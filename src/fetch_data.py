@@ -29,6 +29,29 @@ HEADERS = {
     "Authorization": f"Bearer {API_KEY}"
 }
 
+# ======================
+# MANUAL DATA OVERRIDES
+# ======================
+# These players weren't found by the API search, so we provide their data manually.
+# This ensures we have school and weight for all prospects.
+
+MANUAL_PLAYER_DATA = {
+    "Nick Singleton": {"school": "Penn State", "weight": 219},
+    "Jaydn Ott": {"school": "California", "weight": 205},
+    "Chip Trayanum": {"school": "Ohio State", "weight": 233},
+    "C.J. Donaldson": {"school": "West Virginia", "weight": 225},
+    "TreVonte Citizen": {"school": "LSU", "weight": 225},
+    "Alton McCaskill IV": {"school": "Houston", "weight": 205},
+    "Reggie Virgil": {"school": "Vanderbilt", "weight": 190},
+    "Vinny Anthony II": {"school": "Notre Dame", "weight": 190},
+    "Joseph Manjack IV": {"school": "Texas Tech", "weight": 190},
+    "Max Tomzcak": {"school": "Northern Illinois", "weight": 185},
+    "Ja'Mori Maclin": {"school": "Missouri", "weight": 195},
+    "Mike Washington Jr.": {"school": "Florida State", "weight": 217},
+    "Robert Henry Jr.": {"school": "Sam Houston", "weight": 210},
+    "Samuel Singleton Jr.": {"school": "Kansas State", "weight": 205},
+}
+
 
 def search_player(player_name):
     """
@@ -286,18 +309,42 @@ def fetch_all_prospects(mock_draft_path, output_path, year=2025):
             })
             players_found += 1
         else:
-            # Player not found in API - still include them with empty data
-            output_data.append({
-                'player_name': name,
-                'position': position,
-                'school': '',
-                'projected_pick': projected_pick,
-                'rec_yards': '',
-                'team_pass_attempts': '',
-                'age': '',
-                'weight': ''
-            })
-            players_missing += 1
+            # Player not found in API - check manual overrides
+            if name in MANUAL_PLAYER_DATA:
+                manual = MANUAL_PLAYER_DATA[name]
+                team = manual['school']
+                weight = manual['weight']
+
+                # Try to get stats using the manual school
+                rec_yards = get_receiving_yards(name, team, year)
+                team_pass_att = get_team_pass_attempts_cached(team, year)
+                age = estimate_age_cached(name, season_year=year)
+
+                output_data.append({
+                    'player_name': name,
+                    'position': position,
+                    'school': team,
+                    'projected_pick': projected_pick,
+                    'rec_yards': rec_yards if rec_yards else '',
+                    'team_pass_attempts': team_pass_att if team_pass_att else '',
+                    'age': age if age else '',
+                    'weight': weight if weight else ''
+                })
+                players_found += 1
+                print(f"  Used manual override for: {name} ({team})")
+            else:
+                # No manual override - include with empty data
+                output_data.append({
+                    'player_name': name,
+                    'position': position,
+                    'school': '',
+                    'projected_pick': projected_pick,
+                    'rec_yards': '',
+                    'team_pass_attempts': '',
+                    'age': '',
+                    'weight': ''
+                })
+                players_missing += 1
 
     print("-" * 50)
     print(f"\nResults:")
