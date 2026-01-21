@@ -57,14 +57,15 @@ athletic = normalize(weight + speed_score(forty_time, weight))
    - Age 22: 0.90x (10% penalty)
    - Age 23: 0.80x (20% penalty)
 
+3. **Speed Score Function**: Classic Speed Score (Barnwell formula)
+   - Formula: (Weight × 200) / (40 time)^4
+   - Industry standard, rewards players who are fast for their size
+
 ## Open Questions (Decide Together)
 
 Still need to determine:
 
-1. **Speed Score Function**: How to combine 40 time and weight?
-   - What's a good 40 for a 180lb WR vs 220lb RB?
-
-2. **Position Differences**: Should RBs and WRs use different formulas?
+1. **Position Differences**: Should RBs and WRs use different formulas?
    - Different weights? Different production metrics?
 
 ## Technical Preferences
