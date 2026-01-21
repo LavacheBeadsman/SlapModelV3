@@ -1,0 +1,108 @@
+rank,player_name,school,projected_pick,slap_score,delta,draft_capital_score,breakout_score,rec_yards,team_pass_attempts,age,age_estimated,weight
+1,Carnell Tate,Ohio State,4,84.6,-15.4,100,64.8,875,408,20,FALSE,195
+2,Makai Lemon,USC,16,83.2,-9.4,92.6,71.1,1156,420,21,FALSE,195
+3,Jordyn Tyson,Arizona State,7,79.7,-20.3,100,53.6,711,430,21,FALSE,200
+4,Kevin Concepcion,NC State,27,77.9,0.0,77.9,,,413,20,FALSE,190
+5,Denzel Boston,Washington,24,74.0,-6.9,80.9,65.2,881,370,21,FALSE,209
+6,Chris Bell,Kansas,43,67.7,0.0,67.7,,,345,MISSING,MISSING,176
+7,Eli Heidenreich,Navy,250,66.0,21.0,45.0,93.1,941,182,23,FALSE,206
+8,Chris Brazzell,Tennessee,53,63.9,0.0,63.9,,,437,MISSING,MISSING,200
+9,Zachariah Branch,Georgia,47,62.6,-3.4,66.0,58.2,811,417,21,FALSE,180
+10,Elijah Sarratt,Indiana,44,62.2,-5.1,67.3,55.7,806,406,22,FALSE,209
+11,Omar Cooper Jr.,Indiana,76,61.1,3.0,58.1,64.9,961,406,21,FALSE,201
+12,Germie Bernard,Alabama,52,59.5,-4.7,64.2,53.5,862,523,21,FALSE,204
+13,Skyler Bell,UConn,88,59.2,3.2,56.0,63.3,1276,451,23,FALSE,185
+14,Brenen Thompson,Mississippi State,113,58.6,5.8,52.8,66.0,1054,390,22,FALSE,170
+15,Amare Thomas,Houston,250,58.6,13.6,45.0,76.2,966,377,19,FALSE,205
+16,Ja'Kobi Lane,USC,65,58.3,-2.2,60.5,55.5,745,420,21,FALSE,200
+17,Antonio Williams,Georgia Southern,85,56.5,0.0,56.5,,,431,MISSING,MISSING,210
+18,Malachi Fields,Notre Dame,89,55.6,-0.3,55.9,55.3,630,322,22,TRUE,223
+19,Hank Beatty,Illinois,250,53.4,8.4,45.0,64.2,864,372,21,FALSE,185
+20,C.J. Daniels,Liberty,112,52.9,0.0,52.9,,,316,MISSING,MISSING,205
+21,Lewis Bond,Boston College,185,52.6,5.0,47.6,59.1,1010,454,22,TRUE,190
+22,Ted Hurst,Georgia State,132,51.0,0.0,51.0,,1004,475,MISSING,MISSING,185
+23,Deion Burks,Oklahoma,121,50.2,-1.8,52.0,47.9,620,431,22,FALSE,188
+24,Bryce Lance,North Dakota State,150,49.7,0.0,49.7,,1079,,23,FALSE,209
+25,Shelton Sampson Jr.,Louisiana,250,49.2,4.2,45.0,54.7,537,342,20,TRUE,195
+26,Kevin Coleman Jr.,Jackson State,162,48.9,0.0,48.9,,,,21,FALSE,180
+27,Cyrus Allen,Cincinnati,250,48.6,3.6,45.0,53.3,660,363,22,TRUE,180
+28,Harrison Wallace III,Ole Miss,250,48.4,3.4,45.0,52.8,934,523,22,FALSE,195
+29,Eric McAlister,Boise State,171,48.3,0.0,48.3,,,472,22,TRUE,205
+30,Eric Rivers,Kansas,178,47.9,0.0,47.9,,,345,22,TRUE,170
+31,De'Zhaun Stribling,Oklahoma State,186,47.5,0.0,47.5,,,365,22,FALSE,200
+32,Keelan Marion,BYU,193,47.2,0.0,47.2,,,403,MISSING,MISSING,195
+33,Josh Cameron,Baylor,194,47.1,0.0,47.1,,872,510,MISSING,MISSING,224
+34,Aaron Anderson,Alabama,199,46.9,0.0,46.9,,,523,22,FALSE,188
+35,Dane Key,Kentucky,202,46.8,0.0,46.8,,,367,22,FALSE,210
+36,Jordan Hudson,SMU,211,46.4,0.0,46.4,,766,460,MISSING,MISSING,200
+37,Caleb Douglas,Florida,212,46.3,0.0,46.3,,,374,21,FALSE,210
+38,Trebor Pena,Penn State,250,46.3,1.3,45.0,48.0,552,339,23,FALSE,186
+39,Reggie Virgil,,216,46.2,0.0,46.2,,,,21,FALSE,
+40,Caullin Lacy,Louisville,231,46.0,0.4,45.6,46.6,635,418,23,FALSE,190
+41,Vinny Anthony II,,224,45.9,0.0,45.9,,,,MISSING,MISSING,
+42,Zavion Thomas,LSU,250,45.7,0.7,45.0,46.5,488,443,20,FALSE,192
+43,Kendrick Law,Alabama,250,45.0,0.0,45.0,,,523,22,FALSE,205
+44,Chris Hilton,LSU,250,45.0,0.0,45.0,,,443,22,FALSE,190
+45,Malik Benson,Alabama,250,45.0,0.0,45.0,,,523,22,FALSE,195
+46,Jeff Caldwell,Cincinnati,250,45.0,0.0,45.0,,478,363,MISSING,MISSING,215
+47,J.Michael Sturdivant,California,250,45.0,0.0,45.0,,,505,22,FALSE,213
+48,Dillon Bell,Georgia,250,45.0,0.0,45.0,,268,417,MISSING,MISSING,210
+49,Barion Brown,Kentucky,250,45.0,0.0,45.0,,,367,21,FALSE,185
+50,Jordan Dwyer,Idaho,250,45.0,0.0,45.0,,,,MISSING,MISSING,195
+51,Griffin Wilde,Northwestern,250,45.0,0.0,45.0,,880,378,MISSING,MISSING,200
+52,Romello Brinson,Miami,250,45.0,0.0,45.0,,,496,22,TRUE,190
+53,Jalen Walthall,Hawai'i,250,45.0,0.0,45.0,,,540,MISSING,MISSING,180
+54,Chase Roberts,Georgia Tech,250,45.0,0.0,45.0,,,394,MISSING,MISSING,280
+55,Emmanuel Henderson,Alabama,250,45.0,0.0,45.0,,,523,22,FALSE,190
+56,Raymond Cottrell,Texas A&M,250,45.0,0.0,45.0,,,408,20,TRUE,210
+57,Anthony Evans III,Georgia,250,45.0,0.0,45.0,,,417,20,FALSE,180
+58,Jalen Brown,Notre Dame,250,45.0,0.0,45.0,,,322,20,TRUE,202
+59,Cordale Russell,Colorado,250,45.0,0.0,45.0,,,356,20,TRUE,210
+60,Braylon James,Notre Dame,250,45.0,0.0,45.0,,,322,20,TRUE,190
+61,Tyler Brown,Iowa State,250,45.0,0.0,45.0,,,346,18,TRUE,
+62,Mikey Matthews,California,250,45.0,0.0,45.0,,,505,20,TRUE,180
+63,Antonio Gates Jr.,Michigan State,250,45.0,0.0,45.0,,,378,21,FALSE,193
+64,C.J. Williams,Alabama,250,45.0,0.0,45.0,,,523,MISSING,MISSING,159
+65,Andre Greene Jr.,North Carolina,250,45.0,0.0,45.0,,,355,MISSING,MISSING,202
+66,Kobe Prentice,Alabama,250,45.0,0.0,45.0,,,523,21,FALSE,190
+67,Kyion Grayes,California,250,45.0,0.0,45.0,,10,505,MISSING,MISSING,190
+68,Braylin Presley,Oklahoma State,250,45.0,0.0,45.0,,,365,21,FALSE,170
+69,Talyn Shettron,Oklahoma State,250,45.0,0.0,45.0,,,365,MISSING,MISSING,195
+70,Tobias Merriweather,California,250,45.0,0.0,45.0,,,505,MISSING,MISSING,195
+71,Kaleb Brown,Iowa,250,45.0,0.0,45.0,,,286,21,FALSE,200
+72,Jayden McGowan,Boston College,250,45.0,0.0,45.0,,,454,MISSING,MISSING,180
+73,Jaron Glover,Michigan State,250,45.0,0.0,45.0,,,378,MISSING,MISSING,205
+74,Justus Ross-Simmons,Colorado State,250,45.0,0.0,45.0,,,394,MISSING,MISSING,210
+75,Jayden Ballard,Ohio State,250,45.0,0.0,45.0,,,408,22,TRUE,205
+76,Christian Leary,Alabama,250,45.0,0.0,45.0,,,523,22,TRUE,180
+77,JoJo Earle,Alabama,250,45.0,0.0,45.0,,,523,22,FALSE,185
+78,Dacari Collins,Clemson,250,45.0,0.0,45.0,,,474,22,FALSE,215
+79,Cody Jackson,Army,250,45.0,0.0,45.0,,,126,22,TRUE,200
+80,Kyron Ware-Hudson,Penn State,250,45.0,0.0,45.0,,288,339,MISSING,MISSING,215
+81,Malik McClain,USC,250,45.0,0.0,45.0,,,420,22,TRUE,245
+82,Jerand Bradley,Boston College,250,45.0,0.0,45.0,,,454,22,FALSE,223
+83,Andrel Anthony,Duke,250,45.0,0.0,45.0,,,506,23,FALSE,186
+84,Jayden Thomas,Georgia Tech,250,45.0,0.0,45.0,,,394,22,FALSE,220
+85,Rara Thomas,Georgia,250,45.0,0.0,45.0,,,417,23,FALSE,208
+86,Jared Brown,Coastal Carolina,250,45.0,0.0,45.0,,,399,22,TRUE,195
+87,Jaden Bray,Oklahoma State,250,45.0,0.0,45.0,,,365,22,TRUE,209
+88,Joseph Manjack IV,,250,45.0,0.0,45.0,,,,22,TRUE,
+89,Max Tomzcak,,250,45.0,0.0,45.0,,,,MISSING,MISSING,
+90,E.J. Williams,Clemson,250,45.0,0.0,45.0,,,474,23,TRUE,203
+91,Ja'Mori Maclin,,250,45.0,0.0,45.0,,,,23,TRUE,
+92,Ja'Varrius Johnson,Auburn,250,45.0,0.0,45.0,,,362,MISSING,MISSING,180
+93,Donavon Greene,Virginia Tech,250,45.0,0.0,45.0,,267,319,MISSING,MISSING,196
+94,Jalil Farooq,Maryland,250,43.4,-1.6,45.0,41.4,545,491,23,FALSE,213
+95,Noah Thomas,Georgia,196,42.6,-4.4,47.0,36.9,254,417,21,FALSE,205
+96,Brandon Inniss,Ohio State,250,42.3,-2.7,45.0,38.9,271,408,20,FALSE,199
+97,London Humphreys,Georgia,250,42.3,-2.7,45.0,38.8,276,417,20,FALSE,200
+98,Ayden Williams,Mississippi State,250,42.2,-2.8,45.0,38.6,252,390,20,TRUE,205
+99,Colbie Young,Georgia,250,42.0,-3.0,45.0,38.2,358,417,23,FALSE,215
+100,Deion Colzie,Miami (OH),250,40.3,-4.7,45.0,34.2,178,368,22,TRUE,211
+101,Kaden Wetjen,Iowa,250,40.2,-4.8,45.0,34.0,151,286,23,FALSE,196
+102,Jaden Greathouse,Notre Dame,250,39.0,-6.0,45.0,31.2,73,322,20,FALSE,212
+103,Hykeem Williams,Colorado,250,38.8,-6.2,45.0,30.9,81,356,21,FALSE,220
+104,Nathan Leacock,North Carolina,250,38.3,-6.7,45.0,29.6,48,355,20,TRUE,217
+105,Ryan Niblett,Texas,250,38.3,-6.7,45.0,29.7,60,420,20,FALSE,187
+106,Squirrel White,Florida State,250,38.3,-6.7,45.0,29.7,52,339,21,FALSE,170
+107,Jaquaize Pettaway,East Carolina,250,37.8,-7.2,45.0,28.5,32,440,20,TRUE,194
