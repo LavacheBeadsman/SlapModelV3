@@ -78,6 +78,7 @@ athletic = normalize(weight + speed_score(forty_time, weight))
 2. **Explain code in simple terms** - What does it do and why
 3. **Small steps** - Break work into pieces I can follow
 4. **Options with tradeoffs** - When deciding something, give me choices with clear pros and cons
+5. **NEVER estimate, guess, or make up data** - If data is missing, flag it and ask me how to handle it
 
 ## Project Structure
 
