@@ -25,6 +25,45 @@ def get_name_variations(name):
     """
     variations = [name]
 
+    # Common nickname mappings
+    NICKNAMES = {
+        'nick': 'nicholas',
+        'nicholas': 'nick',
+        'mike': 'michael',
+        'michael': 'mike',
+        'chris': 'christopher',
+        'christopher': 'chris',
+        'will': 'william',
+        'william': 'will',
+        'tom': 'thomas',
+        'thomas': 'tom',
+        'dan': 'daniel',
+        'daniel': 'dan',
+        'rob': 'robert',
+        'robert': 'rob',
+        'bob': 'robert',
+        'joe': 'joseph',
+        'joseph': 'joe',
+        'tony': 'anthony',
+        'anthony': 'tony',
+        'matt': 'matthew',
+        'matthew': 'matt',
+        'jon': 'jonathan',
+        'jonathan': 'jon',
+        'dave': 'david',
+        'david': 'dave',
+        'jim': 'james',
+        'james': 'jim',
+        'ed': 'edward',
+        'edward': 'ed',
+        'sam': 'samuel',
+        'samuel': 'sam',
+        'ben': 'benjamin',
+        'benjamin': 'ben',
+        'alex': 'alexander',
+        'alexander': 'alex',
+    }
+
     # Remove Jr., III, IV, II suffixes
     no_suffix = re.sub(r'\s+(Jr\.|Jr|III|IV|II)$', '', name, flags=re.IGNORECASE)
     if no_suffix != name:
@@ -46,8 +85,23 @@ def get_name_variations(name):
     if no_suffix_no_periods not in variations:
         variations.append(no_suffix_no_periods)
 
-    # First name only (for uniquely named players)
+    # Try nickname variations
     parts = name.split()
+    if len(parts) >= 2:
+        first_name = parts[0].replace('.', '').lower()
+        last_name = ' '.join(parts[1:])
+
+        if first_name in NICKNAMES:
+            alt_first = NICKNAMES[first_name].title()
+            alt_name = f"{alt_first} {last_name}"
+            if alt_name not in variations:
+                variations.append(alt_name)
+            # Also try with no suffix
+            alt_no_suffix = re.sub(r'\s+(Jr\.|Jr|III|IV|II)$', '', alt_name, flags=re.IGNORECASE)
+            if alt_no_suffix not in variations:
+                variations.append(alt_no_suffix)
+
+    # First name only (for uniquely named players)
     if len(parts) >= 2:
         first_name = parts[0].replace('.', '')
         if len(first_name) > 2:  # Skip if it's just initials
