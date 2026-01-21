@@ -126,73 +126,133 @@ def calculate_age_at_season(birthdate_str, season_year=2024):
 
 
 # ======================
-# TEST: 5 players first
+# FULL RUN: All prospects
 # ======================
 
 if __name__ == "__main__":
-    test_players = [
-        "Tetairoa McMillan",
-        "Jordyn Tyson",
-        "Jeremiyah Love",
-        "Carnell Tate",
-        "Makai Lemon"
-    ]
+    import csv
+    from datetime import date
+
+    # File paths
+    input_path = "data/prospects_with_stats.csv"
+    output_path = "data/prospects_with_birthdates.csv"
+    missing_log_path = "data/missing_birthdates.txt"
 
     print("=" * 60)
-    print("WIKIPEDIA BIRTHDATE TEST - 5 Players")
+    print("WIKIPEDIA BIRTHDATE FETCH - Full Prospect List")
     print("=" * 60)
     print()
 
-    results = []
+    # Read the prospects CSV
+    print(f"Reading prospects from: {input_path}")
+    with open(input_path, 'r') as f:
+        reader = csv.DictReader(f)
+        prospects = list(reader)
+    print(f"  Found {len(prospects)} prospects")
 
-    for name in test_players:
-        print(f"Looking up: {name}")
+    # Check for duplicates
+    names = [p['player_name'] for p in prospects]
+    duplicates = [name for name in names if names.count(name) > 1]
+    if duplicates:
+        print(f"\n  WARNING: Found duplicate names: {set(duplicates)}")
+    else:
+        print("  No duplicates found")
+    print()
+
+    # Track results
+    results = []
+    missing_players = []
+    found_count = 0
+    missing_count = 0
+
+    print("Fetching birthdates from Wikipedia...")
+    print("-" * 60)
+
+    for i, prospect in enumerate(prospects):
+        name = prospect['player_name']
+
+        # Progress indicator (every 20 players)
+        if (i + 1) % 20 == 0:
+            print(f"  Progress: {i + 1}/{len(prospects)} players processed")
 
         # Small delay to be respectful to Wikipedia's servers
-        time.sleep(0.5)
+        time.sleep(0.3)
 
-        result = get_wikipedia_birthdate(name)
+        # Fetch birthdate
+        wiki_result = get_wikipedia_birthdate(name)
 
-        if result:
-            birthdate = result["birthdate"]
+        if wiki_result:
+            birthdate = wiki_result["birthdate"]
             age_2024 = calculate_age_at_season(birthdate, 2024)
-            source = result["source"]
+            found_count += 1
 
-            print(f"  Birthdate: {birthdate}")
-            print(f"  Age during 2024 season: {age_2024}")
-            print(f"  Source: {source}")
-
-            results.append({
-                "player": name,
-                "birthdate": birthdate,
-                "age_2024": age_2024,
-                "status": "FOUND",
-                "source": source
-            })
+            # Add birthdate and age to prospect data
+            prospect['birthdate'] = birthdate
+            prospect['age'] = age_2024  # Replace estimated age with real age
         else:
-            print(f"  Status: NOT FOUND on Wikipedia")
-            results.append({
-                "player": name,
-                "birthdate": None,
-                "age_2024": None,
-                "status": "NOT FOUND",
-                "source": None
-            })
+            # Mark as MISSING - do NOT guess
+            missing_count += 1
+            missing_players.append(name)
+            prospect['birthdate'] = "MISSING"
+            prospect['age'] = "MISSING"
 
-        print()
+        results.append(prospect)
+
+    print("-" * 60)
+    print()
 
     # Summary
     print("=" * 60)
     print("SUMMARY")
     print("=" * 60)
-    found = sum(1 for r in results if r["status"] == "FOUND")
-    print(f"Found: {found}/{len(test_players)}")
+    print(f"  Total players: {len(prospects)}")
+    print(f"  Birthdates found: {found_count} ({100*found_count/len(prospects):.1f}%)")
+    print(f"  Birthdates missing: {missing_count} ({100*missing_count/len(prospects):.1f}%)")
     print()
 
-    print("Results table:")
-    print(f"{'Player':<25} {'Birthdate':<12} {'Age (2024)':<10} {'Status'}")
+    # Log missing players
+    if missing_players:
+        print(f"Players with MISSING birthdates ({len(missing_players)}):")
+        for name in missing_players:
+            print(f"  - {name}")
+        print()
+
+        # Save missing players to a separate file
+        with open(missing_log_path, 'w') as f:
+            f.write("Players with missing birthdates (need manual lookup):\n")
+            f.write("=" * 50 + "\n\n")
+            for name in missing_players:
+                f.write(f"- {name}\n")
+        print(f"Missing players log saved to: {missing_log_path}")
+        print()
+
+    # Save to CSV
+    print(f"Saving results to: {output_path}")
+    fieldnames = ['player_name', 'position', 'school', 'projected_pick',
+                  'rec_yards', 'team_pass_attempts', 'birthdate', 'age', 'weight']
+
+    with open(output_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(results)
+
+    print("Done!")
+    print()
+
+    # Show first 10 and last 10 rows
+    print("=" * 60)
+    print("FIRST 10 ROWS")
+    print("=" * 60)
+    print(f"{'Player':<25} {'Birthdate':<12} {'Age':<6} {'School'}")
     print("-" * 60)
-    for r in results:
-        birthdate = r["birthdate"] or "—"
-        age = str(r["age_2024"]) if r["age_2024"] else "—"
-        print(f"{r['player']:<25} {birthdate:<12} {age:<10} {r['status']}")
+    for r in results[:10]:
+        print(f"{r['player_name']:<25} {r['birthdate']:<12} {str(r['age']):<6} {r['school']}")
+
+    print()
+    print("=" * 60)
+    print("LAST 10 ROWS")
+    print("=" * 60)
+    print(f"{'Player':<25} {'Birthdate':<12} {'Age':<6} {'School'}")
+    print("-" * 60)
+    for r in results[-10:]:
+        print(f"{r['player_name']:<25} {r['birthdate']:<12} {str(r['age']):<6} {r['school']}")
