@@ -60,7 +60,7 @@ def load_recruiting_data():
     print("Loading recruiting data from CFBD API...")
     recruiting_cache = {}
 
-    for year in range(2019, 2025):
+    for year in range(2020, 2026):
         for pos in ["WR", "RB", "ATH"]:
             url = f"{BASE_URL}/recruiting/players"
             params = {"year": year, "position": pos}
@@ -76,7 +76,7 @@ def load_recruiting_data():
     return recruiting_cache
 
 
-def estimate_age_from_recruiting(player_name, recruiting_cache, season_year=2024):
+def estimate_age_from_recruiting(player_name, recruiting_cache, season_year=2025):
     """
     Estimate age based on recruiting class year.
     Assumes player was 18 in their recruiting year.

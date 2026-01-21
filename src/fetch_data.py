@@ -51,7 +51,7 @@ def search_player(player_name):
     return None
 
 
-def get_receiving_yards(player_name, team, year=2024):
+def get_receiving_yards(player_name, team, year=2025):
     """
     Get a player's receiving yards for a specific season.
 
@@ -82,7 +82,7 @@ def get_receiving_yards(player_name, team, year=2024):
     return None
 
 
-def get_team_pass_attempts(team, year=2024):
+def get_team_pass_attempts(team, year=2025):
     """
     Get a team's total pass attempts for a season.
 
@@ -113,7 +113,7 @@ def get_team_pass_attempts(team, year=2024):
     return None
 
 
-def estimate_age(player_name, position, season_year=2024):
+def estimate_age(player_name, position, season_year=2025):
     """
     Estimate a player's age during a season based on when they were recruited.
 
@@ -128,8 +128,8 @@ def estimate_age(player_name, position, season_year=2024):
 
     Returns: estimated age as an integer, or None if not found
     """
-    # Search recruiting database for years 2020-2024
-    for recruit_year in range(2024, 2019, -1):
+    # Search recruiting database for years 2021-2025
+    for recruit_year in range(2025, 2020, -1):
         url = f"{BASE_URL}/recruiting/players"
         params = {
             "year": recruit_year,
@@ -168,7 +168,7 @@ _team_pass_attempts_cache = {}
 _recruiting_cache = {}
 
 
-def get_team_pass_attempts_cached(team, year=2024):
+def get_team_pass_attempts_cached(team, year=2025):
     """Same as get_team_pass_attempts but uses cache to avoid repeat calls."""
     cache_key = f"{team}_{year}"
     if cache_key not in _team_pass_attempts_cache:
@@ -176,7 +176,7 @@ def get_team_pass_attempts_cached(team, year=2024):
     return _team_pass_attempts_cache[cache_key]
 
 
-def load_recruiting_cache(positions, years=range(2020, 2025)):
+def load_recruiting_cache(positions, years=range(2021, 2026)):
     """
     Load all recruiting data upfront so we don't have to make
     separate API calls for each player's age.
@@ -194,7 +194,7 @@ def load_recruiting_cache(positions, years=range(2020, 2025)):
     print(f"  Loaded {len(_recruiting_cache)} recruits into cache\n")
 
 
-def estimate_age_cached(player_name, season_year=2024):
+def estimate_age_cached(player_name, season_year=2025):
     """
     Fast age estimation using the pre-loaded cache.
     """
@@ -217,7 +217,7 @@ def estimate_age_cached(player_name, season_year=2024):
 # MAIN FUNCTION: Fetch data for all prospects
 # ======================
 
-def fetch_all_prospects(mock_draft_path, output_path, year=2024):
+def fetch_all_prospects(mock_draft_path, output_path, year=2025):
     """
     The main function that does everything:
     1. Reads your mock draft CSV
@@ -227,7 +227,7 @@ def fetch_all_prospects(mock_draft_path, output_path, year=2024):
     Parameters:
     - mock_draft_path: path to mock_draft_2026.csv
     - output_path: where to save the combined data
-    - year: which college season to pull stats from (2024)
+    - year: which college season to pull stats from (2025 for 2026 draft prospects)
     """
 
     # Load recruiting data into cache first (speeds up age lookups)
