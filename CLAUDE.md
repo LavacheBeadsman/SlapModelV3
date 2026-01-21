@@ -61,12 +61,10 @@ athletic = normalize(weight + speed_score(forty_time, weight))
    - Formula: (Weight × 200) / (40 time)^4
    - Industry standard, rewards players who are fast for their size
 
-## Open Questions (Decide Together)
-
-Still need to determine:
-
-1. **Position Differences**: Should RBs and WRs use different formulas?
-   - Different weights? Different production metrics?
+4. **Position Handling**: Same formula for RBs and WRs
+   - Both use: Receiving yards ÷ Team pass attempts
+   - For RBs, this captures pass-catching ability (high-value skill in modern NFL)
+   - Allows direct comparison across positions
 
 ## Technical Preferences
 
