@@ -50,17 +50,21 @@ athletic = normalize(weight + speed_score(forty_time, weight))
    - "Balanced Approach" - all three factors matter
    - Draft capital sets the floor, production confirms ability, athleticism raises ceiling
 
+2. **Age Weight Function**: Moderate adjustment
+   - Age 19: 1.20x (20% bonus)
+   - Age 20: 1.10x (10% bonus)
+   - Age 21: 1.00x (baseline)
+   - Age 22: 0.90x (10% penalty)
+   - Age 23: 0.80x (20% penalty)
+
 ## Open Questions (Decide Together)
 
 Still need to determine:
 
-1. **Age Weight Function**: How much to reward younger producers?
-   - How much bonus for a 19-year-old vs 22-year-old?
-
-2. **Speed Score Function**: How to combine 40 time and weight?
+1. **Speed Score Function**: How to combine 40 time and weight?
    - What's a good 40 for a 180lb WR vs 220lb RB?
 
-3. **Position Differences**: Should RBs and WRs use different formulas?
+2. **Position Differences**: Should RBs and WRs use different formulas?
    - Different weights? Different production metrics?
 
 ## Technical Preferences
