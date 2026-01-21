@@ -39,7 +39,17 @@ WEB_SEARCH_BIRTHDATES = {
 }
 
 # Players with wrong Wikipedia matches (need to be marked as MISSING)
-WRONG_MATCHES = ["Chris Brazzell"]
+# These are different people with the same name in Wikipedia
+WRONG_MATCHES = [
+    "Chris Brazzell",    # Wikipedia has 1976 birthdate (different person)
+    "Josh Cameron",      # Wikipedia has 1986 birthdate (age 37)
+    "Dillon Bell",       # Wikipedia has 1822 birthdate (age 201!)
+    "Jared Brown",       # Wikipedia has 1973 birthdate (age 51)
+    "Raymond Cottrell",  # Wikipedia has 1911 birthdate (age 113)
+    "Jalen Brown",       # Wikipedia has 1995 birthdate (age 29)
+    "Andrew Paul",       # Wikipedia has 1961 birthdate (age 63)
+    "Jeff Caldwell",     # Wikipedia has 1996 birthdate (age 28)
+]
 
 
 def load_recruiting_data():
