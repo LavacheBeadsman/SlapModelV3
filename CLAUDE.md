@@ -61,10 +61,12 @@ athletic = normalize(weight + speed_score(forty_time, weight))
    - Formula: (Weight × 200) / (40 time)^4
    - Industry standard, rewards players who are fast for their size
 
-4. **Position Handling**: Same formula for RBs and WRs
+4. **Position Handling**: Position-Split Normalization
    - Both use: Receiving yards ÷ Team pass attempts
-   - For RBs, this captures pass-catching ability (high-value skill in modern NFL)
-   - Allows direct comparison across positions
+   - RBs are normalized against other RBs only (50 = average RB)
+   - WRs are normalized against other WRs only (50 = average WR)
+   - This prevents RBs from being penalized for lower receiving yards than WRs
+   - Outputs separate RB and WR rankings
 
 ## Technical Preferences
 
@@ -103,4 +105,16 @@ For each prospect, we'll need:
 
 ## Commands
 
-(To be added as we build the project)
+```bash
+# Calculate SLAP scores (outputs to output/ folder)
+python src/calculate_slap.py
+
+# Refresh data from APIs (birthdates, stats)
+python src/fill_missing_ages.py
+```
+
+## Output Files
+
+- `output/slap_scores_rb.csv` - RB rankings
+- `output/slap_scores_wr.csv` - WR rankings
+- `output/slap_scores.csv` - Combined rankings

@@ -1,10 +1,14 @@
 """
-SLAP Score V3 Calculator
+SLAP Score V3 Calculator (Position-Split Version)
 
-This is the main scoring script that combines all three components:
+This scoring script calculates scores SEPARATELY for RBs and WRs:
+- RBs are compared against other RBs (50 = average RB)
+- WRs are compared against other WRs (50 = average WR)
+
+Components:
 1. Draft Capital (45%) - Higher draft picks get higher scores
 2. Breakout Score (35%) - Production relative to opportunity, adjusted for age
-3. Athletic Modifier (20%) - Size + Speed (placeholder until Combine data available)
+3. Athletic Modifier (20%) - Size + Speed (placeholder until Combine data)
 
 The output is a 0-100 score for each prospect, plus a "delta" showing how
 much the model disagrees with their draft position.
@@ -12,6 +16,7 @@ much the model disagrees with their draft position.
 
 import csv
 import math
+import os
 
 
 # =============================================================================
@@ -159,21 +164,41 @@ def normalize_scores(raw_scores, target_mean=50, target_std=15):
 
 
 # =============================================================================
-# MAIN SLAP SCORE CALCULATION
+# POSITION-SPLIT SLAP SCORE CALCULATION
 # =============================================================================
 
-def calculate_slap_scores(prospects):
+def calculate_slap_scores_by_position(prospects):
     """
-    Calculate SLAP scores for all prospects.
+    Calculate SLAP scores separately for RBs and WRs.
 
-    Steps:
-    1. Calculate raw component scores for each player
-    2. Normalize each component to 0-100 scale
-    3. Combine with weights: 45% Draft + 35% Breakout + 20% Athletic
-    4. Calculate delta vs draft-only baseline
+    Each position is normalized against itself:
+    - RB with 50 breakout score = average RB production
+    - WR with 50 breakout score = average WR production
 
-    Returns list of prospects with scores added.
+    This prevents RBs from being penalized for having fewer receiving yards
+    than WRs (which is expected).
     """
+
+    # Separate by position
+    rbs = [p for p in prospects if p.get('position') == 'RB']
+    wrs = [p for p in prospects if p.get('position') == 'WR']
+
+    print(f"  Splitting by position: {len(rbs)} RBs, {len(wrs)} WRs")
+
+    # Calculate scores for each position group
+    rb_results = calculate_position_group(rbs, "RB")
+    wr_results = calculate_position_group(wrs, "WR")
+
+    return rb_results, wr_results
+
+
+def calculate_position_group(prospects, position_name):
+    """
+    Calculate SLAP scores for a single position group.
+    All normalization happens within this group only.
+    """
+    if len(prospects) == 0:
+        return []
 
     # Step 1: Calculate raw scores for each component
     draft_raw = []
@@ -193,10 +218,15 @@ def calculate_slap_scores(prospects):
         breakout_raw.append(calculate_breakout_raw(rec_yards, team_pass, age))
         athletic_raw.append(calculate_athletic_raw(weight, forty))
 
-    # Step 2: Normalize each component
+    # Step 2: Normalize WITHIN this position group
     draft_norm = normalize_scores(draft_raw)
     breakout_norm = normalize_scores(breakout_raw)
     athletic_norm = normalize_scores(athletic_raw)
+
+    # Count valid scores
+    valid_breakout = sum(1 for b in breakout_norm if b is not None)
+    valid_athletic = sum(1 for a in athletic_norm if a is not None)
+    print(f"    {position_name}: {len(prospects)} total, {valid_breakout} with breakout, {valid_athletic} with athletic")
 
     # Step 3: Calculate final SLAP score
     results = []
@@ -210,7 +240,6 @@ def calculate_slap_scores(prospects):
         result['athletic_score'] = athletic_norm[i]
 
         # Calculate weighted SLAP score
-        # Handle missing components gracefully
         dc = draft_norm[i]
         br = breakout_norm[i]
         ath = athletic_norm[i]
@@ -225,7 +254,7 @@ def calculate_slap_scores(prospects):
             result['delta'] = 0.0  # No delta when using draft only
         elif ath is None:
             # Have draft + breakout but no athletic
-            # Redistribute athletic weight: new weights = 0.45/0.80, 0.35/0.80
+            # Redistribute athletic weight
             adj_dc_weight = WEIGHT_DRAFT_CAPITAL / (WEIGHT_DRAFT_CAPITAL + WEIGHT_BREAKOUT)
             adj_br_weight = WEIGHT_BREAKOUT / (WEIGHT_DRAFT_CAPITAL + WEIGHT_BREAKOUT)
             slap = (dc * adj_dc_weight) + (br * adj_br_weight)
@@ -266,78 +295,17 @@ def safe_float(value):
         return None
 
 
-# =============================================================================
-# MAIN SCRIPT
-# =============================================================================
-
-if __name__ == "__main__":
-    input_path = "data/prospects_final.csv"
-    output_path = "output/slap_scores.csv"
-
-    print("=" * 70)
-    print("SLAP SCORE V3 CALCULATOR")
-    print("=" * 70)
-    print()
-
-    # Load prospects
-    print(f"Loading data from: {input_path}")
-    with open(input_path, 'r') as f:
-        reader = csv.DictReader(f)
-        prospects = list(reader)
-    print(f"  Found {len(prospects)} prospects")
-    print()
-
-    # Calculate scores
-    print("Calculating SLAP scores...")
-    results = calculate_slap_scores(prospects)
-
-    # Count valid scores
-    valid_slap = sum(1 for r in results if r['slap_score'] is not None)
-    valid_breakout = sum(1 for r in results if r['breakout_score'] is not None)
-    valid_athletic = sum(1 for r in results if r['athletic_score'] is not None)
-
-    print(f"  Draft Capital scores: {len(results)} (all players have draft projections)")
-    print(f"  Breakout scores: {valid_breakout} (need rec_yards, team_pass_attempts, age)")
-    print(f"  Athletic scores: {valid_athletic} (need weight + 40 time)")
-    print(f"  Final SLAP scores: {valid_slap}")
-    print()
-
+def print_rankings(results, position, count=10):
+    """Print top N prospects for a position."""
     # Sort by SLAP score (highest first)
-    results_sorted = sorted(results, key=lambda x: (x['slap_score'] is None, -(x['slap_score'] or 0)))
+    sorted_results = sorted(results, key=lambda x: (x['slap_score'] is None, -(x['slap_score'] or 0)))
 
-    # Save to CSV
-    print(f"Saving results to: {output_path}")
+    print(f"{'Rank':<5} {'Player':<25} {'School':<15} {'Pick':<5} {'SLAP':<6} {'Delta':<7} {'DC':<6} {'BR':<6}")
+    print("-" * 85)
 
-    # Ensure output directory exists
-    import os
-    os.makedirs("output", exist_ok=True)
-
-    fieldnames = [
-        'player_name', 'position', 'school', 'projected_pick',
-        'slap_score', 'delta',
-        'draft_capital_score', 'breakout_score', 'athletic_score',
-        'rec_yards', 'team_pass_attempts', 'age', 'age_estimated', 'weight'
-    ]
-
-    with open(output_path, 'w', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
-        writer.writeheader()
-        writer.writerows(results_sorted)
-
-    print("Done!")
-    print()
-
-    # Show top 20 prospects
-    print("=" * 70)
-    print("TOP 20 PROSPECTS BY SLAP SCORE")
-    print("=" * 70)
-    print()
-    print(f"{'Rank':<5} {'Player':<25} {'Pos':<4} {'Pick':<5} {'SLAP':<6} {'Delta':<7} {'DC':<6} {'BR':<6}")
-    print("-" * 70)
-
-    for i, r in enumerate(results_sorted[:20], 1):
+    for i, r in enumerate(sorted_results[:count], 1):
         name = r['player_name'][:24]
-        pos = r['position']
+        school = (r.get('school') or '')[:14]
         pick = r['projected_pick']
         slap = r['slap_score'] if r['slap_score'] else '-'
         delta = r['delta'] if r['delta'] else '-'
@@ -348,86 +316,174 @@ if __name__ == "__main__":
         if isinstance(delta, (int, float)) and delta > 0:
             delta = f"+{delta}"
 
-        print(f"{i:<5} {name:<25} {pos:<4} {pick:<5} {slap:<6} {delta:<7} {dc:<6} {br:<6}")
+        print(f"{i:<5} {name:<25} {school:<15} {pick:<5} {slap:<6} {delta:<7} {dc:<6} {br:<6}")
+
+
+# =============================================================================
+# MAIN SCRIPT
+# =============================================================================
+
+if __name__ == "__main__":
+    input_path = "data/prospects_final.csv"
+    output_rb_path = "output/slap_scores_rb.csv"
+    output_wr_path = "output/slap_scores_wr.csv"
+    output_combined_path = "output/slap_scores.csv"
+
+    print("=" * 85)
+    print("SLAP SCORE V3 CALCULATOR (POSITION-SPLIT)")
+    print("=" * 85)
+    print()
+
+    # Load prospects
+    print(f"Loading data from: {input_path}")
+    with open(input_path, 'r') as f:
+        reader = csv.DictReader(f)
+        prospects = list(reader)
+    print(f"  Found {len(prospects)} prospects")
+    print()
+
+    # Calculate scores by position
+    print("Calculating SLAP scores by position...")
+    rb_results, wr_results = calculate_slap_scores_by_position(prospects)
+    print()
+
+    # Sort each by SLAP score
+    rb_sorted = sorted(rb_results, key=lambda x: (x['slap_score'] is None, -(x['slap_score'] or 0)))
+    wr_sorted = sorted(wr_results, key=lambda x: (x['slap_score'] is None, -(x['slap_score'] or 0)))
+
+    # Ensure output directory exists
+    os.makedirs("output", exist_ok=True)
+
+    # Save to separate CSV files
+    fieldnames = [
+        'player_name', 'position', 'school', 'projected_pick',
+        'slap_score', 'delta',
+        'draft_capital_score', 'breakout_score', 'athletic_score',
+        'rec_yards', 'team_pass_attempts', 'age', 'age_estimated', 'weight'
+    ]
+
+    print(f"Saving RB results to: {output_rb_path}")
+    with open(output_rb_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(rb_sorted)
+
+    print(f"Saving WR results to: {output_wr_path}")
+    with open(output_wr_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(wr_sorted)
+
+    # Also save combined (for backwards compatibility)
+    print(f"Saving combined results to: {output_combined_path}")
+    all_sorted = sorted(rb_results + wr_results, key=lambda x: (x['slap_score'] is None, -(x['slap_score'] or 0)))
+    with open(output_combined_path, 'w', newline='') as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction='ignore')
+        writer.writeheader()
+        writer.writerows(all_sorted)
+
+    print()
+    print("Done!")
+    print()
+
+    # Show top 10 RBs
+    print("=" * 85)
+    print("TOP 10 RUNNING BACKS BY SLAP SCORE")
+    print("=" * 85)
+    print()
+    print("(RBs normalized against other RBs - 50 = average RB)")
+    print()
+    print_rankings(rb_results, "RB", 10)
+    print()
+
+    # Show top 10 WRs
+    print("=" * 85)
+    print("TOP 10 WIDE RECEIVERS BY SLAP SCORE")
+    print("=" * 85)
+    print()
+    print("(WRs normalized against other WRs - 50 = average WR)")
+    print()
+    print_rankings(wr_results, "WR", 10)
+    print()
+
+    # Show biggest positive deltas by position
+    print("=" * 85)
+    print("BIGGEST POSITIVE DELTAS BY POSITION")
+    print("(Model likes more than draft slot)")
+    print("=" * 85)
+    print()
+
+    # RB positive deltas
+    rb_with_delta = [r for r in rb_results if r['delta'] is not None and r['delta'] > 0]
+    rb_by_delta = sorted(rb_with_delta, key=lambda x: -x['delta'])[:5]
+
+    print("RBs:")
+    print(f"  {'Player':<25} {'Pick':<6} {'SLAP':<6} {'Delta':<7}")
+    print("  " + "-" * 50)
+    for r in rb_by_delta:
+        print(f"  {r['player_name']:<25} {r['projected_pick']:<6} {r['slap_score']:<6} +{r['delta']}")
 
     print()
 
-    # Show biggest positive deltas (model likes more than draft position)
-    print("=" * 70)
-    print("BIGGEST POSITIVE DELTAS (Model likes more than draft slot)")
-    print("=" * 70)
-    print()
+    # WR positive deltas
+    wr_with_delta = [r for r in wr_results if r['delta'] is not None and r['delta'] > 0]
+    wr_by_delta = sorted(wr_with_delta, key=lambda x: -x['delta'])[:5]
 
-    # Filter to players with valid deltas and sort by delta
-    with_delta = [r for r in results if r['delta'] is not None and r['delta'] != 0]
-    by_delta = sorted(with_delta, key=lambda x: -x['delta'])
-
-    print(f"{'Player':<25} {'Pos':<4} {'Pick':<5} {'SLAP':<6} {'Delta':<7} {'Why?'}")
-    print("-" * 70)
-
-    for r in by_delta[:10]:
-        name = r['player_name'][:24]
-        pos = r['position']
-        pick = r['projected_pick']
-        slap = r['slap_score']
-        delta = f"+{r['delta']}" if r['delta'] > 0 else r['delta']
-
-        # Explain the delta
-        dc = r['draft_capital_score'] or 50
-        br = r['breakout_score'] or 50
-        if br > dc:
-            why = "Strong production"
-        else:
-            why = "Good all-around"
-
-        print(f"{name:<25} {pos:<4} {pick:<5} {slap:<6} {delta:<7} {why}")
+    print("WRs:")
+    print(f"  {'Player':<25} {'Pick':<6} {'SLAP':<6} {'Delta':<7}")
+    print("  " + "-" * 50)
+    for r in wr_by_delta:
+        print(f"  {r['player_name']:<25} {r['projected_pick']:<6} {r['slap_score']:<6} +{r['delta']}")
 
     print()
 
-    # Show biggest negative deltas (model likes less than draft position)
-    print("=" * 70)
-    print("BIGGEST NEGATIVE DELTAS (Model likes less than draft slot)")
-    print("=" * 70)
+    # Show biggest negative deltas by position
+    print("=" * 85)
+    print("BIGGEST NEGATIVE DELTAS BY POSITION")
+    print("(Model likes less than draft slot)")
+    print("=" * 85)
     print()
 
-    by_delta_neg = sorted(with_delta, key=lambda x: x['delta'])
+    # RB negative deltas
+    rb_neg_delta = [r for r in rb_results if r['delta'] is not None and r['delta'] < 0]
+    rb_by_neg = sorted(rb_neg_delta, key=lambda x: x['delta'])[:5]
 
-    print(f"{'Player':<25} {'Pos':<4} {'Pick':<5} {'SLAP':<6} {'Delta':<7} {'Why?'}")
-    print("-" * 70)
-
-    for r in by_delta_neg[:10]:
-        name = r['player_name'][:24]
-        pos = r['position']
-        pick = r['projected_pick']
-        slap = r['slap_score']
-        delta = r['delta']
-
-        # Explain the delta
-        dc = r['draft_capital_score'] or 50
-        br = r['breakout_score'] or 50
-        if br < dc:
-            why = "Low production"
-        else:
-            why = "Below expectations"
-
-        print(f"{name:<25} {pos:<4} {pick:<5} {slap:<6} {delta:<7} {why}")
+    print("RBs:")
+    print(f"  {'Player':<25} {'Pick':<6} {'SLAP':<6} {'Delta':<7}")
+    print("  " + "-" * 50)
+    for r in rb_by_neg:
+        print(f"  {r['player_name']:<25} {r['projected_pick']:<6} {r['slap_score']:<6} {r['delta']}")
 
     print()
-    print("=" * 70)
+
+    # WR negative deltas
+    wr_neg_delta = [r for r in wr_results if r['delta'] is not None and r['delta'] < 0]
+    wr_by_neg = sorted(wr_neg_delta, key=lambda x: x['delta'])[:5]
+
+    print("WRs:")
+    print(f"  {'Player':<25} {'Pick':<6} {'SLAP':<6} {'Delta':<7}")
+    print("  " + "-" * 50)
+    for r in wr_by_neg:
+        print(f"  {r['player_name']:<25} {r['projected_pick']:<6} {r['slap_score']:<6} {r['delta']}")
+
+    print()
+    print("=" * 85)
     print("NOTES")
-    print("=" * 70)
+    print("=" * 85)
     print("""
-1. SLAP Score: 0-100 scale where 50 = average prospect
-   - 65+ = Well above average
-   - 80+ = Elite prospect
+1. Position-Split Normalization:
+   - RBs are compared only to other RBs (50 = average RB)
+   - WRs are compared only to other WRs (50 = average WR)
+   - This prevents RBs from being penalized for lower receiving yards
 
-2. Delta: Difference between SLAP score and draft-only baseline
+2. SLAP Score: 0-100 scale
+   - 65+ = Well above average for position
+   - 80+ = Elite prospect for position
+
+3. Delta: Difference between SLAP score and draft-only baseline
    - Positive = Model likes them MORE than their draft slot suggests
    - Negative = Model likes them LESS than their draft slot suggests
 
-3. Missing Athletic Scores: 40-yard dash times aren't available until
-   the 2026 NFL Combine. Once available, athletic scores will be added
-   and final SLAP scores will be recalculated.
-
-4. Players with missing breakout data have SLAP = Draft Capital only.
+4. Missing Athletic Scores: 40-yard dash times aren't available until
+   the 2026 NFL Combine. Once available, athletic scores will be added.
 """)
