@@ -44,21 +44,23 @@ athletic = normalize(weight + speed_score(forty_time, weight))
 - Combines size and speed
 - Heavier players with fast times score higher
 
+## Decisions Made
+
+1. **Component Weights**: 45% Draft Capital / 35% Breakout / 20% Athletic
+   - "Balanced Approach" - all three factors matter
+   - Draft capital sets the floor, production confirms ability, athleticism raises ceiling
+
 ## Open Questions (Decide Together)
 
-Before writing code, we need to determine:
+Still need to determine:
 
-1. **Component Weights**: How much should each factor matter?
-   - Draft capital vs breakout vs athletic
-   - Example: 50% draft, 30% breakout, 20% athletic?
-
-2. **Age Weight Function**: How much to reward younger producers?
+1. **Age Weight Function**: How much to reward younger producers?
    - How much bonus for a 19-year-old vs 22-year-old?
 
-3. **Speed Score Function**: How to combine 40 time and weight?
+2. **Speed Score Function**: How to combine 40 time and weight?
    - What's a good 40 for a 180lb WR vs 220lb RB?
 
-4. **Position Differences**: Should RBs and WRs use different formulas?
+3. **Position Differences**: Should RBs and WRs use different formulas?
    - Different weights? Different production metrics?
 
 ## Technical Preferences
