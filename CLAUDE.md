@@ -39,10 +39,10 @@ breakout = normalize(prod_age_adj)
 
 ### 3. Athletic Modifier
 ```
-athletic = normalize(weight + speed_score(forty_time, weight))
+athletic = normalize(speed_score(forty_time, weight))
 ```
-- Combines size and speed
-- Heavier players with fast times score higher
+- Uses Barnwell Speed Score: (weight × 200) / (40 time)^4
+- Rewards players who are fast for their size (weight already factored into speed score)
 
 ## Decisions Made
 
