@@ -18,7 +18,7 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2020,Van Jefferson,WR,Florida,57,24.0,657.0,467.0,200.0,,combine,missing,False,51.1,32.2,,21.5
 2020,Denzel Mims,WR,Baylor,59,22.0,1020.0,444.0,207.0,4.38,combine,combine,True,50.7,54.3,69.0,43.1
 2020,AJ Dillon,RB,Boston College,62,22.0,195.0,305.0,247.0,4.53,combine,combine,True,57.6,54.3,75.3,50.5
-2020,Antonio Gibson,RB,Memphis,66,22.0,735.0,441.0,228.0,4.39,combine,combine,True,56.5,100.0,85.2,80.1
+2020,Antonio Gibson,RB,Memphis,66,22.0,735.0,441.0,228.0,4.39,combine,combine,True,56.5,42.7,85.2,46.1
 2020,Ke'Shawn Vaughn,RB,Illinois,76,23.0,270.0,381.0,214.0,4.51,combine,combine,True,54.0,53.8,50.2,39.0
 2020,Lynn Bowden Jr.,WR,Kentucky,80,22.0,348.0,257.0,204.0,,combine,missing,False,47.6,37.0,,21.8
 2020,Bryan Edwards,WR,South Carolina,81,21.0,816.0,,212.0,,combine,missing,False,47.5,,,29.4
