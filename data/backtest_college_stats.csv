@@ -89,13 +89,13 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2023,A.T. Perry,WR,Wake Forest,195,23.0,1096.0,474.0,198.0,4.47
 2023,Elijah Higgins,WR,Stanford,197,22.0,704.0,448.0,235.0,4.54
 2023,Xavier Hutchinson,WR,Iowa State,205,23.0,1171.0,479.0,203.0,4.53
-2023,Andrei Iosivas,WR,Princeton,206,23.0,943.0,,205.0,4.43
+2023,Andrei Iosivas,WR,Princeton,206,23.0,943.0,352.0,205.0,4.43
 2023,DeMario Douglas,WR,Liberty,210,22.0,993.0,395.0,179.0,4.44
 2023,Deuce Vaughn,RB,Kansas State,212,21.0,378.0,388.0,179.0,
 2023,Zach Evans,RB,Mississippi,215,22.0,119.0,386.0,202.0,
 2023,Antoine Green,WR,North Carolina,219,23.0,798.0,525.0,199.0,4.47
 2023,DeWayne McBride,RB,Ala-Birmingham,222,22.0,10.0,321.0,209.0,
-2023,Colton Dowell,WR,UT Martin,228,24.0,1032.0,,,
+2023,Colton Dowell,WR,UT Martin,228,24.0,1032.0,389.0,,
 2023,Lew Nichols,RB,Central Michigan,235,22.0,128.0,389.0,,
 2023,Kenny McIntosh,RB,Georgia,237,23.0,504.0,492.0,204.0,4.62
 2023,Jalen Brooks,WR,South Carolina,244,23.0,504.0,419.0,201.0,4.69
@@ -148,9 +148,9 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2024,Casey Washington,WR,Illinois,187,23.0,670.0,414.0,,
 2024,Tejhaun Palmer,WR,Ala-Birmingham,191,24.0,858.0,427.0,,
 2024,Jawhar Jordan,RB,Louisville,205,25.0,246.0,408.0,193.0,4.56
-2024,Dylan Laube,RB,New Hampshire,208,24.0,699.0,,206.0,4.54
+2024,Dylan Laube,RB,New Hampshire,208,24.0,699.0,455.0,206.0,4.54
 2024,Jordan Whittington,WR,Texas,213,23.0,505.0,475.0,205.0,
-2024,Ryan Flournoy,WR,SE Missouri St.,216,24.0,839.0,,202.0,4.44
+2024,Ryan Flournoy,WR,SE Missouri St.,216,24.0,839.0,365.0,202.0,4.44
 2024,Brenden Rice,WR,USC,225,22.0,791.0,461.0,208.0,4.5
 2024,Devaughn Vele,WR,Utah,235,26.0,593.0,328.0,203.0,4.47
 2024,Tahj Washington,WR,USC,241,23.0,1062.0,461.0,174.0,
