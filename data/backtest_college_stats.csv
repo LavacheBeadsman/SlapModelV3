@@ -1,4 +1,111 @@
 draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,weight,forty,weight_source,forty_source,full_athletic_data
+2020,Henry Ruggs III,WR,Alabama,12,21.0,746.0,406.0,188.0,4.27,combine,combine,True
+2020,Jerry Jeudy,WR,Alabama,15,21.0,1163.0,406.0,193.0,4.45,combine,combine,True
+2020,CeeDee Lamb,WR,Oklahoma,17,21.0,1327.0,381.0,198.0,4.5,combine,combine,True
+2020,Jalen Reagor,WR,TCU,21,21.0,611.0,394.0,206.0,4.47,combine,combine,True
+2020,Justin Jefferson,WR,LSU,22,21.0,1540.0,567.0,202.0,4.43,combine,combine,True
+2020,Brandon Aiyuk,WR,Arizona State,25,22.0,1192.0,383.0,205.0,4.5,combine,combine,True
+2020,Clyde Edwards-Helaire,RB,LSU,32,21.0,453.0,567.0,207.0,4.6,combine,combine,True
+2020,Tee Higgins,WR,Clemson,33,21.0,1167.0,509.0,216.0,,combine,missing,False
+2020,Michael Pittman Jr.,WR,USC,34,22.0,1275.0,514.0,223.0,4.52,combine,combine,True
+2020,D'Andre Swift,RB,Georgia,35,21.0,216.0,415.0,212.0,4.48,combine,combine,True
+2020,Jonathan Taylor,RB,Wisconsin,41,21.0,267.0,351.0,185.0,4.61,combine,combine,True
+2020,Laviska Shenault Jr.,WR,Colorado,42,21.0,764.0,411.0,227.0,4.58,combine,combine,True
+2020,KJ Hamler,WR,Penn State,46,21.0,904.0,369.0,178.0,,combine,missing,False
+2020,Chase Claypool,WR,Notre Dame,49,22.0,1037.0,416.0,238.0,4.42,combine,combine,True
+2020,Cam Akers,RB,Florida State,52,21.0,225.0,432.0,217.0,4.47,combine,combine,True
+2020,J.K. Dobbins,RB,Ohio State,55,21.0,247.0,406.0,209.0,,combine,missing,False
+2020,Van Jefferson,WR,Florida,57,24.0,657.0,467.0,200.0,,combine,missing,False
+2020,Denzel Mims,WR,Baylor,59,22.0,1020.0,444.0,207.0,4.38,combine,combine,True
+2020,AJ Dillon,RB,Boston College,62,22.0,195.0,305.0,247.0,4.53,combine,combine,True
+2020,Antonio Gibson,RB,Memphis,66,22.0,735.0,441.0,228.0,4.39,combine,combine,True
+2020,Ke'Shawn Vaughn,RB,Illinois,76,23.0,270.0,381.0,214.0,4.51,combine,combine,True
+2020,Lynn Bowden Jr.,WR,Kentucky,80,22.0,348.0,257.0,204.0,,combine,missing,False
+2020,Bryan Edwards,WR,South Carolina,81,21.0,816.0,,212.0,,combine,missing,False
+2020,Zack Moss,RB,Utah,86,22.0,388.0,321.0,223.0,4.65,combine,combine,True
+2020,Devin Duvernay,WR,Texas,92,22.0,1386.0,470.0,200.0,4.39,combine,combine,True
+2020,Darrynton Evans,RB,Appalachian State,93,22.0,,,203.0,4.41,combine,combine,True
+2020,Joshua Kelley,RB,UCLA,112,22.0,71.0,426.0,212.0,4.49,combine,combine,True
+2020,La'Mical Perine,RB,Florida,120,22.0,262.0,467.0,216.0,4.62,combine,combine,True
+2020,Anthony McFarland Jr.,RB,Maryland,124,22.0,126.0,342.0,208.0,4.44,combine,combine,True
+2020,Gabriel Davis,WR,UCF,128,21.0,1241.0,457.0,216.0,4.54,combine,combine,True
+2020,Antonio Gandy-Golden,WR,Liberty,142,22.0,1396.0,452.0,223.0,4.6,combine,combine,True
+2020,DeeJay Dallas,RB,Miami,144,21.0,140.0,437.0,217.0,4.58,combine,combine,True
+2020,Joe Reed,WR,Virginia,151,22.0,679.0,520.0,224.0,4.47,combine,combine,True
+2020,Tyler Johnson,WR,Minnesota,161,22.0,1318.0,323.0,206.0,,combine,missing,False
+2020,Collin Johnson,WR,Texas,165,22.0,559.0,470.0,222.0,,combine,missing,False
+2020,Quintez Cephus,WR,Wisconsin,166,22.0,901.0,351.0,202.0,4.73,combine,combine,True
+2020,John Hightower,WR,Boise State,168,24.0,943.0,,189.0,4.43,combine,combine,True
+2020,Isaiah Coulter,WR,Rhode Island,171,21.0,205.0,,198.0,4.45,combine,combine,True
+2020,Jason Huntley,RB,New Mexico St.,172,22.0,192.0,446.0,,,missing,missing,False
+2020,Darnell Mooney,WR,Tulane,173,22.0,713.0,336.0,176.0,4.38,combine,combine,True
+2020,K.J. Osborn,WR,Miami,176,23.0,547.0,437.0,203.0,4.48,combine,combine,True
+2020,Donovan Peoples-Jones,WR,Michigan,187,21.0,438.0,410.0,212.0,4.48,combine,combine,True
+2020,Quez Watkins,WR,Southern Miss,200,22.0,1178.0,438.0,185.0,4.35,combine,combine,True
+2020,James Proche,WR,SMU,201,23.0,1225.0,503.0,201.0,,combine,missing,False
+2020,Isaiah Hodgins,WR,Oregon State,207,21.0,1171.0,420.0,210.0,4.61,combine,combine,True
+2020,Dezmon Patmon,WR,Washington State,212,22.0,762.0,710.0,225.0,4.48,combine,combine,True
+2020,Freddie Swain,WR,Florida,214,22.0,517.0,467.0,197.0,4.46,combine,combine,True
+2020,Jauan Jennings,WR,Tennessee,217,23.0,969.0,360.0,215.0,4.72,combine,combine,True
+2020,K.J. Hill,WR,Ohio State,220,22.0,636.0,406.0,196.0,4.6,combine,combine,True
+2020,Eno Benjamin,RB,Arizona State,222,21.0,347.0,383.0,207.0,4.57,combine,combine,True
+2020,Raymond Calais,RB,Louisiana,245,22.0,67.0,412.0,188.0,4.42,combine,combine,True
+2020,Malcolm Perry,RB,Navy,246,23.0,,104.0,186.0,4.63,combine,combine,True
+2020,Tyrie Cleveland,WR,Florida,252,22.0,351.0,467.0,209.0,4.46,combine,combine,True
+2021,Ja'Marr Chase,WR,LSU,5,21.0,1780.0,567.0,201.0,4.34,combine,combine,True
+2021,Jaylen Waddle,WR,Alabama,6,22.0,591.0,425.0,,,missing,missing,False
+2021,DeVonta Smith,WR,Alabama,10,22.0,1856.0,425.0,305.0,5.29,combine,combine,True
+2021,Kadarius Toney,WR,Florida,20,22.0,984.0,473.0,193.0,4.39,combine,combine,True
+2021,Najee Harris,RB,Alabama,24,23.0,425.0,425.0,,,missing,missing,False
+2021,Travis Etienne,RB,Clemson,25,22.0,588.0,490.0,215.0,4.45,combine,combine,True
+2021,Rashod Bateman,WR,Minnesota,27,21.0,472.0,184.0,190.0,4.39,combine,combine,True
+2021,Elijah Moore,WR,Ole Miss,34,21.0,1193.0,335.0,,4.35,missing,combine,False
+2021,Javonte Williams,RB,North Carolina,35,21.0,305.0,357.0,212.0,4.55,combine,combine,True
+2021,Rondale Moore,WR,Purdue,49,21.0,270.0,,180.0,4.28,combine,combine,True
+2021,D'Wayne Eskridge,WR,Western Michigan,56,24.0,768.0,155.0,190.0,4.38,combine,combine,True
+2021,Tutu Atwell,WR,Louisville,57,21.0,625.0,315.0,155.0,4.42,combine,combine,True
+2021,Terrace Marshall Jr.,WR,LSU,59,21.0,731.0,421.0,205.0,4.4,combine,combine,True
+2021,Josh Palmer,WR,Tennessee,77,21.0,475.0,285.0,,,missing,missing,False
+2021,Dyami Brown,WR,North Carolina,82,21.0,1084.0,357.0,344.0,,combine,missing,False
+2021,Amari Rodgers,WR,Clemson,85,21.0,1020.0,490.0,212.0,4.52,combine,combine,True
+2021,Trey Sermon,RB,Ohio State,88,22.0,95.0,225.0,215.0,4.57,combine,combine,True
+2021,Nico Collins,WR,Michigan,89,22.0,729.0,410.0,215.0,4.43,combine,combine,True
+2021,Anthony Schwartz,WR,Auburn,91,21.0,652.0,362.0,186.0,4.27,combine,combine,True
+2021,Michael Carter,RB,North Carolina,107,22.0,267.0,357.0,201.0,4.5,combine,combine,True
+2021,Dez Fitzpatrick,WR,Louisville,109,23.0,833.0,315.0,208.0,4.43,combine,combine,True
+2021,Amon-Ra St. Brown,WR,USC,112,21.0,478.0,263.0,197.0,4.51,combine,combine,True
+2021,Kene Nwangwu,RB,Iowa State,119,23.0,22.0,372.0,,,missing,missing,False
+2021,Rhamondre Stevenson,RB,Oklahoma,120,23.0,211.0,362.0,231.0,4.64,combine,combine,True
+2021,Chuba Hubbard,RB,Oklahoma State,126,22.0,52.0,340.0,210.0,4.48,combine,combine,True
+2021,Jaelon Darden,WR,North Texas,129,22.0,1190.0,336.0,174.0,4.47,combine,combine,True
+2021,Tylan Wallace,WR,Oklahoma State,131,22.0,917.0,340.0,194.0,4.48,combine,combine,True
+2021,Jacob Harris,WR,UCF,141,24.0,539.0,408.0,219.0,4.39,combine,combine,True
+2021,Kenneth Gainwell,RB,Memphis,150,22.0,610.0,441.0,201.0,4.42,combine,combine,True
+2021,Ihmir Smith-Marsette,WR,Iowa,157,22.0,345.0,248.0,181.0,4.43,combine,combine,True
+2021,Simi Fehoko,WR,Stanford,179,23.0,584.0,220.0,222.0,4.44,combine,combine,True
+2021,Cornell Powell,WR,Clemson,181,23.0,882.0,490.0,204.0,4.53,combine,combine,True
+2021,Frank Darby,WR,Arizona State,187,23.0,46.0,87.0,201.0,4.56,combine,combine,True
+2021,Elijah Mitchell,RB,Louisiana,194,23.0,153.0,308.0,201.0,4.38,combine,combine,True
+2021,Gary Brightwell,RB,Arizona,196,22.0,58.0,188.0,218.0,4.62,combine,combine,True
+2021,Larry Rountree,RB,Missouri,198,22.0,100.0,363.0,,4.62,missing,combine,False
+2021,Chris Evans,RB,Michigan,202,23.0,87.0,213.0,211.0,4.5,combine,combine,True
+2021,Marquez Stevenson,WR,Houston,203,23.0,307.0,297.0,180.0,4.48,combine,combine,True
+2021,Shi Smith,WR,South Carolina,204,22.0,621.0,295.0,237.0,4.79,combine,combine,True
+2021,Racey McMath,WR,LSU,205,22.0,195.0,421.0,217.0,4.36,combine,combine,True
+2021,Jalen Camp,WR,Georgia Tech,209,23.0,392.0,283.0,226.0,4.48,combine,combine,True
+2021,Demetric Felton,RB,UCLA,211,23.0,159.0,200.0,189.0,4.55,combine,combine,True
+2021,Khalil Herbert,RB,Virginia Tech,217,23.0,179.0,253.0,210.0,4.46,combine,combine,True
+2021,Seth Williams,WR,Auburn,219,21.0,744.0,362.0,211.0,4.49,combine,combine,True
+2021,Dazz Newsome,WR,North Carolina,221,22.0,684.0,357.0,190.0,4.59,combine,combine,True
+2021,Mike Strachan,WR,Charleston (WV),229,24.0,,,,,missing,missing,False
+2021,Jake Funk,RB,Maryland,233,23.0,68.0,157.0,204.0,4.49,combine,combine,True
+2021,Tre Nixon,WR,UCF,242,23.0,258.0,408.0,187.0,4.44,combine,combine,True
+2021,Gerrid Doaks,RB,Cincinnati,244,23.0,202.0,295.0,228.0,4.58,combine,combine,True
+2021,Ben Skowronek,WR,Notre Dame,249,24.0,439.0,362.0,220.0,,combine,missing,False
+2021,Kawaan Baker,WR,South Alabama,255,23.0,656.0,350.0,210.0,4.44,combine,combine,True
+2021,Kylin Hill,RB,Mississippi State,256,23.0,237.0,557.0,214.0,4.51,combine,combine,True
+2021,Jermar Jefferson,RB,Oregon State,257,21.0,67.0,233.0,206.0,4.57,combine,combine,True
+2021,Dax Milne,WR,BYU,258,22.0,1189.0,375.0,,4.54,missing,combine,False
 2022,Drake London,WR,USC,8,21.0,1084.0,500.0,219.0,NONE,existing,did_not_run,False
 2022,Garrett Wilson,WR,Ohio State,10,22.0,1058.0,494.0,183.0,4.38,existing,existing,True
 2022,Chris Olave,WR,Ohio State,11,22.0,936.0,494.0,187.0,4.39,existing,existing,True
@@ -155,3 +262,59 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2024,Devaughn Vele,WR,Utah,235,26.0,593.0,328.0,203.0,4.47,existing,existing,True
 2024,Tahj Washington,WR,USC,241,23.0,1062.0,461.0,174.0,NONE,existing,not_recorded,False
 2024,Cornelius Johnson,WR,Michigan,253,23.0,604.0,361.0,212.0,4.44,existing,existing,True
+2025,Travis Hunter,WR,Colorado,2,22.0,1258.0,481.0,188.0,,combine,missing,False
+2025,Ashton Jeanty,RB,Boise State,6,21.0,138.0,415.0,211.0,,combine,missing,False
+2025,Tetairoa McMillan,WR,Arizona,8,22.0,1319.0,437.0,219.0,,combine,missing,False
+2025,Emeka Egbuka,WR,Ohio State,19,22.0,1011.0,455.0,202.0,,combine,missing,False
+2025,Omarion Hampton,RB,North Carolina,22,22.0,373.0,391.0,221.0,4.46,combine,combine,True
+2025,Matthew Golden,WR,Texas,23,22.0,987.0,541.0,191.0,4.29,combine,combine,True
+2025,Jayden Higgins,WR,Iowa State,34,22.0,1183.0,472.0,224.0,4.82,combine,combine,True
+2025,Quinshon Judkins,RB,Ohio State,36,21.0,161.0,455.0,221.0,4.48,combine,combine,True
+2025,TreVeyon Henderson,RB,Ohio State,38,22.0,284.0,455.0,202.0,4.43,combine,combine,True
+2025,Luther Burden,WR,Missouri,39,21.0,666.0,403.0,206.0,4.41,combine,combine,True
+2025,Tre Harris,WR,Ole Miss,55,23.0,1063.0,434.0,,,missing,missing,False
+2025,Jack Bech,WR,TCU,58,22.0,1034.0,488.0,214.0,,combine,missing,False
+2025,RJ Harvey,RB,UCF,60,24.0,267.0,310.0,205.0,4.4,combine,combine,True
+2025,Kyle Williams,WR,Washington State,69,22.0,1193.0,399.0,190.0,4.4,combine,combine,True
+2025,Isaac TeSlaa,WR,Arkansas,70,23.0,545.0,414.0,214.0,4.43,combine,combine,True
+2025,Pat Bryant,WR,Illinois,74,22.0,978.0,353.0,204.0,4.61,combine,combine,True
+2025,Jaylin Noel,WR,Iowa State,79,23.0,1194.0,472.0,194.0,4.39,combine,combine,True
+2025,Kaleb Johnson,RB,Iowa,83,22.0,188.0,260.0,224.0,4.57,combine,combine,True
+2025,Savion Williams,WR,TCU,87,23.0,611.0,488.0,222.0,4.48,combine,combine,True
+2025,Tai Felton,WR,Maryland,102,22.0,1124.0,493.0,183.0,4.37,combine,combine,True
+2025,Chimere Dike,WR,Florida,103,23.0,783.0,339.0,196.0,4.34,combine,combine,True
+2025,Bhayshul Tuten,RB,Virginia Tech,104,22.0,79.0,339.0,206.0,4.32,combine,combine,True
+2025,Cam Skattebo,RB,Arizona State,105,23.0,605.0,382.0,219.0,,combine,missing,False
+2025,Dont'e Thornton,WR,Tennessee,108,22.0,661.0,373.0,205.0,4.3,combine,combine,True
+2025,Arian Smith,WR,Georgia,110,23.0,817.0,513.0,179.0,4.36,combine,combine,True
+2025,Trevor Etienne,RB,Georgia,114,21.0,194.0,513.0,198.0,4.42,combine,combine,True
+2025,Woody Marks,RB,USC,116,24.0,321.0,533.0,207.0,4.54,combine,combine,True
+2025,Jarquez Hunter,RB,Auburn,117,22.0,155.0,369.0,204.0,4.44,combine,combine,True
+2025,Dylan Sampson,RB,Tennessee,126,20.0,143.0,373.0,200.0,,combine,missing,False
+2025,Jaylin Lane,WR,Virginia Tech,128,23.0,466.0,339.0,191.0,4.34,combine,combine,True
+2025,Jalen Royals,WR,Utah St.,133,22.0,834.0,458.0,205.0,4.42,combine,combine,True
+2025,Elic Ayomanor,WR,Stanford,136,22.0,831.0,370.0,206.0,4.44,combine,combine,True
+2025,Jordan Watkins,WR,Ole Miss,138,23.0,906.0,434.0,196.0,4.37,combine,combine,True
+2025,Jordan James,RB,Oregon,147,21.0,209.0,460.0,205.0,4.55,combine,combine,True
+2025,Jaydon Blue,RB,Texas,149,21.0,368.0,541.0,196.0,4.38,combine,combine,True
+2025,DJ Giddens,RB,Kansas State,151,22.0,258.0,381.0,212.0,4.43,combine,combine,True
+2025,KeAndre Lambert-Smith,WR,Auburn,158,23.0,981.0,369.0,190.0,4.37,combine,combine,True
+2025,Tory Horton,WR,Colorado State,166,22.0,331.0,388.0,196.0,4.41,combine,combine,True
+2025,Ollie Gordon,RB,Oklahoma State,179,21.0,201.0,450.0,226.0,4.61,combine,combine,True
+2025,Devin Neal,RB,Kansas,184,22.0,254.0,306.0,213.0,4.58,combine,combine,True
+2025,Kalel Mullings,RB,Michigan,188,22.0,35.0,308.0,226.0,,combine,missing,False
+2025,Tahj Brooks,RB,Texas Tech,193,23.0,185.0,536.0,214.0,4.52,combine,combine,True
+2025,LaJohntay Wester,WR,Colorado,203,23.0,931.0,481.0,163.0,4.46,combine,combine,True
+2025,Jimmy Horn,WR,Colorado,208,22.0,441.0,481.0,174.0,4.46,combine,combine,True
+2025,Damien Martinez,RB,Miami,223,21.0,204.0,489.0,217.0,4.51,combine,combine,True
+2025,Brashard Smith,RB,SMU,228,22.0,327.0,437.0,194.0,4.39,combine,combine,True
+2025,Kyle Monangai,RB,Rutgers,233,23.0,75.0,395.0,211.0,4.6,combine,combine,True
+2025,Tez Johnson,WR,Oregon,235,23.0,898.0,460.0,154.0,4.51,combine,combine,True
+2025,LeQuint Allen,RB,Syracuse,236,21.0,529.0,598.0,204.0,,combine,missing,False
+2025,Ricky White,WR,UNLV,238,23.0,1041.0,309.0,184.0,4.61,combine,combine,True
+2025,Phil Mafah,RB,Clemson,239,22.0,103.0,529.0,234.0,,combine,missing,False
+2025,Kaden Prather,WR,Maryland,240,23.0,624.0,493.0,204.0,4.46,combine,combine,True
+2025,Konata Mumpfield,WR,Pittsburgh,242,22.0,813.0,499.0,186.0,4.59,combine,combine,True
+2025,Dominic Lovett,WR,Georgia,244,22.0,607.0,513.0,185.0,4.4,combine,combine,True
+2025,Jacory Croskey-Merritt,RB,Arizona,245,24.0,,437.0,,,missing,missing,False
+2025,Junior Bergen,WR,Montana,252,,542.0,,,,missing,missing,False
