@@ -5,7 +5,7 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2022,Jameson Williams,WR,Alabama,12,21.0,1572.0,571.0,179.0,
 2022,Jahan Dotson,WR,Penn State,16,22.0,1182.0,486.0,178.0,4.43
 2022,Treylon Burks,WR,Arkansas,18,22.0,1104.0,314.0,225.0,4.55
-2022,Christian Watson,WR,North Dakota State,34,23.0,801.0,,208.0,4.36
+2022,Christian Watson,WR,North Dakota State,34,23.0,801.0,255.0,208.0,4.36
 2022,Breece Hall,RB,Iowa State,36,21.0,302.0,446.0,217.0,4.39
 2022,Kenneth Walker III,RB,Michigan State,41,21.0,89.0,400.0,,
 2022,Wan'Dale Robinson,WR,Kentucky,43,21.0,1334.0,366.0,178.0,4.44
@@ -26,7 +26,7 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2022,Zamir White,RB,Georgia,122,22.0,75.0,407.0,214.0,4.4
 2022,Isaiah Spiller,RB,Texas A&M,123,21.0,189.0,370.0,217.0,
 2022,Erik Ezukanma,WR,Texas Tech,125,22.0,705.0,388.0,209.0,
-2022,Pierre Strong,RB,South Dakota St.,127,23.0,8.0,,207.0,4.37
+2022,Pierre Strong,RB,South Dakota St.,127,23.0,8.0,406.0,207.0,4.37
 2022,Hassan Haskins,RB,Michigan,131,22.0,131.0,395.0,228.0,
 2022,Romeo Doubs,WR,Nevada,132,22.0,1109.0,572.0,201.0,
 2022,Calvin Austin III,WR,Memphis,138,23.0,1149.0,445.0,,
@@ -139,7 +139,7 @@ draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,we
 2024,Tyrone Tracy Jr.,RB,Purdue,166,24.0,132.0,392.0,209.0,4.48
 2024,Keilan Robinson,RB,Texas,167,24.0,56.0,475.0,191.0,4.42
 2024,Bub Means,WR,Pittsburgh,170,23.0,721.0,360.0,212.0,4.43
-2024,Isaiah Davis,RB,South Dakota St.,173,22.0,190.0,,218.0,4.57
+2024,Isaiah Davis,RB,South Dakota St.,173,22.0,190.0,307.0,218.0,4.57
 2024,Kimani Vidal,RB,Troy,181,23.0,201.0,456.0,213.0,4.46
 2024,Jha'Quan Jackson,WR,Tulane,182,24.0,439.0,368.0,188.0,4.42
 2024,Malik Washington,WR,Virginia,184,23.0,1426.0,396.0,191.0,4.47
