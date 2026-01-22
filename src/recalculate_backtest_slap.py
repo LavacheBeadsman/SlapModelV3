@@ -8,10 +8,10 @@ this script recalculates athletic scores and final SLAP percentile ranks.
 import math
 import pandas as pd
 
-# SLAP configuration
-WEIGHT_DRAFT_CAPITAL = 0.45
+# SLAP configuration (optimized via backtest on 2020-2024 classes)
+WEIGHT_DRAFT_CAPITAL = 0.50
 WEIGHT_BREAKOUT = 0.35
-WEIGHT_ATHLETIC = 0.20
+WEIGHT_ATHLETIC = 0.15
 
 AGE_WEIGHTS = {
     18: 1.25, 19: 1.20, 20: 1.10, 21: 1.00,
