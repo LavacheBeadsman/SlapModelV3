@@ -1,0 +1,320 @@
+player_name,position,draft_year,pick,college,rec_yards,team_pass_attempts,age,weight,forty,draft_capital_score,breakout_score,athletic_score,slap_score,tier
+Malik Nabers,WR,2024,6,LSU,1569.0,411.0,21.0,200.0,4.35,98.3,89.9,67.8,100.0,Elite
+Marvin Harrison Jr.,WR,2024,4,Ohio State,1211.0,400.0,22.0,209.0,,100.0,67.7,,99.7,Elite
+Ja'Marr Chase,WR,2021,5,LSU,1780.0,567.0,21.0,201.0,4.34,100.0,76.1,70.3,99.4,Elite
+Jahmyr Gibbs,RB,2023,12,Alabama,444.0,438.0,21.0,199.0,4.36,100.0,77.1,62.3,99.0,Elite
+Travis Hunter,WR,2025,2,Colorado,1258.0,481.0,22.0,188.0,,100.0,60.1,,98.7,Elite
+Bijan Robinson,RB,2023,8,Texas,314.0,405.0,21.0,215.0,4.46,100.0,64.7,59.7,98.4,Elite
+Tetairoa McMillan,WR,2025,8,Arizona,1319.0,437.0,22.0,219.0,,88.9,67.5,,98.1,Elite
+Travis Etienne,RB,2021,25,Clemson,588.0,490.0,22.0,215.0,4.45,78.8,80.6,61.5,97.7,Elite
+Drake London,WR,2022,8,USC,1084.0,500.0,21.0,219.0,,88.9,56.4,,97.4,Elite
+Ashton Jeanty,RB,2025,6,Boise State,138.0,415.0,21.0,211.0,,100.0,41.6,,97.1,Elite
+Omarion Hampton,RB,2025,22,North Carolina,373.0,391.0,22.0,221.0,4.46,82.6,69.0,65.2,96.8,Elite
+DeVonta Smith,WR,2021,10,Alabama,1856.0,425.0,22.0,170.0,4.48,82.6,92.2,24.1,96.4,Elite
+Najee Harris,RB,2021,24,Alabama,425.0,425.0,23.0,,,80.0,66.0,,96.1,Elite
+Jameson Williams,WR,2022,12,Alabama,1572.0,571.0,21.0,179.0,,77.8,68.2,,95.8,Elite
+Rome Odunze,WR,2024,9,Washington,1640.0,575.0,22.0,212.0,4.45,85.5,64.5,62.0,95.5,Elite
+Jaylen Waddle,WR,2021,6,Alabama,591.0,425.0,22.0,,,98.3,37.7,,95.1,Elite
+Elijah Moore,WR,2021,34,Ole Miss,1193.0,335.0,21.0,,4.35,57.8,84.7,,94.8,Elite
+Brian Thomas,WR,2024,23,LSU,1177.0,411.0,21.0,209.0,4.33,64.1,70.5,79.3,94.5,Elite
+CeeDee Lamb,WR,2020,17,Oklahoma,1327.0,381.0,21.0,198.0,4.5,69.9,83.1,43.6,94.2,Elite
+Treylon Burks,WR,2022,18,Arkansas,1104.0,314.0,22.0,225.0,4.55,68.8,76.6,57.0,93.8,Elite
+Cam Skattebo,RB,2025,105,Arizona State,605.0,382.0,23.0,219.0,,49.1,90.4,,93.5,Elite
+Breece Hall,RB,2022,36,Iowa State,302.0,446.0,21.0,217.0,4.39,69.1,59.6,74.5,93.2,Elite
+Jerry Jeudy,WR,2020,15,Alabama,1163.0,406.0,21.0,193.0,4.45,72.6,70.5,46.5,92.9,Elite
+Henry Ruggs III,WR,2020,12,Alabama,746.0,406.0,21.0,188.0,4.27,77.8,49.6,70.0,92.5,Elite
+Garrett Wilson,WR,2022,10,Ohio State,1058.0,494.0,22.0,183.0,4.38,82.6,51.5,48.2,92.2,Elite
+Justin Jefferson,WR,2020,22,LSU,1540.0,567.0,21.0,202.0,4.43,64.9,67.5,56.9,91.9,Elite
+Xavier Legette,WR,2024,32,South Carolina,1255.0,412.0,23.0,221.0,4.39,58.7,61.8,79.4,91.6,Elite
+Javonte Williams,RB,2021,35,North Carolina,305.0,357.0,21.0,212.0,4.55,69.8,68.8,42.0,91.2,Elite
+Rachaad White,RB,2022,91,Arizona State,456.0,313.0,23.0,214.0,4.48,51.2,85.1,55.3,90.9,Elite
+Skyy Moore,WR,2022,54,Western Michigan,1292.0,368.0,21.0,195.0,4.41,51.7,83.7,54.0,90.6,Elite
+D'Wayne Eskridge,WR,2021,56,Western Michigan,768.0,155.0,24.0,190.0,4.38,51.3,82.8,54.2,90.3,Elite
+Christian Watson,WR,2022,34,North Dakota State,801.0,255.0,23.0,208.0,4.36,57.8,63.4,73.2,89.9,Good
+Chris Olave,WR,2022,11,Ohio State,936.0,494.0,22.0,187.0,4.39,80.0,46.9,50.2,89.6,Good
+Brandon Aiyuk,WR,2020,25,Arizona State,1192.0,383.0,22.0,205.0,4.5,62.7,69.2,49.0,89.3,Good
+Kenneth Gainwell,RB,2021,150,Memphis,610.0,441.0,22.0,201.0,4.42,44.5,89.2,53.6,89.0,Good
+Wan'Dale Robinson,WR,2022,43,Kentucky,1334.0,366.0,21.0,178.0,4.44,54.5,86.4,35.6,88.6,Good
+Chase Claypool,WR,2020,49,Notre Dame,1037.0,416.0,22.0,238.0,4.42,52.9,57.9,88.5,88.3,Good
+Tyler Johnson,WR,2020,161,Minnesota,1318.0,323.0,22.0,206.0,,41.9,86.9,,88.0,Good
+Clyde Edwards-Helaire,RB,2020,32,LSU,453.0,567.0,21.0,207.0,4.6,72.1,65.9,30.3,87.7,Good
+Emeka Egbuka,WR,2025,19,Ohio State,1011.0,455.0,22.0,202.0,,67.7,52.9,,87.3,Good
+Rashod Bateman,WR,2021,27,Minnesota,472.0,184.0,21.0,190.0,4.39,61.4,64.4,52.7,87.0,Good
+D'Andre Swift,RB,2020,35,Georgia,216.0,415.0,21.0,212.0,4.48,69.8,51.4,53.5,86.7,Good
+Jonathon Brooks,RB,2024,46,Texas,286.0,475.0,21.0,216.0,,63.5,55.7,,86.4,Good
+Jayden Higgins,WR,2025,34,Iowa State,1183.0,472.0,22.0,224.0,4.47,57.8,58.1,68.6,86.0,Good
+AJ Dillon,RB,2020,62,Boston College,195.0,305.0,22.0,247.0,4.53,57.6,54.3,75.3,85.7,Good
+Antonio Gibson,RB,2020,66,Memphis,735.0,441.0,22.0,228.0,4.39,56.5,50.0,85.2,85.4,Good
+TreVeyon Henderson,RB,2025,38,Ohio State,284.0,455.0,22.0,202.0,4.43,67.8,53.6,52.8,85.1,Good
+Evan Hull,RB,2023,176,Northwestern,546.0,417.0,22.0,209.0,4.47,42.6,85.7,52.5,84.7,Good
+Quentin Johnston,WR,2023,21,TCU,1069.0,454.0,22.0,208.0,4.49,65.8,55.4,52.8,84.4,Good
+Jahan Dotson,WR,2022,16,Penn State,1182.0,486.0,22.0,178.0,4.43,71.2,56.8,37.0,84.1,Good
+Zack Moss,RB,2020,86,Utah,388.0,321.0,22.0,223.0,4.65,52.1,81.0,35.6,83.8,Good
+Tyquan Thornton,WR,2022,50,Baylor,948.0,365.0,21.0,181.0,4.28,52.7,65.1,61.6,83.4,Good
+Matthew Golden,WR,2025,23,Texas,987.0,541.0,22.0,191.0,4.29,64.1,45.7,69.5,83.1,Good
+Kadarius Toney,WR,2021,20,Florida,984.0,473.0,22.0,193.0,4.39,66.7,50.3,55.3,82.8,Good
+Tee Higgins,WR,2020,33,Clemson,1167.0,509.0,21.0,216.0,,58.2,58.9,,82.5,Good
+Quinshon Judkins,RB,2025,36,Ohio State,161.0,455.0,21.0,221.0,4.48,69.1,42.7,61.6,82.1,Good
+Xavier Worthy,WR,2024,28,Texas,1014.0,475.0,21.0,165.0,4.21,60.8,55.7,57.1,81.8,Good
+Michael Pittman Jr.,WR,2020,34,USC,1275.0,514.0,22.0,223.0,4.52,57.8,57.7,60.0,81.5,Good
+J.K. Dobbins,RB,2020,55,Ohio State,247.0,406.0,21.0,209.0,,59.9,56.0,,81.2,Good
+Zach Charbonnet,RB,2023,52,UCLA,321.0,419.0,22.0,214.0,4.53,61.0,60.2,46.9,80.8,Good
+RJ Harvey,RB,2025,60,UCF,267.0,310.0,24.0,205.0,4.4,58.2,55.7,61.0,80.5,Good
+Zay Flowers,WR,2023,22,Boston Col.,1077.0,440.0,22.0,182.0,4.42,64.9,57.1,41.6,80.2,Good
+Cam Akers,RB,2020,52,Florida State,225.0,432.0,21.0,217.0,4.47,61.0,51.4,59.7,79.9,Good
+KJ Hamler,WR,2020,46,Penn State,904.0,369.0,21.0,178.0,,53.7,62.1,,79.5,Good
+Trey Benson,RB,2024,66,Florida State,227.0,433.0,22.0,216.0,4.39,56.5,48.9,73.5,79.2,Good
+Jonathan Mingo,WR,2023,39,Mississippi,862.0,386.0,22.0,220.0,4.46,55.9,53.1,66.9,78.9,Good
+Kenneth Walker III,RB,2022,41,Michigan State,89.0,400.0,21.0,211.0,4.38,66.1,35.9,70.5,78.6,Good
+Devin Duvernay,WR,2020,92,Texas,1386.0,470.0,22.0,200.0,4.39,46.3,66.2,61.3,78.2,Good
+James Cook,RB,2022,63,Georgia,284.0,407.0,22.0,199.0,4.42,57.3,57.0,51.7,77.9,Good
+Kyle Williams,WR,2025,69,Washington State,1193.0,399.0,22.0,190.0,4.4,49.1,67.0,51.3,77.6,Good
+Jalen Reagor,WR,2020,21,TCU,611.0,394.0,21.0,206.0,4.47,65.8,43.8,54.2,77.3,Good
+Deuce Vaughn,RB,2023,212,Kansas State,378.0,388.0,21.0,179.0,,40.7,75.1,,76.9,Good
+Denzel Mims,WR,2020,59,Baylor,1020.0,444.0,22.0,207.0,4.38,50.7,54.3,69.0,76.6,Good
+Dyami Brown,WR,2021,82,North Carolina,1084.0,357.0,21.0,189.0,4.46,47.4,74.0,41.9,76.3,Good
+Marvin Mims,WR,2023,63,Oklahoma,1083.0,407.0,21.0,183.0,4.38,50.0,66.4,48.2,76.0,Good
+Alec Pierce,WR,2022,53,Cincinnati,884.0,400.0,22.0,211.0,4.41,52.0,52.7,67.5,75.6,Good
+Jalin Hyatt,WR,2023,73,Tennessee,1267.0,422.0,21.0,176.0,4.4,48.5,73.3,39.3,75.3,Good
+Adonai Mitchell,WR,2024,52,Texas,845.0,475.0,21.0,205.0,4.34,52.2,48.4,73.9,75.0,Good
+Trey Palmer,WR,2023,191,Nebraska,1043.0,340.0,22.0,192.0,4.33,40.8,68.4,63.8,74.7,Good
+Ricky Pearsall,WR,2024,31,Florida,970.0,389.0,23.0,189.0,4.41,59.2,52.8,48.9,74.4,Good
+Isaac Guerendo,RB,2024,129,Louisville,234.0,408.0,24.0,221.0,4.33,46.3,45.2,90.6,74.0,Good
+Jonathan Taylor,RB,2020,41,Wisconsin,267.0,351.0,21.0,185.0,4.61,66.1,63.9,11.2,73.7,Good
+Jalen Tolbert,WR,2022,88,South Alabama,1474.0,407.0,23.0,194.0,4.49,46.7,71.2,41.8,73.4,Good
+Dylan Laube,RB,2024,208,New Hampshire,699.0,455.0,24.0,206.0,4.54,40.9,80.4,38.5,73.1,Good
+Luther Burden,WR,2025,39,Missouri,666.0,403.0,21.0,206.0,4.41,55.9,45.9,63.3,72.7,Good
+Kaleb Johnson,RB,2025,83,Iowa,188.0,260.0,22.0,224.0,4.57,52.6,58.2,48.9,72.4,Good
+Gabriel Davis,WR,2020,128,UCF,1241.0,457.0,21.0,216.0,4.54,43.6,67.5,51.7,72.1,Good
+Ke'Shawn Vaughn,RB,2020,76,Illinois,270.0,381.0,23.0,214.0,4.51,54.0,53.8,50.2,71.8,Good
+LeQuint Allen,RB,2025,236,Syracuse,529.0,598.0,21.0,204.0,,39.7,70.4,,71.4,Good
+Laviska Shenault Jr.,WR,2020,42,Colorado,764.0,411.0,21.0,227.0,4.58,54.9,50.1,54.1,71.1,Good
+Antonio Gandy-Golden,WR,2020,142,Liberty,1396.0,452.0,22.0,223.0,4.6,42.8,68.8,48.4,70.8,Good
+De'Von Achane,RB,2023,84,Texas A&M,196.0,391.0,21.0,188.0,4.32,52.4,50.4,58.4,70.5,Good
+Dax Milne,WR,2021,258,BYU,1189.0,375.0,22.0,,4.54,39.1,70.3,,70.1,Good
+Javon Baker,WR,2024,110,Central Florida,1139.0,366.0,22.0,202.0,4.54,44.8,69.2,41.2,69.8,Average
+Tyjae Spears,RB,2023,81,Tulane,256.0,379.0,22.0,201.0,4.47,53.0,56.0,45.2,69.5,Average
+Simi Fehoko,WR,2021,179,Stanford,584.0,220.0,23.0,222.0,4.44,41.2,55.5,71.8,69.2,Average
+Terrace Marshall Jr.,WR,2021,59,LSU,731.0,421.0,21.0,205.0,4.4,50.7,47.6,64.0,68.8,Average
+Jaelon Darden,WR,2021,129,North Texas,1190.0,336.0,22.0,174.0,4.47,43.5,77.1,28.5,68.5,Average
+Jaydon Blue,RB,2025,149,Texas,368.0,541.0,21.0,196.0,4.38,44.5,59.7,55.8,68.2,Average
+Dont'e Thornton,WR,2025,108,Tennessee,661.0,373.0,22.0,205.0,4.3,44.9,44.7,80.9,67.9,Average
+DJ Giddens,RB,2025,151,Kansas State,258.0,381.0,22.0,212.0,4.43,44.4,56.0,62.2,67.5,Average
+MarShawn Lloyd,RB,2024,88,USC,232.0,461.0,23.0,220.0,4.46,51.7,45.3,64.3,67.2,Average
+John Metchie,WR,2022,44,Alabama,1142.0,571.0,22.0,187.0,,54.2,48.9,,66.9,Average
+Dez Fitzpatrick,WR,2021,109,Louisville,833.0,315.0,23.0,208.0,4.43,44.8,55.3,61.8,66.6,Average
+Rashee Rice,WR,2023,55,SMU,1355.0,513.0,23.0,204.0,4.51,51.5,55.2,46.8,66.2,Average
+Tre Harris,WR,2025,55,Ole Miss,1063.0,434.0,23.0,,,51.5,52.1,,65.9,Average
+Malik Washington,WR,2024,184,Virginia,1426.0,396.0,23.0,191.0,4.47,41.1,70.8,42.1,65.6,Average
+Ja'Lynn Polk,WR,2024,37,Washington,1159.0,575.0,22.0,203.0,4.52,56.6,49.2,44.7,65.3,Average
+Anthony Schwartz,WR,2021,91,Auburn,652.0,362.0,21.0,186.0,4.27,46.4,48.9,68.1,64.9,Average
+Troy Franklin,WR,2024,102,Oregon,1383.0,514.0,21.0,176.0,4.41,45.4,67.0,38.0,64.6,Average
+Jaylin Noel,WR,2025,79,Iowa State,1194.0,472.0,23.0,194.0,4.39,47.7,53.4,56.2,64.3,Average
+Khalil Shakir,WR,2022,148,Boise State,1117.0,410.0,22.0,196.0,4.43,42.5,62.1,51.9,64.0,Average
+Velus Jones Jr.,WR,2022,71,Tennessee,807.0,375.0,25.0,204.0,4.31,48.8,38.5,78.2,63.6,Average
+Chimere Dike,WR,2025,103,Florida,783.0,339.0,23.0,196.0,4.34,45.3,49.8,65.8,63.3,Average
+Jack Bech,WR,2025,58,TCU,1034.0,488.0,22.0,214.0,,50.9,51.0,,63.0,Average
+Michael Carter,RB,2021,107,North Carolina,267.0,357.0,22.0,201.0,4.5,48.8,59.4,40.4,62.7,Average
+Quez Watkins,WR,2020,200,Southern Miss,1178.0,438.0,22.0,185.0,4.35,40.6,61.5,54.4,62.3,Average
+Malachi Corley,WR,2024,65,Western Kentucky,984.0,539.0,22.0,215.0,4.47,49.7,45.7,61.4,62.0,Average
+Amari Rodgers,WR,2021,85,Clemson,1020.0,490.0,21.0,212.0,4.52,47.0,54.6,51.6,61.7,Average
+Pat Bryant,WR,2025,74,Illinois,978.0,353.0,22.0,204.0,4.61,48.3,63.0,33.6,61.4,Average
+Jordan Addison,WR,2023,23,USC,875.0,514.0,21.0,173.0,4.49,64.1,46.9,25.3,61.0,Average
+Nico Collins,WR,2021,89,Michigan,729.0,410.0,22.0,215.0,4.43,46.6,44.8,67.7,60.7,Average
+Eno Benjamin,RB,2020,222,Arizona State,347.0,383.0,21.0,207.0,4.57,40.2,71.5,34.8,60.4,Average
+Jaylen Wright,RB,2024,120,Tennessee,141.0,411.0,21.0,210.0,4.38,47.3,42.1,69.5,60.1,Average
+Isaiah Hodgins,WR,2020,207,Oregon State,1171.0,420.0,21.0,210.0,4.61,40.4,69.0,37.9,59.7,Average
+Brian Robinson Jr.,RB,2022,98,Alabama,296.0,571.0,23.0,225.0,4.53,50.1,45.9,56.4,59.4,Average
+Bhayshul Tuten,RB,2025,104,Virginia Tech,79.0,339.0,22.0,206.0,4.32,49.2,35.2,77.1,59.1,Average
+Elic Ayomanor,WR,2025,136,Stanford,831.0,370.0,22.0,206.0,4.44,43.1,53.4,58.7,58.8,Average
+Tylan Wallace,WR,2021,131,Oklahoma State,917.0,340.0,22.0,194.0,4.48,43.4,61.6,43.2,58.4,Average
+Trestan Ebner,RB,2022,203,Baylor,284.0,365.0,23.0,206.0,4.43,41.1,56.7,56.6,58.1,Average
+Andrei Iosivas,WR,2023,206,Princeton,943.0,352.0,23.0,205.0,4.43,40.4,55.9,59.4,57.8,Average
+Ray Davis,RB,2024,128,Kentucky,323.0,375.0,24.0,211.0,4.52,46.4,55.7,46.0,57.5,Average
+KeAndre Lambert-Smith,WR,2025,158,Auburn,981.0,369.0,23.0,190.0,4.37,42.1,55.5,55.7,57.1,Average
+Jermaine Burton,WR,2024,80,Alabama,798.0,325.0,23.0,196.0,4.45,47.6,52.2,49.0,56.8,Average
+Keon Coleman,WR,2024,33,Florida State,658.0,433.0,21.0,213.0,4.61,58.2,43.2,40.0,56.5,Average
+Tai Felton,WR,2025,102,Maryland,1124.0,493.0,22.0,183.0,4.37,45.4,54.0,49.6,56.2,Average
+Brashard Smith,RB,2025,228,SMU,327.0,437.0,22.0,194.0,4.39,40.0,59.4,52.1,55.8,Average
+Tank Bigsby,RB,2023,88,Auburn,180.0,308.0,22.0,210.0,4.56,51.7,51.7,38.8,55.5,Average
+Chase Brown,RB,2023,163,Illinois,240.0,393.0,23.0,209.0,4.43,43.5,49.7,59.4,55.2,Average
+Devin Neal,RB,2025,184,Kansas,254.0,306.0,22.0,213.0,4.58,42.2,63.2,38.2,54.9,Average
+Isaiah Spiller,RB,2022,123,Texas A&M,189.0,370.0,21.0,217.0,,46.9,50.9,,54.5,Average
+Jerome Ford,RB,2022,156,Cincinnati,220.0,400.0,22.0,210.0,4.46,44.0,50.1,55.1,54.2,Average
+Khalil Herbert,RB,2021,217,Virginia Tech,179.0,253.0,23.0,210.0,4.46,40.5,53.8,55.1,53.9,Average
+Tyler Badie,RB,2022,196,Missouri,330.0,455.0,22.0,197.0,4.45,41.5,58.3,44.8,53.6,Average
+Seth Williams,WR,2021,219,Auburn,744.0,362.0,21.0,211.0,4.49,40.0,54.1,55.2,53.2,Average
+Ty Chandler,RB,2022,169,North Carolina,216.0,382.0,24.0,204.0,4.38,43.1,44.9,63.6,52.9,Average
+Luke McCaffrey,WR,2024,100,Rice,992.0,431.0,23.0,198.0,4.46,45.6,49.7,49.2,52.6,Average
+Bucky Irving,RB,2024,125,Oregon,413.0,514.0,22.0,192.0,4.55,46.7,62.0,25.1,52.3,Average
+Jordan Watkins,WR,2025,138,Ole Miss,906.0,434.0,23.0,196.0,4.37,43.0,46.2,61.0,51.9,Average
+Jalen Royals,WR,2025,133,Utah St.,834.0,458.0,22.0,205.0,4.42,43.3,45.6,60.9,51.6,Average
+Roman Wilson,WR,2024,84,Michigan,789.0,361.0,23.0,185.0,4.39,47.1,47.8,48.4,51.3,Average
+David Bell,WR,2022,99,Purdue,1286.0,576.0,21.0,212.0,4.65,45.7,57.7,34.2,51.0,Average
+Kendre Miller,RB,2023,71,TCU,116.0,454.0,21.0,215.0,,55.2,37.6,,50.6,Average
+Bub Means,WR,2024,170,Pittsburgh,721.0,360.0,23.0,212.0,4.43,41.6,44.9,65.2,50.3,Average
+Jarquez Hunter,RB,2025,117,Auburn,155.0,369.0,22.0,204.0,4.44,47.6,44.0,53.0,50.0,Average
+Calvin Austin III,WR,2022,138,Memphis,1149.0,445.0,23.0,170.0,4.32,43.0,54.3,45.2,49.7,Below Avg
+Will Shipley,RB,2024,127,Clemson,244.0,474.0,22.0,206.0,,46.5,48.4,,49.4,Below Avg
+Josh Palmer,WR,2021,77,Tennessee,475.0,285.0,21.0,,,48.0,46.2,,49.0,Below Avg
+Isaac TeSlaa,WR,2025,70,Arkansas,545.0,414.0,23.0,214.0,4.43,48.9,33.7,66.8,48.7,Below Avg
+Dameon Pierce,RB,2022,107,Florida,216.0,416.0,22.0,218.0,4.59,48.8,48.6,40.8,48.4,Below Avg
+Trevor Etienne,RB,2025,114,Georgia,194.0,513.0,21.0,198.0,4.42,47.9,44.0,50.8,48.1,Below Avg
+Trey Sermon,RB,2021,88,Ohio State,95.0,225.0,22.0,215.0,4.57,51.7,44.1,41.4,47.7,Below Avg
+Rhamondre Stevenson,RB,2021,120,Oklahoma,211.0,362.0,23.0,231.0,4.64,47.3,48.6,43.4,47.4,Below Avg
+Anthony McFarland Jr.,RB,2020,124,Maryland,126.0,342.0,22.0,208.0,4.44,46.8,41.6,56.7,47.1,Below Avg
+Ladd McConkey,WR,2024,34,Georgia,478.0,456.0,22.0,186.0,4.39,57.8,31.5,49.3,46.8,Below Avg
+Isaiah Davis,RB,2024,173,South Dakota St.,190.0,307.0,22.0,218.0,4.57,42.8,53.3,43.9,46.4,Below Avg
+Elijah Mitchell,RB,2021,194,Louisiana,153.0,308.0,23.0,201.0,4.38,41.6,45.0,60.7,46.1,Below Avg
+Zamir White,RB,2022,122,Georgia,75.0,407.0,22.0,214.0,4.4,47.0,32.9,69.7,45.8,Below Avg
+Dylan Sampson,RB,2025,126,Tennessee,143.0,373.0,20.0,200.0,,46.6,46.3,,45.5,Below Avg
+Kenny McIntosh,RB,2023,237,Georgia,504.0,492.0,23.0,204.0,4.62,39.6,67.0,25.1,45.1,Below Avg
+Gerrid Doaks,RB,2021,244,Cincinnati,202.0,295.0,23.0,228.0,4.58,39.3,52.8,50.6,44.8,Below Avg
+Tank Dell,WR,2023,69,Houston,1398.0,501.0,23.0,165.0,4.49,49.1,57.7,19.0,44.2,Below Avg
+Danny Gray,WR,2022,105,SMU,803.0,468.0,23.0,186.0,4.33,45.2,40.2,58.4,44.2,Below Avg
+Tyler Scott,WR,2023,133,Cincinnati,899.0,417.0,21.0,177.0,4.44,43.3,56.1,34.8,43.8,Below Avg
+La'Mical Perine,RB,2020,120,Florida,262.0,467.0,22.0,216.0,4.62,47.3,50.6,34.6,43.5,Below Avg
+DeMario Douglas,WR,2023,210,Liberty,993.0,395.0,22.0,179.0,4.44,40.3,58.3,36.5,43.2,Below Avg
+Elijah Higgins,WR,2023,197,Stanford,704.0,448.0,22.0,235.0,4.54,40.6,41.0,66.0,42.9,Below Avg
+Jacob Harris,WR,2021,141,UCF,539.0,408.0,24.0,219.0,4.39,42.9,31.1,77.7,42.5,Below Avg
+Tyler Allgeier,RB,2022,151,BYU,199.0,389.0,22.0,224.0,4.6,44.4,48.3,44.1,42.2,Below Avg
+Amon-Ra St. Brown,WR,2021,112,USC,478.0,263.0,21.0,197.0,4.51,44.6,49.2,41.4,41.9,Below Avg
+Savion Williams,WR,2025,87,TCU,611.0,488.0,23.0,222.0,4.48,46.8,32.6,65.4,41.6,Below Avg
+Woody Marks,RB,2025,116,USC,321.0,533.0,24.0,207.0,4.54,47.7,46.2,39.4,41.2,Below Avg
+Kimani Vidal,RB,2024,181,Troy,201.0,456.0,23.0,213.0,4.46,42.3,42.6,57.8,40.9,Below Avg
+James Proche,WR,2020,201,SMU,1225.0,503.0,23.0,201.0,,40.5,51.9,,40.6,Below Avg
+Joe Reed,WR,2020,151,Virginia,679.0,520.0,22.0,224.0,4.47,42.4,36.2,68.6,40.3,Below Avg
+A.T. Perry,WR,2023,195,Wake Forest,1096.0,474.0,23.0,198.0,4.47,40.7,49.9,47.8,39.9,Below Avg
+Romeo Doubs,WR,2022,132,Nevada,1109.0,572.0,22.0,201.0,,43.4,47.8,,39.6,Below Avg
+Israel Abanikanda,RB,2023,143,Pittsburgh,146.0,393.0,20.0,216.0,,45.0,45.6,,39.3,Below Avg
+Tutu Atwell,WR,2021,57,Louisville,625.0,315.0,21.0,155.0,4.42,51.1,52.6,19.1,39.0,Below Avg
+Ricky White,WR,2025,238,UNLV,1041.0,309.0,23.0,184.0,4.61,39.6,67.1,19.5,38.6,Below Avg
+Jayden Reed,WR,2023,50,Michigan State,636.0,412.0,23.0,187.0,4.45,52.7,37.4,41.7,38.3,Below Avg
+Xavier Hutchinson,WR,2023,205,Iowa State,1171.0,479.0,23.0,203.0,4.53,40.4,52.0,43.3,38.0,Below Avg
+Audric Estime,RB,2024,147,Notre Dame,142.0,351.0,21.0,,,44.7,45.4,,37.7,Below Avg
+Kawaan Baker,WR,2021,255,South Alabama,656.0,350.0,23.0,210.0,4.44,39.2,42.8,61.9,36.7,Below Avg
+Devontez Walker,WR,2024,113,North Carolina,699.0,460.0,23.0,193.0,4.36,44.6,37.0,59.9,36.7,Below Avg
+Eric Gray,RB,2023,172,Oklahoma,229.0,407.0,23.0,207.0,,42.9,47.7,,36.7,Below Avg
+Darnell Mooney,WR,2020,173,Tulane,713.0,336.0,22.0,176.0,4.38,41.5,51.1,42.1,36.4,Below Avg
+Ryan Flournoy,WR,2024,216,SE Missouri St.,839.0,365.0,24.0,202.0,4.44,40.1,45.0,55.4,36.0,Below Avg
+Damien Martinez,RB,2025,223,Miami,204.0,489.0,21.0,217.0,4.51,40.2,46.0,52.8,35.7,Below Avg
+Blake Corum,RB,2024,83,Michigan,117.0,361.0,23.0,205.0,4.53,52.6,37.8,39.2,35.4,Below Avg
+Ollie Gordon,RB,2025,179,Oklahoma State,201.0,450.0,21.0,226.0,4.61,42.5,47.6,44.1,35.1,Below Avg
+Tyrion Davis-Price,RB,2022,93,LSU,64.0,443.0,21.0,211.0,4.48,50.9,31.8,52.6,34.7,Below Avg
+Erik Ezukanma,WR,2022,125,Texas Tech,705.0,388.0,22.0,209.0,,43.8,45.5,,34.4,Below Avg
+Justin Shorter,WR,2023,150,Florida,577.0,366.0,23.0,229.0,4.55,42.4,37.9,60.0,34.1,Below Avg
+Colton Dowell,WR,2023,228,UT Martin,1032.0,389.0,24.0,,,39.8,50.0,,33.8,Below Avg
+Rasheen Ali,RB,2024,165,Marshall,213.0,425.0,23.0,206.0,,43.4,45.2,,33.4,Below Avg
+Cornelius Johnson,WR,2024,253,Michigan,604.0,361.0,23.0,212.0,4.44,39.2,39.5,63.6,33.1,Below Avg
+Jordan James,RB,2025,147,Oregon,209.0,460.0,21.0,205.0,4.55,44.7,48.0,36.1,32.8,Below Avg
+Johnny Wilson,WR,2024,185,Florida State,617.0,433.0,23.0,231.0,4.52,41.0,35.5,66.1,32.5,Below Avg
+Tre Tucker,WR,2023,100,Cincinnati,672.0,417.0,22.0,182.0,4.4,45.6,41.8,44.4,32.1,Below Avg
+Jaxon Smith-Njigba,WR,2023,20,Ohio State,43.0,410.0,21.0,196.0,4.48,66.7,14.4,44.8,31.5,Below Avg
+Jalen Camp,WR,2021,209,Georgia Tech,392.0,283.0,23.0,226.0,4.48,40.3,34.8,68.5,31.5,Below Avg
+Jaylin Lane,WR,2025,128,Virginia Tech,466.0,339.0,23.0,191.0,4.34,43.6,34.6,61.3,31.2,Below Avg
+Tahj Washington,WR,2024,241,USC,1062.0,461.0,23.0,174.0,,39.5,49.7,,30.8,Below Avg
+Roschon Johnson,RB,2023,115,Texas,128.0,405.0,22.0,219.0,4.58,47.8,39.1,43.1,30.5,Below Avg
+Kyren Williams,RB,2022,164,Notre Dame,359.0,450.0,22.0,194.0,4.65,43.4,61.7,13.2,30.2,Below Avg
+Samori Toure,WR,2022,258,Nebraska,898.0,342.0,24.0,,,39.1,49.6,,29.9,Below Avg
+Jason Huntley,RB,2020,172,New Mexico St.,192.0,446.0,22.0,,,42.9,44.5,,29.5,Below Avg
+Brenden Rice,WR,2024,225,USC,791.0,461.0,22.0,208.0,4.5,39.9,43.7,51.4,29.2,Below Avg
+Jamari Thrash,WR,2024,156,Louisville,858.0,408.0,23.0,188.0,4.46,42.2,46.5,41.1,28.9,Below Avg
+Braelon Allen,RB,2024,134,Wisconsin,131.0,469.0,20.0,235.0,,45.8,40.3,,28.6,Below Avg
+Pierre Strong,RB,2022,127,South Dakota St.,8.0,406.0,23.0,207.0,4.37,46.5,25.1,68.4,28.2,Below Avg
+Hassan Haskins,RB,2022,131,Michigan,131.0,395.0,22.0,228.0,,46.1,39.8,,27.9,Below Avg
+Joshua Kelley,RB,2020,112,UCLA,71.0,426.0,22.0,212.0,4.49,48.2,32.1,51.8,27.6,Below Avg
+Josh Downs,WR,2023,79,North Carolina,1029.0,525.0,22.0,171.0,4.48,47.7,48.1,24.9,27.3,Below Avg
+Jauan Jennings,WR,2020,217,Tennessee,969.0,360.0,23.0,215.0,4.72,40.1,56.1,27.7,26.9,Below Avg
+Quintez Cephus,WR,2020,166,Wisconsin,901.0,351.0,22.0,202.0,4.73,41.7,59.2,18.2,26.6,Below Avg
+Arian Smith,WR,2025,110,Georgia,817.0,513.0,23.0,179.0,4.36,44.8,38.2,47.6,26.3,Below Avg
+Bo Melton,WR,2022,229,Rutgers,618.0,394.0,23.0,189.0,4.34,39.8,37.8,59.5,26.0,Below Avg
+Lynn Bowden Jr.,WR,2020,80,Kentucky,348.0,257.0,22.0,204.0,,47.6,37.1,,25.6,Below Avg
+Demetric Felton,RB,2021,211,UCLA,159.0,200.0,23.0,189.0,4.55,40.7,57.4,22.6,25.3,Below Avg
+Van Jefferson,WR,2020,57,Florida,657.0,467.0,24.0,200.0,,51.1,32.3,,24.7,Below Avg
+Jase McClellan,RB,2024,186,Alabama,137.0,325.0,22.0,221.0,,42.0,44.0,,24.7,Below Avg
+DeeJay Dallas,RB,2020,144,Miami,140.0,437.0,21.0,217.0,4.58,44.9,41.0,41.5,24.4,Below Avg
+Chris Evans,RB,2021,202,Michigan,87.0,213.0,23.0,211.0,4.5,41.2,41.3,49.2,24.0,Below Avg
+Dezmon Patmon,WR,2020,212,Washington State,762.0,710.0,22.0,225.0,4.48,40.2,31.9,67.8,23.7,Below Avg
+Keaontay Ingram,RB,2022,201,USC,156.0,500.0,22.0,221.0,4.53,41.2,38.9,53.0,23.4,Below Avg
+Shi Smith,WR,2021,204,South Carolina,621.0,295.0,22.0,237.0,4.79,40.4,50.8,33.1,23.1,Below Avg
+Isiah Pacheco,RB,2022,251,Rutgers,25.0,394.0,23.0,216.0,4.37,39.1,26.9,77.4,22.7,Below Avg
+Ainias Smith,WR,2024,152,Texas A&M,795.0,426.0,23.0,190.0,,42.3,42.6,,22.4,Below Avg
+Tyrone Tracy Jr.,RB,2024,166,Purdue,132.0,392.0,24.0,209.0,4.48,43.3,36.5,50.8,22.1,Below Avg
+Charlie Jones,WR,2023,131,Purdue,1361.0,581.0,24.0,175.0,4.43,43.4,45.6,34.5,21.8,Below Avg
+Chuba Hubbard,RB,2021,126,Oklahoma State,52.0,340.0,22.0,210.0,4.48,46.6,31.4,51.7,21.4,Below Avg
+Kylin Hill,RB,2021,256,Mississippi State,237.0,557.0,23.0,214.0,4.51,38.9,42.0,50.2,21.1,Below Avg
+Ronnie Bell,WR,2023,253,Michigan,889.0,370.0,23.0,191.0,4.54,39.2,51.4,32.9,20.8,Below Avg
+Anthony Gould,WR,2024,142,Oregon State,718.0,380.0,23.0,174.0,4.39,42.8,43.0,39.0,20.5,Below Avg
+Tahj Brooks,RB,2025,193,Texas Tech,185.0,536.0,23.0,214.0,4.52,41.6,38.7,48.6,20.1,Below Avg
+Cornell Powell,WR,2021,181,Clemson,882.0,490.0,23.0,204.0,4.53,41.2,41.6,44.1,19.8,Below Avg
+Donovan Peoples-Jones,WR,2020,187,Michigan,438.0,410.0,21.0,212.0,4.48,41.0,34.0,57.4,19.5,Below Avg
+Racey McMath,WR,2021,205,LSU,195.0,421.0,22.0,217.0,4.36,40.4,20.8,81.2,19.2,Below Avg
+Jake Funk,RB,2021,233,Maryland,68.0,157.0,23.0,204.0,4.49,39.8,42.3,44.7,18.8,Below Avg
+Cedric Tillman,WR,2023,74,Tennessee,417.0,422.0,23.0,213.0,4.54,48.3,28.4,49.5,18.5,Below Avg
+Puka Nacua,WR,2023,177,BYU,625.0,392.0,22.0,201.0,,41.3,41.5,,18.2,Below Avg
+Parker Washington,WR,2023,185,Penn State,611.0,422.0,21.0,204.0,,41.0,41.7,,17.9,Below Avg
+Grant Dubose,WR,2023,256,Charlotte,792.0,429.0,22.0,201.0,4.57,39.2,46.1,36.5,17.5,Below Avg
+Jacob Cowing,WR,2024,135,Arizona,839.0,464.0,23.0,168.0,4.38,43.2,41.7,35.1,17.2,Below Avg
+Kyle Philips,WR,2022,163,UCLA,739.0,335.0,23.0,189.0,4.58,41.9,48.2,26.5,16.9,Below Avg
+Tejhaun Palmer,WR,2024,191,Ala-Birmingham,858.0,427.0,24.0,,,40.8,40.9,,16.6,Below Avg
+Jalen McMillan,WR,2024,92,Washington,559.0,575.0,22.0,197.0,4.47,46.3,30.1,46.9,16.2,Below Avg
+Antoine Green,WR,2023,219,North Carolina,798.0,525.0,23.0,199.0,4.47,40.0,37.0,48.6,15.9,Below Avg
+Snoop Conner,RB,2022,154,Mississippi,82.0,429.0,22.0,222.0,4.59,44.1,33.2,44.0,15.6,Below Avg
+K.J. Osborn,WR,2020,176,Miami,547.0,437.0,23.0,203.0,4.48,41.4,32.6,50.3,15.3,Below Avg
+Kaden Prather,WR,2025,240,Maryland,624.0,493.0,23.0,204.0,4.46,39.5,32.9,54.0,14.9,Below Avg
+Ihmir Smith-Marsette,WR,2021,157,Iowa,345.0,248.0,22.0,181.0,4.43,42.1,37.7,39.4,14.6,Below Avg
+Kevin Harris,RB,2022,183,South Carolina,89.0,360.0,21.0,221.0,,42.2,37.2,,14.3,Below Avg
+Casey Washington,WR,2024,187,Illinois,670.0,414.0,23.0,,,41.0,38.6,,14.0,Below Avg
+Dazz Newsome,WR,2021,221,North Carolina,684.0,357.0,22.0,190.0,4.59,40.0,47.3,26.1,13.6,Below Avg
+Zach Evans,RB,2023,215,Mississippi,119.0,386.0,22.0,202.0,,40.6,38.7,,13.3,Below Avg
+Lew Nichols,RB,2023,235,Central Michigan,128.0,389.0,22.0,,,39.7,39.7,,13.0,Below Avg
+Larry Rountree,RB,2021,198,Missouri,100.0,363.0,22.0,,4.62,41.4,37.2,,12.7,Below Avg
+Tory Horton,WR,2025,166,Colorado State,331.0,388.0,22.0,196.0,4.41,41.7,27.9,54.9,12.3,Below Avg
+Gary Brightwell,RB,2021,196,Arizona,58.0,188.0,22.0,218.0,4.62,41.5,38.7,36.2,12.0,Below Avg
+Jalen Nailor,WR,2022,191,Michigan State,695.0,400.0,23.0,186.0,4.5,40.8,40.5,34.2,11.7,Below Avg
+Michael Wilson,WR,2023,94,Stanford,418.0,448.0,23.0,213.0,4.58,46.1,27.5,44.0,11.4,Below Avg
+Freddie Swain,WR,2020,214,Florida,517.0,467.0,22.0,197.0,4.46,40.2,32.5,48.4,11.0,Below Avg
+Dominic Lovett,WR,2025,244,Georgia,607.0,513.0,22.0,185.0,4.4,39.4,33.9,47.0,10.7,Below Avg
+Kayshon Boutte,WR,2023,187,LSU,538.0,480.0,21.0,195.0,4.5,41.0,35.1,41.2,10.4,Below Avg
+Devaughn Vele,WR,2024,235,Utah,593.0,328.0,26.0,203.0,4.47,39.6,30.7,51.8,10.1,Below Avg
+Brittain Brown,RB,2022,250,UCLA,129.0,335.0,24.0,,,39.1,38.3,,9.7,Below Avg
+George Pickens,WR,2022,52,Georgia,107.0,407.0,21.0,195.0,4.47,52.2,17.6,45.3,9.4,Below Avg
+Derius Davis,WR,2023,125,TCU,531.0,454.0,22.0,165.0,4.36,43.8,33.7,35.2,9.1,Below Avg
+Jawhar Jordan,RB,2024,205,Louisville,246.0,408.0,25.0,193.0,4.56,41.0,43.1,24.6,8.8,Below Avg
+Collin Johnson,WR,2020,165,Texas,559.0,470.0,22.0,222.0,,41.8,34.0,,8.4,Below Avg
+Tyrie Cleveland,WR,2020,252,Florida,351.0,467.0,22.0,209.0,4.46,39.2,26.0,58.1,8.1,Below Avg
+Kene Nwangwu,RB,2021,119,Iowa State,22.0,372.0,23.0,,,47.4,26.7,,7.8,Below Avg
+Keilan Robinson,RB,2024,167,Texas,56.0,475.0,24.0,191.0,4.42,43.2,28.6,44.1,7.5,Below Avg
+K.J. Hill,WR,2020,220,Ohio State,636.0,406.0,22.0,196.0,4.6,40.0,40.9,29.2,7.1,Below Avg
+Jha'Quan Jackson,WR,2024,182,Tulane,439.0,368.0,24.0,188.0,4.42,41.1,29.3,46.7,6.8,Below Avg
+Jermar Jefferson,RB,2021,257,Oregon State,67.0,233.0,21.0,206.0,4.57,38.9,39.3,33.9,6.5,Below Avg
+Dontayvion Wicks,WR,2023,159,Virginia,430.0,342.0,22.0,206.0,4.62,42.0,35.3,33.8,6.2,Below Avg
+LaJohntay Wester,WR,2025,203,Colorado,931.0,481.0,23.0,163.0,4.46,40.5,43.8,20.9,5.8,Below Avg
+Konata Mumpfield,WR,2025,242,Pittsburgh,813.0,499.0,22.0,186.0,4.59,39.5,42.1,23.2,5.5,Below Avg
+Michael Woods II,WR,2022,202,Oklahoma,400.0,403.0,22.0,204.0,4.55,40.5,30.4,41.4,5.2,Below Avg
+Raymond Calais,RB,2020,245,Louisiana,67.0,412.0,22.0,188.0,4.42,39.3,31.9,41.3,4.9,Below Avg
+Phil Mafah,RB,2025,239,Clemson,103.0,529.0,22.0,234.0,,39.5,33.4,,4.5,Below Avg
+Kalel Mullings,RB,2025,188,Michigan,35.0,308.0,22.0,226.0,,41.9,29.6,,4.2,Below Avg
+Chris Rodriguez,RB,2023,193,Kentucky,41.0,349.0,22.0,217.0,,41.6,29.8,,3.9,Below Avg
+Kyle Monangai,RB,2025,233,Rutgers,75.0,395.0,23.0,211.0,4.6,39.8,32.2,33.6,3.6,Below Avg
+Zander Horvath,RB,2022,260,Purdue,108.0,576.0,23.0,,,38.8,32.1,,3.2,Below Avg
+Jordan Whittington,WR,2024,213,Texas,505.0,475.0,23.0,205.0,,40.2,29.6,,2.9,Below Avg
+Ben Skowronek,WR,2021,249,Notre Dame,439.0,362.0,24.0,220.0,,39.3,29.5,,2.6,Below Avg
+Tez Johnson,WR,2025,235,Oregon,898.0,460.0,23.0,154.0,4.51,39.6,44.0,8.2,2.3,Below Avg
+Marquez Stevenson,WR,2021,203,Houston,307.0,297.0,23.0,180.0,4.48,40.5,29.1,32.1,1.9,Below Avg
+Tre Nixon,WR,2021,242,UCF,258.0,408.0,23.0,187.0,4.44,39.5,22.6,43.0,1.6,Below Avg
+Jimmy Horn,WR,2025,208,Colorado,441.0,481.0,22.0,174.0,4.46,40.3,29.1,29.8,1.3,Below Avg
+DeWayne McBride,RB,2023,222,Ala-Birmingham,10.0,321.0,22.0,209.0,,40.2,25.7,,1.0,Below Avg
+Frank Darby,WR,2021,187,Arizona State,46.0,87.0,23.0,201.0,4.56,41.0,20.9,37.8,0.6,Below Avg
+Jalen Brooks,WR,2023,244,South Carolina,504.0,419.0,23.0,201.0,4.69,39.4,31.8,22.0,0.3,Below Avg
+Bryan Edwards,WR,2020,81,South Carolina,816.0,,21.0,212.0,,47.5,,,,No Score
+Darrynton Evans,RB,2020,93,Appalachian State,,,22.0,203.0,4.41,50.9,,57.3,,No Score
+John Hightower,WR,2020,168,Boise State,943.0,,24.0,189.0,4.43,41.7,,46.1,,No Score
+Isaiah Coulter,WR,2020,171,Rhode Island,205.0,,21.0,198.0,4.45,41.5,,50.6,,No Score
+Malcolm Perry,RB,2020,246,Navy,,104.0,23.0,186.0,4.63,39.3,,9.5,,No Score
+Rondale Moore,WR,2021,49,Purdue,270.0,,21.0,180.0,4.28,52.9,,60.7,,No Score
+Mike Strachan,WR,2021,229,Charleston (WV),,,24.0,,,39.8,,,,No Score
+Montrell Washington,WR,2022,162,Samford,124.0,,23.0,,,41.9,,,,No Score
+Dareke Young,WR,2022,233,Lenoir-Rhyne,303.0,,23.0,,,39.7,,,,No Score
+Jacory Croskey-Merritt,RB,2025,245,Arizona,,437.0,24.0,,,39.3,,,,No Score
+Junior Bergen,WR,2025,252,Montana,542.0,,,,,39.2,,,,No Score
