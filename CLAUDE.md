@@ -46,9 +46,10 @@ athletic = normalize(weight + speed_score(forty_time, weight))
 
 ## Decisions Made
 
-1. **Component Weights**: 45% Draft Capital / 35% Breakout / 20% Athletic
-   - "Balanced Approach" - all three factors matter
-   - Draft capital sets the floor, production confirms ability, athleticism raises ceiling
+1. **Component Weights**: 50% Draft Capital / 35% Breakout / 15% Athletic
+   - Optimized via backtest on 2020-2024 draft classes (207 players)
+   - Draft capital is the strongest predictor (50%), breakout adds value for finding sleepers (35%), athleticism is a modest tiebreaker (15%)
+   - Spearman correlation: 0.51 | Top-24 hit rate: 56%
 
 2. **Age Weight Function**: Moderate adjustment
    - Age 19: 1.20x (20% bonus)
