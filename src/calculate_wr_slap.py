@@ -190,7 +190,8 @@ if __name__ == "__main__":
     # Load data
     hit_rates = pd.read_csv('data/backtest_hit_rates.csv')
     ras_data = pd.read_csv('data/wr_ras_merged.csv')
-    breakout_ages = pd.read_csv('data/wr_breakout_age_scores.csv')
+    # Use FIXED breakout ages (includes 700+ yards alternative criterion)
+    breakout_ages = pd.read_csv('data/wr_breakout_age_scores_fixed.csv')
 
     # Build WR dataset
     wr = hit_rates[hit_rates['position'] == 'WR'].copy()
