@@ -62,11 +62,22 @@ Age Score mapping:
 - Scaled 0-100 where 50 = average for that position
 
 ### 3. Athletic Modifier
+
+**For RBs:**
 ```
 athletic = normalize(speed_score(forty_time, weight))
 ```
 - Uses Barnwell Speed Score: (weight × 200) / (40 time)^4
-- Rewards players who are fast for their size (weight already factored into speed score)
+- Rewards players who are fast for their size
+
+**For WRs:**
+```
+athletic = normalize(RAS)
+```
+- Uses Relative Athletic Score (RAS) from Kent Lee Platte (0-10 scale)
+- Composite metric combining 40-yard dash, vertical, broad jump, 3-cone, shuttle, and bench
+- Data source: `data/WR_RAS_2020_to_2025.csv`
+- For missing RAS: use position average (neutral assumption)
 
 ## Decisions Made
 
@@ -82,9 +93,11 @@ athletic = normalize(speed_score(forty_time, weight))
    - Age 22: 0.90x (10% penalty)
    - Age 23: 0.80x (20% penalty)
 
-3. **Speed Score Function**: Classic Speed Score (Barnwell formula)
-   - Formula: (Weight × 200) / (40 time)^4
-   - Industry standard, rewards players who are fast for their size
+3. **Athletic Score Function**: Position-specific
+   - RBs: Speed Score (Barnwell formula) = (Weight × 200) / (40 time)^4
+   - WRs: RAS (Relative Athletic Score) = composite 0-10 scale from combine metrics
+   - RAS tested: Young+HighRAS has 25% hit rate vs 18.2% for Young+LowRAS
+   - Combination of breakout age + RAS slightly improves signal (r=0.411 vs r=0.388)
 
 4. **Position Handling**: Position-Split Normalization
    - RBs use: Receiving yards ÷ Team pass attempts × age weight
@@ -139,6 +152,7 @@ For each prospect, we'll need:
 **For WRs specifically:**
 - Breakout age (age when first hit 20%+ dominator rating)
 - Requires multi-season college data to calculate
+- RAS (Relative Athletic Score) from combine/pro day metrics
 
 ## Commands
 
