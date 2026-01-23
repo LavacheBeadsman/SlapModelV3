@@ -1,0 +1,327 @@
+player_name,draft_year,college,breakout_age,peak_dominator,source
+Amari Cooper,2015,Alabama,20.0,,calculated
+Kevin White,2015,West Virginia,20.0,,calculated
+DeVante Parker,2015,Louisville,20.0,,calculated
+Nelson Agholor,2015,USC,,,calculated
+Breshad Perriman,2015,Central Florida,,,calculated
+Phillip Dorsett,2015,Miami (FL),20.0,,calculated
+Devin Smith,2015,Ohio St.,20.0,,calculated
+Dorial Green-Beckham,2015,Oklahoma,,,calculated
+Devin Funchess,2015,Michigan,,,calculated
+Tyler Lockett,2015,Kansas St.,,,calculated
+Jaelen Strong,2015,Arizona St.,,,calculated
+Chris Conley,2015,Georgia,,,calculated
+Sammie Coates,2015,Auburn,,,calculated
+Ty Montgomery,2015,Stanford,,,calculated
+Jamison Crowder,2015,Duke,20.0,,calculated
+Justin Hardy,2015,East Carolina,20.0,,calculated
+Vince Mayle,2015,Washington St.,,,calculated
+DeAndre Smelter,2015,Georgia Tech,,,calculated
+Rashad Greene,2015,Florida St.,,,calculated
+Stefon Diggs,2015,Maryland,20.0,,calculated
+Tony Lippett,2015,Michigan St.,,,calculated
+JJ Nelson,2015,Ala-Birmingham,,,calculated
+Kenny Bell,2015,Nebraska,20.0,,calculated
+Keith Mumphery,2015,Michigan St.,,,calculated
+Kaelin Clay,2015,Utah,,,calculated
+Geremy Davis,2015,Connecticut,20.0,,calculated
+Evan Spencer,2015,Ohio St.,,,calculated
+Bud Sasser,2015,Missouri,,,calculated
+Darren Waller,2015,Georgia Tech,,,calculated
+Neal Sterling,2015,Monmouth,,,calculated
+Andre Debose,2015,Florida,,,calculated
+Da'Ron Brown,2015,Northern Illinois,20.0,,calculated
+Dezmin Lewis,2015,Central Arkansas,,,calculated
+Mario Alford,2015,West Virginia,,,calculated
+Tre McBride,2015,William & Mary,,,calculated
+Corey Coleman,2016,Baylor,22.0,350.39,calculated
+Will Fuller,2016,Notre Dame,19.0,8.33,calculated
+Josh Doctson,2016,TCU,22.0,256.67,calculated
+Laquon Treadwell,2016,Mississippi,22.0,221.27,calculated
+Sterling Shepard,2016,Oklahoma,22.0,273.58,calculated
+Michael Thomas,2016,Ohio St.,22.0,253.61,calculated
+Tyler Boyd,2016,Pittsburgh,19.0,254.52,calculated
+Braxton Miller,2016,Ohio St.,22.0,147.1,calculated
+Leonte Carroo,2016,Rutgers,22.0,240.06,calculated
+Chris Moore,2016,Cincinnati,19.0,150.46,calculated
+Malcolm Mitchell,2016,Georgia,22.0,229.66,calculated
+Ricardo Louis,2016,Auburn,22.0,228.43,calculated
+Pharoh Cooper,2016,South Carolina,19.0,277.21,calculated
+Demarcus Robinson,2016,Florida,19.0,213.47,calculated
+Tajae Sharpe,2016,Massachusetts,22.0,266.46,calculated
+Jordan Payton,2016,UCLA,19.0,209.61,calculated
+Trevor Davis,2016,California,19.0,310.15,calculated
+Tyreek Hill,2016,West Alabama,19.0,139.34,calculated
+Rashard Higgins,2016,Colorado St.,22.0,238.01,calculated
+Moritz Boehringer,2016,,,,calculated
+Jakeem Grant,2016,Texas Tech,19.0,184.35,calculated
+Kolby Listenbee,2016,TCU,22.0,115.67,calculated
+Cody Core,2016,Mississippi,19.0,350.39,calculated
+Mike Thomas,2016,Southern Miss,22.0,253.61,calculated
+Aaron Burbridge,2016,Michigan St.,22.0,277.05,calculated
+Devin Lucien,2016,Arizona St.,22.0,174.16,calculated
+Demarcus Ayers,2016,Houston,22.0,263.89,calculated
+Daniel Braverman,2016,Western Michigan,22.0,313.37,calculated
+Devin Fuller,2016,UCLA,19.0,8.33,calculated
+Charone Peake,2016,Clemson,22.0,106.63,calculated
+Kenny Lawler,2016,California,22.0,106.0,calculated
+Corey Davis,2017,Western Michigan,18.0,377.51,calculated
+Mike Williams,2017,Clemson,18.0,186.17,calculated
+John Ross,2017,Washington,21.0,275.0,calculated
+Zay Jones,2017,East Carolina,21.0,312.45,calculated
+Curtis Samuel,2017,Ohio St.,21.0,200.98,calculated
+JuJu Smith-Schuster,2017,USC,21.0,300.0,calculated
+Cooper Kupp,2017,Eastern Washington,,,calculated
+Taywan Taylor,2017,Western Kentucky,21.0,336.73,calculated
+ArDarius Stewart,2017,Alabama,18.0,232.5,calculated
+Carlos Henderson,2017,Louisiana Tech,21.0,258.93,calculated
+Chris Godwin,2017,Penn St.,21.0,239.6,calculated
+Kenny Golladay,2017,Northern Illinois,21.0,291.0,calculated
+Chad Williams,2017,Grambling St.,18.0,186.17,calculated
+Amara Darboh,2017,Michigan,21.0,223.24,calculated
+Dede Westbrook,2017,Oklahoma,21.0,381.51,calculated
+Josh Reynolds,2017,Texas A&M,21.0,188.7,calculated
+Mack Hollins,2017,North Carolina,21.0,173.84,calculated
+Josh Malone,2017,Tennessee,21.0,224.8,calculated
+Ryan Switzer,2017,North Carolina,21.0,224.24,calculated
+Jehu Chesson,2017,Michigan,21.0,155.66,calculated
+Chad Hansen,2017,California,21.0,201.13,calculated
+Shelton Gibson,2017,West Virginia,21.0,226.65,calculated
+Rodney Adams,2017,South Florida,18.0,229.9,calculated
+Isaiah McKenzie,2017,Georgia,21.0,137.31,calculated
+DeAngelo Yancey,2017,Purdue,21.0,170.74,calculated
+Trent Taylor,2017,Louisiana Tech,21.0,336.73,calculated
+Robert Davis,2017,Georgia St.,18.0,377.51,calculated
+Stacy Coley,2017,Miami (FL),21.0,165.02,calculated
+David Moore,2017,East Central (OK),18.0,225.89,calculated
+Isaiah Ford,2017,Virginia Tech,21.0,237.82,calculated
+Noah Brown,2017,Ohio St.,18.0,314.12,calculated
+Malachi Dupre,2017,LSU,21.0,216.55,calculated
+D.J. Moore,2018,Maryland,20.0,324.84,calculated
+Calvin Ridley,2018,Alabama,20.0,269.88,calculated
+Courtland Sutton,2018,SMU,20.0,273.25,calculated
+Dante Pettis,2018,Washington,20.0,207.18,calculated
+Christian Kirk,2018,Texas A&M,20.0,191.91,calculated
+Anthony Miller,2018,Memphis,20.0,288.32,calculated
+James Washington,2018,Oklahoma St.,20.0,282.9,calculated
+DJ Chark,2018,LSU,21.0,270.33,calculated
+Michael Gallup,2018,Colorado St.,21.0,322.44,calculated
+Tre'Quan Smith,2018,Central Florida,20.0,300.0,calculated
+Keke Coutee,2018,Texas Tech,21.0,229.57,calculated
+Antonio Callaway,2018,Florida,20.0,162.44,calculated
+DaeSean Hamilton,2018,Penn St.,20.0,163.1,calculated
+Jaleel Scott,2018,New Mexico St.,20.0,215.59,calculated
+J'Mon Moore,2018,Missouri,20.0,324.84,calculated
+Justin Watson,2018,Pennsylvania,20.0,128.47,calculated
+Daurice Fountain,2018,Northern Iowa,,0.85,calculated
+Jordan Lasley,2018,UCLA,21.0,212.34,calculated
+Marquez Valdes-Scantling,2018,South Florida,21.0,203.27,calculated
+Damion Ratley,2018,Texas A&M,20.0,134.3,calculated
+Deon Cain,2018,Clemson,20.0,140.21,calculated
+Ray-Ray McCloud,2018,Clemson,20.0,106.81,calculated
+Dylan Cantrell,2018,Texas Tech,21.0,146.03,calculated
+Russell Gage,2018,LSU,21.0,90.0,calculated
+Tremon Smith,2018,Central Arkansas,20.0,300.0,calculated
+Equanimeous St. Brown,2018,Notre Dame,20.0,314.12,calculated
+Cedrick Wilson Jr.,2018,Boise St.,20.0,214.81,calculated
+Braxton Berrios,2018,Miami (FL),21.0,147.06,calculated
+Javon Wims,2018,Georgia,21.0,208.2,calculated
+Marcell Ateman,2018,Oklahoma St.,20.0,208.55,calculated
+Richie James,2018,Middle Tenn. St.,20.0,282.9,calculated
+Auden Tate,2018,Florida St.,21.0,134.49,calculated
+Austin Proehl,2018,North Carolina,20.0,110.48,calculated
+Trey Quinn,2018,SMU,22.0,244.56,calculated
+Marquise Brown,2019,Oklahoma,19.0,314.12,calculated
+N'Keal Harry,2019,Arizona St.,20.0,240.38,calculated
+Deebo Samuel,2019,South Carolina,19.0,200.98,calculated
+A.J. Brown,2019,Mississippi,19.0,314.12,calculated
+Mecole Hardman,2019,Georgia,21.0,105.9,calculated
+JJ Arcega-Whiteside,2019,Stanford,20.0,198.35,calculated
+Parris Campbell,2019,Ohio St.,19.0,145.45,calculated
+Andy Isabella,2019,Massachusetts,20.0,228.19,calculated
+D.K. Metcalf,2019,Mississippi,21.0,148.85,calculated
+Diontae Johnson,2019,Toledo,19.0,339.0,calculated
+Jalen Hurd,2019,Baylor,19.0,51.21,calculated
+Terry McLaurin,2019,Ohio St.,20.0,98.64,calculated
+Miles Boykin,2019,Notre Dame,20.0,43.02,calculated
+Hakeem Butler,2019,Iowa St.,20.0,122.85,calculated
+Gary Jennings Jr,2019,West Virginia,19.0,214.81,calculated
+Riley Ridley,2019,Georgia,19.0,269.88,calculated
+Hunter Renfrow,2019,Clemson,19.0,121.49,calculated
+Darius Slayton,2019,Auburn,20.0,150.26,calculated
+KeeSean Johnson,2019,Fresno St.,19.0,339.0,calculated
+Travis Fulgham,2019,Old Dominion,19.0,119.52,calculated
+Juwann Winfree,2019,Colorado,21.0,79.27,calculated
+Marcus Green,2019,La-Monroe,19.0,209.65,calculated
+Kelvin Harmon,2019,North Carolina St.,20.0,205.17,calculated
+Scott Miller,2019,Bowling Green,19.0,288.32,calculated
+John Ursua,2019,Hawaii,20.0,157.68,calculated
+Terry Godwin,2019,Georgia,19.0,239.6,calculated
+Dillon Mitchell,2019,Oregon,19.0,229.66,calculated
+Olabisi Johnson,2019,Colorado St.,19.0,339.0,calculated
+Henry Ruggs III,2020,Alabama,20.0,16.8,existing
+Jerry Jeudy,2020,Alabama,20.0,27.1,existing
+CeeDee Lamb,2020,Oklahoma,19.0,31.9,existing
+Jalen Reagor,2020,TCU,20.0,38.4,existing
+Justin Jefferson,2020,LSU,20.0,29.4,existing
+Brandon Aiyuk,2020,Arizona St.,21.0,36.8,existing
+Tee Higgins,2020,Clemson,20.0,27.0,existing
+Michael Pittman Jr.,2020,USC,20.0,29.2,existing
+Laviska Shenault Jr.,2020,Colorado,20.0,33.8,existing
+KJ Hamler,2020,Penn St.,20.0,31.4,existing
+Chase Claypool,2020,Notre Dame,21.0,31.6,existing
+Van Jefferson,2020,Florida,,18.1,existing
+Denzel Mims,2020,Baylor,19.0,31.5,existing
+Lynn Bowden Jr.,2020,Kentucky,20.0,35.5,existing
+Bryan Edwards,2020,South Carolina,19.0,30.6,existing
+Devin Duvernay,2020,Texas,21.0,36.9,existing
+Gabriel Davis,2020,Central Florida,20.0,30.1,existing
+Antonio Gandy-Golden,2020,Liberty,20.0,37.2,existing
+Joe Reed,2020,Virginia,,18.1,existing
+Tyler Johnson,2020,Minnesota,19.0,44.7,existing
+Collin Johnson,2020,Texas,19.0,27.3,existing
+Quintez Cephus,2020,Wisconsin,21.0,32.2,existing
+John Hightower,2020,Boise St.,21.0,25.7,existing
+Isaiah Coulter,2020,Rhode Island,,,calculated
+Darnell Mooney,2020,Tulane,19.0,41.7,existing
+K.J. Osborn,2020,Miami (FL),,16.9,existing
+Donovan Peoples-Jones,2020,Michigan,20.0,21.0,existing
+Quez Watkins,2020,Southern Miss,20.0,31.9,existing
+James Proche,2020,SMU,19.0,36.9,existing
+Isaiah Hodgins,2020,Oregon St.,20.0,38.3,existing
+Dezmon Patmon,2020,Washington St.,20.0,16.8,existing
+Freddie Swain,2020,Florida,,13.2,existing
+Jauan Jennings,2020,Tennessee,21.0,33.7,existing
+K.J. Hill,2020,Ohio St.,20.0,17.6,existing
+Tyrie Cleveland,2020,Florida,19.0,20.8,existing
+Ja'Marr Chase,2021,LSU,20.0,29.5,existing
+Jaylen Waddle,2021,Alabama,19.0,17.5,existing
+DeVonta Smith,2021,Alabama,20.0,39.9,existing
+Kadarius Toney,2021,Florida,21.0,21.7,existing
+Rashod Bateman,2021,Minnesota,19.0,37.0,existing
+Elijah Moore,2021,Mississippi,20.0,36.5,existing
+Rondale Moore,2021,Purdue,19.0,31.5,existing
+D'Wayne Eskridge,2021,Western Michigan,18.0,45.1,existing
+Tutu Atwell,2021,Louisville,20.0,41.9,existing
+Terrace Marshall Jr.,2021,LSU,21.0,23.4,existing
+Josh Palmer,2021,Tennessee,19.0,23.2,existing
+Dyami Brown,2021,North Carolina,20.0,30.0,existing
+Amari Rodgers,2021,Clemson,21.0,24.4,existing
+Nico Collins,2021,Michigan,19.0,22.9,existing
+Anthony Schwartz,2021,Auburn,21.0,26.9,existing
+Dez Fitzpatrick,2021,Louisville,20.0,31.0,existing
+Amon-Ra St. Brown,2021,USC,19.0,25.2,existing
+Jaelon Darden,2021,North Texas,20.0,42.0,existing
+Tylan Wallace,2021,Oklahoma St.,20.0,34.9,existing
+Jacob Harris,2021,Central Florida,,15.3,existing
+Ihmir Smith-Marsette,2021,Iowa,20.0,24.3,existing
+Simi Fehoko,2021,Stanford,21.0,33.8,existing
+Cornell Powell,2021,Clemson,21.0,21.1,existing
+Frank Darby,2021,Arizona St.,,19.0,existing
+Marquez Stevenson,2021,Houston,19.0,37.2,existing
+Shi Smith,2021,South Carolina,21.0,33.2,existing
+Racey McMath,2021,LSU,,6.2,existing
+Jalen Camp,2021,Georgia Tech,,19.7,existing
+Seth Williams,2021,Auburn,20.0,30.9,existing
+Dazz Newsome,2021,North Carolina,20.0,27.4,existing
+Mike Strachan,2021,Charleston (WV),,,calculated
+Tre Nixon,2021,Central Florida,20.0,20.2,existing
+Ben Skowronek,2021,Notre Dame,,15.4,existing
+Kawaan Baker,2021,South Alabama,19.0,30.1,existing
+Dax Milne,2021,BYU,21.0,29.8,existing
+Drake London,2022,USC,20.0,30.3,existing
+Garrett Wilson,2022,Ohio St.,20.0,34.4,existing
+Chris Olave,2022,Ohio St.,19.0,34.7,existing
+Jameson Williams,2022,Alabama,21.0,31.0,existing
+Jahan Dotson,2022,Penn St.,20.0,38.5,existing
+Treylon Burks,2022,Arkansas,19.0,39.7,existing
+Christian Watson,2022,North Dakota St.,18.0,127.21,calculated
+Wan'Dale Robinson,2022,Kentucky,21.0,45.5,existing
+John Metchie,2022,Alabama,20.0,22.5,existing
+Tyquan Thornton,2022,Baylor,19.0,33.3,existing
+George Pickens,2022,Georgia,19.0,23.3,existing
+Alec Pierce,2022,Cincinnati,19.0,26.2,existing
+Skyy Moore,2022,Western Michigan,19.0,39.2,existing
+Velus Jones Jr.,2022,Tennessee,21.0,24.1,existing
+Jalen Tolbert,2022,South Alabama,19.0,48.0,existing
+David Bell,2022,Purdue,19.0,33.7,existing
+Danny Gray,2022,SMU,21.0,22.0,existing
+Erik Ezukanma,2022,Texas Tech,20.0,27.9,existing
+Romeo Doubs,2022,Nevada,19.0,34.5,existing
+Calvin Austin III,2022,Memphis,20.0,32.1,existing
+Khalil Shakir,2022,Boise St.,19.0,42.5,existing
+Montrell Washington,2022,Samford,18.0,282.9,calculated
+Kyle Philips,2022,UCLA,19.0,27.2,existing
+Jalen Nailor,2022,Michigan St.,20.0,30.8,existing
+Michael Woods II,2022,Oklahoma,,11.7,existing
+Bo Melton,2022,Rutgers,19.0,35.8,existing
+Dareke Young,2022,Lenoir-Rhyne,18.0,97.09,calculated
+Samori Toure,2022,Nebraska,21.0,28.1,existing
+Jaxon Smith-Njigba,2023,Ohio St.,20.0,32.4,existing
+Quentin Johnston,2023,TCU,19.0,27.2,existing
+Zay Flowers,2023,Boston Col.,19.0,36.3,existing
+Jordan Addison,2023,USC,21.0,18.6,existing
+Jonathan Mingo,2023,Mississippi,21.0,27.6,existing
+Jayden Reed,2023,Michigan St.,19.0,31.1,existing
+Rashee Rice,2023,SMU,19.0,32.9,existing
+Marvin Mims,2023,Oklahoma,20.0,32.7,existing
+Tank Dell,2023,Houston,19.0,35.0,existing
+Jalin Hyatt,2023,Tennessee,21.0,29.9,existing
+Cedric Tillman,2023,Tennessee,20.0,32.3,existing
+Josh Downs,2023,North Carolina,20.0,40.2,existing
+Michael Wilson,2023,Stanford,18.0,21.5,existing
+Tre Tucker,2023,Cincinnati,21.0,21.3,existing
+Derius Davis,2023,TCU,,18.3,existing
+Charlie Jones,2023,Purdue,21.0,34.9,existing
+Tyler Scott,2023,Cincinnati,21.0,28.5,existing
+Justin Shorter,2023,Florida,,19.8,existing
+Dontayvion Wicks,2023,Virginia,20.0,25.6,existing
+Puka Nacua,2023,BYU,20.0,23.4,existing
+Parker Washington,2023,Penn St.,19.0,23.5,existing
+Kayshon Boutte,2023,LSU,19.0,22.0,existing
+Trey Palmer,2023,Nebraska,21.0,39.4,existing
+A.T. Perry,2023,Wake Forest,20.0,30.0,existing
+Elijah Higgins,2023,Stanford,21.0,23.1,existing
+Xavier Hutchinson,2023,Iowa St.,19.0,37.3,existing
+Andrei Iosivas,2023,Princeton,22.0,,calculated
+DeMario Douglas,2023,Liberty,20.0,35.3,existing
+Antoine Green,2023,North Carolina,21.0,18.4,existing
+Colton Dowell,2023,UT Martin,22.0,39.62,calculated
+Jalen Brooks,2023,South Carolina,,14.9,existing
+Ronnie Bell,2023,Michigan,18.0,28.9,existing
+Grant Dubose,2023,Charlotte,20.0,29.3,existing
+Marvin Harrison Jr.,2024,Ohio St.,20.0,34.6,existing
+Malik Nabers,2024,LSU,20.0,35.6,existing
+Rome Odunze,2024,Washington,20.0,31.8,existing
+Brian Thomas,2024,LSU,21.0,26.7,existing
+Xavier Worthy,2024,Texas,19.0,36.3,existing
+Ricky Pearsall,2024,Florida,20.0,31.4,existing
+Xavier Legette,2024,South Carolina,21.0,37.6,existing
+Keon Coleman,2024,Florida St.,,18.8,existing
+Ladd McConkey,2024,Georgia,20.0,17.2,existing
+Ja'Lynn Polk,2024,Washington,21.0,22.5,existing
+Adonai Mitchell,2024,Texas,21.0,20.9,existing
+Malachi Corley,2024,Western Kentucky,20.0,26.2,existing
+Jermaine Burton,2024,Alabama,21.0,25.9,existing
+Roman Wilson,2024,Michigan,21.0,24.6,existing
+Jalen McMillan,2024,Washington,20.0,22.8,existing
+Luke McCaffrey,2024,Rice,20.0,30.2,existing
+Troy Franklin,2024,Oregon,20.0,28.5,existing
+Javon Baker,2024,Central Florida,18.0,263.93,calculated
+Devontez Walker,2024,North Carolina,,18.0,existing
+Jacob Cowing,2024,Arizona,20.0,26.9,existing
+Anthony Gould,2024,Oregon St.,21.0,22.8,existing
+Ainias Smith,2024,Texas A&M,18.0,22.6,existing
+Jamari Thrash,2024,Louisville,21.0,25.9,existing
+Bub Means,2024,Pittsburgh,21.0,27.8,existing
+Jha'Quan Jackson,2024,Tulane,18.0,20.1,existing
+Malik Washington,2024,Virginia,21.0,47.4,existing
+Johnny Wilson,2024,Florida St.,20.0,25.5,existing
+Casey Washington,2024,Illinois,21.0,21.0,existing
+Tejhaun Palmer,2024,Ala-Birmingham,21.0,24.7,existing
+Jordan Whittington,2024,Texas,20.0,20.8,existing
+Ryan Flournoy,2024,SE Missouri St.,20.0,,existing
+Brenden Rice,2024,USC,21.0,18.3,existing
+Devaughn Vele,2024,Utah,21.0,27.5,existing
+Tahj Washington,2024,USC,20.0,24.5,existing
+Cornelius Johnson,2024,Michigan,,19.6,existing
