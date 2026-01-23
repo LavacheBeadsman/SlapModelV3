@@ -1,327 +1,327 @@
 player_name,position,draft_year,pick,round,college,seasons_played,best_rank,best_ppr,hit24,hit12,RAS
-Amari Cooper,WR,2015,4,1,Alabama,9,1.0,51.5,1,1,8.57
-Kevin White,WR,2015,7,1,West Virginia,9,609.0,12.2,0,0,9.72
-DeVante Parker,WR,2015,14,1,Louisville,9,22.0,34.9,1,0,9.75
-Nelson Agholor,WR,2015,20,1,USC,9,44.0,27.1,0,0,7.38
-Breshad Perriman,WR,2015,26,1,Central Florida,9,25.0,34.599999999999994,0,0,9.95
-Phillip Dorsett,WR,2015,29,1,Miami (FL),9,87.0,25.5,0,0,8.47
-Devin Smith,WR,2015,37,2,Ohio St.,9,331.0,16.4,0,0,8.61
-Dorial Green-Beckham,WR,2015,40,2,Oklahoma,9,144.0,22.9,0,0,6.3
+Amari Cooper,WR,2015,4,1,Alabama,9,12.0,253.60000000000002,1,1,8.57
+Kevin White,WR,2015,7,1,West Virginia,9,119.0,38.6,0,0,9.72
+DeVante Parker,WR,2015,14,1,Louisville,9,13.0,246.2,1,0,9.75
+Nelson Agholor,WR,2015,20,1,USC,9,18.0,222.1,1,0,7.38
+Breshad Perriman,WR,2015,26,1,Central Florida,9,53.0,138.1,0,0,9.95
+Phillip Dorsett,WR,2015,29,1,Miami (FL),9,71.0,105.9,0,0,8.47
+Devin Smith,WR,2015,37,2,Ohio St.,9,142.0,26.5,0,0,8.61
+Dorial Green-Beckham,WR,2015,40,2,Oklahoma,9,62.0,112.89999999999999,0,0,6.3
 Devin Funchess,WR,2015,41,2,Michigan,9,999.0,0.0,0,0,5.26
-Tyler Lockett,WR,2015,69,3,Kansas St.,9,2.0,53.0,1,1,7.71
-Jaelen Strong,WR,2015,70,3,Arizona St.,9,234.0,19.3,0,0,9.14
-Chris Conley,WR,2015,76,3,Georgia,9,81.0,26.4,0,0,9.68
-Sammie Coates,WR,2015,87,3,Auburn,9,27.0,31.9,0,0,9.86
-Ty Montgomery,WR,2015,94,3,Stanford,9,31.0,30.3,0,0,7.75
-Jamison Crowder,WR,2015,105,4,Duke,9,44.0,27.1,0,0,1.31
-Justin Hardy,WR,2015,107,4,East Carolina,9,451.0,14.3,0,0,4.87
-Vince Mayle,WR,2015,123,4,Washington St.,9,998.0,6.2,0,0,4.63
-DeAndre Smelter,WR,2015,132,4,Georgia Tech,9,1474.0,3.3000000000000003,0,0,
-Rashad Greene,WR,2015,139,5,Florida St.,9,367.0,15.8,0,0,5.37
-Stefon Diggs,WR,2015,146,5,Maryland,9,2.0,44.8,1,1,5.66
+Tyler Lockett,WR,2015,69,3,Kansas St.,9,5.0,274.0,1,1,7.71
+Jaelen Strong,WR,2015,70,3,Arizona St.,9,109.0,50.800000000000004,0,0,9.14
+Chris Conley,WR,2015,76,3,Georgia,9,45.0,156.5,0,0,9.68
+Sammie Coates,WR,2015,87,3,Auburn,9,90.0,83.3,0,0,9.86
+Ty Montgomery,WR,2015,94,3,Stanford,9,45.0,179.3,0,0,7.75
+Jamison Crowder,WR,2015,105,4,Duke,9,29.0,197.7,0,0,1.31
+Justin Hardy,WR,2015,107,4,East Carolina,9,96.0,69.1,0,0,4.87
+Vince Mayle,WR,2015,123,4,Washington St.,9,176.0,6.2,0,0,4.63
+DeAndre Smelter,WR,2015,132,4,Georgia Tech,9,182.0,3.3000000000000003,0,0,
+Rashad Greene,WR,2015,139,5,Florida St.,9,125.0,40.300000000000004,0,0,5.37
+Stefon Diggs,WR,2015,146,5,Maryland,9,2.0,391.70000000000005,1,1,5.66
 Tony Lippett,WR,2015,156,5,Michigan St.,9,999.0,0.0,0,0,3.99
 JJ Nelson,WR,2015,159,5,Ala-Birmingham,9,999.0,0.0,0,0,
 Kenny Bell,WR,2015,162,5,Nebraska,9,999.0,0.0,0,0,9.2
-Keith Mumphery,WR,2015,175,5,Michigan St.,9,780.0,9.600000000000001,0,0,4.36
-Kaelin Clay,WR,2015,184,6,Utah,9,998.0,6.2,0,0,2.18
-Geremy Davis,WR,2015,186,6,Connecticut,9,1257.0,4.5,0,0,9.66
+Keith Mumphery,WR,2015,175,5,Michigan St.,9,141.0,26.900000000000002,0,0,4.36
+Kaelin Clay,WR,2015,184,6,Utah,9,134.0,23.4,0,0,2.18
+Geremy Davis,WR,2015,186,6,Connecticut,9,174.0,6.8,0,0,9.66
 Evan Spencer,WR,2015,187,6,Ohio St.,9,999.0,0.0,0,0,8.37
 Bud Sasser,WR,2015,201,6,Missouri,9,999.0,0.0,0,0,7.45
 Darren Waller,WR,2015,204,6,Georgia Tech,9,999.0,0.0,0,0,
 Neal Sterling,WR,2015,220,7,Monmouth,9,999.0,0.0,0,0,6.62
 Andre Debose,WR,2015,221,7,Florida,9,999.0,0.0,0,0,8.13
 Da'Ron Brown,WR,2015,233,7,Northern Illinois,9,999.0,0.0,0,0,
-Dezmin Lewis,WR,2015,234,7,Central Arkansas,9,1921.0,0.0,0,0,4.77
-Mario Alford,WR,2015,238,7,West Virginia,9,1535.0,2.5,0,0,5.4
-Tre McBride,WR,2015,245,7,William & Mary,9,496.0,12.200000000000001,0,0,9.56
-Corey Coleman,WR,2016,15,1,Baylor,8,61.0,27.4,0,0,9.66
-Will Fuller,WR,2016,21,1,Notre Dame,8,1.0,53.7,1,1,7.17
-Josh Doctson,WR,2016,22,1,TCU,8,384.0,14.600000000000001,0,0,9.41
-Laquon Treadwell,WR,2016,23,1,Mississippi,8,454.0,14.700000000000001,0,0,3.33
-Sterling Shepard,WR,2016,40,2,Oklahoma,8,22.0,33.6,1,0,7.62
-Michael Thomas,WR,2016,47,2,Ohio St.,8,6.0,41.2,1,1,9.11
-Tyler Boyd,WR,2016,55,2,Pittsburgh,8,27.0,33.8,0,0,4.27
-Braxton Miller,WR,2016,85,3,Ohio St.,8,503.0,13.6,0,0,8.59
-Leonte Carroo,WR,2016,86,3,Rutgers,8,440.0,14.4,0,0,6.96
-Chris Moore,WR,2016,107,4,Cincinnati,8,128.0,22.4,0,0,7.96
-Malcolm Mitchell,WR,2016,112,4,Georgia,8,165.0,21.2,0,0,8.08
-Ricardo Louis,WR,2016,114,4,Auburn,8,504.0,12.100000000000001,0,0,9.23
-Pharoh Cooper,WR,2016,117,4,South Carolina,8,540.0,12.5,0,0,2.06
-Demarcus Robinson,WR,2016,126,4,Florida,8,20.0,35.2,1,0,5.86
-Tajae Sharpe,WR,2016,140,5,Massachusetts,8,119.0,23.9,0,0,5.3
-Jordan Payton,WR,2016,154,5,UCLA,8,1857.0,1.3,0,0,6.84
-Trevor Davis,WR,2016,163,5,California,8,479.0,13.4,0,0,9.14
-Tyreek Hill,WR,2016,165,5,West Alabama,8,1.0,57.900000000000006,1,1,9.39
-Rashard Higgins,WR,2016,172,5,Colorado St.,8,118.0,21.8,0,0,1.65
+Dezmin Lewis,WR,2015,234,7,Central Arkansas,9,197.0,0.0,0,0,4.77
+Mario Alford,WR,2015,238,7,West Virginia,9,187.0,2.5,0,0,5.4
+Tre McBride,WR,2015,245,7,William & Mary,9,136.0,22.400000000000002,0,0,9.56
+Corey Coleman,WR,2016,15,1,Baylor,8,83.0,93.3,0,0,9.66
+Will Fuller,WR,2016,21,1,Notre Dame,8,34.0,188.9,0,0,7.17
+Josh Doctson,WR,2016,22,1,TCU,8,59.0,119.8,0,0,9.41
+Laquon Treadwell,WR,2016,23,1,Mississippi,8,89.0,82.4,0,0,3.33
+Sterling Shepard,WR,2016,40,2,Oklahoma,8,31.0,194.7,0,0,7.62
+Michael Thomas,WR,2016,47,2,Ohio St.,8,1.0,388.6,1,1,9.11
+Tyler Boyd,WR,2016,55,2,Pittsburgh,8,18.0,222.9,1,0,4.27
+Braxton Miller,WR,2016,85,3,Ohio St.,8,118.0,41.300000000000004,0,0,8.59
+Leonte Carroo,WR,2016,86,3,Rutgers,8,155.0,18.8,0,0,6.96
+Chris Moore,WR,2016,107,4,Cincinnati,8,63.0,115.1,0,0,7.96
+Malcolm Mitchell,WR,2016,112,4,Georgia,8,72.0,110.60000000000001,0,0,8.08
+Ricardo Louis,WR,2016,114,4,Auburn,8,94.0,62.7,0,0,9.23
+Pharoh Cooper,WR,2016,117,4,South Carolina,8,105.0,55.5,0,0,2.06
+Demarcus Robinson,WR,2016,126,4,Florida,8,55.0,137.2,0,0,5.86
+Tajae Sharpe,WR,2016,140,5,Massachusetts,8,74.0,105.30000000000001,0,0,5.3
+Jordan Payton,WR,2016,154,5,UCLA,8,194.0,1.3,0,0,6.84
+Trevor Davis,WR,2016,163,5,California,8,138.0,30.4,0,0,9.14
+Tyreek Hill,WR,2016,165,5,West Alabama,8,2.0,393.6,1,1,9.39
+Rashard Higgins,WR,2016,172,5,Colorado St.,8,59.0,139.5,0,0,1.65
 Moritz Boehringer,WR,2016,180,6,,8,999.0,0.0,0,0,9.98
-Jakeem Grant,WR,2016,186,6,Texas Tech,8,140.0,21.000000000000004,0,0,6.39
+Jakeem Grant,WR,2016,186,6,Texas Tech,8,94.0,81.3,0,0,6.39
 Kolby Listenbee,WR,2016,192,6,TCU,8,999.0,0.0,0,0,7.91
-Cody Core,WR,2016,199,6,Mississippi,8,606.0,12.200000000000001,0,0,7.38
-Mike Thomas,WR,2016,206,6,Southern Miss,8,574.0,13.1,0,0,7.66
-Aaron Burbridge,WR,2016,213,6,Michigan St.,8,1279.0,4.9,0,0,2.78
+Cody Core,WR,2016,199,6,Mississippi,8,123.0,37.0,0,0,7.38
+Mike Thomas,WR,2016,206,6,Southern Miss,8,140.0,30.299999999999997,0,0,7.66
+Aaron Burbridge,WR,2016,213,6,Michigan St.,8,152.0,15.8,0,0,2.78
 Devin Lucien,WR,2016,225,7,Arizona St.,8,999.0,0.0,0,0,6.68
 Demarcus Ayers,WR,2016,229,7,Houston,8,999.0,0.0,0,0,0.89
-Daniel Braverman,WR,2016,230,7,Western Michigan,8,1921.0,0.0,0,0,2.56
+Daniel Braverman,WR,2016,230,7,Western Michigan,8,197.0,0.0,0,0,2.56
 Devin Fuller,WR,2016,238,7,UCLA,8,999.0,0.0,0,0,8.34
-Charone Peake,WR,2016,241,7,Clemson,8,838.0,9.3,0,0,5.76
+Charone Peake,WR,2016,241,7,Clemson,8,121.0,37.6,0,0,5.76
 Kenny Lawler,WR,2016,243,7,California,8,999.0,0.0,0,0,2.09
-Corey Davis,WR,2017,5,1,Western Michigan,7,16.0,35.2,1,0,
-Mike Williams,WR,2017,7,1,Clemson,7,12.0,36.5,1,1,7.24
-John Ross,WR,2017,9,1,Washington,7,23.0,34.8,1,0,9.5
-Zay Jones,WR,2017,37,2,East Carolina,7,13.0,34.9,1,0,9.71
-Curtis Samuel,WR,2017,40,2,Ohio St.,7,71.0,26.8,0,0,7.45
-JuJu Smith-Schuster,WR,2017,62,2,USC,7,10.0,37.900000000000006,1,1,
-Cooper Kupp,WR,2017,69,3,Eastern Washington,7,6.0,37.6,1,1,5.0
-Taywan Taylor,WR,2017,72,3,Western Kentucky,7,384.0,14.7,0,0,8.7
-ArDarius Stewart,WR,2017,79,3,Alabama,7,1076.0,5.6000000000000005,0,0,
+Corey Davis,WR,2017,5,1,Western Michigan,7,29.0,191.4,0,0,
+Mike Williams,WR,2017,7,1,Clemson,7,14.0,246.60000000000002,1,0,7.24
+John Ross,WR,2017,9,1,Washington,7,75.0,95.0,0,0,9.5
+Zay Jones,WR,2017,37,2,East Carolina,7,19.0,232.8,1,0,9.71
+Curtis Samuel,WR,2017,40,2,Ohio St.,7,28.0,212.1,0,0,7.45
+JuJu Smith-Schuster,WR,2017,62,2,USC,7,9.0,296.90000000000003,1,1,
+Cooper Kupp,WR,2017,69,3,Eastern Washington,7,1.0,554.8,1,1,5.0
+Taywan Taylor,WR,2017,72,3,Western Kentucky,7,83.0,87.6,0,0,8.7
+ArDarius Stewart,WR,2017,79,3,Alabama,7,146.0,16.900000000000002,0,0,
 Carlos Henderson,WR,2017,82,3,Louisiana Tech,7,999.0,0.0,0,0,5.75
-Chris Godwin,WR,2017,84,3,Penn St.,7,8.0,41.2,1,1,9.66
-Kenny Golladay,WR,2017,96,3,Northern Illinois,7,55.0,28.3,0,0,8.94
-Chad Williams,WR,2017,98,3,Grambling St.,7,671.0,11.000000000000002,0,0,9.01
-Amara Darboh,WR,2017,106,3,Michigan,7,1170.0,4.9,0,0,9.6
-Dede Westbrook,WR,2017,110,4,Oklahoma,7,153.0,22.2,0,0,4.84
-Josh Reynolds,WR,2017,117,4,Texas A&M,7,122.0,23.6,0,0,9.1
-Mack Hollins,WR,2017,118,4,North Carolina,7,44.0,29.8,0,0,
-Josh Malone,WR,2017,128,4,Tennessee,7,555.0,11.5,0,0,7.03
-Ryan Switzer,WR,2017,133,4,North Carolina,7,519.0,13.1,0,0,4.83
-Jehu Chesson,WR,2017,139,4,Michigan,7,1595.0,2.0,0,0,7.94
-Chad Hansen,WR,2017,141,4,California,7,449.0,15.100000000000001,0,0,7.39
-Shelton Gibson,WR,2017,166,5,West Virginia,7,1172.0,5.800000000000001,0,0,3.98
-Rodney Adams,WR,2017,170,5,South Florida,7,2066.0,0.0,0,0,6.02
-Isaiah McKenzie,WR,2017,172,5,Georgia,7,52.0,29.4,0,0,
+Chris Godwin,WR,2017,84,3,Penn St.,7,3.0,276.1,1,1,9.66
+Kenny Golladay,WR,2017,96,3,Northern Illinois,7,11.0,248.0,1,1,8.94
+Chad Williams,WR,2017,98,3,Grambling St.,7,127.0,41.0,0,0,9.01
+Amara Darboh,WR,2017,106,3,Michigan,7,150.0,15.1,0,0,9.6
+Dede Westbrook,WR,2017,110,4,Oklahoma,7,34.0,175.5,0,0,4.84
+Josh Reynolds,WR,2017,117,4,Texas A&M,7,45.0,156.0,0,0,9.1
+Mack Hollins,WR,2017,118,4,North Carolina,7,47.0,154.0,0,0,
+Josh Malone,WR,2017,128,4,Tennessee,7,140.0,18.5,0,0,7.03
+Ryan Switzer,WR,2017,133,4,North Carolina,7,97.0,69.4,0,0,4.83
+Jehu Chesson,WR,2017,139,4,Michigan,7,182.0,3.8,0,0,7.94
+Chad Hansen,WR,2017,141,4,California,7,121.0,46.6,0,0,7.39
+Shelton Gibson,WR,2017,166,5,West Virginia,7,178.0,5.800000000000001,0,0,3.98
+Rodney Adams,WR,2017,170,5,South Florida,7,227.0,0.0,0,0,6.02
+Isaiah McKenzie,WR,2017,172,5,Georgia,7,57.0,122.80000000000001,0,0,
 DeAngelo Yancey,WR,2017,175,5,Purdue,7,999.0,0.0,0,0,9.08
-Trent Taylor,WR,2017,177,5,Louisiana Tech,7,237.0,19.1,0,0,4.0
-Robert Davis,WR,2017,209,6,Georgia St.,7,1589.0,2.1,0,0,9.79
-Stacy Coley,WR,2017,219,7,Miami (FL),7,1851.0,0.0,0,0,4.46
-David Moore,WR,2017,226,7,East Central (OK),7,202.0,20.3,0,0,8.99
-Isaiah Ford,WR,2017,237,7,Virginia Tech,7,385.0,15.200000000000001,0,0,5.05
-Noah Brown,WR,2017,239,7,Ohio St.,7,69.0,27.3,0,0,6.88
+Trent Taylor,WR,2017,177,5,Louisiana Tech,7,69.0,98.0,0,0,4.0
+Robert Davis,WR,2017,209,6,Georgia St.,7,196.0,3.7,0,0,9.79
+Stacy Coley,WR,2017,219,7,Miami (FL),7,200.0,0.0,0,0,4.46
+David Moore,WR,2017,226,7,East Central (OK),7,68.0,120.30000000000001,0,0,8.99
+Isaiah Ford,WR,2017,237,7,Virginia Tech,7,110.0,55.6,0,0,5.05
+Noah Brown,WR,2017,239,7,Ohio St.,7,58.0,122.4,0,0,6.88
 Malachi Dupre,WR,2017,247,7,LSU,7,999.0,0.0,0,0,7.2
-D.J. Moore,WR,2018,24,1,Maryland,6,27.0,31.900000000000002,0,0,9.65
-Calvin Ridley,WR,2018,26,1,Alabama,6,4.0,40.5,1,1,5.12
-Courtland Sutton,WR,2018,40,2,SMU,6,35.0,29.700000000000003,0,0,9.81
-Dante Pettis,WR,2018,44,2,Washington,6,42.0,29.7,0,0,
-Christian Kirk,WR,2018,47,2,Texas A&M,6,13.0,37.8,1,0,6.23
-Anthony Miller,WR,2018,51,2,Memphis,6,70.0,26.8,0,0,9.27
-James Washington,WR,2018,60,2,Oklahoma St.,6,178.0,21.1,0,0,5.55
-DJ Chark,WR,2018,61,2,LSU,6,60.0,27.8,0,0,
-Michael Gallup,WR,2018,81,3,Colorado St.,6,31.0,32.8,0,0,5.87
-Tre'Quan Smith,WR,2018,91,3,Central Florida,6,25.0,31.700000000000003,0,0,6.85
-Keke Coutee,WR,2018,103,4,Texas Tech,6,62.0,28.0,0,0,5.64
-Antonio Callaway,WR,2018,105,4,Florida,6,279.0,17.9,0,0,6.2
-DaeSean Hamilton,WR,2018,113,4,Penn St.,6,246.0,18.5,0,0,8.09
-Jaleel Scott,WR,2018,132,4,New Mexico St.,6,1617.0,2.6,0,0,7.6
-J'Mon Moore,WR,2018,133,4,Missouri,6,1639.0,2.0,0,0,8.43
-Justin Watson,WR,2018,144,5,Pennsylvania,6,304.0,16.9,0,0,9.61
-Daurice Fountain,WR,2018,159,5,Northern Iowa,6,1401.0,4.300000000000001,0,0,7.98
+D.J. Moore,WR,2018,24,1,Maryland,6,18.0,238.10000000000002,1,0,9.65
+Calvin Ridley,WR,2018,26,1,Alabama,6,7.0,281.5,1,1,5.12
+Courtland Sutton,WR,2018,40,2,SMU,6,16.0,247.60000000000002,1,0,9.81
+Dante Pettis,WR,2018,44,2,Washington,6,74.0,103.5,0,0,
+Christian Kirk,WR,2018,47,2,Texas A&M,6,9.0,285.7,1,1,6.23
+Anthony Miller,WR,2018,51,2,Memphis,6,59.0,127.5,0,0,9.27
+James Washington,WR,2018,60,2,Oklahoma St.,6,57.0,133.5,0,0,5.55
+DJ Chark,WR,2018,61,2,LSU,6,61.0,115.5,0,0,
+Michael Gallup,WR,2018,81,3,Colorado St.,6,28.0,212.7,0,0,5.87
+Tre'Quan Smith,WR,2018,91,3,Central Florida,6,66.0,126.6,0,0,6.85
+Keke Coutee,WR,2018,103,4,Texas Tech,6,80.0,90.7,0,0,5.64
+Antonio Callaway,WR,2018,105,4,Florida,6,56.0,132.3,0,0,6.2
+DaeSean Hamilton,WR,2018,113,4,Penn St.,6,99.0,66.3,0,0,8.09
+Jaleel Scott,WR,2018,132,4,New Mexico St.,6,205.0,2.6,0,0,7.6
+J'Mon Moore,WR,2018,133,4,Missouri,6,188.0,3.5,0,0,8.43
+Justin Watson,WR,2018,144,5,Pennsylvania,6,72.0,104.0,0,0,9.61
+Daurice Fountain,WR,2018,159,5,Northern Iowa,6,197.0,4.300000000000001,0,0,7.98
 Jordan Lasley,WR,2018,162,5,UCLA,6,999.0,0.0,0,0,4.47
-Marquez Valdes-Scantling,WR,2018,174,5,South Florida,6,76.0,25.9,0,0,9.26
-Damion Ratley,WR,2018,175,6,Texas A&M,6,422.0,14.4,0,0,9.02
-Deon Cain,WR,2018,185,6,Clemson,6,1145.0,5.5,0,0,6.47
-Ray-Ray McCloud,WR,2018,187,6,Clemson,6,286.0,18.1,0,0,3.71
+Marquez Valdes-Scantling,WR,2018,174,5,South Florida,6,43.0,166.1,0,0,9.26
+Damion Ratley,WR,2018,175,6,Texas A&M,6,128.0,38.0,0,0,9.02
+Deon Cain,WR,2018,185,6,Clemson,6,144.0,21.4,0,0,6.47
+Ray-Ray McCloud,WR,2018,187,6,Clemson,6,50.0,142.5,0,0,3.71
 Dylan Cantrell,WR,2018,191,6,Texas Tech,6,999.0,0.0,0,0,9.86
-Russell Gage,WR,2018,194,6,LSU,6,66.0,27.6,0,0,8.0
+Russell Gage,WR,2018,194,6,LSU,6,38.0,175.5,0,0,8.0
 Tremon Smith,WR,2018,196,6,Central Arkansas,6,999.0,0.0,0,0,
-Equanimeous St. Brown,WR,2018,207,6,Notre Dame,6,440.0,14.4,0,0,9.85
-Cedrick Wilson Jr.,WR,2018,208,6,Boise St.,6,668.0,10.7,0,0,
-Braxton Berrios,WR,2018,210,6,Miami (FL),6,93.0,25.7,0,0,5.68
-Javon Wims,WR,2018,224,7,Georgia,6,674.0,10.600000000000001,0,0,5.44
-Marcell Ateman,WR,2018,228,7,Oklahoma St.,6,791.0,9.6,0,0,5.18
-Richie James,WR,2018,240,7,Middle Tenn. St.,6,24.0,33.400000000000006,1,0,5.99
-Auden Tate,WR,2018,253,7,Florida St.,6,447.0,14.1,0,0,1.82
+Equanimeous St. Brown,WR,2018,207,6,Notre Dame,6,105.0,62.7,0,0,9.85
+Cedrick Wilson Jr.,WR,2018,208,6,Boise St.,6,88.0,76.3,0,0,
+Braxton Berrios,WR,2018,210,6,Miami (FL),6,64.0,115.1,0,0,5.68
+Javon Wims,WR,2018,224,7,Georgia,6,120.0,42.6,0,0,5.44
+Marcell Ateman,WR,2018,228,7,Oklahoma St.,6,134.0,36.4,0,0,5.18
+Richie James,WR,2018,240,7,Middle Tenn. St.,6,45.0,157.70000000000002,0,0,5.99
+Auden Tate,WR,2018,253,7,Florida St.,6,72.0,101.5,0,0,1.82
 Austin Proehl,WR,2018,255,7,North Carolina,6,999.0,0.0,0,0,3.62
-Trey Quinn,WR,2018,256,7,SMU,6,483.0,13.6,0,0,7.01
-Marquise Brown,WR,2019,25,1,Oklahoma,5,21.0,33.5,1,0,
-N'Keal Harry,WR,2019,32,1,Arizona St.,5,717.0,10.4,0,0,8.44
-Deebo Samuel,WR,2019,36,2,South Carolina,5,14.0,35.7,1,0,7.91
-A.J. Brown,WR,2019,51,2,Mississippi,5,5.0,39.6,1,1,8.59
-Mecole Hardman,WR,2019,56,2,Georgia,5,56.0,28.0,0,0,8.3
+Trey Quinn,WR,2018,256,7,SMU,6,107.0,51.8,0,0,7.01
+Marquise Brown,WR,2019,25,1,Oklahoma,5,23.0,226.3,1,0,
+N'Keal Harry,WR,2019,32,1,Arizona St.,5,143.0,30.4,0,0,8.44
+Deebo Samuel,WR,2019,36,2,South Carolina,5,2.0,385.1,1,1,7.91
+A.J. Brown,WR,2019,51,2,Mississippi,5,6.0,333.2,1,1,8.59
+Mecole Hardman,WR,2019,56,2,Georgia,5,39.0,178.5,0,0,8.3
 JJ Arcega-Whiteside,WR,2019,57,2,Stanford,5,999.0,0.0,0,0,
-Parris Campbell,WR,2019,59,2,Ohio St.,5,117.0,23.0,0,0,9.76
-Andy Isabella,WR,2019,62,2,Massachusetts,5,231.0,20.099999999999998,0,0,7.26
+Parris Campbell,WR,2019,59,2,Ohio St.,5,50.0,149.1,0,0,9.76
+Andy Isabella,WR,2019,62,2,Massachusetts,5,113.0,54.8,0,0,7.26
 D.K. Metcalf,WR,2019,64,2,Mississippi,5,999.0,0.0,0,0,
-Diontae Johnson,WR,2019,66,3,Toledo,5,41.0,30.5,0,0,4.18
+Diontae Johnson,WR,2019,66,3,Toledo,5,9.0,288.8,1,1,4.18
 Jalen Hurd,WR,2019,67,3,Baylor,5,999.0,0.0,0,0,8.21
-Terry McLaurin,WR,2019,76,3,Ohio St.,5,44.0,30.3,0,0,9.56
-Miles Boykin,WR,2019,93,3,Notre Dame,5,558.0,12.2,0,0,9.94
-Hakeem Butler,WR,2019,103,4,Iowa St.,5,1964.0,0.0,0,0,9.47
+Terry McLaurin,WR,2019,76,3,Ohio St.,5,4.0,322.5,1,1,9.56
+Miles Boykin,WR,2019,93,3,Notre Dame,5,99.0,74.6,0,0,9.94
+Hakeem Butler,WR,2019,103,4,Iowa St.,5,216.0,0.0,0,0,9.47
 Gary Jennings Jr,WR,2019,120,4,West Virginia,5,999.0,0.0,0,0,
-Riley Ridley,WR,2019,126,4,Georgia,5,843.0,8.4,0,0,4.53
-Hunter Renfrow,WR,2019,149,5,Clemson,5,58.0,28.700000000000003,0,0,2.91
-Darius Slayton,WR,2019,171,5,Auburn,5,26.0,34.1,0,0,8.91
-KeeSean Johnson,WR,2019,174,6,Fresno St.,5,701.0,10.2,0,0,3.18
-Travis Fulgham,WR,2019,184,6,Old Dominion,5,31.0,31.200000000000003,0,0,8.01
-Juwann Winfree,WR,2019,187,6,Colorado,5,1089.0,7.0,0,0,7.14
+Riley Ridley,WR,2019,126,4,Georgia,5,158.0,13.5,0,0,4.53
+Hunter Renfrow,WR,2019,149,5,Clemson,5,11.0,272.9,1,1,2.91
+Darius Slayton,WR,2019,171,5,Auburn,5,38.0,170.0,0,0,8.91
+KeeSean Johnson,WR,2019,174,6,Fresno St.,5,115.0,46.0,0,0,3.18
+Travis Fulgham,WR,2019,184,6,Old Dominion,5,69.0,115.9,0,0,8.01
+Juwann Winfree,WR,2019,187,6,Colorado,5,173.0,11.8,0,0,7.14
 Marcus Green,WR,2019,203,6,La-Monroe,5,999.0,0.0,0,0,7.22
-Kelvin Harmon,WR,2019,206,6,North Carolina St.,5,660.0,10.8,0,0,4.88
-Scott Miller,WR,2019,208,6,Bowling Green,5,139.0,22.9,0,0,7.76
-John Ursua,WR,2019,236,7,Hawaii,5,1589.0,2.1,0,0,6.44
-Terry Godwin,WR,2019,237,7,Georgia,5,1149.0,6.5,0,0,5.26
+Kelvin Harmon,WR,2019,206,6,North Carolina St.,5,94.0,66.5,0,0,4.88
+Scott Miller,WR,2019,208,6,Bowling Green,5,67.0,121.0,0,0,7.76
+John Ursua,WR,2019,236,7,Hawaii,5,204.0,2.1,0,0,6.44
+Terry Godwin,WR,2019,237,7,Georgia,5,194.0,6.5,0,0,5.26
 Dillon Mitchell,WR,2019,239,7,Oregon,5,999.0,0.0,0,0,7.96
-Olabisi Johnson,WR,2019,247,7,Colorado St.,5,379.0,16.4,0,0,
+Olabisi Johnson,WR,2019,247,7,Colorado St.,5,86.0,82.7,0,0,
 Henry Ruggs III,WR,2020,12,1,Alabama,4,999.0,0.0,0,0,9.54
-Jerry Jeudy,WR,2020,15,1,Alabama,4,8.0,40.5,1,1,6.76
-CeeDee Lamb,WR,2020,17,1,Oklahoma,4,5.0,42.2,1,1,7.44
-Jalen Reagor,WR,2020,21,1,TCU,4,350.0,16.9,0,0,6.03
-Justin Jefferson,WR,2020,22,1,LSU,4,6.0,39.6,1,1,9.69
-Brandon Aiyuk,WR,2020,25,1,Arizona St.,4,26.0,32.9,0,0,8.47
-Tee Higgins,WR,2020,33,2,Clemson,4,4.0,43.400000000000006,1,1,4.12
+Jerry Jeudy,WR,2020,15,1,Alabama,4,18.0,240.9,1,0,6.76
+CeeDee Lamb,WR,2020,17,1,Oklahoma,4,1.0,425.70000000000005,1,1,7.44
+Jalen Reagor,WR,2020,21,1,TCU,4,95.0,81.2,0,0,6.03
+Justin Jefferson,WR,2020,22,1,LSU,4,1.0,379.0,1,1,9.69
+Brandon Aiyuk,WR,2020,25,1,Arizona St.,4,10.0,279.1,1,1,8.47
+Tee Higgins,WR,2020,33,2,Clemson,4,10.0,280.0,1,1,4.12
 Michael Pittman Jr.,WR,2020,34,2,USC,4,999.0,0.0,0,0,8.27
-Laviska Shenault Jr.,WR,2020,42,2,Colorado,4,108.0,24.6,0,0,6.97
+Laviska Shenault Jr.,WR,2020,42,2,Colorado,4,47.0,157.1,0,0,6.97
 KJ Hamler,WR,2020,46,2,Penn St.,4,999.0,0.0,0,0,
-Chase Claypool,WR,2020,49,2,Notre Dame,4,5.0,42.6,1,1,9.98
-Van Jefferson,WR,2020,57,2,Florida,4,171.0,21.0,0,0,
-Denzel Mims,WR,2020,59,2,Baylor,4,739.0,10.7,0,0,9.77
+Chase Claypool,WR,2020,49,2,Notre Dame,4,17.0,237.8,1,0,9.98
+Van Jefferson,WR,2020,57,2,Florida,4,37.0,188.9,0,0,
+Denzel Mims,WR,2020,59,2,Baylor,4,108.0,60.699999999999996,0,0,9.77
 Lynn Bowden Jr.,WR,2020,80,3,Kentucky,4,999.0,0.0,0,0,
-Bryan Edwards,WR,2020,81,3,South Carolina,4,302.0,17.8,0,0,
-Devin Duvernay,WR,2020,92,3,Texas,4,151.0,21.4,0,0,7.86
+Bryan Edwards,WR,2020,81,3,South Carolina,4,63.0,116.2,0,0,
+Devin Duvernay,WR,2020,92,3,Texas,4,67.0,110.10000000000001,0,0,7.86
 Gabriel Davis,WR,2020,128,4,Central Florida,4,999.0,0.0,0,0,6.85
-Antonio Gandy-Golden,WR,2020,142,4,Liberty,4,1702.0,2.2,0,0,6.13
-Joe Reed,WR,2020,151,5,Virginia,4,1053.0,7.4,0,0,9.35
-Tyler Johnson,WR,2020,161,5,Minnesota,4,510.0,13.5,0,0,
-Collin Johnson,WR,2020,165,5,Texas,4,247.0,19.6,0,0,
-Quintez Cephus,WR,2020,166,5,Wisconsin,4,373.0,16.3,0,0,4.5
-John Hightower,WR,2020,168,5,Boise St.,4,1101.0,6.9,0,0,8.02
-Isaiah Coulter,WR,2020,171,5,Rhode Island,4,2066.0,0.0,0,0,6.68
-Darnell Mooney,WR,2020,173,5,Tulane,4,28.0,31.5,0,0,7.04
-K.J. Osborn,WR,2020,176,5,Miami (FL),4,28.0,31.700000000000003,0,0,8.0
-Donovan Peoples-Jones,WR,2020,187,6,Michigan,4,87.0,26.1,0,0,9.63
-Quez Watkins,WR,2020,200,6,Southern Miss,4,128.0,23.3,0,0,7.4
-James Proche,WR,2020,201,6,SMU,4,461.0,14.600000000000001,0,0,4.04
-Isaiah Hodgins,WR,2020,207,6,Oregon St.,4,93.0,24.5,0,0,7.56
-Dezmon Patmon,WR,2020,212,6,Washington St.,4,957.0,8.4,0,0,8.46
-Freddie Swain,WR,2020,214,6,Florida,4,171.0,21.0,0,0,8.29
-Jauan Jennings,WR,2020,217,7,Tennessee,4,2.0,46.5,1,1,2.7
-K.J. Hill,WR,2020,220,7,Ohio St.,4,1101.0,6.9,0,0,3.89
-Tyrie Cleveland,WR,2020,252,7,Florida,4,936.0,8.5,0,0,9.65
-Ja'Marr Chase,WR,2021,5,1,LSU,3,1.0,55.6,1,1,9.82
-Jaylen Waddle,WR,2021,6,1,Alabama,3,4.0,40.1,1,1,
-DeVonta Smith,WR,2021,10,1,Alabama,3,31.0,31.3,0,0,
-Kadarius Toney,WR,2021,20,1,Florida,3,50.0,29.6,0,0,8.99
-Rashod Bateman,WR,2021,27,1,Minnesota,3,120.0,23.0,0,0,8.04
-Elijah Moore,WR,2021,34,2,Mississippi,3,50.0,29.6,0,0,8.69
-Rondale Moore,WR,2021,49,2,Purdue,3,109.0,24.4,0,0,9.33
-D'Wayne Eskridge,WR,2021,56,2,Western Michigan,3,598.0,12.5,0,0,6.71
-Tutu Atwell,WR,2021,57,2,Louisville,3,268.0,17.9,0,0,6.25
-Terrace Marshall Jr.,WR,2021,59,2,LSU,3,432.0,14.600000000000001,0,0,
-Josh Palmer,WR,2021,77,3,Tennessee,3,37.0,30.6,0,0,7.59
-Dyami Brown,WR,2021,82,3,North Carolina,3,93.0,24.5,0,0,8.38
-Amari Rodgers,WR,2021,85,3,Clemson,3,351.0,16.0,0,0,5.35
-Nico Collins,WR,2021,89,3,Michigan,3,16.0,35.8,1,0,9.57
-Anthony Schwartz,WR,2021,91,3,Auburn,3,621.0,11.8,0,0,6.89
-Dez Fitzpatrick,WR,2021,109,4,Louisville,3,598.0,12.5,0,0,
-Amon-Ra St. Brown,WR,2021,112,4,USC,3,6.0,39.400000000000006,1,1,7.13
-Jaelon Darden,WR,2021,129,4,North Texas,3,1438.0,4.1,0,0,7.14
-Tylan Wallace,WR,2021,131,4,Oklahoma St.,3,188.0,20.5,0,0,4.71
-Jacob Harris,WR,2021,141,4,Central Florida,3,1824.0,1.6,0,0,9.88
-Ihmir Smith-Marsette,WR,2021,157,5,Iowa,3,245.0,19.3,0,0,6.81
-Simi Fehoko,WR,2021,179,5,Stanford,3,926.0,7.9,0,0,9.18
+Antonio Gandy-Golden,WR,2020,142,4,Liberty,4,200.0,3.5,0,0,6.13
+Joe Reed,WR,2020,151,5,Virginia,4,184.0,8.9,0,0,9.35
+Tyler Johnson,WR,2020,161,5,Minnesota,4,91.0,81.5,0,0,
+Collin Johnson,WR,2020,165,5,Texas,4,110.0,59.2,0,0,
+Quintez Cephus,WR,2020,166,5,Wisconsin,4,102.0,66.9,0,0,4.5
+John Hightower,WR,2020,168,5,Boise St.,4,145.0,28.8,0,0,8.02
+Isaiah Coulter,WR,2020,171,5,Rhode Island,4,227.0,0.0,0,0,6.68
+Darnell Mooney,WR,2020,173,5,Tulane,4,25.0,219.70000000000002,0,0,7.04
+K.J. Osborn,WR,2020,176,5,Miami (FL),4,41.0,165.6,0,0,8.0
+Donovan Peoples-Jones,WR,2020,187,6,Michigan,4,43.0,161.1,0,0,9.63
+Quez Watkins,WR,2020,200,6,Southern Miss,4,60.0,121.5,0,0,7.4
+James Proche,WR,2020,201,6,SMU,4,133.0,36.2,0,0,4.04
+Isaiah Hodgins,WR,2020,207,6,Oregon St.,4,56.0,126.0,0,0,7.56
+Dezmon Patmon,WR,2020,212,6,Washington St.,4,178.0,10.1,0,0,8.46
+Freddie Swain,WR,2020,214,6,Florida,4,85.0,86.5,0,0,8.29
+Jauan Jennings,WR,2020,217,7,Tennessee,4,28.0,210.5,0,0,2.7
+K.J. Hill,WR,2020,220,7,Ohio St.,4,168.0,14.3,0,0,3.89
+Tyrie Cleveland,WR,2020,252,7,Florida,4,171.0,12.3,0,0,9.65
+Ja'Marr Chase,WR,2021,5,1,LSU,3,1.0,403.0,1,1,9.82
+Jaylen Waddle,WR,2021,6,1,Alabama,3,11.0,267.40000000000003,1,1,
+DeVonta Smith,WR,2021,10,1,Alabama,3,8.0,295.3,1,1,
+Kadarius Toney,WR,2021,20,1,Florida,3,90.0,81.6,0,0,8.99
+Rashod Bateman,WR,2021,27,1,Minnesota,3,31.0,201.60000000000002,0,0,8.04
+Elijah Moore,WR,2021,34,2,Mississippi,3,54.0,138.2,0,0,8.69
+Rondale Moore,WR,2021,49,2,Purdue,3,62.0,119.3,0,0,9.33
+D'Wayne Eskridge,WR,2021,56,2,Western Michigan,3,147.0,28.3,0,0,6.71
+Tutu Atwell,WR,2021,57,2,Louisville,3,59.0,121.2,0,0,6.25
+Terrace Marshall Jr.,WR,2021,59,2,LSU,3,140.0,32.900000000000006,0,0,
+Josh Palmer,WR,2021,77,3,Tennessee,3,39.0,174.4,0,0,7.59
+Dyami Brown,WR,2021,82,3,North Carolina,3,76.0,108.3,0,0,8.38
+Amari Rodgers,WR,2021,85,3,Clemson,3,123.0,43.1,0,0,5.35
+Nico Collins,WR,2021,89,3,Michigan,3,6.0,294.2,1,1,9.57
+Anthony Schwartz,WR,2021,91,3,Auburn,3,138.0,33.4,0,0,6.89
+Dez Fitzpatrick,WR,2021,109,4,Louisville,3,163.0,15.9,0,0,
+Amon-Ra St. Brown,WR,2021,112,4,USC,3,2.0,386.5,1,1,7.13
+Jaelon Darden,WR,2021,129,4,North Texas,3,174.0,11.4,0,0,7.14
+Tylan Wallace,WR,2021,131,4,Oklahoma St.,3,119.0,43.1,0,0,4.71
+Jacob Harris,WR,2021,141,4,Central Florida,3,213.0,1.6,0,0,9.88
+Ihmir Smith-Marsette,WR,2021,157,5,Iowa,3,146.0,28.6,0,0,6.81
+Simi Fehoko,WR,2021,179,5,Stanford,3,148.0,16.6,0,0,9.18
 Cornell Powell,WR,2021,181,5,Clemson,3,999.0,0.0,0,0,7.57
-Frank Darby,WR,2021,187,6,Arizona St.,3,1617.0,2.5,0,0,5.89
+Frank Darby,WR,2021,187,6,Arizona St.,3,207.0,2.5,0,0,5.89
 Marquez Stevenson,WR,2021,203,6,Houston,3,999.0,0.0,0,0,5.37
-Shi Smith,WR,2021,204,6,South Carolina,3,298.0,17.0,0,0,6.78
-Racey McMath,WR,2021,205,6,LSU,3,1259.0,4.9,0,0,7.43
-Jalen Camp,WR,2021,209,6,Georgia Tech,3,1791.0,1.7000000000000002,0,0,9.75
-Seth Williams,WR,2021,219,6,Auburn,3,1394.0,4.4,0,0,6.86
-Dazz Newsome,WR,2021,221,6,North Carolina,3,1739.0,2.3,0,0,2.13
-Mike Strachan,WR,2021,229,7,Charleston (WV),3,1185.0,5.6,0,0,
+Shi Smith,WR,2021,204,6,South Carolina,3,106.0,61.6,0,0,6.78
+Racey McMath,WR,2021,205,6,LSU,3,183.0,6.4,0,0,7.43
+Jalen Camp,WR,2021,209,6,Georgia Tech,3,210.0,1.7000000000000002,0,0,9.75
+Seth Williams,WR,2021,219,6,Auburn,3,202.0,4.4,0,0,6.86
+Dazz Newsome,WR,2021,221,6,North Carolina,3,204.0,4.3,0,0,2.13
+Mike Strachan,WR,2021,229,7,Charleston (WV),3,175.0,8.9,0,0,
 Tre Nixon,WR,2021,242,7,Central Florida,3,999.0,0.0,0,0,8.97
-Ben Skowronek,WR,2021,249,7,Notre Dame,3,314.0,16.7,0,0,
+Ben Skowronek,WR,2021,249,7,Notre Dame,3,88.0,84.30000000000001,0,0,
 Kawaan Baker,WR,2021,255,7,South Alabama,3,999.0,0.0,0,0,9.08
-Dax Milne,WR,2021,258,7,BYU,3,980.0,7.6,0,0,4.56
-Drake London,WR,2022,8,1,USC,2,7.0,40.7,1,1,
-Garrett Wilson,WR,2022,10,1,Ohio St.,2,31.0,30.000000000000004,0,0,7.77
-Chris Olave,WR,2022,11,1,Ohio St.,2,105.0,23.700000000000003,0,0,8.64
-Jameson Williams,WR,2022,12,1,Alabama,2,73.0,26.0,0,0,
-Jahan Dotson,WR,2022,16,1,Penn St.,2,104.0,24.8,0,0,6.33
-Treylon Burks,WR,2022,18,1,Arkansas,2,257.0,18.1,0,0,5.79
-Christian Watson,WR,2022,34,2,North Dakota St.,2,22.0,32.7,1,0,9.96
-Wan'Dale Robinson,WR,2022,43,2,Kentucky,2,207.0,19.9,0,0,7.36
-John Metchie,WR,2022,44,2,Alabama,2,278.0,18.4,0,0,
-Tyquan Thornton,WR,2022,50,2,Baylor,2,157.0,21.299999999999997,0,0,8.54
-George Pickens,WR,2022,52,2,Georgia,2,18.0,35.5,1,0,9.35
-Alec Pierce,WR,2022,53,2,Cincinnati,2,97.0,24.200000000000003,0,0,9.83
-Skyy Moore,WR,2022,54,2,Western Michigan,2,354.0,16.0,0,0,7.58
+Dax Milne,WR,2021,258,7,BYU,3,157.0,15.7,0,0,4.56
+Drake London,WR,2022,8,1,USC,2,6.0,280.8,1,1,
+Garrett Wilson,WR,2022,10,1,Ohio St.,2,13.0,251.9,1,0,7.77
+Chris Olave,WR,2022,11,1,Ohio St.,2,21.0,231.3,1,0,8.64
+Jameson Williams,WR,2022,12,1,Alabama,2,22.0,227.20000000000002,1,0,
+Jahan Dotson,WR,2022,16,1,Penn St.,2,54.0,130.6,0,0,6.33
+Treylon Burks,WR,2022,18,1,Arkansas,2,83.0,88.10000000000001,0,0,5.79
+Christian Watson,WR,2022,34,2,North Dakota St.,2,42.0,164.10000000000002,0,0,9.96
+Wan'Dale Robinson,WR,2022,43,2,Kentucky,2,39.0,182.70000000000002,0,0,7.36
+John Metchie,WR,2022,44,2,Alabama,2,102.0,65.7,0,0,
+Tyquan Thornton,WR,2022,50,2,Baylor,2,100.0,66.3,0,0,8.54
+George Pickens,WR,2022,52,2,Georgia,2,28.0,218.3,0,0,9.35
+Alec Pierce,WR,2022,53,2,Cincinnati,2,43.0,161.4,0,0,9.83
+Skyy Moore,WR,2022,54,2,Western Michigan,2,104.0,62.800000000000004,0,0,7.58
 Velus Jones Jr.,WR,2022,71,3,Tennessee,2,999.0,0.0,0,0,7.1
-Jalen Tolbert,WR,2022,88,3,South Alabama,2,157.0,21.700000000000003,0,0,8.62
-David Bell,WR,2022,99,3,Purdue,2,136.0,22.8,0,0,3.98
-Danny Gray,WR,2022,105,3,SMU,2,1718.0,2.0,0,0,6.76
-Erik Ezukanma,WR,2022,125,4,Texas Tech,2,1852.0,1.7000000000000002,0,0,7.03
-Romeo Doubs,WR,2022,132,4,Nevada,2,70.0,27.1,0,0,
-Calvin Austin III,WR,2022,138,4,Memphis,2,403.0,15.2,0,0,9.05
-Khalil Shakir,WR,2022,148,5,Boise St.,2,159.0,21.6,0,0,8.31
-Montrell Washington,WR,2022,162,5,Samford,2,1739.0,1.9000000000000001,0,0,4.32
-Kyle Philips,WR,2022,163,5,UCLA,2,554.0,12.600000000000001,0,0,8.31
-Jalen Nailor,WR,2022,191,6,Michigan St.,2,246.0,19.1,0,0,8.09
+Jalen Tolbert,WR,2022,88,3,South Alabama,2,46.0,152.0,0,0,8.62
+David Bell,WR,2022,99,3,Purdue,2,98.0,62.1,0,0,3.98
+Danny Gray,WR,2022,105,3,SMU,2,204.0,2.9,0,0,6.76
+Erik Ezukanma,WR,2022,125,4,Texas Tech,2,194.0,2.2,0,0,7.03
+Romeo Doubs,WR,2022,132,4,Nevada,2,30.0,213.8,0,0,
+Calvin Austin III,WR,2022,138,4,Memphis,2,102.0,60.4,0,0,9.05
+Khalil Shakir,WR,2022,148,5,Boise St.,2,27.0,217.9,0,0,8.31
+Montrell Washington,WR,2022,162,5,Samford,2,181.0,7.2,0,0,4.32
+Kyle Philips,WR,2022,163,5,UCLA,2,138.0,33.1,0,0,8.31
+Jalen Nailor,WR,2022,191,6,Michigan St.,2,74.0,111.30000000000001,0,0,8.09
 Michael Woods II,WR,2022,202,6,Oklahoma,2,999.0,0.0,0,0,
-Bo Melton,WR,2022,229,7,Rutgers,2,143.0,22.5,0,0,9.23
-Dareke Young,WR,2022,233,7,Lenoir-Rhyne,2,1323.0,4.4,0,0,9.93
-Samori Toure,WR,2022,258,7,Nebraska,2,693.0,10.7,0,0,6.14
-Jaxon Smith-Njigba,WR,2023,20,1,Ohio St.,1,14.0,37.0,1,0,8.34
-Quentin Johnston,WR,2023,21,1,TCU,1,27.0,31.6,0,0,8.68
-Zay Flowers,WR,2023,22,1,Boston Col.,1,35.0,29.700000000000003,0,0,8.29
-Jordan Addison,WR,2023,23,1,USC,1,11.0,39.3,1,1,5.94
-Jonathan Mingo,WR,2023,39,2,Mississippi,1,528.0,12.9,0,0,9.87
-Jayden Reed,WR,2023,50,2,Michigan St.,1,22.0,33.1,1,0,6.74
-Rashee Rice,WR,2023,55,2,SMU,1,40.0,29.1,0,0,9.53
-Marvin Mims,WR,2023,63,2,Oklahoma,1,29.0,30.2,0,0,
-Tank Dell,WR,2023,69,3,Houston,1,45.0,29.599999999999998,0,0,
-Jalin Hyatt,WR,2023,73,3,Tennessee,1,357.0,15.9,0,0,8.76
-Cedric Tillman,WR,2023,74,3,Tennessee,1,45.0,28.9,0,0,8.67
-Josh Downs,WR,2023,79,3,North Carolina,1,124.0,23.5,0,0,8.99
-Michael Wilson,WR,2023,94,3,Stanford,1,76.0,26.6,0,0,9.55
-Tre Tucker,WR,2023,100,3,Cincinnati,1,129.0,22.6,0,0,7.16
-Derius Davis,WR,2023,125,4,TCU,1,691.0,10.799999999999999,0,0,4.29
-Charlie Jones,WR,2023,131,4,Purdue,1,808.0,9.200000000000001,0,0,
-Tyler Scott,WR,2023,133,4,Cincinnati,1,960.0,7.6000000000000005,0,0,8.61
+Bo Melton,WR,2022,229,7,Rutgers,2,110.0,56.5,0,0,9.23
+Dareke Young,WR,2022,233,7,Lenoir-Rhyne,2,182.0,6.5,0,0,9.93
+Samori Toure,WR,2022,258,7,Nebraska,2,151.0,19.2,0,0,6.14
+Jaxon Smith-Njigba,WR,2023,20,1,Ohio St.,1,14.0,251.6,1,0,8.34
+Quentin Johnston,WR,2023,21,1,TCU,1,41.0,174.70000000000002,0,0,8.68
+Zay Flowers,WR,2023,22,1,Boston Col.,1,19.0,235.4,1,0,8.29
+Jordan Addison,WR,2023,23,1,USC,1,24.0,221.3,1,0,5.94
+Jonathan Mingo,WR,2023,39,2,Mississippi,1,82.0,84.8,0,0,9.87
+Jayden Reed,WR,2023,50,2,Michigan St.,1,24.0,225.6,1,0,6.74
+Rashee Rice,WR,2023,55,2,SMU,1,13.0,271.2,1,0,9.53
+Marvin Mims,WR,2023,63,2,Oklahoma,1,58.0,132.8,0,0,
+Tank Dell,WR,2023,69,3,Houston,1,41.0,165.0,0,0,
+Jalin Hyatt,WR,2023,73,3,Tennessee,1,103.0,60.3,0,0,8.76
+Cedric Tillman,WR,2023,74,3,Tennessee,1,93.0,80.4,0,0,8.67
+Josh Downs,WR,2023,79,3,North Carolina,1,40.0,182.2,0,0,8.99
+Michael Wilson,WR,2023,94,3,Stanford,1,63.0,124.5,0,0,9.55
+Tre Tucker,WR,2023,100,3,Cincinnati,1,60.0,129.3,0,0,7.16
+Derius Davis,WR,2023,125,4,TCU,1,121.0,41.199999999999996,0,0,4.29
+Charlie Jones,WR,2023,131,4,Purdue,1,166.0,14.700000000000001,0,0,
+Tyler Scott,WR,2023,133,4,Cincinnati,1,135.0,35.900000000000006,0,0,8.61
 Justin Shorter,WR,2023,150,5,Florida,1,999.0,0.0,0,0,7.94
-Dontayvion Wicks,WR,2023,159,5,Virginia,1,88.0,24.8,0,0,9.17
-Puka Nacua,WR,2023,177,5,BYU,1,5.0,41.800000000000004,1,1,5.18
-Parker Washington,WR,2023,185,6,Penn St.,1,95.0,24.3,0,0,
-Kayshon Boutte,WR,2023,187,6,LSU,1,89.0,24.700000000000003,0,0,4.99
-Trey Palmer,WR,2023,191,6,Nebraska,1,331.0,16.4,0,0,6.18
-A.T. Perry,WR,2023,195,6,Wake Forest,1,195.0,20.3,0,0,9.62
+Dontayvion Wicks,WR,2023,159,5,Virginia,1,57.0,129.7,0,0,9.17
+Puka Nacua,WR,2023,177,5,BYU,1,4.0,331.4,1,1,5.18
+Parker Washington,WR,2023,185,6,Penn St.,1,86.0,91.0,0,0,
+Kayshon Boutte,WR,2023,187,6,LSU,1,65.0,121.9,0,0,4.99
+Trey Palmer,WR,2023,191,6,Nebraska,1,64.0,114.4,0,0,6.18
+A.T. Perry,WR,2023,195,6,Wake Forest,1,101.0,60.6,0,0,9.62
 Elijah Higgins,WR,2023,197,6,Stanford,1,999.0,0.0,0,0,8.94
-Xavier Hutchinson,WR,2023,205,6,Iowa St.,1,815.0,9.2,0,0,7.27
-Andrei Iosivas,WR,2023,206,6,Princeton,1,182.0,20.6,0,0,9.96
+Xavier Hutchinson,WR,2023,205,6,Iowa St.,1,123.0,37.3,0,0,7.27
+Andrei Iosivas,WR,2023,206,6,Princeton,1,70.0,119.9,0,0,9.96
 DeMario Douglas,WR,2023,210,6,Liberty,1,999.0,0.0,0,0,
-Antoine Green,WR,2023,219,7,North Carolina,1,2018.0,1.2,0,0,8.68
-Colton Dowell,WR,2023,228,7,UT Martin,1,1998.0,1.3,0,0,9.78
-Jalen Brooks,WR,2023,244,7,South Carolina,1,862.0,8.7,0,0,5.6
-Ronnie Bell,WR,2023,253,7,Michigan,1,695.0,10.4,0,0,8.2
+Antoine Green,WR,2023,219,7,North Carolina,1,200.0,1.2,0,0,8.68
+Colton Dowell,WR,2023,228,7,UT Martin,1,199.0,1.3,0,0,9.78
+Jalen Brooks,WR,2023,244,7,South Carolina,1,125.0,35.7,0,0,5.6
+Ronnie Bell,WR,2023,253,7,Michigan,1,143.0,30.8,0,0,8.2
 Grant Dubose,WR,2023,256,7,Charlotte,1,999.0,0.0,0,0,
 Marvin Harrison Jr.,WR,2024,4,1,Ohio St.,0,999.0,0.0,0,0,
-Malik Nabers,WR,2024,6,1,LSU,0,17.0,36.1,1,0,9.67
-Rome Odunze,WR,2024,9,1,Washington,0,109.0,23.400000000000002,0,0,9.92
-Brian Thomas,WR,2024,23,1,LSU,0,24.0,32.5,1,0,
-Xavier Worthy,WR,2024,28,1,Texas,0,18.0,35.7,1,0,9.41
-Ricky Pearsall,WR,2024,31,1,Florida,0,47.0,28.700000000000003,0,0,9.91
-Xavier Legette,WR,2024,32,1,South Carolina,0,228.0,19.6,0,0,9.9
-Keon Coleman,WR,2024,33,2,Florida St.,0,292.0,18.0,0,0,8.18
-Ladd McConkey,WR,2024,34,2,Georgia,0,20.0,34.7,1,0,9.34
-Ja'Lynn Polk,WR,2024,37,2,Washington,0,815.0,9.2,0,0,8.85
-Adonai Mitchell,WR,2024,52,2,Texas,0,539.0,13.100000000000001,0,0,9.99
-Malachi Corley,WR,2024,65,3,Western Kentucky,0,1741.0,2.0,0,0,7.76
-Jermaine Burton,WR,2024,80,3,Alabama,0,1155.0,5.7,0,0,9.09
+Malik Nabers,WR,2024,6,1,LSU,0,8.0,273.6,1,1,9.67
+Rome Odunze,WR,2024,9,1,Washington,0,49.0,144.9,0,0,9.92
+Brian Thomas,WR,2024,23,1,LSU,0,5.0,284.0,1,1,
+Xavier Worthy,WR,2024,28,1,Texas,0,12.0,253.7,1,1,9.41
+Ricky Pearsall,WR,2024,31,1,Florida,0,82.0,93.5,0,0,9.91
+Xavier Legette,WR,2024,32,1,South Carolina,0,63.0,125.10000000000001,0,0,9.9
+Keon Coleman,WR,2024,33,2,Florida St.,0,71.0,118.7,0,0,8.18
+Ladd McConkey,WR,2024,34,2,Georgia,0,7.0,275.6,1,1,9.34
+Ja'Lynn Polk,WR,2024,37,2,Washington,0,130.0,32.699999999999996,0,0,8.85
+Adonai Mitchell,WR,2024,52,2,Texas,0,115.0,52.800000000000004,0,0,9.99
+Malachi Corley,WR,2024,65,3,Western Kentucky,0,177.0,7.2,0,0,7.76
+Jermaine Burton,WR,2024,80,3,Alabama,0,156.0,14.700000000000001,0,0,9.09
 Roman Wilson,WR,2024,84,3,Michigan,0,999.0,0.0,0,0,8.59
-Jalen McMillan,WR,2024,92,3,Washington,0,120.0,23.0,0,0,8.67
-Luke McCaffrey,WR,2024,100,3,Rice,0,993.0,7.4,0,0,9.44
-Troy Franklin,WR,2024,102,4,Oregon,0,515.0,13.4,0,0,9.02
-Javon Baker,WR,2024,110,4,Central Florida,0,1701.0,2.2,0,0,7.84
-Devontez Walker,WR,2024,113,4,North Carolina,0,834.0,9.1,0,0,9.76
-Jacob Cowing,WR,2024,135,4,Arizona,0,1036.0,7.0,0,0,6.28
-Anthony Gould,WR,2024,142,5,Oregon St.,0,1504.0,3.3000000000000003,0,0,8.87
-Ainias Smith,WR,2024,152,5,Texas A&M,0,484.0,13.9,0,0,7.36
-Jamari Thrash,WR,2024,156,5,Louisville,0,1542.0,3.1,0,0,6.77
-Bub Means,WR,2024,170,5,Pittsburgh,0,401.0,15.5,0,0,9.35
-Jha'Quan Jackson,WR,2024,182,6,Tulane,0,1931.0,1.3,0,0,5.34
-Malik Washington,WR,2024,184,6,Virginia,0,704.0,10.5,0,0,8.63
-Johnny Wilson,WR,2024,185,6,Florida St.,0,977.0,7.5,0,0,9.7
-Casey Washington,WR,2024,187,6,Illinois,0,1670.0,2.4000000000000004,0,0,7.15
+Jalen McMillan,WR,2024,92,3,Washington,0,51.0,141.5,0,0,8.67
+Luke McCaffrey,WR,2024,100,3,Rice,0,127.0,34.8,0,0,9.44
+Troy Franklin,WR,2024,102,4,Oregon,0,92.0,80.5,0,0,9.02
+Javon Baker,WR,2024,110,4,Central Florida,0,202.0,2.2,0,0,7.84
+Devontez Walker,WR,2024,113,4,North Carolina,0,172.0,9.1,0,0,9.76
+Jacob Cowing,WR,2024,135,4,Arizona,0,165.0,12.7,0,0,6.28
+Anthony Gould,WR,2024,142,5,Oregon St.,0,195.0,3.3000000000000003,0,0,8.87
+Ainias Smith,WR,2024,152,5,Texas A&M,0,147.0,17.7,0,0,7.36
+Jamari Thrash,WR,2024,156,5,Louisville,0,189.0,5.2,0,0,6.77
+Bub Means,WR,2024,170,5,Pittsburgh,0,137.0,26.8,0,0,9.35
+Jha'Quan Jackson,WR,2024,182,6,Tulane,0,213.0,1.3,0,0,5.34
+Malik Washington,WR,2024,184,6,Virginia,0,111.0,56.800000000000004,0,0,8.63
+Johnny Wilson,WR,2024,185,6,Florida St.,0,155.0,14.8,0,0,9.7
+Casey Washington,WR,2024,187,6,Illinois,0,201.0,2.4000000000000004,0,0,7.15
 Tejhaun Palmer,WR,2024,191,6,Ala-Birmingham,0,999.0,0.0,0,0,9.57
-Jordan Whittington,WR,2024,213,6,Texas,0,382.0,15.9,0,0,
-Ryan Flournoy,WR,2024,216,6,SE Missouri St.,0,1026.0,7.1000000000000005,0,0,9.89
+Jordan Whittington,WR,2024,213,6,Texas,0,113.0,54.7,0,0,
+Ryan Flournoy,WR,2024,216,6,SE Missouri St.,0,146.0,18.200000000000003,0,0,9.89
 Brenden Rice,WR,2024,225,7,USC,0,999.0,0.0,0,0,7.17
-Devaughn Vele,WR,2024,235,7,Utah,0,423.0,15.0,0,0,8.47
+Devaughn Vele,WR,2024,235,7,Utah,0,78.0,106.5,0,0,8.47
 Tahj Washington,WR,2024,241,7,USC,0,999.0,0.0,0,0,5.13
 Cornelius Johnson,WR,2024,253,7,Michigan,0,999.0,0.0,0,0,9.46

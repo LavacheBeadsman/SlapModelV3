@@ -88,21 +88,26 @@ wr_stats['fantasy_points_ppr'] = (
     wr_stats['rushing_fumbles_lost'].fillna(0) * 2
 )
 
-# Get best season for each player
-best_seasons = wr_stats.groupby('player_display_name').agg({
-    'fantasy_points_ppr': 'max',
-    'season': lambda x: x.loc[wr_stats.loc[x.index, 'fantasy_points_ppr'].idxmax()]
+# STEP 1: Aggregate per player+season to get SEASON TOTALS (not single game)
+season_totals = wr_stats.groupby(['player_display_name', 'season']).agg({
+    'fantasy_points_ppr': 'sum'
 }).reset_index()
-best_seasons.columns = ['player_name', 'best_ppr', 'best_season']
 
-# Get season rankings to determine Hit24
-def get_season_rank(group):
-    return group.rank(ascending=False, method='min')
+print(f"Calculated season totals for {len(season_totals)} player-seasons")
 
-wr_stats['season_rank'] = wr_stats.groupby('season')['fantasy_points_ppr'].transform(get_season_rank)
+# STEP 2: Get best season for each player
+best_seasons = season_totals.loc[season_totals.groupby('player_display_name')['fantasy_points_ppr'].idxmax()]
+best_seasons = best_seasons.rename(columns={
+    'player_display_name': 'player_name',
+    'fantasy_points_ppr': 'best_ppr',
+    'season': 'best_season'
+})
+
+# STEP 3: Get season rankings to determine Hit24 (rank by season total, not single game)
+season_totals['season_rank'] = season_totals.groupby('season')['fantasy_points_ppr'].rank(ascending=False, method='min')
 
 # Check if player ever finished top-24
-hit24 = wr_stats.groupby('player_display_name').agg({
+hit24 = season_totals.groupby('player_display_name').agg({
     'season_rank': 'min'  # Best (lowest) rank
 }).reset_index()
 hit24.columns = ['player_name', 'best_rank']
