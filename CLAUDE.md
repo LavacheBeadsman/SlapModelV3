@@ -35,16 +35,30 @@ prod = rec_yards / team_pass_attempts
 breakout = normalize(prod * age_weight)
 ```
 
-**For WRs (Dominator Rating):**
+**For WRs (Breakout Age):**
 ```
-dominator = rec_yards / team_receiving_yards
-breakout = normalize(dominator * age_weight)
+breakout = age_score(breakout_age)
 ```
+Where `breakout_age` = age when player first hit 20%+ Dominator Rating
+
+Age Score mapping:
+- Age 18: 100 (freshman breakout = elite)
+- Age 19: 90
+- Age 20: 75
+- Age 21: 60
+- Age 22: 45
+- Age 23: 30
+- Never hit 20%: 25
+
+**Why Age-Only for WRs?**
+- Dominator Rating alone had weak correlation (r=0.175) with NFL success
+- High dominator often came from weak competition (small schools, late-round busts)
+- Breakout Age has stronger correlation (r=0.395) - younger breakouts predict NFL success
+- Draft capital already prices in production context (teammates, transfers, competition)
+- This avoids penalizing players like Jaylen Waddle (competed with 3 future 1st-rounders)
 
 - RBs use yards per team pass attempt (measures receiving share of passing game)
-- WRs use Dominator Rating (% of team receiving yards captured)
-- Dominator Rating is more predictive for WRs because it accounts for team passing efficiency
-- Younger players get age bonus, older players get penalty
+- Younger players breaking out earlier signals higher upside
 - Scaled 0-100 where 50 = average for that position
 
 ### 3. Athletic Modifier
@@ -73,12 +87,19 @@ athletic = normalize(speed_score(forty_time, weight))
    - Industry standard, rewards players who are fast for their size
 
 4. **Position Handling**: Position-Split Normalization
-   - RBs use: Receiving yards ÷ Team pass attempts
-   - WRs use: Dominator Rating (Receiving yards ÷ Team receiving yards)
+   - RBs use: Receiving yards ÷ Team pass attempts × age weight
+   - WRs use: Breakout Age scoring (age when first hit 20%+ dominator)
    - RBs are normalized against other RBs only (50 = average RB)
    - WRs are normalized against other WRs only (50 = average WR)
    - This prevents RBs from being penalized for lower receiving yards than WRs
    - Outputs separate RB and WR rankings
+
+5. **WR Breakout Age Methodology** (updated after backtest analysis)
+   - Originally tested Dominator Rating but it had weak signal (r=0.175)
+   - Dominator penalized players with elite teammates (Waddle at Alabama)
+   - Breakout Age (when player first hit 20% dominator) has stronger signal (r=0.395)
+   - Logistic regression coefficient is positive (+0.388), confirming predictive value
+   - Draft capital already accounts for context (teammates, transfers, competition level)
 
 ## Technical Preferences
 
@@ -112,9 +133,12 @@ For each prospect, we'll need:
 - Draft pick (actual or projected)
 - Receiving yards (or rushing for RBs)
 - Team pass attempts (for RBs)
-- Team receiving yards (for WRs - used for Dominator Rating)
 - Age (at time of production)
 - Weight, 40-yard dash time
+
+**For WRs specifically:**
+- Breakout age (age when first hit 20%+ dominator rating)
+- Requires multi-season college data to calculate
 
 ## Commands
 
@@ -124,6 +148,9 @@ python src/calculate_slap.py
 
 # Refresh data from APIs (birthdates, stats)
 python src/fill_missing_ages.py
+
+# Update WR breakout scores with age-only approach
+python src/update_wr_breakout.py
 ```
 
 ## Output Files
