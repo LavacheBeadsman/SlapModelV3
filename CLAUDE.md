@@ -27,19 +27,17 @@ dc = normalize(1 / sqrt(draft_pick))
 - Uses actual draft pick OR expected pick from consensus mock drafts (for pre-draft analysis)
 - Higher picks = higher scores (pick 1 is best)
 
-### 2. Breakout Score (Production Core)
+### 2. Breakout Age Score
 
-**For RBs:**
-```
-prod = rec_yards / team_pass_attempts
-breakout = normalize(prod * age_weight)
-```
-
-**For WRs (Breakout Age):**
+**For BOTH WRs and RBs:**
 ```
 breakout = age_score(breakout_age)
 ```
-Where `breakout_age` = age when player first hit 20%+ Dominator Rating
+Where `breakout_age` = age when player first had significant college production
+
+Note: RB breakout age has weaker predictive value than WR breakout age (r=-0.01 vs r=0.39),
+but is included for consistency and content value. Many elite RBs broke out late
+(Kamara, Henry, David Johnson at age 21).
 
 Age Score mapping:
 - Age 18: 100 (freshman breakout = elite)
@@ -81,10 +79,14 @@ athletic = normalize(RAS)
 
 ## Decisions Made
 
-1. **Component Weights**: 50% Draft Capital / 35% Breakout / 15% Athletic
-   - Optimized via backtest on 2020-2024 draft classes (207 players)
-   - Draft capital is the strongest predictor (50%), breakout adds value for finding sleepers (35%), athleticism is a modest tiebreaker (15%)
-   - Spearman correlation: 0.51 | Top-24 hit rate: 56%
+1. **Component Weights**: 85% Draft Capital / 10% Breakout Age / 5% RAS
+   - Updated after rigorous backtest analysis (2015-2024, 500+ players)
+   - Draft capital is the dominant predictor (~85% of signal)
+   - Breakout Age adds marginal signal (10%) - younger breakouts slightly predict success
+   - RAS adds content value (5%) - small but non-zero effect, useful for discussions
+   - Statistical reality: RAS is NOT significant after controlling for DC (p=0.42 for RBs, p=0.99 for WRs)
+   - Practical value: Small edges compound, and audience cares about athleticism as a talking point
+   - Spearman correlation: ~0.50 | Top-half hit rate: 33% WR, 46% RB
 
 2. **Age Weight Function**: Moderate adjustment
    - Age 19: 1.20x (20% bonus)
@@ -190,11 +192,15 @@ For each prospect, we'll need:
 ## Commands
 
 ```bash
-# Calculate WR SLAP scores with MNAR-aware RAS handling
-python src/calculate_wr_slap.py
+# Calculate SLAP scores for both WRs and RBs (backtest 2015-2024)
+python src/calculate_slap_unified.py
 
-# Calculate 2026 WR class projections
-python src/calculate_2026_wr_slap.py
+# Calculate 2026 prospect class SLAP scores
+python src/calculate_2026_slap.py
+
+# Legacy commands (superseded by unified calculator)
+# python src/calculate_wr_slap.py
+# python src/calculate_2026_wr_slap.py
 
 # Update WR breakout scores with age-only approach
 python src/update_wr_breakout.py
@@ -205,8 +211,15 @@ python src/fill_missing_ages.py
 
 ## Output Files
 
-- `output/wr_slap_threshold_based.csv` - WR SLAP scores (2020-2024 backtest)
-- `output/wr_slap_2026_projections.csv` - 2026 WR class projections
-- `output/slap_scores_rb.csv` - RB rankings
-- `output/slap_scores_wr.csv` - WR rankings
-- `output/slap_scores.csv` - Combined rankings
+### V3 Output (Current - 85/10/5 weights)
+- `output/slap_scores_wr_v3.csv` - WR SLAP scores (2015-2024 backtest)
+- `output/slap_scores_rb_v3.csv` - RB SLAP scores (2015-2024 backtest)
+- `output/slap_scores_combined_v3.csv` - Combined WR+RB rankings
+- `output/slap_2026_wr.csv` - 2026 WR class projections
+- `output/slap_2026_rb.csv` - 2026 RB class projections
+- `output/slap_2026_combined.csv` - 2026 combined projections
+
+### Legacy Output (superseded)
+- `output/wr_slap_threshold_based.csv` - Old WR SLAP scores
+- `output/slap_scores_rb.csv` - Old RB rankings
+- `output/slap_scores_wr.csv` - Old WR rankings
