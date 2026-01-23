@@ -28,14 +28,24 @@ dc = normalize(1 / sqrt(draft_pick))
 - Higher picks = higher scores (pick 1 is best)
 
 ### 2. Breakout Score (Production Core)
+
+**For RBs:**
 ```
 prod = rec_yards / team_pass_attempts
-prod_age_adj = prod * age_weight(age)
-breakout = normalize(prod_age_adj)
+breakout = normalize(prod * age_weight)
 ```
-- Measures production relative to team opportunity
-- Rewards younger players who produce
-- Scaled 0-100 where 50 = average
+
+**For WRs (Dominator Rating):**
+```
+dominator = rec_yards / team_receiving_yards
+breakout = normalize(dominator * age_weight)
+```
+
+- RBs use yards per team pass attempt (measures receiving share of passing game)
+- WRs use Dominator Rating (% of team receiving yards captured)
+- Dominator Rating is more predictive for WRs because it accounts for team passing efficiency
+- Younger players get age bonus, older players get penalty
+- Scaled 0-100 where 50 = average for that position
 
 ### 3. Athletic Modifier
 ```
@@ -63,7 +73,8 @@ athletic = normalize(speed_score(forty_time, weight))
    - Industry standard, rewards players who are fast for their size
 
 4. **Position Handling**: Position-Split Normalization
-   - Both use: Receiving yards ÷ Team pass attempts
+   - RBs use: Receiving yards ÷ Team pass attempts
+   - WRs use: Dominator Rating (Receiving yards ÷ Team receiving yards)
    - RBs are normalized against other RBs only (50 = average RB)
    - WRs are normalized against other WRs only (50 = average WR)
    - This prevents RBs from being penalized for lower receiving yards than WRs
@@ -100,7 +111,8 @@ For each prospect, we'll need:
 - Name, position, school
 - Draft pick (actual or projected)
 - Receiving yards (or rushing for RBs)
-- Team pass attempts
+- Team pass attempts (for RBs)
+- Team receiving yards (for WRs - used for Dominator Rating)
 - Age (at time of production)
 - Weight, 40-yard dash time
 

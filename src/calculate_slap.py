@@ -6,9 +6,11 @@ This scoring script calculates scores SEPARATELY for RBs and WRs:
 - WRs are compared against other WRs (50 = average WR)
 
 Components:
-1. Draft Capital (45%) - Higher draft picks get higher scores
+1. Draft Capital (50%) - Higher draft picks get higher scores
 2. Breakout Score (35%) - Production relative to opportunity, adjusted for age
-3. Athletic Modifier (20%) - Size + Speed (placeholder until Combine data)
+   - RBs: rec_yards / team_pass_attempts * age_weight
+   - WRs: Dominator Rating (rec_yards / team_rec_yards) * age_weight
+3. Athletic Modifier (15%) - Barnwell Speed Score
 
 The output is a 0-100 score for each prospect, plus a "delta" showing how
 much the model disagrees with their draft position.
@@ -23,10 +25,10 @@ import os
 # CONFIGURATION - These match the decisions in CLAUDE.md
 # =============================================================================
 
-# Component weights (must add to 1.0)
-WEIGHT_DRAFT_CAPITAL = 0.45
+# Component weights (must add to 1.0) - optimized via backtest on 2020-2024 classes
+WEIGHT_DRAFT_CAPITAL = 0.50
 WEIGHT_BREAKOUT = 0.35
-WEIGHT_ATHLETIC = 0.20
+WEIGHT_ATHLETIC = 0.15
 
 # Age weight multipliers (moderate adjustment)
 AGE_WEIGHTS = {
@@ -67,9 +69,9 @@ def calculate_draft_capital_raw(draft_pick):
     return 1 / math.sqrt(draft_pick)
 
 
-def calculate_breakout_raw(rec_yards, team_pass_attempts, age):
+def calculate_breakout_raw_rb(rec_yards, team_pass_attempts, age):
     """
-    Calculate age-adjusted production score.
+    Calculate age-adjusted production score for RBs.
 
     Formula: (rec_yards / team_pass_attempts) * age_weight
 
@@ -80,19 +82,45 @@ def calculate_breakout_raw(rec_yards, team_pass_attempts, age):
 
     Returns None if any data is missing.
     """
-    # Check for missing data
     if rec_yards is None or team_pass_attempts is None or age is None:
         return None
     if team_pass_attempts <= 0:
         return None
 
-    # Calculate raw production rate
     production_rate = rec_yards / team_pass_attempts
-
-    # Apply age adjustment
-    age_weight = AGE_WEIGHTS.get(age, 0.70)  # Default to 0.70 for very old players
+    age_weight = AGE_WEIGHTS.get(age, 0.70)
 
     return production_rate * age_weight
+
+
+def calculate_breakout_raw_wr(rec_yards, team_rec_yards, team_pass_attempts, age):
+    """
+    Calculate age-adjusted production score for WRs using Dominator Rating.
+
+    Formula: (rec_yards / team_rec_yards) * age_weight
+
+    Dominator Rating measures what % of team receiving yards the player captured.
+    This is more predictive than yards/PA for WRs because it accounts for team
+    passing efficiency (completion rate, yards per attempt).
+
+    Falls back to yards/PA if team_rec_yards is not available.
+    """
+    if rec_yards is None or age is None:
+        return None
+
+    age_weight = AGE_WEIGHTS.get(age, 0.70)
+
+    # Prefer Dominator Rating if team receiving yards available
+    if team_rec_yards is not None and team_rec_yards > 0:
+        dominator = rec_yards / team_rec_yards
+        return dominator * age_weight
+
+    # Fall back to yards/PA
+    if team_pass_attempts is not None and team_pass_attempts > 0:
+        production_rate = rec_yards / team_pass_attempts
+        return production_rate * age_weight
+
+    return None
 
 
 def calculate_athletic_raw(weight, forty_time):
@@ -210,12 +238,19 @@ def calculate_position_group(prospects, position_name):
         draft_pick = safe_int(p.get('projected_pick'))
         rec_yards = safe_int(p.get('rec_yards'))
         team_pass = safe_int(p.get('team_pass_attempts'))
+        team_rec = safe_int(p.get('team_rec_yards'))  # For WR Dominator Rating
         age = safe_int(p.get('age'))
         weight = safe_int(p.get('weight'))
         forty = safe_float(p.get('forty_time'))  # Not available yet
 
         draft_raw.append(calculate_draft_capital_raw(draft_pick))
-        breakout_raw.append(calculate_breakout_raw(rec_yards, team_pass, age))
+
+        # Use position-specific breakout calculation
+        if position_name == 'WR':
+            breakout_raw.append(calculate_breakout_raw_wr(rec_yards, team_rec, team_pass, age))
+        else:
+            breakout_raw.append(calculate_breakout_raw_rb(rec_yards, team_pass, age))
+
         athletic_raw.append(calculate_athletic_raw(weight, forty))
 
     # Step 2: Normalize WITHIN this position group
