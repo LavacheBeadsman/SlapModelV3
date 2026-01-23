@@ -77,7 +77,7 @@ athletic = normalize(RAS)
 - Uses Relative Athletic Score (RAS) from Kent Lee Platte (0-10 scale)
 - Composite metric combining 40-yard dash, vertical, broad jump, 3-cone, shuttle, and bench
 - Data source: `data/WR_RAS_2020_to_2025.csv`
-- For missing RAS: use position average (neutral assumption)
+- For missing RAS: threshold-based handling (see Decision #6)
 
 ## Decisions Made
 
@@ -113,6 +113,39 @@ athletic = normalize(RAS)
    - Breakout Age (when player first hit 20% dominator) has stronger signal (r=0.395)
    - Logistic regression coefficient is positive (+0.388), confirming predictive value
    - Draft capital already accounts for context (teammates, transfers, competition level)
+
+6. **Missing Athletic Data Handling** (MNAR-aware approach)
+
+   Missing RAS data is NOT random - elite prospects skip workouts BECAUSE they're already valued.
+   This is "Missing Not At Random" (MNAR). Evidence from backtest:
+   - Round 1 WRs with missing RAS: 4 players, 100% hit rate (Waddle, Smith, London, Williams)
+   - Round 2-7 WRs with missing RAS: 16 players, 0% hit rate
+
+   **Threshold-based handling:**
+
+   ```
+   IF pick ≤ 32 AND RAS missing AND (breakout missing OR breakout ≤ 25):
+       # Elite opt-out with missing breakout (e.g., Waddle)
+       SLAP = DC × 0.85 + Avg_Breakout × 0.15
+       Status: "elite_optout_full"
+
+   ELSE IF pick ≤ 32 AND RAS missing:
+       # Elite opt-out with valid breakout
+       SLAP = DC × 0.588 + Breakout × 0.412
+       Status: "elite_optout"
+
+   ELSE IF RAS missing:
+       # Non-elite missing - conservative mean imputation
+       SLAP = DC × 0.50 + Breakout × 0.35 + Avg_RAS × 0.15
+       Status: "imputed_avg"
+
+   ELSE:
+       # Has RAS data - use full formula
+       SLAP = DC × 0.50 + Breakout × 0.35 + RAS × 0.15
+       Status: "observed"
+   ```
+
+   **Result**: Waddle SLAP improved from 70.3 to 98.8 (+28.5 points)
 
 ## Technical Preferences
 
@@ -157,18 +190,23 @@ For each prospect, we'll need:
 ## Commands
 
 ```bash
-# Calculate SLAP scores (outputs to output/ folder)
-python src/calculate_slap.py
+# Calculate WR SLAP scores with MNAR-aware RAS handling
+python src/calculate_wr_slap.py
 
-# Refresh data from APIs (birthdates, stats)
-python src/fill_missing_ages.py
+# Calculate 2026 WR class projections
+python src/calculate_2026_wr_slap.py
 
 # Update WR breakout scores with age-only approach
 python src/update_wr_breakout.py
+
+# Refresh data from APIs (birthdates, stats)
+python src/fill_missing_ages.py
 ```
 
 ## Output Files
 
+- `output/wr_slap_threshold_based.csv` - WR SLAP scores (2020-2024 backtest)
+- `output/wr_slap_2026_projections.csv` - 2026 WR class projections
 - `output/slap_scores_rb.csv` - RB rankings
 - `output/slap_scores_wr.csv` - WR rankings
 - `output/slap_scores.csv` - Combined rankings
