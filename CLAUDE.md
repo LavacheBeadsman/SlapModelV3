@@ -27,17 +27,13 @@ dc = normalize(1 / sqrt(draft_pick))
 - Uses actual draft pick OR expected pick from consensus mock drafts (for pre-draft analysis)
 - Higher picks = higher scores (pick 1 is best)
 
-### 2. Breakout Age Score
+### 2. Production Component (Position-Specific)
 
-**For BOTH WRs and RBs:**
+**For WRs: Breakout Age**
 ```
 breakout = age_score(breakout_age)
 ```
-Where `breakout_age` = age when player first had significant college production
-
-Note: RB breakout age has weaker predictive value than WR breakout age (r=-0.01 vs r=0.39),
-but is included for consistency and content value. Many elite RBs broke out late
-(Kamara, Henry, David Johnson at age 21).
+Where `breakout_age` = age when player first hit 20%+ dominator rating
 
 Age Score mapping:
 - Age 18: 100 (freshman breakout = elite)
@@ -48,16 +44,31 @@ Age Score mapping:
 - Age 23: 30
 - Never hit 20%: 25
 
-**Why Age-Only for WRs?**
+**Why Breakout Age for WRs?**
 - Dominator Rating alone had weak correlation (r=0.175) with NFL success
 - High dominator often came from weak competition (small schools, late-round busts)
 - Breakout Age has stronger correlation (r=0.395) - younger breakouts predict NFL success
 - Draft capital already prices in production context (teammates, transfers, competition)
 - This avoids penalizing players like Jaylen Waddle (competed with 3 future 1st-rounders)
 
-- RBs use yards per team pass attempt (measures receiving share of passing game)
-- Younger players breaking out earlier signals higher upside
-- Scaled 0-100 where 50 = average for that position
+**For RBs: Receiving Production Score**
+```
+production = (receiving_yards / team_pass_attempts) × age_weight
+```
+Where `age_weight` adjusts for when production occurred:
+- Age 19: 1.20x (20% bonus)
+- Age 20: 1.10x (10% bonus)
+- Age 21: 1.00x (baseline)
+- Age 22: 0.90x (10% penalty)
+- Age 23+: 0.80x (20% penalty)
+
+**Why Receiving Production for RBs (not Breakout Age)?**
+- Backtest analysis (2015-2024, 188 RBs) proved receiving production is better:
+  - Production metric: r=0.30, **adds significant value beyond DC (p=0.004)**
+  - Breakout age: r=0.10, **does NOT add value (p=0.80)**
+- Receiving yards / team pass attempts measures a RB's share of the passing game
+- Age-weighting rewards younger players who caught passes early
+- Normalized 0-100 where 50 = average RB
 
 ### 3. Athletic Modifier
 
@@ -79,21 +90,24 @@ athletic = normalize(RAS)
 
 ## Decisions Made
 
-1. **Component Weights**: 85% Draft Capital / 10% Breakout Age / 5% RAS
+1. **Component Weights**: 85% Draft Capital / 10% Production / 5% Athletic
    - Updated after rigorous backtest analysis (2015-2024, 500+ players)
    - Draft capital is the dominant predictor (~85% of signal)
-   - Breakout Age adds marginal signal (10%) - younger breakouts slightly predict success
-   - RAS adds content value (5%) - small but non-zero effect, useful for discussions
+   - Production component (10%):
+     - WRs: Breakout Age (r=0.395, adds marginal value)
+     - RBs: Receiving Production (r=0.30, adds significant value p=0.004)
+   - Athletic component adds content value (5%) - small but non-zero effect, useful for discussions
    - Statistical reality: RAS is NOT significant after controlling for DC (p=0.42 for RBs, p=0.99 for WRs)
    - Practical value: Small edges compound, and audience cares about athleticism as a talking point
    - Spearman correlation: ~0.50 | Top-half hit rate: 33% WR, 46% RB
 
-2. **Age Weight Function**: Moderate adjustment
-   - Age 19: 1.20x (20% bonus)
+2. **Age Weight Function (RB Production)**: Moderate adjustment
+   - Used to weight RB receiving production by college age
+   - Age 19: 1.20x (20% bonus for early production)
    - Age 20: 1.10x (10% bonus)
    - Age 21: 1.00x (baseline)
    - Age 22: 0.90x (10% penalty)
-   - Age 23: 0.80x (20% penalty)
+   - Age 23+: 0.80x (20% penalty)
 
 3. **Athletic Score Function**: Position-specific
    - RBs: Speed Score (Barnwell formula) = (Weight × 200) / (40 time)^4
@@ -101,12 +115,11 @@ athletic = normalize(RAS)
    - RAS tested: Young+HighRAS has 25% hit rate vs 18.2% for Young+LowRAS
    - Combination of breakout age + RAS slightly improves signal (r=0.411 vs r=0.388)
 
-4. **Position Handling**: Position-Split Normalization
-   - RBs use: Receiving yards ÷ Team pass attempts × age weight
-   - WRs use: Breakout Age scoring (age when first hit 20%+ dominator)
-   - RBs are normalized against other RBs only (50 = average RB)
-   - WRs are normalized against other WRs only (50 = average WR)
-   - This prevents RBs from being penalized for lower receiving yards than WRs
+4. **Position Handling**: Position-Split Production Metrics
+   - **RBs**: Receiving yards ÷ Team pass attempts × age weight (validated: p=0.004)
+   - **WRs**: Breakout Age scoring (age when first hit 20%+ dominator)
+   - Both metrics normalized 0-100 within position (50 = average)
+   - Data source for RB receiving: CFBD API (193/208 RBs = 92.8% coverage)
    - Outputs separate RB and WR rankings
 
 5. **WR Breakout Age Methodology** (updated after backtest analysis)
@@ -176,50 +189,58 @@ SlapModelV3/
 
 ## Data Requirements
 
-For each prospect, we'll need:
+**For all prospects:**
 - Name, position, school
 - Draft pick (actual or projected)
-- Receiving yards (or rushing for RBs)
-- Team pass attempts (for RBs)
-- Age (at time of production)
-- Weight, 40-yard dash time
+- Age at draft
+- Weight, 40-yard dash time (for athletic score)
 
 **For WRs specifically:**
 - Breakout age (age when first hit 20%+ dominator rating)
 - Requires multi-season college data to calculate
 - RAS (Relative Athletic Score) from combine/pro day metrics
 
+**For RBs specifically:**
+- Receiving yards (best college season)
+- Team pass attempts (same season)
+- Data source: CFBD API (92.8% coverage for 2015-2024 backtest)
+
 ## Commands
 
 ```bash
-# Calculate SLAP scores for both WRs and RBs (backtest 2015-2024)
-python src/calculate_slap_unified.py
+# Generate SLAP scores with corrected RB production metric (backtest 2015-2024)
+python src/generate_slap_v3_fixed.py
+
+# Fetch RB receiving stats from CFBD API
+python src/fetch_rb_receiving_stats.py
 
 # Calculate 2026 prospect class SLAP scores
 python src/calculate_2026_slap.py
-
-# Legacy commands (superseded by unified calculator)
-# python src/calculate_wr_slap.py
-# python src/calculate_2026_wr_slap.py
 
 # Update WR breakout scores with age-only approach
 python src/update_wr_breakout.py
 
 # Refresh data from APIs (birthdates, stats)
 python src/fill_missing_ages.py
+
+# Legacy commands (superseded)
+# python src/calculate_slap_unified.py
+# python src/calculate_wr_slap.py
 ```
 
 ## Output Files
 
-### V3 Output (Current - 85/10/5 weights)
-- `output/slap_scores_wr_v3.csv` - WR SLAP scores (2015-2024 backtest)
-- `output/slap_scores_rb_v3.csv` - RB SLAP scores (2015-2024 backtest)
-- `output/slap_scores_combined_v3.csv` - Combined WR+RB rankings
+### V3 Output (Current - 85/10/5 weights, corrected RB metric)
+- `output/slap_v3_fixed_all_players.csv` - All SLAP scores with corrected RB production metric
 - `output/slap_2026_wr.csv` - 2026 WR class projections
 - `output/slap_2026_rb.csv` - 2026 RB class projections
 - `output/slap_2026_combined.csv` - 2026 combined projections
 
+### Data Files
+- `data/rb_backtest_with_receiving.csv` - RB backtest data with receiving stats from CFBD
+- `data/rb_production_analysis.csv` - RB production metric analysis results
+
 ### Legacy Output (superseded)
-- `output/wr_slap_threshold_based.csv` - Old WR SLAP scores
-- `output/slap_scores_rb.csv` - Old RB rankings
-- `output/slap_scores_wr.csv` - Old WR rankings
+- `output/slap_scores_wr_v3.csv` - Old WR SLAP scores
+- `output/slap_scores_rb_v3.csv` - Old RB SLAP scores (used breakout age, not production)
+- `output/slap_scores_combined_v3.csv` - Old combined rankings
