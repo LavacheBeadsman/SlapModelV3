@@ -132,22 +132,24 @@ RB_BREAKOUT_AGES = {
     # 2015 class
     'Todd Gurley': 19, 'Melvin Gordon': 20, 'David Johnson': 21,
     'Tevin Coleman': 20, 'Duke Johnson': 18, 'T.J. Yeldon': 18,
-    'Ameer Abdullah': 20, 'Jay Ajayi': 20, 'Mike Davis': 19,
+    'Ameer Abdullah': 20, 'Jay Ajayi': 20, 'Mike Davis': 19, 'Matt Jones': 21,
     # 2016 class
     'Ezekiel Elliott': 19, 'Derrick Henry': 21, 'Kenyan Drake': 19,
     'Jordan Howard': 20, 'Devontae Booker': 21, 'Paul Perkins': 18,
+    'C.J. Prosise': 21,
     # 2017 class
     'Christian McCaffrey': 19, 'Leonard Fournette': 18, 'Dalvin Cook': 18,
     'Joe Mixon': 19, 'Alvin Kamara': 21, 'Kareem Hunt': 19,
     'Aaron Jones': 19, 'James Conner': 20, 'Samaje Perine': 18, 'Marlon Mack': 19,
+    "D'Onta Foreman": 20,
     # 2018 class
     'Saquon Barkley': 18, 'Nick Chubb': 18, 'Sony Michel': 18,
-    'Ronald Jones': 18, 'Rashaad Penny': 21, 'Kerryon Johnson': 20,
-    'Royce Freeman': 18, 'Nyheim Hines': 20,
+    'Ronald Jones': 18, 'Ronald Jones II': 18, 'Rashaad Penny': 21, 'Kerryon Johnson': 20,
+    'Royce Freeman': 18, 'Nyheim Hines': 20, 'Derrius Guice': 19,
     # 2019 class
     'Josh Jacobs': 20, 'Miles Sanders': 21, 'David Montgomery': 19,
     'Darrell Henderson': 20, 'Devin Singletary': 19, 'Damien Harris': 18,
-    'Justice Hill': 18, 'Tony Pollard': 20,
+    'Justice Hill': 18, 'Tony Pollard': 20, 'Alexander Mattison': 19,
     # 2020 class
     'Clyde Edwards-Helaire': 21, "D'Andre Swift": 19, 'Jonathan Taylor': 18,
     'Cam Akers': 18, 'J.K. Dobbins': 18, 'Zack Moss': 19,
@@ -160,7 +162,7 @@ RB_BREAKOUT_AGES = {
     'Breece Hall': 19, 'Kenneth Walker III': 21, 'James Cook': 21,
     'Rachaad White': 22, 'Brian Robinson Jr.': 22, 'Dameon Pierce': 21,
     'Isiah Pacheco': 19, 'Kyren Williams': 19, 'Tyler Allgeier': 21,
-    'Jerome Ford': 21, 'Zamir White': 20,
+    'Jerome Ford': 21, 'Zamir White': 20, 'Tyrion Davis-Price': 21,
     # 2023 class
     'Bijan Robinson': 19, 'Jahmyr Gibbs': 19, 'Zach Charbonnet': 18,
     "De'Von Achane": 20, 'Tank Bigsby': 18, 'Tyjae Spears': 21,
@@ -168,7 +170,7 @@ RB_BREAKOUT_AGES = {
     'Israel Abanikanda': 21, 'Eric Gray': 18, 'Sean Tucker': 18,
     'Deuce Vaughn': 18, 'Chris Rodriguez': 19, 'DeWayne McBride': 20,
     # 2024 class
-    'Jonathan Brooks': 20, 'Trey Benson': 21, 'Blake Corum': 21,
+    'Jonathan Brooks': 20, 'Jonathon Brooks': 20, 'Trey Benson': 21, 'Blake Corum': 21,
     'MarShawn Lloyd': 21, 'Jaylen Wright': 20,
     'Ray Davis': 23, 'Braelon Allen': 19, 'Audric Estime': 20,
     'Tyrone Tracy Jr.': 22, 'Isaac Guerendo': 22, 'Kimani Vidal': 21,
