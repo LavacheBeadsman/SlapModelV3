@@ -70,6 +70,14 @@ Where `age_weight` adjusts for when production occurred:
 - Age-weighting rewards younger players who caught passes early
 - Normalized 0-100 where 50 = average RB
 
+**CRITICAL: Season Selection for RB Production**
+- **ALWAYS use FINAL college season** (draft_year - 1)
+- This matches the backtest methodology that validated the metric
+- For 2026 draft class: use 2025 college season
+- For 2025 draft class: use 2024 college season
+- Do NOT use "best season" - this was not validated and inflates scores
+- Exception: If player has no final season data (injury, transfer mid-season), use most recent available season and flag as "no_final_season_data"
+
 ### 3. Athletic Modifier
 
 **For RBs:**
@@ -161,6 +169,30 @@ athletic = normalize(RAS)
    ```
 
    **Result**: Waddle SLAP improved from 70.3 to 98.8 (+28.5 points)
+
+7. **Season Selection for RB Production** (CRITICAL for consistency)
+   - **ALWAYS use FINAL college season** (draft_year - 1)
+   - Backtest validated using final season only - do NOT use "best season"
+   - Using "best season" inflates scores and creates methodological inconsistency
+
+   **Season Mapping:**
+   | Draft Year | College Season to Use |
+   |------------|----------------------|
+   | 2026       | 2025                 |
+   | 2025       | 2024                 |
+   | 2024       | 2023                 |
+   | etc.       | draft_year - 1       |
+
+   **Exception Handling:**
+   - If player has NO final season data (injury, redshirt, mid-season transfer):
+     - Use most recent available season
+     - Flag status as "no_final_season_data"
+     - Document the exception
+
+   **Why This Matters:**
+   - Backtest showed production predicts NFL success using final season
+   - Using "best season" cherry-picks data not validated as predictive
+   - 19 players had inflated scores before this fix (avg +12.6 production, +1.26 SLAP)
 
 ## Technical Preferences
 
