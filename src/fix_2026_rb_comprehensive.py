@@ -137,7 +137,7 @@ def names_match(name1, name2):
     return False
 
 
-def get_all_seasons_data(player_name, schools_to_check, years=[2024, 2023, 2022, 2021]):
+def get_all_seasons_data(player_name, schools_to_check, years=[2025, 2024, 2023, 2022, 2021]):
     """Get all seasons of receiving data for a player, checking multiple schools"""
     all_seasons = []
 
