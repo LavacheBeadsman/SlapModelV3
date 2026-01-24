@@ -98,16 +98,30 @@ athletic = normalize(RAS)
 
 ## Decisions Made
 
-1. **Component Weights**: 85% Draft Capital / 10% Production / 5% Athletic
-   - Updated after rigorous backtest analysis (2015-2024, 500+ players)
-   - Draft capital is the dominant predictor (~85% of signal)
-   - Production component (10%):
-     - WRs: Breakout Age (r=0.395, adds marginal value)
-     - RBs: Receiving Production (r=0.30, adds significant value p=0.004)
-   - Athletic component adds content value (5%) - small but non-zero effect, useful for discussions
-   - Statistical reality: RAS is NOT significant after controlling for DC (p=0.42 for RBs, p=0.99 for WRs)
-   - Practical value: Small edges compound, and audience cares about athleticism as a talking point
-   - Spearman correlation: ~0.50 | Top-half hit rate: 33% WR, 46% RB
+1. **Component Weights**: 50% Draft Capital / 35% Production / 15% Athletic
+   - **Updated for edge-finding** (Jan 2026) - previous weights (85/10/5) created deltas too small to matter
+   - New weights create meaningful deltas (~8-12 points avg vs ~3-4 points with old weights)
+   - Tested 6 weight combinations against backtest data (2015-2024, 500+ players):
+
+   **Why 50/35/15?**
+   - **Best for edge finding**: 59.3% bust accuracy for RBs flagged with negative delta
+   - **Meaningful differentiation**: Allows model to have "takes" that disagree with scouts
+   - **Acceptable accuracy tradeoff**: Correlation only drops ~0.1 from DC-only baseline
+
+   **Tradeoff Analysis:**
+   | Weights | Avg |Delta| | SLAP-PPG r | Sleeper Hit% | Bust Miss% |
+   |---------|-------------|------------|--------------|------------|
+   | 85/10/5 (old) | 3-4 pts | 0.54 WR / 0.62 RB | 5% WR / 24% RB | 0% |
+   | 50/35/15 (new) | 8-12 pts | 0.49 WR / 0.52 RB | 14% WR / 30% RB | 38% WR / 59% RB |
+
+   **Production component (35%)**:
+   - WRs: Breakout Age (r=0.395 correlation with NFL success)
+   - RBs: Receiving Production (r=0.30, p=0.004 - statistically significant)
+
+   **Athletic component (15%)**:
+   - RAS for WRs, Speed Score for RBs
+   - Not statistically significant alone, but improves edge identification
+   - Valuable for content discussions
 
 2. **Age Weight Function (RB Production)**: Moderate adjustment
    - Used to weight RB receiving production by college age
@@ -147,28 +161,20 @@ athletic = normalize(RAS)
    **Threshold-based handling:**
 
    ```
-   IF pick ≤ 32 AND RAS missing AND (breakout missing OR breakout ≤ 25):
-       # Elite opt-out with missing breakout (e.g., Waddle)
-       SLAP = DC × 0.85 + Avg_Breakout × 0.15
-       Status: "elite_optout_full"
-
-   ELSE IF pick ≤ 32 AND RAS missing:
-       # Elite opt-out with valid breakout
-       SLAP = DC × 0.588 + Breakout × 0.412
-       Status: "elite_optout"
-
-   ELSE IF RAS missing:
-       # Non-elite missing - conservative mean imputation
-       SLAP = DC × 0.50 + Breakout × 0.35 + Avg_RAS × 0.15
-       Status: "imputed_avg"
+   IF RAS missing:
+       # Use position average for RAS
+       SLAP = DC × 0.50 + Production × 0.35 + Avg_RAS × 0.15
+       Status: "imputed"
 
    ELSE:
        # Has RAS data - use full formula
-       SLAP = DC × 0.50 + Breakout × 0.35 + RAS × 0.15
+       SLAP = DC × 0.50 + Production × 0.35 + RAS × 0.15
        Status: "observed"
    ```
 
-   **Result**: Waddle SLAP improved from 70.3 to 98.8 (+28.5 points)
+   **Note**: With 50/35/15 weights, elite opt-out handling is less critical since
+   Production (35%) now has significant weight. Elite prospects with missing RAS
+   still get fair scores from their strong DC + Production components.
 
 7. **Season Selection for RB Production** (CRITICAL for consistency)
    - **ALWAYS use FINAL college season** (draft_year - 1)
