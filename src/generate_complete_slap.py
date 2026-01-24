@@ -26,63 +26,56 @@ WEIGHT_BREAKOUT = 0.10
 WEIGHT_RAS = 0.05
 
 # ============================================================================
-# CORRECTED DC FORMULA: TIERED v2
+# CORRECTED DC FORMULA: GRADUAL CURVE
 # ============================================================================
-def dc_tiered_v2(pick):
+def dc_gradual(pick):
     """
-    Tiered DC formula with smooth interpolation within tiers.
+    Gradual DC formula using power function.
 
-    Goals achieved:
-    - Picks 1-5: 95-100 (elite picks nearly equal)
-    - Pick 10: ~88 (top 10 all strong)
-    - Pick 32: ~70 (end of round 1)
-    - Pick 100: ~35 (day 3)
+    DC = 100 - 2.40 × (pick^0.62 - 1)
+
+    This produces a smooth, gradual curve that:
+    - Keeps Round 1 picks close together (spread of ~18 points)
+    - Accelerates decay in later rounds where outcomes diverge more
+
+    Key values:
+    - Pick 1: 100.0
+    - Pick 10: 92.4
+    - Pick 32: 81.8 (end of Round 1)
+    - Pick 64: 70.8 (end of Round 2)
+    - Pick 100: 60.7 (end of Round 3)
+    - Pick 150: 48.8
+    - Pick 200: 38.3
+    - Pick 262: 31.4
     """
-    tiers = [
-        (1, 5, 95, 100),      # Elite picks: 95-100
-        (6, 10, 88, 95),      # Rest of top 10: 88-95
-        (11, 20, 80, 88),     # Round 1 back half: 80-88
-        (21, 32, 70, 80),     # Early Round 2: 70-80
-        (33, 50, 58, 70),     # Rest of Round 2: 58-70
-        (51, 75, 45, 58),     # Round 3: 45-58
-        (76, 100, 35, 45),    # Round 3-4: 35-45
-        (101, 150, 20, 35),   # Day 3 early: 20-35
-        (151, 200, 10, 20),   # Day 3 mid: 10-20
-        (201, 262, 0, 10),    # Day 3 late: 0-10
-    ]
-
-    for start, end, score_low, score_high in tiers:
-        if start <= pick <= end:
-            # Linear interpolation within tier (higher pick = lower score)
-            pct = (pick - start) / (end - start)
-            return score_high - pct * (score_high - score_low)
-
-    # Handle edge cases
-    if pick < 1:
-        return 100
-    return 0
+    k, p = 2.40, 0.62
+    return max(0, min(100, 100 - k * (pick**p - 1)))
 
 print("\n" + "=" * 90)
-print("DC FORMULA: TIERED v2")
+print("DC FORMULA: GRADUAL CURVE")
+print("DC = 100 - 2.40 × (pick^0.62 - 1)")
 print("=" * 90)
 print("""
-Tiers:
-  Picks 1-5:    95-100  (Elite)
-  Picks 6-10:   88-95   (Top 10)
-  Picks 11-20:  80-88   (Round 1 back half)
-  Picks 21-32:  70-80   (Early Round 2)
-  Picks 33-50:  58-70   (Rest of Round 2)
-  Picks 51-75:  45-58   (Round 3)
-  Picks 76-100: 35-45   (Round 3-4)
-  Picks 101-150: 20-35  (Day 3 early)
-  Picks 151-200: 10-20  (Day 3 mid)
-  Picks 201-262: 0-10   (Day 3 late)
+Key properties:
+  - Pick 1:   100.0 (guaranteed)
+  - Pick 10:   92.4
+  - Pick 32:   81.8 (end of Round 1)
+  - Pick 64:   70.8 (end of Round 2)
+  - Pick 100:  60.7 (end of Round 3)
+  - Pick 150:  48.8 (mid Day 3)
+  - Pick 200:  38.3 (late Day 3)
+  - Pick 262:  31.4 (Mr. Irrelevant)
+
+Day spreads:
+  Day 1 (Rd 1, picks 1-32):    18.2 points (100.0 → 81.8)
+  Day 2 (Rd 2-3, picks 33-100): 21.1 points (81.8 → 60.7)
+  Day 3 (Rd 4-7, picks 101-262): 29.3 points (60.7 → 31.4)
 """)
 
 # Show sample DC scores
 print("Sample DC Scores:")
-for pick in [1, 2, 5, 10, 20, 32, 50, 75, 100, 150, 200]:
-    print(f"  Pick {pick:>3}: DC = {dc_tiered_v2(pick):.1f}")
+for pick in [1, 2, 5, 10, 20, 32, 50, 64, 100, 150, 200, 262]:
+    print(f"  Pick {pick:>3}: DC = {dc_gradual(pick):.1f}")
 
 # ============================================================================
 # BREAKOUT AGE SCORING
@@ -238,7 +231,7 @@ print("PROCESSING WR BACKTEST (2015-2024)")
 print("=" * 90)
 
 wr_backtest['position'] = 'WR'
-wr_backtest['dc_score'] = wr_backtest['pick'].apply(dc_tiered_v2)
+wr_backtest['dc_score'] = wr_backtest['pick'].apply(dc_gradual)
 wr_backtest['breakout_score'] = wr_backtest['breakout_age'].apply(breakout_age_to_score)
 wr_backtest['ras_score'] = wr_backtest['RAS'].apply(normalize_ras)
 
@@ -274,7 +267,7 @@ print("PROCESSING RB BACKTEST (2015-2024)")
 print("=" * 90)
 
 rb_backtest['position'] = 'RB'
-rb_backtest['dc_score'] = rb_backtest['pick'].apply(dc_tiered_v2)
+rb_backtest['dc_score'] = rb_backtest['pick'].apply(dc_gradual)
 
 # Add breakout ages from research
 rb_backtest['breakout_age'] = rb_backtest['player_name'].map(RB_BREAKOUT_AGES)
@@ -319,7 +312,7 @@ rb_2026 = prospects_2026[prospects_2026['position'] == 'RB'].copy()
 # WR 2026
 wr_2026['draft_year'] = 2026
 wr_2026['pick'] = wr_2026['projected_pick']
-wr_2026['dc_score'] = wr_2026['pick'].apply(dc_tiered_v2)
+wr_2026['dc_score'] = wr_2026['pick'].apply(dc_gradual)
 wr_2026['breakout_age'] = wr_2026['player_name'].map(WR_2026_BREAKOUT)
 wr_2026['breakout_score'] = wr_2026['breakout_age'].apply(breakout_age_to_score)
 wr_2026['breakout_score_final'] = wr_2026['breakout_score'].fillna(wr_avg_breakout)
@@ -343,7 +336,7 @@ print(f"2026 WRs processed: {len(wr_2026)}")
 # RB 2026
 rb_2026['draft_year'] = 2026
 rb_2026['pick'] = rb_2026['projected_pick']
-rb_2026['dc_score'] = rb_2026['pick'].apply(dc_tiered_v2)
+rb_2026['dc_score'] = rb_2026['pick'].apply(dc_gradual)
 rb_2026['breakout_age'] = rb_2026['player_name'].map(RB_2026_BREAKOUT)
 rb_2026['breakout_score'] = rb_2026['breakout_age'].apply(breakout_age_to_score)
 rb_2026['breakout_score_final'] = rb_2026['breakout_score'].fillna(rb_avg_breakout)
