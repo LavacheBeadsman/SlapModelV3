@@ -1,15 +1,10 @@
 """
-Fix 2026 RB Projections - Use Production Metric Instead of Breakout Age
+Fix 2026 RB Projections - CORRECTED VERSION
 
-The evaluation showed 2026 RBs were using breakout_score (wrong metric).
-Backtest proved:
-- Production metric (rec_yards / team_pass_att x age_weight): p=0.004, adds value
-- Breakout age: p=0.80, does NOT add value
-
-This script:
-1. Fetches 2024 receiving stats for 2026 RB prospects from CFBD
-2. Calculates production score
-3. Regenerates SLAP scores with correct metric
+Matches backtest calculation exactly:
+- SLAP = 0.85*DC + 0.10*Production + 0.05*RAS
+- All components normalized to 0-100 scale
+- Production = (rec_yards / team_pass_att) × age_weight, then normalized
 """
 
 import os
@@ -27,70 +22,31 @@ API_KEY = os.getenv("CFBD_API_KEY")
 BASE_URL = "https://api.collegefootballdata.com"
 HEADERS = {"Authorization": f"Bearer {API_KEY}"}
 
-# School name mappings (expanded for 2026 prospects)
+# =============================================================================
+# CONFIGURATION - MUST MATCH BACKTEST
+# =============================================================================
+WEIGHT_DC = 0.85
+WEIGHT_PRODUCTION = 0.10
+WEIGHT_RAS = 0.05
+
+# School name mappings
 SCHOOL_MAPPINGS = {
-    "Ohio St.": "Ohio State",
-    "Penn St.": "Penn State",
-    "Michigan St.": "Michigan State",
-    "North Dakota St.": "North Dakota State",
-    "Oklahoma St.": "Oklahoma State",
-    "Miss. St.": "Mississippi State",
-    "Mississippi St.": "Mississippi State",
-    "San Diego St.": "San Diego State",
-    "Florida St.": "Florida State",
-    "Fresno St.": "Fresno State",
-    "Boise St.": "Boise State",
-    "Iowa St.": "Iowa State",
-    "Arizona St.": "Arizona State",
-    "Kansas St.": "Kansas State",
-    "N.C. State": "NC State",
-    "N.C.": "North Carolina",
-    "North Carolina St.": "NC State",
-    "Appalachian St.": "Appalachian State",
-    "Colorado St.": "Colorado State",
-    "Oregon St.": "Oregon State",
-    "Washington St.": "Washington State",
-    "S. Carolina": "South Carolina",
-    "Miami (FL)": "Miami",
-    "Central Mich.": "Central Michigan",
-    "Western Mich.": "Western Michigan",
-    "Eastern Mich.": "Eastern Michigan",
-    "Northern Ill.": "Northern Illinois",
-    "Southern Miss.": "Southern Mississippi",
-    "Southern Miss": "Southern Mississippi",
-    "San Jose St.": "San Jose State",
-    "La.-Monroe": "Louisiana Monroe",
-    "La.-Lafayette": "Louisiana",
-    "Louisiana-Lafayette": "Louisiana",
-    "Louisiana Tech": "Louisiana Tech",
-    "Texas-El Paso": "UTEP",
-    "Ala-Birmingham": "UAB",
-    "Coastal Carolina": "Coastal Carolina",
-    "South Dakota St.": "South Dakota State",
-    "New Mexico St.": "New Mexico State",
-    "Boston Col.": "Boston College",
-    "Boston College": "Boston College",
-    "Mississippi": "Ole Miss",
-    "Pitt": "Pittsburgh",
-    "Pittsburgh": "Pittsburgh",
-    "Texas Tech": "Texas Tech",
-    "Wake Forest": "Wake Forest",
-    "Notre Dame": "Notre Dame",
-    "Georgia Tech": "Georgia Tech",
-    "Virginia Tech": "Virginia Tech",
-    "Texas State": "Texas State",
-    "Texas A&M": "Texas A&M",
-    "Stephen F. Austin": None,  # FCS
-    "North Dakota State": None,  # FCS
-    "Jacksonville State": "Jacksonville State",
-    "UT Martin": None,  # FCS
-    "Georgia State": "Georgia State",
-    "New Mexico State": "New Mexico State",
+    "Ohio St.": "Ohio State", "Penn St.": "Penn State", "Michigan St.": "Michigan State",
+    "North Dakota St.": "North Dakota State", "Oklahoma St.": "Oklahoma State",
+    "Miss. St.": "Mississippi State", "Mississippi St.": "Mississippi State",
+    "San Diego St.": "San Diego State", "Florida St.": "Florida State",
+    "Fresno St.": "Fresno State", "Boise St.": "Boise State", "Iowa St.": "Iowa State",
+    "Arizona St.": "Arizona State", "Kansas St.": "Kansas State", "N.C. State": "NC State",
+    "Appalachian St.": "Appalachian State", "Colorado St.": "Colorado State",
+    "Oregon St.": "Oregon State", "Washington St.": "Washington State",
+    "Miami (FL)": "Miami", "Southern Miss.": "Southern Mississippi",
+    "New Mexico St.": "New Mexico State", "Boston Col.": "Boston College",
+    "Mississippi": "Ole Miss", "Pitt": "Pittsburgh",
+    "Stephen F. Austin": None, "North Dakota State": None, "UT Martin": None,  # FCS
 }
 
 
 def normalize_school(school):
-    """Convert school name to CFBD format."""
     if pd.isna(school):
         return None
     school = str(school).strip()
@@ -98,14 +54,8 @@ def normalize_school(school):
 
 
 def fetch_player_receiving_stats(team, year):
-    """Fetch receiving stats for all players on a team."""
     url = f"{BASE_URL}/stats/player/season"
-    params = {
-        "year": year,
-        "category": "receiving",
-        "team": team
-    }
-
+    params = {"year": year, "category": "receiving", "team": team}
     try:
         response = requests.get(url, headers=HEADERS, params=params, timeout=30)
         if response.status_code == 200:
@@ -114,7 +64,6 @@ def fetch_player_receiving_stats(team, year):
                 player = stat.get("player", "").lower()
                 stat_type = stat.get("statType", "")
                 value = stat.get("stat", 0)
-
                 if player not in stats:
                     stats[player] = {}
                 try:
@@ -122,80 +71,57 @@ def fetch_player_receiving_stats(team, year):
                 except (ValueError, TypeError):
                     stats[player][stat_type] = 0
             return stats
-        elif response.status_code == 429:
-            print(f"    Rate limited on {team} {year}")
-            time.sleep(5)
-            return None
-        else:
-            return {}
+        return {}
     except Exception as e:
-        print(f"    Error fetching {team} {year}: {e}")
         return {}
 
 
 def fetch_team_pass_attempts(team, year):
-    """Fetch team total pass attempts from CFBD."""
     url = f"{BASE_URL}/stats/season"
-    params = {
-        "year": year,
-        "team": team
-    }
-
+    params = {"year": year, "team": team}
     try:
         response = requests.get(url, headers=HEADERS, params=params, timeout=30)
         if response.status_code == 200:
-            data = response.json()
-            for stat in data:
+            for stat in response.json():
                 if stat.get("statName") == "passAttempts":
                     return float(stat.get("statValue", 0))
-            return None
-        elif response.status_code == 429:
-            time.sleep(5)
-            return None
-        else:
-            return None
-    except Exception as e:
-        print(f"    Error fetching team stats {team} {year}: {e}")
+        return None
+    except:
         return None
 
 
 def names_match(name1, name2):
-    """Check if two names refer to the same person."""
-    n1 = name1.lower().strip()
-    n2 = name2.lower().strip()
+    n1 = name1.lower().strip().replace('.', ' ').replace("'", "")
+    n2 = name2.lower().strip().replace('.', ' ').replace("'", "")
 
     if n1 == n2:
         return True
 
-    # Remove suffixes and compare
-    parts1 = n1.replace('.', ' ').replace("'", "").split()
-    parts2 = n2.replace('.', ' ').replace("'", "").split()
+    parts1 = n1.split()
+    parts2 = n2.split()
 
-    suffixes = {'jr', 'jr.', 'ii', 'iii', 'iv', 'sr'}
+    suffixes = {'jr', 'ii', 'iii', 'iv', 'sr'}
     clean1 = [p for p in parts1 if p not in suffixes]
     clean2 = [p for p in parts2 if p not in suffixes]
 
     if not clean1 or not clean2:
         return False
 
-    # Compare first name (allow initial match)
-    first1, first2 = clean1[0], clean2[0]
-    if first1 != first2:
-        if not (len(first1) <= 2 and first2.startswith(first1[0])):
-            if not (len(first2) <= 2 and first1.startswith(first2[0])):
-                return False
+    # Check last name match
+    if clean1[-1] != clean2[-1]:
+        return False
 
-    # Compare last name
+    # Check first name (allow partial)
     if len(clean1) > 1 and len(clean2) > 1:
-        last1, last2 = clean1[-1], clean2[-1]
-        if last1 != last2:
-            return False
+        if clean1[0] == clean2[0]:
+            return True
+        if clean1[0].startswith(clean2[0][:1]) or clean2[0].startswith(clean1[0][:1]):
+            return True
 
-    return True
+    return clean1[-1] == clean2[-1]
 
 
 def find_player_receiving(player_name, team_stats):
-    """Find a player's receiving yards in team stats."""
     if team_stats is None or not team_stats:
         return None, None, None
 
@@ -208,16 +134,26 @@ def find_player_receiving(player_name, team_stats):
     return None, None, None
 
 
+# =============================================================================
+# SCORING FUNCTIONS - MUST MATCH BACKTEST
+# =============================================================================
+
+def dc_score(pick):
+    """DC formula: DC = 100 - 2.40 × (pick^0.62 - 1)"""
+    if pd.isna(pick):
+        return 0
+    return max(0, min(100, 100 - 2.40 * (pick**0.62 - 1)))
+
+
 def age_weight(age):
-    """Age weight for production metric."""
+    """Age weight for RB production metric"""
     if pd.isna(age) or str(age) == 'MISSING':
-        return 1.0  # Default
+        return 1.0
     try:
         age = float(age)
     except (ValueError, TypeError):
         return 1.0
 
-    # Draft age - 1 = final college season age
     college_age = age - 1
     if college_age <= 19:
         return 1.20
@@ -231,175 +167,203 @@ def age_weight(age):
         return 0.80
 
 
-def dc_score(pick):
-    """Calculate draft capital score from pick number."""
-    if pd.isna(pick):
-        return 0
-    return 100 - 2.40 * (pick**0.62 - 1)
+def normalize_ras(ras, mean_ras=5.5, std_ras=2.5):
+    """Convert RAS (0-10 scale) to 0-100 score - same as backtest"""
+    if pd.isna(ras):
+        return None
+    return 50 + (ras - mean_ras) / std_ras * 25
 
 
 def main():
     print("=" * 90)
-    print("FIX 2026 RB PROJECTIONS - USE PRODUCTION METRIC")
+    print("FIX 2026 RB PROJECTIONS - CORRECTED VERSION")
     print("=" * 90)
 
-    # Load current 2026 RB projections
-    rb_2026 = pd.read_csv('output/slap_2026_rb.csv')
-    print(f"\nLoaded {len(rb_2026)} RB prospects for 2026")
+    # =========================================================================
+    # STEP 1: Load backtest to get normalization parameters
+    # =========================================================================
+    print("\n--- Loading backtest for normalization parameters ---")
 
-    # Add columns for receiving data
+    rb_backtest = pd.read_csv('data/rb_backtest_with_receiving.csv')
+
+    # Calculate production for backtest
+    rb_backtest['rec_yards'] = pd.to_numeric(rb_backtest['rec_yards'], errors='coerce')
+    rb_backtest['team_pass_att'] = pd.to_numeric(rb_backtest['team_pass_att'], errors='coerce')
+    rb_backtest['age'] = pd.to_numeric(rb_backtest['age'], errors='coerce')
+
+    bt_has_data = (rb_backtest['rec_yards'].notna()) & (rb_backtest['team_pass_att'].notna()) & (rb_backtest['team_pass_att'] > 0)
+
+    rb_backtest.loc[bt_has_data, 'rec_per_pass_att'] = (
+        rb_backtest.loc[bt_has_data, 'rec_yards'] / rb_backtest.loc[bt_has_data, 'team_pass_att']
+    )
+    rb_backtest.loc[bt_has_data, 'age_wt'] = rb_backtest.loc[bt_has_data, 'age'].apply(age_weight)
+    rb_backtest.loc[bt_has_data, 'production_raw'] = (
+        rb_backtest.loc[bt_has_data, 'rec_per_pass_att'] * rb_backtest.loc[bt_has_data, 'age_wt']
+    )
+
+    # Get min/max for normalization
+    PROD_MIN = rb_backtest.loc[bt_has_data, 'production_raw'].min()
+    PROD_MAX = rb_backtest.loc[bt_has_data, 'production_raw'].max()
+
+    # Calculate normalized production scores for backtest
+    rb_backtest.loc[bt_has_data, 'production_score'] = (
+        (rb_backtest.loc[bt_has_data, 'production_raw'] - PROD_MIN) / (PROD_MAX - PROD_MIN) * 100
+    )
+
+    # Calculate RAS scores for backtest
+    rb_backtest['ras_score'] = rb_backtest['RAS'].apply(normalize_ras)
+
+    # Get averages for imputation
+    AVG_PRODUCTION = rb_backtest['production_score'].mean()
+    AVG_RAS = rb_backtest['ras_score'].mean()
+
+    print(f"Backtest normalization:")
+    print(f"  Production raw range: {PROD_MIN:.4f} - {PROD_MAX:.4f}")
+    print(f"  Avg production score: {AVG_PRODUCTION:.1f}")
+    print(f"  Avg RAS score: {AVG_RAS:.1f}")
+
+    # =========================================================================
+    # STEP 2: Load 2026 RB prospects
+    # =========================================================================
+    print("\n--- Loading 2026 RB prospects ---")
+
+    # Load from prospects file
+    prospects = pd.read_csv('data/prospects_final.csv')
+    rb_2026 = prospects[prospects['position'] == 'RB'].copy()
+    print(f"Loaded {len(rb_2026)} RB prospects")
+
+    # =========================================================================
+    # STEP 3: Fetch receiving data from CFBD
+    # =========================================================================
+    print("\n--- Fetching 2024 receiving stats from CFBD ---")
+
     rb_2026['rec_yards'] = None
     rb_2026['receptions'] = None
     rb_2026['team_pass_att'] = None
-    rb_2026['cfbd_name'] = None
 
-    # Cache for team stats
     team_cache = {}
     pass_att_cache = {}
 
-    print("\n" + "-" * 60)
-    print("Fetching 2024 receiving stats from CFBD...")
-    print("-" * 60)
-
     found = 0
-    missing = 0
-    fcs_skipped = 0
 
     for idx, row in rb_2026.iterrows():
         player = row['player_name']
         school = row['school']
 
-        # Normalize school name
         cfbd_school = normalize_school(school)
         if cfbd_school is None:
-            print(f"  {player}: School '{school}' is FCS (not in CFBD)")
-            fcs_skipped += 1
             continue
 
-        # Try 2024 season first (most recent)
         for season in [2024, 2023]:
             cache_key = (cfbd_school, season)
 
             if cache_key not in team_cache:
-                print(f"  Fetching {cfbd_school} {season}...")
                 team_cache[cache_key] = fetch_player_receiving_stats(cfbd_school, season)
                 time.sleep(0.3)
 
             team_stats = team_cache[cache_key]
             yards, receptions, matched_name = find_player_receiving(player, team_stats)
 
-            if yards is not None:
+            if yards is not None and yards > 0:
                 rb_2026.at[idx, 'rec_yards'] = yards
                 rb_2026.at[idx, 'receptions'] = receptions
-                rb_2026.at[idx, 'cfbd_name'] = matched_name
 
-                # Get team pass attempts
                 if cache_key not in pass_att_cache:
                     pass_att_cache[cache_key] = fetch_team_pass_attempts(cfbd_school, season)
                     time.sleep(0.3)
 
                 rb_2026.at[idx, 'team_pass_att'] = pass_att_cache[cache_key]
                 found += 1
-                print(f"    ✓ {player}: {yards} rec yds, {receptions} rec ({season})")
+                print(f"  ✓ {player}: {yards} rec yds ({season})")
                 break
-        else:
-            missing += 1
-            print(f"    ✗ {player}: Not found in CFBD")
 
-    print("\n" + "-" * 60)
-    print(f"RESULTS: Found receiving data for {found}/{len(rb_2026)} RBs ({found/len(rb_2026)*100:.1f}%)")
-    print(f"Missing: {missing} | FCS skipped: {fcs_skipped}")
-    print("-" * 60)
+    print(f"\nFound receiving data for {found}/{len(rb_2026)} RBs")
 
-    # Calculate production metric
-    print("\n" + "=" * 90)
-    print("CALCULATING PRODUCTION SCORES")
-    print("=" * 90)
+    # =========================================================================
+    # STEP 4: Calculate production scores
+    # =========================================================================
+    print("\n--- Calculating production scores ---")
 
-    # For players with receiving data
+    # Convert to numeric
+    rb_2026['rec_yards'] = pd.to_numeric(rb_2026['rec_yards'], errors='coerce')
+    rb_2026['team_pass_att'] = pd.to_numeric(rb_2026['team_pass_att'], errors='coerce')
+
     has_data = (rb_2026['rec_yards'].notna()) & (rb_2026['team_pass_att'].notna()) & (rb_2026['team_pass_att'] > 0)
 
-    if has_data.sum() > 0:
-        rb_2026.loc[has_data, 'rec_per_pass_att'] = (
-            rb_2026.loc[has_data, 'rec_yards'].astype(float) /
-            rb_2026.loc[has_data, 'team_pass_att'].astype(float)
-        )
-        rb_2026.loc[has_data, 'age_wt'] = rb_2026.loc[has_data, 'age'].apply(age_weight)
-        rb_2026.loc[has_data, 'production_raw'] = (
-            rb_2026.loc[has_data, 'rec_per_pass_att'] *
-            rb_2026.loc[has_data, 'age_wt']
-        )
+    # Calculate raw production
+    rb_2026.loc[has_data, 'rec_per_pass_att'] = (
+        rb_2026.loc[has_data, 'rec_yards'] / rb_2026.loc[has_data, 'team_pass_att']
+    )
+    rb_2026.loc[has_data, 'age_wt'] = rb_2026.loc[has_data, 'age'].apply(age_weight)
+    rb_2026.loc[has_data, 'production_raw'] = (
+        rb_2026.loc[has_data, 'rec_per_pass_att'] * rb_2026.loc[has_data, 'age_wt']
+    )
 
-        # Normalize to 0-100 scale using backtest distribution
-        # Load backtest to get normalization parameters
-        rb_backtest = pd.read_csv('data/rb_backtest_with_receiving.csv')
-        bt_has_data = (rb_backtest['rec_yards'].notna()) & (rb_backtest['team_pass_att'].notna()) & (rb_backtest['team_pass_att'] > 0)
+    # Normalize using backtest min/max (clip to 0-100)
+    rb_2026.loc[has_data, 'production_score'] = (
+        (rb_2026.loc[has_data, 'production_raw'] - PROD_MIN) / (PROD_MAX - PROD_MIN) * 100
+    ).clip(0, 100)
 
-        rb_backtest.loc[bt_has_data, 'rec_per_pass_att'] = (
-            rb_backtest.loc[bt_has_data, 'rec_yards'].astype(float) /
-            rb_backtest.loc[bt_has_data, 'team_pass_att'].astype(float)
-        )
-        rb_backtest.loc[bt_has_data, 'age_wt'] = rb_backtest.loc[bt_has_data, 'age'].apply(age_weight)
-        rb_backtest.loc[bt_has_data, 'production_raw'] = (
-            rb_backtest.loc[bt_has_data, 'rec_per_pass_att'] *
-            rb_backtest.loc[bt_has_data, 'age_wt']
-        )
+    # Mark status
+    rb_2026['production_status'] = 'imputed'
+    rb_2026.loc[has_data, 'production_status'] = 'observed'
 
-        # Use backtest min/max for normalization
-        min_prod = rb_backtest.loc[bt_has_data, 'production_raw'].min()
-        max_prod = rb_backtest.loc[bt_has_data, 'production_raw'].max()
+    # Impute missing with average
+    rb_2026['production_score'] = rb_2026['production_score'].fillna(AVG_PRODUCTION)
 
-        print(f"\nNormalization from backtest: min={min_prod:.4f}, max={max_prod:.4f}")
+    print(f"Production scores: {has_data.sum()} observed, {(~has_data).sum()} imputed")
 
-        # Normalize 2026 production scores
-        rb_2026.loc[has_data, 'production_score'] = (
-            (rb_2026.loc[has_data, 'production_raw'] - min_prod) / (max_prod - min_prod) * 100
-        ).clip(0, 100)  # Clip to 0-100 range
-
-        rb_2026['production_status'] = 'imputed'
-        rb_2026.loc[has_data, 'production_status'] = 'observed'
-
-    # For players without data, use average
-    avg_production = 50.0  # Default to average
-    rb_2026.loc[~has_data, 'production_score'] = avg_production
-
-    # Recalculate SLAP scores with 85/10/5 weights
-    print("\n" + "=" * 90)
-    print("RECALCULATING SLAP SCORES")
-    print("=" * 90)
+    # =========================================================================
+    # STEP 5: Calculate SLAP scores - MATCHING BACKTEST FORMULA
+    # =========================================================================
+    print("\n--- Calculating SLAP scores ---")
 
     # DC score
     rb_2026['dc_score'] = rb_2026['projected_pick'].apply(dc_score)
 
-    # RAS score (keep existing imputed values, scale to 0-100)
-    # RAS is already 0-10 scale, multiply by 10
-    rb_2026['ras_normalized'] = rb_2026['ras_score'] * 10 if 'ras_score' in rb_2026.columns else 66.5
+    # RAS score - impute with backtest average (all 2026 prospects missing RAS)
+    rb_2026['ras_score'] = AVG_RAS
+    rb_2026['ras_status'] = 'imputed'
 
-    # Calculate SLAP: 85% DC + 10% Production + 5% RAS
+    # SLAP = 0.85*DC + 0.10*Production + 0.05*RAS
     rb_2026['slap_score'] = (
-        0.85 * rb_2026['dc_score'] +
-        0.10 * rb_2026['production_score'] +
-        0.05 * rb_2026['ras_normalized']
+        WEIGHT_DC * rb_2026['dc_score'] +
+        WEIGHT_PRODUCTION * rb_2026['production_score'] +
+        WEIGHT_RAS * rb_2026['ras_score']
     )
 
-    # Delta vs DC-only
+    # Delta vs DC
     rb_2026['delta_vs_dc'] = rb_2026['slap_score'] - rb_2026['dc_score']
 
-    # Sort by SLAP score
+    # Sort by SLAP
     rb_2026 = rb_2026.sort_values('slap_score', ascending=False).reset_index(drop=True)
     rb_2026['rank'] = range(1, len(rb_2026) + 1)
 
-    # Show results
-    print("\n--- Top 20 RBs by SLAP Score (with Production Metric) ---")
-    print(f"{'Rank':<5} {'Player':<25} {'School':<15} {'Pick':>5} {'DC':>6} {'Prod':>6} {'SLAP':>6} {'Delta':>7}")
-    print("-" * 85)
-    for _, row in rb_2026.head(20).iterrows():
-        prod = f"{row['production_score']:.1f}" if pd.notna(row['production_score']) else "imp"
-        print(f"{int(row['rank']):<5} {row['player_name']:<25} {row['school']:<15} "
-              f"{int(row['projected_pick']):>5} {row['dc_score']:>6.1f} {prod:>6} "
-              f"{row['slap_score']:>6.1f} {row['delta_vs_dc']:>+7.1f}")
+    # =========================================================================
+    # STEP 6: Display and save results
+    # =========================================================================
+    print("\n" + "=" * 90)
+    print("2026 RB RANKINGS (CORRECTED)")
+    print("=" * 90)
 
-    # Save updated projections
+    print(f"\n{'Rank':<5} {'Player':<25} {'School':<15} {'Pick':>5} {'DC':>6} {'Prod':>5} {'RAS':>5} {'SLAP':>6} {'Delta':>6}")
+    print("-" * 95)
+
+    for _, row in rb_2026.head(25).iterrows():
+        prod_str = f"{row['production_score']:.0f}" if row['production_status'] == 'observed' else f"{row['production_score']:.0f}*"
+        print(f"{int(row['rank']):<5} {row['player_name']:<25} {row['school']:<15} "
+              f"{int(row['projected_pick']):>5} {row['dc_score']:>6.1f} {prod_str:>5} "
+              f"{row['ras_score']:>5.1f} {row['slap_score']:>6.1f} {row['delta_vs_dc']:>+6.1f}")
+
+    print("\n* = imputed production score")
+
+    # Verify formula
+    print("\n--- Formula verification ---")
+    sample = rb_2026.iloc[0]
+    calc = WEIGHT_DC * sample['dc_score'] + WEIGHT_PRODUCTION * sample['production_score'] + WEIGHT_RAS * sample['ras_score']
+    print(f"{sample['player_name']}: {WEIGHT_DC}×{sample['dc_score']:.1f} + {WEIGHT_PRODUCTION}×{sample['production_score']:.1f} + {WEIGHT_RAS}×{sample['ras_score']:.1f} = {calc:.1f}")
+
+    # Save
     output_cols = [
         'rank', 'player_name', 'school', 'projected_pick', 'age',
         'slap_score', 'dc_score', 'production_score', 'ras_score',
@@ -407,41 +371,16 @@ def main():
         'rec_yards', 'receptions', 'team_pass_att'
     ]
 
-    # Ensure all columns exist
     for col in output_cols:
         if col not in rb_2026.columns:
             rb_2026[col] = None
 
-    rb_2026_out = rb_2026[output_cols].copy()
-    rb_2026_out.to_csv('output/slap_2026_rb.csv', index=False)
+    rb_2026[output_cols].to_csv('output/slap_2026_rb.csv', index=False)
     print(f"\n✓ Saved: output/slap_2026_rb.csv")
 
-    # Also update combined file if it exists
-    try:
-        combined = pd.read_csv('output/slap_2026_combined.csv')
-        # Remove old RB data
-        combined = combined[combined['position'] != 'RB'].copy()
-
-        # Add new RB data
-        rb_for_combined = rb_2026_out.copy()
-        rb_for_combined['position'] = 'RB'
-
-        # Merge
-        combined = pd.concat([combined, rb_for_combined], ignore_index=True)
-        combined = combined.sort_values('slap_score', ascending=False).reset_index(drop=True)
-        combined.to_csv('output/slap_2026_combined.csv', index=False)
-        print(f"✓ Saved: output/slap_2026_combined.csv")
-    except FileNotFoundError:
-        pass
-
     print("\n" + "=" * 90)
-    print("DONE - 2026 RB projections now use PRODUCTION METRIC")
+    print("DONE")
     print("=" * 90)
-
-    # Summary stats
-    observed = (rb_2026['production_status'] == 'observed').sum()
-    imputed = (rb_2026['production_status'] == 'imputed').sum()
-    print(f"\nProduction scores: {observed} observed, {imputed} imputed")
 
 
 if __name__ == "__main__":
