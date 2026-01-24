@@ -91,8 +91,32 @@ def fetch_team_pass_attempts(team, year):
 
 
 def names_match(name1, name2):
-    n1 = name1.lower().strip().replace('.', ' ').replace("'", "")
-    n2 = name2.lower().strip().replace('.', ' ').replace("'", "")
+    """
+    Check if two names refer to the same person.
+    Requires BOTH first name AND last name to match (at least partially).
+    """
+    # Common nickname mappings
+    NICKNAMES = {
+        'nick': 'nicholas', 'nicholas': 'nick',
+        'mike': 'michael', 'michael': 'mike',
+        'chris': 'christopher', 'christopher': 'chris',
+        'dan': 'daniel', 'daniel': 'dan',
+        'dave': 'david', 'david': 'dave',
+        'rob': 'robert', 'robert': 'rob', 'bob': 'robert',
+        'will': 'william', 'william': 'will', 'bill': 'william',
+        'tom': 'thomas', 'thomas': 'tom',
+        'jim': 'james', 'james': 'jim', 'jimmy': 'james',
+        'joe': 'joseph', 'joseph': 'joe',
+        'tony': 'anthony', 'anthony': 'tony',
+        'alex': 'alexander', 'alexander': 'alex',
+        'matt': 'matthew', 'matthew': 'matt',
+        'ben': 'benjamin', 'benjamin': 'ben',
+        'sam': 'samuel', 'samuel': 'sam',
+        'ej': 'e j', 'cj': 'c j', 'dj': 'd j', 'aj': 'a j', 'jj': 'j j',
+    }
+
+    n1 = name1.lower().strip().replace('.', ' ').replace("'", "").replace("-", " ")
+    n2 = name2.lower().strip().replace('.', ' ').replace("'", "").replace("-", " ")
 
     if n1 == n2:
         return True
@@ -107,18 +131,35 @@ def names_match(name1, name2):
     if not clean1 or not clean2:
         return False
 
-    # Check last name match
+    # MUST have at least 2 parts (first and last name)
+    if len(clean1) < 2 or len(clean2) < 2:
+        return False
+
+    # Last name MUST match exactly
     if clean1[-1] != clean2[-1]:
         return False
 
-    # Check first name (allow partial)
-    if len(clean1) > 1 and len(clean2) > 1:
-        if clean1[0] == clean2[0]:
-            return True
-        if clean1[0].startswith(clean2[0][:1]) or clean2[0].startswith(clean1[0][:1]):
-            return True
+    # First name matching
+    first1, first2 = clean1[0], clean2[0]
 
-    return clean1[-1] == clean2[-1]
+    # Exact match
+    if first1 == first2:
+        return True
+
+    # Check nickname mappings
+    if NICKNAMES.get(first1) == first2 or NICKNAMES.get(first2) == first1:
+        return True
+
+    # First 3 characters match
+    if len(first1) >= 3 and len(first2) >= 3 and first1[:3] == first2[:3]:
+        return True
+
+    # One name is a prefix of the other (at least 3 chars)
+    short, long = (first1, first2) if len(first1) < len(first2) else (first2, first1)
+    if len(short) >= 3 and long.startswith(short):
+        return True
+
+    return False
 
 
 def find_player_receiving(player_name, team_stats):
