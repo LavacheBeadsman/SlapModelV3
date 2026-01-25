@@ -33,11 +33,16 @@ print(f"  RAS:           {WEIGHT_RAS*100:.0f}%")
 # ============================================================================
 
 def normalize_draft_capital(pick, max_pick=262):
-    """Convert pick number to 0-100 score using 1/sqrt(pick)"""
-    raw = 1 / np.sqrt(pick)
-    max_raw = 1 / np.sqrt(1)
-    min_raw = 1 / np.sqrt(max_pick)
-    return ((raw - min_raw) / (max_raw - min_raw)) * 100
+    """Convert pick number to 0-100 score using gentler power curve.
+
+    Formula: DC = 100 - 2.40 × (pick^0.62 - 1)
+
+    This creates a gentler decay than 1/sqrt(pick), giving:
+    - Pick 1: 100, Pick 5: ~95, Pick 10: ~88, Pick 32: ~73
+    - Pick 100: ~50, Pick 200: ~35
+    """
+    dc = 100 - 2.40 * (pick ** 0.62 - 1)
+    return max(0, min(100, dc))  # Clamp to 0-100
 
 def breakout_age_to_score(age):
     """Convert breakout age to 0-100 score for WRs"""

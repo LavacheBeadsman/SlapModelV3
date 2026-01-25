@@ -20,10 +20,29 @@ A draft-capital-anchored prospect model that rates 2026 NFL Draft RBs and WRs on
 ## The Formula (Core Structure)
 
 ### 1. Draft Capital Anchor
-Transform draft pick into a strength score:
+Transform draft pick into a strength score using the "gentler curve" formula:
 ```
-dc = normalize(1 / sqrt(draft_pick))
+DC = 100 - 2.40 × (pick^0.62 - 1)
 ```
+
+**Why This Formula?**
+- Creates a gentler decay than the original 1/sqrt(pick) formula
+- Better differentiates between early picks while still penalizing late picks
+- Produces more intuitive scores that match expectations
+
+**DC Score Examples:**
+| Pick | DC Score |
+|------|----------|
+| 1    | 100      |
+| 5    | ~96      |
+| 10   | ~92      |
+| 32   | ~82      |
+| 64   | ~71      |
+| 100  | ~61      |
+| 150  | ~49      |
+| 200  | ~38      |
+| 250  | ~29      |
+
 - Uses actual draft pick OR expected pick from consensus mock drafts (for pre-draft analysis)
 - Higher picks = higher scores (pick 1 is best)
 
@@ -200,6 +219,30 @@ athletic = normalize(RAS)
    - Using "best season" cherry-picks data not validated as predictive
    - 19 players had inflated scores before this fix (avg +12.6 production, +1.26 SLAP)
 
+8. **DC Formula Change: Gentler Curve (Option B)** (Jan 2026)
+   - Changed from `normalize(1/sqrt(pick))` to `100 - 2.40 × (pick^0.62 - 1)`
+
+   **Why We Changed It:**
+   - Old formula created steep drops early (pick 1 to pick 10 dropped ~30 points)
+   - Scouts don't see that much difference between pick 1 and pick 10
+   - New formula creates gentler, more realistic decay
+
+   **Old vs New DC Scores:**
+   | Pick | Old DC | New DC |
+   |------|--------|--------|
+   | 1    | 100    | 100    |
+   | 5    | 81     | 96     |
+   | 10   | 69     | 92     |
+   | 32   | 44     | 82     |
+   | 100  | 24     | 61     |
+   | 200  | 13     | 38     |
+
+   **Impact on Final SLAP Scores:**
+   - Scores now range from ~21 (late picks, poor profile) to ~99 (early picks, elite profile)
+   - WR average SLAP: ~65 (was ~55)
+   - RB average SLAP: ~50 (was ~40)
+   - Scores better match intuitive expectations (pick 10 player with great profile = ~90+)
+
 ## Technical Preferences
 
 - **Language**: Python
@@ -246,14 +289,11 @@ SlapModelV3/
 ## Commands
 
 ```bash
-# Generate SLAP scores with corrected RB production metric (backtest 2015-2024)
-python src/generate_slap_v3_fixed.py
+# MAIN COMMAND: Recalculate ALL SLAP scores with new DC formula (50/35/15 weights)
+python src/recalculate_all_slap_new_dc.py
 
 # Fetch RB receiving stats from CFBD API
 python src/fetch_rb_receiving_stats.py
-
-# Calculate 2026 prospect class SLAP scores
-python src/calculate_2026_slap.py
 
 # Update WR breakout scores with age-only approach
 python src/update_wr_breakout.py
@@ -262,23 +302,28 @@ python src/update_wr_breakout.py
 python src/fill_missing_ages.py
 
 # Legacy commands (superseded)
+# python src/generate_slap_v3_fixed.py
+# python src/calculate_2026_slap.py
 # python src/calculate_slap_unified.py
-# python src/calculate_wr_slap.py
+# python src/build_master_database_50_35_15.py
 ```
 
 ## Output Files
 
-### V3 Output (Current - 85/10/5 weights, corrected RB metric)
-- `output/slap_v3_fixed_all_players.csv` - All SLAP scores with corrected RB production metric
-- `output/slap_2026_wr.csv` - 2026 WR class projections
-- `output/slap_2026_rb.csv` - 2026 RB class projections
-- `output/slap_2026_combined.csv` - 2026 combined projections
+### Current Output (50/35/15 weights, gentler DC curve)
+- `output/slap_complete_all_players.csv` - All SLAP scores (WRs + RBs, 2015-2026)
+- `output/slap_complete_wr.csv` - All WR SLAP scores (2015-2026)
+- `output/slap_complete_rb.csv` - All RB SLAP scores (2015-2026)
+- `output/slap_wr_2026.csv` - 2026 WR class projections
+- `output/slap_rb_2026.csv` - 2026 RB class projections
 
 ### Data Files
 - `data/rb_backtest_with_receiving.csv` - RB backtest data with receiving stats from CFBD
-- `data/rb_production_analysis.csv` - RB production metric analysis results
+- `data/wr_backtest_expanded_final.csv` - WR backtest data with breakout ages
+- `data/prospects_final.csv` - 2026 prospect data
 
 ### Legacy Output (superseded)
-- `output/slap_scores_wr_v3.csv` - Old WR SLAP scores
-- `output/slap_scores_rb_v3.csv` - Old RB SLAP scores (used breakout age, not production)
-- `output/slap_scores_combined_v3.csv` - Old combined rankings
+- `output/slap_v3_fixed_all_players.csv` - Old scores (before DC formula change)
+- `output/slap_2026_wr.csv` - Old 2026 WR projections
+- `output/slap_2026_rb.csv` - Old 2026 RB projections
+- `output/slap_master_*_50_35_15.csv` - Old master databases
