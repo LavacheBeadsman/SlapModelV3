@@ -117,30 +117,37 @@ athletic = normalize(RAS)
 
 ## Decisions Made
 
-1. **Component Weights**: 50% Draft Capital / 35% Production / 15% Athletic
-   - **Updated for edge-finding** (Jan 2026) - previous weights (85/10/5) created deltas too small to matter
-   - New weights create meaningful deltas (~8-12 points avg vs ~3-4 points with old weights)
-   - Tested 6 weight combinations against backtest data (2015-2024, 500+ players):
+1. **Component Weights**: Position-Specific (Updated Jan 2026)
 
-   **Why 50/35/15?**
-   - **Best for edge finding**: 59.3% bust accuracy for RBs flagged with negative delta
-   - **Meaningful differentiation**: Allows model to have "takes" that disagree with scouts
-   - **Acceptable accuracy tradeoff**: Correlation only drops ~0.1 from DC-only baseline
+   **WRs: 65% DC / 20% Breakout / 15% RAS**
+   **RBs: 50% DC / 35% Production / 15% RAS**
 
-   **Tradeoff Analysis:**
-   | Weights | Avg |Delta| | SLAP-PPG r | Sleeper Hit% | Bust Miss% |
-   |---------|-------------|------------|--------------|------------|
-   | 85/10/5 (old) | 3-4 pts | 0.54 WR / 0.62 RB | 5% WR / 24% RB | 0% |
-   | 50/35/15 (new) | 8-12 pts | 0.49 WR / 0.52 RB | 14% WR / 30% RB | 38% WR / 59% RB |
+   **Why Different Weights by Position?**
 
-   **Production component (35%)**:
-   - WRs: Breakout Age (r=0.395 correlation with NFL success)
-   - RBs: Receiving Production (r=0.30, p=0.004 - statistically significant)
+   Testing revealed WR breakout age has weaker predictive power than RB receiving production:
+   - WR breakout age correlation: r=0.155 (weak)
+   - RB receiving production correlation: r=0.30 (moderate, p=0.004)
 
-   **Athletic component (15%)**:
+   For WRs, adding breakout at 35% weight actually HURT predictions:
+   - DC only: r=0.531
+   - DC + 35% breakout: r=0.477 (worse!)
+   - DC + 20% breakout: r=0.519 (optimal balance)
+
+   **WR Weight Analysis (65/20/15):**
+   | Metric | 50/35/15 (old) | 65/20/15 (new) | Change |
+   |--------|----------------|----------------|--------|
+   | PPR Correlation | 0.477 | 0.519 | +9% |
+   | Hit24 Correlation | 0.404 | 0.450 | +11% |
+   | Avg Delta | 11.5 pts | 7.7 pts | Smaller but meaningful |
+
+   **RB Weights Stay at 50/35/15:**
+   - RB receiving production is statistically significant (p=0.004)
+   - Adding production at 35% improves predictions
+   - No change needed for RBs
+
+   **Athletic component (15% for both)**:
    - RAS for WRs, Speed Score for RBs
-   - Not statistically significant alone, but improves edge identification
-   - Valuable for content discussions
+   - Unchanged from previous version
 
 2. **Age Weight Function (RB Production)**: Moderate adjustment
    - Used to weight RB receiving production by college age
@@ -182,18 +189,19 @@ athletic = normalize(RAS)
    ```
    IF RAS missing:
        # Use position average for RAS
-       SLAP = DC × 0.50 + Production × 0.35 + Avg_RAS × 0.15
+       WR SLAP = DC × 0.65 + Breakout × 0.20 + Avg_RAS × 0.15
+       RB SLAP = DC × 0.50 + Production × 0.35 + Avg_RAS × 0.15
        Status: "imputed"
 
    ELSE:
        # Has RAS data - use full formula
-       SLAP = DC × 0.50 + Production × 0.35 + RAS × 0.15
+       WR SLAP = DC × 0.65 + Breakout × 0.20 + RAS × 0.15
+       RB SLAP = DC × 0.50 + Production × 0.35 + RAS × 0.15
        Status: "observed"
    ```
 
-   **Note**: With 50/35/15 weights, elite opt-out handling is less critical since
-   Production (35%) now has significant weight. Elite prospects with missing RAS
-   still get fair scores from their strong DC + Production components.
+   **Note**: With WR weights at 65/20/15, DC dominates the score. Elite prospects
+   with missing RAS still get fair scores from their strong DC component.
 
 7. **Season Selection for RB Production** (CRITICAL for consistency)
    - **ALWAYS use FINAL college season** (draft_year - 1)
@@ -289,7 +297,7 @@ SlapModelV3/
 ## Commands
 
 ```bash
-# MAIN COMMAND: Recalculate ALL SLAP scores with new DC formula (50/35/15 weights)
+# MAIN COMMAND: Recalculate ALL SLAP scores (WR: 65/20/15, RB: 50/35/15)
 python src/recalculate_all_slap_new_dc.py
 
 # Fetch RB receiving stats from CFBD API
@@ -310,7 +318,8 @@ python src/fill_missing_ages.py
 
 ## Output Files
 
-### Current Output (50/35/15 weights, gentler DC curve)
+### Current Output (WR: 65/20/15, RB: 50/35/15, gentler DC curve)
+- `output/slap_complete_database_v4.csv` - Master database with all SLAP scores (WRs + RBs, 2015-2026)
 - `output/slap_complete_all_players.csv` - All SLAP scores (WRs + RBs, 2015-2026)
 - `output/slap_complete_wr.csv` - All WR SLAP scores (2015-2026)
 - `output/slap_complete_rb.csv` - All RB SLAP scores (2015-2026)

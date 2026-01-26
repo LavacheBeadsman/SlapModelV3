@@ -9,7 +9,14 @@ This creates:
 - Pick 1: 100, Pick 5: ~95, Pick 10: ~88
 - Pick 32: ~73, Pick 100: ~50, Pick 200: ~35
 
-WEIGHTS: DC (50%) + Production (35%) + RAS (15%)
+WEIGHTS (Position-Specific):
+  WRs: DC (65%) + Breakout Age (20%) + RAS (15%)
+  RBs: DC (50%) + Receiving Production (35%) + RAS (15%)
+
+Why different weights?
+- WR breakout age has weaker predictive power (r=0.155) than RB receiving production (r=0.30)
+- WR model benefits from heavier DC weighting for better predictions
+- RB receiving production is statistically significant (p=0.004) and deserves more weight
 """
 
 import pandas as pd
@@ -21,14 +28,22 @@ print("=" * 90)
 print("SLAP SCORE V3 - COMPLETE RECALCULATION WITH NEW DC FORMULA")
 print("=" * 90)
 print("\nNEW DC Formula: DC = 100 - 2.40 × (pick^0.62 - 1)")
-print("Weights: DC (50%) + Production (35%) + RAS (15%)")
+print("\nPosition-Specific Weights:")
+print("  WRs: DC (65%) + Breakout Age (20%) + RAS (15%)")
+print("  RBs: DC (50%) + Receiving Production (35%) + RAS (15%)")
 
 # ============================================================================
-# WEIGHTS
+# WEIGHTS - POSITION SPECIFIC
 # ============================================================================
-WEIGHT_DC = 0.50
-WEIGHT_PRODUCTION = 0.35
-WEIGHT_RAS = 0.15
+# WR weights (breakout age is less predictive, so DC gets more weight)
+WR_WEIGHT_DC = 0.65
+WR_WEIGHT_PRODUCTION = 0.20
+WR_WEIGHT_RAS = 0.15
+
+# RB weights (receiving production is statistically significant)
+RB_WEIGHT_DC = 0.50
+RB_WEIGHT_PRODUCTION = 0.35
+RB_WEIGHT_RAS = 0.15
 
 # ============================================================================
 # NEW DC FORMULA
@@ -105,11 +120,11 @@ wr_backtest['production_score'] = wr_backtest['breakout_score_final']  # For WR,
 wr_backtest['ras_score'] = wr_backtest['RAS'] * 10  # Convert 0-10 to 0-100
 wr_backtest['ras_score_final'] = wr_backtest['ras_score'].fillna(WR_AVG_RAS)
 
-# Calculate SLAP with 50/35/15 weights
+# Calculate SLAP with WR weights (65/20/15)
 wr_backtest['slap_score'] = (
-    WEIGHT_DC * wr_backtest['dc_score'] +
-    WEIGHT_PRODUCTION * wr_backtest['production_score'] +
-    WEIGHT_RAS * wr_backtest['ras_score_final']
+    WR_WEIGHT_DC * wr_backtest['dc_score'] +
+    WR_WEIGHT_PRODUCTION * wr_backtest['production_score'] +
+    WR_WEIGHT_RAS * wr_backtest['ras_score_final']
 )
 
 wr_backtest['delta_vs_dc'] = wr_backtest['slap_score'] - wr_backtest['dc_score']
@@ -140,11 +155,11 @@ rb_backtest['production_score_final'] = rb_backtest['production_score'].fillna(R
 rb_backtest['ras_score'] = rb_backtest['RAS'] * 10
 rb_backtest['ras_score_final'] = rb_backtest['ras_score'].fillna(RB_AVG_RAS)
 
-# Calculate SLAP with 50/35/15 weights
+# Calculate SLAP with RB weights (50/35/15 - unchanged)
 rb_backtest['slap_score'] = (
-    WEIGHT_DC * rb_backtest['dc_score'] +
-    WEIGHT_PRODUCTION * rb_backtest['production_score_final'] +
-    WEIGHT_RAS * rb_backtest['ras_score_final']
+    RB_WEIGHT_DC * rb_backtest['dc_score'] +
+    RB_WEIGHT_PRODUCTION * rb_backtest['production_score_final'] +
+    RB_WEIGHT_RAS * rb_backtest['ras_score_final']
 )
 
 rb_backtest['delta_vs_dc'] = rb_backtest['slap_score'] - rb_backtest['dc_score']
@@ -191,11 +206,11 @@ wr_2026['ras_score_final'] = WR_AVG_RAS  # No combine data yet
 wr_2026['breakout_status'] = np.where(wr_2026['breakout_score'].isna(), 'imputed', 'observed')
 wr_2026['ras_status'] = 'imputed'
 
-# Calculate SLAP
+# Calculate SLAP with WR weights (65/20/15)
 wr_2026['slap_score'] = (
-    WEIGHT_DC * wr_2026['dc_score'] +
-    WEIGHT_PRODUCTION * wr_2026['breakout_score_final'] +
-    WEIGHT_RAS * wr_2026['ras_score_final']
+    WR_WEIGHT_DC * wr_2026['dc_score'] +
+    WR_WEIGHT_PRODUCTION * wr_2026['breakout_score_final'] +
+    WR_WEIGHT_RAS * wr_2026['ras_score_final']
 )
 wr_2026['delta_vs_dc'] = wr_2026['slap_score'] - wr_2026['dc_score']
 
@@ -237,11 +252,11 @@ rb_2026['production_status'] = np.where(
 )
 rb_2026['ras_status'] = 'imputed'
 
-# Calculate SLAP
+# Calculate SLAP with RB weights (50/35/15 - unchanged)
 rb_2026['slap_score'] = (
-    WEIGHT_DC * rb_2026['dc_score'] +
-    WEIGHT_PRODUCTION * rb_2026['production_score_final'] +
-    WEIGHT_RAS * rb_2026['ras_score_final']
+    RB_WEIGHT_DC * rb_2026['dc_score'] +
+    RB_WEIGHT_PRODUCTION * rb_2026['production_score_final'] +
+    RB_WEIGHT_RAS * rb_2026['ras_score_final']
 )
 rb_2026['delta_vs_dc'] = rb_2026['slap_score'] - rb_2026['dc_score']
 
@@ -512,6 +527,10 @@ print(f"Saved: output/slap_complete_rb.csv ({len(rb_all)} RBs)")
 
 all_players_final.to_csv('output/slap_complete_all_players.csv', index=False)
 print(f"Saved: output/slap_complete_all_players.csv ({len(all_players_final)} total)")
+
+# Save v4 database (with position-specific weights)
+all_players_final.to_csv('output/slap_complete_database_v4.csv', index=False)
+print(f"Saved: output/slap_complete_database_v4.csv ({len(all_players_final)} total)")
 
 # Save 2026 specific files
 wr_2026_output = wr_2026_ranked[['player_name', 'school', 'projected_pick', 'age',
