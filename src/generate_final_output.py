@@ -1,8 +1,13 @@
 """
-SLAP Score V3 - Final Clean Output Generation
-==============================================
+SLAP Score V3 - Final Clean Output Generation (CALIBRATED)
+===========================================================
 
-Generates the final, clean output files with all requested columns and formatting.
+Implements Option B: Percentile Rank Normalization
+
+This ensures WR breakout scores and RB production scores are on the same scale:
+- "90" = top 10% of position
+- "50" = median for position
+- Allows meaningful cross-position comparisons
 
 Output Files:
 1. output/slap_complete_database_final.csv - Complete database (all players 2015-2026)
@@ -16,7 +21,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 print("=" * 90)
-print("SLAP SCORE V3 - FINAL CLEAN OUTPUT GENERATION")
+print("SLAP SCORE V3 - CALIBRATED OUTPUT (Option B: Percentile Ranks)")
 print("=" * 90)
 
 # ============================================================================
@@ -30,10 +35,9 @@ RB_WEIGHT_DC = 0.50
 RB_WEIGHT_PRODUCTION = 0.35
 RB_WEIGHT_RAS = 0.15
 
-# Position averages (from backtest)
+# Position averages for RAS imputation
 WR_AVG_RAS = 68.9
 RB_AVG_RAS = 66.5
-RB_AVG_PRODUCTION = 30.0
 
 # ============================================================================
 # FORMULAS
@@ -44,8 +48,8 @@ def normalize_draft_capital(pick):
     dc = 100 - 2.40 * (pick ** 0.62 - 1)
     return max(0, min(100, dc))
 
-def wr_breakout_score(breakout_age, dominator_pct):
-    """Continuous breakout scoring with dominator tiebreaker."""
+def wr_breakout_score_raw(breakout_age, dominator_pct):
+    """RAW breakout scoring (before percentile conversion)."""
     if breakout_age is None or pd.isna(breakout_age):
         if dominator_pct is not None and pd.notna(dominator_pct):
             return min(35, 15 + (dominator_pct * 1.0))
@@ -63,8 +67,8 @@ def wr_breakout_score(breakout_age, dominator_pct):
 
     return min(base_score + bonus, 99.9)
 
-def rb_production_score(rec_yards, team_pass_att, draft_age):
-    """RB receiving production score with age weighting."""
+def rb_production_score_raw(rec_yards, team_pass_att, draft_age):
+    """RAW RB receiving production score (before percentile conversion)."""
     if pd.isna(rec_yards) or pd.isna(team_pass_att) or team_pass_att == 0:
         return None
     if pd.isna(draft_age):
@@ -151,99 +155,132 @@ print(f"  2026 WR prospects: {len(wr_2026)} players")
 print(f"  2026 RB prospects: {len(rb_2026)} players")
 
 # ============================================================================
-# PROCESS WR BACKTEST
+# STEP 1: Calculate RAW production scores for all players
 # ============================================================================
-print("\nProcessing WR backtest data...")
+print("\nStep 1: Calculating RAW production scores...")
 
+# WR backtest - raw breakout scores
 wr_backtest['dc_score'] = wr_backtest['pick'].apply(normalize_draft_capital)
-wr_backtest['breakout_score'] = wr_backtest.apply(
-    lambda x: wr_breakout_score(x['breakout_age'], x['dominator_pct']), axis=1
+wr_backtest['breakout_score_raw'] = wr_backtest.apply(
+    lambda x: wr_breakout_score_raw(x['breakout_age'], x['dominator_pct']), axis=1
 )
 wr_backtest['ras_raw'] = wr_backtest['RAS']
-wr_backtest['ras_score'] = wr_backtest['RAS'].fillna(WR_AVG_RAS / 10) * 10  # Scale to 0-100
+wr_backtest['ras_score'] = wr_backtest['RAS'].fillna(WR_AVG_RAS / 10) * 10
 
-wr_backtest['slap_score'] = (
-    WR_WEIGHT_DC * wr_backtest['dc_score'] +
-    WR_WEIGHT_PRODUCTION * wr_backtest['breakout_score'] +
-    WR_WEIGHT_RAS * wr_backtest['ras_score']
-)
-wr_backtest['delta'] = wr_backtest['slap_score'] - wr_backtest['dc_score']
-wr_backtest['slap_tier'] = wr_backtest['slap_score'].apply(get_slap_tier)
-
-# ============================================================================
-# PROCESS RB BACKTEST
-# ============================================================================
-print("Processing RB backtest data...")
-
+# RB backtest - raw production scores
 rb_backtest['dc_score'] = rb_backtest['pick'].apply(normalize_draft_capital)
-rb_backtest['production_score'] = rb_backtest.apply(
-    lambda x: rb_production_score(x['rec_yards'], x['team_pass_att'], x['age']), axis=1
+rb_backtest['production_score_raw'] = rb_backtest.apply(
+    lambda x: rb_production_score_raw(x['rec_yards'], x['team_pass_att'], x['age']), axis=1
 )
-rb_backtest['production_score'] = rb_backtest['production_score'].fillna(RB_AVG_PRODUCTION)
+# Fill missing with median of non-missing
+rb_median_prod = rb_backtest['production_score_raw'].median()
+rb_backtest['production_score_raw'] = rb_backtest['production_score_raw'].fillna(rb_median_prod)
 rb_backtest['ras_raw'] = rb_backtest['RAS']
 rb_backtest['ras_score'] = rb_backtest['RAS'].fillna(RB_AVG_RAS / 10) * 10
 
-rb_backtest['slap_score'] = (
-    RB_WEIGHT_DC * rb_backtest['dc_score'] +
-    RB_WEIGHT_PRODUCTION * rb_backtest['production_score'] +
-    RB_WEIGHT_RAS * rb_backtest['ras_score']
-)
-rb_backtest['delta'] = rb_backtest['slap_score'] - rb_backtest['dc_score']
-rb_backtest['slap_tier'] = rb_backtest['slap_score'].apply(get_slap_tier)
-
-# ============================================================================
-# PROCESS 2026 WRs
-# ============================================================================
-print("Processing 2026 WR prospects...")
-
+# 2026 WRs - raw breakout scores
 wr_2026['breakout_age'] = wr_2026['player_name'].map(WR_2026_BREAKOUT)
 wr_2026['dominator_pct'] = wr_2026['player_name'].map(WR_2026_DOMINATOR)
 wr_2026['dc_score'] = wr_2026['projected_pick'].apply(normalize_draft_capital)
-wr_2026['breakout_score'] = wr_2026.apply(
-    lambda x: wr_breakout_score(x['breakout_age'], x['dominator_pct']), axis=1
+wr_2026['breakout_score_raw'] = wr_2026.apply(
+    lambda x: wr_breakout_score_raw(x['breakout_age'], x['dominator_pct']), axis=1
 )
 wr_2026['ras_raw'] = None
 wr_2026['ras_score'] = WR_AVG_RAS
 
-wr_2026['slap_score'] = (
-    WR_WEIGHT_DC * wr_2026['dc_score'] +
-    WR_WEIGHT_PRODUCTION * wr_2026['breakout_score'] +
-    WR_WEIGHT_RAS * wr_2026['ras_score']
-)
-wr_2026['delta'] = wr_2026['slap_score'] - wr_2026['dc_score']
-wr_2026['slap_tier'] = wr_2026['slap_score'].apply(get_slap_tier)
-
-# ============================================================================
-# PROCESS 2026 RBs
-# ============================================================================
-print("Processing 2026 RB prospects...")
-
+# 2026 RBs - raw production scores
 if rb_2026_existing is not None:
     rb_2026 = rb_2026.merge(
         rb_2026_existing[['player_name', 'production_score']],
         on='player_name',
         how='left'
     )
-    rb_2026['production_score'] = rb_2026['production_score'].fillna(RB_AVG_PRODUCTION)
+    rb_2026['production_score_raw'] = rb_2026['production_score'].fillna(rb_median_prod)
 else:
-    rb_2026['production_score'] = RB_AVG_PRODUCTION
+    rb_2026['production_score_raw'] = rb_median_prod
 
 rb_2026['dc_score'] = rb_2026['projected_pick'].apply(normalize_draft_capital)
 rb_2026['ras_raw'] = None
 rb_2026['ras_score'] = RB_AVG_RAS
 
+# ============================================================================
+# STEP 2: Convert to PERCENTILE RANKS within position
+# ============================================================================
+print("Step 2: Converting to percentile ranks...")
+
+# Combine all WR raw scores
+all_wr_raw = pd.concat([
+    wr_backtest[['player_name', 'breakout_score_raw']],
+    wr_2026[['player_name', 'breakout_score_raw']]
+], ignore_index=True)
+
+# Combine all RB raw scores
+all_rb_raw = pd.concat([
+    rb_backtest[['player_name', 'production_score_raw']],
+    rb_2026[['player_name', 'production_score_raw']]
+], ignore_index=True)
+
+# Calculate percentile ranks (0-100 scale)
+# rank(pct=True) gives 0-1, multiply by 100 for 0-100 scale
+all_wr_raw['breakout_percentile'] = all_wr_raw['breakout_score_raw'].rank(pct=True) * 100
+all_rb_raw['production_percentile'] = all_rb_raw['production_score_raw'].rank(pct=True) * 100
+
+# Create lookup dictionaries
+wr_percentile_lookup = dict(zip(all_wr_raw['player_name'], all_wr_raw['breakout_percentile']))
+rb_percentile_lookup = dict(zip(all_rb_raw['player_name'], all_rb_raw['production_percentile']))
+
+# Apply percentile ranks back to dataframes
+wr_backtest['breakout_percentile'] = wr_backtest['player_name'].map(wr_percentile_lookup)
+wr_2026['breakout_percentile'] = wr_2026['player_name'].map(wr_percentile_lookup)
+rb_backtest['production_percentile'] = rb_backtest['player_name'].map(rb_percentile_lookup)
+rb_2026['production_percentile'] = rb_2026['player_name'].map(rb_percentile_lookup)
+
+print(f"  WR breakout: raw mean={all_wr_raw['breakout_score_raw'].mean():.1f} → percentile mean={all_wr_raw['breakout_percentile'].mean():.1f}")
+print(f"  RB production: raw mean={all_rb_raw['production_score_raw'].mean():.1f} → percentile mean={all_rb_raw['production_percentile'].mean():.1f}")
+
+# ============================================================================
+# STEP 3: Calculate SLAP scores using PERCENTILE ranks
+# ============================================================================
+print("Step 3: Calculating calibrated SLAP scores...")
+
+# WR SLAP using percentile ranks
+wr_backtest['slap_score'] = (
+    WR_WEIGHT_DC * wr_backtest['dc_score'] +
+    WR_WEIGHT_PRODUCTION * wr_backtest['breakout_percentile'] +
+    WR_WEIGHT_RAS * wr_backtest['ras_score']
+)
+wr_backtest['delta'] = wr_backtest['slap_score'] - wr_backtest['dc_score']
+wr_backtest['slap_tier'] = wr_backtest['slap_score'].apply(get_slap_tier)
+
+wr_2026['slap_score'] = (
+    WR_WEIGHT_DC * wr_2026['dc_score'] +
+    WR_WEIGHT_PRODUCTION * wr_2026['breakout_percentile'] +
+    WR_WEIGHT_RAS * wr_2026['ras_score']
+)
+wr_2026['delta'] = wr_2026['slap_score'] - wr_2026['dc_score']
+wr_2026['slap_tier'] = wr_2026['slap_score'].apply(get_slap_tier)
+
+# RB SLAP using percentile ranks
+rb_backtest['slap_score'] = (
+    RB_WEIGHT_DC * rb_backtest['dc_score'] +
+    RB_WEIGHT_PRODUCTION * rb_backtest['production_percentile'] +
+    RB_WEIGHT_RAS * rb_backtest['ras_score']
+)
+rb_backtest['delta'] = rb_backtest['slap_score'] - rb_backtest['dc_score']
+rb_backtest['slap_tier'] = rb_backtest['slap_score'].apply(get_slap_tier)
+
 rb_2026['slap_score'] = (
     RB_WEIGHT_DC * rb_2026['dc_score'] +
-    RB_WEIGHT_PRODUCTION * rb_2026['production_score'] +
+    RB_WEIGHT_PRODUCTION * rb_2026['production_percentile'] +
     RB_WEIGHT_RAS * rb_2026['ras_score']
 )
 rb_2026['delta'] = rb_2026['slap_score'] - rb_2026['dc_score']
 rb_2026['slap_tier'] = rb_2026['slap_score'].apply(get_slap_tier)
 
 # ============================================================================
-# CREATE STANDARDIZED OUTPUT - WRs
+# CREATE STANDARDIZED OUTPUT
 # ============================================================================
-print("\nCreating standardized WR output...")
+print("\nCreating standardized output...")
 
 wr_backtest_out = pd.DataFrame({
     'player_name': wr_backtest['player_name'],
@@ -254,17 +291,18 @@ wr_backtest_out = pd.DataFrame({
     'draft_age': wr_backtest.get('age', None),
     'breakout_age': wr_backtest['breakout_age'],
     'dominator_pct': wr_backtest['dominator_pct'],
-    'breakout_score': wr_backtest['breakout_score'],
+    'breakout_score_raw': wr_backtest['breakout_score_raw'],
+    'production_percentile': wr_backtest['breakout_percentile'],
     'rec_yards': None,
     'team_pass_att': None,
-    'production_score': None,
+    'production_score_raw': None,
     'ras_raw': wr_backtest['ras_raw'],
     'ras_score': wr_backtest['ras_score'],
     'dc_score': wr_backtest['dc_score'],
     'slap_score': wr_backtest['slap_score'],
     'slap_tier': wr_backtest['slap_tier'],
     'delta': wr_backtest['delta'],
-    'nfl_best_ppg': wr_backtest['best_ppr'],  # Using PPR for WRs
+    'nfl_best_ppg': wr_backtest['best_ppr'],
     'hit24': wr_backtest['hit24'],
 })
 
@@ -277,10 +315,11 @@ wr_2026_out = pd.DataFrame({
     'draft_age': wr_2026['age'],
     'breakout_age': wr_2026['breakout_age'],
     'dominator_pct': wr_2026['dominator_pct'],
-    'breakout_score': wr_2026['breakout_score'],
+    'breakout_score_raw': wr_2026['breakout_score_raw'],
+    'production_percentile': wr_2026['breakout_percentile'],
     'rec_yards': None,
     'team_pass_att': None,
-    'production_score': None,
+    'production_score_raw': None,
     'ras_raw': wr_2026['ras_raw'],
     'ras_score': wr_2026['ras_score'],
     'dc_score': wr_2026['dc_score'],
@@ -291,11 +330,6 @@ wr_2026_out = pd.DataFrame({
     'hit24': None,
 })
 
-# ============================================================================
-# CREATE STANDARDIZED OUTPUT - RBs
-# ============================================================================
-print("Creating standardized RB output...")
-
 rb_backtest_out = pd.DataFrame({
     'player_name': rb_backtest['player_name'],
     'position': 'RB',
@@ -305,10 +339,11 @@ rb_backtest_out = pd.DataFrame({
     'draft_age': rb_backtest['age'],
     'breakout_age': None,
     'dominator_pct': None,
-    'breakout_score': None,
+    'breakout_score_raw': None,
+    'production_percentile': rb_backtest['production_percentile'],
     'rec_yards': rb_backtest['rec_yards'],
     'team_pass_att': rb_backtest['team_pass_att'],
-    'production_score': rb_backtest['production_score'],
+    'production_score_raw': rb_backtest['production_score_raw'],
     'ras_raw': rb_backtest['ras_raw'],
     'ras_score': rb_backtest['ras_score'],
     'dc_score': rb_backtest['dc_score'],
@@ -328,10 +363,11 @@ rb_2026_out = pd.DataFrame({
     'draft_age': rb_2026['age'],
     'breakout_age': None,
     'dominator_pct': None,
-    'breakout_score': None,
+    'breakout_score_raw': None,
+    'production_percentile': rb_2026['production_percentile'],
     'rec_yards': None,
     'team_pass_att': None,
-    'production_score': rb_2026['production_score'],
+    'production_score_raw': rb_2026['production_score_raw'],
     'ras_raw': rb_2026['ras_raw'],
     'ras_score': rb_2026['ras_score'],
     'dc_score': rb_2026['dc_score'],
@@ -342,16 +378,10 @@ rb_2026_out = pd.DataFrame({
     'hit24': None,
 })
 
-# ============================================================================
-# COMBINE ALL DATA
-# ============================================================================
-print("Combining all data...")
-
+# Combine all data
 all_wr = pd.concat([wr_backtest_out, wr_2026_out], ignore_index=True)
 all_rb = pd.concat([rb_backtest_out, rb_2026_out], ignore_index=True)
 all_players = pd.concat([all_wr, all_rb], ignore_index=True)
-
-# Sort by draft year and SLAP score
 all_players = all_players.sort_values(['draft_year', 'slap_score'], ascending=[True, False])
 
 # ============================================================================
@@ -361,26 +391,40 @@ print("\n" + "=" * 90)
 print("SAVING OUTPUT FILES")
 print("=" * 90)
 
-# 1. Complete database
 all_players.to_csv('output/slap_complete_database_final.csv', index=False)
 print(f"\n1. Saved: output/slap_complete_database_final.csv")
 print(f"   Total players: {len(all_players)}")
 print(f"   - WRs: {len(all_wr)} ({len(wr_backtest_out)} backtest + {len(wr_2026_out)} 2026)")
 print(f"   - RBs: {len(all_rb)} ({len(rb_backtest_out)} backtest + {len(rb_2026_out)} 2026)")
 
-# 2. 2026 WR rankings (top 50)
 wr_2026_final = wr_2026_out.sort_values('slap_score', ascending=False).head(50).reset_index(drop=True)
 wr_2026_final.insert(0, 'rank', range(1, len(wr_2026_final) + 1))
 wr_2026_final.to_csv('output/slap_wr_2026_final.csv', index=False)
-print(f"\n2. Saved: output/slap_wr_2026_final.csv")
-print(f"   Top 50 WRs for 2026 draft")
+print(f"\n2. Saved: output/slap_wr_2026_final.csv (Top 50)")
 
-# 3. 2026 RB rankings (top 50)
 rb_2026_final = rb_2026_out.sort_values('slap_score', ascending=False).head(50).reset_index(drop=True)
 rb_2026_final.insert(0, 'rank', range(1, len(rb_2026_final) + 1))
 rb_2026_final.to_csv('output/slap_rb_2026_final.csv', index=False)
-print(f"\n3. Saved: output/slap_rb_2026_final.csv")
-print(f"   Top 50 RBs for 2026 draft")
+print(f"\n3. Saved: output/slap_rb_2026_final.csv (Top 50)")
+
+# ============================================================================
+# CALIBRATION VERIFICATION
+# ============================================================================
+print("\n" + "=" * 90)
+print("CALIBRATION VERIFICATION")
+print("=" * 90)
+
+print("\n### BEFORE vs AFTER Calibration")
+print("-" * 60)
+print(f"\nProduction component (now using percentile ranks):")
+print(f"  WR percentile mean: {all_wr['production_percentile'].mean():.1f}")
+print(f"  RB percentile mean: {all_rb['production_percentile'].mean():.1f}")
+print(f"  Gap: {all_wr['production_percentile'].mean() - all_rb['production_percentile'].mean():.1f} (target: ~0)")
+
+print(f"\nFinal SLAP scores:")
+print(f"  WR mean: {all_wr['slap_score'].mean():.1f}")
+print(f"  RB mean: {all_rb['slap_score'].mean():.1f}")
+print(f"  Gap: {all_wr['slap_score'].mean() - all_rb['slap_score'].mean():.1f} (was 12.9, target: ~2-3)")
 
 # ============================================================================
 # SUMMARY STATISTICS
@@ -389,15 +433,7 @@ print("\n" + "=" * 90)
 print("SUMMARY STATISTICS")
 print("=" * 90)
 
-# Player count by position and year
-print("\n### PLAYER COUNT BY POSITION AND YEAR")
-print("-" * 60)
-pivot = all_players.groupby(['draft_year', 'position']).size().unstack(fill_value=0)
-print(pivot.to_string())
-print(f"\nTotal: {len(all_players)} players")
-
-# Score distribution
-print("\n### SCORE DISTRIBUTION")
+print("\n### SCORE DISTRIBUTION (CALIBRATED)")
 print("-" * 60)
 print(f"\n{'Position':<8} {'Mean':>8} {'Std':>8} {'Min':>8} {'Max':>8} {'Median':>8}")
 print("-" * 50)
@@ -405,7 +441,6 @@ for pos in ['WR', 'RB']:
     pos_data = all_players[all_players['position'] == pos]['slap_score']
     print(f"{pos:<8} {pos_data.mean():>8.1f} {pos_data.std():>8.1f} {pos_data.min():>8.1f} {pos_data.max():>8.1f} {pos_data.median():>8.1f}")
 
-# Tier distribution
 print("\n### TIER DISTRIBUTION")
 print("-" * 60)
 tier_order = ['Elite', 'Great', 'Good', 'Average', 'Below Avg', 'Poor']
@@ -461,12 +496,12 @@ print("\n" + "=" * 90)
 print("TOP 20 RBs FOR 2026 DRAFT")
 print("=" * 90)
 
-print(f"\n{'Rank':>4} {'Player':<25} {'School':<20} {'Pick':>5} {'SLAP':>6} {'Tier':<10} {'Prod':>7}")
+print(f"\n{'Rank':>4} {'Player':<25} {'School':<20} {'Pick':>5} {'SLAP':>6} {'Tier':<10} {'Prod%':>7}")
 print("-" * 85)
 for i, row in rb_2026_final.head(20).iterrows():
-    prod = f"{row['production_score']:.0f}" if pd.notna(row['production_score']) else "N/A"
+    prod = f"{row['production_percentile']:.0f}" if pd.notna(row['production_percentile']) else "N/A"
     print(f"{row['rank']:>4} {row['player_name']:<25} {row['college']:<20} {int(row['pick']):>5} {row['slap_score']:>6.1f} {row['slap_tier']:<10} {prod:>7}")
 
 print("\n" + "=" * 90)
-print("FINAL OUTPUT GENERATION COMPLETE")
+print("CALIBRATED OUTPUT GENERATION COMPLETE")
 print("=" * 90)
