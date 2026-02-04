@@ -204,7 +204,9 @@ print("PROCESSING 2026 WR PROSPECTS")
 print("=" * 90)
 
 # 2026 WR Breakout ages (researched)
+# Original 43 players + 7 new from CFBD multi-season analysis
 WR_2026_BREAKOUT = {
+    # Original researched breakout ages
     'Carnell Tate': 19, 'Jordyn Tyson': 20, 'Makai Lemon': 20, 'Denzel Boston': 20,
     'Kevin Concepcion': 19, 'Chris Bell': 21, 'Elijah Sarratt': 21, 'Zachariah Branch': 19,
     'Germie Bernard': 20, 'Chris Brazzell': 21, "Ja'Kobi Lane": 20, 'Omar Cooper Jr.': 21,
@@ -216,6 +218,14 @@ WR_2026_BREAKOUT = {
     'Reggie Virgil': 20, 'Vinny Anthony II': 21, 'Caullin Lacy': 21, 'Kendrick Law': 21,
     'Colbie Young': 21, 'Harrison Wallace III': 20, 'Jaden Greathouse': 19, 'Barion Brown': 19,
     'Amare Thomas': 18, 'Hykeem Williams': 20, 'Shelton Sampson Jr.': 19,
+    # New from CFBD multi-season analysis (calculated Feb 2026)
+    'Hank Beatty': 21,           # Illinois - first hit 20%+ in 2025 season
+    'Eli Heidenreich': 21,       # Navy - first hit 20%+ in 2023 season (35.1%)
+    'Emmanuel Henderson': 22,    # Kansas - first hit 20%+ in 2025 season
+    'Zavion Thomas': 18,         # LSU - first hit 20%+ in 2023 season (32.7%) - ELITE
+    'Anthony Evans III': 20,     # Mississippi State - first hit 20%+ in 2025 season
+    'Rara Thomas': 23,           # Troy - first hit 20%+ in 2025 season
+    "Ja'Varrius Johnson": 21,    # Auburn - first hit 20%+ in 2022 season (28.6%)
 }
 
 prospects = pd.read_csv('data/prospects_final.csv')
