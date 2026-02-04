@@ -88,12 +88,37 @@ def breakout_age_to_score(age):
     }
     return scores.get(age, 25)
 
-def rb_production_score(rec_yards, team_pass_att):
-    """Calculate RB receiving production score"""
+def rb_production_score(rec_yards, team_pass_att, draft_age):
+    """
+    Calculate RB receiving production score with continuous age weighting.
+
+    Younger RBs get a bonus multiplier on their production.
+    Older RBs get a penalty multiplier.
+
+    Formula: (rec_yards / team_pass_att) × age_weight × 100
+
+    Age weight: 1.15 - (0.05 × (season_age - 19))
+    Where season_age = draft_age - 1 (age during final college season)
+    """
     if pd.isna(rec_yards) or pd.isna(team_pass_att) or team_pass_att == 0:
         return None
+    if pd.isna(draft_age):
+        draft_age = 22  # Default to baseline if missing
+
+    # Raw production ratio
     ratio = rec_yards / team_pass_att
-    score = (ratio / 1.0) * 100
+
+    # Season age (age during final college season)
+    season_age = draft_age - 1
+
+    # Continuous age weight
+    # Age 19 = 1.15, Age 20 = 1.10, Age 21 = 1.05, Age 22 = 1.00, Age 23 = 0.95
+    age_weight = 1.15 - (0.05 * (season_age - 19))
+    age_weight = max(0.85, min(1.15, age_weight))  # Cap between 0.85 and 1.15
+
+    # Age-adjusted production score
+    score = ratio * age_weight * 100
+
     return min(100, max(0, score))
 
 # Position averages (from backtest)
@@ -149,7 +174,7 @@ print(f"Loaded {len(rb_backtest)} RBs from backtest")
 # Calculate scores with NEW DC formula
 rb_backtest['dc_score'] = rb_backtest['pick'].apply(normalize_draft_capital)
 rb_backtest['production_score'] = rb_backtest.apply(
-    lambda x: rb_production_score(x['rec_yards'], x['team_pass_att']), axis=1
+    lambda x: rb_production_score(x['rec_yards'], x['team_pass_att'], x['age']), axis=1
 )
 rb_backtest['production_score_final'] = rb_backtest['production_score'].fillna(RB_AVG_PRODUCTION)
 rb_backtest['ras_score'] = rb_backtest['RAS'] * 10
