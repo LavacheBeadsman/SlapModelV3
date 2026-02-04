@@ -189,9 +189,12 @@ def main():
                 player_tds = stats.get('TD', 0)
                 player_rec = stats.get('REC', 0)
 
-                # Calculate Dominator Rating (yards-only for now)
+                # Calculate Dominator Rating: (yards_share + td_share) / 2
+                # This is the correct formula per CLAUDE.md
                 if team_rec_yards and team_rec_yards > 0:
-                    dominator = (player_yards / team_rec_yards) * 100
+                    yards_share = player_yards / team_rec_yards
+                    td_share = player_tds / team_rec_tds if team_rec_tds and team_rec_tds > 0 else yards_share
+                    dominator = ((yards_share + td_share) / 2) * 100
                 else:
                     dominator = None
 
