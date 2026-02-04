@@ -48,20 +48,38 @@ DC = 100 - 2.40 × (pick^0.62 - 1)
 
 ### 2. Production Component (Position-Specific)
 
-**For WRs: Breakout Age**
+**For WRs: Breakout Age (Continuous Scoring)**
 ```
-breakout = age_score(breakout_age)
+breakout = wr_breakout_score(breakout_age, dominator_pct)
 ```
 Where `breakout_age` = age when player first hit 20%+ dominator rating
 
-Age Score mapping:
-- Age 18: 100 (freshman breakout = elite)
-- Age 19: 90
-- Age 20: 75
-- Age 21: 60
-- Age 22: 45
-- Age 23: 30
-- Never hit 20%: 25
+**Continuous Scoring Formula (Feb 2026 update):**
+Uses age tier as base score + dominator magnitude as tiebreaker:
+```python
+# For players who broke out (hit 20%+ dominator):
+base_score = age_tier (100, 90, 75, 60, 45, 30, 20)
+bonus = min((dominator_pct - 20) × 0.5, 9.9)
+final_score = min(base_score + bonus, 99.9)
+
+# For players who never broke out:
+final_score = min(35, 15 + dominator_pct)  # Maps 0-20% to 15-35
+```
+
+**Age Tier Base Scores:**
+- Age 18: 100 → final range 99.9 (capped)
+- Age 19: 90 → final range 90.0 - 99.9
+- Age 20: 75 → final range 75.0 - 84.9
+- Age 21: 60 → final range 60.0 - 69.9
+- Age 22: 45 → final range 45.0 - 54.9
+- Age 23: 30 → final range 30.0 - 39.9
+- Never hit 20%: 15-35 (based on peak dominator)
+
+**Why Continuous Scoring?**
+- Discrete tiers created artificial cliffs (19.9 years = 90, 20.0 years = 75)
+- Dominator tiebreaker differentiates within age tiers
+- Creates 180+ unique scores vs 7 discrete tiers
+- Works with integer ages (backtest data has no exact birthdates)
 
 **Why Breakout Age for WRs?**
 - Dominator Rating alone had weak correlation (r=0.175) with NFL success

@@ -72,8 +72,60 @@ for pick in test_picks:
 # HELPER FUNCTIONS
 # ============================================================================
 
+def wr_breakout_score(breakout_age, dominator_pct):
+    """
+    Continuous breakout scoring using age tier + dominator tiebreaker.
+
+    For WRs who broke out (hit 20%+ dominator):
+    - Base score from age tier (100, 90, 75, 60, 45, 30, 20)
+    - Bonus from dominator magnitude: (dom% - 20) * 0.5, capped at 9.9
+
+    For WRs who never broke out:
+    - Use peak dominator as penalty score: 15 + (dom% * 1.0)
+    - This maps 0-20% dominator to 15-35 score range
+
+    Args:
+        breakout_age: Age when first hit 20%+ dominator, or None if never
+        dominator_pct: Peak dominator rating percentage (0-100 scale)
+
+    Returns:
+        Continuous score from 15 to 99.9
+    """
+    # Never broke out - use penalty scoring
+    if breakout_age is None or pd.isna(breakout_age):
+        if dominator_pct is not None and pd.notna(dominator_pct):
+            # 0-20% dominator maps to 15-35 score
+            return min(35, 15 + (dominator_pct * 1.0))
+        else:
+            return 25  # No data at all
+
+    # Age tier base scores
+    age_tiers = {
+        18: 100,
+        19: 90,
+        20: 75,
+        21: 60,
+        22: 45,
+        23: 30,
+        24: 20,
+    }
+    base_score = age_tiers.get(int(breakout_age), 20)
+
+    # Dominator bonus (creates continuous scores within tier)
+    # 20% dominator = 0 bonus, 40%+ dominator = up to 9.9 bonus
+    if dominator_pct is not None and pd.notna(dominator_pct) and dominator_pct >= 20:
+        bonus = min((dominator_pct - 20) * 0.5, 9.9)
+        bonus = max(0, bonus)  # No negative bonus
+    else:
+        bonus = 0
+
+    final_score = min(base_score + bonus, 99.9)
+    return final_score
+
+
+# Legacy function for backward compatibility
 def breakout_age_to_score(age):
-    """Convert breakout age to 0-100 score for WRs"""
+    """Convert breakout age to 0-100 score for WRs (legacy discrete version)"""
     if pd.isna(age):
         return None
     age = int(age)
@@ -137,10 +189,23 @@ print("=" * 90)
 wr_backtest = pd.read_csv('data/wr_backtest_expanded_final.csv')
 print(f"Loaded {len(wr_backtest)} WRs from backtest")
 
-# Calculate scores with NEW DC formula
+# Load correct dominator percentages from wr_dominator_complete.csv
+wr_dominator = pd.read_csv('data/wr_dominator_complete.csv')
+wr_backtest = wr_backtest.merge(
+    wr_dominator[['player_name', 'draft_year', 'dominator_pct']],
+    on=['player_name', 'draft_year'],
+    how='left'
+)
+print(f"  Merged dominator_pct: {wr_backtest['dominator_pct'].notna().sum()} WRs with data")
+
+# Calculate scores with NEW DC formula and CONTINUOUS breakout scoring
 wr_backtest['dc_score'] = wr_backtest['pick'].apply(normalize_draft_capital)
-wr_backtest['breakout_score'] = wr_backtest['breakout_age'].apply(breakout_age_to_score)
-wr_backtest['breakout_score_final'] = wr_backtest['breakout_score'].fillna(WR_AVG_BREAKOUT)
+
+# Use new continuous breakout scoring with dominator tiebreaker
+wr_backtest['breakout_score'] = wr_backtest.apply(
+    lambda x: wr_breakout_score(x['breakout_age'], x['dominator_pct']), axis=1
+)
+wr_backtest['breakout_score_final'] = wr_backtest['breakout_score']  # No imputation needed - function handles None
 wr_backtest['production_score'] = wr_backtest['breakout_score_final']  # For WR, production = breakout
 wr_backtest['ras_score'] = wr_backtest['RAS'] * 10  # Convert 0-10 to 0-100
 wr_backtest['ras_score_final'] = wr_backtest['ras_score'].fillna(WR_AVG_RAS)
@@ -228,17 +293,31 @@ WR_2026_BREAKOUT = {
     "Ja'Varrius Johnson": 21,    # Auburn - first hit 20%+ in 2022 season (28.6%)
 }
 
+# Load 2026 WR dominator data from CFBD analysis
+try:
+    wr_2026_breakout_data = pd.read_csv('data/wr_breakout_ages_2026.csv')
+    WR_2026_DOMINATOR = dict(zip(wr_2026_breakout_data['player_name'],
+                                  wr_2026_breakout_data['peak_dominator']))
+    print(f"  Loaded 2026 WR dominator data: {len(WR_2026_DOMINATOR)} players")
+except:
+    WR_2026_DOMINATOR = {}
+
 prospects = pd.read_csv('data/prospects_final.csv')
 wr_2026 = prospects[prospects['position'] == 'WR'].copy()
 print(f"Loaded {len(wr_2026)} 2026 WR prospects")
 
-# Calculate scores with NEW DC formula
+# Calculate scores with NEW DC formula and CONTINUOUS breakout scoring
 wr_2026['breakout_age'] = wr_2026['player_name'].map(WR_2026_BREAKOUT)
-wr_2026['breakout_score'] = wr_2026['breakout_age'].apply(breakout_age_to_score)
-wr_2026['breakout_score_final'] = wr_2026['breakout_score'].fillna(WR_AVG_BREAKOUT)
+wr_2026['dominator_pct'] = wr_2026['player_name'].map(WR_2026_DOMINATOR)
+
+# Use new continuous breakout scoring with dominator tiebreaker
+wr_2026['breakout_score'] = wr_2026.apply(
+    lambda x: wr_breakout_score(x['breakout_age'], x['dominator_pct']), axis=1
+)
+wr_2026['breakout_score_final'] = wr_2026['breakout_score']  # No imputation needed
 wr_2026['dc_score'] = wr_2026['projected_pick'].apply(normalize_draft_capital)
 wr_2026['ras_score_final'] = WR_AVG_RAS  # No combine data yet
-wr_2026['breakout_status'] = np.where(wr_2026['breakout_score'].isna(), 'imputed', 'observed')
+wr_2026['breakout_status'] = np.where(wr_2026['breakout_age'].isna(), 'imputed', 'observed')
 wr_2026['ras_status'] = 'imputed'
 
 # Calculate SLAP with WR weights (65/20/15)
