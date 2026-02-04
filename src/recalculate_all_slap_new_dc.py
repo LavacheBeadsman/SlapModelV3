@@ -147,10 +147,23 @@ def rb_production_score(rec_yards, team_pass_att, draft_age):
     Younger RBs get a bonus multiplier on their production.
     Older RBs get a penalty multiplier.
 
-    Formula: (rec_yards / team_pass_att) × age_weight × 100
+    Formula (Feb 2026 update - continuous scoring):
+        raw_score = (rec_yards / team_pass_att) × age_weight × 100
+        scaled_score = raw_score / SCALE_FACTOR  # Normalize to 0-99.9 range
+        final_score = min(99.9, scaled_score)
 
     Age weight: 1.15 - (0.05 × (season_age - 19))
     Where season_age = draft_age - 1 (age during final college season)
+
+    Scale factor of 1.75 brings max historical score (~175) to ~100,
+    ensuring elite producers are differentiated rather than all capped at 100.
+
+    Examples:
+        Antonio Gibson (2020): 175.0 raw → 100.0 scaled → 99.9 final
+        Joe Mixon (2017): 154.1 raw → 88.1 scaled
+        Saquon Barkley (2018): 151.8 raw → 86.7 scaled
+        Christian McCaffrey (2017): 112.2 raw → 64.1 scaled
+        Average RB: ~52 raw → ~30 scaled
     """
     if pd.isna(rec_yards) or pd.isna(team_pass_att) or team_pass_att == 0:
         return None
@@ -168,10 +181,14 @@ def rb_production_score(rec_yards, team_pass_att, draft_age):
     age_weight = 1.15 - (0.05 * (season_age - 19))
     age_weight = max(0.85, min(1.15, age_weight))  # Cap between 0.85 and 1.15
 
-    # Age-adjusted production score
-    score = ratio * age_weight * 100
+    # Raw age-adjusted production score
+    raw_score = ratio * age_weight * 100
 
-    return min(100, max(0, score))
+    # Scale to 0-99.9 range (historical max raw ~175, so scale by 1.75)
+    SCALE_FACTOR = 1.75
+    scaled_score = raw_score / SCALE_FACTOR
+
+    return min(99.9, max(0, scaled_score))
 
 # Position averages (from backtest)
 WR_AVG_BREAKOUT = 79.7

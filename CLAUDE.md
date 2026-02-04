@@ -88,16 +88,34 @@ final_score = min(35, 15 + dominator_pct)  # Maps 0-20% to 15-35
 - Draft capital already prices in production context (teammates, transfers, competition)
 - This avoids penalizing players like Jaylen Waddle (competed with 3 future 1st-rounders)
 
-**For RBs: Receiving Production Score**
+**For RBs: Receiving Production Score (Continuous Scoring)**
 ```
-production = (receiving_yards / team_pass_attempts) × age_weight
+production = (receiving_yards / team_pass_attempts) × age_weight × 100 / 1.75
 ```
+
+**Continuous Scoring Formula (Feb 2026 update):**
+```python
+raw_score = (rec_yards / team_pass_att) × age_weight × 100
+scaled_score = raw_score / 1.75  # Normalize to 0-99.9 range
+final_score = min(99.9, scaled_score)
+```
+
 Where `age_weight` adjusts for when production occurred:
-- Age 19: 1.20x (20% bonus)
-- Age 20: 1.10x (10% bonus)
-- Age 21: 1.00x (baseline)
-- Age 22: 0.90x (10% penalty)
-- Age 23+: 0.80x (20% penalty)
+- Season age 19: 1.15x (15% bonus for early production)
+- Season age 20: 1.10x (10% bonus)
+- Season age 21: 1.05x (5% bonus)
+- Season age 22: 1.00x (baseline)
+- Season age 23: 0.95x (5% penalty)
+- Season age 24+: 0.90x (10% penalty)
+
+**Why Scale by 1.75?**
+- Old formula capped 21 RBs at 100, losing differentiation at the top
+- Elite producers like Antonio Gibson (175 raw) and Joe Mixon (154 raw) were all 100
+- Scaling by 1.75 spreads scores across 0-99.9 range:
+  - Antonio Gibson: 99.9 (was 100)
+  - Joe Mixon: 88.1 (was 100)
+  - Saquon Barkley: 86.7 (was 100)
+  - Average RB: ~30 (was ~52)
 
 **Why Receiving Production for RBs (not Breakout Age)?**
 - Backtest analysis (2015-2024, 188 RBs) proved receiving production is better:
@@ -105,7 +123,7 @@ Where `age_weight` adjusts for when production occurred:
   - Breakout age: r=0.10, **does NOT add value (p=0.80)**
 - Receiving yards / team pass attempts measures a RB's share of the passing game
 - Age-weighting rewards younger players who caught passes early
-- Normalized 0-100 where 50 = average RB
+- Creates 189 unique scores (fully continuous)
 
 **CRITICAL: Season Selection for RB Production**
 - **ALWAYS use FINAL college season** (draft_year - 1)
