@@ -124,8 +124,8 @@ Russell Gage,WR,2018,194,6,LSU,6,38.0,175.5,0,0,8.0,,2.55
 Tremon Smith,WR,2018,196,6,Central Arkansas,6,999.0,0.0,0,0,,18.0,300.0
 Equanimeous St. Brown,WR,2018,207,6,Notre Dame,6,105.0,62.7,0,0,9.85,18.0,314.12
 Cedrick Wilson Jr.,WR,2018,208,6,Boise St.,6,88.0,76.3,0,0,,18.0,342.64
-Braxton Berrios,WR,2018,210,6,Miami (FL),6,64.0,115.1,0,0,5.68,,17.59
-Javon Wims,WR,2018,224,7,Georgia,6,120.0,42.6,0,0,5.44,,12.26
+Braxton Berrios,WR,2018,210,6,Miami (FL),6,64.0,115.1,0,0,5.68,21.0,17.59
+Javon Wims,WR,2018,224,7,Georgia,6,120.0,42.6,0,0,5.44,22.0,12.26
 Marcell Ateman,WR,2018,228,7,Oklahoma St.,6,134.0,36.4,0,0,5.18,18.0,134.62
 Richie James,WR,2018,240,7,Middle Tenn. St.,6,45.0,157.70000000000002,0,0,5.99,18.0,243.51
 Auden Tate,WR,2018,253,7,Florida St.,6,72.0,101.5,0,0,1.82,18.0,44.52
@@ -177,7 +177,7 @@ Bryan Edwards,WR,2020,81,3,South Carolina,4,63.0,116.2,0,0,,19.0,30.6
 Devin Duvernay,WR,2020,92,3,Texas,4,67.0,110.1,0,0,7.86,21.0,36.9
 Gabriel Davis,WR,2020,128,4,Central Florida,4,999.0,0.0,0,0,6.85,20.0,30.1
 Antonio Gandy-Golden,WR,2020,142,4,Liberty,4,200.0,3.5,0,0,6.13,20.0,37.2
-Joe Reed,WR,2020,151,5,Virginia,4,184.0,8.9,0,0,9.35,,18.1
+Joe Reed,WR,2020,151,5,Virginia,4,184.0,8.9,0,0,9.35,21.0,18.1
 Tyler Johnson,WR,2020,161,5,Minnesota,4,91.0,81.5,0,0,,19.0,44.7
 Collin Johnson,WR,2020,165,5,Texas,4,110.0,59.2,0,0,,19.0,27.3
 Quintez Cephus,WR,2020,166,5,Wisconsin,4,102.0,66.9,0,0,4.5,21.0,32.2
@@ -213,7 +213,7 @@ Dez Fitzpatrick,WR,2021,109,4,Louisville,3,163.0,15.9,0,0,,20.0,31.0
 Amon-Ra St. Brown,WR,2021,112,4,USC,3,2.0,386.5,1,1,7.13,19.0,25.2
 Jaelon Darden,WR,2021,129,4,North Texas,3,174.0,11.4,0,0,7.14,20.0,42.0
 Tylan Wallace,WR,2021,131,4,Oklahoma St.,3,119.0,43.1,0,0,4.71,20.0,34.9
-Jacob Harris,WR,2021,141,4,Central Florida,3,213.0,1.6,0,0,9.88,,15.3
+Jacob Harris,WR,2021,141,4,Central Florida,3,213.0,1.6,0,0,9.88,23.0,15.3
 Ihmir Smith-Marsette,WR,2021,157,5,Iowa,3,146.0,28.6,0,0,6.81,20.0,24.3
 Simi Fehoko,WR,2021,179,5,Stanford,3,148.0,16.6,0,0,9.18,21.0,33.8
 Cornell Powell,WR,2021,181,5,Clemson,3,999.0,0.0,0,0,7.57,21.0,21.1
@@ -221,12 +221,12 @@ Frank Darby,WR,2021,187,6,Arizona St.,3,207.0,2.5,0,0,5.89,,19.0
 Marquez Stevenson,WR,2021,203,6,Houston,3,999.0,0.0,0,0,5.37,19.0,37.2
 Shi Smith,WR,2021,204,6,South Carolina,3,106.0,61.6,0,0,6.78,21.0,33.2
 Racey McMath,WR,2021,205,6,LSU,3,183.0,6.4,0,0,7.43,,6.2
-Jalen Camp,WR,2021,209,6,Georgia Tech,3,210.0,1.7000000000000002,0,0,9.75,,19.7
+Jalen Camp,WR,2021,209,6,Georgia Tech,3,210.0,1.7000000000000002,0,0,9.75,22.0,19.7
 Seth Williams,WR,2021,219,6,Auburn,3,202.0,4.4,0,0,6.86,20.0,30.9
 Dazz Newsome,WR,2021,221,6,North Carolina,3,204.0,4.3,0,0,2.13,20.0,27.4
 Mike Strachan,WR,2021,229,7,Charleston (WV),3,175.0,8.9,0,0,,,
 Tre Nixon,WR,2021,242,7,Central Florida,3,999.0,0.0,0,0,8.97,20.0,20.2
-Ben Skowronek,WR,2021,249,7,Notre Dame,3,88.0,84.30000000000001,0,0,,,15.4
+Ben Skowronek,WR,2021,249,7,Notre Dame,3,88.0,84.30000000000001,0,0,,22.0,15.4
 Kawaan Baker,WR,2021,255,7,South Alabama,3,999.0,0.0,0,0,9.08,19.0,30.1
 Dax Milne,WR,2021,258,7,BYU,3,157.0,15.7,0,0,4.56,21.0,29.8
 Drake London,WR,2022,8,1,USC,2,6.0,280.8,1,1,,20.0,30.3
@@ -297,7 +297,7 @@ Brian Thomas,WR,2024,23,1,LSU,0,5.0,284.0,1,1,,21.0,26.7
 Xavier Worthy,WR,2024,28,1,Texas,0,12.0,253.7,1,1,9.41,19.0,36.3
 Ricky Pearsall,WR,2024,31,1,Florida,0,82.0,93.5,0,0,9.91,20.0,31.4
 Xavier Legette,WR,2024,32,1,South Carolina,0,63.0,125.1,0,0,9.9,21.0,37.6
-Keon Coleman,WR,2024,33,2,Florida St.,0,71.0,118.7,0,0,8.18,,18.8
+Keon Coleman,WR,2024,33,2,Florida St.,0,71.0,118.7,0,0,8.18,20.0,18.8
 Ladd McConkey,WR,2024,34,2,Georgia,0,7.0,275.6,1,1,9.34,20.0,17.2
 Ja'Lynn Polk,WR,2024,37,2,Washington,0,130.0,32.7,0,0,8.85,21.0,22.5
 Adonai Mitchell,WR,2024,52,2,Texas,0,115.0,52.8,0,0,9.99,21.0,20.9
@@ -308,7 +308,7 @@ Jalen McMillan,WR,2024,92,3,Washington,0,51.0,141.5,0,0,8.67,20.0,22.8
 Luke McCaffrey,WR,2024,100,3,Rice,0,127.0,34.8,0,0,9.44,20.0,30.2
 Troy Franklin,WR,2024,102,4,Oregon,0,92.0,80.5,0,0,9.02,20.0,28.5
 Javon Baker,WR,2024,110,4,Central Florida,0,202.0,2.2,0,0,7.84,18.0,263.93
-Devontez Walker,WR,2024,113,4,North Carolina,0,172.0,9.1,0,0,9.76,,18.0
+Devontez Walker,WR,2024,113,4,North Carolina,0,172.0,9.1,0,0,9.76,21.0,18.0
 Jacob Cowing,WR,2024,135,4,Arizona,0,165.0,12.7,0,0,6.28,20.0,26.9
 Anthony Gould,WR,2024,142,5,Oregon St.,0,195.0,3.3000000000000003,0,0,8.87,21.0,22.8
 Ainias Smith,WR,2024,152,5,Texas A&M,0,147.0,17.7,0,0,7.36,18.0,22.6
