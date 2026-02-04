@@ -305,7 +305,12 @@ def main():
         if row['draft_year'] == 2026 and pd.isna(row['draft_age']):
             match = wr_2026[wr_2026['player_name'] == row['player_name']]
             if len(match) > 0 and 'age' in match.columns:
-                all_wrs_df.at[idx, 'draft_age'] = match.iloc[0]['age']
+                age_val = match.iloc[0]['age']
+                if pd.notna(age_val):
+                    try:
+                        all_wrs_df.at[idx, 'draft_age'] = float(age_val)
+                    except (ValueError, TypeError):
+                        pass  # Skip if age is not a valid number
 
     # Calculate final college season for each WR
     all_wrs_df['final_season'] = all_wrs_df['draft_year'] - 1
