@@ -189,18 +189,18 @@ r_wr_dc, p_wr_dc = spearmanr(wr_dc_only['dc'], wr_dc_only['outcome'])
 print(f"Sample size (DC only): {len(wr_dc_only)}")
 print(f"DC alone -> NFL PPR correlation: r = {r_wr_dc:.4f} (p = {p_wr_dc:.2e})")
 
-# WR: DC + Breakout
+# WR: DC + Breakout (using current 65/20 weights, normalized to sum to 1 without RAS)
 wr_dc_bo = wr_analysis[wr_analysis['dc'].notna() & wr_analysis['breakout'].notna()].copy()
 if len(wr_dc_bo) > 10:
-    wr_dc_bo['slap_dc_bo'] = 0.85 * wr_dc_bo['dc'] + 0.15 * wr_dc_bo['breakout']
+    wr_dc_bo['slap_dc_bo'] = 0.765 * wr_dc_bo['dc'] + 0.235 * wr_dc_bo['breakout']  # 65/(65+20) and 20/(65+20)
     r_wr_dc_bo, p_wr_dc_bo = spearmanr(wr_dc_bo['slap_dc_bo'], wr_dc_bo['outcome'])
     print(f"\nSample size (DC + Breakout): {len(wr_dc_bo)}")
     print(f"DC + Breakout -> NFL PPR correlation: r = {r_wr_dc_bo:.4f} (p = {p_wr_dc_bo:.2e})")
 
-# WR: DC + Breakout + RAS (full model)
+# WR: DC + Breakout + RAS (full model - current weights: 65/20/15)
 wr_full = wr_analysis[wr_analysis['dc'].notna() & wr_analysis['breakout'].notna() & wr_analysis['RAS'].notna()].copy()
 if len(wr_full) > 10:
-    wr_full['slap_full'] = 0.85 * wr_full['dc'] + 0.10 * wr_full['breakout'] + 0.05 * (wr_full['RAS'] * 10)  # RAS is 0-10, scale to 0-100
+    wr_full['slap_full'] = 0.65 * wr_full['dc'] + 0.20 * wr_full['breakout'] + 0.15 * (wr_full['RAS'] * 10)  # RAS is 0-10, scale to 0-100
     r_wr_full, p_wr_full = spearmanr(wr_full['slap_full'], wr_full['outcome'])
     print(f"\nSample size (COMPLETE data - DC + Breakout + RAS): {len(wr_full)}")
     print(f"DC + Breakout + RAS -> NFL PPR correlation: r = {r_wr_full:.4f} (p = {p_wr_full:.2e})")
@@ -219,18 +219,18 @@ r_rb_dc, p_rb_dc = spearmanr(rb_dc_only['dc'], rb_dc_only['outcome'])
 print(f"Sample size (DC only): {len(rb_dc_only)}")
 print(f"DC alone -> NFL PPG correlation: r = {r_rb_dc:.4f} (p = {p_rb_dc:.2e})")
 
-# RB: DC + Production
+# RB: DC + Production (using current 50/35 weights, normalized to sum to 1 without RAS)
 rb_dc_prod = rb_analysis[rb_analysis['dc'].notna() & rb_analysis['production'].notna()].copy()
 if len(rb_dc_prod) > 10:
-    rb_dc_prod['slap_dc_prod'] = 0.85 * rb_dc_prod['dc'] + 0.15 * rb_dc_prod['production']
+    rb_dc_prod['slap_dc_prod'] = 0.588 * rb_dc_prod['dc'] + 0.412 * rb_dc_prod['production']  # 50/(50+35) and 35/(50+35)
     r_rb_dc_prod, p_rb_dc_prod = spearmanr(rb_dc_prod['slap_dc_prod'], rb_dc_prod['outcome'])
     print(f"\nSample size (DC + Production): {len(rb_dc_prod)}")
     print(f"DC + Production -> NFL PPG correlation: r = {r_rb_dc_prod:.4f} (p = {p_rb_dc_prod:.2e})")
 
-# RB: DC + Production + RAS (full model)
+# RB: DC + Production + RAS (full model - current weights: 50/35/15)
 rb_full = rb_analysis[rb_analysis['dc'].notna() & rb_analysis['production'].notna() & rb_analysis['RAS'].notna()].copy()
 if len(rb_full) > 10:
-    rb_full['slap_full'] = 0.85 * rb_full['dc'] + 0.10 * rb_full['production'] + 0.05 * (rb_full['RAS'] * 10)
+    rb_full['slap_full'] = 0.50 * rb_full['dc'] + 0.35 * rb_full['production'] + 0.15 * (rb_full['RAS'] * 10)
     r_rb_full, p_rb_full = spearmanr(rb_full['slap_full'], rb_full['outcome'])
     print(f"\nSample size (COMPLETE data - DC + Production + RAS): {len(rb_full)}")
     print(f"DC + Production + RAS -> NFL PPG correlation: r = {r_rb_full:.4f} (p = {p_rb_full:.2e})")
