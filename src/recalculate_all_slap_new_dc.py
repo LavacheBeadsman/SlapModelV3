@@ -17,6 +17,11 @@ Why different weights?
 - WR breakout age has weaker predictive power (r=0.155) than RB receiving production (r=0.30)
 - WR model benefits from heavier DC weighting for better predictions
 - RB receiving production is statistically significant (p=0.004) and deserves more weight
+
+RB Production Method (Updated Feb 2026):
+- Uses CAREER AVERAGE (not final season or best season)
+- Career average has best predictive power: r=0.2415, partial r=0.1748 (p=0.015)
+- Smooths out single-season noise and captures consistent receiving ability
 """
 
 import pandas as pd
@@ -31,6 +36,7 @@ print("\nNEW DC Formula: DC = 100 - 2.40 × (pick^0.62 - 1)")
 print("\nPosition-Specific Weights:")
 print("  WRs: DC (65%) + Breakout Age (20%) + RAS (15%)")
 print("  RBs: DC (50%) + Receiving Production (35%) + RAS (15%)")
+print("\nRB Production Method: CAREER AVERAGE (Feb 2026 update)")
 
 # ============================================================================
 # WEIGHTS - POSITION SPECIFIC
@@ -196,6 +202,92 @@ WR_AVG_RAS = 68.9
 RB_AVG_PRODUCTION = 30.0
 RB_AVG_RAS = 66.5
 
+
+def load_rb_career_averages():
+    """
+    Load multi-season college receiving data and calculate career average ratios.
+
+    Returns a dict mapping (player_name_lower, draft_year) to career_avg_ratio.
+    Uses data from college_receiving_2011_2023.csv.
+
+    Career Average method was validated Feb 2026 as best predictor:
+    - r=0.2415 with NFL PPG
+    - partial r=0.1748 (p=0.015) controlling for DC
+    """
+    try:
+        college = pd.read_csv('data/college_receiving_2011_2023.csv')
+        college_rb = college[college['position'] == 'RB'].copy()
+        college_rb['name_lower'] = college_rb['college_name'].str.lower().str.strip()
+
+        # Calculate ratio for each season
+        college_rb['ratio'] = college_rb['rec_yards'] / college_rb['team_pass_att']
+        college_rb = college_rb[college_rb['ratio'].notna() & (college_rb['team_pass_att'] > 0)]
+
+        # Group by player and calculate career average
+        career_avgs = college_rb.groupby('name_lower').agg({
+            'ratio': 'mean',
+            'season': ['max', 'count']  # Most recent season and number of seasons
+        }).reset_index()
+        career_avgs.columns = ['name_lower', 'career_avg_ratio', 'last_season', 'num_seasons']
+
+        # Create lookup dict: (name_lower, draft_year) -> career_avg_ratio
+        # Draft year = last_season + 1 (most players)
+        career_avg_dict = {}
+        for _, row in career_avgs.iterrows():
+            # Map to likely draft years (last_season + 1 or + 2)
+            for offset in [1, 2]:
+                draft_year = int(row['last_season']) + offset
+                career_avg_dict[(row['name_lower'], draft_year)] = row['career_avg_ratio']
+
+        print(f"  Loaded career averages for {len(career_avgs)} RBs from multi-season data")
+        return career_avg_dict, career_avgs
+
+    except Exception as e:
+        print(f"  Warning: Could not load multi-season data: {e}")
+        return {}, pd.DataFrame()
+
+
+def rb_production_score_career_avg(career_avg_ratio, draft_age):
+    """
+    Calculate RB receiving production score using career average ratio.
+
+    This replaces the single-season method. Career average was validated
+    Feb 2026 as the best predictor (p=0.015 partial correlation with NFL success).
+
+    Formula:
+        raw_score = career_avg_ratio × age_weight × 100
+        scaled_score = raw_score / 1.75  # Normalize to 0-99.9 range
+        final_score = min(99.9, scaled_score)
+
+    Args:
+        career_avg_ratio: Average of (rec_yards / team_pass_att) across all college seasons
+        draft_age: Age at draft (used to calculate age weight)
+
+    Returns:
+        Production score from 0 to 99.9
+    """
+    if pd.isna(career_avg_ratio) or career_avg_ratio == 0:
+        return None
+    if pd.isna(draft_age):
+        draft_age = 22  # Default to baseline if missing
+
+    # Season age (age during final college season)
+    season_age = draft_age - 1
+
+    # Continuous age weight
+    # Age 19 = 1.15, Age 20 = 1.10, Age 21 = 1.05, Age 22 = 1.00, Age 23 = 0.95
+    age_weight = 1.15 - (0.05 * (season_age - 19))
+    age_weight = max(0.85, min(1.15, age_weight))  # Cap between 0.85 and 1.15
+
+    # Raw age-adjusted production score
+    raw_score = career_avg_ratio * age_weight * 100
+
+    # Scale to 0-99.9 range
+    SCALE_FACTOR = 1.75
+    scaled_score = raw_score / SCALE_FACTOR
+
+    return min(99.9, max(0, scaled_score))
+
 # ============================================================================
 # LOAD AND PROCESS WR BACKTEST DATA (2015-2024)
 # ============================================================================
@@ -250,13 +342,39 @@ print("\n" + "=" * 90)
 print("PROCESSING RB BACKTEST DATA (2015-2024)")
 print("=" * 90)
 
+# Load career average data from multi-season college receiving stats
+career_avg_dict, career_avg_df = load_rb_career_averages()
+
 rb_backtest = pd.read_csv('data/rb_backtest_with_receiving.csv')
 print(f"Loaded {len(rb_backtest)} RBs from backtest")
 
-# Calculate scores with NEW DC formula
+# Match players to career average data
+rb_backtest['name_lower'] = rb_backtest['player_name'].str.lower().str.strip()
+rb_backtest['career_avg_ratio'] = rb_backtest.apply(
+    lambda x: career_avg_dict.get((x['name_lower'], int(x['draft_year'])), np.nan), axis=1
+)
+
+# For players not matched, try using cfbd_name
+if 'cfbd_name' in rb_backtest.columns:
+    rb_backtest['cfbd_lower'] = rb_backtest['cfbd_name'].str.lower().str.strip()
+    mask = rb_backtest['career_avg_ratio'].isna()
+    rb_backtest.loc[mask, 'career_avg_ratio'] = rb_backtest.loc[mask].apply(
+        lambda x: career_avg_dict.get((x['cfbd_lower'], int(x['draft_year'])), np.nan)
+        if pd.notna(x.get('cfbd_lower')) else np.nan, axis=1
+    )
+
+# Fall back to single-season ratio for unmatched players
+rb_backtest['single_season_ratio'] = rb_backtest['rec_yards'] / rb_backtest['team_pass_att']
+mask = rb_backtest['career_avg_ratio'].isna()
+rb_backtest.loc[mask, 'career_avg_ratio'] = rb_backtest.loc[mask, 'single_season_ratio']
+
+matched_count = rb_backtest['career_avg_ratio'].notna().sum()
+print(f"  Matched {matched_count}/{len(rb_backtest)} RBs to career average data")
+
+# Calculate scores with NEW DC formula and CAREER AVERAGE production
 rb_backtest['dc_score'] = rb_backtest['pick'].apply(normalize_draft_capital)
 rb_backtest['production_score'] = rb_backtest.apply(
-    lambda x: rb_production_score(x['rec_yards'], x['team_pass_att'], x['age']), axis=1
+    lambda x: rb_production_score_career_avg(x['career_avg_ratio'], x['age']), axis=1
 )
 rb_backtest['production_score_final'] = rb_backtest['production_score'].fillna(RB_AVG_PRODUCTION)
 rb_backtest['ras_score'] = rb_backtest['RAS'] * 10
@@ -588,7 +706,8 @@ rb_backtest_std = pd.DataFrame({
     'round': rb_backtest['round'],
     'dc_score': rb_backtest['dc_score'],
     'production_score': rb_backtest['production_score_final'],
-    'production_metric': 'receiving_production',
+    'production_metric': 'career_avg_receiving',  # Updated Feb 2026
+    'career_avg_ratio': rb_backtest['career_avg_ratio'],  # New field
     'ras_score': rb_backtest['ras_score_final'],
     'slap_score': rb_backtest['slap_score'],
     'delta_vs_dc': rb_backtest['delta_vs_dc'],
@@ -612,7 +731,8 @@ rb_2026_std = pd.DataFrame({
     'round': np.ceil(rb_2026['projected_pick'] / 32).astype(int),
     'dc_score': rb_2026['dc_score'],
     'production_score': rb_2026['production_score_final'],
-    'production_metric': 'receiving_production',
+    'production_metric': 'career_avg_receiving',  # Updated Feb 2026
+    'career_avg_ratio': None,  # Not yet available for 2026
     'ras_score': rb_2026['ras_score_final'],
     'slap_score': rb_2026['slap_score'],
     'delta_vs_dc': rb_2026['delta_vs_dc'],

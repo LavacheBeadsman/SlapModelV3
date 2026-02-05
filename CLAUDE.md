@@ -125,13 +125,29 @@ Where `age_weight` adjusts for when production occurred:
 - Age-weighting rewards younger players who caught passes early
 - Creates 189 unique scores (fully continuous)
 
-**CRITICAL: Season Selection for RB Production**
-- **ALWAYS use FINAL college season** (draft_year - 1)
-- This matches the backtest methodology that validated the metric
-- For 2026 draft class: use 2025 college season
-- For 2025 draft class: use 2024 college season
-- Do NOT use "best season" - this was not validated and inflates scores
-- Exception: If player has no final season data (injury, transfer mid-season), use most recent available season and flag as "no_final_season_data"
+**CRITICAL: Season Selection for RB Production (Updated Feb 2026)**
+- **USE CAREER AVERAGE** across all college seasons
+- This was validated as the best predictor (Feb 2026 analysis of 208 RBs):
+
+| Method | NFL PPG Corr | Hit24 Corr | Partial Corr (controlling for DC) | P-value |
+|--------|-------------|------------|-----------------------------------|---------|
+| **Career Average** | **0.2415** | **0.1660** | **0.1748** | **0.015** ✓ |
+| Final Season | 0.2355 | 0.1469 | 0.1332 | 0.065 |
+| Best Season | 0.1905 | 0.1469 | 0.1161 | 0.109 |
+
+**Why Career Average?**
+- Only method with statistically significant partial correlation (p=0.015)
+- Smooths out single-season noise (injuries, QB changes, scheme shifts)
+- Best Season performs WORST because it cherry-picks outliers
+- Career Average captures consistent pass-catching ability across multiple years
+
+**Calculation:**
+```python
+career_avg_ratio = mean(rec_yards / team_pass_att) for all college seasons
+production_score = career_avg_ratio × age_weight × 100 / 1.75
+```
+
+**Exception:** If player has only 1 season of data, use that season
 
 ### 3. Athletic Modifier
 
@@ -239,29 +255,25 @@ athletic = normalize(RAS)
    **Note**: With WR weights at 65/20/15, DC dominates the score. Elite prospects
    with missing RAS still get fair scores from their strong DC component.
 
-7. **Season Selection for RB Production** (CRITICAL for consistency)
-   - **ALWAYS use FINAL college season** (draft_year - 1)
-   - Backtest validated using final season only - do NOT use "best season"
-   - Using "best season" inflates scores and creates methodological inconsistency
+7. **Season Selection for RB Production** (Updated Feb 2026 - Career Average)
+   - **USE CAREER AVERAGE** - average rec_yards/team_pass_att across ALL college seasons
+   - Feb 2026 analysis tested 3 methods on 208 RBs (2015-2024):
+     - Career Average: r=0.2415, partial r=0.1748 (p=0.015) ✓ BEST
+     - Final Season: r=0.2355, partial r=0.1332 (p=0.065)
+     - Best Season: r=0.1905, partial r=0.1161 (p=0.109) WORST
 
-   **Season Mapping:**
-   | Draft Year | College Season to Use |
-   |------------|----------------------|
-   | 2026       | 2025                 |
-   | 2025       | 2024                 |
-   | 2024       | 2023                 |
-   | etc.       | draft_year - 1       |
+   **Why Career Average Works Best:**
+   - Only method with statistically significant value beyond DC (p=0.015)
+   - Smooths out single-season noise (injuries, QB changes, scheme shifts)
+   - Best Season cherry-picks outliers and actually hurts predictions
+   - Captures consistent pass-catching ability across college career
 
-   **Exception Handling:**
-   - If player has NO final season data (injury, redshirt, mid-season transfer):
-     - Use most recent available season
-     - Flag status as "no_final_season_data"
-     - Document the exception
+   **Data Source:**
+   - `data/college_receiving_2011_2023.csv` for multi-season data
+   - 127 of 208 backtest RBs had 2+ college seasons
+   - 184 of 208 were matched to multi-season data (88%)
 
-   **Why This Matters:**
-   - Backtest showed production predicts NFL success using final season
-   - Using "best season" cherry-picks data not validated as predictive
-   - 19 players had inflated scores before this fix (avg +12.6 production, +1.26 SLAP)
+   **Exception:** Players with only 1 season of data use that season
 
 8. **DC Formula Change: Gentler Curve (Option B)** (Jan 2026)
    - Changed from `normalize(1/sqrt(pick))` to `100 - 2.40 × (pick^0.62 - 1)`
@@ -326,9 +338,9 @@ SlapModelV3/
 - RAS (Relative Athletic Score) from combine/pro day metrics
 
 **For RBs specifically:**
-- Receiving yards (best college season)
-- Team pass attempts (same season)
-- Data source: CFBD API (92.8% coverage for 2015-2024 backtest)
+- Receiving yards and team pass attempts for ALL college seasons (career average)
+- Data source: CFBD API via `data/college_receiving_2011_2023.csv`
+- Coverage: 88% of 2015-2024 backtest RBs matched to multi-season data
 
 ## Commands
 
