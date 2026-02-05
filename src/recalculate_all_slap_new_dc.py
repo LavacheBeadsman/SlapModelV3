@@ -285,38 +285,24 @@ print("\n" + "=" * 90)
 print("PROCESSING 2026 WR PROSPECTS")
 print("=" * 90)
 
-# 2026 WR Breakout ages (researched)
-# Original 43 players + 7 new from CFBD multi-season analysis
-WR_2026_BREAKOUT = {
-    # Original researched breakout ages
-    'Carnell Tate': 19, 'Jordyn Tyson': 20, 'Makai Lemon': 20, 'Denzel Boston': 20,
-    'Kevin Concepcion': 19, 'Chris Bell': 21, 'Elijah Sarratt': 21, 'Zachariah Branch': 19,
-    'Germie Bernard': 20, 'Chris Brazzell': 21, "Ja'Kobi Lane": 20, 'Omar Cooper Jr.': 21,
-    'Antonio Williams': 21, 'Skyler Bell': 21, 'Malachi Fields': 21, 'C.J. Daniels': 20,
-    'Brenen Thompson': 21, 'Deion Burks': 20, 'Ted Hurst': 21, 'Bryce Lance': 21,
-    'Kevin Coleman Jr.': 20, 'Eric McAlister': 21, 'Eric Rivers': 21, 'Lewis Bond': 21,
-    "De'Zhaun Stribling": 20, 'Keelan Marion': 20, 'Josh Cameron': 21, 'Noah Thomas': 19,
-    'Aaron Anderson': 20, 'Dane Key': 20, 'Jordan Hudson': 20, 'Caleb Douglas': 20,
-    'Reggie Virgil': 20, 'Vinny Anthony II': 21, 'Caullin Lacy': 21, 'Kendrick Law': 21,
-    'Colbie Young': 21, 'Harrison Wallace III': 20, 'Jaden Greathouse': 19, 'Barion Brown': 19,
-    'Amare Thomas': 18, 'Hykeem Williams': 20, 'Shelton Sampson Jr.': 19,
-    # New from CFBD multi-season analysis (calculated Feb 2026)
-    'Hank Beatty': 21,           # Illinois - first hit 20%+ in 2025 season
-    'Eli Heidenreich': 21,       # Navy - first hit 20%+ in 2023 season (35.1%)
-    'Emmanuel Henderson': 22,    # Kansas - first hit 20%+ in 2025 season
-    'Zavion Thomas': 18,         # LSU - first hit 20%+ in 2023 season (32.7%) - ELITE
-    'Anthony Evans III': 20,     # Mississippi State - first hit 20%+ in 2025 season
-    'Rara Thomas': 23,           # Troy - first hit 20%+ in 2025 season
-    "Ja'Varrius Johnson": 21,    # Auburn - first hit 20%+ in 2022 season (28.6%)
-}
-
-# Load 2026 WR dominator data from CFBD analysis
+# Load 2026 WR breakout data from CFBD multi-season analysis
 try:
     wr_2026_breakout_data = pd.read_csv('data/wr_breakout_ages_2026.csv')
+    # Load both breakout ages and dominator percentages from CSV
+    WR_2026_BREAKOUT = dict(zip(wr_2026_breakout_data['player_name'],
+                                 wr_2026_breakout_data['breakout_age']))
     WR_2026_DOMINATOR = dict(zip(wr_2026_breakout_data['player_name'],
                                   wr_2026_breakout_data['peak_dominator']))
+    print(f"  Loaded 2026 WR breakout data: {len(WR_2026_BREAKOUT)} players")
     print(f"  Loaded 2026 WR dominator data: {len(WR_2026_DOMINATOR)} players")
-except:
+
+    # Show breakout status summary
+    status_counts = wr_2026_breakout_data['status'].value_counts()
+    for status, count in status_counts.items():
+        print(f"    {status}: {count}")
+except Exception as e:
+    print(f"  Warning: Could not load breakout data: {e}")
+    WR_2026_BREAKOUT = {}
     WR_2026_DOMINATOR = {}
 
 prospects = pd.read_csv('data/prospects_final.csv')
