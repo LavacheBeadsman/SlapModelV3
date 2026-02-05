@@ -2,13 +2,13 @@
 SLAP Score V3 Backtest Analysis - CORRECTED
 ============================================
 
-Evaluate model performance for 2015-2023 drafts ONLY.
-(2024 and 2025 draft classes don't have complete NFL data yet)
+Evaluate model performance for 2015-2024 drafts.
+(2025 draft class data not yet available in NFLVerse API)
 
 As of Feb 2026:
 - 2015-2023 classes: Have 3-11 NFL seasons of data (complete)
-- 2024 class: Just finished Year 2 (data not in source files)
-- 2025 class: Just finished Year 1 (data not in source files)
+- 2024 class: Just finished Year 2 (data now updated)
+- 2025 class: Just finished Year 1 (API not yet updated)
 - 2026 class: Not drafted yet (prospects)
 """
 
@@ -18,22 +18,22 @@ from scipy import stats
 
 print("=" * 80)
 print("SLAP SCORE V3 BACKTEST ANALYSIS - CORRECTED")
-print("Evaluating 2015-2023 draft classes only (complete NFL data)")
+print("Evaluating 2015-2024 draft classes (complete NFL data)")
 print("=" * 80)
 
 # Load the recalculated data
 wr_data = pd.read_csv('output/slap_complete_wr.csv')
 rb_data = pd.read_csv('output/slap_complete_rb.csv')
 
-# Filter to 2015-2023 ONLY (players with complete NFL outcomes)
+# Filter to 2015-2024 (players with complete NFL outcomes)
 wr_backtest = wr_data[(wr_data['data_type'] == 'backtest') &
                        (wr_data['draft_year'] >= 2015) &
-                       (wr_data['draft_year'] <= 2023)].copy()
+                       (wr_data['draft_year'] <= 2024)].copy()
 rb_backtest = rb_data[(rb_data['data_type'] == 'backtest') &
                        (rb_data['draft_year'] >= 2015) &
-                       (rb_data['draft_year'] <= 2023)].copy()
+                       (rb_data['draft_year'] <= 2024)].copy()
 
-print(f"\nBacktest Sample (2015-2023 only):")
+print(f"\nBacktest Sample (2015-2024):")
 print(f"  WRs: {len(wr_backtest)} players")
 print(f"  RBs: {len(rb_backtest)} players")
 print(f"  Total: {len(wr_backtest) + len(rb_backtest)} players")
@@ -42,7 +42,7 @@ print(f"  Total: {len(wr_backtest) + len(rb_backtest)} players")
 # WR BACKTEST ANALYSIS
 # ============================================================================
 print("\n" + "=" * 80)
-print("WR BACKTEST ANALYSIS (2015-2023)")
+print("WR BACKTEST ANALYSIS (2015-2024)")
 print("Weights: 65% DC + 20% Breakout Age + 15% RAS")
 print("=" * 80)
 
@@ -89,7 +89,7 @@ for low, high, label in tiers:
 # RB BACKTEST ANALYSIS
 # ============================================================================
 print("\n" + "=" * 80)
-print("RB BACKTEST ANALYSIS (2015-2023)")
+print("RB BACKTEST ANALYSIS (2015-2024)")
 print("Weights: 50% DC + 35% Career Avg Production + 15% RAS")
 print("=" * 80)
 
@@ -134,7 +134,7 @@ for low, high, label in tiers:
 # COMBINED ANALYSIS
 # ============================================================================
 print("\n" + "=" * 80)
-print("COMBINED ANALYSIS (2015-2023)")
+print("COMBINED ANALYSIS (2015-2024)")
 print("=" * 80)
 
 all_valid = pd.concat([wr_valid, rb_valid], ignore_index=True)
@@ -186,13 +186,13 @@ for _, row in values.head(10).iterrows():
 # YEAR BY YEAR BREAKDOWN
 # ============================================================================
 print("\n" + "=" * 80)
-print("YEAR-BY-YEAR HIT RATES (2015-2023)")
+print("YEAR-BY-YEAR HIT RATES (2015-2024)")
 print("=" * 80)
 
 print(f"\n{'Year':<6} {'WRs':<6} {'WR Hit24':<12} {'RBs':<6} {'RB Hit24':<12}")
 print("-" * 45)
 
-for year in range(2015, 2024):
+for year in range(2015, 2025):
     wr_year = wr_valid[wr_valid['draft_year'] == year]
     rb_year = rb_valid[rb_valid['draft_year'] == year]
 
@@ -205,7 +205,7 @@ for year in range(2015, 2024):
 # SUMMARY
 # ============================================================================
 print("\n" + "=" * 80)
-print("BACKTEST SUMMARY (2015-2023)")
+print("BACKTEST SUMMARY (2015-2024)")
 print("=" * 80)
 
 wr_hit24_total = int(wr_valid['nfl_hit24'].sum())
