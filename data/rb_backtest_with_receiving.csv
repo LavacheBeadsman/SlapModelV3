@@ -1,5 +1,5 @@
 player_name,draft_year,pick,round,college,age,best_season,season_rank,RAS,rec_yards,receptions,team_pass_att,cfbd_name,best_ppr,best_ppg,hit24,hit12
-Todd Gurley,2015,10,1,Georgia,21.0,2018.0,1.0,,,,,,400.4,25.024999618530277,1,1
+Todd Gurley,2015,10,1,Georgia,21.0,2018.0,1.0,,,,,,400.4,25.02499961853028,1,1
 Melvin Gordon,2015,15,1,Wisconsin,22.0,2018.0,6.0,8.74,153.0,19.0,322.0,melvin gordon,296.4,21.17142813546317,0,1
 T.J. Yeldon,2015,36,2,Alabama,21.0,2018.0,25.0,7.05,180.0,15.0,451.0,t.j. yeldon,155.9,12.991666158040363,0,1
 Ameer Abdullah,2015,54,2,Nebraska,22.0,2024.0,40.0,8.66,269.0,22.0,359.0,ameer abdullah,26.8,13.399999618530272,0,1
@@ -178,7 +178,7 @@ Tyjae Spears,2023,81,3,Tulane,22.0,2023.0,35.0,7.51,256.0,22.0,379.0,tyjae spear
 De'Von Achane,2023,84,3,Texas A&M,21.0,2023.0,24.0,,196.0,36.0,391.0,devon achane,299.9,17.641176111557904,0,1
 Tank Bigsby,2023,88,3,Auburn,22.0,2024.0,38.0,8.32,180.0,30.0,308.0,tank bigsby,129.0,8.6,0,0
 Roschon Johnson,2023,115,4,Texas,22.0,2023.0,47.0,8.67,128.0,14.0,405.0,roschon johnson,102.1,6.806666564941406,0,0
-Israel Abanikanda,2023,143,5,Pittsburgh,20.0,2023.0,94.0,9.63,146.0,12.0,393.0,israel abanikanda,18.300001,3.0500001907348637,0,0
+Israel Abanikanda,2023,143,5,Pittsburgh,20.0,2023.0,94.0,9.63,146.0,12.0,393.0,israel abanikanda,18.300001,3.050000190734864,0,0
 Chase Brown,2023,163,5,Illinois,23.0,2024.0,12.0,9.81,240.0,27.0,393.0,chase brown,255.0,15.9375,0,1
 Eric Gray,2023,172,5,Oklahoma,23.0,2024.0,97.0,6.56,229.0,33.0,407.0,eric gray,13.0,2.6,0,0
 Evan Hull,2023,176,5,Northwestern,22.0,2023.0,129.0,9.33,546.0,55.0,417.0,evan hull,1.7,1.7000000476837158,0,0
@@ -207,28 +207,28 @@ Kimani Vidal,2024,181,6,Troy,23.0,2024.0,81.0,8.88,201.0,18.0,456.0,kimani vidal
 Jase McClellan,2024,186,6,Alabama,22.0,2024.0,118.0,,137.0,15.0,325.0,jase mcclellan,3.2,1.600000023841858,0,0
 Jawhar Jordan,2024,205,6,Louisville,25.0,,,4.6,246.0,21.0,408.0,jawhar jordan,0.0,0.0,0,0
 Dylan Laube,2024,208,6,New Hampshire,24.0,2024.0,135.0,8.78,699.0,68.0,,dylan laube,-2.0,-2.0,0,0
-Ashton Jeanty,2025,6,1,Boise St.,,,,,,,,ashton jeanty,0.0,0.0,0,0
-Omarion Hampton,2025,22,1,North Carolina,,,,,,,,omarion hampton,0.0,0.0,0,0
-Quinshon Judkins,2025,36,2,Ohio St.,,,,,,,,quinshon judkins,0.0,0.0,0,0
-TreVeyon Henderson,2025,38,2,Ohio St.,,,,,,,,treveyon henderson,0.0,0.0,0,0
-RJ Harvey,2025,60,2,Central Florida,,,,,,,,rj harvey,0.0,0.0,0,0
-Kaleb Johnson,2025,83,3,Iowa,,,,,,,,kaleb johnson,0.0,0.0,0,0
-Bhayshul Tuten,2025,104,4,Virginia Tech,,,,,,,,bhayshul tuten,0.0,0.0,0,0
-Cam Skattebo,2025,105,4,Arizona St.,,,,,,,,cam skattebo,0.0,0.0,0,0
-Trevor Etienne,2025,114,4,Georgia,,,,,,,,trevor etienne,0.0,0.0,0,0
-Woody Marks,2025,116,4,USC,,,,,,,,woody marks,0.0,0.0,0,0
+Ashton Jeanty,2025,6,1,Boise St.,,,,,,,,ashton jeanty,247.1,14.53529411764706,0,1
+Omarion Hampton,2025,22,1,North Carolina,,,,,,,,omarion hampton,135.7,15.077777777777776,0,1
+Quinshon Judkins,2025,36,2,Ohio St.,,,,,,,,quinshon judkins,167.8,11.985714285714286,0,0
+TreVeyon Henderson,2025,38,2,Ohio St.,,,,,,,,treveyon henderson,208.2,12.24705882352941,0,1
+RJ Harvey,2025,60,2,Central Florida,,,,,,,,rj harvey,208.6,12.270588235294117,0,1
+Kaleb Johnson,2025,83,3,Iowa,,,,,,,,kaleb johnson,8.8,0.8800000000000001,0,0
+Bhayshul Tuten,2025,104,4,Virginia Tech,,,,,,,,bhayshul tuten,90.6,6.04,0,0
+Cam Skattebo,2025,105,4,Arizona St.,,,,,,,,cam skattebo,127.7,15.9625,0,1
+Trevor Etienne,2025,114,4,Georgia,,,,,,,,trevor etienne,13.7,2.2833333333333337,0,0
+Woody Marks,2025,116,4,USC,,,,,,,,woody marks,145.1,9.06875,0,0
 Jarquez Hunter,2025,117,4,Auburn,,,,,,,,jarquez hunter,0.0,0.0,0,0
-Dylan Sampson,2025,126,4,Tennessee,,,,,,,,dylan sampson,0.0,0.0,0,0
+Dylan Sampson,2025,126,4,Tennessee,,,,,,,,dylan sampson,89.6,5.973333333333333,0,0
 Jordan James,2025,147,5,Oregon,,,,,,,,jordan james,0.0,0.0,0,0
-Jaydon Blue,2025,149,5,Texas,,,,,,,,jaydon blue,0.0,0.0,0,0
-DJ Giddens,2025,151,5,Kansas St.,,,,,,,,dj giddens,0.0,0.0,0,0
-Ollie Gordon,2025,179,6,Oklahoma St.,,,,,,,,ollie gordon,0.0,0.0,0,0
-Devin Neal,2025,184,6,Kansas,,,,,,,,devin neal,0.0,0.0,0,0
-Kalel Mullings,2025,188,6,Michigan,,,,,,,,kalel mullings,0.0,0.0,0,0
-Tahj Brooks,2025,193,6,Texas Tech,,,,,,,,tahj brooks,0.0,0.0,0,0
+Jaydon Blue,2025,149,5,Texas,,,,,,,,jaydon blue,20.4,4.08,0,0
+DJ Giddens,2025,151,5,Kansas St.,,,,,,,,dj giddens,9.6,2.4,0,0
+Ollie Gordon,2025,179,6,Oklahoma St.,,,,,,,,ollie gordon,54.1,3.38125,0,0
+Devin Neal,2025,184,6,Kansas,,,,,,,,devin neal,60.0,7.5,0,0
+Kalel Mullings,2025,188,6,Michigan,,,,,,,,kalel mullings,0.7,0.2333333333333333,0,0
+Tahj Brooks,2025,193,6,Texas Tech,,,,,,,,tahj brooks,6.4,1.0666666666666669,0,0
 Damien Martinez,2025,223,7,Miami (FL),,,,,,,,damien martinez,0.0,0.0,0,0
-Brashard Smith,2025,228,7,SMU,,,,,,,,brashard smith,0.0,0.0,0,0
-Kyle Monangai,2025,233,7,Rutgers,,,,,,,,kyle monangai,0.0,0.0,0,0
-LeQuint Allen,2025,236,7,Syracuse,,,,,,,,lequint allen,0.0,0.0,0,0
-Phil Mafah,2025,239,7,Clemson,,,,,,,,phil mafah,0.0,0.0,0,0
-Jacory Croskey-Merritt,2025,245,7,Arizona,,,,,,,,jacory croskey-merritt,0.0,0.0,0,0
+Brashard Smith,2025,228,7,SMU,,,,,,,,brashard smith,63.3,5.275,0,0
+Kyle Monangai,2025,233,7,Rutgers,,,,,,,,kyle monangai,142.7,8.91875,0,0
+LeQuint Allen,2025,236,7,Syracuse,,,,,,,,lequint allen,24.8,2.7555555555555555,0,0
+Phil Mafah,2025,239,7,Clemson,,,,,,,,phil mafah,10.9,10.9,0,0
+Jacory Croskey-Merritt,2025,245,7,Arizona,,,,,,,,jacory croskey-merritt,144.3,8.488235294117647,0,0
