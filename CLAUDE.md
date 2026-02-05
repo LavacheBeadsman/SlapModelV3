@@ -218,7 +218,7 @@ athletic = normalize(RAS)
 4. **Position Handling**: Position-Split Production Metrics
    - **RBs**: Receiving yards ÷ Team pass attempts × age weight (validated: p=0.004)
    - **WRs**: Breakout Age scoring (age when first hit 20%+ dominator)
-   - Both metrics normalized 0-100 within position (50 = average)
+   - Both metrics use **PERCENTILE NORMALIZATION** within position (see Decision #9)
    - Data source for RB receiving: CFBD API (193/208 RBs = 92.8% coverage)
    - Outputs separate RB and WR rankings
 
@@ -294,10 +294,44 @@ athletic = normalize(RAS)
    | 200  | 13     | 38     |
 
    **Impact on Final SLAP Scores:**
-   - Scores now range from ~21 (late picks, poor profile) to ~99 (early picks, elite profile)
-   - WR average SLAP: ~65 (was ~55)
-   - RB average SLAP: ~50 (was ~40)
+   - Scores now range from ~17 (late picks, poor profile) to ~99 (early picks, elite profile)
+   - WR average SLAP: ~53 (after calibration fix)
+   - RB average SLAP: ~52 (after calibration fix)
    - Scores better match intuitive expectations (pick 10 player with great profile = ~90+)
+
+9. **Production Score Calibration: Percentile Normalization** (Feb 2026)
+
+   **The Problem:**
+   WR breakout scores and RB receiving scores were on completely different scales:
+   - WR production scores: Mean=63, Median=66 (most scored 50-90)
+   - RB production scores: Mean=24, Median=21 (most scored 10-40)
+
+   This caused WRs to dramatically outscore RBs (WR SLAP mean was 57.8 vs RB mean of 43.6).
+   In the top 50 players by SLAP, 48 were WRs and only 2 were RBs.
+
+   **The Fix: Percentile Normalization**
+   Production scores are now converted to percentile ranks within each position:
+   ```python
+   # Convert raw score to percentile (0-100) within position
+   production_score = percentile_rank(raw_score, position_reference_distribution) * 100
+   ```
+
+   **Result:**
+   - A 90th percentile WR production → score of 90
+   - A 90th percentile RB production → score of 90
+   - Median player in each position → score of ~50
+
+   **Before vs After:**
+   | Metric | Before Fix | After Fix |
+   |--------|------------|-----------|
+   | WR SLAP Mean | 57.8 | 53.3 |
+   | RB SLAP Mean | 43.6 | 52.4 |
+   | Gap | 14.2 pts | 0.9 pts |
+   | Top 50 (WR/RB) | 48/2 | 39/11 |
+
+   **Raw scores preserved:**
+   The original raw production scores are stored in `production_score_raw` column
+   for reference. The SLAP calculation uses the percentile-normalized `production_score`.
 
 ## Technical Preferences
 

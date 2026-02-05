@@ -22,6 +22,12 @@ RB Production Method (Updated Feb 2026):
 - Uses CAREER AVERAGE (not final season or best season)
 - Career average has best predictive power: r=0.2415, partial r=0.1748 (p=0.015)
 - Smooths out single-season noise and captures consistent receiving ability
+
+CALIBRATION FIX (Feb 2026):
+- Production scores are now PERCENTILE NORMALIZED within each position
+- This ensures WR and RB scores are on comparable scales
+- A 90th percentile WR and 90th percentile RB both get ~90 production score
+- Raw production scores are preserved in 'production_score_raw' column
 """
 
 import pandas as pd
@@ -37,6 +43,7 @@ print("\nPosition-Specific Weights:")
 print("  WRs: DC (65%) + Breakout Age (20%) + RAS (15%)")
 print("  RBs: DC (50%) + Receiving Production (35%) + RAS (15%)")
 print("\nRB Production Method: CAREER AVERAGE (Feb 2026 update)")
+print("\nCALIBRATION: Percentile normalization within position (Feb 2026 fix)")
 
 # ============================================================================
 # WEIGHTS - POSITION SPECIFIC
@@ -196,11 +203,45 @@ def rb_production_score(rec_yards, team_pass_att, draft_age):
 
     return min(99.9, max(0, scaled_score))
 
-# Position averages (from backtest)
-WR_AVG_BREAKOUT = 79.7
+# Position averages (from backtest) - used for imputation
 WR_AVG_RAS = 68.9
-RB_AVG_PRODUCTION = 30.0
 RB_AVG_RAS = 66.5
+# Note: Production averages no longer needed - using percentile normalization instead
+
+
+def percentile_normalize(series, reference_series=None):
+    """
+    Convert raw scores to percentile ranks (0-100 scale).
+
+    This ensures different metrics (WR breakout age, RB receiving production)
+    are on comparable scales. A 90th percentile WR and 90th percentile RB
+    both get ~90 as their production score.
+
+    Args:
+        series: The scores to normalize
+        reference_series: Optional reference distribution (for normalizing prospects
+                         against backtest distribution). If None, uses series itself.
+
+    Returns:
+        Percentile-normalized scores (0-100)
+    """
+    if reference_series is None:
+        reference_series = series
+
+    # Get valid (non-null) values for the reference distribution
+    ref_valid = reference_series.dropna()
+
+    if len(ref_valid) == 0:
+        return series  # Can't normalize without reference data
+
+    def score_to_percentile(val):
+        if pd.isna(val):
+            return np.nan
+        # Calculate what percentile this value would be in the reference distribution
+        percentile = (ref_valid < val).sum() / len(ref_valid) * 100
+        return min(99.9, max(0.1, percentile))  # Bound to 0.1-99.9
+
+    return series.apply(score_to_percentile)
 
 
 def load_rb_career_averages():
@@ -314,26 +355,23 @@ wr_backtest['dc_score'] = wr_backtest['pick'].apply(normalize_draft_capital)
 wr_backtest['breakout_score'] = wr_backtest.apply(
     lambda x: wr_breakout_score(x['breakout_age'], x['dominator_pct']), axis=1
 )
-wr_backtest['breakout_score_final'] = wr_backtest['breakout_score']  # No imputation needed - function handles None
-wr_backtest['production_score'] = wr_backtest['breakout_score_final']  # For WR, production = breakout
+
+# Store RAW production score before normalization
+wr_backtest['production_score_raw'] = wr_backtest['breakout_score']
+
+# RAS scores
 wr_backtest['ras_score'] = wr_backtest['RAS'] * 10  # Convert 0-10 to 0-100
 wr_backtest['ras_score_final'] = wr_backtest['ras_score'].fillna(WR_AVG_RAS)
 
-# Calculate SLAP with WR weights (65/20/15)
-wr_backtest['slap_score'] = (
-    WR_WEIGHT_DC * wr_backtest['dc_score'] +
-    WR_WEIGHT_PRODUCTION * wr_backtest['production_score'] +
-    WR_WEIGHT_RAS * wr_backtest['ras_score_final']
-)
-
-wr_backtest['delta_vs_dc'] = wr_backtest['slap_score'] - wr_backtest['dc_score']
-
-# Status fields
+# Status fields (before normalization)
 wr_backtest['production_status'] = np.where(wr_backtest['breakout_score'].isna(), 'imputed', 'observed')
 wr_backtest['ras_status'] = np.where(wr_backtest['ras_score'].isna(), 'imputed', 'observed')
 
 print(f"  WRs with observed breakout: {(wr_backtest['production_status'] == 'observed').sum()}")
 print(f"  WRs with observed RAS: {(wr_backtest['ras_status'] == 'observed').sum()}")
+
+# NOTE: Percentile normalization will be applied AFTER processing all positions
+# to ensure we have the full reference distribution
 
 # ============================================================================
 # LOAD AND PROCESS RB BACKTEST DATA (2015-2024)
@@ -373,28 +411,26 @@ print(f"  Matched {matched_count}/{len(rb_backtest)} RBs to career average data"
 
 # Calculate scores with NEW DC formula and CAREER AVERAGE production
 rb_backtest['dc_score'] = rb_backtest['pick'].apply(normalize_draft_capital)
-rb_backtest['production_score'] = rb_backtest.apply(
+rb_backtest['production_score_calc'] = rb_backtest.apply(
     lambda x: rb_production_score_career_avg(x['career_avg_ratio'], x['age']), axis=1
 )
-rb_backtest['production_score_final'] = rb_backtest['production_score'].fillna(RB_AVG_PRODUCTION)
+
+# Store RAW production score before normalization
+rb_backtest['production_score_raw'] = rb_backtest['production_score_calc']
+
+# RAS scores
 rb_backtest['ras_score'] = rb_backtest['RAS'] * 10
 rb_backtest['ras_score_final'] = rb_backtest['ras_score'].fillna(RB_AVG_RAS)
 
-# Calculate SLAP with RB weights (50/35/15 - unchanged)
-rb_backtest['slap_score'] = (
-    RB_WEIGHT_DC * rb_backtest['dc_score'] +
-    RB_WEIGHT_PRODUCTION * rb_backtest['production_score_final'] +
-    RB_WEIGHT_RAS * rb_backtest['ras_score_final']
-)
-
-rb_backtest['delta_vs_dc'] = rb_backtest['slap_score'] - rb_backtest['dc_score']
-
-# Status fields
-rb_backtest['production_status'] = np.where(rb_backtest['production_score'].isna(), 'imputed', 'observed')
+# Status fields (before normalization)
+rb_backtest['production_status'] = np.where(rb_backtest['production_score_calc'].isna(), 'imputed', 'observed')
 rb_backtest['ras_status'] = np.where(rb_backtest['ras_score'].isna(), 'imputed', 'observed')
 
 print(f"  RBs with observed production: {(rb_backtest['production_status'] == 'observed').sum()}")
 print(f"  RBs with observed RAS: {(rb_backtest['ras_status'] == 'observed').sum()}")
+
+# NOTE: Percentile normalization will be applied AFTER processing all positions
+# to ensure we have the full reference distribution
 
 # ============================================================================
 # LOAD AND PROCESS 2026 WR PROSPECTS
@@ -435,19 +471,16 @@ wr_2026['dominator_pct'] = wr_2026['player_name'].map(WR_2026_DOMINATOR)
 wr_2026['breakout_score'] = wr_2026.apply(
     lambda x: wr_breakout_score(x['breakout_age'], x['dominator_pct']), axis=1
 )
-wr_2026['breakout_score_final'] = wr_2026['breakout_score']  # No imputation needed
+
+# Store RAW production score before normalization
+wr_2026['production_score_raw'] = wr_2026['breakout_score']
+
 wr_2026['dc_score'] = wr_2026['projected_pick'].apply(normalize_draft_capital)
 wr_2026['ras_score_final'] = WR_AVG_RAS  # No combine data yet
 wr_2026['breakout_status'] = np.where(wr_2026['breakout_age'].isna(), 'imputed', 'observed')
 wr_2026['ras_status'] = 'imputed'
 
-# Calculate SLAP with WR weights (65/20/15)
-wr_2026['slap_score'] = (
-    WR_WEIGHT_DC * wr_2026['dc_score'] +
-    WR_WEIGHT_PRODUCTION * wr_2026['breakout_score_final'] +
-    WR_WEIGHT_RAS * wr_2026['ras_score_final']
-)
-wr_2026['delta_vs_dc'] = wr_2026['slap_score'] - wr_2026['dc_score']
+# NOTE: SLAP calculation moved to AFTER percentile normalization
 
 # ============================================================================
 # LOAD AND PROCESS 2026 RB PROSPECTS
@@ -467,33 +500,124 @@ except:
 rb_2026 = prospects[prospects['position'] == 'RB'].copy()
 print(f"Loaded {len(rb_2026)} 2026 RB prospects")
 
-# If we have existing production scores, use them
+# If we have existing production scores, use them as RAW scores
 if rb_2026_existing is not None:
     rb_2026 = rb_2026.merge(
         rb_2026_existing[['player_name', 'production_score']],
         on='player_name',
         how='left'
     )
-    rb_2026['production_score_final'] = rb_2026['production_score'].fillna(RB_AVG_PRODUCTION)
+    rb_2026['production_score_raw'] = rb_2026['production_score']
 else:
-    rb_2026['production_score_final'] = RB_AVG_PRODUCTION
+    rb_2026['production_score_raw'] = np.nan
 
 # Calculate scores with NEW DC formula
 rb_2026['dc_score'] = rb_2026['projected_pick'].apply(normalize_draft_capital)
 rb_2026['ras_score_final'] = RB_AVG_RAS  # No combine data yet
 rb_2026['production_status'] = np.where(
-    rb_2026.get('production_score', pd.Series([np.nan]*len(rb_2026))).isna(),
+    rb_2026['production_score_raw'].isna(),
     'imputed', 'observed'
 )
 rb_2026['ras_status'] = 'imputed'
 
-# Calculate SLAP with RB weights (50/35/15 - unchanged)
+# NOTE: SLAP calculation moved to AFTER percentile normalization
+
+# ============================================================================
+# PERCENTILE NORMALIZATION (CALIBRATION FIX)
+# ============================================================================
+print("\n" + "=" * 90)
+print("APPLYING PERCENTILE NORMALIZATION")
+print("=" * 90)
+
+# Get reference distributions from backtest data only
+wr_ref_distribution = wr_backtest['production_score_raw'].dropna()
+rb_ref_distribution = rb_backtest['production_score_raw'].dropna()
+
+print(f"\nWR reference distribution (backtest): n={len(wr_ref_distribution)}")
+print(f"  Raw scores: Mean={wr_ref_distribution.mean():.1f}, Median={wr_ref_distribution.median():.1f}, Min={wr_ref_distribution.min():.1f}, Max={wr_ref_distribution.max():.1f}")
+
+print(f"\nRB reference distribution (backtest): n={len(rb_ref_distribution)}")
+print(f"  Raw scores: Mean={rb_ref_distribution.mean():.1f}, Median={rb_ref_distribution.median():.1f}, Min={rb_ref_distribution.min():.1f}, Max={rb_ref_distribution.max():.1f}")
+
+# Apply percentile normalization to WR backtest
+wr_backtest['production_score'] = percentile_normalize(
+    wr_backtest['production_score_raw'],
+    wr_ref_distribution
+)
+# Fill any missing with median (50th percentile)
+wr_backtest['production_score'] = wr_backtest['production_score'].fillna(50.0)
+
+# Apply percentile normalization to RB backtest
+rb_backtest['production_score'] = percentile_normalize(
+    rb_backtest['production_score_raw'],
+    rb_ref_distribution
+)
+# Fill any missing with median (50th percentile)
+rb_backtest['production_score'] = rb_backtest['production_score'].fillna(50.0)
+
+# Apply percentile normalization to 2026 WR prospects (using backtest distribution)
+wr_2026['production_score'] = percentile_normalize(
+    wr_2026['production_score_raw'],
+    wr_ref_distribution
+)
+wr_2026['production_score'] = wr_2026['production_score'].fillna(50.0)
+wr_2026['breakout_score_final'] = wr_2026['production_score']  # For compatibility
+
+# Apply percentile normalization to 2026 RB prospects (using backtest distribution)
+rb_2026['production_score'] = percentile_normalize(
+    rb_2026['production_score_raw'],
+    rb_ref_distribution
+)
+rb_2026['production_score'] = rb_2026['production_score'].fillna(50.0)
+rb_2026['production_score_final'] = rb_2026['production_score']
+
+print("\nAfter percentile normalization:")
+print(f"  WR backtest: Mean={wr_backtest['production_score'].mean():.1f}, Median={wr_backtest['production_score'].median():.1f}")
+print(f"  RB backtest: Mean={rb_backtest['production_score'].mean():.1f}, Median={rb_backtest['production_score'].median():.1f}")
+print(f"  WR 2026:     Mean={wr_2026['production_score'].mean():.1f}, Median={wr_2026['production_score'].median():.1f}")
+print(f"  RB 2026:     Mean={rb_2026['production_score'].mean():.1f}, Median={rb_2026['production_score'].median():.1f}")
+
+# ============================================================================
+# CALCULATE SLAP SCORES (with normalized production)
+# ============================================================================
+print("\n" + "=" * 90)
+print("CALCULATING SLAP SCORES")
+print("=" * 90)
+
+# WR backtest SLAP
+wr_backtest['slap_score'] = (
+    WR_WEIGHT_DC * wr_backtest['dc_score'] +
+    WR_WEIGHT_PRODUCTION * wr_backtest['production_score'] +
+    WR_WEIGHT_RAS * wr_backtest['ras_score_final']
+)
+wr_backtest['delta_vs_dc'] = wr_backtest['slap_score'] - wr_backtest['dc_score']
+
+# RB backtest SLAP
+rb_backtest['production_score_final'] = rb_backtest['production_score']
+rb_backtest['slap_score'] = (
+    RB_WEIGHT_DC * rb_backtest['dc_score'] +
+    RB_WEIGHT_PRODUCTION * rb_backtest['production_score_final'] +
+    RB_WEIGHT_RAS * rb_backtest['ras_score_final']
+)
+rb_backtest['delta_vs_dc'] = rb_backtest['slap_score'] - rb_backtest['dc_score']
+
+# WR 2026 SLAP
+wr_2026['slap_score'] = (
+    WR_WEIGHT_DC * wr_2026['dc_score'] +
+    WR_WEIGHT_PRODUCTION * wr_2026['production_score'] +
+    WR_WEIGHT_RAS * wr_2026['ras_score_final']
+)
+wr_2026['delta_vs_dc'] = wr_2026['slap_score'] - wr_2026['dc_score']
+
+# RB 2026 SLAP
 rb_2026['slap_score'] = (
     RB_WEIGHT_DC * rb_2026['dc_score'] +
     RB_WEIGHT_PRODUCTION * rb_2026['production_score_final'] +
     RB_WEIGHT_RAS * rb_2026['ras_score_final']
 )
 rb_2026['delta_vs_dc'] = rb_2026['slap_score'] - rb_2026['dc_score']
+
+print("SLAP scores calculated using PERCENTILE-NORMALIZED production scores")
 
 # ============================================================================
 # SCORE DISTRIBUTION ANALYSIS
@@ -657,7 +781,8 @@ wr_backtest_std = pd.DataFrame({
     'pick': wr_backtest['pick'],
     'round': wr_backtest['round'],
     'dc_score': wr_backtest['dc_score'],
-    'production_score': wr_backtest['production_score'],
+    'production_score': wr_backtest['production_score'],  # Percentile-normalized
+    'production_score_raw': wr_backtest['production_score_raw'],  # Original raw score
     'production_metric': 'breakout_age',
     'ras_score': wr_backtest['ras_score_final'],
     'slap_score': wr_backtest['slap_score'],
@@ -679,7 +804,8 @@ wr_2026_std = pd.DataFrame({
     'pick': wr_2026['projected_pick'],
     'round': np.ceil(wr_2026['projected_pick'] / 32).astype(int),
     'dc_score': wr_2026['dc_score'],
-    'production_score': wr_2026['breakout_score_final'],
+    'production_score': wr_2026['production_score'],  # Percentile-normalized
+    'production_score_raw': wr_2026['production_score_raw'],  # Original raw score
     'production_metric': 'breakout_age',
     'ras_score': wr_2026['ras_score_final'],
     'slap_score': wr_2026['slap_score'],
@@ -705,7 +831,8 @@ rb_backtest_std = pd.DataFrame({
     'pick': rb_backtest['pick'],
     'round': rb_backtest['round'],
     'dc_score': rb_backtest['dc_score'],
-    'production_score': rb_backtest['production_score_final'],
+    'production_score': rb_backtest['production_score'],  # Percentile-normalized
+    'production_score_raw': rb_backtest['production_score_raw'],  # Original raw score
     'production_metric': 'career_avg_receiving',  # Updated Feb 2026
     'career_avg_ratio': rb_backtest['career_avg_ratio'],  # New field
     'ras_score': rb_backtest['ras_score_final'],
@@ -730,7 +857,8 @@ rb_2026_std = pd.DataFrame({
     'pick': rb_2026['projected_pick'],
     'round': np.ceil(rb_2026['projected_pick'] / 32).astype(int),
     'dc_score': rb_2026['dc_score'],
-    'production_score': rb_2026['production_score_final'],
+    'production_score': rb_2026['production_score'],  # Percentile-normalized
+    'production_score_raw': rb_2026['production_score_raw'],  # Original raw score
     'production_metric': 'career_avg_receiving',  # Updated Feb 2026
     'career_avg_ratio': None,  # Not yet available for 2026
     'ras_score': rb_2026['ras_score_final'],
