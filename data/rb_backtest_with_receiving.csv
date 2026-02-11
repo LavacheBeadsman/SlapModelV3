@@ -1,209 +1,224 @@
 player_name,draft_year,pick,round,college,age,best_ppr,best_ppg,best_season,season_rank,hit24,hit12,RAS,rec_yards,receptions,team_pass_att,cfbd_name
 Todd Gurley,2015,10,1,Georgia,21.0,404.6,23.8,2018.0,1.0,1,1,,,,,
-Melvin Gordon,2015,15,1,Wisconsin,22.0,296.4,17.435294117647057,2018.0,6.0,1,1,8.74,153,19,322.0,melvin gordon
-T.J. Yeldon,2015,36,2,Alabama,21.0,173.1,10.18235294117647,2018.0,25.0,0,0,7.05,180,15,451.0,t.j. yeldon
-Ameer Abdullah,2015,54,2,Nebraska,22.0,125.2,7.364705882352942,2024.0,40.0,0,0,8.66,269,22,359.0,ameer abdullah
-Tevin Coleman,2015,73,3,Indiana,22.0,233.9,13.758823529411766,2016.0,10.0,1,1,9.72,141,25,313.0,tevin coleman
+Melvin Gordon,2015,15,1,Wisconsin,22.0,296.4,17.435294117647057,2018.0,6.0,1,1,8.74,153.0,19.0,322.0,melvin gordon
+T.J. Yeldon,2015,36,2,Alabama,21.0,173.1,10.18235294117647,2018.0,25.0,0,0,7.05,180.0,15.0,451.0,t.j. yeldon
+Ameer Abdullah,2015,54,2,Nebraska,22.0,125.2,7.364705882352942,2024.0,40.0,0,0,8.66,269.0,22.0,359.0,ameer abdullah
+Tevin Coleman,2015,73,3,Indiana,22.0,233.9,13.758823529411766,2016.0,10.0,1,1,9.72,141.0,25.0,313.0,tevin coleman
 Duke Johnson,2015,77,3,Miami (FL),21.0,216.1,12.711764705882352,2017.0,13.0,1,0,6.98,,,,
-David Johnson,2015,86,3,Northern Iowa,23.0,407.8,23.988235294117647,2016.0,1.0,1,1,9.84,276,10,,david johnson
-Matt Jones,2015,95,3,Florida,22.0,116.4,6.847058823529412,2015.0,45.0,0,0,5.23,65,11,324.0,matt jones
-Jeremy Langford,2015,106,4,Michigan St.,23.0,147.6,8.68235294117647,2015.0,32.0,0,0,7.52,62,11,400.0,jeremy langford
-Javorius Allen,2015,125,4,USC,24.0,166.1,9.770588235294117,2017.0,26.0,0,0,8.02,458,41,460.0,javorius allen
-Mike Davis,2015,126,4,South Carolina,22.0,206.5,12.147058823529411,2020.0,14.0,1,0,6.09,368,32,468.0,mike davis
-David Cobb,2015,138,5,Minnesota,22.0,21.4,1.258823529411765,2015.0,105.0,0,0,4.55,162,16,254.0,david cobb
-Jay Ajayi,2015,149,5,Boise St.,22.0,222.8,13.105882352941178,2016.0,12.0,1,1,8.63,535,50,451.0,jay ajayi
-Karlos Williams,2015,155,5,Florida St.,22.0,124.3,7.311764705882353,2015.0,39.0,0,0,6.41,265,29,516.0,karlos williams
-Cameron Artis-Payne,2015,174,5,Auburn,25.0,36.9,2.170588235294117,2015.0,84.0,0,0,6.0,147,13,332.0,cameron artis-payne
-Josh Robinson,2015,205,6,Mississippi St.,23.0,11.2,0.6588235294117647,2015.0,117.0,0,0,1.1,370,28,423.0,josh robinson
-Marcus Murphy,2015,230,7,Missouri,23.0,38.6,2.2705882352941176,2018.0,84.0,0,0,0.24,212,28,415.0,marcus murphy
-Kenny Hilliard,2015,235,7,LSU,23.0,0.0,0.0,,,0,0,0.91,35,4,276.0,kenny hilliard
-Ezekiel Elliott,2016,4,1,Ohio St.,21.0,370.6,21.8,2018.0,4.0,1,1,8.65,206,27,325.0,ezekiel elliott
-Derrick Henry,2016,45,2,Alabama,22.0,381.4,22.43529411764706,2024.0,2.0,1,1,8.77,91,11,446.0,derrick henry
-Kenyan Drake,2016,73,3,Alabama,22.0,211.0,12.411764705882351,2019.0,16.0,1,0,6.98,276,29,446.0,kenyan drake
-C.J. Prosise,2016,90,3,Notre Dame,22.0,61.0,3.588235294117647,2016.0,67.0,0,0,8.07,308,26,385.0,c.j. prosise
+David Johnson,2015,86,3,Northern Iowa,23.0,407.8,23.988235294117647,2016.0,1.0,1,1,9.84,276.0,10.0,,david johnson
+Matt Jones,2015,95,3,Florida,22.0,116.4,6.847058823529412,2015.0,45.0,0,0,5.23,65.0,11.0,324.0,matt jones
+Jeremy Langford,2015,106,4,Michigan St.,23.0,147.6,8.68235294117647,2015.0,32.0,0,0,7.52,62.0,11.0,400.0,jeremy langford
+Javorius Allen,2015,125,4,USC,24.0,166.1,9.770588235294117,2017.0,26.0,0,0,8.02,458.0,41.0,460.0,javorius allen
+Mike Davis,2015,126,4,South Carolina,22.0,206.5,12.147058823529411,2020.0,14.0,1,0,6.09,368.0,32.0,468.0,mike davis
+David Cobb,2015,138,5,Minnesota,22.0,21.4,1.258823529411765,2015.0,105.0,0,0,4.55,162.0,16.0,254.0,david cobb
+Jay Ajayi,2015,149,5,Boise St.,22.0,222.8,13.105882352941178,2016.0,12.0,1,1,8.63,535.0,50.0,451.0,jay ajayi
+Karlos Williams,2015,155,5,Florida St.,22.0,124.3,7.311764705882353,2015.0,39.0,0,0,6.41,265.0,29.0,516.0,karlos williams
+Cameron Artis-Payne,2015,174,5,Auburn,25.0,36.9,2.170588235294117,2015.0,84.0,0,0,6.0,147.0,13.0,332.0,cameron artis-payne
+Josh Robinson,2015,205,6,Mississippi St.,23.0,11.2,0.6588235294117647,2015.0,117.0,0,0,1.1,370.0,28.0,423.0,josh robinson
+Marcus Murphy,2015,230,7,Missouri,23.0,38.6,2.2705882352941176,2018.0,84.0,0,0,0.24,212.0,28.0,415.0,marcus murphy
+Kenny Hilliard,2015,235,7,LSU,23.0,0.0,0.0,,,0,0,0.91,35.0,4.0,276.0,kenny hilliard
+Ezekiel Elliott,2016,4,1,Ohio St.,21.0,370.6,21.8,2018.0,4.0,1,1,8.65,206.0,27.0,325.0,ezekiel elliott
+Derrick Henry,2016,45,2,Alabama,22.0,381.4,22.43529411764706,2024.0,2.0,1,1,8.77,91.0,11.0,446.0,derrick henry
+Kenyan Drake,2016,73,3,Alabama,22.0,211.0,12.411764705882351,2019.0,16.0,1,0,6.98,276.0,29.0,446.0,kenyan drake
+C.J. Prosise,2016,90,3,Notre Dame,22.0,61.0,3.588235294117647,2016.0,67.0,0,0,8.07,308.0,26.0,385.0,c.j. prosise
 Tyler Ervin,2016,119,4,San Jose St.,22.0,26.1,1.535294117647059,2020.0,96.0,0,0,7.7,,,,
-Kenneth Dixon,2016,134,4,Louisiana Tech,22.0,102.4,6.023529411764706,2016.0,49.0,0,0,6.86,467,34,479.0,kenneth dixon
-Devontae Booker,2016,136,4,Utah,24.0,144.10000000000002,8.476470588235296,2021.0,33.0,0,0,,318,37,352.0,devontae booker
-DeAndre Washington,2016,143,5,Texas Tech,23.0,121.9,7.170588235294118,2019.0,40.0,0,0,7.31,385,41,620.0,deandre washington
-Paul Perkins,2016,149,5,UCLA,21.0,85.5,5.029411764705882,2016.0,57.0,0,0,5.39,242,30,510.0,paul perkins
-Jordan Howard,2016,150,5,Indiana,21.0,230.1,13.53529411764706,2016.0,11.0,1,1,5.41,106,11,461.0,jordan howard
-Wendell Smallwood,2016,153,5,West Virginia,22.0,128.3,7.547058823529412,2018.0,40.0,0,0,7.09,160,26,429.0,wendell smallwood
-Jonathan Williams,2016,156,5,Arkansas,22.0,40.400000000000006,2.3764705882352946,2019.0,80.0,0,0,6.4,65,11,359.0,jonathan williams
-Alex Collins,2016,171,5,Arkansas,22.0,171.0,10.058823529411764,2017.0,24.0,1,0,2.96,95,13,374.0,alex collins
-Keenan Reynolds,2016,182,6,Navy,22.0,0.0,0.0,,,0,0,4.55,47,1,122.0,keenan reynolds
-Kelvin Taylor,2016,211,6,Florida,22.0,0.0,0.0,,,0,0,2.66,150,17,405.0,kelvin taylor
-Darius Jackson,2016,216,6,Eastern Michigan,22.0,1.6,0.0941176470588235,2018.0,129.0,0,0,9.85,201,21,409.0,darius jackson
-Dwayne Washington,2016,236,7,Washington,22.0,48.7,2.864705882352941,2016.0,69.0,0,0,9.82,315,25,396.0,dwayne washington
-Daniel Lasco,2016,237,7,California,23.0,6.300000000000001,0.3705882352941176,2016.0,123.0,0,0,9.61,24,4,550.0,daniel lasco
-Keith Marshall,2016,242,7,Georgia,22.0,0.0,0.0,,,0,0,9.35,28,4,327.0,keith marshall
-Zac Brooks,2016,247,7,Clemson,23.0,0.0,0.0,,,0,0,7.94,113,9,528.0,zac brooks
-Leonard Fournette,2017,4,1,LSU,22.0,289.8,17.04705882352941,2017.0,5.0,1,1,8.04,146,15,298.0,leonard fournette
-Christian McCaffrey,2017,8,1,Stanford,21.0,480.3,28.25294117647059,2023.0,1.0,1,1,8.52,310,37,304.0,christian mccaffrey
-Dalvin Cook,2017,41,2,Florida St.,22.0,337.8,19.87058823529412,2020.0,3.0,1,1,4.65,488,33,421.0,dalvin cook
-Joe Mixon,2017,48,2,Oklahoma,21.0,348.8,20.51764705882353,2021.0,2.0,1,1,9.46,538,37,384.0,joe mixon
-Alvin Kamara,2017,67,3,Tennessee,22.0,410.9,24.170588235294115,2020.0,1.0,1,1,8.08,392,40,379.0,alvin kamara
-Kareem Hunt,2017,86,3,Toledo,22.0,308.90000000000003,18.17058823529412,2017.0,4.0,1,1,5.15,403,41,423.0,kareem hunt
-D'Onta Foreman,2017,89,3,Texas,21.0,131.0,7.705882352941177,2022.0,38.0,0,0,7.82,75,7,402.0,d'onta foreman
-James Conner,2017,105,3,Pittsburgh,22.0,280.0,16.470588235294116,2018.0,6.0,1,1,4.33,302,21,324.0,james conner
-Samaje Perine,2017,114,4,Oklahoma,21.0,165.4,9.729411764705883,2022.0,31.0,0,0,4.94,106,10,384.0,samaje perine
+Kenneth Dixon,2016,134,4,Louisiana Tech,22.0,102.4,6.023529411764706,2016.0,49.0,0,0,6.86,467.0,34.0,479.0,kenneth dixon
+Devontae Booker,2016,136,4,Utah,24.0,144.10000000000002,8.476470588235296,2021.0,33.0,0,0,,318.0,37.0,352.0,devontae booker
+DeAndre Washington,2016,143,5,Texas Tech,23.0,121.9,7.170588235294118,2019.0,40.0,0,0,7.31,385.0,41.0,620.0,deandre washington
+Paul Perkins,2016,149,5,UCLA,21.0,85.5,5.029411764705882,2016.0,57.0,0,0,5.39,242.0,30.0,510.0,paul perkins
+Jordan Howard,2016,150,5,Indiana,21.0,230.1,13.53529411764706,2016.0,11.0,1,1,5.41,106.0,11.0,461.0,jordan howard
+Wendell Smallwood,2016,153,5,West Virginia,22.0,128.3,7.547058823529412,2018.0,40.0,0,0,7.09,160.0,26.0,429.0,wendell smallwood
+Jonathan Williams,2016,156,5,Arkansas,22.0,40.400000000000006,2.3764705882352946,2019.0,80.0,0,0,6.4,65.0,11.0,359.0,jonathan williams
+Alex Collins,2016,171,5,Arkansas,22.0,171.0,10.058823529411764,2017.0,24.0,1,0,2.96,95.0,13.0,374.0,alex collins
+Keenan Reynolds,2016,182,6,Navy,22.0,0.0,0.0,,,0,0,4.55,47.0,1.0,122.0,keenan reynolds
+Kelvin Taylor,2016,211,6,Florida,22.0,0.0,0.0,,,0,0,2.66,150.0,17.0,405.0,kelvin taylor
+Darius Jackson,2016,216,6,Eastern Michigan,22.0,1.6,0.0941176470588235,2018.0,129.0,0,0,9.85,201.0,21.0,409.0,darius jackson
+Dwayne Washington,2016,236,7,Washington,22.0,48.7,2.864705882352941,2016.0,69.0,0,0,9.82,315.0,25.0,396.0,dwayne washington
+Daniel Lasco,2016,237,7,California,23.0,6.300000000000001,0.3705882352941176,2016.0,123.0,0,0,9.61,24.0,4.0,550.0,daniel lasco
+Keith Marshall,2016,242,7,Georgia,22.0,0.0,0.0,,,0,0,9.35,28.0,4.0,327.0,keith marshall
+Zac Brooks,2016,247,7,Clemson,23.0,0.0,0.0,,,0,0,7.94,113.0,9.0,528.0,zac brooks
+Leonard Fournette,2017,4,1,LSU,22.0,289.8,17.04705882352941,2017.0,5.0,1,1,8.04,146.0,15.0,298.0,leonard fournette
+Christian McCaffrey,2017,8,1,Stanford,21.0,480.3,28.25294117647059,2023.0,1.0,1,1,8.52,310.0,37.0,304.0,christian mccaffrey
+Dalvin Cook,2017,41,2,Florida St.,22.0,337.8,19.87058823529412,2020.0,3.0,1,1,4.65,488.0,33.0,421.0,dalvin cook
+Joe Mixon,2017,48,2,Oklahoma,21.0,348.8,20.51764705882353,2021.0,2.0,1,1,9.46,538.0,37.0,384.0,joe mixon
+Alvin Kamara,2017,67,3,Tennessee,22.0,410.9,24.170588235294115,2020.0,1.0,1,1,8.08,392.0,40.0,379.0,alvin kamara
+Kareem Hunt,2017,86,3,Toledo,22.0,308.90000000000003,18.17058823529412,2017.0,4.0,1,1,5.15,403.0,41.0,423.0,kareem hunt
+D'Onta Foreman,2017,89,3,Texas,21.0,131.0,7.705882352941177,2022.0,38.0,0,0,7.82,75.0,7.0,402.0,d'onta foreman
+James Conner,2017,105,3,Pittsburgh,22.0,280.0,16.470588235294116,2018.0,6.0,1,1,4.33,302.0,21.0,324.0,james conner
+Samaje Perine,2017,114,4,Oklahoma,21.0,165.4,9.729411764705883,2022.0,31.0,0,0,4.94,106.0,10.0,384.0,samaje perine
 Tarik Cohen,2017,119,4,North Carolina A&T,22.0,235.6,13.858823529411763,2018.0,11.0,1,1,3.92,,,,
-Joe Williams,2017,121,4,Utah,24.0,0.0,0.0,,,0,0,7.78,107,9,399.0,joe williams
-Donnel Pumphrey,2017,132,4,San Diego St.,22.0,0.0,0.0,,,0,0,4.01,231,27,256.0,donnel pumphrey
-Jamaal Williams,2017,134,4,BYU,22.0,225.9,13.288235294117648,2022.0,15.0,1,0,4.55,80,7,412.0,jamaal williams
-Wayne Gallman,2017,140,4,Clemson,22.0,136.6,8.035294117647059,2020.0,37.0,0,0,6.28,152,20,629.0,wayne gallman
-Marlon Mack,2017,143,4,South Florida,21.0,206.1,12.123529411764707,2018.0,17.0,1,0,8.78,227,28,358.0,marlon mack
-Brian Hill,2017,156,5,Wyoming,21.0,95.4,5.611764705882353,2020.0,51.0,0,0,7.4,67,8,379.0,brian hill
-Jeremy McNichols,2017,162,5,Boise St.,21.0,73.60000000000001,4.329411764705883,2021.0,58.0,0,0,,474,37,406.0,jeremy mcnichols
-T.J. Logan,2017,179,5,North Carolina,23.0,10.9,0.6411764705882353,2018.0,107.0,0,0,7.56,244,29,458.0,t.j. logan
-Aaron Jones,2017,182,5,Texas-El Paso,22.0,359.70000000000005,21.15882352941177,2019.0,2.0,1,1,9.21,233,28,327.0,aaron jones
-Elijah McGuire,2017,188,6,Louisiana,23.0,85.9,5.052941176470589,2018.0,62.0,0,0,,238,29,342.0,elijah mcguire
+Joe Williams,2017,121,4,Utah,24.0,0.0,0.0,,,0,0,7.78,107.0,9.0,399.0,joe williams
+Donnel Pumphrey,2017,132,4,San Diego St.,22.0,0.0,0.0,,,0,0,4.01,231.0,27.0,256.0,donnel pumphrey
+Jamaal Williams,2017,134,4,BYU,22.0,225.9,13.288235294117648,2022.0,15.0,1,0,4.55,80.0,7.0,412.0,jamaal williams
+Wayne Gallman,2017,140,4,Clemson,22.0,136.6,8.035294117647059,2020.0,37.0,0,0,6.28,152.0,20.0,629.0,wayne gallman
+Marlon Mack,2017,143,4,South Florida,21.0,206.1,12.123529411764707,2018.0,17.0,1,0,8.78,227.0,28.0,358.0,marlon mack
+Brian Hill,2017,156,5,Wyoming,21.0,95.4,5.611764705882353,2020.0,51.0,0,0,7.4,67.0,8.0,379.0,brian hill
+Jeremy McNichols,2017,162,5,Boise St.,21.0,73.60000000000001,4.329411764705883,2021.0,58.0,0,0,,474.0,37.0,406.0,jeremy mcnichols
+T.J. Logan,2017,179,5,North Carolina,23.0,10.9,0.6411764705882353,2018.0,107.0,0,0,7.56,244.0,29.0,458.0,t.j. logan
+Aaron Jones,2017,182,5,Texas-El Paso,22.0,359.70000000000005,21.15882352941177,2019.0,2.0,1,1,9.21,233.0,28.0,327.0,aaron jones
+Elijah McGuire,2017,188,6,Louisiana,23.0,85.9,5.052941176470589,2018.0,62.0,0,0,,238.0,29.0,342.0,elijah mcguire
 De'Angelo Henderson,2017,203,6,Coastal Carolina,24.0,0.0,0.0,,,0,0,5.66,,,,
-Brandon Wilson,2017,207,6,Houston,23.0,0.0,0.0,,,0,0,,52,5,523.0,brandon wilson
+Brandon Wilson,2017,207,6,Houston,23.0,0.0,0.0,,,0,0,,52.0,5.0,523.0,brandon wilson
 Devante Mays,2017,238,7,Utah St.,23.0,1.1,0.0647058823529411,2017.0,131.0,0,0,7.66,,,,
-Khalfani Muhammad,2017,241,7,California,22.0,0.0,0.0,,,0,0,7.52,132,17,621.0,khalfani muhammad
-Elijah Hood,2017,242,7,North Carolina,21.0,0.0,0.0,,,0,0,5.69,142,25,458.0,elijah hood
-Chris Carson,2017,249,7,Oklahoma St.,22.0,232.6,13.682352941176472,2019.0,13.0,1,0,7.91,128,13,465.0,chris carson
-Matthew Dayes,2017,252,7,North Carolina St.,23.0,0.0,0.0,,,0,0,,267,32,438.0,matthew dayes
-Saquon Barkley,2018,2,1,Penn St.,21.0,455.7,26.805882352941172,2024.0,1.0,1,1,9.97,632,54,458.0,saquon barkley
-Rashaad Penny,2018,27,1,San Diego St.,22.0,121.7,7.158823529411765,2021.0,45.0,0,0,7.26,135,19,252.0,rashaad penny
-Sony Michel,2018,31,1,Georgia,23.0,210.6,12.388235294117647,2018.0,14.0,1,0,8.95,96,9,305.0,sony michel
-Nick Chubb,2018,35,2,Georgia,22.0,281.4,16.552941176470586,2022.0,6.0,1,1,9.15,30,4,305.0,nick chubb
-Ronald Jones II,2018,38,2,USC,21.0,0.0,0.0,,,0,0,,187,14,491.0,ronald jones ii
-Kerryon Johnson,2018,43,2,Auburn,21.0,139.4,8.200000000000001,2018.0,37.0,0,0,7.09,194,24,382.0,kerryon johnson
-Derrius Guice,2018,59,2,LSU,21.0,57.400000000000006,3.3764705882352946,2019.0,69.0,0,0,7.37,124,18,300.0,derrius guice
-Royce Freeman,2018,71,3,Oregon,22.0,142.20000000000002,8.364705882352942,2019.0,38.0,0,0,8.26,164,14,311.0,royce freeman
-Nyheim Hines,2018,104,4,North Carolina St.,21.0,163.3,9.605882352941178,2018.0,27.0,0,0,5.68,152,26,484.0,nyheim hines
-Mark Walton,2018,112,4,Miami (FL),21.0,0.0,0.0,,,0,0,4.55,91,7,425.0,mark walton
+Khalfani Muhammad,2017,241,7,California,22.0,0.0,0.0,,,0,0,7.52,132.0,17.0,621.0,khalfani muhammad
+Elijah Hood,2017,242,7,North Carolina,21.0,0.0,0.0,,,0,0,5.69,142.0,25.0,458.0,elijah hood
+Chris Carson,2017,249,7,Oklahoma St.,22.0,232.6,13.682352941176472,2019.0,13.0,1,0,7.91,128.0,13.0,465.0,chris carson
+Matthew Dayes,2017,252,7,North Carolina St.,23.0,0.0,0.0,,,0,0,,267.0,32.0,438.0,matthew dayes
+Saquon Barkley,2018,2,1,Penn St.,21.0,455.7,26.80588235294117,2024.0,1.0,1,1,9.97,632.0,54.0,458.0,saquon barkley
+Rashaad Penny,2018,27,1,San Diego St.,22.0,121.7,7.158823529411765,2021.0,45.0,0,0,7.26,135.0,19.0,252.0,rashaad penny
+Sony Michel,2018,31,1,Georgia,23.0,210.6,12.388235294117647,2018.0,14.0,1,0,8.95,96.0,9.0,305.0,sony michel
+Nick Chubb,2018,35,2,Georgia,22.0,281.4,16.552941176470586,2022.0,6.0,1,1,9.15,30.0,4.0,305.0,nick chubb
+Ronald Jones II,2018,38,2,USC,21.0,0.0,0.0,,,0,0,,187.0,14.0,491.0,ronald jones ii
+Kerryon Johnson,2018,43,2,Auburn,21.0,139.4,8.200000000000001,2018.0,37.0,0,0,7.09,194.0,24.0,382.0,kerryon johnson
+Derrius Guice,2018,59,2,LSU,21.0,57.400000000000006,3.3764705882352946,2019.0,69.0,0,0,7.37,124.0,18.0,300.0,derrius guice
+Royce Freeman,2018,71,3,Oregon,22.0,142.20000000000002,8.364705882352942,2019.0,38.0,0,0,8.26,164.0,14.0,311.0,royce freeman
+Nyheim Hines,2018,104,4,North Carolina St.,21.0,163.3,9.605882352941178,2018.0,27.0,0,0,5.68,152.0,26.0,484.0,nyheim hines
+Mark Walton,2018,112,4,Miami (FL),21.0,0.0,0.0,,,0,0,4.55,91.0,7.0,425.0,mark walton
 Ito Smith,2018,126,4,Southern Miss,22.0,97.7,5.747058823529412,2018.0,53.0,0,0,6.26,,,,
-Kalen Ballage,2018,131,4,Arizona St.,22.0,93.9,5.523529411764706,2020.0,52.0,0,0,9.12,91,20,416.0,kalen ballage
-Chase Edmonds,2018,134,4,Fordham,22.0,168.0,9.882352941176473,2020.0,27.0,0,0,7.89,21,2,,chase edmonds
-Jordan Wilkins,2018,169,5,Mississippi,24.0,61.3,3.605882352941177,2020.0,71.0,0,0,7.74,241,26,434.0,jordan wilkins
-John Kelly,2018,176,6,Tennessee,21.0,12.1,0.7117647058823531,2018.0,103.0,0,0,4.43,299,37,319.0,john kelly
-Boston Scott,2018,201,6,Louisiana Tech,23.0,109.1,6.417647058823529,2021.0,45.0,0,0,8.85,181,20,420.0,boston scott
+Kalen Ballage,2018,131,4,Arizona St.,22.0,93.9,5.523529411764706,2020.0,52.0,0,0,9.12,91.0,20.0,416.0,kalen ballage
+Chase Edmonds,2018,134,4,Fordham,22.0,168.0,9.882352941176473,2020.0,27.0,0,0,7.89,21.0,2.0,,chase edmonds
+Jordan Wilkins,2018,169,5,Mississippi,24.0,61.3,3.605882352941177,2020.0,71.0,0,0,7.74,241.0,26.0,434.0,jordan wilkins
+John Kelly,2018,176,6,Tennessee,21.0,12.1,0.7117647058823531,2018.0,103.0,0,0,4.43,299.0,37.0,319.0,john kelly
+Boston Scott,2018,201,6,Louisiana Tech,23.0,109.1,6.417647058823529,2021.0,45.0,0,0,8.85,181.0,20.0,420.0,boston scott
 Trenton Cannon,2018,204,6,Virginia St.,24.0,48.7,2.864705882352941,2018.0,79.0,0,0,9.07,,,,
-David Williams,2018,226,7,Arkansas,24.0,0.0,0.0,,,0,0,4.76,171,10,340.0,david williams
-Bo Scarbrough,2018,236,7,Alabama,23.0,43.2,2.541176470588236,2019.0,79.0,0,0,9.25,109,17,332.0,bo scarbrough
-Nick Bawden,2018,237,7,San Diego St.,22.0,0.0,0.0,,,0,0,,103,15,252.0,nick bawden
-Justin Jackson,2018,251,7,Northwestern,22.0,86.2,5.070588235294117,2021.0,61.0,0,0,8.84,276,44,461.0,justin jackson
-Josh Jacobs,2019,24,1,Alabama,21.0,328.3,19.311764705882357,2022.0,3.0,1,1,5.65,247,20,438.0,josh jacobs
-Miles Sanders,2019,53,2,Penn St.,22.0,244.8,14.4,2022.0,12.0,1,1,9.48,139,24,379.0,miles sanders
-Darrell Henderson,2019,70,3,Memphis,22.0,171.4,10.08235294117647,2021.0,27.0,0,0,7.68,295,19,413.0,darrell henderson
-David Montgomery,2019,73,3,Iowa St.,22.0,267.90000000000003,15.758823529411767,2020.0,6.0,1,1,5.15,157,22,363.0,david montgomery
-Devin Singletary,2019,74,3,Florida Atlantic,22.0,237.3,13.958823529411765,2021.0,10.0,1,1,1.65,36,6,364.0,devin singletary
-Damien Harris,2019,87,3,Alabama,22.0,214.8,12.63529411764706,2021.0,15.0,1,0,6.36,204,22,438.0,damien harris
-Alexander Mattison,2019,102,3,Boise St.,21.0,137.4,8.08235294117647,2024.0,34.0,0,0,6.81,173,27,460.0,alexander mattison
-Bryce Love,2019,112,4,Stanford,22.0,0.0,0.0,,,0,0,,99,20,423.0,bryce love
-Justice Hill,2019,113,4,Oklahoma St.,21.0,147.3,8.664705882352942,2024.0,33.0,0,0,9.33,68,13,491.0,justice hill
-Benny Snell Jr.,2019,122,4,Kentucky,21.0,0.0,0.0,,,0,0,,105,17,295.0,benny snell jr.
-Tony Pollard,2019,128,4,Memphis,22.0,266.0,15.647058823529411,2022.0,8.0,1,1,7.17,444,38,413.0,tony pollard
-Ryquell Armstead,2019,140,5,Temple,22.0,51.2,3.011764705882353,2019.0,73.0,0,0,7.71,52,8,443.0,ryquell armstead
-Qadree Ollison,2019,152,5,Pittsburgh,22.0,30.7,1.8058823529411765,2019.0,89.0,0,0,4.43,66,11,315.0,qadree ollison
-Jordan Scarlett,2019,154,5,Florida,23.0,0.9,0.0529411764705882,2019.0,128.0,0,0,4.71,84,10,364.0,jordan scarlett
-Trayveon Williams,2019,182,6,Texas A&M,21.0,21.700000000000003,1.2764705882352942,2020.0,99.0,0,0,4.6,277,27,439.0,trayveon williams
-Ty Johnson,2019,186,6,Maryland,21.0,117.0,6.882352941176471,2021.0,42.0,0,0,9.74,22,6,241.0,ty johnson
-Dexter Williams,2019,194,6,Notre Dame,22.0,1.1,0.0647058823529411,2019.0,126.0,0,0,8.13,133,16,418.0,dexter williams
-Travis Homer,2019,204,6,Miami (FL),21.0,55.8,3.282352941176471,2021.0,75.0,0,0,8.34,186,19,355.0,travis homer
-Rodney Anderson,2019,211,6,Oklahoma,22.0,0.0,0.0,,,0,0,,281,17,433.0,rodney anderson
+David Williams,2018,226,7,Arkansas,24.0,0.0,0.0,,,0,0,4.76,171.0,10.0,340.0,david williams
+Bo Scarbrough,2018,236,7,Alabama,23.0,43.2,2.541176470588236,2019.0,79.0,0,0,9.25,109.0,17.0,332.0,bo scarbrough
+Nick Bawden,2018,237,7,San Diego St.,22.0,0.0,0.0,,,0,0,,103.0,15.0,252.0,nick bawden
+Justin Jackson,2018,251,7,Northwestern,22.0,86.2,5.070588235294117,2021.0,61.0,0,0,8.84,276.0,44.0,461.0,justin jackson
+Josh Jacobs,2019,24,1,Alabama,21.0,328.3,19.31176470588236,2022.0,3.0,1,1,5.65,247.0,20.0,438.0,josh jacobs
+Miles Sanders,2019,53,2,Penn St.,22.0,244.8,14.4,2022.0,12.0,1,1,9.48,139.0,24.0,379.0,miles sanders
+Darrell Henderson,2019,70,3,Memphis,22.0,171.4,10.08235294117647,2021.0,27.0,0,0,7.68,295.0,19.0,413.0,darrell henderson
+David Montgomery,2019,73,3,Iowa St.,22.0,267.90000000000003,15.758823529411767,2020.0,6.0,1,1,5.15,157.0,22.0,363.0,david montgomery
+Devin Singletary,2019,74,3,Florida Atlantic,22.0,237.3,13.958823529411765,2021.0,10.0,1,1,1.65,36.0,6.0,364.0,devin singletary
+Damien Harris,2019,87,3,Alabama,22.0,214.8,12.63529411764706,2021.0,15.0,1,0,6.36,204.0,22.0,438.0,damien harris
+Alexander Mattison,2019,102,3,Boise St.,21.0,137.4,8.08235294117647,2024.0,34.0,0,0,6.81,173.0,27.0,460.0,alexander mattison
+Bryce Love,2019,112,4,Stanford,22.0,0.0,0.0,,,0,0,,99.0,20.0,423.0,bryce love
+Justice Hill,2019,113,4,Oklahoma St.,21.0,147.3,8.664705882352942,2024.0,33.0,0,0,9.33,68.0,13.0,491.0,justice hill
+Benny Snell Jr.,2019,122,4,Kentucky,21.0,0.0,0.0,,,0,0,,105.0,17.0,295.0,benny snell jr.
+Tony Pollard,2019,128,4,Memphis,22.0,266.0,15.647058823529411,2022.0,8.0,1,1,7.17,444.0,38.0,413.0,tony pollard
+Ryquell Armstead,2019,140,5,Temple,22.0,51.2,3.011764705882353,2019.0,73.0,0,0,7.71,52.0,8.0,443.0,ryquell armstead
+Qadree Ollison,2019,152,5,Pittsburgh,22.0,30.7,1.8058823529411765,2019.0,89.0,0,0,4.43,66.0,11.0,315.0,qadree ollison
+Jordan Scarlett,2019,154,5,Florida,23.0,0.9,0.0529411764705882,2019.0,128.0,0,0,4.71,84.0,10.0,364.0,jordan scarlett
+Trayveon Williams,2019,182,6,Texas A&M,21.0,21.700000000000003,1.2764705882352942,2020.0,99.0,0,0,4.6,277.0,27.0,439.0,trayveon williams
+Ty Johnson,2019,186,6,Maryland,21.0,117.0,6.882352941176471,2021.0,42.0,0,0,9.74,22.0,6.0,241.0,ty johnson
+Dexter Williams,2019,194,6,Notre Dame,22.0,1.1,0.0647058823529411,2019.0,126.0,0,0,8.13,133.0,16.0,418.0,dexter williams
+Travis Homer,2019,204,6,Miami (FL),21.0,55.8,3.282352941176471,2021.0,75.0,0,0,8.34,186.0,19.0,355.0,travis homer
+Rodney Anderson,2019,211,6,Oklahoma,22.0,0.0,0.0,,,0,0,,281.0,17.0,433.0,rodney anderson
 Darwin Thompson,2019,214,6,Utah St.,22.0,33.2,1.9529411764705884,2020.0,86.0,0,0,7.99,,,,
-Mike Weber,2019,218,7,Ohio St.,22.0,0.0,0.0,,,0,0,7.01,112,21,559.0,mike weber
-Cullen Gillaspia,2019,220,7,Texas A&M,24.0,0.0,0.0,,,0,0,,52,5,439.0,cullen gillaspia
-Kerrith Whyte Jr,2019,222,7,Florida Atlantic,22.0,0.0,0.0,,,0,0,,160,10,364.0,kerrith whyte jr.
-Chandler Cox,2019,233,7,Auburn,23.0,0.0,0.0,,,0,0,,81,10,382.0,chandler cox
-Myles Gaskin,2019,234,7,Washington,22.0,173.6,10.211764705882352,2021.0,26.0,0,0,5.93,77,21,405.0,myles gaskin
-Clyde Edwards-Helaire,2020,32,1,LSU,21.0,194.4,11.43529411764706,2020.0,20.0,1,0,5.41,453,55,567.0,clyde edwards-helaire
-D'Andre Swift,2020,35,2,Georgia,21.0,214.5,12.617647058823527,2024.0,16.0,1,0,7.55,216,24,415.0,d'andre swift
-Jonathan Taylor,2020,41,2,Wisconsin,21.0,373.1,21.947058823529414,2021.0,1.0,1,1,9.53,252,26,351.0,jonathan taylor
-Cam Akers,2020,52,2,Florida St.,21.0,146.0,8.588235294117647,2020.0,34.0,0,0,8.79,225,30,432.0,cam akers
-J.K. Dobbins,2020,55,2,Ohio St.,21.0,194.4,11.43529411764706,2024.0,22.0,1,0,,247,23,406.0,j.k. dobbins
-AJ Dillon,2020,62,2,Boston Col.,22.0,117.6,6.91764705882353,2023.0,43.0,0,0,,195,13,305.0,aj dillon
-Antonio Gibson,2020,66,3,Memphis,22.0,229.1,13.476470588235296,2021.0,13.0,1,0,,735,38,441.0,antonio gibson
+Mike Weber,2019,218,7,Ohio St.,22.0,0.0,0.0,,,0,0,7.01,112.0,21.0,559.0,mike weber
+Cullen Gillaspia,2019,220,7,Texas A&M,24.0,0.0,0.0,,,0,0,,52.0,5.0,439.0,cullen gillaspia
+Kerrith Whyte Jr,2019,222,7,Florida Atlantic,22.0,0.0,0.0,,,0,0,,160.0,10.0,364.0,kerrith whyte jr.
+Chandler Cox,2019,233,7,Auburn,23.0,0.0,0.0,,,0,0,,81.0,10.0,382.0,chandler cox
+Myles Gaskin,2019,234,7,Washington,22.0,173.6,10.211764705882352,2021.0,26.0,0,0,5.93,77.0,21.0,405.0,myles gaskin
+Clyde Edwards-Helaire,2020,32,1,LSU,21.0,194.4,11.43529411764706,2020.0,20.0,1,0,5.41,453.0,55.0,567.0,clyde edwards-helaire
+D'Andre Swift,2020,35,2,Georgia,21.0,214.5,12.617647058823527,2024.0,16.0,1,0,7.55,216.0,24.0,415.0,d'andre swift
+Jonathan Taylor,2020,41,2,Wisconsin,21.0,373.1,21.947058823529414,2021.0,1.0,1,1,9.53,252.0,26.0,351.0,jonathan taylor
+Cam Akers,2020,52,2,Florida St.,21.0,146.0,8.588235294117647,2020.0,34.0,0,0,8.79,225.0,30.0,432.0,cam akers
+J.K. Dobbins,2020,55,2,Ohio St.,21.0,194.4,11.43529411764706,2024.0,22.0,1,0,,247.0,23.0,406.0,j.k. dobbins
+AJ Dillon,2020,62,2,Boston Col.,22.0,117.6,6.91764705882353,2023.0,43.0,0,0,,195.0,13.0,305.0,aj dillon
+Antonio Gibson,2020,66,3,Memphis,22.0,229.1,13.476470588235296,2021.0,13.0,1,0,,735.0,38.0,441.0,antonio gibson
 Ke'Shawn Vaughn,2020,76,3,Illinois,23.0,50.8,2.988235294117647,2021.0,80.0,0,0,5.17,,,,
-Zack Moss,2020,86,3,Utah,22.0,169.6,9.976470588235294,2023.0,33.0,0,0,2.8,388,28,321.0,zack moss
+Zack Moss,2020,86,3,Utah,22.0,169.6,9.976470588235294,2023.0,33.0,0,0,2.8,388.0,28.0,321.0,zack moss
 Darrynton Evans,2020,93,3,Appalachian St.,22.0,30.0,1.7647058823529411,2023.0,84.0,0,0,9.11,,,,
-Joshua Kelley,2020,112,4,UCLA,22.0,81.2,4.776470588235294,2020.0,60.0,0,0,7.59,71,11,426.0,joshua kelley
-La'Mical Perine,2020,120,4,Florida,22.0,52.5,3.088235294117647,2020.0,77.0,0,0,5.25,262,40,467.0,lamical perine
-Anthony McFarland Jr.,2020,124,4,Maryland,22.0,0.0,0.0,,,0,0,,126,17,342.0,anthony mcfarland
-DeeJay Dallas,2020,144,4,Miami (FL),21.0,60.1,3.5352941176470587,2021.0,71.0,0,0,,140,14,437.0,deejay dallas
-Jason Huntley,2020,172,5,New Mexico St.,22.0,5.1000000000000005,0.3,2021.0,128.0,0,0,8.08,192,40,446.0,jason huntley
-Eno Benjamin,2020,222,7,Arizona St.,21.0,89.60000000000001,5.270588235294119,2022.0,52.0,0,0,5.76,347,42,383.0,eno benjamin
-Raymond Calais,2020,245,7,Louisiana,22.0,0.0,0.0,,,0,0,7.6,67,10,412.0,raymond calais
-Malcolm Perry,2020,246,7,Navy,23.0,24.7,1.4529411764705882,2020.0,97.0,0,0,,167,9,129.0,malcolm perry
-Najee Harris,2021,24,1,Alabama,23.0,303.5,17.852941176470587,2021.0,4.0,1,1,,425,43,425.0,najee harris
-Travis Etienne,2021,25,1,Clemson,22.0,282.4,16.61176470588235,2023.0,5.0,1,1,9.12,588,48,490.0,travis etienne
-Javonte Williams,2021,35,2,North Carolina,21.0,204.9,12.052941176470588,2021.0,18.0,1,0,8.79,305,25,357.0,javonte williams
-Trey Sermon,2021,88,3,Ohio St.,22.0,53.8,3.164705882352941,2024.0,66.0,0,0,9.67,95,12,225.0,trey sermon
-Michael Carter,2021,107,4,North Carolina,22.0,154.4,9.08235294117647,2021.0,30.0,0,0,6.2,267,25,357.0,michael carter
-Kene Nwangwu,2021,119,4,Iowa St.,23.0,11.0,0.6470588235294118,2021.0,116.0,0,0,9.88,22,3,372.0,kene nwangwu
-Rhamondre Stevenson,2021,120,4,Oklahoma,23.0,249.1,14.65294117647059,2022.0,10.0,1,1,3.98,211,18,362.0,rhamondre stevenson
-Chuba Hubbard,2021,126,4,Oklahoma St.,22.0,241.6,14.211764705882352,2024.0,16.0,1,0,8.43,52,8,340.0,chuba hubbard
-Kenneth Gainwell,2021,150,5,Memphis,22.0,139.9,8.229411764705883,2021.0,35.0,0,0,5.66,610,51,441.0,kenneth gainwell
-Elijah Mitchell,2021,194,6,Louisiana,23.0,200.6,11.8,2021.0,20.0,1,0,9.5,153,16,308.0,elijah mitchell
-Gary Brightwell,2021,196,6,Arizona,22.0,30.0,1.7647058823529411,2022.0,89.0,0,0,4.57,58,13,188.0,gary brightwell
-Larry Rountree,2021,198,6,Missouri,22.0,15.6,0.9176470588235296,2021.0,112.0,0,0,2.01,100,15,363.0,larry rountree iii
-Chris Evans,2021,202,6,Michigan,23.0,52.400000000000006,3.0823529411764707,2021.0,77.0,0,0,9.84,87,9,213.0,chris evans
-Demetric Felton,2021,211,6,UCLA,23.0,50.5,2.9705882352941178,2021.0,81.0,0,0,,159,22,200.0,demetric felton
-Khalil Herbert,2021,217,6,Virginia Tech,23.0,117.8,6.929411764705883,2022.0,42.0,0,0,6.14,179,10,253.0,khalil herbert
-Jake Funk,2021,233,7,Maryland,23.0,3.2,0.188235294117647,2023.0,120.0,0,0,9.76,68,10,157.0,jake funk
-Gerrid Doaks,2021,244,7,Cincinnati,23.0,0.0,0.0,,,0,0,8.3,202,14,295.0,gerrid doaks
-Kylin Hill,2021,256,7,Mississippi St.,23.0,3.9,0.2294117647058823,2021.0,132.0,0,0,7.28,237,23,557.0,kylin hill
-Jermar Jefferson,2021,257,7,Oregon St.,21.0,25.700000000000003,1.5117647058823531,2021.0,101.0,0,0,2.22,67,9,233.0,jermar jefferson
-Breece Hall,2022,36,2,Iowa St.,21.0,290.5,17.08823529411765,2023.0,4.0,1,1,9.96,302,36,446.0,breece hall
-Kenneth Walker III,2022,41,2,Michigan St.,21.0,199.4,11.729411764705883,2023.0,22.0,1,0,9.24,89,13,400.0,kenneth walker iii
-James Cook,2022,63,2,Georgia,22.0,324.3,19.076470588235296,2024.0,5.0,1,1,8.75,284,27,407.0,james cook
-Rachaad White,2022,91,3,Arizona St.,23.0,295.5,17.38235294117647,2023.0,2.0,1,1,9.87,456,43,313.0,rachaad white
-Tyrion Davis-Price,2022,93,3,LSU,21.0,9.9,0.5823529411764706,2022.0,115.0,0,0,6.65,64,10,443.0,tyrion davis-price
-Brian Robinson Jr.,2022,98,3,Alabama,23.0,0.0,0.0,,,0,0,6.58,296,35,571.0,brian robinson jr.
-Dameon Pierce,2022,107,4,Florida,22.0,166.4,9.788235294117648,2022.0,29.0,0,0,7.09,216,19,416.0,dameon pierce
-Zamir White,2022,122,4,Georgia,22.0,73.9,4.347058823529412,2023.0,57.0,0,0,9.81,75,9,407.0,zamir white
-Isaiah Spiller,2022,123,4,Texas A&M,21.0,19.0,1.1176470588235294,2023.0,92.0,0,0,5.66,189,25,370.0,isaiah spiller
-Pierre Strong,2022,127,4,South Dakota St.,23.0,42.8,2.51764705882353,2023.0,74.0,0,0,,8,3,,pierre strong
-Hassan Haskins,2022,131,4,Michigan,22.0,33.3,1.9588235294117649,2024.0,80.0,0,0,,131,18,395.0,hassan haskins
-Tyler Allgeier,2022,151,5,BYU,22.0,159.4,9.376470588235296,2022.0,32.0,0,0,7.4,199,28,389.0,tyler allgeier
-Snoop Conner,2022,154,5,Mississippi,22.0,10.2,0.6,2022.0,113.0,0,0,7.03,82,14,429.0,snoop conner
-Jerome Ford,2022,156,5,Cincinnati,22.0,220.4,12.96470588235294,2023.0,17.0,1,0,6.91,220,21,400.0,jerome ford
-Kyren Williams,2022,164,5,Notre Dame,22.0,299.8,17.63529411764706,2024.0,8.0,1,1,3.46,359,42,450.0,kyren williams
-Ty Chandler,2022,169,5,North Carolina,24.0,101.0,5.941176470588236,2023.0,48.0,0,0,6.35,216,15,382.0,ty chandler
-Kevin Harris,2022,183,6,South Carolina,21.0,21.3,1.2529411764705882,2023.0,88.0,0,0,7.13,89,11,360.0,kevin harris
-Tyler Badie,2022,196,6,Missouri,22.0,10.2,0.6,2024.0,104.0,0,0,6.38,330,54,455.0,tyler badie
-Keaontay Ingram,2022,201,6,USC,22.0,18.1,1.0647058823529412,2022.0,101.0,0,0,8.67,156,22,500.0,keaontay ingram
-Trestan Ebner,2022,203,6,Baylor,23.0,8.200000000000001,0.4823529411764706,2022.0,121.0,0,0,4.77,284,28,365.0,trestan ebner
-Brittain Brown,2022,250,7,UCLA,24.0,0.0,0.0,,,0,0,4.75,129,18,335.0,brittain brown
+Joshua Kelley,2020,112,4,UCLA,22.0,81.2,4.776470588235294,2020.0,60.0,0,0,7.59,71.0,11.0,426.0,joshua kelley
+La'Mical Perine,2020,120,4,Florida,22.0,52.5,3.088235294117647,2020.0,77.0,0,0,5.25,262.0,40.0,467.0,lamical perine
+Anthony McFarland Jr.,2020,124,4,Maryland,22.0,0.0,0.0,,,0,0,,126.0,17.0,342.0,anthony mcfarland
+DeeJay Dallas,2020,144,4,Miami (FL),21.0,60.1,3.5352941176470587,2021.0,71.0,0,0,,140.0,14.0,437.0,deejay dallas
+Jason Huntley,2020,172,5,New Mexico St.,22.0,5.1000000000000005,0.3,2021.0,128.0,0,0,8.08,192.0,40.0,446.0,jason huntley
+Eno Benjamin,2020,222,7,Arizona St.,21.0,89.60000000000001,5.270588235294119,2022.0,52.0,0,0,5.76,347.0,42.0,383.0,eno benjamin
+Raymond Calais,2020,245,7,Louisiana,22.0,0.0,0.0,,,0,0,7.6,67.0,10.0,412.0,raymond calais
+Malcolm Perry,2020,246,7,Navy,23.0,24.7,1.4529411764705882,2020.0,97.0,0,0,,167.0,9.0,129.0,malcolm perry
+Najee Harris,2021,24,1,Alabama,23.0,303.5,17.852941176470587,2021.0,4.0,1,1,,425.0,43.0,425.0,najee harris
+Travis Etienne,2021,25,1,Clemson,22.0,282.4,16.61176470588235,2023.0,5.0,1,1,9.12,588.0,48.0,490.0,travis etienne
+Javonte Williams,2021,35,2,North Carolina,21.0,204.9,12.052941176470588,2021.0,18.0,1,0,8.79,305.0,25.0,357.0,javonte williams
+Trey Sermon,2021,88,3,Ohio St.,22.0,53.8,3.164705882352941,2024.0,66.0,0,0,9.67,95.0,12.0,225.0,trey sermon
+Michael Carter,2021,107,4,North Carolina,22.0,154.4,9.08235294117647,2021.0,30.0,0,0,6.2,267.0,25.0,357.0,michael carter
+Kene Nwangwu,2021,119,4,Iowa St.,23.0,11.0,0.6470588235294118,2021.0,116.0,0,0,9.88,22.0,3.0,372.0,kene nwangwu
+Rhamondre Stevenson,2021,120,4,Oklahoma,23.0,249.1,14.65294117647059,2022.0,10.0,1,1,3.98,211.0,18.0,362.0,rhamondre stevenson
+Chuba Hubbard,2021,126,4,Oklahoma St.,22.0,241.6,14.211764705882352,2024.0,16.0,1,0,8.43,52.0,8.0,340.0,chuba hubbard
+Kenneth Gainwell,2021,150,5,Memphis,22.0,139.9,8.229411764705883,2021.0,35.0,0,0,5.66,610.0,51.0,441.0,kenneth gainwell
+Elijah Mitchell,2021,194,6,Louisiana,23.0,200.6,11.8,2021.0,20.0,1,0,9.5,153.0,16.0,308.0,elijah mitchell
+Gary Brightwell,2021,196,6,Arizona,22.0,30.0,1.7647058823529411,2022.0,89.0,0,0,4.57,58.0,13.0,188.0,gary brightwell
+Larry Rountree,2021,198,6,Missouri,22.0,15.6,0.9176470588235296,2021.0,112.0,0,0,2.01,100.0,15.0,363.0,larry rountree iii
+Chris Evans,2021,202,6,Michigan,23.0,52.400000000000006,3.0823529411764707,2021.0,77.0,0,0,9.84,87.0,9.0,213.0,chris evans
+Demetric Felton,2021,211,6,UCLA,23.0,50.5,2.9705882352941178,2021.0,81.0,0,0,,159.0,22.0,200.0,demetric felton
+Khalil Herbert,2021,217,6,Virginia Tech,23.0,117.8,6.929411764705883,2022.0,42.0,0,0,6.14,179.0,10.0,253.0,khalil herbert
+Jake Funk,2021,233,7,Maryland,23.0,3.2,0.188235294117647,2023.0,120.0,0,0,9.76,68.0,10.0,157.0,jake funk
+Gerrid Doaks,2021,244,7,Cincinnati,23.0,0.0,0.0,,,0,0,8.3,202.0,14.0,295.0,gerrid doaks
+Kylin Hill,2021,256,7,Mississippi St.,23.0,3.9,0.2294117647058823,2021.0,132.0,0,0,7.28,237.0,23.0,557.0,kylin hill
+Jermar Jefferson,2021,257,7,Oregon St.,21.0,25.700000000000003,1.5117647058823531,2021.0,101.0,0,0,2.22,67.0,9.0,233.0,jermar jefferson
+Breece Hall,2022,36,2,Iowa St.,21.0,290.5,17.08823529411765,2023.0,4.0,1,1,9.96,302.0,36.0,446.0,breece hall
+Kenneth Walker III,2022,41,2,Michigan St.,21.0,199.4,11.729411764705883,2023.0,22.0,1,0,9.24,89.0,13.0,400.0,kenneth walker iii
+James Cook,2022,63,2,Georgia,22.0,324.3,19.076470588235296,2024.0,5.0,1,1,8.75,284.0,27.0,407.0,james cook
+Rachaad White,2022,91,3,Arizona St.,23.0,295.5,17.38235294117647,2023.0,2.0,1,1,9.87,456.0,43.0,313.0,rachaad white
+Tyrion Davis-Price,2022,93,3,LSU,21.0,9.9,0.5823529411764706,2022.0,115.0,0,0,6.65,64.0,10.0,443.0,tyrion davis-price
+Brian Robinson Jr.,2022,98,3,Alabama,23.0,0.0,0.0,,,0,0,6.58,296.0,35.0,571.0,brian robinson jr.
+Dameon Pierce,2022,107,4,Florida,22.0,166.4,9.788235294117648,2022.0,29.0,0,0,7.09,216.0,19.0,416.0,dameon pierce
+Zamir White,2022,122,4,Georgia,22.0,73.9,4.347058823529412,2023.0,57.0,0,0,9.81,75.0,9.0,407.0,zamir white
+Isaiah Spiller,2022,123,4,Texas A&M,21.0,19.0,1.1176470588235294,2023.0,92.0,0,0,5.66,189.0,25.0,370.0,isaiah spiller
+Pierre Strong,2022,127,4,South Dakota St.,23.0,42.8,2.51764705882353,2023.0,74.0,0,0,,8.0,3.0,,pierre strong
+Hassan Haskins,2022,131,4,Michigan,22.0,33.3,1.9588235294117649,2024.0,80.0,0,0,,131.0,18.0,395.0,hassan haskins
+Tyler Allgeier,2022,151,5,BYU,22.0,159.4,9.376470588235296,2022.0,32.0,0,0,7.4,199.0,28.0,389.0,tyler allgeier
+Snoop Conner,2022,154,5,Mississippi,22.0,10.2,0.6,2022.0,113.0,0,0,7.03,82.0,14.0,429.0,snoop conner
+Jerome Ford,2022,156,5,Cincinnati,22.0,220.4,12.96470588235294,2023.0,17.0,1,0,6.91,220.0,21.0,400.0,jerome ford
+Kyren Williams,2022,164,5,Notre Dame,22.0,299.8,17.63529411764706,2024.0,8.0,1,1,3.46,359.0,42.0,450.0,kyren williams
+Ty Chandler,2022,169,5,North Carolina,24.0,101.0,5.941176470588236,2023.0,48.0,0,0,6.35,216.0,15.0,382.0,ty chandler
+Kevin Harris,2022,183,6,South Carolina,21.0,21.3,1.2529411764705882,2023.0,88.0,0,0,7.13,89.0,11.0,360.0,kevin harris
+Tyler Badie,2022,196,6,Missouri,22.0,10.2,0.6,2024.0,104.0,0,0,6.38,330.0,54.0,455.0,tyler badie
+Keaontay Ingram,2022,201,6,USC,22.0,18.1,1.0647058823529412,2022.0,101.0,0,0,8.67,156.0,22.0,500.0,keaontay ingram
+Trestan Ebner,2022,203,6,Baylor,23.0,8.200000000000001,0.4823529411764706,2022.0,121.0,0,0,4.77,284.0,28.0,365.0,trestan ebner
+Brittain Brown,2022,250,7,UCLA,24.0,0.0,0.0,,,0,0,4.75,129.0,18.0,335.0,brittain brown
 Isiah Pacheco,2022,251,7,Rutgers,23.0,279.2,16.423529411764704,2023.0,6.0,1,1,8.85,,,,
 Zander Horvath,2022,260,7,Purdue,23.0,18.6,1.0941176470588234,2022.0,103.0,0,0,9.83,,,,
-Bijan Robinson,2023,8,1,Texas,21.0,341.7,20.1,2024.0,4.0,1,1,9.85,314,19,405.0,bijan robinson
-Jahmyr Gibbs,2023,12,1,Alabama,21.0,390.4,22.96470588235294,2024.0,2.0,1,1,8.06,444,44,438.0,jahmyr gibbs
-Zach Charbonnet,2023,52,2,UCLA,22.0,183.7,10.805882352941175,2024.0,26.0,0,0,8.71,321,37,419.0,zach charbonnet
-Kendre Miller,2023,71,3,TCU,21.0,43.3,2.547058823529412,2023.0,71.0,0,0,,116,16,454.0,kendre miller
-Tyjae Spears,2023,81,3,Tulane,22.0,153.8,9.047058823529412,2023.0,35.0,0,0,7.51,256,22,379.0,tyjae spears
-De'Von Achane,2023,84,3,Texas A&M,21.0,196.7,11.570588235294116,2023.0,24.0,1,0,,196,36,391.0,devon achane
-Tank Bigsby,2023,88,3,Auburn,22.0,129.0,7.588235294117647,2024.0,38.0,0,0,8.32,180,30,308.0,tank bigsby
-Roschon Johnson,2023,115,4,Texas,22.0,102.1,6.005882352941176,2023.0,47.0,0,0,8.67,128,14,405.0,roschon johnson
-Israel Abanikanda,2023,143,5,Pittsburgh,20.0,18.3,1.076470588235294,2023.0,94.0,0,0,9.63,146,12,393.0,israel abanikanda
-Chase Brown,2023,163,5,Illinois,23.0,255.0,15.0,2024.0,12.0,1,1,9.81,240,27,393.0,chase brown
-Eric Gray,2023,172,5,Oklahoma,23.0,19.3,1.1352941176470588,2024.0,97.0,0,0,6.56,229,33,407.0,eric gray
-Evan Hull,2023,176,5,Northwestern,22.0,1.7000000000000002,0.1,2023.0,129.0,0,0,9.33,546,55,417.0,evan hull
-Chris Rodriguez,2023,193,6,Kentucky,22.0,31.5,1.8529411764705883,2024.0,83.0,0,0,,41,5,349.0,chris rodriguez jr.
-Deuce Vaughn,2023,212,6,Kansas St.,21.0,15.0,0.8823529411764706,2023.0,98.0,0,0,4.32,378,42,388.0,deuce vaughn
-Zach Evans,2023,215,6,Mississippi,22.0,1.9,0.1117647058823529,2023.0,128.0,0,0,8.75,119,12,386.0,zach evans
-DeWayne McBride,2023,222,7,Ala-Birmingham,22.0,0.0,0.0,,,0,0,,10,2,321.0,dewayne mcbride
-Lew Nichols,2023,235,7,Central Michigan,22.0,0.0,0.0,,,0,0,,128,21,389.0,lew nichols
-Kenny McIntosh,2023,237,7,Georgia,23.0,22.4,1.3176470588235294,2024.0,95.0,0,0,4.08,504,43,492.0,kenny mcintosh
-Jonathon Brooks,2024,46,2,Texas,21.0,7.500000000000001,0.4411764705882353,2024.0,108.0,0,0,,286,25,475.0,jonathon brooks
-Trey Benson,2024,66,3,Florida St.,22.0,47.0,2.764705882352941,2024.0,69.0,0,0,9.76,227,20,433.0,trey benson
-Blake Corum,2024,83,3,Michigan,23.0,33.5,1.9705882352941175,2024.0,79.0,0,0,8.29,117,16,361.0,blake corum
-MarShawn Lloyd,2024,88,3,USC,23.0,2.8,0.1647058823529411,2024.0,121.0,0,0,8.62,232,13,461.0,marshawn lloyd
-Jaylen Wright,2024,120,4,Tennessee,21.0,26.700000000000003,1.5705882352941178,2024.0,92.0,0,0,9.81,141,22,411.0,jaylen wright
+Bijan Robinson,2023,8,1,Texas,21.0,341.7,20.1,2024.0,4.0,1,1,9.85,314.0,19.0,405.0,bijan robinson
+Jahmyr Gibbs,2023,12,1,Alabama,21.0,390.4,22.96470588235294,2024.0,2.0,1,1,8.06,444.0,44.0,438.0,jahmyr gibbs
+Zach Charbonnet,2023,52,2,UCLA,22.0,183.7,10.805882352941175,2024.0,26.0,0,0,8.71,321.0,37.0,419.0,zach charbonnet
+Kendre Miller,2023,71,3,TCU,21.0,43.3,2.547058823529412,2023.0,71.0,0,0,,116.0,16.0,454.0,kendre miller
+Tyjae Spears,2023,81,3,Tulane,22.0,153.8,9.047058823529412,2023.0,35.0,0,0,7.51,256.0,22.0,379.0,tyjae spears
+De'Von Achane,2023,84,3,Texas A&M,21.0,196.7,11.570588235294116,2023.0,24.0,1,0,,196.0,36.0,391.0,devon achane
+Tank Bigsby,2023,88,3,Auburn,22.0,129.0,7.588235294117647,2024.0,38.0,0,0,8.32,180.0,30.0,308.0,tank bigsby
+Roschon Johnson,2023,115,4,Texas,22.0,102.1,6.005882352941176,2023.0,47.0,0,0,8.67,128.0,14.0,405.0,roschon johnson
+Israel Abanikanda,2023,143,5,Pittsburgh,20.0,18.3,1.076470588235294,2023.0,94.0,0,0,9.63,146.0,12.0,393.0,israel abanikanda
+Chase Brown,2023,163,5,Illinois,23.0,255.0,15.0,2024.0,12.0,1,1,9.81,240.0,27.0,393.0,chase brown
+Eric Gray,2023,172,5,Oklahoma,23.0,19.3,1.1352941176470588,2024.0,97.0,0,0,6.56,229.0,33.0,407.0,eric gray
+Evan Hull,2023,176,5,Northwestern,22.0,1.7000000000000002,0.1,2023.0,129.0,0,0,9.33,546.0,55.0,417.0,evan hull
+Chris Rodriguez,2023,193,6,Kentucky,22.0,31.5,1.8529411764705883,2024.0,83.0,0,0,,41.0,5.0,349.0,chris rodriguez jr.
+Deuce Vaughn,2023,212,6,Kansas St.,21.0,15.0,0.8823529411764706,2023.0,98.0,0,0,4.32,378.0,42.0,388.0,deuce vaughn
+Zach Evans,2023,215,6,Mississippi,22.0,1.9,0.1117647058823529,2023.0,128.0,0,0,8.75,119.0,12.0,386.0,zach evans
+DeWayne McBride,2023,222,7,Ala-Birmingham,22.0,0.0,0.0,,,0,0,,10.0,2.0,321.0,dewayne mcbride
+Lew Nichols,2023,235,7,Central Michigan,22.0,0.0,0.0,,,0,0,,128.0,21.0,389.0,lew nichols
+Kenny McIntosh,2023,237,7,Georgia,23.0,22.4,1.3176470588235294,2024.0,95.0,0,0,4.08,504.0,43.0,492.0,kenny mcintosh
+Jonathon Brooks,2024,46,2,Texas,21.0,7.500000000000001,0.4411764705882353,2024.0,108.0,0,0,,286.0,25.0,475.0,jonathon brooks
+Trey Benson,2024,66,3,Florida St.,22.0,47.0,2.764705882352941,2024.0,69.0,0,0,9.76,227.0,20.0,433.0,trey benson
+Blake Corum,2024,83,3,Michigan,23.0,33.5,1.9705882352941173,2024.0,79.0,0,0,8.29,117.0,16.0,361.0,blake corum
+MarShawn Lloyd,2024,88,3,USC,23.0,2.8,0.1647058823529411,2024.0,121.0,0,0,8.62,232.0,13.0,461.0,marshawn lloyd
+Jaylen Wright,2024,120,4,Tennessee,21.0,26.700000000000003,1.5705882352941178,2024.0,92.0,0,0,9.81,141.0,22.0,411.0,jaylen wright
 Bucky Irving,2024,125,4,Oregon,22.0,260.70000000000005,15.33529411764706,2024.0,11.0,1,1,2.22,,,,
-Will Shipley,2024,127,4,Clemson,22.0,29.4,1.7294117647058822,2024.0,86.0,0,0,9.57,244,31,474.0,will shipley
+Will Shipley,2024,127,4,Clemson,22.0,29.4,1.7294117647058822,2024.0,86.0,0,0,9.57,244.0,31.0,474.0,will shipley
 Ray Davis,2024,128,4,Kentucky,24.0,125.7,7.394117647058824,2024.0,39.0,0,0,,,,,
-Isaac Guerendo,2024,129,4,Louisville,24.0,96.2,5.658823529411765,2024.0,50.0,0,0,9.9,234,22,408.0,isaac guerendo
-Braelon Allen,2024,134,4,Wisconsin,20.0,85.2,5.011764705882353,2024.0,51.0,0,0,,131,28,469.0,braelon allen
-Audric Estime,2024,147,5,Notre Dame,21.0,48.7,2.864705882352941,2024.0,67.0,0,0,6.57,142,17,351.0,audric estime
-Rasheen Ali,2024,165,5,Marshall,23.0,3.1,0.1823529411764706,2024.0,119.0,0,0,,213,28,425.0,rasheen ali
-Tyrone Tracy Jr.,2024,166,5,Purdue,24.0,0.0,0.0,,,0,0,9.78,132,19,392.0,tyrone tracy jr.
-Keilan Robinson,2024,167,5,Texas,24.0,0.0,0.0,,,0,0,7.32,56,8,475.0,keilan robinson
-Isaiah Davis,2024,173,5,South Dakota St.,22.0,45.900000000000006,2.7,2024.0,71.0,0,0,8.86,190,22,,isaiah davis
-Kimani Vidal,2024,181,6,Troy,23.0,32.7,1.9235294117647064,2024.0,81.0,0,0,8.88,201,18,456.0,kimani vidal
-Jase McClellan,2024,186,6,Alabama,22.0,3.2,0.188235294117647,2024.0,118.0,0,0,,137,15,325.0,jase mcclellan
-Jawhar Jordan,2024,205,6,Louisville,25.0,0.0,0.0,,,0,0,4.6,246,21,408.0,jawhar jordan
-Dylan Laube,2024,208,6,New Hampshire,24.0,-2.0,-0.1176470588235294,2024.0,135.0,0,0,8.78,699,68,,dylan laube
+Isaac Guerendo,2024,129,4,Louisville,24.0,96.2,5.658823529411765,2024.0,50.0,0,0,9.9,234.0,22.0,408.0,isaac guerendo
+Braelon Allen,2024,134,4,Wisconsin,20.0,85.2,5.011764705882353,2024.0,51.0,0,0,,131.0,28.0,469.0,braelon allen
+Audric Estime,2024,147,5,Notre Dame,21.0,48.7,2.864705882352941,2024.0,67.0,0,0,6.57,142.0,17.0,351.0,audric estime
+Rasheen Ali,2024,165,5,Marshall,23.0,3.1,0.1823529411764706,2024.0,119.0,0,0,,213.0,28.0,425.0,rasheen ali
+Tyrone Tracy Jr.,2024,166,5,Purdue,24.0,0.0,0.0,,,0,0,9.78,132.0,19.0,392.0,tyrone tracy jr.
+Keilan Robinson,2024,167,5,Texas,24.0,0.0,0.0,,,0,0,7.32,56.0,8.0,475.0,keilan robinson
+Isaiah Davis,2024,173,5,South Dakota St.,22.0,45.900000000000006,2.7,2024.0,71.0,0,0,8.86,190.0,22.0,,isaiah davis
+Kimani Vidal,2024,181,6,Troy,23.0,32.7,1.9235294117647064,2024.0,81.0,0,0,8.88,201.0,18.0,456.0,kimani vidal
+Jase McClellan,2024,186,6,Alabama,22.0,3.2,0.188235294117647,2024.0,118.0,0,0,,137.0,15.0,325.0,jase mcclellan
+Jawhar Jordan,2024,205,6,Louisville,25.0,0.0,0.0,,,0,0,4.6,246.0,21.0,408.0,jawhar jordan
+Dylan Laube,2024,208,6,New Hampshire,24.0,-2.0,-0.1176470588235294,2024.0,135.0,0,0,8.78,699.0,68.0,,dylan laube
+Ashton Jeanty,2025,6,1,Boise St.,21.0,247.1,14.535294117647059,2025.0,11.0,1,1,,138.0,,415.0,
+Omarion Hampton,2025,22,1,North Carolina,22.0,135.7,7.98235294117647,2025.0,35.0,0,0,9.7,373.0,,391.0,
+Quinshon Judkins,2025,36,2,Ohio St.,21.0,167.8,9.870588235294118,2025.0,26.0,0,0,9.9,161.0,,455.0,
+TreVeyon Henderson,2025,38,2,Ohio St.,22.0,208.2,12.24705882352941,2025.0,20.0,1,0,8.87,284.0,,455.0,
+RJ Harvey,2025,60,2,Central Florida,24.0,208.6,12.270588235294117,2025.0,19.0,1,0,8.49,267.0,,310.0,
+Kaleb Johnson,2025,83,3,Iowa,22.0,8.8,0.5176470588235295,2025.0,113.0,0,0,,188.0,,260.0,
+Bhayshul Tuten,2025,104,4,Virginia Tech,22.0,90.6,5.329411764705882,2025.0,53.0,0,0,9.56,79.0,,339.0,
+Cam Skattebo,2025,105,4,Arizona St.,23.0,127.7,7.511764705882353,2025.0,37.0,0,0,7.45,605.0,,382.0,
+Trevor Etienne,2025,114,4,Georgia,21.0,13.7,0.8058823529411764,2025.0,102.0,0,0,6.94,194.0,,513.0,
+Woody Marks,2025,116,4,USC,24.0,145.1,8.535294117647059,2025.0,30.0,0,0,6.66,321.0,,533.0,
+Jarquez Hunter,2025,117,4,Auburn,22.0,0.0,0.0,,999.0,0,0,7.17,155.0,,369.0,
+Dylan Sampson,2025,126,4,Tennessee,20.0,89.60000000000001,5.2705882352941185,2025.0,54.0,0,0,6.6,143.0,,373.0,
+Jordan James,2025,147,5,Oregon,21.0,0.0,0.0,,999.0,0,0,4.65,209.0,,460.0,
+Jaydon Blue,2025,149,5,Texas,21.0,20.4,1.2,2025.0,91.0,0,0,6.34,368.0,,541.0,
+DJ Giddens,2025,151,5,Kansas St.,22.0,9.6,0.5647058823529412,2025.0,110.0,0,0,9.78,258.0,,381.0,
