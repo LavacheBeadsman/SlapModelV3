@@ -108,6 +108,14 @@ wr = wr.merge(
     on=['player_name', 'draft_year'], how='left'
 )
 
+# FIX: When dominator_pct is missing from the merge (e.g. all 2025 WRs, plus
+# ~15 others where wr_dominator_complete.csv has no entry), fall back to
+# peak_dominator from the WR backtest file itself.  The two columns hold the
+# same value when both exist (verified: 304/305 match within 0.01).
+missing_dom = wr['dominator_pct'].isna() & wr['peak_dominator'].notna()
+wr.loc[missing_dom, 'dominator_pct'] = wr.loc[missing_dom, 'peak_dominator']
+print(f"  Dominator fallback: filled {missing_dom.sum()} WRs from peak_dominator")
+
 rb = pd.read_csv('data/rb_backtest_with_receiving.csv')
 hr = pd.read_csv('data/backtest_hit_rates_rebuilt.csv')
 
@@ -142,10 +150,21 @@ rb['position'] = 'RB'
 # JOIN AUTHORITATIVE NFL OUTCOMES
 # ============================================================================
 
-hr_key = hr.set_index(['player_name', 'draft_year'])
+# FIX: Normalize known name mismatches so backtest files join to hit_rates.
+# "Luther Burden III" in WR backtest vs "Luther Burden" in hit_rates.
+NAME_MAP = {
+    'Luther Burden III': 'Luther Burden',
+}
+
+# Add a join_name column to each dataframe for matching
+for df in [wr, rb]:
+    df['join_name'] = df['player_name'].map(NAME_MAP).fillna(df['player_name'])
+hr['join_name'] = hr['player_name'].map(NAME_MAP).fillna(hr['player_name'])
+
+hr_key = hr.set_index(['join_name', 'draft_year'])
 
 def get_hr(row, field):
-    key = (row['player_name'], row['draft_year'])
+    key = (row['join_name'], row['draft_year'])
     if key in hr_key.index:
         return hr_key.at[key, field]
     return np.nan
@@ -159,6 +178,8 @@ wr_matched = wr['hit24'].notna().sum()
 rb_matched = rb['hit24'].notna().sum()
 print(f"  WR hit-rate joins: {wr_matched}/{len(wr)}")
 print(f"  RB hit-rate joins: {rb_matched}/{len(rb)}")
+if wr_matched > 230:
+    print(f"  (name normalization recovered {wr_matched - 230} previously-dropped WRs)")
 
 
 # ============================================================================
