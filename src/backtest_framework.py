@@ -1,29 +1,40 @@
 """
-SLAP Score V3 — Backtest Framework
-====================================
-Calculates SLAP scores for every draft class (2015-2024) using the current
-formulas, then measures how well those scores predicted actual NFL outcomes.
+SLAP Score V3 - Backtesting Framework
+======================================
 
-2025 draft class is shown separately as "early returns" (only one NFL season).
+Calculates SLAP scores for all historical WRs (2015-2025) and RBs (2015-2025),
+then evaluates how well those scores predicted actual NFL outcomes.
 
-Outputs:
-  1. Hit rate by SLAP tier (90+, 80-89, 70-79, 60-69, 50-59, below 50)
-  2. SLAP accuracy vs draft-capital-only accuracy
-  3. Biggest misses — high SLAP busts and low SLAP hits
+Data sources:
+  - wr_backtest_expanded_final.csv   (WR college profiles + breakout ages)
+  - wr_dominator_complete.csv        (dominator % for continuous breakout scoring)
+  - rb_backtest_with_receiving.csv   (RB college profiles + receiving production)
+  - backtest_hit_rates_rebuilt.csv   (authoritative NFL outcomes - hit24/hit12)
+
+NFL outcomes are joined from backtest_hit_rates_rebuilt.csv, which is the
+single source of truth.  The individual WR/RB files may have stale hit24 values.
+
+Output:
+  Table 1: Hit24 rate by SLAP tier (WR, RB, Combined)
+  Table 2: SLAP vs Draft Capital Only — does SLAP beat just using pick order?
+  Table 3: Biggest misses — high-SLAP busts and low-SLAP hits
+  Table 4: Year-by-year breakdown for 2015-2023 (70+ vs <60)
+  Separate "early returns" section for 2024-2025 draft classes.
+  File: output/backtest_results.csv
 """
-
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pandas as pd
 import numpy as np
-from scipy.stats import pearsonr
-from config import FIRST_SEASON, LAST_COLLEGE_SEASON, CURRENT_DRAFT_CLASS
+from scipy.stats import spearmanr
+import warnings
+warnings.filterwarnings('ignore')
 
-# ---------------------------------------------------------------------------
-# Weights (from CLAUDE.md)
-# ---------------------------------------------------------------------------
+
+# ============================================================================
+# FORMULAS — must match recalculate_all_slap_new_dc.py exactly
+# ============================================================================
+
+# Weights
 WR_W_DC   = 0.65
 WR_W_PROD = 0.20
 WR_W_RAS  = 0.15
@@ -32,22 +43,19 @@ RB_W_DC   = 0.50
 RB_W_PROD = 0.35
 RB_W_RAS  = 0.15
 
-# Position averages used when data is missing (from recalculate_all_slap_new_dc.py)
-WR_AVG_RAS  = 68.9
+# Position averages for missing-data imputation
+WR_AVG_RAS  = 68.9   # 0-100 scale (RAS * 10)
 RB_AVG_PROD = 30.0
 RB_AVG_RAS  = 66.5
 
-# ---------------------------------------------------------------------------
-# Core formulas — identical to recalculate_all_slap_new_dc.py
-# ---------------------------------------------------------------------------
 
 def dc_score(pick):
     """Draft Capital: DC = 100 - 2.40 * (pick^0.62 - 1), clamped 0-100."""
     return max(0.0, min(100.0, 100 - 2.40 * (pick ** 0.62 - 1)))
 
 
-def wr_breakout_score(breakout_age, dominator_pct):
-    """Continuous breakout scoring: age tier base + dominator tiebreaker."""
+def wr_breakout(breakout_age, dominator_pct):
+    """Continuous breakout scoring: age-tier base + dominator tiebreaker."""
     if breakout_age is None or pd.isna(breakout_age):
         if dominator_pct is not None and pd.notna(dominator_pct):
             return min(35, 15 + dominator_pct * 1.0)
@@ -62,340 +70,297 @@ def wr_breakout_score(breakout_age, dominator_pct):
     return min(base + bonus, 99.9)
 
 
-def rb_production_score(rec_yards, team_pass_att, draft_age):
-    """RB receiving production with continuous age weighting, scaled by 1.75."""
+def rb_prod(rec_yards, team_pass_att, draft_age):
+    """RB receiving production with continuous age weighting, scaled /1.75."""
     if pd.isna(rec_yards) or pd.isna(team_pass_att) or team_pass_att == 0:
         return None
     if pd.isna(draft_age):
         draft_age = 22
-
     season_age = draft_age - 1
-    age_weight = max(0.85, min(1.15, 1.15 - 0.05 * (season_age - 19)))
-    raw = (rec_yards / team_pass_att) * age_weight * 100
+    age_wt = max(0.85, min(1.15, 1.15 - 0.05 * (season_age - 19)))
+    raw = (rec_yards / team_pass_att) * age_wt * 100
     return min(99.9, max(0.0, raw / 1.75))
 
 
-# ---------------------------------------------------------------------------
-# Load data
-# ---------------------------------------------------------------------------
+TIER_ORDER = ['90+', '80-89', '70-79', '60-69', '50-59', '<50']
 
-wr = pd.read_csv("data/wr_backtest_expanded_final.csv")
-rb = pd.read_csv("data/rb_backtest_with_receiving.csv")
+def assign_tier(score):
+    if score >= 90: return '90+'
+    if score >= 80: return '80-89'
+    if score >= 70: return '70-79'
+    if score >= 60: return '60-69'
+    if score >= 50: return '50-59'
+    return '<50'
 
-# Merge dominator percentages into WR data
-wr_dom = pd.read_csv("data/wr_dominator_complete.csv")
+
+# ============================================================================
+# LOAD DATA
+# ============================================================================
+
+print("=" * 90)
+print("SLAP SCORE V3 - BACKTESTING FRAMEWORK")
+print("=" * 90)
+
+wr = pd.read_csv('data/wr_backtest_expanded_final.csv')
+wr_dom = pd.read_csv('data/wr_dominator_complete.csv')
 wr = wr.merge(
-    wr_dom[["player_name", "draft_year", "dominator_pct"]],
-    on=["player_name", "draft_year"],
-    how="left",
+    wr_dom[['player_name', 'draft_year', 'dominator_pct']],
+    on=['player_name', 'draft_year'], how='left'
 )
 
-# ---------------------------------------------------------------------------
-# Calculate SLAP scores
-# ---------------------------------------------------------------------------
+rb = pd.read_csv('data/rb_backtest_with_receiving.csv')
+hr = pd.read_csv('data/backtest_hit_rates_rebuilt.csv')
 
-# ---- WR scores ----
-wr["dc"]   = wr["pick"].apply(dc_score)
-wr["prod"] = wr.apply(
-    lambda r: wr_breakout_score(r["breakout_age"], r["dominator_pct"]), axis=1
-)
-wr["ras"]  = (wr["RAS"] * 10).fillna(WR_AVG_RAS)   # 0-10 → 0-100
-wr["slap"] = WR_W_DC * wr["dc"] + WR_W_PROD * wr["prod"] + WR_W_RAS * wr["ras"]
-wr["dc_only_score"] = wr["dc"]                       # baseline comparison
-wr["position"] = "WR"
-
-# ---- RB scores ----
-rb["dc"]   = rb["pick"].apply(dc_score)
-rb["prod_raw"] = rb.apply(
-    lambda r: rb_production_score(r["rec_yards"], r["team_pass_att"], r["age"]),
-    axis=1,
-)
-rb["prod"] = rb["prod_raw"].fillna(RB_AVG_PROD)
-rb["ras"]  = (rb["RAS"] * 10).fillna(RB_AVG_RAS)
-rb["slap"] = RB_W_DC * rb["dc"] + RB_W_PROD * rb["prod"] + RB_W_RAS * rb["ras"]
-rb["dc_only_score"] = rb["dc"]
-rb["position"] = "RB"
-
-# ---------------------------------------------------------------------------
-# Build a unified frame with the columns we need
-# ---------------------------------------------------------------------------
-keep = ["player_name", "position", "draft_year", "pick", "dc", "slap",
-        "dc_only_score", "hit24", "hit12", "best_ppr"]
-
-# RB file uses best_ppr; WR file also has best_ppr — grab college name too
-wr["college_name"] = wr["college"]
-rb["college_name"] = rb["college"]
-keep_extra = keep + ["college_name"]
-
-all_players = pd.concat(
-    [wr[keep_extra], rb[keep_extra]],
-    ignore_index=True,
-)
-
-# Separate 2025 early returns from the real backtest (2015-2024)
-backtest = all_players[all_players["draft_year"] <= 2024].copy()
-early_returns = all_players[all_players["draft_year"] == 2025].copy()
-
-print("=" * 90)
-print("SLAP SCORE V3 — BACKTEST FRAMEWORK")
-print("=" * 90)
-print(f"\nBacktest pool : {len(backtest)} players  (2015-2024)")
-print(f"  WRs         : {len(backtest[backtest['position']=='WR'])}")
-print(f"  RBs         : {len(backtest[backtest['position']=='RB'])}")
-print(f"Early returns : {len(early_returns)} players  (2025, one NFL season)")
-
-# ---------------------------------------------------------------------------
-# 1.  HIT RATE BY SLAP TIER
-# ---------------------------------------------------------------------------
-
-tier_bins   = [0, 50, 60, 70, 80, 90, 101]
-tier_labels = ["Below 50", "50-59", "60-69", "70-79", "80-89", "90+"]
-
-def tier_table(df, score_col, label):
-    """Print hit-rate table by tier for a given score column."""
-    df = df.copy()
-    df["tier"] = pd.cut(df[score_col], bins=tier_bins, labels=tier_labels,
-                        right=False)
-    grp = df.groupby("tier", observed=False).agg(
-        players=("hit24", "size"),
-        hits=("hit24", "sum"),
-    )
-    grp["hit_rate"] = (grp["hits"] / grp["players"] * 100).round(1)
-    grp["hit_rate_str"] = grp.apply(
-        lambda r: f"{r['hit_rate']:.1f}%" if r["players"] > 0 else "n/a", axis=1
-    )
-
-    print(f"\n{'':>2}{label}")
-    print(f"{'':>2}{'Tier':<12} {'Players':>8} {'Hits':>6} {'Hit Rate':>10}")
-    print(f"{'':>2}{'-'*40}")
-    for tier in reversed(tier_labels):          # show highest tier first
-        row = grp.loc[tier]
-        print(f"{'':>2}{tier:<12} {int(row['players']):>8} "
-              f"{int(row['hits']):>6} {row['hit_rate_str']:>10}")
-    total_hits  = int(grp["hits"].sum())
-    total_count = int(grp["players"].sum())
-    print(f"{'':>2}{'TOTAL':<12} {total_count:>8} {total_hits:>6} "
-          f"{total_hits/total_count*100:>9.1f}%")
-    return grp
+print(f"\nLoaded: {len(wr)} WRs, {len(rb)} RBs, {len(hr)} hit-rate records")
 
 
-print("\n" + "=" * 90)
-print("SECTION 1 — HIT RATE BY SLAP TIER  (Hit24 = top-24 PPR finish)")
-print("=" * 90)
+# ============================================================================
+# CALCULATE SLAP SCORES
+# ============================================================================
 
-# Combined
-grp_slap = tier_table(backtest, "slap", "SLAP Score — All positions (2015-2024)")
-grp_dc   = tier_table(backtest, "dc_only_score", "DC-Only Baseline — All positions (2015-2024)")
+print("Calculating SLAP scores...")
 
-# By position
-print()
-for pos in ["WR", "RB"]:
-    subset = backtest[backtest["position"] == pos]
-    tier_table(subset, "slap", f"SLAP Score — {pos}s (2015-2024)")
-    tier_table(subset, "dc_only_score", f"DC-Only Baseline — {pos}s (2015-2024)")
+# WR
+wr['dc'] = wr['pick'].apply(dc_score)
+wr['prod'] = wr.apply(
+    lambda r: wr_breakout(r['breakout_age'], r.get('dominator_pct')), axis=1)
+wr['ras'] = (wr['RAS'] * 10).fillna(WR_AVG_RAS)
+wr['slap'] = WR_W_DC * wr['dc'] + WR_W_PROD * wr['prod'] + WR_W_RAS * wr['ras']
+wr['position'] = 'WR'
 
-# ---------------------------------------------------------------------------
-# 2.  SLAP ACCURACY VS DC-ONLY ACCURACY
-# ---------------------------------------------------------------------------
+# RB
+rb['dc'] = rb['pick'].apply(dc_score)
+rb['prod_raw'] = rb.apply(
+    lambda r: rb_prod(r['rec_yards'], r['team_pass_att'], r['age']), axis=1)
+rb['prod'] = rb['prod_raw'].fillna(RB_AVG_PROD)
+rb['ras'] = (rb['RAS'] * 10).fillna(RB_AVG_RAS)
+rb['slap'] = RB_W_DC * rb['dc'] + RB_W_PROD * rb['prod'] + RB_W_RAS * rb['ras']
+rb['position'] = 'RB'
 
-def accuracy_report(df, label):
-    """Correlation + predictive stats for SLAP vs DC-only."""
-    valid = df.dropna(subset=["slap", "dc_only_score", "hit24", "best_ppr"])
 
-    r_slap, p_slap = pearsonr(valid["slap"], valid["best_ppr"])
-    r_dc,   p_dc   = pearsonr(valid["dc_only_score"], valid["best_ppr"])
+# ============================================================================
+# JOIN AUTHORITATIVE NFL OUTCOMES
+# ============================================================================
 
-    # Hit-rate accuracy: does higher-scored player have higher hit rate?
-    # Use top-half vs bottom-half split
-    median_slap = valid["slap"].median()
-    median_dc   = valid["dc_only_score"].median()
+hr_key = hr.set_index(['player_name', 'draft_year'])
 
-    top_slap_hr = valid[valid["slap"] >= median_slap]["hit24"].mean() * 100
-    bot_slap_hr = valid[valid["slap"] <  median_slap]["hit24"].mean() * 100
-    top_dc_hr   = valid[valid["dc_only_score"] >= median_dc]["hit24"].mean() * 100
-    bot_dc_hr   = valid[valid["dc_only_score"] <  median_dc]["hit24"].mean() * 100
+def get_hr(row, field):
+    key = (row['player_name'], row['draft_year'])
+    if key in hr_key.index:
+        return hr_key.at[key, field]
+    return np.nan
 
-    # Year-by-year: for each draft class, does SLAP or DC better predict
-    # which players hit?  Count wins.
-    slap_wins = 0
-    dc_wins   = 0
-    ties      = 0
-    for yr, ydf in valid.groupby("draft_year"):
-        if len(ydf) < 5:
-            continue
-        rs, _ = pearsonr(ydf["slap"], ydf["best_ppr"])
-        rd, _ = pearsonr(ydf["dc_only_score"], ydf["best_ppr"])
-        if rs > rd + 0.01:
-            slap_wins += 1
-        elif rd > rs + 0.01:
-            dc_wins += 1
-        else:
-            ties += 1
+for df in [wr, rb]:
+    df['hit24']    = df.apply(lambda r: get_hr(r, 'hit24'), axis=1)
+    df['hit12']    = df.apply(lambda r: get_hr(r, 'hit12'), axis=1)
+    df['best_ppr'] = df.apply(lambda r: get_hr(r, 'best_ppr'), axis=1)
 
+wr_matched = wr['hit24'].notna().sum()
+rb_matched = rb['hit24'].notna().sum()
+print(f"  WR hit-rate joins: {wr_matched}/{len(wr)}")
+print(f"  RB hit-rate joins: {rb_matched}/{len(rb)}")
+
+
+# ============================================================================
+# BUILD COMBINED FRAME
+# ============================================================================
+
+cols = ['player_name', 'position', 'draft_year', 'pick', 'round', 'college',
+        'dc', 'prod', 'ras', 'slap', 'hit24', 'hit12', 'best_ppr']
+all_df = pd.concat([wr[cols], rb[cols]], ignore_index=True)
+all_df['slap_tier'] = all_df['slap'].apply(assign_tier)
+all_df['dc_tier']   = all_df['dc'].apply(assign_tier)
+
+# Drop any rows without NFL outcome data (shouldn't happen)
+all_df = all_df[all_df['hit24'].notna()].copy()
+all_df['hit24'] = all_df['hit24'].astype(int)
+
+# Splits
+main  = all_df[all_df['draft_year'] <= 2023].copy()
+early = all_df[all_df['draft_year'] >= 2024].copy()
+
+print(f"\nMain backtest  (2015-2023): {len(main)} players  "
+      f"({len(main[main['position']=='WR'])} WR, {len(main[main['position']=='RB'])} RB)")
+print(f"Early returns  (2024-2025): {len(early)} players")
+
+
+# ============================================================================
+# HELPER: build tier summary
+# ============================================================================
+
+def tier_summary(df, tier_col='slap_tier'):
+    rows = []
+    for tier in TIER_ORDER:
+        t = df[df[tier_col] == tier]
+        n = len(t)
+        hits = int(t['hit24'].sum()) if n > 0 else 0
+        rate = hits / n * 100 if n > 0 else 0
+        rows.append({'tier': tier, 'players': n, 'hits': hits, 'rate': rate})
+    total_n = len(df)
+    total_h = int(df['hit24'].sum())
+    rows.append({'tier': 'TOTAL', 'players': total_n, 'hits': total_h,
+                 'rate': total_h / total_n * 100 if total_n > 0 else 0})
+    return rows
+
+
+def print_tier_table(label, rows):
     print(f"\n  {label}")
-    print(f"  {'─'*60}")
-    print(f"  {'Metric':<40} {'SLAP':>10} {'DC-Only':>10}")
-    print(f"  {'─'*60}")
-    print(f"  {'Pearson r vs Best PPR':<40} {r_slap:>10.3f} {r_dc:>10.3f}")
-    print(f"  {'p-value':<40} {p_slap:>10.4f} {p_dc:>10.4f}")
-    print(f"  {'Top-half hit rate':<40} {top_slap_hr:>9.1f}% {top_dc_hr:>9.1f}%")
-    print(f"  {'Bottom-half hit rate':<40} {bot_slap_hr:>9.1f}% {bot_dc_hr:>9.1f}%")
-    print(f"  {'Spread (top - bottom)':<40} "
-          f"{top_slap_hr-bot_slap_hr:>9.1f}% {top_dc_hr-bot_dc_hr:>9.1f}%")
-    print(f"  {'Year-by-year wins (r > other + 0.01)':<40} "
-          f"{slap_wins:>10} {dc_wins:>10}")
-    if ties:
-        print(f"  {'Ties (within 0.01)':<40} {ties:>10}")
-    advantage = "SLAP" if r_slap > r_dc else "DC-Only"
-    print(f"\n  → Overall advantage: {advantage} "
-          f"(Δr = {abs(r_slap - r_dc):.3f})")
+    print(f"  {'Tier':<10} {'Players':>8} {'Hits':>6} {'Hit Rate':>10}")
+    print(f"  {'-' * 38}")
+    for r in rows:
+        rate_str = f"{r['rate']:.1f}%" if r['players'] > 0 else '  n/a'
+        print(f"  {r['tier']:<10} {r['players']:>8} {r['hits']:>6} {rate_str:>10}")
 
+
+# ============================================================================
+# TABLE 1: Hit24 Rate by SLAP Tier
+# ============================================================================
 
 print("\n" + "=" * 90)
-print("SECTION 2 — SLAP ACCURACY VS DRAFT-CAPITAL-ONLY")
+print("TABLE 1: HIT24 RATE BY SLAP TIER (2015-2023)")
 print("=" * 90)
 
-accuracy_report(backtest, "All positions (2015-2024)")
+for label, subset in [('WR', main[main['position']=='WR']),
+                       ('RB', main[main['position']=='RB']),
+                       ('COMBINED', main)]:
+    print_tier_table(f"--- {label} ---", tier_summary(subset))
 
-for pos in ["WR", "RB"]:
-    subset = backtest[backtest["position"] == pos]
-    accuracy_report(subset, f"{pos}s only (2015-2024)")
 
-# ---------------------------------------------------------------------------
-# 3.  BIGGEST MISSES
-# ---------------------------------------------------------------------------
+# ============================================================================
+# TABLE 2: SLAP vs Draft Capital Only
+# ============================================================================
 
 print("\n" + "=" * 90)
-print("SECTION 3 — BIGGEST MISSES")
+print("TABLE 2: SLAP vs DRAFT CAPITAL ONLY (2015-2023)")
 print("=" * 90)
+print("\n  Does adding production + athletic data beat just using draft pick order?")
 
-# --- High SLAP busts: SLAP >= 70, but never hit24 ---
-busts = (backtest[(backtest["slap"] >= 70) & (backtest["hit24"] == 0)]
-         .sort_values("slap", ascending=False))
+slap_rows = tier_summary(main, 'slap_tier')
+dc_rows   = tier_summary(main, 'dc_tier')
 
-print(f"\n  HIGH-SLAP BUSTS  (SLAP ≥ 70, never Hit24)  —  {len(busts)} players")
-print(f"  {'Player':<25} {'Pos':>3} {'Year':>5} {'Pick':>5} {'SLAP':>6} {'DC':>5} "
-      f"{'BestPPR':>8}")
-print(f"  {'─'*65}")
-for _, r in busts.head(25).iterrows():
-    ppr = f"{r['best_ppr']:.1f}" if pd.notna(r["best_ppr"]) else "n/a"
-    print(f"  {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>5} "
-          f"{int(r['pick']):>5} {r['slap']:>6.1f} {r['dc']:>5.1f} {ppr:>8}")
+print(f"\n  {'Tier':<10}  {'--- SLAP ---':^28}  {'--- DC Only ---':^28}")
+print(f"  {'':10}  {'Players':>8} {'Hits':>6} {'Rate':>10}  {'Players':>8} {'Hits':>6} {'Rate':>10}")
+print(f"  {'-' * 76}")
+for s, d in zip(slap_rows, dc_rows):
+    s_rate = f"{s['rate']:.1f}%" if s['players'] > 0 else '  n/a'
+    d_rate = f"{d['rate']:.1f}%" if d['players'] > 0 else '  n/a'
+    print(f"  {s['tier']:<10}  {s['players']:>8} {s['hits']:>6} {s_rate:>10}  "
+          f"{d['players']:>8} {d['hits']:>6} {d_rate:>10}")
 
-# --- Low SLAP hits: SLAP < 60, but hit24 ---
-sleepers = (backtest[(backtest["slap"] < 60) & (backtest["hit24"] == 1)]
-            .sort_values("slap", ascending=True))
+# Correlation comparison
+valid = main.dropna(subset=['best_ppr'])
+valid = valid[valid['best_ppr'] > 0]
+if len(valid) > 20:
+    r_slap, p_slap = spearmanr(valid['slap'], valid['best_ppr'])
+    r_dc, p_dc     = spearmanr(valid['dc'],   valid['best_ppr'])
+    print(f"\n  Spearman correlation with best NFL PPR season:")
+    print(f"    SLAP:    r = {r_slap:.3f}  (p = {p_slap:.4f})")
+    print(f"    DC only: r = {r_dc:.3f}  (p = {p_dc:.4f})")
+    better = "SLAP" if r_slap > r_dc else "DC Only"
+    print(f"    Advantage: {better}  (delta r = {abs(r_slap - r_dc):.3f})")
 
-print(f"\n  LOW-SLAP HITS  (SLAP < 60, hit24 = 1)  —  {len(sleepers)} players")
-print(f"  {'Player':<25} {'Pos':>3} {'Year':>5} {'Pick':>5} {'SLAP':>6} {'DC':>5} "
-      f"{'BestPPR':>8}")
-print(f"  {'─'*65}")
-for _, r in sleepers.head(25).iterrows():
-    ppr = f"{r['best_ppr']:.1f}" if pd.notna(r["best_ppr"]) else "n/a"
-    print(f"  {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>5} "
-          f"{int(r['pick']):>5} {r['slap']:>6.1f} {r['dc']:>5.1f} {ppr:>8}")
+    for pos in ['WR', 'RB']:
+        v = valid[valid['position'] == pos]
+        if len(v) > 15:
+            rs, _ = spearmanr(v['slap'], v['best_ppr'])
+            rd, _ = spearmanr(v['dc'],   v['best_ppr'])
+            print(f"    {pos}: SLAP r={rs:.3f}  vs  DC r={rd:.3f}  (delta {rs - rd:+.3f})")
 
-# --- Players where SLAP disagrees most with DC (positive delta = model likes more) ---
-backtest_with_outcome = backtest.copy()
-backtest_with_outcome["delta"] = backtest_with_outcome["slap"] - backtest_with_outcome["dc"]
 
-# Positive delta busts: model boosted them but they busted
-pos_delta_busts = (backtest_with_outcome[
-    (backtest_with_outcome["delta"] > 5) & (backtest_with_outcome["hit24"] == 0)]
-    .sort_values("delta", ascending=False))
-
-print(f"\n  POSITIVE-DELTA BUSTS  (SLAP boosted > +5 over DC, but busted)  "
-      f"—  {len(pos_delta_busts)} players")
-print(f"  {'Player':<25} {'Pos':>3} {'Year':>5} {'Pick':>5} {'SLAP':>6} {'DC':>5} "
-      f"{'Delta':>6} {'BestPPR':>8}")
-print(f"  {'─'*72}")
-for _, r in pos_delta_busts.head(15).iterrows():
-    ppr = f"{r['best_ppr']:.1f}" if pd.notna(r["best_ppr"]) else "n/a"
-    print(f"  {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>5} "
-          f"{int(r['pick']):>5} {r['slap']:>6.1f} {r['dc']:>5.1f} "
-          f"{r['delta']:>+6.1f} {ppr:>8}")
-
-# Negative delta hits: model dinged them but they hit anyway
-neg_delta_hits = (backtest_with_outcome[
-    (backtest_with_outcome["delta"] < -5) & (backtest_with_outcome["hit24"] == 1)]
-    .sort_values("delta", ascending=True))
-
-print(f"\n  NEGATIVE-DELTA HITS  (SLAP dinged < -5 vs DC, but they hit)  "
-      f"—  {len(neg_delta_hits)} players")
-print(f"  {'Player':<25} {'Pos':>3} {'Year':>5} {'Pick':>5} {'SLAP':>6} {'DC':>5} "
-      f"{'Delta':>6} {'BestPPR':>8}")
-print(f"  {'─'*72}")
-for _, r in neg_delta_hits.head(15).iterrows():
-    ppr = f"{r['best_ppr']:.1f}" if pd.notna(r["best_ppr"]) else "n/a"
-    print(f"  {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>5} "
-          f"{int(r['pick']):>5} {r['slap']:>6.1f} {r['dc']:>5.1f} "
-          f"{r['delta']:>+6.1f} {ppr:>8}")
-
-# ---------------------------------------------------------------------------
-# 4.  EARLY RETURNS — 2025 DRAFT CLASS
-# ---------------------------------------------------------------------------
+# ============================================================================
+# TABLE 3: Biggest Misses
+# ============================================================================
 
 print("\n" + "=" * 90)
-print("SECTION 4 — 2025 DRAFT CLASS: EARLY RETURNS  (one NFL season)")
+print("TABLE 3: BIGGEST MISSES (2015-2023)")
 print("=" * 90)
-print("\n  ⚠  These players have only played one NFL season.")
-print("     Hit24 status may change as careers develop.\n")
 
-if len(early_returns) > 0:
-    er = early_returns.sort_values("slap", ascending=False).reset_index(drop=True)
-    print(f"  {'Rank':>4} {'Player':<25} {'Pos':>3} {'Pick':>5} {'SLAP':>6} {'DC':>5} "
-          f"{'Hit24':>6} {'BestPPR':>8}")
-    print(f"  {'─'*70}")
-    for i, r in er.iterrows():
-        ppr = f"{r['best_ppr']:.1f}" if pd.notna(r["best_ppr"]) else "n/a"
-        hit = "YES" if r["hit24"] == 1 else "no"
-        print(f"  {i+1:>4} {r['player_name']:<25} {r['position']:>3} "
-              f"{int(r['pick']):>5} {r['slap']:>6.1f} {r['dc']:>5.1f} "
-              f"{hit:>6} {ppr:>8}")
+row_fmt = f"  {'Player':<25} {'Pos':>3} {'Year':>5} {'Pick':>5} {'SLAP':>6} {'Best PPR':>9}"
+row_sep = f"  {'-' * 60}"
 
-    hits_2025  = int(er["hit24"].sum())
-    total_2025 = len(er)
-    print(f"\n  2025 summary: {hits_2025}/{total_2025} hit24 after year 1 "
-          f"({hits_2025/total_2025*100:.0f}%)")
-else:
-    print("  No 2025 data found.")
+# High-SLAP busts
+busts = main[main['hit24'] == 0].nlargest(10, 'slap')
+print(f"\n  Top 10 Highest-SLAP Busts (no Hit24)")
+print(row_fmt)
+print(row_sep)
+for _, r in busts.iterrows():
+    ppr = f"{r['best_ppr']:.1f}" if pd.notna(r['best_ppr']) else '-'
+    print(f"  {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>5} "
+          f"{int(r['pick']):>5} {r['slap']:>6.1f} {ppr:>9}")
 
-# ---------------------------------------------------------------------------
-# 5.  YEAR-BY-YEAR BREAKDOWN
-# ---------------------------------------------------------------------------
+# Low-SLAP hits
+sleepers = main[main['hit24'] == 1].nsmallest(10, 'slap')
+print(f"\n  Top 10 Lowest-SLAP Hits (achieved Hit24)")
+print(row_fmt)
+print(row_sep)
+for _, r in sleepers.iterrows():
+    ppr = f"{r['best_ppr']:.1f}" if pd.notna(r['best_ppr']) else '-'
+    print(f"  {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>5} "
+          f"{int(r['pick']):>5} {r['slap']:>6.1f} {ppr:>9}")
+
+
+# ============================================================================
+# TABLE 4: Year-by-Year Breakdown (2015-2023)
+# ============================================================================
 
 print("\n" + "=" * 90)
-print("SECTION 5 — YEAR-BY-YEAR CORRELATION  (SLAP vs DC-Only → Best PPR)")
+print("TABLE 4: YEAR-BY-YEAR BREAKDOWN (2015-2023)")
 print("=" * 90)
+print("\n  SLAP 70+ vs SLAP <60 hit rates by draft class")
 
-print(f"\n  {'Year':>6} {'N':>5} {'Pos':>5} {'r(SLAP)':>10} {'r(DC)':>10} {'Winner':>10}")
-print(f"  {'─'*50}")
+print(f"\n  {'Year':>6}  {'--- SLAP 70+ ---':^26}  {'--- SLAP <60 ---':^26}")
+print(f"  {'':>6}  {'Players':>8} {'Hits':>6} {'Rate':>8}  {'Players':>8} {'Hits':>6} {'Rate':>8}")
+print(f"  {'-' * 68}")
 
-for yr in sorted(backtest["draft_year"].unique()):
-    ydf = backtest[backtest["draft_year"] == yr].dropna(subset=["best_ppr"])
-    if len(ydf) < 5:
-        continue
-    rs, _ = pearsonr(ydf["slap"], ydf["best_ppr"])
-    rd, _ = pearsonr(ydf["dc_only_score"], ydf["best_ppr"])
-    pos_mix = "/".join(
-        f"{v}{k}" for k, v in ydf["position"].value_counts().items()
-    )
-    winner = "SLAP" if rs > rd + 0.01 else ("DC" if rd > rs + 0.01 else "TIE")
-    print(f"  {int(yr):>6} {len(ydf):>5} {pos_mix:>5} {rs:>10.3f} {rd:>10.3f} "
-          f"{winner:>10}")
+for year in range(2015, 2024):
+    yr = main[main['draft_year'] == year]
+    top = yr[yr['slap'] >= 70]
+    bot = yr[yr['slap'] < 60]
+
+    t_n, t_h = len(top), int(top['hit24'].sum())
+    b_n, b_h = len(bot), int(bot['hit24'].sum())
+    t_rate = f"{t_h/t_n*100:.0f}%" if t_n > 0 else 'n/a'
+    b_rate = f"{b_h/b_n*100:.0f}%" if b_n > 0 else 'n/a'
+
+    print(f"  {year:>6}  {t_n:>8} {t_h:>6} {t_rate:>8}  {b_n:>8} {b_h:>6} {b_rate:>8}")
 
 # Totals
-valid_all = backtest.dropna(subset=["best_ppr"])
-rs_all, _ = pearsonr(valid_all["slap"], valid_all["best_ppr"])
-rd_all, _ = pearsonr(valid_all["dc_only_score"], valid_all["best_ppr"])
-winner_all = "SLAP" if rs_all > rd_all else "DC-Only"
-print(f"  {'─'*50}")
-print(f"  {'ALL':>6} {len(valid_all):>5} {'':>5} {rs_all:>10.3f} {rd_all:>10.3f} "
-      f"{winner_all:>10}")
+top_all = main[main['slap'] >= 70]
+bot_all = main[main['slap'] < 60]
+ta_n, ta_h = len(top_all), int(top_all['hit24'].sum())
+ba_n, ba_h = len(bot_all), int(bot_all['hit24'].sum())
+print(f"  {'-' * 68}")
+print(f"  {'TOTAL':>6}  {ta_n:>8} {ta_h:>6} {ta_h/ta_n*100:>7.0f}%  "
+      f"{ba_n:>8} {ba_h:>6} {ba_h/ba_n*100:>7.0f}%")
 
-# ---------------------------------------------------------------------------
-# Done
-# ---------------------------------------------------------------------------
+
+# ============================================================================
+# EARLY RETURNS: 2024-2025
+# ============================================================================
+
+print("\n" + "=" * 90)
+print("EARLY RETURNS: 2024-2025 DRAFT CLASSES (1 NFL season each)")
+print("=" * 90)
+print("  Included for reference only — too early to judge careers.\n")
+
+for year in [2024, 2025]:
+    yr = early[early['draft_year'] == year]
+    if len(yr) == 0:
+        continue
+    print_tier_table(f"--- {year} Draft Class ({len(yr)} players) ---",
+                     tier_summary(yr))
+
+
+# ============================================================================
+# SAVE RESULTS
+# ============================================================================
+
+export = all_df.copy()
+export['delta_vs_dc'] = export['slap'] - export['dc']
+export = export.sort_values(['draft_year', 'slap'], ascending=[True, False])
+export.to_csv('output/backtest_results.csv', index=False)
+
+print(f"\nSaved: output/backtest_results.csv ({len(export)} players)")
 print("\n" + "=" * 90)
 print("BACKTEST COMPLETE")
 print("=" * 90)
