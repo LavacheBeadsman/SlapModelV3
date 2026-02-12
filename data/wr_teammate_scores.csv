@@ -1,0 +1,340 @@
+player_name,draft_year,pick,round,college,teammate_count,best_teammate_pick,total_teammate_dc,avg_teammate_dc,teammate_names
+Amari Cooper,2015,4,1,Alabama,1,123.0,55.0,55.0,"Kevin Norwood (Rd4 #123, 2014)"
+Kevin White,2015,7,1,West Virginia,1,238.0,31.0,31.0,"Mario Alford (Rd7 #238, 2015)"
+DeVante Parker,2015,14,1,Louisville,1,256.0,27.7,27.7,"Gerald Christian (Rd7 #256, 2015)"
+Nelson Agholor,2015,20,1,USC,2,39.0,117.8,58.9,"Marqise Lee (Rd2 #39, 2014); Randall Telfer (Rd6 #198, 2015)"
+Breshad Perriman,2015,26,1,Central Florida,0,,0.0,0.0,
+Phillip Dorsett,2015,29,1,Miami (FL),1,68.0,69.6,69.6,"Clive Walford (Rd3 #68, 2015)"
+Devin Smith,2015,37,2,Ohio St.,5,47.0,306.9,61.4,"Jeff Heuerman (Rd3 #92, 2015); Evan Spencer (Rd6 #187, 2015); Michael Thomas (Rd2 #47, 2016); Braxton Miller (Rd3 #85, 2016); Nick Vannett (Rd3 #94, 2016)"
+Dorial Green-Beckham,2015,40,2,Oklahoma,3,40.0,194.9,65.0,"Jalen Saunders (Rd4 #104, 2014); Blake Bell (Rd4 #117, 2015); Sterling Shepard (Rd2 #40, 2016)"
+Devin Funchess,2015,41,2,Michigan,1,244.0,29.9,29.9,"Jeremy Gallon (Rd7 #244, 2014)"
+Tyler Lockett,2015,69,3,Kansas St.,0,,0.0,0.0,
+Jaelen Strong,2015,70,3,Arizona St.,1,225.0,33.4,33.4,"Devin Lucien (Rd7 #225, 2016)"
+Chris Conley,2015,76,3,Georgia,2,112.0,105.3,52.7,"Arthur Lynch (Rd5 #155, 2014); Malcolm Mitchell (Rd4 #112, 2016)"
+Sammie Coates,2015,87,3,Auburn,2,114.0,104.4,52.2,"C.J. Uzomah (Rd5 #157, 2015); Ricardo Louis (Rd4 #114, 2016)"
+Ty Montgomery,2015,94,3,Stanford,1,81.0,65.8,65.8,"Austin Hooper (Rd3 #81, 2016)"
+Jamison Crowder,2015,105,4,Duke,0,,0.0,0.0,
+Justin Hardy,2015,107,4,East Carolina,0,,0.0,0.0,
+Vince Mayle,2015,123,4,Washington St.,0,,0.0,0.0,
+DeAndre Smelter,2015,132,4,Georgia Tech,1,204.0,37.5,37.5,"Darren Waller (Rd6 #204, 2015)"
+Rashad Greene,2015,139,5,Florida St.,2,28.0,123.0,61.5,"Kelvin Benjamin (Rd1 #28, 2014); Nick O'Leary (Rd6 #194, 2015)"
+Stefon Diggs,2015,146,5,Maryland,0,,0.0,0.0,
+Tony Lippett,2015,156,5,Michigan St.,2,175.0,79.1,39.6,"Keith Mumphery (Rd5 #175, 2015); Aaron Burbridge (Rd6 #213, 2016)"
+JJ Nelson,2015,159,5,Ala-Birmingham,1,213.0,35.7,35.7,"Kennard Backman (Rd6 #213, 2015)"
+Kenny Bell,2015,162,5,Nebraska,1,209.0,36.5,36.5,"Quincy Enunwa (Rd6 #209, 2014)"
+Keith Mumphery,2015,175,5,Michigan St.,2,156.0,83.2,41.6,"Tony Lippett (Rd5 #156, 2015); Aaron Burbridge (Rd6 #213, 2016)"
+Kaelin Clay,2015,184,6,Utah,0,,0.0,0.0,
+Geremy Davis,2015,186,6,Connecticut,0,,0.0,0.0,
+Evan Spencer,2015,187,6,Ohio St.,5,37.0,345.9,69.2,"Devin Smith (Rd2 #37, 2015); Jeff Heuerman (Rd3 #92, 2015); Michael Thomas (Rd2 #47, 2016); Braxton Miller (Rd3 #85, 2016); Nick Vannett (Rd3 #94, 2016)"
+Bud Sasser,2015,201,6,Missouri,0,,0.0,0.0,
+Darren Waller,2015,204,6,Georgia Tech,1,132.0,52.9,52.9,"DeAndre Smelter (Rd4 #132, 2015)"
+Neal Sterling,2015,220,7,Monmouth,0,,0.0,0.0,
+Andre Debose,2015,221,7,Florida,1,126.0,54.3,54.3,"Demarcus Robinson (Rd4 #126, 2016)"
+Da'Ron Brown,2015,233,7,Northern Illinois,0,,0.0,0.0,
+Dezmin Lewis,2015,234,7,Central Arkansas,0,,0.0,0.0,
+Mario Alford,2015,238,7,West Virginia,1,7.0,94.4,94.4,"Kevin White (Rd1 #7, 2015)"
+Tre McBride,2015,245,7,William & Mary,0,,0.0,0.0,
+Corey Coleman,2016,15,1,Baylor,1,217.0,35.0,35.0,"Rico Gathers (Rd6 #217, 2016)"
+Will Fuller,2016,21,1,Notre Dame,1,229.0,32.7,32.7,"Ben Koyack (Rd7 #229, 2015)"
+Josh Doctson,2016,22,1,TCU,1,192.0,39.9,39.9,"Kolby Listenbee (Rd6 #192, 2016)"
+Laquon Treadwell,2016,23,1,Mississippi,2,23.0,124.1,62.1,"Cody Core (Rd6 #199, 2016); Evan Engram (Rd1 #23, 2017)"
+Sterling Shepard,2016,40,2,Oklahoma,3,40.0,193.4,64.5,"Dorial Green-Beckham (Rd2 #40, 2015); Blake Bell (Rd4 #117, 2015); Dede Westbrook (Rd4 #110, 2017)"
+Michael Thomas,2016,47,2,Ohio St.,7,37.0,420.1,60.0,"Devin Smith (Rd2 #37, 2015); Jeff Heuerman (Rd3 #92, 2015); Evan Spencer (Rd6 #187, 2015); Braxton Miller (Rd3 #85, 2016); Nick Vannett (Rd3 #94, 2016); Curtis Samuel (Rd2 #40, 2017); Noah Brown (Rd7 #239, 2017)"
+Tyler Boyd,2016,55,2,Pittsburgh,0,,0.0,0.0,
+Braxton Miller,2016,85,3,Ohio St.,7,37.0,431.7,61.7,"Devin Smith (Rd2 #37, 2015); Jeff Heuerman (Rd3 #92, 2015); Evan Spencer (Rd6 #187, 2015); Michael Thomas (Rd2 #47, 2016); Nick Vannett (Rd3 #94, 2016); Curtis Samuel (Rd2 #40, 2017); Noah Brown (Rd7 #239, 2017)"
+Leonte Carroo,2016,86,3,Rutgers,1,85.0,64.7,64.7,"Tyler Kroft (Rd3 #85, 2015)"
+Chris Moore,2016,107,4,Cincinnati,0,,0.0,0.0,
+Malcolm Mitchell,2016,112,4,Georgia,2,76.0,111.2,55.6,"Chris Conley (Rd3 #76, 2015); Isaiah McKenzie (Rd5 #172, 2017)"
+Ricardo Louis,2016,114,4,Auburn,2,87.0,111.4,55.7,"Sammie Coates (Rd3 #87, 2015); C.J. Uzomah (Rd5 #157, 2015)"
+Pharoh Cooper,2016,117,4,South Carolina,2,184.0,69.6,34.8,"Rory Anderson (Rd7 #254, 2015); Jerell Adams (Rd6 #184, 2016)"
+Demarcus Robinson,2016,126,4,Florida,1,221.0,34.2,34.2,"Andre Debose (Rd7 #221, 2015)"
+Tajae Sharpe,2016,140,5,Massachusetts,0,,0.0,0.0,
+Jordan Payton,2016,154,5,UCLA,2,231.0,63.3,31.7,"Thomas Duarte (Rd7 #231, 2016); Devin Fuller (Rd7 #238, 2016)"
+Trevor Davis,2016,163,5,California,2,141.0,80.9,40.4,"Kenny Lawler (Rd7 #243, 2016); Chad Hansen (Rd4 #141, 2017)"
+Tyreek Hill,2016,165,5,West Alabama,0,,0.0,0.0,
+Rashard Higgins,2016,172,5,Colorado St.,0,,0.0,0.0,
+Moritz Boehringer,2016,180,6,,0,,0.0,0.0,
+Jakeem Grant,2016,186,6,Texas Tech,0,,0.0,0.0,
+Kolby Listenbee,2016,192,6,TCU,1,22.0,86.1,86.1,"Josh Doctson (Rd1 #22, 2016)"
+Cody Core,2016,199,6,Mississippi,2,23.0,171.3,85.6,"Laquon Treadwell (Rd1 #23, 2016); Evan Engram (Rd1 #23, 2017)"
+Mike Thomas,2016,206,6,Southern Miss,0,,0.0,0.0,
+Aaron Burbridge,2016,213,6,Michigan St.,2,156.0,90.8,45.4,"Tony Lippett (Rd5 #156, 2015); Keith Mumphery (Rd5 #175, 2015)"
+Devin Lucien,2016,225,7,Arizona St.,1,70.0,69.0,69.0,"Jaelen Strong (Rd3 #70, 2015)"
+Demarcus Ayers,2016,229,7,Houston,0,,0.0,0.0,
+Daniel Braverman,2016,230,7,Western Michigan,1,5.0,95.9,95.9,"Corey Davis (Rd1 #5, 2017)"
+Devin Fuller,2016,238,7,UCLA,2,154.0,80.2,40.1,"Jordan Payton (Rd5 #154, 2016); Thomas Duarte (Rd7 #231, 2016)"
+Charone Peake,2016,241,7,Clemson,2,7.0,143.2,71.6,"Mike Williams (Rd1 #7, 2017); Jordan Leggett (Rd5 #150, 2017)"
+Kenny Lawler,2016,243,7,California,2,141.0,96.7,48.4,"Trevor Davis (Rd5 #163, 2016); Chad Hansen (Rd4 #141, 2017)"
+Corey Davis,2017,5,1,Western Michigan,1,230.0,32.5,32.5,"Daniel Braverman (Rd7 #230, 2016)"
+Mike Williams,2017,7,1,Clemson,4,150.0,161.5,40.4,"Charone Peake (Rd7 #241, 2016); Jordan Leggett (Rd5 #150, 2017); Deon Cain (Rd6 #185, 2018); Ray-Ray McCloud (Rd6 #187, 2018)"
+John Ross,2017,9,1,Washington,2,44.0,133.0,66.5,"Dante Pettis (Rd2 #44, 2018); Will Dissly (Rd4 #120, 2018)"
+Zay Jones,2017,37,2,East Carolina,0,,0.0,0.0,
+Curtis Samuel,2017,40,2,Ohio St.,4,47.0,234.1,58.5,"Michael Thomas (Rd2 #47, 2016); Braxton Miller (Rd3 #85, 2016); Nick Vannett (Rd3 #94, 2016); Noah Brown (Rd7 #239, 2017)"
+JuJu Smith-Schuster,2017,62,2,USC,0,,0.0,0.0,
+Cooper Kupp,2017,69,3,Eastern Washington,0,,0.0,0.0,
+Taywan Taylor,2017,72,3,Western Kentucky,1,110.0,58.2,58.2,"Tyler Higbee (Rd4 #110, 2016)"
+ArDarius Stewart,2017,79,3,Alabama,2,19.0,171.8,85.9,"O.J. Howard (Rd1 #19, 2017); Calvin Ridley (Rd1 #26, 2018)"
+Carlos Henderson,2017,82,3,Louisiana Tech,1,177.0,43.0,43.0,"Trent Taylor (Rd5 #177, 2017)"
+Chris Godwin,2017,84,3,Penn St.,2,42.0,135.5,67.7,"Mike Gesicki (Rd2 #42, 2018); DaeSean Hamilton (Rd4 #113, 2018)"
+Kenny Golladay,2017,96,3,Northern Illinois,0,,0.0,0.0,
+Chad Williams,2017,98,3,Grambling St.,0,,0.0,0.0,
+Amara Darboh,2017,106,3,Michigan,2,139.0,101.1,50.6,"Jehu Chesson (Rd4 #139, 2017); Jake Butt (Rd5 #145, 2017)"
+Dede Westbrook,2017,110,4,Oklahoma,2,40.0,143.2,71.6,"Sterling Shepard (Rd2 #40, 2016); Mark Andrews (Rd3 #86, 2018)"
+Josh Reynolds,2017,117,4,Texas A&M,2,47.0,119.7,59.8,"Christian Kirk (Rd2 #47, 2018); Damion Ratley (Rd6 #175, 2018)"
+Mack Hollins,2017,118,4,North Carolina,2,133.0,80.5,40.3,"Ryan Switzer (Rd4 #133, 2017); Austin Proehl (Rd7 #255, 2018)"
+Josh Malone,2017,128,4,Tennessee,0,,0.0,0.0,
+Ryan Switzer,2017,133,4,North Carolina,2,118.0,84.1,42.0,"Mack Hollins (Rd4 #118, 2017); Austin Proehl (Rd7 #255, 2018)"
+Jehu Chesson,2017,139,4,Michigan,2,106.0,109.0,54.5,"Amara Darboh (Rd3 #106, 2017); Jake Butt (Rd5 #145, 2017)"
+Chad Hansen,2017,141,4,California,2,163.0,76.0,38.0,"Trevor Davis (Rd5 #163, 2016); Kenny Lawler (Rd7 #243, 2016)"
+Shelton Gibson,2017,166,5,West Virginia,0,,0.0,0.0,
+Rodney Adams,2017,170,5,South Florida,1,174.0,43.6,43.6,"Marquez Valdes-Scantling (Rd5 #174, 2018)"
+Isaiah McKenzie,2017,172,5,Georgia,2,112.0,91.3,45.6,"Malcolm Mitchell (Rd4 #112, 2016); Javon Wims (Rd7 #224, 2018)"
+DeAngelo Yancey,2017,175,5,Purdue,0,,0.0,0.0,
+Trent Taylor,2017,177,5,Louisiana Tech,1,82.0,65.5,65.5,"Carlos Henderson (Rd3 #82, 2017)"
+Robert Davis,2017,209,6,Georgia St.,0,,0.0,0.0,
+Stacy Coley,2017,219,7,Miami (FL),3,29.0,178.3,59.4,"David Njoku (Rd1 #29, 2017); Chris Herndon (Rd4 #107, 2018); Braxton Berrios (Rd6 #210, 2018)"
+David Moore,2017,226,7,East Central (OK),0,,0.0,0.0,
+Isaiah Ford,2017,237,7,Virginia Tech,1,201.0,38.1,38.1,"Bucky Hodges (Rd6 #201, 2017)"
+Noah Brown,2017,239,7,Ohio St.,4,40.0,282.0,70.5,"Michael Thomas (Rd2 #47, 2016); Braxton Miller (Rd3 #85, 2016); Nick Vannett (Rd3 #94, 2016); Curtis Samuel (Rd2 #40, 2017)"
+Malachi Dupre,2017,247,7,LSU,2,61.0,111.2,55.6,"DJ Chark (Rd2 #61, 2018); Russell Gage (Rd6 #194, 2018)"
+D.J. Moore,2018,24,1,Maryland,0,,0.0,0.0,
+Calvin Ridley,2018,26,1,Alabama,3,19.0,229.1,76.4,"O.J. Howard (Rd1 #19, 2017); ArDarius Stewart (Rd3 #79, 2017); Irv Smith Jr. (Rd2 #50, 2019)"
+Courtland Sutton,2018,40,2,SMU,1,256.0,27.7,27.7,"Trey Quinn (Rd7 #256, 2018)"
+Dante Pettis,2018,44,2,Washington,3,9.0,223.3,74.4,"John Ross (Rd1 #9, 2017); Will Dissly (Rd4 #120, 2018); Drew Sample (Rd2 #52, 2019)"
+Christian Kirk,2018,47,2,Texas A&M,3,75.0,167.3,55.8,"Josh Reynolds (Rd4 #117, 2017); Damion Ratley (Rd6 #175, 2018); Jace Sternberger (Rd3 #75, 2019)"
+Anthony Miller,2018,51,2,Memphis,0,,0.0,0.0,
+James Washington,2018,60,2,Oklahoma St.,1,228.0,32.9,32.9,"Marcell Ateman (Rd7 #228, 2018)"
+DJ Chark,2018,61,2,LSU,3,137.0,120.5,40.2,"Malachi Dupre (Rd7 #247, 2017); Russell Gage (Rd6 #194, 2018); Foster Moreau (Rd4 #137, 2019)"
+Michael Gallup,2018,81,3,Colorado St.,1,247.0,29.3,29.3,"Olabisi Johnson (Rd7 #247, 2019)"
+Tre'Quan Smith,2018,91,3,Central Florida,1,98.0,61.2,61.2,"Jordan Akins (Rd3 #98, 2018)"
+Keke Coutee,2018,103,4,Texas Tech,1,191.0,40.1,40.1,"Dylan Cantrell (Rd6 #191, 2018)"
+Antonio Callaway,2018,105,4,Florida,0,,0.0,0.0,
+DaeSean Hamilton,2018,113,4,Penn St.,2,42.0,143.0,71.5,"Chris Godwin (Rd3 #84, 2017); Mike Gesicki (Rd2 #42, 2018)"
+Jaleel Scott,2018,132,4,New Mexico St.,0,,0.0,0.0,
+J'Mon Moore,2018,133,4,Missouri,0,,0.0,0.0,
+Justin Watson,2018,144,5,Pennsylvania,0,,0.0,0.0,
+Daurice Fountain,2018,159,5,Northern Iowa,0,,0.0,0.0,
+Jordan Lasley,2018,162,5,UCLA,1,254.0,28.1,28.1,"Caleb Wilson (Rd7 #254, 2019)"
+Marquez Valdes-Scantling,2018,174,5,South Florida,1,170.0,44.4,44.4,"Rodney Adams (Rd5 #170, 2017)"
+Damion Ratley,2018,175,6,Texas A&M,3,47.0,200.2,66.7,"Josh Reynolds (Rd4 #117, 2017); Christian Kirk (Rd2 #47, 2018); Jace Sternberger (Rd3 #75, 2019)"
+Deon Cain,2018,185,6,Clemson,4,7.0,233.1,58.3,"Mike Williams (Rd1 #7, 2017); Jordan Leggett (Rd5 #150, 2017); Ray-Ray McCloud (Rd6 #187, 2018); Hunter Renfrow (Rd5 #149, 2019)"
+Ray-Ray McCloud,2018,187,6,Clemson,4,7.0,233.5,58.4,"Mike Williams (Rd1 #7, 2017); Jordan Leggett (Rd5 #150, 2017); Deon Cain (Rd6 #185, 2018); Hunter Renfrow (Rd5 #149, 2019)"
+Dylan Cantrell,2018,191,6,Texas Tech,1,103.0,59.9,59.9,"Keke Coutee (Rd4 #103, 2018)"
+Russell Gage,2018,194,6,LSU,3,61.0,152.7,50.9,"Malachi Dupre (Rd7 #247, 2017); DJ Chark (Rd2 #61, 2018); Foster Moreau (Rd4 #137, 2019)"
+Tremon Smith,2018,196,6,Central Arkansas,0,,0.0,0.0,
+Equanimeous St. Brown,2018,207,6,Notre Dame,3,93.0,149.8,49.9,"Durham Smythe (Rd4 #123, 2018); Miles Boykin (Rd3 #93, 2019); Alizé Mack (Rd7 #231, 2019)"
+Cedrick Wilson Jr.,2018,208,6,Boise St.,0,,0.0,0.0,
+Braxton Berrios,2018,210,6,Miami (FL),3,29.0,176.5,58.8,"David Njoku (Rd1 #29, 2017); Stacy Coley (Rd7 #219, 2017); Chris Herndon (Rd4 #107, 2018)"
+Javon Wims,2018,224,7,Georgia,5,56.0,236.4,47.3,"Isaiah McKenzie (Rd5 #172, 2017); Mecole Hardman (Rd2 #56, 2019); Riley Ridley (Rd4 #126, 2019); Isaac Nauta (Rd7 #224, 2019); Terry Godwin (Rd7 #237, 2019)"
+Marcell Ateman,2018,228,7,Oklahoma St.,1,60.0,72.0,72.0,"James Washington (Rd2 #60, 2018)"
+Richie James,2018,240,7,Middle Tenn. St.,0,,0.0,0.0,
+Auden Tate,2018,253,7,Florida St.,1,250.0,28.8,28.8,"Ryan Izzo (Rd7 #250, 2018)"
+Austin Proehl,2018,255,7,North Carolina,2,118.0,108.8,54.4,"Mack Hollins (Rd4 #118, 2017); Ryan Switzer (Rd4 #133, 2017)"
+Trey Quinn,2018,256,7,SMU,1,40.0,78.8,78.8,"Courtland Sutton (Rd2 #40, 2018)"
+Marquise Brown,2019,25,1,Oklahoma,2,17.0,152.9,76.5,"Mark Andrews (Rd3 #86, 2018); CeeDee Lamb (Rd1 #17, 2020)"
+N'Keal Harry,2019,32,1,Arizona St.,1,25.0,84.7,84.7,"Brandon Aiyuk (Rd1 #25, 2020)"
+Deebo Samuel,2019,36,2,South Carolina,2,25.0,150.5,75.3,"Hayden Hurst (Rd1 #25, 2018); Bryan Edwards (Rd3 #81, 2020)"
+A.J. Brown,2019,51,2,Mississippi,2,64.0,132.5,66.3,"D.K. Metcalf (Rd2 #64, 2019); Dawson Knox (Rd3 #96, 2019)"
+Mecole Hardman,2019,56,2,Georgia,5,126.0,193.0,38.6,"Javon Wims (Rd7 #224, 2018); Riley Ridley (Rd4 #126, 2019); Isaac Nauta (Rd7 #224, 2019); Terry Godwin (Rd7 #237, 2019); Charlie Woerner (Rd6 #190, 2020)"
+JJ Arcega-Whiteside,2019,57,2,Stanford,3,133.0,147.5,49.2,"Dalton Schultz (Rd4 #137, 2018); Kaden Smith (Rd6 #176, 2019); Colby Parkinson (Rd4 #133, 2020)"
+Parris Campbell,2019,59,2,Ohio St.,2,76.0,101.6,50.8,"Terry McLaurin (Rd3 #76, 2019); K.J. Hill (Rd7 #220, 2020)"
+Andy Isabella,2019,62,2,Massachusetts,0,,0.0,0.0,
+D.K. Metcalf,2019,64,2,Mississippi,2,51.0,136.7,68.3,"A.J. Brown (Rd2 #51, 2019); Dawson Knox (Rd3 #96, 2019)"
+Diontae Johnson,2019,66,3,Toledo,0,,0.0,0.0,
+Jalen Hurd,2019,67,3,Baylor,1,59.0,72.3,72.3,"Denzel Mims (Rd2 #59, 2020)"
+Terry McLaurin,2019,76,3,Ohio St.,2,59.0,106.7,53.4,"Parris Campbell (Rd2 #59, 2019); K.J. Hill (Rd7 #220, 2020)"
+Miles Boykin,2019,93,3,Notre Dame,5,43.0,277.5,55.5,"Durham Smythe (Rd4 #123, 2018); Equanimeous St. Brown (Rd6 #207, 2018); Alizé Mack (Rd7 #231, 2019); Cole Kmet (Rd2 #43, 2020); Chase Claypool (Rd2 #49, 2020)"
+Hakeem Butler,2019,103,4,Iowa St.,0,,0.0,0.0,
+Gary Jennings Jr,2019,120,4,West Virginia,1,121.0,55.5,55.5,"Trevon Wesco (Rd4 #121, 2019)"
+Riley Ridley,2019,126,4,Georgia,5,56.0,212.1,42.4,"Javon Wims (Rd7 #224, 2018); Mecole Hardman (Rd2 #56, 2019); Isaac Nauta (Rd7 #224, 2019); Terry Godwin (Rd7 #237, 2019); Charlie Woerner (Rd6 #190, 2020)"
+Hunter Renfrow,2019,149,5,Clemson,3,33.0,163.7,54.6,"Deon Cain (Rd6 #185, 2018); Ray-Ray McCloud (Rd6 #187, 2018); Tee Higgins (Rd2 #33, 2020)"
+Darius Slayton,2019,171,5,Auburn,0,,0.0,0.0,
+KeeSean Johnson,2019,174,6,Fresno St.,0,,0.0,0.0,
+Travis Fulgham,2019,184,6,Old Dominion,0,,0.0,0.0,
+Juwann Winfree,2019,187,6,Colorado,1,42.0,78.0,78.0,"Laviska Shenault Jr. (Rd2 #42, 2020)"
+Marcus Green,2019,203,6,La-Monroe,0,,0.0,0.0,
+Kelvin Harmon,2019,206,6,North Carolina St.,1,165.0,45.5,45.5,"Jaylen Samuels (Rd5 #165, 2018)"
+Scott Miller,2019,208,6,Bowling Green,0,,0.0,0.0,
+John Ursua,2019,236,7,Hawaii,0,,0.0,0.0,
+Terry Godwin,2019,237,7,Georgia,5,56.0,235.1,47.0,"Javon Wims (Rd7 #224, 2018); Mecole Hardman (Rd2 #56, 2019); Riley Ridley (Rd4 #126, 2019); Isaac Nauta (Rd7 #224, 2019); Charlie Woerner (Rd6 #190, 2020)"
+Dillon Mitchell,2019,239,7,Oregon,0,,0.0,0.0,
+Olabisi Johnson,2019,247,7,Colorado St.,1,81.0,65.8,65.8,"Michael Gallup (Rd3 #81, 2018)"
+Henry Ruggs III,2020,12,1,Alabama,4,6.0,352.3,88.1,"Irv Smith Jr. (Rd2 #50, 2019); Jerry Jeudy (Rd1 #15, 2020); Jaylen Waddle (Rd1 #6, 2021); DeVonta Smith (Rd1 #10, 2021)"
+Jerry Jeudy,2020,15,1,Alabama,4,6.0,354.0,88.5,"Irv Smith Jr. (Rd2 #50, 2019); Henry Ruggs III (Rd1 #12, 2020); Jaylen Waddle (Rd1 #6, 2021); DeVonta Smith (Rd1 #10, 2021)"
+CeeDee Lamb,2020,17,1,Oklahoma,1,25.0,84.7,84.7,"Marquise Brown (Rd1 #25, 2019)"
+Jalen Reagor,2020,21,1,TCU,0,,0.0,0.0,
+Justin Jefferson,2020,22,1,LSU,5,5.0,285.8,57.2,"Foster Moreau (Rd4 #137, 2019); Stephen Sullivan (Rd7 #251, 2020); Ja'Marr Chase (Rd1 #5, 2021); Terrace Marshall Jr. (Rd2 #59, 2021); Racey McMath (Rd6 #205, 2021)"
+Brandon Aiyuk,2020,25,1,Arizona St.,2,32.0,122.7,61.4,"N'Keal Harry (Rd1 #32, 2019); Frank Darby (Rd6 #187, 2021)"
+Tee Higgins,2020,33,2,Clemson,3,85.0,155.8,51.9,"Hunter Renfrow (Rd5 #149, 2019); Amari Rodgers (Rd3 #85, 2021); Cornell Powell (Rd5 #181, 2021)"
+Michael Pittman Jr.,2020,34,2,USC,1,112.0,57.7,57.7,"Amon-Ra St. Brown (Rd4 #112, 2021)"
+Laviska Shenault Jr.,2020,42,2,Colorado,1,187.0,40.9,40.9,"Juwann Winfree (Rd6 #187, 2019)"
+KJ Hamler,2020,46,2,Penn St.,1,55.0,73.6,73.6,"Pat Freiermuth (Rd2 #55, 2021)"
+Chase Claypool,2020,49,2,Notre Dame,5,43.0,266.7,53.3,"Miles Boykin (Rd3 #93, 2019); Alizé Mack (Rd7 #231, 2019); Cole Kmet (Rd2 #43, 2020); Tommy Tremble (Rd3 #83, 2021); Ben Skowronek (Rd7 #249, 2021)"
+Van Jefferson,2020,57,2,Florida,4,4.0,247.7,61.9,"Freddie Swain (Rd6 #214, 2020); Tyrie Cleveland (Rd7 #252, 2020); Kyle Pitts (Rd1 #4, 2021); Kadarius Toney (Rd1 #20, 2021)"
+Denzel Mims,2020,59,2,Baylor,1,67.0,69.9,69.9,"Jalen Hurd (Rd3 #67, 2019)"
+Lynn Bowden Jr.,2020,80,3,Kentucky,0,,0.0,0.0,
+Bryan Edwards,2020,81,3,South Carolina,2,36.0,117.8,58.9,"Deebo Samuel (Rd2 #36, 2019); Shi Smith (Rd6 #204, 2021)"
+Devin Duvernay,2020,92,3,Texas,1,165.0,45.5,45.5,"Collin Johnson (Rd5 #165, 2020)"
+Gabriel Davis,2020,128,4,Central Florida,2,141.0,81.1,40.5,"Jacob Harris (Rd4 #141, 2021); Tre Nixon (Rd7 #242, 2021)"
+Antonio Gandy-Golden,2020,142,4,Liberty,0,,0.0,0.0,
+Joe Reed,2020,151,5,Virginia,0,,0.0,0.0,
+Tyler Johnson,2020,161,5,Minnesota,1,27.0,83.9,83.9,"Rashod Bateman (Rd1 #27, 2021)"
+Collin Johnson,2020,165,5,Texas,1,92.0,62.8,62.8,"Devin Duvernay (Rd3 #92, 2020)"
+Quintez Cephus,2020,166,5,Wisconsin,0,,0.0,0.0,
+John Hightower,2020,168,5,Boise St.,1,124.0,54.7,54.7,"John Bates (Rd4 #124, 2021)"
+Isaiah Coulter,2020,171,5,Rhode Island,0,,0.0,0.0,
+Darnell Mooney,2020,173,5,Tulane,0,,0.0,0.0,
+K.J. Osborn,2020,176,5,Miami (FL),1,147.0,49.4,49.4,"Brevin Jordan (Rd5 #147, 2021)"
+Donovan Peoples-Jones,2020,187,6,Michigan,2,89.0,114.4,57.2,"Zach Gentry (Rd5 #141, 2019); Nico Collins (Rd3 #89, 2021)"
+Quez Watkins,2020,200,6,Southern Miss,0,,0.0,0.0,
+James Proche,2020,201,6,SMU,1,127.0,54.0,54.0,"Kylen Granson (Rd4 #127, 2021)"
+Isaiah Hodgins,2020,207,6,Oregon St.,0,,0.0,0.0,
+Dezmon Patmon,2020,212,6,Washington St.,0,,0.0,0.0,
+Freddie Swain,2020,214,6,Florida,4,4.0,285.1,71.3,"Van Jefferson (Rd2 #57, 2020); Tyrie Cleveland (Rd7 #252, 2020); Kyle Pitts (Rd1 #4, 2021); Kadarius Toney (Rd1 #20, 2021)"
+Jauan Jennings,2020,217,7,Tennessee,1,77.0,66.9,66.9,"Josh Palmer (Rd3 #77, 2021)"
+K.J. Hill,2020,220,7,Ohio St.,3,59.0,189.4,63.1,"Parris Campbell (Rd2 #59, 2019); Terry McLaurin (Rd3 #76, 2019); Luke Farrell (Rd5 #145, 2021)"
+Tyrie Cleveland,2020,252,7,Florida,4,4.0,292.3,73.1,"Van Jefferson (Rd2 #57, 2020); Freddie Swain (Rd6 #214, 2020); Kyle Pitts (Rd1 #4, 2021); Kadarius Toney (Rd1 #20, 2021)"
+Ja'Marr Chase,2021,5,1,LSU,4,22.0,224.3,56.1,"Justin Jefferson (Rd1 #22, 2020); Stephen Sullivan (Rd7 #251, 2020); Terrace Marshall Jr. (Rd2 #59, 2021); Racey McMath (Rd6 #205, 2021)"
+Jaylen Waddle,2021,6,1,Alabama,5,10.0,441.7,88.3,"Henry Ruggs III (Rd1 #12, 2020); Jerry Jeudy (Rd1 #15, 2020); DeVonta Smith (Rd1 #10, 2021); Jameson Williams (Rd1 #12, 2022); John Metchie (Rd2 #44, 2022)"
+DeVonta Smith,2021,10,1,Alabama,5,6.0,444.4,88.9,"Henry Ruggs III (Rd1 #12, 2020); Jerry Jeudy (Rd1 #15, 2020); Jaylen Waddle (Rd1 #6, 2021); Jameson Williams (Rd1 #12, 2022); John Metchie (Rd2 #44, 2022)"
+Kadarius Toney,2021,20,1,Florida,4,4.0,233.7,58.4,"Van Jefferson (Rd2 #57, 2020); Freddie Swain (Rd6 #214, 2020); Tyrie Cleveland (Rd7 #252, 2020); Kyle Pitts (Rd1 #4, 2021)"
+Rashod Bateman,2021,27,1,Minnesota,2,161.0,81.2,40.6,"Tyler Johnson (Rd5 #161, 2020); Ko Kieft (Rd6 #218, 2022)"
+Elijah Moore,2021,34,2,Mississippi,0,,0.0,0.0,
+Rondale Moore,2021,49,2,Purdue,2,99.0,112.9,56.4,"Brycen Hopkins (Rd4 #136, 2020); David Bell (Rd3 #99, 2022)"
+D'Wayne Eskridge,2021,56,2,Western Michigan,1,54.0,73.9,73.9,"Skyy Moore (Rd2 #54, 2022)"
+Tutu Atwell,2021,57,2,Louisville,1,109.0,58.4,58.4,"Dez Fitzpatrick (Rd4 #109, 2021)"
+Terrace Marshall Jr.,2021,59,2,LSU,4,5.0,247.9,62.0,"Justin Jefferson (Rd1 #22, 2020); Stephen Sullivan (Rd7 #251, 2020); Ja'Marr Chase (Rd1 #5, 2021); Racey McMath (Rd6 #205, 2021)"
+Josh Palmer,2021,77,3,Tennessee,2,71.0,103.6,51.8,"Jauan Jennings (Rd7 #217, 2020); Velus Jones Jr. (Rd3 #71, 2022)"
+Dyami Brown,2021,82,3,North Carolina,1,221.0,34.2,34.2,"Dazz Newsome (Rd6 #221, 2021)"
+Amari Rodgers,2021,85,3,Clemson,2,33.0,123.6,61.8,"Tee Higgins (Rd2 #33, 2020); Cornell Powell (Rd5 #181, 2021)"
+Nico Collins,2021,89,3,Michigan,1,187.0,40.9,40.9,"Donovan Peoples-Jones (Rd6 #187, 2020)"
+Anthony Schwartz,2021,91,3,Auburn,1,219.0,34.6,34.6,"Seth Williams (Rd6 #219, 2021)"
+Dez Fitzpatrick,2021,109,4,Louisville,1,57.0,73.0,73.0,"Tutu Atwell (Rd2 #57, 2021)"
+Amon-Ra St. Brown,2021,112,4,USC,2,8.0,174.7,87.4,"Michael Pittman Jr. (Rd2 #34, 2020); Drake London (Rd1 #8, 2022)"
+Jaelon Darden,2021,129,4,North Texas,0,,0.0,0.0,
+Tylan Wallace,2021,131,4,Oklahoma St.,0,,0.0,0.0,
+Jacob Harris,2021,141,4,Central Florida,2,128.0,84.1,42.0,"Gabriel Davis (Rd4 #128, 2020); Tre Nixon (Rd7 #242, 2021)"
+Ihmir Smith-Marsette,2021,157,5,Iowa,0,,0.0,0.0,
+Simi Fehoko,2021,179,5,Stanford,1,133.0,52.6,52.6,"Colby Parkinson (Rd4 #133, 2020)"
+Cornell Powell,2021,181,5,Clemson,2,33.0,146.1,73.1,"Tee Higgins (Rd2 #33, 2020); Amari Rodgers (Rd3 #85, 2021)"
+Frank Darby,2021,187,6,Arizona St.,1,25.0,84.7,84.7,"Brandon Aiyuk (Rd1 #25, 2020)"
+Marquez Stevenson,2021,203,6,Houston,0,,0.0,0.0,
+Shi Smith,2021,204,6,South Carolina,2,81.0,98.9,49.4,"Bryan Edwards (Rd3 #81, 2020); Nick Muse (Rd7 #227, 2022)"
+Racey McMath,2021,205,6,LSU,4,5.0,282.9,70.7,"Justin Jefferson (Rd1 #22, 2020); Stephen Sullivan (Rd7 #251, 2020); Ja'Marr Chase (Rd1 #5, 2021); Terrace Marshall Jr. (Rd2 #59, 2021)"
+Jalen Camp,2021,209,6,Georgia Tech,1,206.0,37.1,37.1,"Tyler Davis (Rd6 #206, 2020)"
+Seth Williams,2021,219,6,Auburn,1,91.0,63.1,63.1,"Anthony Schwartz (Rd3 #91, 2021)"
+Dazz Newsome,2021,221,6,North Carolina,1,82.0,65.5,65.5,"Dyami Brown (Rd3 #82, 2021)"
+Mike Strachan,2021,229,7,Charleston (WV),0,,0.0,0.0,
+Tre Nixon,2021,242,7,Central Florida,2,128.0,104.6,52.3,"Gabriel Davis (Rd4 #128, 2020); Jacob Harris (Rd4 #141, 2021)"
+Ben Skowronek,2021,249,7,Notre Dame,3,43.0,218.5,72.8,"Cole Kmet (Rd2 #43, 2020); Chase Claypool (Rd2 #49, 2020); Tommy Tremble (Rd3 #83, 2021)"
+Kawaan Baker,2021,255,7,South Alabama,1,88.0,63.9,63.9,"Jalen Tolbert (Rd3 #88, 2022)"
+Dax Milne,2021,258,7,BYU,0,,0.0,0.0,
+Drake London,2022,8,1,USC,2,23.0,143.3,71.6,"Amon-Ra St. Brown (Rd4 #112, 2021); Jordan Addison (Rd1 #23, 2023)"
+Garrett Wilson,2022,10,1,Ohio St.,4,11.0,289.1,72.3,"Luke Farrell (Rd5 #145, 2021); Chris Olave (Rd1 #11, 2022); Jeremy Ruckert (Rd3 #101, 2022); Jaxon Smith-Njigba (Rd1 #20, 2023)"
+Chris Olave,2022,11,1,Ohio St.,4,10.0,289.7,72.4,"Luke Farrell (Rd5 #145, 2021); Garrett Wilson (Rd1 #10, 2022); Jeremy Ruckert (Rd3 #101, 2022); Jaxon Smith-Njigba (Rd1 #20, 2023)"
+Jameson Williams,2022,12,1,Alabama,4,6.0,325.3,81.3,"Jaylen Waddle (Rd1 #6, 2021); DeVonta Smith (Rd1 #10, 2021); John Metchie (Rd2 #44, 2022); Cameron Latu (Rd3 #101, 2023)"
+Jahan Dotson,2022,16,1,Penn St.,3,55.0,186.6,62.2,"Pat Freiermuth (Rd2 #55, 2021); Brenton Strange (Rd2 #61, 2023); Parker Washington (Rd6 #185, 2023)"
+Treylon Burks,2022,18,1,Arkansas,0,,0.0,0.0,
+Christian Watson,2022,34,2,North Dakota St.,0,,0.0,0.0,
+Wan'Dale Robinson,2022,43,2,Kentucky,0,,0.0,0.0,
+John Metchie,2022,44,2,Alabama,4,6.0,339.1,84.8,"Jaylen Waddle (Rd1 #6, 2021); DeVonta Smith (Rd1 #10, 2021); Jameson Williams (Rd1 #12, 2022); Cameron Latu (Rd3 #101, 2023)"
+Tyquan Thornton,2022,50,2,Baylor,0,,0.0,0.0,
+George Pickens,2022,52,2,Georgia,3,93.0,159.7,53.2,"Tre' McKitty (Rd3 #97, 2021); John FitzPatrick (Rd6 #213, 2022); Darnell Washington (Rd3 #93, 2023)"
+Alec Pierce,2022,53,2,Cincinnati,3,100.0,162.8,54.3,"Tre Tucker (Rd3 #100, 2023); Tyler Scott (Rd4 #133, 2023); Josh Whyle (Rd5 #147, 2023)"
+Skyy Moore,2022,54,2,Western Michigan,1,56.0,73.3,73.3,"D'Wayne Eskridge (Rd2 #56, 2021)"
+Velus Jones Jr.,2022,71,3,Tennessee,3,73.0,202.8,67.6,"Josh Palmer (Rd3 #77, 2021); Jalin Hyatt (Rd3 #73, 2023); Cedric Tillman (Rd3 #74, 2023)"
+Jalen Tolbert,2022,88,3,South Alabama,1,255.0,27.9,27.9,"Kawaan Baker (Rd7 #255, 2021)"
+David Bell,2022,99,3,Purdue,3,49.0,172.9,57.6,"Rondale Moore (Rd2 #49, 2021); Charlie Jones (Rd4 #131, 2023); Payne Durham (Rd5 #171, 2023)"
+Danny Gray,2022,105,3,SMU,3,55.0,166.3,55.4,"Kylen Granson (Rd4 #127, 2021); Grant Calcaterra (Rd6 #198, 2022); Rashee Rice (Rd2 #55, 2023)"
+Erik Ezukanma,2022,125,4,Texas Tech,0,,0.0,0.0,
+Romeo Doubs,2022,132,4,Nevada,1,149.0,49.0,49.0,"Cole Turner (Rd5 #149, 2022)"
+Calvin Austin III,2022,138,4,Memphis,0,,0.0,0.0,
+Khalil Shakir,2022,148,5,Boise St.,1,124.0,54.7,54.7,"John Bates (Rd4 #124, 2021)"
+Montrell Washington,2022,162,5,Samford,0,,0.0,0.0,
+Kyle Philips,2022,163,5,UCLA,1,80.0,66.1,66.1,"Greg Dulcich (Rd3 #80, 2022)"
+Jalen Nailor,2022,191,6,Michigan St.,2,50.0,112.0,56.0,"Connor Heyward (Rd6 #208, 2022); Jayden Reed (Rd2 #50, 2023)"
+Michael Woods II,2022,202,6,Oklahoma,2,63.0,100.4,50.2,"Marvin Mims (Rd2 #63, 2023); Brayden Willis (Rd7 #247, 2023)"
+Bo Melton,2022,229,7,Rutgers,0,,0.0,0.0,
+Dareke Young,2022,233,7,Lenoir-Rhyne,0,,0.0,0.0,
+Samori Toure,2022,258,7,Nebraska,1,191.0,40.1,40.1,"Trey Palmer (Rd6 #191, 2023)"
+Jaxon Smith-Njigba,2023,20,1,Ohio St.,5,4.0,396.3,79.3,"Garrett Wilson (Rd1 #10, 2022); Chris Olave (Rd1 #11, 2022); Jeremy Ruckert (Rd3 #101, 2022); Marvin Harrison Jr. (Rd1 #4, 2024); Cade Stover (Rd4 #123, 2024)"
+Quentin Johnston,2023,21,1,TCU,2,125.0,107.6,53.8,"Derius Davis (Rd4 #125, 2023); Jared Wiley (Rd4 #131, 2024)"
+Zay Flowers,2023,22,1,Boston Col.,0,,0.0,0.0,
+Jordan Addison,2023,23,1,USC,3,8.0,157.6,52.5,"Drake London (Rd1 #8, 2022); Brenden Rice (Rd7 #225, 2024); Tahj Washington (Rd7 #241, 2024)"
+Jonathan Mingo,2023,39,2,Mississippi,0,,0.0,0.0,
+Jayden Reed,2023,50,2,Michigan St.,2,191.0,76.8,38.4,"Jalen Nailor (Rd6 #191, 2022); Connor Heyward (Rd6 #208, 2022)"
+Rashee Rice,2023,55,2,SMU,2,105.0,98.1,49.1,"Danny Gray (Rd3 #105, 2022); Grant Calcaterra (Rd6 #198, 2022)"
+Marvin Mims,2023,63,2,Oklahoma,2,202.0,67.2,33.6,"Michael Woods II (Rd6 #202, 2022); Brayden Willis (Rd7 #247, 2023)"
+Tank Dell,2023,69,3,Houston,0,,0.0,0.0,
+Jalin Hyatt,2023,73,3,Tennessee,2,71.0,136.5,68.2,"Velus Jones Jr. (Rd3 #71, 2022); Cedric Tillman (Rd3 #74, 2023)"
+Cedric Tillman,2023,74,3,Tennessee,2,71.0,136.8,68.4,"Velus Jones Jr. (Rd3 #71, 2022); Jalin Hyatt (Rd3 #73, 2023)"
+Josh Downs,2023,79,3,North Carolina,2,113.0,92.0,46.0,"Antoine Green (Rd7 #219, 2023); Devontez Walker (Rd4 #113, 2024)"
+Michael Wilson,2023,94,3,Stanford,1,197.0,38.9,38.9,"Elijah Higgins (Rd6 #197, 2023)"
+Tre Tucker,2023,100,3,Cincinnati,3,53.0,176.3,58.8,"Alec Pierce (Rd2 #53, 2022); Tyler Scott (Rd4 #133, 2023); Josh Whyle (Rd5 #147, 2023)"
+Derius Davis,2023,125,4,TCU,2,21.0,139.6,69.8,"Quentin Johnston (Rd1 #21, 2023); Jared Wiley (Rd4 #131, 2024)"
+Charlie Jones,2023,131,4,Purdue,2,99.0,105.2,52.6,"David Bell (Rd3 #99, 2022); Payne Durham (Rd5 #171, 2023)"
+Tyler Scott,2023,133,4,Cincinnati,3,53.0,184.4,61.5,"Alec Pierce (Rd2 #53, 2022); Tre Tucker (Rd3 #100, 2023); Josh Whyle (Rd5 #147, 2023)"
+Justin Shorter,2023,150,5,Florida,1,31.0,82.2,82.2,"Ricky Pearsall (Rd1 #31, 2024)"
+Dontayvion Wicks,2023,159,5,Virginia,2,73.0,109.6,54.8,"Jelani Woods (Rd3 #73, 2022); Malik Washington (Rd6 #184, 2024)"
+Puka Nacua,2023,177,5,BYU,0,,0.0,0.0,
+Parker Washington,2023,185,6,Penn St.,3,16.0,219.6,73.2,"Jahan Dotson (Rd1 #16, 2022); Brenton Strange (Rd2 #61, 2023); Theo Johnson (Rd4 #107, 2024)"
+Kayshon Boutte,2023,187,6,LSU,2,6.0,180.7,90.4,"Malik Nabers (Rd1 #6, 2024); Brian Thomas (Rd1 #23, 2024)"
+Trey Palmer,2023,191,6,Nebraska,1,258.0,27.3,27.3,"Samori Toure (Rd7 #258, 2022)"
+A.T. Perry,2023,195,6,Wake Forest,0,,0.0,0.0,
+Elijah Higgins,2023,197,6,Stanford,1,94.0,62.3,62.3,"Michael Wilson (Rd3 #94, 2023)"
+Xavier Hutchinson,2023,205,6,Iowa St.,1,128.0,53.8,53.8,"Charlie Kolar (Rd4 #128, 2022)"
+Andrei Iosivas,2023,206,6,Princeton,0,,0.0,0.0,
+DeMario Douglas,2023,210,6,Liberty,0,,0.0,0.0,
+Antoine Green,2023,219,7,North Carolina,2,79.0,123.8,61.9,"Josh Downs (Rd3 #79, 2023); Devontez Walker (Rd4 #113, 2024)"
+Colton Dowell,2023,228,7,UT Martin,0,,0.0,0.0,
+Jalen Brooks,2023,244,7,South Carolina,2,32.0,114.9,57.4,"Nick Muse (Rd7 #227, 2022); Xavier Legette (Rd1 #32, 2024)"
+Ronnie Bell,2023,253,7,Michigan,4,58.0,221.3,55.3,"Luke Schoonmaker (Rd2 #58, 2023); Roman Wilson (Rd3 #84, 2024); AJ Barner (Rd4 #121, 2024); Cornelius Johnson (Rd7 #253, 2024)"
+Grant Dubose,2023,256,7,Charlotte,0,,0.0,0.0,
+Marvin Harrison Jr.,2024,4,1,Ohio St.,3,19.0,229.5,76.5,"Jaxon Smith-Njigba (Rd1 #20, 2023); Cade Stover (Rd4 #123, 2024); Emeka Egbuka (Rd1 #19, 2025)"
+Malik Nabers,2024,6,1,LSU,3,23.0,204.6,68.2,"Kayshon Boutte (Rd6 #187, 2023); Brian Thomas (Rd1 #23, 2024); Mason Taylor (Rd2 #42, 2025)"
+Rome Odunze,2024,9,1,Washington,3,37.0,172.2,57.4,"Ja'Lynn Polk (Rd2 #37, 2024); Jalen McMillan (Rd3 #92, 2024); Devin Culp (Rd7 #246, 2024)"
+Brian Thomas,2024,23,1,LSU,3,6.0,214.1,71.4,"Kayshon Boutte (Rd6 #187, 2023); Malik Nabers (Rd1 #6, 2024); Mason Taylor (Rd2 #42, 2025)"
+Xavier Worthy,2024,28,1,Texas,5,23.0,312.1,62.4,"Adonai Mitchell (Rd2 #52, 2024); Ja'Tavion Sanders (Rd4 #101, 2024); Jordan Whittington (Rd6 #213, 2024); Matthew Golden (Rd1 #23, 2025); Gunnar Helm (Rd4 #120, 2025)"
+Ricky Pearsall,2024,31,1,Florida,2,103.0,108.7,54.3,"Justin Shorter (Rd5 #150, 2023); Chimere Dike (Rd4 #103, 2025)"
+Xavier Legette,2024,32,1,South Carolina,1,244.0,29.9,29.9,"Jalen Brooks (Rd7 #244, 2023)"
+Keon Coleman,2024,33,2,Florida St.,2,185.0,73.6,36.8,"Johnny Wilson (Rd6 #185, 2024); Jaheim Bell (Rd7 #231, 2024)"
+Ladd McConkey,2024,34,2,Georgia,4,13.0,241.2,60.3,"Darnell Washington (Rd3 #93, 2023); Brock Bowers (Rd1 #13, 2024); Arian Smith (Rd4 #110, 2025); Dominic Lovett (Rd7 #244, 2025)"
+Ja'Lynn Polk,2024,37,2,Washington,3,9.0,185.3,61.8,"Rome Odunze (Rd1 #9, 2024); Jalen McMillan (Rd3 #92, 2024); Devin Culp (Rd7 #246, 2024)"
+Adonai Mitchell,2024,52,2,Texas,5,23.0,321.0,64.2,"Xavier Worthy (Rd1 #28, 2024); Ja'Tavion Sanders (Rd4 #101, 2024); Jordan Whittington (Rd6 #213, 2024); Matthew Golden (Rd1 #23, 2025); Gunnar Helm (Rd4 #120, 2025)"
+Malachi Corley,2024,65,3,Western Kentucky,0,,0.0,0.0,
+Jermaine Burton,2024,80,3,Alabama,2,101.0,103.8,51.9,"Cameron Latu (Rd3 #101, 2023); Robbie Ouzts (Rd5 #175, 2025)"
+Roman Wilson,2024,84,3,Michigan,5,10.0,277.0,55.4,"Luke Schoonmaker (Rd2 #58, 2023); Ronnie Bell (Rd7 #253, 2023); AJ Barner (Rd4 #121, 2024); Cornelius Johnson (Rd7 #253, 2024); Colston Loveland (Rd1 #10, 2025)"
+Jalen McMillan,2024,92,3,Washington,3,9.0,202.4,67.5,"Rome Odunze (Rd1 #9, 2024); Ja'Lynn Polk (Rd2 #37, 2024); Devin Culp (Rd7 #246, 2024)"
+Luke McCaffrey,2024,100,3,Rice,0,,0.0,0.0,
+Troy Franklin,2024,102,4,Oregon,2,46.0,108.2,54.1,"Terrance Ferguson (Rd2 #46, 2025); Tez Johnson (Rd7 #235, 2025)"
+Javon Baker,2024,110,4,Central Florida,0,,0.0,0.0,
+Devontez Walker,2024,113,4,North Carolina,2,79.0,101.0,50.5,"Josh Downs (Rd3 #79, 2023); Antoine Green (Rd7 #219, 2023)"
+Jacob Cowing,2024,135,4,Arizona,2,8.0,133.2,66.6,"Tanner McLachlan (Rd6 #194, 2024); Tetairoa McMillan (Rd1 #8, 2025)"
+Anthony Gould,2024,142,5,Oregon St.,1,42.0,78.0,78.0,"Luke Musgrave (Rd2 #42, 2023)"
+Ainias Smith,2024,152,5,Texas A&M,0,,0.0,0.0,
+Jamari Thrash,2024,156,5,Louisville,0,,0.0,0.0,
+Bub Means,2024,170,5,Pittsburgh,2,202.0,68.2,34.1,"Gavin Bartholomew (Rd6 #202, 2025); Konata Mumpfield (Rd7 #242, 2025)"
+Jha'Quan Jackson,2024,182,6,Tulane,0,,0.0,0.0,
+Malik Washington,2024,184,6,Virginia,1,159.0,46.8,46.8,"Dontayvion Wicks (Rd5 #159, 2023)"
+Johnny Wilson,2024,185,6,Florida St.,2,33.0,113.7,56.9,"Keon Coleman (Rd2 #33, 2024); Jaheim Bell (Rd7 #231, 2024)"
+Casey Washington,2024,187,6,Illinois,2,74.0,133.3,66.7,"Tip Reiman (Rd3 #82, 2024); Pat Bryant (Rd3 #74, 2025)"
+Tejhaun Palmer,2024,191,6,Ala-Birmingham,0,,0.0,0.0,
+Jordan Whittington,2024,213,6,Texas,5,23.0,359.8,72.0,"Xavier Worthy (Rd1 #28, 2024); Adonai Mitchell (Rd2 #52, 2024); Ja'Tavion Sanders (Rd4 #101, 2024); Matthew Golden (Rd1 #23, 2025); Gunnar Helm (Rd4 #120, 2025)"
+Ryan Flournoy,2024,216,6,SE Missouri St.,0,,0.0,0.0,
+Brenden Rice,2024,225,7,USC,2,23.0,116.1,58.0,"Jordan Addison (Rd1 #23, 2023); Tahj Washington (Rd7 #241, 2024)"
+Devaughn Vele,2024,235,7,Utah,2,25.0,115.2,57.6,"Dalton Kincaid (Rd1 #25, 2023); Caleb Lohner (Rd7 #241, 2025)"
+Tahj Washington,2024,241,7,USC,2,23.0,119.1,59.5,"Jordan Addison (Rd1 #23, 2023); Brenden Rice (Rd7 #225, 2024)"
+Cornelius Johnson,2024,253,7,Michigan,5,10.0,313.7,62.7,"Luke Schoonmaker (Rd2 #58, 2023); Ronnie Bell (Rd7 #253, 2023); Roman Wilson (Rd3 #84, 2024); AJ Barner (Rd4 #121, 2024); Colston Loveland (Rd1 #10, 2025)"
+Travis Hunter,2025,2,1,Colorado,2,203.0,74.4,37.2,"LaJohntay Wester (Rd6 #203, 2025); Jimmy Horn (Rd6 #208, 2025)"
+Tetairoa McMillan,2025,8,1,Arizona,2,135.0,91.7,45.8,"Jacob Cowing (Rd4 #135, 2024); Tanner McLachlan (Rd6 #194, 2024)"
+Emeka Egbuka,2025,19,1,Ohio State,2,4.0,151.7,75.9,"Marvin Harrison Jr. (Rd1 #4, 2024); Cade Stover (Rd4 #123, 2024)"
+Matthew Golden,2025,23,1,Texas,5,28.0,309.9,62.0,"Xavier Worthy (Rd1 #28, 2024); Adonai Mitchell (Rd2 #52, 2024); Ja'Tavion Sanders (Rd4 #101, 2024); Jordan Whittington (Rd6 #213, 2024); Gunnar Helm (Rd4 #120, 2025)"
+Jayden Higgins,2025,34,2,Iowa State,1,79.0,66.4,66.4,"Jaylin Noel (Rd3 #79, 2025)"
+Luther Burden III,2025,39,2,Missouri,1,39.0,79.1,79.1,"Luther Burden (Rd2 #39, 2025)"
+Tre Harris,2025,55,2,Ole Miss,1,138.0,51.5,51.5,"Jordan Watkins (Rd4 #138, 2025)"
+Kyle Williams,2025,69,3,Washington State,0,,0.0,0.0,
+Isaac TeSlaa,2025,70,3,Arkansas,0,,0.0,0.0,
+Pat Bryant,2025,74,3,Illinois,2,82.0,106.4,53.2,"Tip Reiman (Rd3 #82, 2024); Casey Washington (Rd6 #187, 2024)"
+Chimere Dike,2025,103,4,Florida,1,31.0,82.2,82.2,"Ricky Pearsall (Rd1 #31, 2024)"
+Elic Ayomanor,2025,136,4,Stanford,0,,0.0,0.0,
+Tez Johnson,2025,235,7,Oregon,2,46.0,136.8,68.4,"Troy Franklin (Rd4 #102, 2024); Terrance Ferguson (Rd2 #46, 2025)"
