@@ -1,39 +1,39 @@
 player_name,position,draft_year,pick,round,college,seasons_played,best_rank,best_ppr,hit24,hit12,RAS,breakout_age,peak_dominator,birthdate,declare_status,early_declare,draft_age,declare_source,rush_attempts,rush_yards,rush_touchdowns,rush_games,rush_source,rush_tds
-Amari Cooper,WR,2015,4,1,Alabama,9,12.0,253.6,1,1,8.57,19.0,47.19794344473008,1994-06-17,EARLY,1,20.0,existing,,23.0,0.0,13,cfbd,
-Kevin White,WR,2015,7,1,West Virginia,9,119.0,38.6,0,0,9.72,19.0,36.78718757583111,1992-10-21,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-DeVante Parker,WR,2015,14,1,Louisville,9,13.0,246.2,1,0,9.75,19.0,24.79291384929009,1993-01-20,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Nelson Agholor,WR,2015,20,1,USC,9,18.0,222.1,1,0,7.38,20.0,32.41003032237472,1993-05-24,EARLY,1,21.0,existing,,3.0,0.0,13,cfbd,
-Breshad Perriman,WR,2015,26,1,Central Florida,9,53.0,138.1,0,0,9.95,20.0,36.62961752206604,1993-09-10,EARLY,1,21.0,existing,,0.0,0.0,13,cfbd,
-Phillip Dorsett,WR,2015,29,1,Miami (FL),9,71.0,105.9,0,0,8.47,19.0,37.13870610663551,1993-01-05,STANDARD,0,22.0,existing,,-6.0,0.0,13,cfbd,
-Devin Smith,WR,2015,37,2,Ohio St.,9,142.0,26.5,0,0,8.61,19.0,26.843038267370613,1992-03-03,LATE,0,23.0,existing,,3.0,0.0,13,cfbd,
-Dorial Green-Beckham,WR,2015,40,2,Oklahoma,9,62.0,112.9,0,0,6.3,20.0,31.8265901221068,1993-04-12,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Devin Funchess,WR,2015,41,2,Michigan,9,999.0,0.0,0,0,5.26,20.0,37.94809010773752,1994-05-21,EARLY,1,20.0,existing,,-11.0,0.0,13,cfbd,
-Tyler Lockett,WR,2015,69,3,Kansas St.,9,5.0,274.0,1,1,7.71,19.0,44.18873940973839,1992-09-28,STANDARD,0,22.0,existing,,17.0,0.0,13,cfbd,
-Jaelen Strong,WR,2015,70,3,Arizona St.,9,109.0,50.8,0,0,9.14,20.0,31.086647257328124,1994-01-25,EARLY,1,21.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Chris Conley,WR,2015,76,3,Georgia,9,45.0,156.5,0,0,9.68,19.0,29.589562024652505,1992-10-25,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Sammie Coates,WR,2015,87,3,Auburn,9,90.0,83.3,0,0,9.86,20.0,27.548555654145712,1993-03-31,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Ty Montgomery,WR,2015,94,3,Stanford,9,45.0,179.3,0,0,7.75,19.0,17.60709504685408,1993-01-22,STANDARD,0,22.0,existing,,144.0,1.0,13,cfbd,
-Jamison Crowder,WR,2015,105,4,Duke,9,29.0,197.7,0,0,1.31,19.0,31.59358487067767,1993-06-17,EARLY,1,21.0,existing,,9.0,0.0,13,cfbd,
-Justin Hardy,WR,2015,107,4,East Carolina,9,96.0,69.1,0,0,4.87,19.0,31.578877139140005,1991-12-18,LATE,0,23.0,existing,,7.0,1.0,13,cfbd,
-Vince Mayle,WR,2015,123,4,Washington St.,9,176.0,6.2,0,0,4.63,21.0,22.93614794138172,1991-11-16,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-DeAndre Smelter,WR,2015,132,4,Georgia Tech,9,182.0,3.3000000000000003,0,0,3.984833334553294,21.0,37.88213047589032,1991-12-03,LATE,0,23.0,existing,,103.0,1.0,13,cfbd,
-Rashad Greene,WR,2015,139,5,Florida St.,9,125.0,40.3,0,0,5.37,19.0,17.616,1992-09-23,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Stefon Diggs,WR,2015,146,5,Maryland,9,2.0,391.7000000000001,1,1,5.66,20.0,26.98953986433075,1993-11-29,EARLY,1,21.0,existing,,28.0,0.0,13,cfbd,
-Tony Lippett,WR,2015,156,5,Michigan St.,9,999.0,0.0,0,0,3.99,20.0,38.63269062422842,1992-08-12,STANDARD,0,22.0,existing,,51.0,1.0,13,cfbd,
-JJ Nelson,WR,2015,159,5,Ala-Birmingham,9,999.0,0.0,0,0,7.92,19.0,24.18412188538669,1992-04-24,LATE,0,23.0,existing,,45.0,0.0,13,cfbd,
-Kenny Bell,WR,2015,162,5,Nebraska,9,999.0,0.0,0,0,9.2,19.0,26.79089590134204,1992-02-25,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Keith Mumphery,WR,2015,175,5,Michigan St.,9,141.0,26.9,0,0,4.36,20.0,12.991290880114924,1992-06-05,STANDARD,0,22.0,existing,,85.0,1.0,13,cfbd,
-Kaelin Clay,WR,2015,184,6,Utah,9,134.0,23.4,0,0,2.18,19.0,20.17509727626459,1992-01-02,LATE,0,23.0,existing,,4.0,0.0,13,cfbd,
-Geremy Davis,WR,2015,186,6,Connecticut,9,174.0,6.8,0,0,9.66,19.0,32.052,1992-01-10,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Evan Spencer,WR,2015,187,6,Ohio St.,9,999.0,0.0,0,0,8.37,19.0,5.581139928320937,1993-05-26,EARLY,1,21.0,existing,,9.0,0.0,13,cfbd,
-Bud Sasser,WR,2015,201,6,Missouri,9,999.0,0.0,0,0,7.45,20.0,42.93882175226586,1991-08-25,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Darren Waller,WR,2015,204,6,Georgia Tech,9,999.0,0.0,0,0,5.236019038420589,20.0,27.81995816978483,1992-09-13,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
-Neal Sterling,WR,2015,220,7,Monmouth,9,999.0,0.0,0,0,6.62,19.0,14.099,1992-04-11,LATE,0,23.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
-Andre Debose,WR,2015,221,7,Florida,9,999.0,0.0,0,0,8.13,19.0,-0.0694766095414543,1990-09-12,LATE,0,24.0,existing,,30.0,0.0,13,cfbd,
-Da'Ron Brown,WR,2015,233,7,Northern Illinois,9,999.0,0.0,0,0,8.12,19.0,35.5923743907929,1991-09-21,LATE,0,23.0,existing,,108.0,1.0,13,cfbd,
-Dezmin Lewis,WR,2015,234,7,Central Arkansas,9,197.0,0.0,0,0,4.77,19.0,16.387,1992-12-05,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
-Mario Alford,WR,2015,238,7,West Virginia,9,187.0,2.5,0,0,5.4,19.0,32.619509827711724,1992-02-25,LATE,0,23.0,existing,,14.0,0.0,13,cfbd,
-Tre McBride,WR,2015,245,7,William & Mary,9,136.0,22.4,0,0,9.56,,,1992-12-01,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Amari Cooper,WR,2015,4,1,Alabama,9,12.0,253.6,1,1,8.57,19.0,47.19794344473008,1994-06-17,EARLY,1,20.0,existing,5.0,23.0,0.0,13,cfbd,
+Kevin White,WR,2015,7,1,West Virginia,9,119.0,38.6,0,0,9.72,19.0,36.78718757583111,1992-10-21,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+DeVante Parker,WR,2015,14,1,Louisville,9,13.0,246.2,1,0,9.75,19.0,24.79291384929009,1993-01-20,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Nelson Agholor,WR,2015,20,1,USC,9,18.0,222.1,1,0,7.38,20.0,32.41003032237472,1993-05-24,EARLY,1,21.0,existing,4.0,3.0,0.0,13,cfbd,
+Breshad Perriman,WR,2015,26,1,Central Florida,9,53.0,138.1,0,0,9.95,20.0,36.62961752206604,1993-09-10,EARLY,1,21.0,existing,1.0,0.0,0.0,13,cfbd,
+Phillip Dorsett,WR,2015,29,1,Miami (FL),9,71.0,105.9,0,0,8.47,19.0,37.13870610663551,1993-01-05,STANDARD,0,22.0,existing,2.0,-6.0,0.0,13,cfbd,
+Devin Smith,WR,2015,37,2,Ohio St.,9,142.0,26.5,0,0,8.61,19.0,26.843038267370613,1992-03-03,LATE,0,23.0,existing,24.0,3.0,0.0,13,cfbd,
+Dorial Green-Beckham,WR,2015,40,2,Oklahoma,9,62.0,112.9,0,0,6.3,20.0,31.8265901221068,1993-04-12,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Devin Funchess,WR,2015,41,2,Michigan,9,999.0,0.0,0,0,5.26,20.0,37.94809010773752,1994-05-21,EARLY,1,20.0,existing,2.0,-11.0,0.0,13,cfbd,
+Tyler Lockett,WR,2015,69,3,Kansas St.,9,5.0,274.0,1,1,7.71,19.0,44.18873940973839,1992-09-28,STANDARD,0,22.0,existing,3.0,17.0,0.0,13,cfbd,
+Jaelen Strong,WR,2015,70,3,Arizona St.,9,109.0,50.8,0,0,9.14,20.0,31.086647257328124,1994-01-25,EARLY,1,21.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Chris Conley,WR,2015,76,3,Georgia,9,45.0,156.5,0,0,9.68,19.0,29.589562024652505,1992-10-25,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Sammie Coates,WR,2015,87,3,Auburn,9,90.0,83.3,0,0,9.86,20.0,27.548555654145712,1993-03-31,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Ty Montgomery,WR,2015,94,3,Stanford,9,45.0,179.3,0,0,7.75,19.0,17.60709504685408,1993-01-22,STANDARD,0,22.0,existing,23.0,144.0,1.0,13,cfbd,
+Jamison Crowder,WR,2015,105,4,Duke,9,29.0,197.7,0,0,1.31,19.0,31.59358487067767,1993-06-17,EARLY,1,21.0,existing,2.0,9.0,0.0,13,cfbd,
+Justin Hardy,WR,2015,107,4,East Carolina,9,96.0,69.1,0,0,4.87,19.0,31.578877139140005,1991-12-18,LATE,0,23.0,existing,1.0,7.0,1.0,13,cfbd,
+Vince Mayle,WR,2015,123,4,Washington St.,9,176.0,6.2,0,0,4.63,21.0,22.93614794138172,1991-11-16,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+DeAndre Smelter,WR,2015,132,4,Georgia Tech,9,182.0,3.3000000000000003,0,0,3.984833334553294,21.0,37.88213047589032,1991-12-03,LATE,0,23.0,existing,3.0,103.0,1.0,13,cfbd,
+Rashad Greene,WR,2015,139,5,Florida St.,9,125.0,40.3,0,0,5.37,19.0,17.616,1992-09-23,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Stefon Diggs,WR,2015,146,5,Maryland,9,2.0,391.7000000000001,1,1,5.66,20.0,26.98953986433075,1993-11-29,EARLY,1,21.0,existing,5.0,28.0,0.0,13,cfbd,
+Tony Lippett,WR,2015,156,5,Michigan St.,9,999.0,0.0,0,0,3.99,20.0,38.63269062422842,1992-08-12,STANDARD,0,22.0,existing,2.0,51.0,1.0,13,cfbd,
+JJ Nelson,WR,2015,159,5,Ala-Birmingham,9,999.0,0.0,0,0,7.92,19.0,24.18412188538669,1992-04-24,LATE,0,23.0,existing,5.0,45.0,0.0,13,cfbd,
+Kenny Bell,WR,2015,162,5,Nebraska,9,999.0,0.0,0,0,9.2,19.0,26.79089590134204,1992-02-25,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Keith Mumphery,WR,2015,175,5,Michigan St.,9,141.0,26.9,0,0,4.36,20.0,12.991290880114924,1992-06-05,STANDARD,0,22.0,existing,6.0,85.0,1.0,13,cfbd,
+Kaelin Clay,WR,2015,184,6,Utah,9,134.0,23.4,0,0,2.18,19.0,20.17509727626459,1992-01-02,LATE,0,23.0,existing,4.0,4.0,0.0,13,cfbd,
+Geremy Davis,WR,2015,186,6,Connecticut,9,174.0,6.8,0,0,9.66,19.0,32.052,1992-01-10,LATE,0,23.0,existing,23.0,203.0,1.0,13,web_research,
+Evan Spencer,WR,2015,187,6,Ohio St.,9,999.0,0.0,0,0,8.37,19.0,5.581139928320937,1993-05-26,EARLY,1,21.0,existing,1.0,9.0,0.0,13,cfbd,
+Bud Sasser,WR,2015,201,6,Missouri,9,999.0,0.0,0,0,7.45,20.0,42.93882175226586,1991-08-25,LATE,0,23.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Darren Waller,WR,2015,204,6,Georgia Tech,9,999.0,0.0,0,0,5.236019038420589,20.0,27.81995816978483,1992-09-13,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
+Neal Sterling,WR,2015,220,7,Monmouth,9,999.0,0.0,0,0,6.62,19.0,14.099,1992-04-11,LATE,0,23.0,existing,,,,13,unknown_fcs,
+Andre Debose,WR,2015,221,7,Florida,9,999.0,0.0,0,0,8.13,19.0,-0.0694766095414543,1990-09-12,LATE,0,24.0,existing,2.0,30.0,0.0,13,cfbd,
+Da'Ron Brown,WR,2015,233,7,Northern Illinois,9,999.0,0.0,0,0,8.12,19.0,35.5923743907929,1991-09-21,LATE,0,23.0,existing,10.0,108.0,1.0,13,cfbd,
+Dezmin Lewis,WR,2015,234,7,Central Arkansas,9,197.0,0.0,0,0,4.77,19.0,16.387,1992-12-05,STANDARD,0,22.0,existing,1.0,0.0,0.0,13,cfbd,
+Mario Alford,WR,2015,238,7,West Virginia,9,187.0,2.5,0,0,5.4,19.0,32.619509827711724,1992-02-25,LATE,0,23.0,existing,2.0,14.0,0.0,13,cfbd,
+Tre McBride,WR,2015,245,7,William & Mary,9,136.0,22.4,0,0,9.56,,,1992-12-01,STANDARD,0,22.0,existing,3.0,6.0,0.0,13,cfbd,
 Corey Coleman,WR,2016,15,1,Baylor,8,83.0,93.3,0,0,9.66,21.0,40.83301130325573,1994-07-06,EARLY,1,21.0,existing,22.0,113.0,,12,pff,0.0
 Will Fuller,WR,2016,21,1,Notre Dame,8,34.0,188.9,0,0,7.17,21.0,17.597,1994-04-16,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
 Josh Doctson,WR,2016,22,1,TCU,8,59.0,119.8,0,0,9.41,22.0,32.63767079352645,1992-12-03,LATE,0,23.0,existing,2.0,7.0,,10,pff,0.0
@@ -51,9 +51,9 @@ Demarcus Robinson,WR,2016,126,4,Florida,8,55.0,137.2,0,0,5.86,21.0,14.0031045187
 Tajae Sharpe,WR,2016,140,5,Massachusetts,8,74.0,105.3,0,0,5.3,20.0,35.2319309600863,1994-12-23,EARLY,1,21.0,existing,1.0,-3.0,,12,pff,0.0
 Jordan Payton,WR,2016,154,5,UCLA,8,194.0,1.3,0,0,6.84,22.0,28.377117427505027,1993-09-01,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
 Trevor Davis,WR,2016,163,5,California,8,138.0,30.4,0,0,9.14,22.0,10.640335587181797,1993-07-04,STANDARD,0,22.0,existing,3.0,4.0,,13,pff,0.0
-Tyreek Hill,WR,2016,165,5,West Alabama,8,2.0,393.6,1,1,9.39,21.0,19.39688715953307,1994-03-01,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Tyreek Hill,WR,2016,165,5,West Alabama,8,2.0,393.6,1,1,9.39,21.0,19.39688715953307,1994-03-01,STANDARD,0,22.0,existing,25.0,237.0,1.0,13,web_research,
 Rashard Higgins,WR,2016,172,5,Colorado St.,8,59.0,139.5,0,0,1.65,21.0,34.575604272062954,1994-10-07,EARLY,1,21.0,existing,1.0,20.0,,12,pff,0.0
-Moritz Boehringer,WR,2016,180,6,,8,999.0,0.0,0,0,9.98,22.0,,1993-08-20,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Moritz Boehringer,WR,2016,180,6,,8,999.0,0.0,0,0,9.98,22.0,,1993-08-20,STANDARD,0,22.0,existing,,,,13,no_college_data,
 Jakeem Grant,WR,2016,186,6,Texas Tech,8,94.0,81.3,0,0,6.39,22.0,25.38492027195951,1992-10-30,LATE,0,23.0,existing,7.0,69.0,,13,pff,2.0
 Kolby Listenbee,WR,2016,192,6,TCU,8,999.0,0.0,0,0,7.91,21.0,13.01862479635338,1994-01-25,STANDARD,0,22.0,existing,1.0,11.0,,11,pff,0.0
 Cody Core,WR,2016,199,6,Mississippi,8,123.0,37.0,0,0,7.38,21.0,13.114883278064156,1994-04-17,STANDARD,0,22.0,existing,1.0,0.0,,13,pff,0.0
@@ -65,19 +65,19 @@ Daniel Braverman,WR,2016,230,7,Western Michigan,8,197.0,0.0,0,0,2.56,22.0,39.946
 Devin Fuller,WR,2016,238,7,UCLA,8,999.0,0.0,0,0,8.34,21.0,17.597,1994-01-29,STANDARD,0,22.0,existing,0.0,0.0,,10,pff,0.0
 Charone Peake,WR,2016,241,7,Clemson,8,121.0,37.6,0,0,5.76,22.0,15.329456731240404,1992-10-16,LATE,0,23.0,existing,0.0,0.0,,15,pff,0.0
 Kenny Lawler,WR,2016,243,7,California,8,999.0,0.0,0,0,2.09,21.0,25.33983310028668,1994-06-25,EARLY,1,21.0,existing,1.0,5.0,,13,pff,0.0
-Corey Davis,WR,2017,5,1,Western Michigan,7,29.0,191.4,0,0,3.7740766830734365,21.0,50.01629656314061,1995-01-11,STANDARD,0,22.0,existing,1.0,0.0,,14,pff,0.0
+Corey Davis,WR,2017,5,1,Western Michigan,7,29.0,191.4,0,0,3.774076683073437,21.0,50.01629656314061,1995-01-11,STANDARD,0,22.0,existing,1.0,0.0,,14,pff,0.0
 Mike Williams,WR,2017,7,1,Clemson,7,14.0,246.6,1,0,7.24,22.0,25.807768239391315,1994-10-04,STANDARD,0,22.0,existing,0.0,0.0,,15,pff,0.0
 John Ross,WR,2017,9,1,Washington,7,75.0,95.0,0,0,9.5,20.0,33.95593166589344,1995-11-27,EARLY,1,21.0,existing,8.0,102.0,,14,pff,1.0
 Zay Jones,WR,2017,37,2,East Carolina,7,19.0,232.8,1,0,9.71,21.0,37.032939546696426,1995-03-30,STANDARD,0,22.0,existing,4.0,24.0,,12,pff,0.0
 Curtis Samuel,WR,2017,40,2,Ohio St.,7,28.0,212.1,0,0,7.45,20.0,29.013498188255472,1996-08-11,EARLY,1,20.0,existing,97.0,770.0,,13,pff,8.0
 JuJu Smith-Schuster,WR,2017,62,2,USC,7,9.0,296.90000000000003,1,1,7.33,19.0,27.87069132741273,1996-11-22,EARLY,1,20.0,existing,5.0,27.0,,13,pff,0.0
-Cooper Kupp,WR,2017,69,3,Eastern Washington,7,1.0,554.8,1,1,5.0,23.0,40.43172199028697,1993-06-15,LATE,0,23.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Cooper Kupp,WR,2017,69,3,Eastern Washington,7,1.0,554.8,1,1,5.0,23.0,40.43172199028697,1993-06-15,LATE,0,23.0,existing,2.0,29.0,0.0,13,cfbd,
 Taywan Taylor,WR,2017,72,3,Western Kentucky,7,83.0,87.6,0,0,8.7,21.0,38.576021886388645,1995-03-02,STANDARD,0,22.0,existing,6.0,36.0,,14,pff,0.0
 ArDarius Stewart,WR,2017,79,3,Alabama,7,146.0,16.900000000000002,0,0,5.89,22.0,29.081508219111264,1993-12-08,LATE,0,23.0,existing,8.0,68.0,,12,pff,0.0
 Carlos Henderson,WR,2017,82,3,Louisiana Tech,7,999.0,0.0,0,0,5.75,20.0,37.18050114061836,1995-10-28,EARLY,1,21.0,existing,14.0,133.0,,13,pff,2.0
 Chris Godwin,WR,2017,84,3,Penn St.,7,3.0,276.1,1,1,9.66,20.0,32.41757203589985,1996-02-27,EARLY,1,21.0,existing,1.0,13.0,,14,pff,0.0
 Kenny Golladay,WR,2017,96,3,Northern Illinois,7,11.0,248.0,1,1,8.94,22.0,41.58753709198813,1993-11-03,LATE,0,23.0,existing,21.0,195.0,,12,pff,2.0
-Chad Williams,WR,2017,98,3,Grambling St.,7,127.0,41.0,0,0,9.01,21.0,37.137,1994-10-19,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Chad Williams,WR,2017,98,3,Grambling St.,7,127.0,41.0,0,0,9.01,21.0,37.137,1994-10-19,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
 Amara Darboh,WR,2017,106,3,Michigan,7,150.0,15.1,0,0,9.6,22.0,33.138606676342526,1994-02-01,LATE,0,23.0,existing,0.0,0.0,,13,pff,0.0
 Dede Westbrook,WR,2017,110,4,Oklahoma,7,34.0,175.5,0,0,4.84,22.0,38.15991108566424,1993-11-21,LATE,0,23.0,existing,10.0,101.0,,13,pff,0.0
 Josh Reynolds,WR,2017,117,4,Texas A&M,7,45.0,156.0,0,0,9.1,21.0,39.66174253843835,1995-02-16,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
@@ -93,7 +93,7 @@ DeAngelo Yancey,WR,2017,175,5,Purdue,7,999.0,0.0,0,0,9.08,21.0,33.43599886973722
 Trent Taylor,WR,2017,177,5,Louisiana Tech,7,69.0,98.0,0,0,4.0,22.0,31.675131776850247,1994-04-30,LATE,0,23.0,existing,0.0,0.0,,14,pff,0.0
 Robert Davis,WR,2017,209,6,Georgia St.,7,196.0,3.7,0,0,9.79,21.0,31.084900965462325,1995-04-02,STANDARD,0,22.0,existing,0.0,0.0,,12,pff,0.0
 Stacy Coley,WR,2017,219,7,Miami (FL),7,200.0,0.0,0,0,4.46,22.0,27.24466891133558,1994-05-13,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
-David Moore,WR,2017,226,7,East Central (OK),7,68.0,120.3,0,0,8.99,21.0,25.707,1995-01-15,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+David Moore,WR,2017,226,7,East Central (OK),7,68.0,120.3,0,0,8.99,21.0,25.707,1995-01-15,STANDARD,0,22.0,existing,,74.0,1.0,13,web_research_partial,
 Isaiah Ford,WR,2017,237,7,Virginia Tech,7,110.0,55.6,0,0,5.05,20.0,26.21121728877392,1996-02-09,EARLY,1,21.0,existing,6.0,33.0,,14,pff,0.0
 Noah Brown,WR,2017,239,7,Ohio St.,7,58.0,122.4,0,0,6.88,20.0,20.6891544270185,1996-01-06,EARLY,1,21.0,existing,0.0,0.0,,13,pff,0.0
 Malachi Dupre,WR,2017,247,7,LSU,7,999.0,0.0,0,0,7.2,21.0,25.49868478737396,1995-10-12,EARLY,1,21.0,existing,0.0,0.0,,12,pff,0.0
@@ -112,8 +112,8 @@ Antonio Callaway,WR,2018,105,4,Florida,6,56.0,132.3,0,0,6.2,20.0,21.185383244206
 DaeSean Hamilton,WR,2018,113,4,Penn St.,6,99.0,66.3,0,0,8.09,22.0,25.422521208907742,1995-03-10,LATE,0,23.0,existing,1.0,2.0,,13,pff,0.0
 Jaleel Scott,WR,2018,132,4,New Mexico St.,6,205.0,2.6,0,0,7.6,22.0,27.616366743741832,1995-02-23,LATE,0,23.0,existing,0.0,0.0,,13,pff,0.0
 J'Mon Moore,WR,2018,133,4,Missouri,6,188.0,3.5,0,0,8.43,22.0,24.848182724553613,1995-05-23,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
-Justin Watson,WR,2018,144,5,Pennsylvania,6,72.0,104.0,0,0,9.61,21.0,11.674,1996-04-04,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
-Daurice Fountain,WR,2018,159,5,Northern Iowa,6,197.0,4.300000000000001,0,0,7.98,21.0,,1995-12-22,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Justin Watson,WR,2018,144,5,Pennsylvania,6,72.0,104.0,0,0,9.61,21.0,11.674,1996-04-04,STANDARD,0,22.0,existing,11.0,52.0,0.0,13,web_research,
+Daurice Fountain,WR,2018,159,5,Northern Iowa,6,197.0,4.300000000000001,0,0,7.98,21.0,,1995-12-22,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
 Jordan Lasley,WR,2018,162,5,UCLA,6,999.0,0.0,0,0,4.47,20.0,28.753569897317767,1996-11-13,EARLY,1,21.0,existing,4.0,-6.0,,9,pff,0.0
 Marquez Valdes-Scantling,WR,2018,174,5,South Florida,6,43.0,166.1,0,0,9.26,23.0,26.713759625041845,1994-10-10,LATE,0,23.0,existing,8.0,108.0,,12,pff,1.0
 Damion Ratley,WR,2018,175,6,Texas A&M,6,128.0,38.0,0,0,9.02,22.0,24.260980905194007,1995-04-16,LATE,0,23.0,existing,0.0,0.0,,13,pff,0.0
@@ -121,7 +121,7 @@ Deon Cain,WR,2018,185,6,Clemson,6,144.0,21.4,0,0,6.47,21.0,28.778390337026533,19
 Ray-Ray McCloud,WR,2018,187,6,Clemson,6,50.0,142.5,0,0,3.71,20.0,10.569323270709557,1996-10-15,EARLY,1,21.0,existing,5.0,28.0,,14,pff,0.0
 Dylan Cantrell,WR,2018,191,6,Texas Tech,6,999.0,0.0,0,0,9.86,23.0,19.40525587828493,1994-06-29,LATE,0,23.0,existing,1.0,3.0,,13,pff,1.0
 Russell Gage,WR,2018,194,6,LSU,6,38.0,175.5,0,0,8.0,21.0,14.21105304125431,1996-01-22,STANDARD,0,22.0,existing,28.0,232.0,,13,pff,1.0
-Tremon Smith,WR,2018,196,6,Central Arkansas,6,999.0,0.0,0,0,7.305,19.0,30.0,,UNKNOWN,0,,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Tremon Smith,WR,2018,196,6,Central Arkansas,6,999.0,0.0,0,0,7.305,19.0,30.0,,UNKNOWN,0,,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
 Equanimeous St. Brown,WR,2018,207,6,Notre Dame,6,105.0,62.7,0,0,9.85,21.0,21.06574989256553,1996-09-30,EARLY,1,21.0,existing,0.0,0.0,,13,pff,0.0
 Cedrick Wilson Jr.,WR,2018,208,6,Boise St.,6,88.0,76.3,0,0,2.879192901894676,21.0,34.008179745193615,1995-11-20,STANDARD,0,22.0,existing,9.0,13.0,,14,pff,0.0
 Braxton Berrios,WR,2018,210,6,Miami (FL),6,64.0,115.1,0,0,5.68,22.0,27.962908592679582,1995-10-06,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
@@ -176,13 +176,13 @@ Lynn Bowden Jr.,WR,2020,80,3,Kentucky,4,999.0,0.0,0,0,7.9935,20.0,17.32822132010
 Bryan Edwards,WR,2020,81,3,South Carolina,4,63.0,116.2,0,0,7.9935,18.0,40.29808773903262,1998-11-13,EARLY,1,21.0,existing,2.0,22.0,,10,pff,0.0
 Devin Duvernay,WR,2020,92,3,Texas,4,67.0,110.1,0,0,7.86,21.0,32.488450545067806,1997-09-12,STANDARD,0,22.0,existing,9.0,31.0,,13,pff,1.0
 Gabriel Davis,WR,2020,128,4,Central Florida,4,999.0,0.0,0,0,6.85,19.0,38.06930693069307,1999-04-01,EARLY,1,21.0,existing,0.0,0.0,,12,pff,0.0
-Antonio Gandy-Golden,WR,2020,142,4,Liberty,4,200.0,3.5,0,0,6.13,20.0,35.949500457490366,1998-04-11,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_not_found,
+Antonio Gandy-Golden,WR,2020,142,4,Liberty,4,200.0,3.5,0,0,6.13,20.0,35.949500457490366,1998-04-11,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
 Joe Reed,WR,2020,151,5,Virginia,4,184.0,8.9,0,0,9.35,20.0,24.27555565867013,1998-01-04,STANDARD,0,22.0,existing,7.0,38.0,,13,pff,0.0
 Tyler Johnson,WR,2020,161,5,Minnesota,4,91.0,81.5,0,0,6.9192307692307695,18.0,40.97988891392298,1998-08-25,EARLY,1,21.0,existing,0.0,0.0,,13,pff,0.0
 Collin Johnson,WR,2020,165,5,Texas,4,110.0,59.2,0,0,6.9192307692307695,20.0,12.119034166445095,1997-09-23,STANDARD,0,22.0,existing,0.0,0.0,,7,pff,0.0
 Quintez Cephus,WR,2020,166,5,Wisconsin,4,102.0,66.9,0,0,4.5,19.0,35.52224601475137,1998-04-01,STANDARD,0,22.0,existing,0.0,0.0,,14,pff,0.0
 John Hightower,WR,2020,168,5,Boise St.,4,145.0,28.8,0,0,8.02,23.0,25.771675588111,1996-05-31,LATE,0,23.0,existing,16.0,154.0,,14,pff,0.0
-Isaiah Coulter,WR,2020,171,5,Rhode Island,4,227.0,0.0,0,0,6.68,,,1998-09-18,EARLY,1,21.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Isaiah Coulter,WR,2020,171,5,Rhode Island,4,227.0,0.0,0,0,6.68,,,1998-09-18,EARLY,1,21.0,existing,0.0,0.0,0.0,13,cfbd_confirmed_zero,
 Darnell Mooney,WR,2020,173,5,Tulane,4,25.0,219.7,0,0,7.04,19.0,26.46509891750653,1997-10-29,STANDARD,0,22.0,existing,0.0,0.0,,13,pff,0.0
 K.J. Osborn,WR,2020,176,5,Miami (FL),4,41.0,165.6,0,0,8.0,,17.703223445736565,1997-06-10,STANDARD,0,22.0,existing,5.0,15.0,,13,pff,0.0
 Donovan Peoples-Jones,WR,2020,187,6,Michigan,4,43.0,161.1,0,0,9.63,19.0,18.71573137074517,1999-02-19,EARLY,1,21.0,existing,2.0,-3.0,,11,pff,0.0
@@ -224,18 +224,18 @@ Racey McMath,WR,2021,205,6,LSU,3,183.0,6.4,0,0,7.43,,5.266487104146261,1999-06-1
 Jalen Camp,WR,2021,209,6,Georgia Tech,3,210.0,1.7000000000000002,0,0,9.75,22.0,24.24506387921022,1998-07-10,STANDARD,0,22.0,existing,0.0,0.0,,10,pff,0.0
 Seth Williams,WR,2021,219,6,Auburn,3,202.0,4.4,0,0,6.86,18.0,32.01953501169349,2000-04-10,EARLY,1,21.0,existing,0.0,0.0,,11,pff,0.0
 Dazz Newsome,WR,2021,221,6,North Carolina,3,204.0,4.3,0,0,2.13,20.0,19.18005897695597,1999-05-15,EARLY,1,21.0,existing,2.0,21.0,,12,pff,1.0
-Mike Strachan,WR,2021,229,7,Charleston (WV),3,175.0,8.9,0,0,9.22,,,1997-08-13,LATE,0,23.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Mike Strachan,WR,2021,229,7,Charleston (WV),3,175.0,8.9,0,0,9.22,,,1997-08-13,LATE,0,23.0,existing,,,,13,no_final_season_data,
 Tre Nixon,WR,2021,242,7,Central Florida,3,999.0,0.0,0,0,8.97,20.0,6.788731894348196,1998-01-26,LATE,0,23.0,existing,0.0,0.0,,4,pff,0.0
 Ben Skowronek,WR,2021,249,7,Notre Dame,3,88.0,84.30000000000001,0,0,6.398571428571429,23.0,24.37112437112437,1997-06-27,LATE,0,23.0,existing,2.0,17.0,,10,pff,1.0
 Kawaan Baker,WR,2021,255,7,South Alabama,3,999.0,0.0,0,0,9.08,19.0,34.28991905813098,1998-08-24,STANDARD,0,22.0,existing,13.0,42.0,,10,pff,0.0
-Dax Milne,WR,2021,258,7,BYU,3,157.0,15.7,0,0,4.56,21.0,27.043400876232205,1999-06-23,EARLY,1,21.0,existing,,67.0,0.0,13,cfbd,
+Dax Milne,WR,2021,258,7,BYU,3,157.0,15.7,0,0,4.56,21.0,27.043400876232205,1999-06-23,EARLY,1,21.0,existing,11.0,67.0,0.0,13,cfbd,
 Drake London,WR,2022,8,1,USC,2,6.0,280.8,1,1,3.5756106514109662,19.0,31.80633147113594,2001-07-24,EARLY,1,20.0,existing,1.0,2.0,,8,pff,0.0
 Garrett Wilson,WR,2022,10,1,Ohio St.,2,13.0,251.9,1,0,7.77,20.0,23.726030764908337,2000-07-22,EARLY,1,21.0,existing,4.0,76.0,,11,pff,1.0
 Chris Olave,WR,2022,11,1,Ohio St.,2,21.0,231.3,1,0,8.64,19.0,23.58116176160708,2000-06-27,EARLY,1,21.0,existing,1.0,-6.0,,12,pff,0.0
 Jameson Williams,WR,2022,12,1,Alabama,2,22.0,227.2,1,0,2.7811700881411583,20.0,31.118790656416323,2001-03-26,EARLY,1,21.0,existing,4.0,32.0,,15,pff,0.0
 Jahan Dotson,WR,2022,16,1,Penn St.,2,54.0,130.6,0,0,6.33,20.0,40.92924663420223,2000-03-22,STANDARD,0,22.0,existing,6.0,18.0,,12,pff,1.0
 Treylon Burks,WR,2022,18,1,Arkansas,2,83.0,88.10000000000001,0,0,5.79,20.0,44.84897518878101,2000-03-23,STANDARD,0,22.0,existing,14.0,124.0,,12,pff,1.0
-Christian Watson,WR,2022,34,2,North Dakota St.,2,42.0,164.10000000000002,0,0,9.96,19.0,80.0,1999-05-12,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Christian Watson,WR,2022,34,2,North Dakota St.,2,42.0,164.10000000000002,0,0,9.96,19.0,80.0,1999-05-12,STANDARD,0,22.0,existing,15.0,114.0,1.0,13,web_research,
 Wan'Dale Robinson,WR,2022,43,2,Kentucky,2,39.0,182.7,0,0,7.36,20.0,37.324553926582574,2001-01-05,EARLY,1,21.0,existing,8.0,110.0,,13,pff,0.0
 John Metchie,WR,2022,44,2,Alabama,2,102.0,65.7,0,0,8.172682926829268,20.0,19.58900059136606,2000-07-18,EARLY,1,21.0,existing,1.0,8.0,,13,pff,0.0
 Tyquan Thornton,WR,2022,50,2,Baylor,2,100.0,66.3,0,0,8.54,18.0,37.505862351975615,2000-08-07,EARLY,1,21.0,existing,0.0,0.0,,14,pff,0.0
@@ -250,12 +250,12 @@ Erik Ezukanma,WR,2022,125,4,Texas Tech,2,194.0,2.2,0,0,7.03,20.0,21.652379053694
 Romeo Doubs,WR,2022,132,4,Nevada,2,30.0,213.8,0,0,6.903333333333333,19.0,26.76585889463184,2000-04-13,STANDARD,0,22.0,existing,1.0,4.0,,11,pff,0.0
 Calvin Austin III,WR,2022,138,4,Memphis,2,102.0,60.4,0,0,9.05,21.0,31.409719987125843,1999-03-24,LATE,0,23.0,existing,1.0,69.0,,12,pff,1.0
 Khalil Shakir,WR,2022,148,5,Boise St.,2,27.0,217.9,0,0,8.31,19.0,35.360569235689155,2000-02-03,STANDARD,0,22.0,existing,21.0,130.0,,12,pff,0.0
-Montrell Washington,WR,2022,162,5,Samford,2,181.0,7.2,0,0,4.32,18.0,15.98,1999-03-14,LATE,0,23.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Montrell Washington,WR,2022,162,5,Samford,2,181.0,7.2,0,0,4.32,18.0,15.98,1999-03-14,LATE,0,23.0,existing,3.0,19.0,1.0,13,cfbd,
 Kyle Philips,WR,2022,163,5,UCLA,2,138.0,33.1,0,0,8.31,20.0,35.35372144436256,1999-06-17,STANDARD,0,22.0,existing,0.0,0.0,,11,pff,0.0
 Jalen Nailor,WR,2022,191,6,Michigan St.,2,74.0,111.3,0,0,8.09,21.0,21.647800013476186,1999-03-02,LATE,0,23.0,existing,0.0,0.0,,9,pff,0.0
 Michael Woods II,WR,2022,202,6,Oklahoma,2,999.0,0.0,0,0,7.62,,8.96441605839416,1999-08-03,STANDARD,0,22.0,existing,1.0,2.0,,11,pff,0.0
 Bo Melton,WR,2022,229,7,Rutgers,2,110.0,56.5,0,0,9.23,19.0,30.529385374607443,1999-11-10,STANDARD,0,22.0,existing,6.0,51.0,,11,pff,0.0
-Dareke Young,WR,2022,233,7,Lenoir-Rhyne,2,182.0,6.5,0,0,9.93,19.0,10.213,1999-06-04,STANDARD,0,22.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Dareke Young,WR,2022,233,7,Lenoir-Rhyne,2,182.0,6.5,0,0,9.93,19.0,10.213,1999-06-04,STANDARD,0,22.0,existing,1.0,5.0,0.0,13,web_research_derived,
 Samori Toure,WR,2022,258,7,Nebraska,2,151.0,19.2,0,0,6.14,23.0,31.90155949774342,1998-03-24,LATE,0,24.0,existing,8.0,63.0,,12,pff,1.0
 Jaxon Smith-Njigba,WR,2023,20,1,Ohio St.,1,14.0,251.6,1,0,8.34,19.0,0.55440948942754,2002-02-14,EARLY,1,21.0,existing,1.0,4.0,,3,pff,0.0
 Quentin Johnston,WR,2023,21,1,TCU,1,41.0,174.70000000000002,0,0,8.68,18.0,22.705274857592737,2001-09-06,EARLY,1,21.0,existing,3.0,-7.0,,14,pff,0.0
@@ -276,17 +276,17 @@ Charlie Jones,WR,2023,131,4,Purdue,1,166.0,14.7,0,0,2.5591365160347985,23.0,40.6
 Tyler Scott,WR,2023,133,4,Cincinnati,1,135.0,35.900000000000006,0,0,8.61,20.0,34.70177207895116,2001-10-12,EARLY,1,21.0,existing,0.0,0.0,,11,pff,0.0
 Justin Shorter,WR,2023,150,5,Florida,1,999.0,0.0,0,0,7.94,,15.469644902634592,1999-09-09,LATE,0,23.0,existing,0.0,0.0,,9,pff,0.0
 Dontayvion Wicks,WR,2023,159,5,Virginia,1,57.0,129.7,0,0,9.17,20.0,24.0142210730446,2001-06-16,EARLY,1,21.0,existing,0.0,0.0,,8,pff,0.0
-Puka Nacua,WR,2023,177,5,BYU,1,4.0,331.4,1,1,5.18,20.0,17.43973351817622,2001-05-29,EARLY,1,21.0,existing,,209.0,5.0,13,cfbd,
+Puka Nacua,WR,2023,177,5,BYU,1,4.0,331.4,1,1,5.18,20.0,17.43973351817622,2001-05-29,EARLY,1,21.0,existing,25.0,209.0,5.0,13,cfbd,
 Parker Washington,WR,2023,185,6,Penn St.,1,86.0,91.0,0,0,7.305,18.0,12.753789112145114,2002-03-21,EARLY,1,21.0,existing,2.0,8.0,,10,pff,0.0
 Kayshon Boutte,WR,2023,187,6,LSU,1,65.0,121.9,0,0,4.99,18.0,11.48310460154538,2002-05-07,EARLY,1,20.0,existing,1.0,41.0,,11,pff,0.0
 Trey Palmer,WR,2023,191,6,Nebraska,1,64.0,114.4,0,0,6.18,21.0,46.14983351831299,2001-04-02,STANDARD,0,22.0,existing,5.0,75.0,,12,pff,0.0
 A.T. Perry,WR,2023,195,6,Wake Forest,1,101.0,60.6,0,0,9.62,21.0,26.30487769907952,1999-10-26,LATE,0,23.0,existing,0.0,0.0,,13,pff,0.0
 Elijah Higgins,WR,2023,197,6,Stanford,1,999.0,0.0,0,0,8.94,21.0,18.20386758439856,2000-06-07,STANDARD,0,22.0,existing,4.0,48.0,,12,pff,0.0
 Xavier Hutchinson,WR,2023,205,6,Iowa St.,1,123.0,37.3,0,0,7.27,20.0,34.43003401531527,2000-06-01,STANDARD,0,22.0,existing,0.0,0.0,,12,pff,0.0
-Andrei Iosivas,WR,2023,206,6,Princeton,1,70.0,119.9,0,0,9.96,22.0,,1999-10-15,LATE,0,23.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
-DeMario Douglas,WR,2023,210,6,Liberty,1,999.0,0.0,0,0,7.34,21.0,31.92336970312104,2000-12-08,STANDARD,0,22.0,existing,,105.0,1.0,13,cfbd,
+Andrei Iosivas,WR,2023,206,6,Princeton,1,70.0,119.9,0,0,9.96,22.0,,1999-10-15,LATE,0,23.0,existing,4.0,10.0,0.0,13,cfbd,
+DeMario Douglas,WR,2023,210,6,Liberty,1,999.0,0.0,0,0,7.34,21.0,31.92336970312104,2000-12-08,STANDARD,0,22.0,existing,5.0,105.0,1.0,13,cfbd,
 Antoine Green,WR,2023,219,7,North Carolina,1,200.0,1.2,0,0,8.68,21.0,18.425306916251365,1999-11-15,LATE,0,23.0,existing,0.0,0.0,,9,pff,0.0
-Colton Dowell,WR,2023,228,7,UT Martin,1,199.0,1.3,0,0,9.78,22.0,34.211719369828856,1999-04-19,LATE,0,24.0,existing,0.0,0.0,0.0,13,assumed_zero_fcs,
+Colton Dowell,WR,2023,228,7,UT Martin,1,199.0,1.3,0,0,9.78,22.0,34.211719369828856,1999-04-19,LATE,0,24.0,existing,1.0,6.0,0.0,13,cfbd,
 Jalen Brooks,WR,2023,244,7,South Carolina,1,125.0,35.7,0,0,5.6,,9.631740803170477,2000-05-07,STANDARD,0,22.0,existing,4.0,51.0,,12,pff,1.0
 Ronnie Bell,WR,2023,253,7,Michigan,1,143.0,30.8,0,0,8.2,22.0,23.136847755459502,2000-01-28,LATE,0,23.0,existing,2.0,26.0,,14,pff,1.0
 Grant Dubose,WR,2023,256,7,Charlotte,1,999.0,0.0,0,0,8.79,20.0,28.836304036058184,2001-06-20,EARLY,1,21.0,existing,1.0,-1.0,,12,pff,0.0
@@ -320,7 +320,7 @@ Johnny Wilson,WR,2024,185,6,Florida St.,0,155.0,14.8,0,0,9.7,21.0,12.79418472063
 Casey Washington,WR,2024,187,6,Illinois,0,201.0,2.4000000000000004,0,0,7.15,21.0,19.19392857629474,2001-03-06,LATE,0,23.0,derived,0.0,0.0,,12,pff,0.0
 Tejhaun Palmer,WR,2024,191,6,Ala-Birmingham,0,999.0,0.0,0,0,9.57,23.0,28.282901119647587,2000-05-19,LATE,0,24.0,derived,0.0,0.0,,12,pff,0.0
 Jordan Whittington,WR,2024,213,6,Texas,0,113.0,54.7,0,0,7.305,20.0,8.239189523103533,2000-10-01,LATE,0,23.0,derived,4.0,29.0,,14,pff,0.0
-Ryan Flournoy,WR,2024,216,6,SE Missouri St.,0,146.0,18.200000000000003,0,0,9.89,20.0,,1999-10-27,LATE,0,24.0,derived,0.0,0.0,0.0,13,assumed_zero_fcs,
+Ryan Flournoy,WR,2024,216,6,SE Missouri St.,0,146.0,18.200000000000003,0,0,9.89,20.0,,1999-10-27,LATE,0,24.0,derived,6.0,49.0,1.0,13,cfbd,
 Brenden Rice,WR,2024,225,7,USC,0,999.0,0.0,0,0,7.17,21.0,25.35227535227536,2002-03-18,EARLY,1,22.0,derived,0.0,0.0,,12,pff,0.0
 Devaughn Vele,WR,2024,235,7,Utah,0,78.0,106.5,0,0,8.47,25.0,23.75231910946197,1997-12-12,LATE,0,26.0,derived,0.0,0.0,,10,pff,0.0
 Tahj Washington,WR,2024,241,7,USC,0,999.0,0.0,0,0,5.13,22.0,23.07692307692308,2001-05-16,LATE,0,23.0,derived,1.0,10.0,,13,pff,0.0
