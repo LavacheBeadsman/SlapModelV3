@@ -24,7 +24,7 @@ JJ Nelson,2015,159,5,Ala-Birmingham,11.0,CFBD (receiving games)
 Kenny Bell,2015,162,5,Nebraska,12.0,CFBD (receiving games)
 Keith Mumphery,2015,175,5,Michigan St.,11.0,CFBD (receiving games)
 Kaelin Clay,2015,184,6,Utah,10.0,CFBD (receiving games)
-Geremy Davis,2015,186,6,Connecticut,,no_data
+Geremy Davis,2015,186,6,Connecticut,12.0,no_data
 Evan Spencer,2015,187,6,Ohio St.,11.0,CFBD (receiving games)
 Bud Sasser,2015,201,6,Missouri,13.0,CFBD (receiving games)
 Darren Waller,2015,204,6,Georgia Tech,9.0,CFBD (receiving games)
@@ -51,9 +51,9 @@ Demarcus Robinson,2016,126,4,Florida,13.0,PFF
 Tajae Sharpe,2016,140,5,Massachusetts,12.0,PFF
 Jordan Payton,2016,154,5,UCLA,13.0,PFF
 Trevor Davis,2016,163,5,California,13.0,PFF
-Tyreek Hill,2016,165,5,West Alabama,,no_data (D2/NAIA)
+Tyreek Hill,2016,165,5,West Alabama,11.0,no_data (D2/NAIA)
 Rashard Higgins,2016,172,5,Colorado St.,12.0,PFF
-Moritz Boehringer,2016,180,6,,,no_data (D2/NAIA)
+Moritz Boehringer,2016,180,6,,11.0,no_data (D2/NAIA)
 Jakeem Grant,2016,186,6,Texas Tech,13.0,PFF
 Kolby Listenbee,2016,192,6,TCU,11.0,PFF
 Cody Core,2016,199,6,Mississippi,13.0,PFF
@@ -93,7 +93,7 @@ DeAngelo Yancey,2017,175,5,Purdue,12.0,PFF
 Trent Taylor,2017,177,5,Louisiana Tech,14.0,PFF
 Robert Davis,2017,209,6,Georgia St.,12.0,PFF
 Stacy Coley,2017,219,7,Miami (FL),13.0,PFF
-David Moore,2017,226,7,East Central (OK),,no_data (D2/NAIA)
+David Moore,2017,226,7,East Central (OK),11.0,no_data (D2/NAIA)
 Isaiah Ford,2017,237,7,Virginia Tech,14.0,PFF
 Noah Brown,2017,239,7,Ohio St.,13.0,PFF
 Malachi Dupre,2017,247,7,LSU,12.0,PFF
@@ -224,7 +224,7 @@ Racey McMath,2021,205,6,LSU,6.0,PFF
 Jalen Camp,2021,209,6,Georgia Tech,10.0,PFF
 Seth Williams,2021,219,6,Auburn,11.0,PFF
 Dazz Newsome,2021,221,6,North Carolina,12.0,PFF
-Mike Strachan,2021,229,7,Charleston (WV),,no_data (D2/NAIA)
+Mike Strachan,2021,229,7,Charleston (WV),11.0,no_data (D2/NAIA)
 Tre Nixon,2021,242,7,Central Florida,4.0,PFF
 Ben Skowronek,2021,249,7,Notre Dame,10.0,PFF
 Kawaan Baker,2021,255,7,South Alabama,10.0,PFF
@@ -255,7 +255,7 @@ Kyle Philips,2022,163,5,UCLA,11.0,PFF
 Jalen Nailor,2022,191,6,Michigan St.,9.0,PFF
 Michael Woods II,2022,202,6,Oklahoma,11.0,PFF
 Bo Melton,2022,229,7,Rutgers,11.0,PFF
-Dareke Young,2022,233,7,Lenoir-Rhyne,,no_data (D2/NAIA)
+Dareke Young,2022,233,7,Lenoir-Rhyne,11.0,no_data (D2/NAIA)
 Samori Toure,2022,258,7,Nebraska,12.0,PFF
 Jaxon Smith-Njigba,2023,20,1,Ohio St.,3.0,PFF
 Quentin Johnston,2023,21,1,TCU,14.0,PFF
