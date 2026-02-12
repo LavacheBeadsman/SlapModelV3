@@ -1,0 +1,186 @@
+==========================================================================================
+ANALYSIS 10: MODEL COMPONENT TESTS
+==========================================================================================
+Master dataset: 339 WRs
+With outcomes: 339
+With PFF: 284
+With games: 333
+With size: 259
+With teammates: 241
+
+==========================================================================================
+TEST 1: ENHANCED BREAKOUT SCORE (Games-Played Proration)
+==========================================================================================
+
+team_pass_att coverage: 212/339
+rec_yards coverage: 321/339
+
+enhanced_raw coverage: 212/339
+games_played used for proration: 320
+
+--- Proration Effect (top 15 biggest boosts) ---
+Player                    College             Year  Games  Factor      Raw   Enhanced  Hit24
+  Rondale Moore           Purdue              2021      3   4.33x   113.8     493.1     NO
+  Frank Darby             Arizona St.         2021      3   4.33x    50.2     217.7     NO
+  Jaxon Smith-Njigba      Ohio St.            2023      3   4.33x    10.5      45.3    YES
+  Tre Nixon               Central Florida     2021      4   3.25x    63.7     207.1     NO
+  George Pickens          Georgia             2022      4   3.25x    28.9      94.0    YES
+  Jaylen Waddle           Alabama             2021      5   2.60x   146.0     379.6    YES
+  Rashod Bateman          Minnesota           2021      5   2.60x   282.2     733.7     NO
+  Marquez Stevenson       Houston             2021      5   2.60x   101.3     263.5     NO
+  D'Wayne Eskridge        Western Michigan    2021      6   2.17x   481.7    1043.8     NO
+  Amon-Ra St. Brown       USC                 2021      6   2.17x   190.8     413.5    YES
+  Simi Fehoko             Stanford            2021      6   2.17x   260.9     565.3     NO
+  Racey McMath            LSU                 2021      6   2.17x    48.6     105.4     NO
+  Cedric Tillman          Tennessee           2023      6   2.17x    98.8     214.1     NO
+  Michael Wilson          Stanford            2023      6   2.17x    94.0     203.6    YES
+  D.K. Metcalf            Mississippi         2019      7   1.86x   142.2     264.2    YES
+
+--- Correlation Comparison: Current Breakout vs Enhanced vs Raw Production ---
+Metric                                hit24        hit12      3yr_ppg   career_ppg     N
+  Current breakout_score            +0.197*      +0.196*      +0.264*      +0.271*   219
+  Raw production (no prorate)        +0.130       +0.053       +0.053       +0.083   140
+  Enhanced (prorated)                +0.088       +0.063       -0.000       +0.018   140
+
+--- Partial Correlations (controlling for DC) ---
+Metric                                hit24        hit12      3yr_ppg   career_ppg     N
+  Current breakout_score             +0.074       +0.101      +0.145*      +0.148*   219
+  Raw production (no prorate)        -0.038       -0.102       -0.099       -0.065   140
+  Enhanced (prorated)                -0.062       -0.068       -0.101       -0.081   140
+
+
+==========================================================================================
+TEST 2: TEAMMATE ADJUSTMENT
+==========================================================================================
+
+Elite program (>150 DC): 76 WRs
+Non-elite: 263 WRs
+
+--- Partial Correlations (controlling for DC + Breakout) ---
+Approach                                   hit24        hit12      3yr_ppg   career_ppg     N
+  A: total_teammate_dc (contin.)         +0.124*      +0.164*       +0.120       +0.109   219
+  B: elite_program (binary >150)         +0.167*      +0.157*      +0.136*       +0.119   219
+  C: best_tm_score (contin.)              +0.049       +0.061       +0.082       +0.069   219
+
+--- Hit Rates: Elite Program vs Non-Elite ---
+  Elite (>150 DC)      N=  76  Hit24=34.2%  Hit12=25.0%  3yr_ppg=9.6
+  Non-elite            N= 263  Hit24=11.4%  Hit12=7.6%  3yr_ppg=6.7
+
+
+==========================================================================================
+TEST 3: SIZE COMPONENT
+==========================================================================================
+
+Size data coverage: height=259, weight=259, BMI=259
+
+--- Raw Correlations ---
+Metric                      hit24        hit12      3yr_ppg   career_ppg     N
+  Height                   +0.022       +0.036       +0.045       +0.069   187
+  Weight                   +0.001       +0.020       +0.013       +0.007   187
+  BMI                      -0.026       -0.009       -0.031       -0.063   187
+
+--- Partial Correlations (controlling for DC + Breakout) ---
+Metric                      hit24        hit12      3yr_ppg   career_ppg     N
+  Height                   +0.050       +0.066       +0.031       +0.061   187
+  Weight                   +0.022       +0.043       -0.006       -0.016   187
+  BMI                      -0.027       -0.009       -0.041       -0.085   187
+
+--- Round 2 Only: Partial Correlations (controlling for DC + Breakout) ---
+Round 2 WRs: 52, with outcomes: 52
+Metric                      hit24        hit12      3yr_ppg   career_ppg     N
+  Height                   +0.141       +0.114       +0.192       +0.219    43
+  Weight                   +0.246       +0.232      +0.310*       +0.256    43
+  BMI                      +0.191       +0.212       +0.213       +0.110    43
+
+
+==========================================================================================
+TEST 4: HEAD-TO-HEAD MODEL COMPARISON
+==========================================================================================
+
+Model                                               hit24    hit12   3yr_ppg   car_ppg   Avg_r     N
+----------------------------------------------------------------------------------------------------
+>>>A: Current (65/20/15 DC/BA/RAS)                 +0.443   +0.365    +0.462    +0.474  0.436   339
+>>>B: Two-factor (75/25 DC/BA)                     +0.456   +0.371    +0.475    +0.481  0.446   339
+----------------------------------------------------------------------------------------------------
+   C: DC/EnhBA/Tm (60/25/15)                       +0.428   +0.337    +0.390    +0.390  0.386   339
+   C: DC/EnhBA/Tm (55/25/20)                       +0.428   +0.341    +0.390    +0.390  0.387   339
+----------------------------------------------------------------------------------------------------
+   C: DC/EnhBA/Tm (60/20/20)                       +0.446   +0.358    +0.417    +0.418  0.410   339
+   C: DC/EnhBA/Tm (65/20/15)                       +0.446   +0.353    +0.417    +0.418  0.409   339
+   C: DC/EnhBA/Tm (50/30/20)                       +0.403   +0.320    +0.359    +0.358  0.360   339
+   C: DC/EnhBA/Tm (55/30/15)                       +0.404   +0.316    +0.358    +0.358  0.359   339
+   C: DC/EnhBA/Tm (70/15/15)                       +0.458   +0.365    +0.438    +0.440  0.426   339
+   D: DC/EnhBA/Tm/Sz (55/20/15/10)                 +0.436   +0.349    +0.399    +0.399  0.396   339
+   D: DC/EnhBA/Tm/Sz (50/25/15/10)                 +0.413   +0.327    +0.367    +0.366  0.368   339
+   D: DC/EnhBA/Tm/Sz (55/25/10/10)                 +0.412   +0.322    +0.364    +0.364  0.365   339
+   D: DC/EnhBA/Tm/Sz (60/20/10/10)                 +0.434   +0.342    +0.396    +0.397  0.393   339
+   D: DC/EnhBA/Tm/Sz (50/20/20/10)                 +0.436   +0.353    +0.400    +0.398  0.397   339
+   D: DC/EnhBA/Tm/Sz (45/25/20/10)                 +0.411   +0.331    +0.367    +0.366  0.369   339
+   E: Sink (50/20/10/10/10)                        +0.470   +0.375    +0.462    +0.471  0.444   284
+   E: Sink (45/20/15/10/10)                        +0.473   +0.386    +0.465    +0.473  0.449   284
+   E: Sink (50/15/15/10/10)                        +0.487   +0.402    +0.489    +0.499  0.469   284
+   E: Sink (55/15/10/10/10)                        +0.482   +0.390    +0.487    +0.497  0.464   284
+   E: Sink (45/25/10/10/10)                        +0.450   +0.354    +0.430    +0.437  0.418   284
+   E: Sink (40/20/15/15/10)                        +0.460   +0.377    +0.448    +0.454  0.435   284
+
+============================================================
+TOP 10 MODELS BY AVERAGE CORRELATION
+============================================================
+  1. E: Sink (50/15/15/10/10)                         avg_r=0.469  hit24=+0.487  N=284
+  2. E: Sink (55/15/10/10/10)                         avg_r=0.464  hit24=+0.482  N=284
+  3. E: Sink (45/20/15/10/10)                         avg_r=0.449  hit24=+0.473  N=284
+  4. B: Two-factor (75/25 DC/BA)                      avg_r=0.446  hit24=+0.456  N=339
+  5. E: Sink (50/20/10/10/10)                         avg_r=0.444  hit24=+0.470  N=284
+  6. A: Current (65/20/15 DC/BA/RAS)                  avg_r=0.436  hit24=+0.443  N=339
+  7. E: Sink (40/20/15/15/10)                         avg_r=0.435  hit24=+0.460  N=284
+  8. C: DC/EnhBA/Tm (70/15/15)                        avg_r=0.426  hit24=+0.458  N=339
+  9. E: Sink (45/25/10/10/10)                         avg_r=0.418  hit24=+0.450  N=284
+  10. C: DC/EnhBA/Tm (60/20/20)                        avg_r=0.410  hit24=+0.446  N=339
+
+============================================================
+TIER BREAKDOWN FOR TOP MODELS
+============================================================
+
+--- A: Current (65/20/15 DC/BA/RAS) ---
+Tier                    N   Hit24%   Hit12%   3yr PPG   Car PPG
+  Top 20%              68   41.2%   30.9%      9.8      9.8
+  High 20%             68   29.4%   17.6%      8.0      7.8
+  Mid 20%              67    9.0%    6.0%      5.3      5.4
+  Low 20%              68    2.9%    2.9%      5.6      5.5
+  Bottom 20%           68    0.0%    0.0%      4.1      3.4
+
+--- B: Two-factor (75/25 DC/BA) ---
+Tier                    N   Hit24%   Hit12%   3yr PPG   Car PPG
+  Top 20%              68   47.1%   30.9%     10.0     10.0
+  High 20%             68   22.1%   14.7%      7.9      7.6
+  Mid 20%              67   10.4%    9.0%      5.3      5.3
+  Low 20%              68    2.9%    2.9%      5.1      5.0
+  Bottom 20%           68    0.0%    0.0%      5.4      5.0
+
+--- E: Sink (50/15/15/10/10) ---
+Tier                    N   Hit24%   Hit12%   3yr PPG   Car PPG
+  Top 20%              57   54.4%   36.8%     10.5     10.4
+  High 20%             57   17.5%    8.8%      7.2      7.0
+  Mid 20%              56    8.9%    8.9%      6.1      6.2
+  Low 20%              57    1.8%    1.8%      4.8      4.5
+  Bottom 20%           57    1.8%    0.0%      5.8      5.5
+
+--- E: Sink (55/15/10/10/10) ---
+Tier                    N   Hit24%   Hit12%   3yr PPG   Car PPG
+  Top 20%              57   54.4%   36.8%     10.7     10.5
+  High 20%             57   17.5%    8.8%      7.0      6.9
+  Mid 20%              56    8.9%    8.9%      6.1      6.1
+  Low 20%              57    1.8%    1.8%      4.8      4.7
+  Bottom 20%           57    1.8%    0.0%      5.8      5.5
+
+--- E: Sink (45/20/15/10/10) ---
+Tier                    N   Hit24%   Hit12%   3yr PPG   Car PPG
+  Top 20%              57   49.1%   35.1%     10.2     10.1
+  High 20%             57   22.8%   10.5%      7.7      7.5
+  Mid 20%              56    7.1%    7.1%      5.9      6.0
+  Low 20%              57    3.5%    3.5%      5.0      4.8
+  Bottom 20%           57    1.8%    0.0%      6.0      5.7
+
+==========================================================================================
+ANALYSIS COMPLETE
+==========================================================================================
