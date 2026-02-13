@@ -191,9 +191,13 @@ rb['s_dc'] = rb['pick'].apply(dc_score)
 rb['s_production'] = rb.apply(
     lambda r: rb_production_score(r['rec_yards'], r['team_pass_att'], r['age']), axis=1)
 
-# Impute missing production with position average
-RB_AVG_PROD = rb['s_production'].mean()
-rb['s_production_final'] = rb['s_production'].fillna(RB_AVG_PROD)
+# Missing production: leave as NaN (no imputation — only 4 FCS/D2 players lack team pass attempts)
+# These 4 players get DC + Speed Score only (production component = NaN → excluded from weighted sum)
+rb['s_production_final'] = rb['s_production'].copy()
+n_missing_prod = rb['s_production_final'].isna().sum()
+if n_missing_prod > 0:
+    print(f"  NOTE: {n_missing_prod} RBs have NULL production (FCS/D2 missing team pass attempts)")
+    print(f"  These players will be scored with DC + Speed Score only (production penalized to 0)")
 
 # --- Speed Score with weight recovery + MNAR imputation ---
 rb['name_norm'] = rb['player_name'].apply(normalize_name)
@@ -324,10 +328,11 @@ n_imputed_40 = impute_mask.sum()
 n_mnar = (rb['weight'].isna()).sum()
 print(f"  Speed Score: {n_real_ss} real, {n_imputed_40} imputed-40, {n_mnar} MNAR-imputed")
 
-# V5 SLAP
+# V5 SLAP — missing production penalized to 0 (not imputed to average)
+rb['s_production_for_calc'] = rb['s_production_final'].fillna(0)
 rb['slap_v5'] = (
     RB_V5['dc'] * rb['s_dc'] +
-    RB_V5['production'] * rb['s_production_final'] +
+    RB_V5['production'] * rb['s_production_for_calc'] +
     RB_V5['speed_score'] * rb['s_speed_score']
 )
 
@@ -336,7 +341,7 @@ RB_AVG_RAS = 66.5
 rb['s_ras'] = rb['RAS'].apply(lambda x: x * 10 if pd.notna(x) else RB_AVG_RAS)
 rb['slap_v4'] = (
     RB_V4['dc'] * rb['s_dc'] +
-    RB_V4['production'] * rb['s_production_final'] +
+    RB_V4['production'] * rb['s_production_for_calc'] +
     RB_V4['ras'] * rb['s_ras']
 )
 
@@ -609,7 +614,7 @@ rb_db = pd.DataFrame({
     'slap_v5': rb['slap_v5'].round(1),
     'slap_v4': rb['slap_v4'].round(1),
     'dc_score': rb['s_dc'].round(1),
-    'production_score': rb['s_production_final'].round(1),
+    'production_score': rb['s_production_final'].round(1),  # NaN = missing data (not imputed)
     'speed_score_norm': rb['s_speed_score'].round(1),
     'delta_v5_dc': rb['delta_v5_dc'].round(1),
     'delta_v5_v4': rb['delta_v5_v4'].round(1),
