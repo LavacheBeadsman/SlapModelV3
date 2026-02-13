@@ -14,14 +14,14 @@ The SLAP model tries to predict which drafted RBs and WRs will become productive
 ### What Does a High SLAP Score Mean?
 A SLAP score is a 0-100 rating where higher = better projected NFL outcome.
 
-- **90+**: Elite prospect profile. Historically, 75% of WRs and 100% of RBs in this tier became fantasy-relevant (scored 24+ fantasy points in their best week).
+- **90+**: Elite prospect profile. Historically, 75% of WRs and 100% of RBs in this tier became fantasy-relevant (finished a full NFL season as a top-24 scorer at their position).
 - **80-89**: Very strong profile. 54% WR hit rate, 100% RB hit rate.
 - **70-79**: Good profile. 19% WR hit rate, 90% RB hit rate.
 - **60-69**: Average profile. 15% WR hit rate, 57% RB hit rate.
 - **50-59**: Below average. 9% WR hit rate, 37% RB hit rate.
 - **Below 50**: Poor profile. Less than 1% WR hit rate, 11% RB hit rate.
 
-In plain terms: a SLAP score of 85+ means "this player has the kind of profile that historically produces NFL starters." A score below 50 means "players with this profile almost never become relevant."
+In plain terms: a SLAP score of 85+ means "this player has the kind of profile that historically produces full-season fantasy starters." A score below 50 means "players with this profile almost never become relevant."
 
 ### What Does the Delta Tell Us?
 The "delta vs draft-only baseline" is the most content-worthy number in the model. It answers: **"Does SLAP think this player is better or worse than where they were drafted?"**
@@ -58,8 +58,8 @@ If you pick the top 10% of players by SLAP score, how good are they?
 
 | Metric | WR SLAP V5 | WR DC-Only | RB SLAP V5 | RB DC-Only |
 |--------|-----------|-----------|-----------|-----------|
-| Hit24 rate (best week scored 24+) | **63.6%** | 54.5% | **86.4%** | 81.8% |
-| Hit12 rate (best week scored 12+) | **36.4%** | 24.2% | **72.7%** | 63.6% |
+| Hit24 rate (ever top-24 at position) | **63.6%** | 54.5% | **86.4%** | 81.8% |
+| Hit12 rate (ever top-12 at position) | **36.4%** | 24.2% | **72.7%** | 63.6% |
 | Average first-3-year PPG | **11.62** | 10.86 | **15.71** | 15.19 |
 
 **This is the strongest selling point.** When the model says a player is in the top tier, it's right about 2 out of 3 times for WRs and about 6 out of 7 times for RBs. Draft capital alone would get you 1 out of 2 for WRs and 4 out of 5 for RBs. That's meaningful improvement.
@@ -151,8 +151,8 @@ Every row is one drafted player. Here's what each column means:
 | `team_pass_att` | RB: Their team's total pass attempts that season. | RB only |
 | `weight` | RB: Player's weight in pounds (from NFL Combine). | RB only |
 | `forty` | RB: 40-yard dash time in seconds (from NFL Combine). | RB only |
-| `nfl_hit24` | 1 or 0. Did the player ever score 24+ fantasy points in a single NFL week? This is the primary "success" threshold. | Both |
-| `nfl_hit12` | 1 or 0. Did the player ever score 12+ fantasy points in a single NFL week? A lower bar — basically "was ever startable." | Both |
+| `nfl_hit24` | 1 or 0. Did the player ever finish a full NFL season as a top-24 scorer at their position (WR or RB) in PPR fantasy points? This is the primary "success" threshold — it means they were a fantasy starter for at least one season. | Both |
+| `nfl_hit12` | 1 or 0. Did they ever finish a full season as a top-12 scorer at their position? A higher bar — this means they were an elite fantasy starter. | Both |
 | `nfl_first_3yr_ppg` | Average fantasy points per game over their first 3 NFL seasons. The main continuous outcome metric. | Both |
 | `nfl_career_ppg` | Average fantasy points per game across their entire NFL career. | Both |
 | `nfl_best_ppr` | Best single-season PPR fantasy points total. | Both |
