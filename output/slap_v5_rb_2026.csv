@@ -1,0 +1,55 @@
+rank,player_name,school,projected_pick,age,slap_v5,dc_score,production_score,speed_score,delta_vs_dc,production_status,speed_score_status,rec_yards,team_pass_attempts,weight
+1,Jeremiyah Love,Notre Dame,10,20.0,79.8,92.4,57.1,52.5,-12.6,observed,weight_est40,280.0,322.0,214.0
+2,Jonah Coleman,Washington,56,22.0,68.1,73.3,57.4,64.0,-5.2,observed,weight_est40,354.0,370.0,228.0
+3,Emmett Johnson,Nebraska,83,21.0,62.9,65.2,61.5,39.8,-2.4,observed,weight_est40,370.0,378.0,200.0
+4,Jadarian Price,Notre Dame,79,21.0,50.7,66.4,17.0,49.5,-15.7,observed,weight_est40,87.0,322.0,209.0
+5,Nick Singleton,Penn State,118,21.0,48.6,56.2,31.7,51.1,-7.6,imputed,weight_est40,219.0,,219.0
+6,Mike Washington Jr.,Arkansas,163,22.0,43.1,45.9,35.6,52.1,-2.8,observed,weight_est40,226.0,381.0,217.0
+7,Demond Claiborne,Wake Forest,136,21.0,41.7,51.9,21.7,29.8,-10.2,observed,weight_est40,140.0,406.0,195.0
+8,Kaytron Allen,Penn State,124,22.0,41.6,54.7,12.0,49.0,-13.1,observed,weight_est40,68.0,339.0,217.0
+9,Adam Randall,Clemson,180,21.0,40.0,42.4,33.7,47.7,-2.3,observed,weight_est40,254.0,474.0,230.0
+10,Roman Hemby,Indiana,197,23.0,34.5,38.9,23.2,44.1,-4.4,observed,weight_est40,165.0,406.0,208.0
+11,Dean Connors,Houston,250,22.0,32.9,28.8,40.4,42.0,4.1,observed,weight_est40,254.0,377.0,206.0
+12,Noah Whittington,Oregon,183,23.0,32.9,41.7,12.8,38.8,-8.8,observed,weight_est40,98.0,437.0,203.0
+13,Desmond Reid,Pittsburgh,250,21.0,32.0,28.8,42.9,8.7,3.2,observed,weight_est40,317.0,464.0,175.0
+14,Jamal Haynes,Georgia Tech,250,22.0,31.7,28.8,39.1,24.5,2.9,observed,weight_est40,257.0,394.0,190.0
+15,Kaden Feagin,Illinois,250,21.0,31.6,28.8,31.8,67.1,2.8,observed,weight_est40,188.0,372.0,250.0
+16,C.J. Donaldson,Ohio State,242,21.0,31.3,30.3,31.7,42.8,1.1,imputed,weight_est40,96.0,,225.0
+17,Savion Red,Nevada,250,21.0,30.8,28.8,31.7,50.6,2.0,imputed,weight_est40,,308.0,233.0
+18,Chip Trayanum,Toledo,250,24.0,30.8,28.8,31.7,50.6,2.0,imputed,weight_est40,212.0,,233.0
+19,Robert Henry Jr.,UTSA,250,24.0,30.5,28.8,31.7,44.7,1.7,imputed,weight_est40,114.0,,210.0
+20,Derrick Davis Jr.,LSU,250,,30.5,28.8,31.7,44.7,1.7,imputed,weight_est40,,443.0,210.0
+21,Trevion Cooley,Georgia Tech,250,24.0,30.4,28.8,31.7,44.1,1.7,imputed,weight_est40,,394.0,208.0
+22,TreVonte Citizen,LSU,250,22.0,30.4,28.8,31.7,42.8,1.6,imputed,weight_est40,,,225.0
+23,Jaydn Ott,California,250,22.0,30.3,28.8,31.7,40.9,1.5,imputed,weight_est40,,,205.0
+24,Alton McCaskill IV,Houston,250,22.0,30.3,28.8,31.7,40.9,1.5,imputed,weight_est40,,,205.0
+25,Samuel Singleton Jr.,Kansas State,250,,30.3,28.8,31.7,40.9,1.5,imputed,weight_est40,,,205.0
+26,Quinten Joyner,Texas Tech,250,20.0,30.3,28.8,31.7,40.9,1.5,imputed,weight_est40,,486.0,205.0
+27,J'Mari Taylor,Virginia,245,23.0,30.1,29.7,29.4,39.9,0.4,observed,weight_est40,253.0,492.0,204.0
+28,Barika Kpeenu,North Dakota State,250,24.0,29.9,28.8,31.7,34.0,1.1,imputed,weight_est40,211.0,,199.0
+29,Sedrick Alexander,Vanderbilt,250,,29.5,28.8,30.0,35.6,0.7,observed,weight_est40,200.0,400.0,200.0
+30,L.J. Johnson Jr.,Texas State,250,19.0,28.9,28.8,31.7,14.0,0.1,imputed,weight_est40,,361.0,180.0
+31,Byron Cardwell,San Diego State,250,23.0,27.6,28.8,21.3,50.0,-1.2,observed,weight_est40,108.0,290.0,215.0
+32,Kadarius Calloway,New Mexico State,250,22.0,27.3,28.8,22.2,37.9,-1.5,observed,weight_est40,175.0,472.0,220.0
+33,Seth McGowan,Kentucky,250,23.0,27.1,28.8,19.6,50.0,-1.7,observed,weight_est40,126.0,367.0,215.0
+34,Rueben Owens,Texas A&M,250,22.0,26.9,28.8,19.1,50.0,-1.8,observed,weight_est40,130.0,408.0,215.0
+35,Rahsul Faison,South Carolina,250,25.0,26.7,28.8,17.7,53.1,-2.1,observed,weight_est40,118.0,342.0,218.0
+36,Dominic Richardson,Tulsa,250,25.0,25.9,28.8,16.3,44.7,-2.9,observed,weight_est40,130.0,409.0,210.0
+37,Jamarion Miller,Alabama,246,22.0,24.9,29.5,12.5,38.9,-4.6,observed,weight_est40,109.0,523.0,221.0
+38,Jalen Berger,UCLA,250,24.0,24.4,28.8,10.5,50.0,-4.4,observed,weight_est40,70.0,361.0,215.0
+39,Kentrel Bullock,South Alabama,250,23.0,23.7,28.8,9.8,40.9,-5.1,observed,weight_est40,53.0,310.0,205.0
+40,Logan Diggs,Ole Miss,250,23.0,23.0,28.8,6.1,50.0,-5.7,observed,weight_est40,56.0,523.0,215.0
+41,Jaylon Glover,UNLV,250,21.0,23.0,28.8,7.6,40.9,-5.8,observed,weight_est40,51.0,424.0,205.0
+42,Andrew Paul,Jacksonville State,250,21.0,22.9,28.8,5.6,50.0,-5.9,observed,weight_est40,29.0,328.0,215.0
+43,Richard Reese,Stephen F. Austin,250,20.0,22.8,28.8,12.1,8.7,-6.0,observed,weight_est40,94.0,510.0,175.0
+44,Max Bredeson,Michigan,250,22.0,22.7,28.8,1.9,67.1,-6.1,observed,weight_est40,11.0,340.0,250.0
+45,Kaelon Black,Indiana,250,23.0,22.5,28.8,5.1,44.7,-6.3,observed,weight_est40,36.0,406.0,210.0
+46,Cam Porter,Northwestern,250,,22.3,28.8,3.7,50.0,-6.5,observed,weight_est40,23.0,378.0,215.0
+47,Djay Braswell,Georgia State,250,21.0,21.9,28.8,2.2,50.0,-6.9,observed,weight_est40,17.0,475.0,215.0
+48,Branson Robinson,Georgia State,250,21.0,21.9,28.8,2.9,45.8,-6.9,observed,weight_est40,22.0,475.0,211.0
+49,Terion Stewart,Virginia Tech,250,23.0,21.7,28.8,3.4,39.9,-7.1,observed,weight_est40,19.0,319.0,222.0
+50,Kedrick Reescano,Arizona,250,,21.6,28.8,1.6,47.9,-7.2,observed,weight_est40,12.0,447.0,213.0
+51,E.J. Smith,Texas A&M,250,23.0,21.6,28.8,2.5,42.3,-7.2,observed,imputed_mnar,18.0,408.0,
+52,Roydell Williams,Florida State,250,24.0,21.6,28.8,3.0,38.9,-7.2,observed,weight_est40,19.0,339.0,221.0
+53,Le'Veon Moss,Texas A&M,250,22.0,21.1,28.8,0.4,44.7,-7.7,observed,weight_est40,3.0,408.0,210.0
+54,Armoni Goodwin,UT Martin,250,24.0,20.9,28.8,2.2,29.8,-7.9,observed,weight_est40,18.0,443.0,195.0
