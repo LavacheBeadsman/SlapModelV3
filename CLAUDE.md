@@ -176,14 +176,29 @@ early_declare = 100 if player declared early (before senior season) else 0
 - Draft capital already captures some of this, but early declare adds a small independent signal
 - Only a 5% weight — another small tiebreaker
 
-### 5. Athletic Modifier (RB only — pending reoptimization)
+### 5. Speed Score (RB only — 5% weight)
 
 **For RBs:**
 ```
-athletic = normalize(speed_score(forty_time, weight))
+speed_score = (weight × 200) / (40_time ^ 4)
 ```
-- Uses Barnwell Speed Score: (weight × 200) / (40 time)^4
+- Uses Bill Barnwell Speed Score formula
 - Rewards players who are fast for their size
+- Normalized 0-100 within position (min-max scaling)
+
+**Missing Speed Score Handling (MNAR-aware imputation):**
+- 68% of backtest RBs have real weight + 40 time → real speed score
+- Weight recovery from combine.parquet + CFBD API → 96% have weight
+- For players with weight but no 40 time: estimate 40 from weight×round bucket averages
+- For players with no weight at all: MNAR-aware imputation
+  - Round 1-2 missing → 60th percentile speed score (elite prospects skip workouts)
+  - Round 3+ missing → 40th percentile speed score (replacement-level, no combine invite)
+
+**Why Only 5% Weight?**
+- RB reoptimization tested Speed Score at 5%, 7%, 10%, and 15% weight
+- No weight above 0% improved all 12 evaluation metrics vs the 65/35 DC/RYPTPA baseline
+- 5% chosen as a small tiebreaker — adds athlete diversity to rankings without hurting prediction
+- DC already prices in most of the athletic signal (NFL teams see combine before drafting)
 
 **Note on WR RAS (Removed in V5):**
 RAS (Relative Athletic Score) was used in previous WR SLAP versions at 15% weight.
@@ -192,16 +207,16 @@ for WRs after controlling for draft capital. The new 4-component WR model (DC / 
 Breakout / Teammate / Early Declare) outperforms the old 3-component model (DC / Breakout / RAS)
 on every metric tested. See Decision #9 for full details.
 
-RB athletic component (Speed Score) is retained for now pending RB model reoptimization.
-
 ## Decisions Made
 
-1. **Component Weights**: Position-Specific (Updated Feb 2026 — WR V5)
+1. **Component Weights**: Position-Specific (Updated Feb 2026 — Both V5 Final)
 
    **WRs (V5): 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare**
-   **RBs: 50% DC / 35% Production / 15% Speed Score** *(pending reoptimization)*
+   **RBs (V5): 65% DC / 30% Receiving Production (RYPTPA) / 5% Speed Score**
 
-   **WR V5 — 4-Component Model (Feb 2026 update):**
+   Both models are now final and locked.
+
+   **WR V5 — 4-Component Model (Feb 2026):**
 
    The WR model was reoptimized from a 3-component model (DC/Breakout/RAS) to a
    4-component model (DC/Enhanced Breakout/Teammate/Early Declare). RAS was dropped
@@ -224,10 +239,20 @@ RB athletic component (Speed Score) is retained for now pending RB model reoptim
    - 246 ranking disagreements vs pure DC (interesting content)
    - Boosted players average +1.3 PPG over dinged players (disagreements are correct)
 
-   **RB Weights Stay at 50/35/15** *(pending reoptimization)*:
-   - RB receiving production is statistically significant (p=0.004)
-   - RB model will be reoptimized with the same 4-component approach
-   - Do NOT recalculate RB scores until reoptimization is complete
+   **RB V5 — 3-Component Model (Feb 2026):**
+
+   The RB model was reoptimized from 50/35/15 (DC/Production/RAS) to 65/30/5
+   (DC/RYPTPA/Speed Score). Key findings from comprehensive reoptimization:
+
+   - DC/RYPTPA 65/35 wins 8 of 12 metrics vs any 3-component model
+   - No third component (RAS, weight, 40 time, early declare) meaningfully helps
+   - 22 PFF sub-metrics tested; RYPTPA ranked #1-2 on every outcome
+   - Speed Score added at 5% as a tiebreaker (doesn't hurt, adds athlete diversity)
+   - MNAR-aware imputation handles missing combine data (elite players skip workouts)
+
+   **Why 65/30/5 instead of 65/35/0:**
+   Speed Score at 5% doesn't improve the 12-metric battery, but it adds athlete
+   diversity to rankings and is the user's preference for content creation purposes.
 
 2. **Age Weight Function (RB Production)**: Moderate adjustment
    - Used to weight RB receiving production by college age
@@ -262,22 +287,33 @@ RB athletic component (Speed Score) is retained for now pending RB model reoptim
    WR V5 components (DC, Enhanced Breakout, Teammate, Early Declare) have near-complete
    data coverage, eliminating the missing-data problem that plagued the RAS-based model.
 
-   **RBs: Still applies** (pending reoptimization). Missing Speed Score data is handled
-   by imputing the position average:
+   **RBs (V5): MNAR-aware Speed Score imputation.**
+   Speed Score requires weight and 40-yard dash time. Coverage: 68% have both from
+   combine.parquet, 96% have weight (after CFBD API recovery).
+
    ```
-   IF Speed Score missing:
-       RB SLAP = DC × 0.50 + Production × 0.35 + Avg_SpeedScore × 0.15
-       Status: "imputed"
-   ELSE:
-       RB SLAP = DC × 0.50 + Production × 0.35 + SpeedScore × 0.15
-       Status: "observed"
+   Step 1: Weight recovery
+     - combine.parquet (primary), CFBD player search API (fallback)
+     - 215/223 RBs have weight (96%)
+
+   Step 2: 40-time estimation for players with weight but no 40
+     - Group known players into weight buckets × round buckets
+     - Assign bucket-average 40 time to missing players
+     - Calculate speed score using real weight + estimated 40
+
+   Step 3: MNAR-aware imputation for players with no weight at all
+     - Round 1-2 missing → 60th percentile of known speed scores
+     - Round 3+ missing → 40th percentile of known speed scores
+
+   Final formula:
+     RB SLAP = DC × 0.65 + RYPTPA × 0.30 + Speed_Score × 0.05
    ```
 
-   **Historical context (WR RAS):** Missing RAS data was NOT random — elite prospects
-   skipped workouts BECAUSE they were already valued (MNAR pattern). Round 1 WRs with
-   missing RAS had 100% hit rate (Waddle, Smith, London, Williams) while Round 2-7 WRs
-   with missing RAS had 0% hit rate. This asymmetry was one reason RAS was ultimately
-   removed from the WR model — it created more problems than it solved.
+   **Why MNAR-aware (not simple average)?**
+   Missing data is NOT random. Rd 1-2 RBs missing combine data (Jeanty, Harris, Mixon)
+   are elite prospects who skipped workouts — 64% hit rate. Rd 3+ missing are
+   replacement-level players — 0% hit rate. Simple average would penalize elites and
+   reward busts.
 
 7. **Season Selection for RB Production** (CRITICAL for consistency)
    - **ALWAYS use FINAL college season** (draft_year - 1)
@@ -358,7 +394,38 @@ RB athletic component (Speed Score) is retained for now pending RB model reoptim
    - Teammate = 100 if total_teammate_dc > 150, else 0
    - Early_Declare = 100 if declared early, else 0
 
-   **Status:** WR V5 formula is locked. RB model reoptimization is pending.
+   **Status:** Both WR V5 and RB V5 formulas are locked.
+
+10. **RB V5: Reoptimization Complete** (Feb 2026)
+
+   The RB model was comprehensively reoptimized. Key analyses performed:
+   - 12-metric comparison of 12 candidate configs across 4 outcomes (hit24, hit12, first_3yr_ppg, career_ppg)
+   - 22 PFF sub-metrics tested with partial correlations controlling for DC
+   - Athletic data audit: coverage bias, name matching fix, normalization, non-linearity
+   - U-shaped weight signal tested (real but too weak: p=.027 but model gain +.008 PRI-AVG)
+   - Speed Score tested with weight recovery (96% coverage) and 3 imputation strategies
+
+   **Old RB Formula (V4):**
+   ```
+   RB SLAP = DC × 0.50 + RYPTPA × 0.35 + RAS × 0.15
+   ```
+
+   **New RB Formula (V5):**
+   ```
+   RB SLAP = DC × 0.65 + RYPTPA × 0.30 + Speed_Score × 0.05
+   ```
+
+   Where:
+   - DC = `100 - 2.40 × (pick^0.62 - 1)` (gentler curve)
+   - RYPTPA = `min(99.9, (rec_yards / team_pass_att) × age_weight × 100 / 1.75)`
+   - Speed_Score = `normalize_0_100((weight × 200) / (forty ^ 4))` with MNAR imputation
+
+   **Key changes from V4 to V5:**
+   - DC weight increased: 50% → 65% (DC is by far the strongest predictor)
+   - Production weight decreased: 35% → 30% (still significant, p=0.004)
+   - RAS replaced by Speed Score at 5% (RAS had no raw measurements; Speed Score uses
+     actual weight + 40 time with better coverage via weight recovery)
+   - MNAR-aware imputation for missing athletic data
 
 ## Technical Preferences
 
@@ -401,17 +468,18 @@ SlapModelV3/
 - Early declare status (did player leave before senior season?)
 
 **For RBs specifically:**
-- Receiving yards (best college season)
+- Receiving yards (FINAL college season, not best season)
 - Team pass attempts (same season)
-- Data source: CFBD API (92.8% coverage for 2015-2024 backtest)
+- Weight and 40-yard dash time (for Speed Score)
+- Data sources: CFBD API for receiving (92.8% coverage), combine.parquet + CFBD player search for weight/40
 
 ## Commands
 
 ```bash
-# MAIN COMMAND: Recalculate ALL SLAP scores
+# MAIN COMMAND: Recalculate ALL SLAP V5 scores + full backtest analysis
 # WR V5: 70/20/5/5 (DC / Enhanced Breakout / Teammate / Early Declare)
-# RB: 50/35/15 (DC / Production / Speed Score) — pending reoptimization
-python src/recalculate_all_slap_new_dc.py   # ← needs update for V5 formula
+# RB V5: 65/30/5 (DC / RYPTPA / Speed Score)
+python src/recalculate_slap_v5.py
 
 # Fetch RB receiving stats from CFBD API
 python src/fetch_rb_receiving_stats.py
@@ -423,6 +491,7 @@ python src/update_wr_breakout.py
 python src/fill_missing_ages.py
 
 # Legacy commands (superseded)
+# python src/recalculate_all_slap_new_dc.py  # V4 weights
 # python src/generate_slap_v3_fixed.py
 # python src/calculate_2026_slap.py
 # python src/calculate_slap_unified.py
@@ -431,13 +500,16 @@ python src/fill_missing_ages.py
 
 ## Output Files
 
-### Current Output (WR V5: 70/20/5/5, RB: 50/35/15 pending reopt, gentler DC curve)
-- `output/slap_complete_database_v4.csv` - Master database with all SLAP scores (WRs + RBs, 2015-2026)
-- `output/slap_complete_all_players.csv` - All SLAP scores (WRs + RBs, 2015-2026)
-- `output/slap_complete_wr.csv` - All WR SLAP scores (2015-2026)
-- `output/slap_complete_rb.csv` - All RB SLAP scores (2015-2026)
-- `output/slap_wr_2026.csv` - 2026 WR class projections
-- `output/slap_rb_2026.csv` - 2026 RB class projections
+### Current Output (V5: WR 70/20/5/5, RB 65/30/5, gentler DC curve)
+- `output/slap_v5_database.csv` - Master V5 database with all SLAP scores (WRs + RBs, 2015-2026)
+
+### Legacy Output (V4 — superseded by V5)
+- `output/slap_complete_database_v4.csv` - V4 master database
+- `output/slap_complete_all_players.csv` - V4 all players
+- `output/slap_complete_wr.csv` - V4 WR scores
+- `output/slap_complete_rb.csv` - V4 RB scores
+- `output/slap_wr_2026.csv` - V4 2026 WR projections
+- `output/slap_rb_2026.csv` - V4 2026 RB projections
 
 ### Data Files
 - `data/rb_backtest_with_receiving.csv` - RB backtest data with receiving stats from CFBD
