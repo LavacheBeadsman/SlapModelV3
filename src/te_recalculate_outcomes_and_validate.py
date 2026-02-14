@@ -10,6 +10,11 @@ REPLACES hit24/hit12 with TE-specific thresholds:
 
 Tests 8-game and 10-game minimums side by side.
 Then re-optimizes weights and runs full validation.
+
+LOCKED WEIGHTS (Feb 2026): DC 60% / Breakout 15% / Production 15% / RAS 10%
+  - Early Declare dropped: no signal in mid-rounds where rankings matter
+  - RAS increased to 10%: appears in all top-10 configs across every analysis
+  - 4-component model: DC / Breakout (15% dominator) / Production (Rec/TPA) / RAS
 """
 
 import pandas as pd
@@ -386,19 +391,12 @@ configs = [
     ('DC/BO/Prod: 65/20/15', {'s_dc':0.65, 's_breakout_f':0.20, 's_production_f':0.15}),
     ('DC/BO/Prod: 65/15/20', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.20}),
     ('DC/BO/Prod: 60/20/20', {'s_dc':0.60, 's_breakout_f':0.20, 's_production_f':0.20}),
-    ('CURRENT: 65/15/10/5/5', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.10, 's_early_dec':0.05, 's_ras_f':0.05}),
-    ('DC/BO/Prod/ED: 70/15/10/5', {'s_dc':0.70, 's_breakout_f':0.15, 's_production_f':0.10, 's_early_dec':0.05}),
-    ('DC/BO/Prod/ED: 65/15/15/5', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.15, 's_early_dec':0.05}),
-    ('DC/BO/Prod/ED: 65/20/10/5', {'s_dc':0.65, 's_breakout_f':0.20, 's_production_f':0.10, 's_early_dec':0.05}),
-    ('DC/BO/Prod/ED: 60/20/15/5', {'s_dc':0.60, 's_breakout_f':0.20, 's_production_f':0.15, 's_early_dec':0.05}),
-    ('DC/BO/Prod/ED: 60/15/15/10', {'s_dc':0.60, 's_breakout_f':0.15, 's_production_f':0.15, 's_early_dec':0.10}),
+    ('LOCKED: 60/15/15/10', {'s_dc':0.60, 's_breakout_f':0.15, 's_production_f':0.15, 's_ras_f':0.10}),
     ('DC/BO/Prod/RAS: 65/15/15/5', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.15, 's_ras_f':0.05}),
     ('DC/BO/Prod/RAS: 65/20/10/5', {'s_dc':0.65, 's_breakout_f':0.20, 's_production_f':0.10, 's_ras_f':0.05}),
-    ('5c: 65/15/10/5/5', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.10, 's_early_dec':0.05, 's_ras_f':0.05}),
-    ('5c: 60/15/15/5/5', {'s_dc':0.60, 's_breakout_f':0.15, 's_production_f':0.15, 's_early_dec':0.05, 's_ras_f':0.05}),
-    ('5c: 70/15/5/5/5', {'s_dc':0.70, 's_breakout_f':0.15, 's_production_f':0.05, 's_early_dec':0.05, 's_ras_f':0.05}),
-    ('5c: 60/20/10/5/5', {'s_dc':0.60, 's_breakout_f':0.20, 's_production_f':0.10, 's_early_dec':0.05, 's_ras_f':0.05}),
-    ('5c: 55/20/15/5/5', {'s_dc':0.55, 's_breakout_f':0.20, 's_production_f':0.15, 's_early_dec':0.05, 's_ras_f':0.05}),
+    ('DC/BO/Prod/RAS: 65/15/10/10', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.10, 's_ras_f':0.10}),
+    ('DC/BO/Prod/RAS: 70/15/10/5', {'s_dc':0.70, 's_breakout_f':0.15, 's_production_f':0.10, 's_ras_f':0.05}),
+    ('OLD: 65/15/10/5/5', {'s_dc':0.65, 's_breakout_f':0.15, 's_production_f':0.10, 's_early_dec':0.05, 's_ras_f':0.05}),
 ]
 
 all_results = []
@@ -469,12 +467,11 @@ if best_res is not None:
 # ============================================================================
 
 print(f"\n\n{'='*120}")
-print("STEP 5: FULL VALIDATION — 65/15/10/5/5 with NEW TE-specific outcomes (10g minimum)")
+print("STEP 5: FULL VALIDATION — LOCKED 60/15/15/10 (DC/BO/Prod/RAS) with TE-specific outcomes (10g)")
 print(f"{'='*120}")
 
-eval_df['slap'] = (eval_df['s_dc']*0.65 + eval_df['s_breakout_f']*0.15 +
-                   eval_df['s_production_f']*0.10 + eval_df['s_early_dec']*0.05 +
-                   eval_df['s_ras_f']*0.05).clip(0,100)
+eval_df['slap'] = (eval_df['s_dc']*0.60 + eval_df['s_breakout_f']*0.15 +
+                   eval_df['s_production_f']*0.15 + eval_df['s_ras_f']*0.10).clip(0,100)
 eval_df['slap_dc'] = eval_df['s_dc']
 
 # --- Brier Scores ---
@@ -550,7 +547,7 @@ print(f"    {'PRI-AVG':<18} SLAP={pri_s_pt:+.4f} [{ci_ps[0]:+.4f},{ci_ps[1]:+.4f
 print(f"\n  5. TIER HIT RATE TABLE:")
 tiers = [(90,101,'90+'),(80,90,'80-89'),(70,80,'70-79'),(60,70,'60-69'),(50,60,'50-59'),(0,50,'Below 50')]
 
-for model, score_col in [('SLAP (65/15/10/5/5)','slap'), ('DC-only','slap_dc')]:
+for model, score_col in [('SLAP (60/15/15/10)','slap'), ('DC-only','slap_dc')]:
     print(f"\n    {model}:")
     print(f"    {'Tier':<12} {'N':>4} {'Top6':>5} {'Rate':>7} {'Top12':>5} {'Rate':>7} {'Best3yrPPG':>11} {'Szn10+':>7}")
     print(f"    {'-'*62}")
@@ -639,14 +636,14 @@ print(f"\n  SLAP wins {slap_wins} of {total_m} metrics vs DC-only.")
 
 print(f"\n\n{'='*120}")
 print("STEP 6: 8-GAME vs 10-GAME MINIMUM — SIDE BY SIDE")
-print("Same 65/15/10/5/5 weights, different game minimums")
+print("Same LOCKED 60/15/15/10 weights, different game minimums")
 print(f"{'='*120}")
 
 for mg in [8, 10]:
     sfx = f'_{mg}g'
     oc = [f'best_3yr_ppg{sfx}', f'top12{sfx}', f'top6{sfx}', f'best_career_ppg{sfx}']
     ow = {oc[0]:0.40, oc[1]:0.25, oc[2]:0.20, oc[3]:0.15}
-    r_s = evaluate_config(eval_df, f"SLAP {mg}g", {'s_dc':0.65,'s_breakout_f':0.15,'s_production_f':0.10,'s_early_dec':0.05,'s_ras_f':0.05}, oc, ow)
+    r_s = evaluate_config(eval_df, f"SLAP {mg}g", {'s_dc':0.60,'s_breakout_f':0.15,'s_production_f':0.15,'s_ras_f':0.10}, oc, ow)
     r_d = evaluate_config(eval_df, f"DC {mg}g", {'s_dc':1.00}, oc, ow)
     print(f"\n  {mg}-GAME MINIMUM:")
     print(f"    top6 hits: {eval_df[f'top6{sfx}'].sum():.0f}/{len(eval_df)} ({eval_df[f'top6{sfx}'].mean():.1%})")
