@@ -3,9 +3,9 @@ Rebuild backtest_outcomes_complete.csv from nflverse weekly data.
 
 Matches ALL 339 WRs + 223 RBs + 160 TEs to nflverse game logs.
 Calculates:
-  - first_3yr_ppg: BEST single-season PPR PPG in first 3 NFL seasons (min 8 games)
-  - career_ppg: BEST single-season PPR PPG across entire career (min 8 games)
-  - seasons_over_10ppg: count of seasons averaging 10+ PPR PPG (min 8 games)
+  - first_3yr_ppg: BEST single-season PPR PPG in first 3 NFL seasons (min 6 games)
+  - career_ppg: BEST single-season PPR PPG across entire career (min 6 games)
+  - seasons_over_10ppg: count of seasons averaging 10+ PPR PPG (min 6 games)
 Preserves existing hit24/hit12 from backtest files (does NOT recalculate).
 """
 import pandas as pd
@@ -20,7 +20,24 @@ rb_bt = pd.read_csv('data/rb_backtest_with_receiving.csv')
 te_bt = pd.read_csv('data/te_backtest_master.csv')
 
 draft = pd.read_parquet('data/nflverse/draft_picks.parquet')
+
+# Load weekly stats — CSV has 1999-2024, append 2025 parquet if available
 stats = pd.read_csv('data/nflverse/player_stats_all_years.csv')
+max_csv_season = int(stats['season'].max())
+print(f"  CSV covers seasons up to {max_csv_season}")
+
+import os
+parquet_2025 = 'data/nflverse/player_stats_2025.parquet'
+if os.path.exists(parquet_2025):
+    stats_2025 = pd.read_parquet(parquet_2025)
+    # Only append if 2025 isn't already in the CSV
+    if max_csv_season < 2025:
+        stats = pd.concat([stats, stats_2025], ignore_index=True)
+        print(f"  Appended 2025 parquet ({len(stats_2025)} rows) — now covers through 2025")
+    else:
+        print(f"  2025 already in CSV, skipping parquet append")
+else:
+    print(f"  WARNING: {parquet_2025} not found — 2025 draft class will have no stats")
 
 print(f"  WR backtest: {len(wr_bt)} players")
 print(f"  RB backtest: {len(rb_bt)} players")
@@ -243,8 +260,8 @@ for _, p in players_df.iterrows():
     total_games = int(player_seasons['games'].sum())
     nfl_games_total.append(total_games)
 
-    # Min 8 games per season to qualify
-    qualified = player_seasons[player_seasons['games'] >= 8]
+    # Min 6 games per season to qualify
+    qualified = player_seasons[player_seasons['games'] >= 6]
 
     # First 3 NFL seasons (draft year through draft year + 2)
     first3 = qualified[
@@ -261,7 +278,7 @@ for _, p in players_df.iterrows():
     else:
         career_ppg.append(np.nan)
 
-    # Seasons over 10 PPG (min 8 games)
+    # Seasons over 10 PPG (min 6 games)
     over_10 = qualified[qualified['ppg'] >= 10.0]
     seasons_over_10ppg.append(len(over_10))
 
@@ -288,17 +305,12 @@ for pos in ['WR', 'RB', 'TE']:
     print(f"  Have first_3yr_ppg:       {has_first3}/{len(sub)}")
     print(f"  Have career_ppg:          {has_career}/{len(sub)}")
 
-    # Show players with no NFL data (pre-2025 only — 2025 class expected)
-    pre_2025_no = no_games[no_games['draft_year'] < 2025].sort_values(['draft_year', 'pick'])
-    class_2025_no = no_games[no_games['draft_year'] == 2025]
-
-    if len(pre_2025_no) > 0:
-        print(f"  Pre-2025 with no NFL stats ({len(pre_2025_no)}):")
-        for _, r in pre_2025_no.iterrows():
+    # Show players with no NFL data
+    if len(no_games) > 0:
+        print(f"  Players with no NFL stats ({len(no_games)}):")
+        for _, r in no_games.sort_values(['draft_year', 'pick']).iterrows():
             tag = "unlinked" if pd.isna(r['player_id']) else "linked-no-stats"
             print(f"    {r['draft_year']} pick {r['pick']:>3}: {r['player_name']:<30} [{tag}]")
-    if len(class_2025_no) > 0:
-        print(f"  2025 class (rookie, no stats yet): {len(class_2025_no)} players")
 
 # ─── Devin Funchess detail ─────────────────────────────────────────
 print("\n" + "=" * 70)
@@ -317,7 +329,7 @@ if not funchess.empty:
         fs = season_stats[season_stats['player_id'] == f['player_id']].sort_values('season')
         print(f"  Season-by-season:")
         for _, s in fs.iterrows():
-            q = "qual" if s['games'] >= 8 else "NOT-qual"
+            q = "qual" if s['games'] >= 6 else "NOT-qual"
             yr_tag = " <-- first 3yr" if s['season'] <= f['draft_year'] + 2 else ""
             print(f"    {int(s['season'])}: {int(s['games']):>2} games, {s['total_ppr']:>7.1f} PPR, {s['ppg']:>6.2f} PPG [{q}]{yr_tag}")
 
@@ -338,12 +350,12 @@ print(f"\nFINAL: {len(output)} rows = {len(output[output['position']=='WR'])} WR
       f"{len(output[output['position']=='RB'])} RB + {len(output[output['position']=='TE'])} TE")
 
 # ─── Show all unmatched for user review ────────────────────────────
-no_stats_pre2025 = players_df[(players_df['nfl_games'] == 0) & (players_df['draft_year'] < 2025)]
-if not no_stats_pre2025.empty:
+no_stats_all = players_df[players_df['nfl_games'] == 0]
+if not no_stats_all.empty:
     print(f"\n{'=' * 70}")
-    print(f"ALL PRE-2025 PLAYERS WITH NO NFL STATS ({len(no_stats_pre2025)})")
+    print(f"ALL PLAYERS WITH NO NFL STATS ({len(no_stats_all)})")
     print(f"{'=' * 70}")
     print("(These should be players who genuinely never played or barely appeared)")
-    for _, r in no_stats_pre2025.sort_values(['position', 'draft_year', 'pick']).iterrows():
+    for _, r in no_stats_all.sort_values(['position', 'draft_year', 'pick']).iterrows():
         linked = "linked" if pd.notna(r['player_id']) else "UNLINKED"
         print(f"  {r['position']} {r['draft_year']} pick {r['pick']:>3}: {r['player_name']:<30} [{linked}]")
