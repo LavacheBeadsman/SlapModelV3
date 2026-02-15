@@ -1,399 +1,723 @@
-player_name,position,draft_year,pick,seasons_played,hit24,hit12,best_ppr,best_rank,first_3yr_ppg,career_ppg,nfl_seasons_in_data,first_3yr_seasons_in_data,first_3yr_games,career_games_in_data,first_3yr_complete,limited_sample,data_coverage
-Amari Cooper,WR,2015,4,10,1,1,246.5,10.0,13.143478260869566,13.7359477124183,10,3,46,153,True,False,full_coverage
-Kevin White,WR,2015,7,10,0,0,38.6,120.0,8.24,4.573333333333334,5,2,5,15,False,False,partial_first_3yr (2/3 seasons)
-Todd Gurley,RB,2015,10,10,1,1,385.3,1.0,17.997727272727275,17.575000000000003,6,3,44,88,True,False,full_coverage
-DeVante Parker,WR,2015,14,10,1,1,246.2,11.0,10.494444444444445,10.18018018018018,9,3,36,111,True,False,full_coverage
-Melvin Gordon,RB,2015,15,10,1,1,288.1,5.0,15.046511627906977,14.317857142857141,9,3,43,112,True,False,full_coverage
-Nelson Agholor,WR,2015,20,10,1,0,187.5,22.0,7.515909090909091,7.64236111111111,10,3,44,144,True,False,full_coverage
-Breshad Perriman,WR,2015,26,10,0,0,138.1,51.0,4.569230769230769,6.332000000000001,7,2,26,75,False,False,partial_first_3yr (2/3 seasons)
-Phillip Dorsett,WR,2015,29,10,0,0,100.8,70.0,5.1171428571428565,5.532051282051282,8,3,35,78,True,False,full_coverage
-T.J. Yeldon,RB,2015,36,10,1,0,173.1,22.0,10.305405405405406,10.350000000000001,6,3,37,58,True,False,full_coverage
-Devin Smith,WR,2015,37,10,0,0,26.5,141.0,3.6875,4.316666666666666,4,2,8,12,False,False,partial_first_3yr (2/3 seasons)
-Dorial Green-Beckham,WR,2015,40,10,0,0,112.9,58.0,7.146428571428571,7.146428571428571,2,2,28,28,False,False,partial_first_3yr (2/3 seasons)
-Devin Funchess,WR,2015,41,10,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Ameer Abdullah,RB,2015,54,10,0,0,125.2,38.0,8.38125,5.6811475409836065,11,3,32,122,True,False,full_coverage
-Tyler Lockett,WR,2015,69,10,1,1,265.4,8.0,9.039130434782608,11.35593220338983,11,3,46,177,True,False,full_coverage
-Jaelen Strong,WR,2015,70,10,0,0,48.1,110.0,5.176470588235294,5.176470588235294,3,3,17,17,True,False,full_coverage
-Tevin Coleman,RB,2015,73,10,1,0,193.6,18.0,10.035,9.175280898876405,8,3,40,89,True,False,full_coverage
-Chris Conley,WR,2015,76,10,0,0,156.5,43.0,5.613333333333333,6.040594059405939,10,3,30,101,True,False,full_coverage
-Duke Johnson,RB,2015,77,10,1,1,216.1,11.0,10.929166666666667,9.84020618556701,8,3,48,97,True,False,full_coverage
-David Johnson,RB,2015,86,10,1,1,407.8,1.0,19.35151515151515,14.407777777777778,8,3,33,90,True,False,full_coverage
-Sammie Coates,WR,2015,87,10,0,0,77.9,91.0,5.470588235294118,5.010526315789474,4,3,17,19,True,False,full_coverage
-Ty Montgomery,WR,2015,94,10,0,0,140.5,55.0,10.542307692307693,6.097260273972602,9,3,26,73,True,False,full_coverage
-Matt Jones,RB,2015,95,10,0,0,116.4,44.0,8.777272727272727,8.777272727272727,3,3,22,22,True,False,full_coverage
-Jamison Crowder,WR,2015,105,10,0,0,197.7,26.0,10.625531914893617,10.26774774774775,10,3,47,111,True,False,full_coverage
-Jeremy Langford,RB,2015,106,10,0,0,147.6,29.0,8.177777777777779,7.9750000000000005,3,2,27,28,False,False,partial_first_3yr (2/3 seasons)
-Justin Hardy,WR,2015,107,10,0,0,65.3,96.0,5.526666666666666,4.971428571428571,5,3,30,49,True,False,full_coverage
-Vince Mayle,WR,2015,123,10,0,0,6.2,177.0,1.55,1.55,2,2,4,4,False,False,partial_first_3yr (2/3 seasons)
-Javorius Allen,RB,2015,125,10,1,0,166.1,23.0,9.134285714285713,8.669387755102042,5,3,35,49,True,False,full_coverage
-Mike Davis,RB,2015,126,10,1,1,206.5,12.0,4.894117647058824,7.956164383561643,8,3,17,73,True,False,full_coverage
-DeAndre Smelter,WR,2015,132,10,0,0,3.3,183.0,3.3,3.3,1,1,1,1,False,False,partial_first_3yr (1/3 seasons)
-David Cobb,RB,2015,138,10,0,0,21.4,102.0,3.057142857142857,3.057142857142857,1,1,7,7,False,False,partial_first_3yr (1/3 seasons)
-Rashad Greene,WR,2015,139,10,0,0,46.3,112.0,4.1923076923076925,3.5833333333333335,3,2,13,18,False,False,partial_first_3yr (2/3 seasons)
-Stefon Diggs,WR,2015,146,10,1,1,328.6,3.0,13.52,15.875279503105594,11,3,40,161,True,False,full_coverage
-Jay Ajayi,RB,2015,149,10,1,1,215.3,11.0,10.344736842105263,9.766666666666667,5,3,38,45,True,False,full_coverage
-Karlos Williams,RB,2015,155,10,0,0,124.3,38.0,11.299999999999999,11.299999999999999,1,1,11,11,False,False,partial_first_3yr (1/3 seasons)
-Tony Lippett,WR,2015,156,10,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-JJ Nelson,WR,2015,159,10,0,0,139.1,57.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Kenny Bell,WR,2015,162,10,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Cameron Artis-Payne,RB,2015,174,10,0,0,35.1,87.0,5.735714285714287,5.427777777777779,4,3,14,18,True,False,full_coverage
-Keith Mumphery,WR,2015,175,10,0,0,26.9,140.0,3.369230769230769,3.369230769230769,2,2,13,13,False,False,partial_first_3yr (2/3 seasons)
-Ezekiel Elliott,RB,2016,4,9,1,1,329.1,2.0,21.4425,15.281185185185185,9,3,40,135,True,False,full_coverage
-Corey Coleman,WR,2016,15,9,0,0,93.3,82.0,6.856,6.856,3,3,25,25,True,False,full_coverage
-Will Fuller,WR,2016,21,9,0,0,188.9,32.0,11.216129032258063,12.34909090909091,6,3,31,55,True,False,full_coverage
-Josh Doctson,WR,2016,22,9,0,0,119.8,56.0,7.425000000000001,7.425000000000001,3,3,32,32,True,False,full_coverage
-Laquon Treadwell,WR,2016,23,9,0,0,82.4,88.0,3.79,4.494915254237288,8,3,30,59,True,False,full_coverage
-Sterling Shepard,WR,2016,40,9,0,0,184.4,30.0,11.893023255813953,10.03963963963964,10,3,43,111,True,False,full_coverage
-Derrick Henry,RB,2016,45,9,1,1,336.4,3.0,9.61,16.015657894736844,10,3,46,152,True,False,full_coverage
-Michael Thomas,WR,2016,47,9,1,1,374.6,1.0,17.653191489361703,17.218072289156627,7,3,47,83,True,False,full_coverage
-Tyler Boyd,WR,2016,55,9,1,0,222.9,17.0,10.0425,10.305925925925926,9,3,40,135,True,False,full_coverage
-Kenyan Drake,RB,2016,73,9,1,0,217.0,14.0,9.255813953488373,10.376530612244897,8,3,43,98,True,False,full_coverage
-Braxton Miller,WR,2016,85,9,0,0,41.3,117.0,3.7999999999999994,3.7999999999999994,2,2,19,19,False,False,partial_first_3yr (2/3 seasons)
-Leonte Carroo,WR,2016,86,9,0,0,18.8,156.0,3.716666666666667,3.716666666666667,3,3,12,12,True,False,full_coverage
-C.J. Prosise,RB,2016,90,9,0,0,61.0,66.0,6.908333333333334,4.976,5,3,12,25,True,False,full_coverage
-Chris Moore,WR,2016,107,9,0,0,115.1,60.0,3.697058823529412,4.863095238095239,8,3,34,84,True,False,full_coverage
-Ricardo Louis,WR,2016,114,9,0,0,62.7,93.0,4.819047619047619,4.819047619047619,2,2,21,21,False,False,partial_first_3yr (2/3 seasons)
-Pharoh Cooper,WR,2016,117,9,0,0,55.5,104.0,2.43,2.911363636363636,7,3,20,44,True,False,full_coverage
-Tyler Ervin,RB,2016,119,9,0,0,26.1,95.0,2.7333333333333334,3.0444444444444443,5,3,9,18,True,False,full_coverage
-Demarcus Robinson,WR,2016,126,9,0,0,123.5,62.0,4.875,6.226016260162601,9,2,24,123,False,False,partial_first_3yr (2/3 seasons)
-Kenneth Dixon,RB,2016,134,9,0,0,102.4,47.0,8.711111111111112,8.711111111111112,2,2,18,18,False,False,partial_first_3yr (2/3 seasons)
-Devontae Booker,RB,2016,136,9,0,0,144.1,32.0,7.153333333333332,6.88170731707317,6,3,45,82,True,False,full_coverage
-Tajae Sharpe,WR,2016,140,9,0,0,105.3,72.0,5.883333333333334,5.1066666666666665,5,2,30,60,False,False,partial_first_3yr (2/3 seasons)
-DeAndre Washington,RB,2016,143,9,0,0,121.9,40.0,5.044444444444444,5.7250000000000005,5,3,36,56,True,False,full_coverage
-Paul Perkins,RB,2016,149,9,0,0,76.8,57.0,4.92,4.48695652173913,3,2,20,23,False,False,partial_first_3yr (2/3 seasons)
-Jordan Howard,RB,2016,150,9,1,1,230.1,10.0,12.974468085106382,11.471830985915492,7,3,47,71,True,False,full_coverage
-Wendell Smallwood,RB,2016,153,9,0,0,117.4,42.0,6.56969696969697,5.413043478260869,5,3,33,46,True,False,full_coverage
-Jonathan Williams,RB,2016,156,9,0,0,40.4,80.0,1.2272727272727273,3.627586206896552,7,2,11,29,False,False,partial_first_3yr (2/3 seasons)
-Trevor Davis,WR,2016,163,9,0,0,30.4,136.0,2.47,3.2411764705882358,3,2,10,17,False,False,partial_first_3yr (2/3 seasons)
-Tyreek Hill,WR,2016,165,9,1,1,376.4,1.0,16.982978723404255,17.939310344827586,10,3,47,145,True,False,full_coverage
-Alex Collins,RB,2016,171,9,1,0,171.0,21.0,9.279411764705882,8.445833333333335,5,3,34,48,True,False,full_coverage
-Rashard Higgins,WR,2016,172,9,0,0,120.9,60.0,5.418918918918919,5.886567164179104,6,3,37,67,True,False,full_coverage
-Leonard Fournette,RB,2017,4,8,1,1,259.4,6.0,16.944444444444443,15.346250000000001,7,3,36,80,True,False,full_coverage
-Corey Davis,WR,2017,5,8,0,0,191.4,28.0,8.814285714285713,9.8,6,3,42,78,True,False,full_coverage
-Mike Williams,WR,2017,7,8,1,0,246.6,13.0,9.05,10.563636363636366,8,3,40,99,True,False,full_coverage
-Christian McCaffrey,RB,2017,8,8,1,1,471.2,1.0,22.610416666666666,22.439821428571427,9,3,48,112,True,False,full_coverage
-John Ross,WR,2017,9,8,0,0,95.0,75.0,7.4624999999999995,6.26111111111111,6,3,24,36,True,False,full_coverage
-Zay Jones,WR,2017,37,8,0,0,198.1,26.0,6.470454545454545,7.009906542056075,9,3,44,107,True,False,full_coverage
-Curtis Samuel,WR,2017,40,8,1,0,212.1,24.0,9.538888888888888,9.107407407407408,9,3,36,108,True,False,full_coverage
-Dalvin Cook,RB,2017,41,8,1,1,337.8,2.0,17.579310344827583,15.010112359550563,8,3,29,89,True,False,full_coverage
-Joe Mixon,RB,2017,48,8,1,1,287.9,4.0,13.865909090909092,15.717117117117118,8,3,44,111,True,False,full_coverage
-JuJu Smith-Schuster,WR,2017,62,8,1,1,296.9,8.0,14.824390243902437,10.772413793103448,9,3,41,116,True,False,full_coverage
-Alvin Kamara,RB,2017,67,8,1,1,377.8,1.0,20.513777777777776,18.653333333333332,9,3,45,126,True,False,full_coverage
-Cooper Kupp,WR,2017,69,8,1,1,439.5,1.0,14.935897435897436,15.764999999999999,9,3,39,120,True,False,full_coverage
-Taywan Taylor,WR,2017,72,8,0,0,87.6,80.0,4.566666666666666,4.419354838709677,4,3,30,31,True,False,full_coverage
-ArDarius Stewart,WR,2017,79,8,0,0,16.9,146.0,1.8777777777777775,1.8777777777777775,1,1,9,9,False,False,partial_first_3yr (1/3 seasons)
-Chris Godwin,WR,2017,84,8,1,1,276.1,2.0,12.306666666666665,14.154545454545454,8,3,45,110,True,False,full_coverage
-Kareem Hunt,RB,2017,86,8,1,1,295.2,4.0,17.908571428571427,12.424793388429753,9,3,35,121,True,False,full_coverage
-D'Onta Foreman,RB,2017,89,8,0,0,131.0,38.0,6.7700000000000005,7.345762711864407,7,2,10,59,False,False,partial_first_3yr (2/3 seasons)
-Kenny Golladay,WR,2017,96,8,1,1,248.0,9.0,13.088095238095239,10.816417910447761,6,3,42,67,True,False,full_coverage
-Chad Williams,WR,2017,98,8,0,0,41.0,125.0,3.15,3.15,3,3,16,16,True,False,full_coverage
-James Conner,RB,2017,105,8,1,1,280.0,5.0,12.568571428571428,14.36111111111111,9,3,35,108,True,False,full_coverage
-Amara Darboh,WR,2017,106,8,0,0,15.1,152.0,1.8875,1.8875,1,1,8,8,False,False,partial_first_3yr (1/3 seasons)
-Dede Westbrook,WR,2017,110,8,0,0,181.5,32.0,10.660526315789474,9.006382978723405,5,3,38,47,True,False,full_coverage
-Samaje Perine,RB,2017,114,8,0,0,142.1,34.0,6.488888888888889,6.4111111111111105,9,3,18,108,True,False,full_coverage
-Josh Reynolds,WR,2017,117,8,0,0,128.8,55.0,5.408571428571429,6.749019607843138,9,3,35,102,True,False,full_coverage
-Mack Hollins,WR,2017,118,8,0,0,154.16,46.0,3.5315789473684207,5.922268041237114,8,2,19,97,False,False,partial_first_3yr (2/3 seasons)
-Tarik Cohen,RB,2017,119,8,1,1,233.94,11.0,11.457916666666668,11.127058823529412,4,3,48,51,True,False,full_coverage
-Josh Malone,WR,2017,128,8,0,0,18.5,139.0,1.7249999999999999,2.1153846153846154,3,2,12,13,False,False,partial_first_3yr (2/3 seasons)
-Donnel Pumphrey,RB,2017,132,8,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Ryan Switzer,WR,2017,133,8,0,0,69.4,96.0,3.7192307692307693,3.7192307692307693,3,3,26,26,True,False,full_coverage
-Jamaal Williams,RB,2017,134,8,1,0,225.9,13.0,9.170454545454547,8.54561403508772,8,3,44,114,True,False,full_coverage
-Jehu Chesson,WR,2017,139,8,0,0,3.8,182.0,1.02,1.02,2,2,5,5,False,False,partial_first_3yr (2/3 seasons)
-Wayne Gallman,RB,2017,140,8,0,0,136.6,33.0,5.645714285714286,6.321818181818181,5,3,35,55,True,False,full_coverage
-Chad Hansen,WR,2017,141,8,0,0,46.6,121.0,3.0666666666666664,5.909090909090909,2,1,6,11,False,False,partial_first_3yr (1/3 seasons)
-Marlon Mack,RB,2017,143,8,1,0,181.3,21.0,11.567499999999999,10.245098039215685,6,3,40,51,True,False,full_coverage
-Brian Hill,RB,2017,156,8,0,0,95.4,51.0,5.417647058823529,5.681818181818182,4,3,17,33,True,False,full_coverage
-Jeremy McNichols,RB,2017,162,8,0,0,73.6,58.0,0.4,4.3118644067796605,5,1,1,59,False,False,partial_first_3yr (1/3 seasons)
-Shelton Gibson,WR,2017,166,8,0,0,5.8,178.0,2.966666666666667,2.966666666666667,2,2,3,3,False,False,partial_first_3yr (2/3 seasons)
-Rodney Adams,WR,2017,170,8,0,0,0.0,227.0,,0.0,1,0,0,1,False,False,no_nfl_stats_found
-Isaiah McKenzie,WR,2017,172,8,0,0,119.8,55.0,5.004,5.5944,7,3,25,75,True,False,full_coverage
-DeAngelo Yancey,WR,2017,175,8,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Trent Taylor,WR,2017,177,8,0,0,98.0,67.0,5.482142857142857,4.213043478260869,7,2,28,46,False,False,partial_first_3yr (2/3 seasons)
-T.J. Logan,RB,2017,179,8,0,0,10.9,106.0,1.6888888888888889,1.6888888888888889,2,2,9,9,False,False,partial_first_3yr (2/3 seasons)
-Aaron Jones,RB,2017,182,8,1,1,314.8,2.0,14.9,14.515322580645162,9,3,38,124,True,False,full_coverage
-Saquon Barkley,RB,2018,2,7,1,1,385.8,1.0,20.816129032258065,17.817924528301884,8,3,31,106,True,False,full_coverage
-D.J. Moore,WR,2018,24,7,1,1,286.5,6.0,13.065217391304348,13.151546391752575,6,3,46,97,True,False,full_coverage
-Calvin Ridley,WR,2018,26,7,1,1,281.5,5.0,15.575,13.697777777777777,7,3,44,90,True,False,full_coverage
-Rashaad Penny,RB,2018,27,7,0,0,121.7,42.0,6.2124999999999995,7.8047619047619055,6,3,24,42,True,False,full_coverage
-Sony Michel,RB,2018,31,7,0,0,152.6,31.0,9.91891891891892,8.409374999999999,5,3,37,64,True,False,full_coverage
-Nick Chubb,RB,2018,35,7,1,1,281.4,6.0,14.984090909090911,13.307,8,3,44,100,True,False,full_coverage
-Ronald Jones II,RB,2018,38,7,1,0,186.3,20.0,10.369444444444445,8.369642857142857,5,3,36,56,True,False,full_coverage
-Courtland Sutton,WR,2018,40,7,1,0,240.3,14.0,11.161212121212122,11.632982456140352,8,3,33,114,True,False,full_coverage
-Kerryon Johnson,RB,2018,43,7,0,0,139.4,34.0,9.25625,9.25625,3,3,32,32,True,False,full_coverage
-Dante Pettis,WR,2018,44,7,0,0,103.5,70.0,7.411428571428571,6.12,7,3,21,49,True,False,full_coverage
-Christian Kirk,WR,2018,47,7,1,1,243.9,11.0,11.205128205128204,11.226730769230768,8,3,39,104,True,False,full_coverage
-Anthony Miller,WR,2018,51,7,0,0,127.5,56.0,7.748260869565217,7.470400000000001,5,3,46,50,True,False,full_coverage
-Derrius Guice,RB,2018,59,7,0,0,57.4,69.0,11.48,11.48,1,1,5,5,False,False,partial_first_3yr (1/3 seasons)
-James Washington,WR,2018,60,7,0,0,133.5,54.0,6.427906976744185,5.8,5,3,43,59,True,False,full_coverage
-DJ Chark,WR,2018,61,7,1,0,225.8,17.0,,8.25,1,0,0,14,False,False,no_nfl_stats_found
-Royce Freeman,RB,2018,71,7,0,0,142.2,36.0,6.843902439024391,5.852307692307693,6,3,41,65,True,False,full_coverage
-Michael Gallup,WR,2018,81,7,1,0,212.7,24.0,10.748888888888889,9.147619047619047,6,3,45,84,True,False,full_coverage
-Tre'Quan Smith,WR,2018,91,7,0,0,103.1,72.0,7.644444444444446,7.5581818181818194,5,3,36,55,True,False,full_coverage
-Keke Coutee,WR,2018,103,7,0,0,89.0,87.0,9.295454545454545,8.625,5,3,22,24,True,False,full_coverage
-Nyheim Hines,RB,2018,104,7,1,0,193.2,15.0,10.05625,7.1739999999999995,4,1,16,50,False,False,partial_first_3yr (1/3 seasons)
-Antonio Callaway,WR,2018,105,7,0,0,132.3,55.0,6.660869565217392,6.660869565217392,3,3,23,23,True,False,full_coverage
-Mark Walton,RB,2018,112,7,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-DaeSean Hamilton,WR,2018,113,7,0,0,66.3,95.0,6.009375,6.009375,3,3,32,32,True,False,full_coverage
-Ito Smith,RB,2018,126,7,0,0,97.7,51.0,5.626470588235295,5.6485714285714295,4,3,34,35,True,False,full_coverage
-Kalen Ballage,RB,2018,131,7,0,0,93.9,52.0,5.557575757575757,4.6292682926829265,4,3,33,41,True,False,full_coverage
-Jaleel Scott,WR,2018,132,7,0,0,2.6,204.0,2.1,2.1,2,2,2,2,False,False,partial_first_3yr (2/3 seasons)
-J'Mon Moore,WR,2018,133,7,0,0,3.5,187.0,1.75,1.75,1,1,2,2,False,False,partial_first_3yr (1/3 seasons)
-Chase Edmonds,RB,2018,134,7,0,0,168.0,25.0,7.473809523809523,7.13875,6,3,42,80,True,False,full_coverage
-Justin Watson,WR,2018,144,7,0,0,89.0,77.0,5.066666666666666,4.544262295081967,7,3,12,61,True,False,full_coverage
-Daurice Fountain,WR,2018,159,7,0,0,4.3,196.0,2.15,2.15,1,1,2,2,False,False,partial_first_3yr (1/3 seasons)
-Jordan Lasley,WR,2018,162,7,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Jordan Wilkins,RB,2018,169,7,0,0,61.3,70.0,4.74054054054054,4.636585365853658,4,3,37,41,True,False,full_coverage
-Marquez Valdes-Scantling,WR,2018,174,7,0,0,137.3,54.0,7.554545454545454,6.498181818181818,8,3,44,110,True,False,full_coverage
-Josh Jacobs,RB,2019,24,6,1,1,328.3,3.0,15.090697674418605,16.11904761904762,7,3,43,105,True,False,full_coverage
-Marquise Brown,WR,2019,25,6,1,0,226.3,22.0,12.080434782608696,11.260674157303372,7,3,46,89,True,False,full_coverage
-N'Keal Harry,WR,2019,32,6,0,0,30.4,141.0,3.3777777777777778,3.6666666666666665,2,1,9,15,False,False,partial_first_3yr (1/3 seasons)
-Deebo Samuel,WR,2019,36,6,1,1,338.96000000000004,3.0,16.02,14.350153846153846,5,3,38,65,True,False,full_coverage
-A.J. Brown,WR,2019,51,6,1,1,299.6,5.0,15.011627906976743,15.922857142857143,7,3,43,105,True,False,full_coverage
-Miles Sanders,RB,2019,53,6,1,0,218.7,15.0,12.6575,10.415909090909091,7,3,40,88,True,False,full_coverage
-Mecole Hardman,WR,2019,56,6,0,0,140.9,48.0,8.21875,7.735211267605634,7,3,48,71,True,False,full_coverage
-JJ Arcega-Whiteside,WR,2019,57,6,0,0,32.9,134.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Parris Campbell,WR,2019,59,6,0,0,149.1,48.0,5.666666666666667,6.3522727272727275,6,3,15,44,True,False,full_coverage
-Andy Isabella,WR,2019,62,6,0,0,54.8,112.0,4.404761904761904,4.029166666666666,4,3,21,24,True,False,full_coverage
-D.K. Metcalf,WR,2019,64,6,1,1,273.3,7.0,14.381632653061226,13.708035714285716,7,3,49,112,True,False,full_coverage
-Diontae Johnson,WR,2019,66,6,1,1,274.4,8.0,14.112765957446808,12.338636363636363,6,3,47,88,True,False,full_coverage
-Jalen Hurd,WR,2019,67,6,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Darrell Henderson,RB,2019,70,6,0,0,163.4,27.0,9.28529411764706,9.014583333333334,5,3,34,48,True,False,full_coverage
-David Montgomery,RB,2019,73,6,1,1,264.8,4.0,14.322727272727274,13.329714285714287,7,3,44,105,True,False,full_coverage
-Devin Singletary,RB,2019,74,6,1,0,197.8,18.0,10.873333333333333,9.435818181818183,7,3,45,110,True,False,full_coverage
-Terry McLaurin,WR,2019,76,6,1,1,267.8,7.0,13.678260869565218,13.489719626168226,7,3,46,107,True,False,full_coverage
-Damien Harris,RB,2019,87,6,1,0,210.1,14.0,11.63846153846154,9.593023255813954,5,3,26,43,True,False,full_coverage
-Miles Boykin,WR,2019,93,6,0,0,69.6,99.0,4.692307692307692,3.9333333333333327,5,3,26,33,True,False,full_coverage
-Alexander Mattison,RB,2019,102,6,0,0,137.4,32.0,6.695238095238096,7.193258426966293,6,3,42,89,True,False,full_coverage
-Hakeem Butler,WR,2019,103,6,0,0,0.0,215.0,0.0,0.0,1,1,1,1,False,False,partial_first_3yr (1/3 seasons)
-Bryce Love,RB,2019,112,6,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Justice Hill,RB,2019,113,6,0,0,127.1,37.0,2.9761904761904763,5.487837837837838,6,2,21,74,False,False,partial_first_3yr (2/3 seasons)
-Gary Jennings Jr,WR,2019,120,6,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Benny Snell Jr.,RB,2019,122,6,0,0,74.9,61.0,3.741025641025641,3.919047619047619,4,3,39,42,True,False,full_coverage
-Riley Ridley,WR,2019,126,6,0,0,12.9,159.0,4.16,4.16,2,2,5,5,False,False,partial_first_3yr (2/3 seasons)
-Tony Pollard,RB,2019,128,6,1,1,248.8,8.0,8.280000000000001,11.13963963963964,7,3,45,111,True,False,full_coverage
-Ryquell Armstead,RB,2019,140,6,0,0,51.2,72.0,3.9875000000000003,3.9875000000000003,2,2,16,16,False,False,partial_first_3yr (2/3 seasons)
-Hunter Renfrow,WR,2019,149,6,1,1,259.1,10.0,11.395652173913044,9.168000000000001,6,3,46,75,True,False,full_coverage
-Qadree Ollison,RB,2019,152,6,0,0,30.7,88.0,3.9000000000000004,3.9000000000000004,3,3,13,13,True,False,full_coverage
-Jordan Scarlett,RB,2019,154,6,0,0,0.9,128.0,0.9,0.9,1,1,1,1,False,False,partial_first_3yr (1/3 seasons)
-Darius Slayton,WR,2019,171,6,0,0,170.0,37.0,8.827906976744186,8.405825242718446,7,3,43,103,True,False,full_coverage
-Henry Ruggs III,WR,2020,12,5,0,0,84.5,86.0,8.430000000000001,8.430000000000001,2,2,20,20,False,False,partial_first_3yr (2/3 seasons)
-Jerry Jeudy,WR,2020,15,5,1,1,240.9,12.0,10.897560975609755,10.463736263736264,6,3,41,91,True,False,full_coverage
-CeeDee Lamb,WR,2020,17,5,1,1,405.2000000000001,1.0,15.348979591836732,17.251063829787235,6,3,49,94,True,False,full_coverage
-Jalen Reagor,WR,2020,21,5,0,0,87.2,90.0,5.057894736842106,4.359259259259259,5,3,38,54,True,False,full_coverage
-Justin Jefferson,WR,2020,22,5,1,1,368.66,1.0,19.4652,18.047234042553193,6,3,50,94,True,False,full_coverage
-Brandon Aiyuk,WR,2020,25,5,1,0,249.2,14.0,12.946666666666667,13.149999999999999,5,3,45,68,True,False,full_coverage
-Clyde Edwards-Helaire,RB,2020,32,5,1,0,176.0,22.0,11.875757575757577,9.157692307692308,6,3,33,52,True,False,full_coverage
-Tee Higgins,WR,2020,33,5,1,0,222.1,17.0,14.758139534883721,14.681707317073172,6,3,43,82,True,False,full_coverage
-Michael Pittman Jr.,WR,2020,34,5,1,0,252.2,13.0,12.043478260869565,12.350526315789473,6,3,46,95,True,False,full_coverage
-D'Andre Swift,RB,2020,35,5,1,0,231.7,15.0,14.745000000000001,13.879775280898878,6,3,40,89,True,False,full_coverage
-Jonathan Taylor,RB,2020,41,5,1,1,373.1,1.0,17.96046511627907,18.30595238095238,6,3,43,84,True,False,full_coverage
-Laviska Shenault Jr.,WR,2020,42,5,0,0,157.1,46.0,11.221428571428572,6.903571428571428,3,1,14,28,False,False,partial_first_3yr (1/3 seasons)
-KJ Hamler,WR,2020,46,5,0,0,90.1,86.0,6.10952380952381,6.10952380952381,3,3,21,21,True,False,full_coverage
-Chase Claypool,WR,2020,49,5,1,0,214.9,23.0,10.57695652173913,9.58943396226415,4,3,46,53,True,False,full_coverage
-Cam Akers,RB,2020,52,5,0,0,141.3,35.0,9.162962962962963,7.784,6,3,27,50,True,False,full_coverage
-J.K. Dobbins,RB,2020,55,5,1,0,191.8,24.0,10.856521739130434,12.10851063829787,5,2,23,47,False,False,partial_first_3yr (2/3 seasons)
-Van Jefferson,WR,2020,57,5,0,0,168.20000000000002,36.0,7.35,5.649397590361446,6,3,40,83,True,False,full_coverage
-Denzel Mims,WR,2020,59,5,0,0,60.7,105.0,3.9857142857142853,3.9857142857142853,3,3,28,28,True,False,full_coverage
-AJ Dillon,RB,2020,62,5,1,0,185.6,23.0,,6.128571428571428,2,0,0,21,False,False,no_nfl_stats_found
-Antonio Gibson,RB,2020,66,5,1,1,229.1,10.0,13.271111111111109,10.20722891566265,6,3,45,83,True,False,full_coverage
-Ke'Shawn Vaughn,RB,2020,76,5,0,0,36.6,89.0,4.123529411764706,3.343478260869566,5,3,17,23,True,False,full_coverage
-Lynn Bowden Jr.,WR,2020,80,5,0,0,53.58,113.0,5.953333333333333,4.475294117647059,2,1,9,17,False,False,partial_first_3yr (1/3 seasons)
-Bryan Edwards,WR,2020,81,5,0,0,109.1,66.0,5.168965517241379,5.168965517241379,3,3,29,29,True,False,full_coverage
-Zack Moss,RB,2020,86,5,0,0,169.6,31.0,6.956410256410257,8.570491803278689,5,3,39,61,True,False,full_coverage
-Devin Duvernay,WR,2020,92,5,0,0,116.1,59.0,5.730232558139535,4.475806451612904,6,3,43,62,True,False,full_coverage
-Darrynton Evans,RB,2020,93,5,0,0,30.0,83.0,3.825,4.06,5,3,8,15,True,False,full_coverage
-Joshua Kelley,RB,2020,112,5,0,0,81.2,59.0,4.9393939393939394,4.409803921568627,5,3,33,51,True,False,full_coverage
-La'Mical Perine,RB,2020,120,5,0,0,52.5,77.0,5.054545454545455,5.3538461538461535,3,2,11,13,False,False,partial_first_3yr (2/3 seasons)
-Anthony McFarland Jr.,RB,2020,124,5,0,0,22.7,98.0,2.228571428571428,2.2866666666666666,4,3,14,15,True,False,full_coverage
-Gabriel Davis,WR,2020,128,5,0,0,171.6,35.0,9.443478260869565,8.838961038961038,6,3,46,77,True,False,full_coverage
-Antonio Gandy-Golden,WR,2020,142,5,0,0,3.5,199.0,0.875,0.875,1,1,4,4,False,False,partial_first_3yr (1/3 seasons)
-DeeJay Dallas,RB,2020,144,5,0,0,60.1,70.0,5.4399999999999995,4.051020408163264,6,3,30,49,True,False,full_coverage
-Joe Reed,WR,2020,151,5,0,0,8.9,184.0,2.966666666666667,2.966666666666667,1,1,3,3,False,False,partial_first_3yr (1/3 seasons)
-Tyler Johnson,WR,2020,161,5,0,0,72.0,101.0,4.516,4.793478260869565,5,2,25,46,False,False,partial_first_3yr (2/3 seasons)
-Collin Johnson,WR,2020,165,5,0,0,59.2,107.0,4.747058823529412,4.22,4,2,17,20,False,False,partial_first_3yr (2/3 seasons)
-Quintez Cephus,WR,2020,166,5,0,0,66.9,101.0,7.0470588235294125,7.0470588235294125,3,3,17,17,True,False,full_coverage
-John Hightower,WR,2020,168,5,0,0,28.8,145.0,2.88,2.88,1,1,10,10,False,False,partial_first_3yr (1/3 seasons)
-Isaiah Coulter,WR,2020,171,5,0,0,0.0,227.0,0.0,0.0,1,1,1,1,False,False,partial_first_3yr (1/3 seasons)
-Jason Huntley,RB,2020,172,5,0,0,5.1,127.0,2.0,2.0,2,2,4,4,False,False,partial_first_3yr (2/3 seasons)
-Darnell Mooney,WR,2020,173,5,1,0,219.7,23.0,10.756818181818181,9.299999999999997,6,3,44,89,True,False,full_coverage
-K.J. Osborn,WR,2020,176,5,0,0,158.5,40.0,9.238235294117647,8.232727272727272,4,2,34,55,False,False,partial_first_3yr (2/3 seasons)
-Ja'Marr Chase,WR,2021,5,4,1,1,403.0,1.0,17.99377777777778,19.593846153846155,5,3,45,78,True,False,full_coverage
-Jaylen Waddle,WR,2021,6,4,1,1,259.2,8.0,15.01276595744681,13.448717948717949,5,3,47,78,True,False,full_coverage
-DeVonta Smith,WR,2021,10,4,1,1,254.6,9.0,13.356,13.3625,5,3,50,80,True,False,full_coverage
-Kadarius Toney,WR,2021,20,4,0,0,82.36,89.0,6.279354838709677,5.886666666666667,4,3,31,33,True,False,full_coverage
-Najee Harris,RB,2021,24,4,1,1,300.7,3.0,14.110980392156861,13.18112676056338,5,3,51,71,True,False,full_coverage
-Travis Etienne,RB,2021,25,4,1,1,282.4,3.0,14.279411764705882,13.175757575757576,4,2,34,66,False,False,partial_first_3yr (2/3 seasons)
-Rashod Bateman,WR,2021,27,4,0,0,174.60000000000002,40.0,7.075757575757576,7.443548387096774,5,3,33,62,True,False,full_coverage
-Elijah Moore,WR,2021,34,4,0,0,138.2,50.0,8.741463414634145,7.580597014925373,5,3,41,67,True,False,full_coverage
-Javonte Williams,RB,2021,35,4,1,1,246.8,12.0,11.516216216216216,11.868571428571428,5,3,37,70,True,False,full_coverage
-Rondale Moore,WR,2021,49,4,0,0,111.1,63.0,7.794871794871795,7.794871794871795,3,3,39,39,True,False,full_coverage
-D'Wayne Eskridge,WR,2021,56,4,0,0,28.3,146.0,2.63125,2.6052631578947367,3,2,16,19,False,False,partial_first_3yr (2/3 seasons)
-Tutu Atwell,WR,2021,57,4,0,0,112.4,62.0,6.753846153846154,6.238775510204081,4,2,26,49,False,False,partial_first_3yr (2/3 seasons)
-Terrace Marshall Jr.,WR,2021,59,4,0,0,83.0,88.0,4.1125,4.1125,1,1,8,8,False,False,partial_first_3yr (1/3 seasons)
-Josh Palmer,WR,2021,77,4,0,0,169.3,36.0,8.997560975609757,7.773529411764706,5,3,41,68,True,False,full_coverage
-Dyami Brown,WR,2021,82,4,0,0,67.4,97.0,3.305517241379311,3.9083636363636365,5,3,29,55,True,False,full_coverage
-Amari Rodgers,WR,2021,85,4,0,0,43.1,122.0,3.7642857142857147,3.7642857142857147,3,3,14,14,True,False,full_coverage
-Trey Sermon,RB,2021,88,4,0,0,53.8,66.0,3.607142857142857,3.7250000000000005,4,3,14,28,True,False,full_coverage
-Nico Collins,WR,2021,89,4,1,1,260.4,8.0,11.31025641025641,13.30151515151515,5,3,39,66,True,False,full_coverage
-Anthony Schwartz,WR,2021,91,4,0,0,33.4,137.0,2.9000000000000004,2.9000000000000004,2,2,18,18,False,False,partial_first_3yr (2/3 seasons)
-Michael Carter,RB,2021,107,4,0,0,154.4,29.0,7.5377777777777775,7.770491803278689,5,3,45,61,True,False,full_coverage
-Dez Fitzpatrick,WR,2021,109,4,0,0,15.9,164.0,5.3,5.3,1,1,3,3,False,False,partial_first_3yr (1/3 seasons)
-Amon-Ra St. Brown,WR,2021,112,4,1,1,330.9,3.0,17.204166666666666,17.87780487804878,5,3,48,82,True,False,full_coverage
-Kene Nwangwu,RB,2021,119,4,0,0,23.0,102.0,2.983333333333333,3.113333333333333,5,3,12,15,True,False,full_coverage
-Rhamondre Stevenson,RB,2021,120,4,1,1,249.1,7.0,12.43170731707317,12.377142857142859,5,3,41,70,True,False,full_coverage
-Chuba Hubbard,RB,2021,126,4,1,0,241.6,14.0,9.106666666666667,10.383999999999999,5,3,45,75,True,False,full_coverage
-Jaelon Darden,WR,2021,129,4,0,0,11.4,175.0,1.6199999999999999,1.6181818181818182,3,2,10,11,False,False,partial_first_3yr (2/3 seasons)
-Tylan Wallace,WR,2021,131,4,0,0,36.3,123.0,1.7909090909090908,2.82,5,3,11,25,True,False,full_coverage
-Jacob Harris,WR,2021,141,4,0,0,1.6,212.0,1.6,1.6,1,1,1,1,False,False,partial_first_3yr (1/3 seasons)
-Kenneth Gainwell,RB,2021,150,4,1,0,223.3,16.0,6.299591836734694,7.2509756097560985,5,3,49,82,True,False,full_coverage
-Ihmir Smith-Marsette,WR,2021,157,4,0,0,32.5,138.0,4.730769230769231,4.821428571428571,4,3,13,14,True,False,full_coverage
-Simi Fehoko,WR,2021,179,4,0,0,16.6,148.0,4.433333333333334,3.7375000000000003,3,2,3,8,False,False,partial_first_3yr (2/3 seasons)
-Cornell Powell,WR,2021,181,4,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Drake London,WR,2022,8,3,1,1,280.8,5.0,12.6756,13.478709677419355,4,3,50,62,True,False,full_coverage
-Garrett Wilson,WR,2022,10,3,1,1,251.9,10.0,13.349019607843136,13.453448275862069,4,3,51,58,True,False,full_coverage
-Chris Olave,WR,2022,11,3,1,1,270.0,6.0,12.97948717948718,14.112727272727273,4,3,39,55,True,False,full_coverage
-Jameson Williams,WR,2022,12,3,1,1,219.1,12.0,9.32121212121212,10.533999999999999,4,3,33,50,True,False,full_coverage
-Jahan Dotson,WR,2022,16,3,0,0,130.6,51.0,6.913953488372092,6.096491228070175,4,3,43,57,True,False,full_coverage
-Treylon Burks,WR,2022,18,3,0,0,88.1,81.0,5.42,4.984848484848484,4,3,25,33,True,False,full_coverage
-Christian Watson,WR,2022,34,3,0,0,164.10000000000002,41.0,10.01891891891892,10.704255319148936,4,3,37,47,True,False,full_coverage
-Breece Hall,RB,2022,36,3,1,1,290.5,2.0,16.1625,15.25,4,3,40,56,True,False,full_coverage
-Kenneth Walker III,RB,2022,41,3,1,0,202.5,18.0,13.293333333333333,12.228125,2,1,15,32,False,False,partial_first_3yr (1/3 seasons)
-Wan'Dale Robinson,WR,2022,43,3,1,0,217.9,13.0,9.671052631578947,10.84074074074074,4,3,38,54,True,False,full_coverage
-John Metchie,WR,2022,44,3,0,0,71.9,87.0,5.54,5.54,1,1,10,10,False,False,partial_first_3yr (1/3 seasons)
-Tyquan Thornton,WR,2022,50,3,0,0,80.8,81.0,4.088,5.083333333333333,4,3,25,36,True,False,full_coverage
-George Pickens,WR,2022,52,3,1,1,289.9,5.0,11.24375,12.763076923076923,4,3,48,65,True,False,full_coverage
-Alec Pierce,WR,2022,53,3,0,0,183.3,27.0,7.53265306122449,8.631250000000001,4,3,49,64,True,False,full_coverage
-Skyy Moore,WR,2022,54,3,0,0,53.7,107.0,3.555172413793103,3.1026315789473684,4,3,29,38,True,False,full_coverage
-James Cook,RB,2022,63,3,1,1,308.2,6.0,12.348979591836732,13.837878787878788,4,3,49,66,True,False,full_coverage
-Velus Jones Jr.,WR,2022,71,3,0,0,38.0,107.0,1.1099999999999999,1.3,2,1,10,11,False,False,partial_first_3yr (1/3 seasons)
-Jalen Tolbert,WR,2022,88,3,0,0,152.0,45.0,6.75,6.053488372093024,4,3,32,43,True,False,full_coverage
-Rachaad White,RB,2022,91,3,1,1,267.9,4.0,12.679166666666667,11.563076923076924,4,3,48,65,True,False,full_coverage
-Tyrion Davis-Price,RB,2022,93,3,0,0,9.9,116.0,1.8142857142857143,1.8142857142857143,3,3,7,7,True,False,full_coverage
-Brian Robinson Jr.,RB,2022,98,3,1,0,198.1,21.0,11.478048780487804,9.352631578947367,4,3,41,57,True,False,full_coverage
-David Bell,WR,2022,99,3,0,0,48.7,113.0,4.158333333333333,4.158333333333333,3,3,24,24,True,False,full_coverage
-Danny Gray,WR,2022,105,3,0,0,2.9,204.0,0.58,0.58,1,1,5,5,False,False,partial_first_3yr (1/3 seasons)
-Dameon Pierce,RB,2022,107,3,0,0,166.4,27.0,8.360000000000001,7.794736842105264,4,3,35,38,True,False,full_coverage
-Zamir White,RB,2022,122,3,0,0,73.9,56.0,3.44375,3.2378378378378376,4,3,32,37,True,False,full_coverage
-Isaiah Spiller,RB,2022,123,3,0,0,19.0,91.0,1.957142857142857,1.957142857142857,2,2,14,14,False,False,partial_first_3yr (2/3 seasons)
-Erik Ezukanma,WR,2022,125,3,0,0,2.2,196.0,0.875,0.875,3,3,4,4,True,False,full_coverage
-Pierre Strong,RB,2022,127,3,0,0,42.8,72.0,3.757142857142857,3.757142857142857,3,3,28,28,True,False,full_coverage
-Hassan Haskins,RB,2022,131,3,0,0,32.8,80.0,3.2666666666666666,2.991304347826087,3,2,18,23,False,False,partial_first_3yr (2/3 seasons)
-Romeo Doubs,WR,2022,132,3,0,0,174.4,36.0,9.490697674418605,9.686440677966102,4,3,43,59,True,False,full_coverage
-Calvin Austin III,WR,2022,138,3,0,0,120.8,68.0,3.7642857142857147,4.960714285714286,2,1,14,28,False,False,partial_first_3yr (1/3 seasons)
-Khalil Shakir,WR,2022,148,3,0,0,182.5,36.0,8.041463414634146,8.680701754385964,4,3,41,57,True,False,full_coverage
-Tyler Allgeier,RB,2022,151,3,0,0,159.4,29.0,8.064,7.853731343283583,4,3,50,67,True,False,full_coverage
-Snoop Conner,RB,2022,154,3,0,0,10.2,113.0,2.04,2.04,1,1,5,5,False,False,partial_first_3yr (1/3 seasons)
-Jerome Ford,RB,2022,156,3,1,0,213.2,16.0,10.557575757575757,8.521739130434783,4,3,33,46,True,False,full_coverage
-Montrell Washington,WR,2022,162,3,0,0,7.2,180.0,0.8,0.8,1,1,9,9,False,False,partial_first_3yr (1/3 seasons)
-Kyle Philips,WR,2022,163,3,0,0,33.1,136.0,4.075,4.075,2,2,12,12,False,False,partial_first_3yr (2/3 seasons)
-Kyren Williams,RB,2022,164,3,1,1,272.1,7.0,15.488888888888889,15.564150943396228,4,3,36,53,True,False,full_coverage
-Ty Chandler,RB,2022,169,3,0,0,101.0,48.0,5.4750000000000005,5.392307692307693,4,3,24,26,True,False,full_coverage
-Bijan Robinson,RB,2023,8,2,1,1,374.8,2.0,18.87843137254902,18.87843137254902,3,3,51,51,True,False,full_coverage
-Jahmyr Gibbs,RB,2023,12,2,1,1,368.6,2.0,19.706122448979592,19.706122448979592,3,3,49,49,True,False,full_coverage
-Jaxon Smith-Njigba,WR,2023,20,2,1,1,361.9,2.0,14.994117647058824,14.994117647058824,3,3,51,51,True,False,full_coverage
-Quentin Johnston,WR,2023,21,2,0,0,174.70000000000002,32.0,9.82,9.82,3,3,45,45,True,False,full_coverage
-Zay Flowers,WR,2023,22,2,1,1,249.3,7.0,13.304,13.304,3,3,50,50,True,False,full_coverage
-Jordan Addison,WR,2023,23,2,1,0,221.3,21.0,12.367391304347825,12.367391304347825,3,3,46,46,True,False,full_coverage
-Jonathan Mingo,WR,2023,39,2,0,0,84.8,81.0,3.5441176470588234,3.5441176470588234,3,3,34,34,True,False,full_coverage
-Jayden Reed,WR,2023,50,2,0,0,217.2,25.0,12.176315789473684,12.176315789473684,3,3,38,38,True,False,full_coverage
-Zach Charbonnet,RB,2023,52,2,0,0,183.7,25.0,9.575510204081631,9.575510204081631,3,3,49,49,True,False,full_coverage
-Rashee Rice,WR,2023,55,2,0,0,212.5,27.0,15.75925925925926,15.75925925925926,3,3,27,27,True,False,full_coverage
-Marvin Mims,WR,2023,63,2,0,0,129.5,57.0,8.09375,8.09375,1,1,16,16,False,False,partial_first_3yr (1/3 seasons)
-Tank Dell,WR,2023,69,2,0,0,165.0,39.0,12.708333333333334,12.708333333333334,2,2,24,24,False,False,partial_first_3yr (2/3 seasons)
-Kendre Miller,RB,2023,71,2,0,0,43.3,70.0,5.284999999999999,5.284999999999999,3,3,20,20,True,False,full_coverage
-Jalin Hyatt,WR,2023,73,2,0,0,60.3,100.0,2.9642857142857144,2.9642857142857144,3,3,28,28,True,False,full_coverage
-Cedric Tillman,WR,2023,74,2,0,0,80.4,91.0,5.768750000000001,5.768750000000001,3,3,32,32,True,False,full_coverage
-Josh Downs,WR,2023,79,2,0,0,182.2,37.0,10.148936170212766,10.148936170212766,3,3,47,47,True,False,full_coverage
-Tyjae Spears,RB,2023,81,2,0,0,153.8,34.0,9.026190476190475,9.026190476190475,3,3,42,42,True,False,full_coverage
-De'Von Achane,RB,2023,84,2,1,1,322.1,5.0,18.99259259259259,18.99259259259259,2,2,27,27,False,False,partial_first_3yr (2/3 seasons)
-Tank Bigsby,RB,2023,88,2,0,0,129.0,36.0,5.323076923076924,5.323076923076924,3,3,39,39,True,False,full_coverage
-Michael Wilson,WR,2023,94,2,1,1,220.6,10.0,9.991304347826087,9.991304347826087,3,3,46,46,True,False,full_coverage
-Tre Tucker,WR,2023,100,2,0,0,161.7,38.0,7.719148936170213,7.719148936170213,3,3,47,47,True,False,full_coverage
-Roschon Johnson,RB,2023,115,2,0,0,102.1,47.0,6.248275862068965,6.248275862068965,3,3,29,29,True,False,full_coverage
-Derius Davis,WR,2023,125,2,0,0,40.1,119.0,2.7100000000000004,2.7100000000000004,3,3,30,30,True,False,full_coverage
-Charlie Jones,WR,2023,131,2,0,0,20.7,159.0,3.525,3.525,3,3,8,8,True,False,full_coverage
-Tyler Scott,WR,2023,133,2,0,0,35.9,131.0,2.6714285714285713,2.6714285714285713,2,2,14,14,False,False,partial_first_3yr (2/3 seasons)
-Israel Abanikanda,RB,2023,143,2,0,0,18.3,93.0,3.0500000000000003,3.0500000000000003,1,1,6,6,False,False,partial_first_3yr (1/3 seasons)
-Justin Shorter,WR,2023,150,2,0,0,0.0,999.0,,,0,0,0,0,False,False,no_nfl_stats_found
-Dontayvion Wicks,WR,2023,159,2,0,0,119.76,58.0,6.801333333333333,6.801333333333333,3,3,45,45,True,False,full_coverage
-Chase Brown,RB,2023,163,2,1,1,278.3,8.0,13.646511627906976,13.646511627906976,3,3,43,43,True,False,full_coverage
-Eric Gray,RB,2023,172,2,0,0,19.3,97.0,2.1533333333333333,2.1533333333333333,2,2,15,15,False,False,partial_first_3yr (2/3 seasons)
-Evan Hull,RB,2023,176,2,0,0,6.4,117.0,1.157142857142857,1.157142857142857,2,2,7,7,False,False,partial_first_3yr (2/3 seasons)
-Puka Nacua,WR,2023,177,2,1,1,377.0,1.0,20.047727272727272,20.047727272727272,3,3,44,44,True,False,full_coverage
-Marvin Harrison Jr.,WR,2024,4,1,0,0,196.5,30.0,10.483333333333334,10.483333333333334,1,1,12,12,False,True,limited_nfl_time (2 season(s) played)
-Malik Nabers,WR,2024,6,1,1,1,273.6,6.0,17.40526315789474,17.40526315789474,2,2,19,19,False,True,limited_nfl_time (2 season(s) played)
-Rome Odunze,WR,2024,9,1,0,0,146.1,41.0,10.03448275862069,10.03448275862069,2,2,29,29,False,True,limited_nfl_time (2 season(s) played)
-Brian Thomas,WR,2024,23,1,1,1,284.0,4.0,16.705882352941178,16.705882352941178,1,1,17,17,False,True,limited_nfl_time (2 season(s) played)
-Xavier Worthy,WR,2024,28,1,0,0,187.2,33.0,9.903333333333334,9.903333333333334,2,2,30,30,False,True,limited_nfl_time (2 season(s) played)
-Ricky Pearsall,WR,2024,31,1,0,0,93.5,73.0,9.584210526315792,9.584210526315792,2,2,19,19,False,True,limited_nfl_time (2 season(s) played)
-Xavier Legette,WR,2024,32,1,0,0,125.1,60.0,7.146666666666667,7.146666666666667,2,2,30,30,False,True,limited_nfl_time (2 season(s) played)
-Keon Coleman,WR,2024,33,1,0,0,111.5,60.0,8.556000000000001,8.556000000000001,2,2,25,25,False,True,limited_nfl_time (2 season(s) played)
-Ladd McConkey,WR,2024,34,1,1,1,240.9,12.0,13.18125,13.18125,2,2,32,32,False,True,limited_nfl_time (2 season(s) played)
-Ja'Lynn Polk,WR,2024,37,1,0,0,32.7,128.0,2.515384615384615,2.515384615384615,1,1,13,13,False,True,limited_nfl_time (2 season(s) played)
-Jonathon Brooks,RB,2024,46,1,0,0,7.5,108.0,2.5,2.5,1,1,3,3,False,True,limited_nfl_time (2 season(s) played)
-Adonai Mitchell,WR,2024,52,1,0,0,89.9,69.0,4.3533333333333335,4.3533333333333335,2,2,33,33,False,True,limited_nfl_time (2 season(s) played)
-Malachi Corley,WR,2024,65,1,0,0,31.6,131.0,2.282352941176471,2.282352941176471,2,2,17,17,False,True,limited_nfl_time (2 season(s) played)
-Trey Benson,RB,2024,66,1,0,0,47.0,69.0,5.15,5.15,2,2,16,16,False,True,limited_nfl_time (2 season(s) played)
-Jermaine Burton,WR,2024,80,1,0,0,14.7,155.0,3.675,3.675,1,1,4,4,False,True,limited_nfl_time (2 season(s) played)
-Blake Corum,RB,2024,83,1,0,0,122.2,40.0,5.02258064516129,5.02258064516129,2,2,31,31,False,True,limited_nfl_time (2 season(s) played)
-Roman Wilson,WR,2024,84,1,0,0,40.6,120.0,4.511111111111111,4.511111111111111,1,1,9,9,False,True,limited_nfl_time (2 season(s) played)
-MarShawn Lloyd,RB,2024,88,1,0,0,2.8,122.0,2.8,2.8,1,1,1,1,False,True,limited_nfl_time (2 season(s) played)
-Jalen McMillan,WR,2024,92,1,0,0,135.4,55.0,9.723529411764707,9.723529411764707,2,2,17,17,False,True,limited_nfl_time (2 season(s) played)
-Luke McCaffrey,WR,2024,100,1,0,0,49.3,110.0,4.4263157894736835,4.4263157894736835,2,2,19,19,False,True,limited_nfl_time (2 season(s) played)
-Troy Franklin,WR,2024,102,1,0,0,173.1,33.0,7.278787878787878,7.278787878787878,2,2,33,33,False,True,limited_nfl_time (2 season(s) played)
-Javon Baker,WR,2024,110,1,0,0,2.2,204.0,0.55,0.55,1,1,4,4,False,True,limited_nfl_time (2 season(s) played)
-Devontez Walker,WR,2024,113,1,0,0,37.6,124.0,6.671428571428572,6.671428571428572,2,2,7,7,False,True,limited_nfl_time (2 season(s) played)
-Jaylen Wright,RB,2024,120,1,0,0,50.2,70.0,3.4954545454545456,3.4954545454545456,2,2,22,22,False,True,limited_nfl_time (2 season(s) played)
-Bucky Irving,RB,2024,125,1,1,0,244.4,13.0,14.255555555555555,14.255555555555555,2,2,27,27,False,True,limited_nfl_time (2 season(s) played)
-Will Shipley,RB,2024,127,1,0,0,19.5,93.0,2.2,2.2,2,2,16,16,False,True,limited_nfl_time (2 season(s) played)
-Ray Davis,RB,2024,128,1,0,0,116.1,40.0,6.006896551724138,6.006896551724138,2,2,29,29,False,True,limited_nfl_time (2 season(s) played)
-Isaac Guerendo,RB,2024,129,1,0,0,96.2,47.0,7.4,7.4,1,1,13,13,False,True,limited_nfl_time (2 season(s) played)
-Braelon Allen,RB,2024,134,1,0,0,85.2,51.0,4.880952380952381,4.880952380952381,2,2,21,21,False,True,limited_nfl_time (2 season(s) played)
-Jacob Cowing,WR,2024,135,1,0,0,12.7,166.0,4.233333333333333,4.233333333333333,1,1,3,3,False,True,limited_nfl_time (2 season(s) played)
-Anthony Gould,WR,2024,142,1,0,0,3.3,197.0,1.9666666666666668,1.9666666666666668,2,2,3,3,False,True,limited_nfl_time (2 season(s) played)
-Audric Estime,RB,2024,147,1,0,0,48.7,67.0,3.746153846153846,3.746153846153846,1,1,13,13,False,True,limited_nfl_time (2 season(s) played)
-Ainias Smith,WR,2024,152,1,0,0,17.7,147.0,5.8999999999999995,5.8999999999999995,1,1,3,3,False,True,limited_nfl_time (2 season(s) played)
-Jamari Thrash,WR,2024,156,1,0,0,20.7,152.0,1.8499999999999999,1.8499999999999999,2,2,14,14,False,True,limited_nfl_time (2 season(s) played)
-Rasheen Ali,RB,2024,165,1,0,0,24.2,89.0,2.275,2.275,2,2,12,12,False,True,limited_nfl_time (2 season(s) played)
-Tyrone Tracy Jr.,RB,2024,166,1,0,0,182.3,26.0,10.853333333333333,10.853333333333333,1,1,15,15,False,True,limited_nfl_time (2 season(s) played)
-Keilan Robinson,RB,2024,167,1,0,0,0.0,999.0,,,0,0,0,0,False,True,limited_nfl_time (2 season(s) played)
-Bub Means,WR,2024,170,1,0,0,26.8,136.0,6.7,6.7,1,1,4,4,False,True,limited_nfl_time (2 season(s) played)
-Isaiah Davis,RB,2024,173,1,0,0,69.2,59.0,4.795833333333333,4.795833333333333,2,2,24,24,False,True,limited_nfl_time (2 season(s) played)
-Travis Hunter,WR,2025,2,0,0,0,63.8,95.0,9.114285714285716,9.114285714285716,1,1,7,7,False,True,limited_nfl_time (1 season(s) played)
-Ashton Jeanty,RB,2025,6,0,1,1,247.1,11.0,14.535294117647059,14.535294117647059,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Tetairoa McMillan,WR,2025,8,0,1,0,213.3,15.0,12.547058823529412,12.547058823529412,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Emeka Egbuka,WR,2025,19,0,1,0,193.7,24.0,11.394117647058822,11.394117647058822,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Omarion Hampton,RB,2025,22,0,0,0,135.7,35.0,15.077777777777776,15.077777777777776,1,1,9,9,False,True,limited_nfl_time (1 season(s) played)
-Matthew Golden,WR,2025,23,0,0,0,70.0,88.0,5.0,5.0,1,1,14,14,False,True,limited_nfl_time (1 season(s) played)
-Jayden Higgins,WR,2025,34,0,0,0,129.5,47.0,7.617647058823529,7.617647058823529,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Quinshon Judkins,RB,2025,36,0,0,0,167.8,26.0,11.985714285714286,11.985714285714286,1,1,14,14,False,True,limited_nfl_time (1 season(s) played)
-TreVeyon Henderson,RB,2025,38,0,1,0,208.2,20.0,12.247058823529413,12.247058823529413,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Luther Burden,WR,2025,39,0,0,0,127.9,48.0,8.526666666666667,8.526666666666667,1,1,15,15,False,True,limited_nfl_time (1 season(s) played)
-Tre Harris,WR,2025,55,0,0,0,69.4,90.0,4.3375,4.3375,1,1,16,16,False,True,limited_nfl_time (1 season(s) played)
-Jack Bech,WR,2025,58,0,0,0,42.4,119.0,3.533333333333333,3.533333333333333,1,1,12,12,False,True,limited_nfl_time (1 season(s) played)
-RJ Harvey,RB,2025,60,0,1,0,208.6,19.0,12.270588235294118,12.270588235294118,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Kyle Williams,WR,2025,69,0,0,0,49.2,111.0,3.784615384615385,3.784615384615385,1,1,13,13,False,True,limited_nfl_time (1 season(s) played)
-Isaac TeSlaa,WR,2025,70,0,0,0,75.9,82.0,5.421428571428572,5.421428571428572,1,1,14,14,False,True,limited_nfl_time (1 season(s) played)
-Pat Bryant,WR,2025,74,0,0,0,74.8,85.0,6.233333333333333,6.233333333333333,1,1,12,12,False,True,limited_nfl_time (1 season(s) played)
-Jaylin Noel,WR,2025,79,0,0,0,68.4,91.0,4.885714285714286,4.885714285714286,1,1,14,14,False,True,limited_nfl_time (1 season(s) played)
-Kaleb Johnson,RB,2025,83,0,0,0,8.8,113.0,0.8800000000000001,0.8800000000000001,1,1,10,10,False,True,limited_nfl_time (1 season(s) played)
-Savion Williams,WR,2025,87,0,0,0,27.5,142.0,2.5,2.5,1,1,11,11,False,True,limited_nfl_time (1 season(s) played)
-Tai Felton,WR,2025,102,0,0,0,5.5,193.0,1.8333333333333333,1.8333333333333333,1,1,3,3,False,True,limited_nfl_time (1 season(s) played)
-Chimere Dike,WR,2025,103,0,0,0,116.1,54.0,6.829411764705883,6.829411764705883,1,1,17,17,False,True,limited_nfl_time (1 season(s) played)
-Bhayshul Tuten,RB,2025,104,0,0,0,90.6,53.0,6.04,6.04,1,1,15,15,False,True,limited_nfl_time (1 season(s) played)
-Cam Skattebo,RB,2025,105,0,0,0,127.7,37.0,15.9625,15.9625,1,1,8,8,False,True,limited_nfl_time (1 season(s) played)
-Dont'e Thornton,WR,2025,108,0,0,0,23.5,147.0,2.1363636363636362,2.1363636363636362,1,1,11,11,False,True,limited_nfl_time (1 season(s) played)
-Arian Smith,WR,2025,110,0,0,0,13.5,172.0,1.125,1.125,1,1,12,12,False,True,limited_nfl_time (1 season(s) played)
-Trevor Etienne,RB,2025,114,0,0,0,13.7,102.0,1.7125000000000001,1.7125000000000001,1,1,8,8,False,True,limited_nfl_time (1 season(s) played)
-Woody Marks,RB,2025,116,0,0,0,145.1,30.0,9.06875,9.06875,1,1,16,16,False,True,limited_nfl_time (1 season(s) played)
-Jarquez Hunter,RB,2025,117,0,0,0,0.0,999.0,,,0,0,0,0,False,True,limited_nfl_time (1 season(s) played)
-Dylan Sampson,RB,2025,126,0,0,0,89.60000000000001,54.0,5.973333333333334,5.973333333333334,1,1,15,15,False,True,limited_nfl_time (1 season(s) played)
-Jaylin Lane,WR,2025,128,0,0,0,39.2,121.0,3.0153846153846158,3.0153846153846158,1,1,13,13,False,True,limited_nfl_time (1 season(s) played)
-Jalen Royals,WR,2025,133,0,0,0,2.4,214.0,2.4,2.4,1,1,1,1,False,True,limited_nfl_time (1 season(s) played)
-Elic Ayomanor,WR,2025,136,0,0,0,116.5,53.0,7.28125,7.28125,1,1,16,16,False,True,limited_nfl_time (1 season(s) played)
-Jordan Watkins,WR,2025,138,0,0,0,4.6000000000000005,195.0,2.3000000000000003,2.3000000000000003,1,1,2,2,False,True,limited_nfl_time (1 season(s) played)
-Jordan James,RB,2025,147,0,0,0,0.0,999.0,,,0,0,0,0,False,True,limited_nfl_time (1 season(s) played)
-Jaydon Blue,RB,2025,149,0,0,0,20.4,91.0,4.08,4.08,1,1,5,5,False,True,limited_nfl_time (1 season(s) played)
-DJ Giddens,RB,2025,151,0,0,0,9.6,110.0,1.9200000000000004,1.9200000000000004,1,1,5,5,False,True,limited_nfl_time (1 season(s) played)
-KeAndre Lambert-Smith,WR,2025,158,0,0,0,16.1,161.0,2.3000000000000003,2.3000000000000003,1,1,7,7,False,True,limited_nfl_time (1 season(s) played)
-Tory Horton,WR,2025,166,0,0,0,59.1,98.0,8.442857142857143,8.442857142857143,1,1,7,7,False,True,limited_nfl_time (1 season(s) played)
+player_name,position,draft_year,pick,hit24,hit12,first_3yr_ppg,career_ppg,seasons_over_10ppg,nfl_games
+Todd Gurley,RB,2015,10,1,1,25.686667,26.578571,6.0,88
+Melvin Gordon,RB,2015,15,1,1,19.276923,22.958333,6.0,112
+T.J. Yeldon,RB,2015,36,0,0,12.991667,12.991667,2.0,58
+Ameer Abdullah,RB,2015,54,0,0,8.885714,9.630769,0.0,110
+Tevin Coleman,RB,2015,73,1,1,14.7,14.7,3.0,89
+Duke Johnson,RB,2015,77,1,0,13.50625,13.50625,2.0,97
+David Johnson,RB,2015,86,1,1,25.4875,25.4875,5.0,90
+Matt Jones,RB,2015,95,0,0,8.953846,8.953846,0.0,22
+Jeremy Langford,RB,2015,106,0,0,9.84,9.84,0.0,28
+Javorius Allen,RB,2015,125,0,0,10.38125,10.38125,1.0,49
+Mike Davis,RB,2015,126,1,0,,14.75,1.0,73
+David Cobb,RB,2015,138,0,0,,,0.0,7
+Jay Ajayi,RB,2015,149,1,1,14.353333,14.353333,1.0,45
+Karlos Williams,RB,2015,155,0,0,11.3,11.3,1.0,11
+Cameron Artis-Payne,RB,2015,174,0,0,,,0.0,18
+Josh Robinson,RB,2015,205,0,0,,,0.0,5
+Marcus Murphy,RB,2015,230,0,0,,4.288889,0.0,13
+Kenny Hilliard,RB,2015,235,0,0,,,,0
+Ezekiel Elliott,RB,2016,4,1,1,21.94,21.94,8.0,135
+Derrick Henry,RB,2016,45,1,1,12.585,24.1625,7.0,135
+Kenyan Drake,RB,2016,73,1,0,12.8875,15.5,4.0,98
+C.J. Prosise,RB,2016,90,0,0,,3.6,0.0,25
+Tyler Ervin,RB,2016,119,0,0,,,0.0,18
+Kenneth Dixon,RB,2016,134,0,0,8.533333,8.533333,0.0,18
+Devontae Booker,RB,2016,136,0,0,8.91875,9.00625,0.0,82
+DeAndre Washington,RB,2016,143,0,0,6.553846,7.61875,0.0,56
+Paul Perkins,RB,2016,149,0,0,5.907692,5.907692,0.0,23
+Jordan Howard,RB,2016,150,1,1,15.34,15.34,4.0,71
+Wendell Smallwood,RB,2016,153,0,0,9.030769,9.030769,0.0,46
+Jonathan Williams,RB,2016,156,0,0,1.55,1.55,0.0,29
+Alex Collins,RB,2016,171,1,0,11.4,11.4,2.0,48
+Keenan Reynolds,RB,2016,182,0,0,,,,0
+Kelvin Taylor,RB,2016,211,0,0,,,,0
+Darius Jackson,RB,2016,216,0,0,,,0.0,1
+Dwayne Washington,RB,2016,236,0,0,4.427273,4.427273,0.0,32
+Daniel Lasco,RB,2016,237,0,0,,,0.0,3
+Keith Marshall,RB,2016,242,0,0,,,,0
+Zac Brooks,RB,2016,247,0,0,,,,0
+Leonard Fournette,RB,2017,4,1,1,17.707692,18.257143,6.0,80
+Christian McCaffrey,RB,2017,8,1,1,29.45,29.45,5.0,95
+Dalvin Cook,RB,2017,41,1,1,20.885714,24.128571,5.0,89
+Joe Mixon,RB,2017,48,1,1,17.385714,17.99375,7.0,111
+Alvin Kamara,RB,2017,67,1,1,23.613333,25.186667,8.0,115
+Kareem Hunt,RB,2017,86,1,1,20.927273,20.927273,6.0,104
+D'Onta Foreman,RB,2017,89,0,0,6.333333,10.433333,2.0,59
+James Conner,RB,2017,105,1,1,21.538462,21.538462,7.0,105
+Samaje Perine,RB,2017,114,0,0,8.346154,8.88125,0.0,94
+Tarik Cohen,RB,2017,119,1,1,14.62125,14.62125,2.0,51
+Joe Williams,RB,2017,121,0,0,,,,0
+Donnel Pumphrey,RB,2017,132,0,0,,,,0
+Jamaal Williams,RB,2017,134,1,0,10.45,13.288235,3.0,114
+Wayne Gallman,RB,2017,140,0,0,8.069231,9.757143,0.0,55
+Marlon Mack,RB,2017,143,1,0,14.841667,14.841667,2.0,51
+Brian Hill,RB,2017,156,0,0,6.72,6.72,0.0,33
+Jeremy McNichols,RB,2017,162,0,0,,5.661538,0.0,43
+T.J. Logan,RB,2017,179,0,0,,,0.0,9
+Aaron Jones,RB,2017,182,1,1,19.675,19.675,7.0,112
+Elijah McGuire,RB,2017,188,0,0,10.7375,10.7375,1.0,23
+De'Angelo Henderson,RB,2017,203,0,0,,,0.0,4
+Brandon Wilson,RB,2017,207,0,0,,,0.0,2
+Devante Mays,RB,2017,238,0,0,,,0.0,2
+Khalfani Muhammad,RB,2017,241,0,0,,,,0
+Elijah Hood,RB,2017,242,0,0,,,,0
+Chris Carson,RB,2017,249,1,0,15.506667,15.65,3.0,49
+Matthew Dayes,RB,2017,252,0,0,,,0.0,5
+Saquon Barkley,RB,2018,2,1,1,24.1125,24.1125,6.0,90
+Rashaad Penny,RB,2018,27,0,0,8.366667,12.17,1.0,42
+Sony Michel,RB,2018,31,1,0,10.7,10.7,1.0,64
+Nick Chubb,RB,2018,35,1,1,17.308333,17.308333,5.0,85
+Ronald Jones II,RB,2018,38,0,0,13.307143,13.307143,2.0,56
+Kerryon Johnson,RB,2018,43,0,0,13.94,13.94,2.0,32
+Derrius Guice,RB,2018,59,0,0,,,0.0,5
+Royce Freeman,RB,2018,71,0,0,8.8875,8.8875,0.0,65
+Nyheim Hines,RB,2018,104,0,0,12.075,12.075,2.0,81
+Mark Walton,RB,2018,112,0,0,,,0.0,13
+Ito Smith,RB,2018,126,0,0,7.515385,7.515385,0.0,35
+Kalen Ballage,RB,2018,131,0,0,8.536364,8.536364,0.0,41
+Chase Edmonds,RB,2018,134,0,0,10.5,11.941667,2.0,80
+Jordan Wilkins,RB,2018,169,0,0,5.108333,5.108333,0.0,41
+John Kelly,RB,2018,176,0,0,,,0.0,5
+Boston Scott,RB,2018,201,0,0,12.3625,12.3625,2.0,56
+Trenton Cannon,RB,2018,204,0,0,4.427273,4.427273,0.0,18
+David Williams,RB,2018,226,0,0,,,,0
+Bo Scarbrough,RB,2018,236,0,0,,,0.0,7
+Nick Bawden,RB,2018,237,0,0,,,0.0,11
+Justin Jackson,RB,2018,251,0,0,8.1625,8.1625,0.0,48
+Josh Jacobs,RB,2019,24,1,1,15.42,19.311765,6.0,90
+Miles Sanders,RB,2019,53,1,1,14.2,14.2,3.0,84
+Darrell Henderson,RB,2019,70,0,0,13.616667,13.616667,1.0,48
+David Montgomery,RB,2019,73,1,1,17.653333,17.653333,6.0,88
+Devin Singletary,RB,2019,74,1,1,12.325,12.325,3.0,93
+Damien Harris,RB,2019,87,1,0,14.006667,14.006667,1.0,43
+Alexander Mattison,RB,2019,102,0,0,7.86875,9.814286,0.0,89
+Bryce Love,RB,2019,112,0,0,,,,0
+Justice Hill,RB,2019,113,0,0,3.3,8.473333,0.0,65
+Benny Snell Jr.,RB,2019,122,0,0,5.263636,5.263636,0.0,42
+Tony Pollard,RB,2019,128,1,1,10.84,15.55,4.0,94
+Ryquell Armstead,RB,2019,140,0,0,3.657143,3.657143,0.0,16
+Qadree Ollison,RB,2019,152,0,0,,,0.0,13
+Jordan Scarlett,RB,2019,154,0,0,,,0.0,1
+Trayveon Williams,RB,2019,182,0,0,,1.064286,0.0,26
+Ty Johnson,RB,2019,186,0,0,7.8,7.8,0.0,74
+Dexter Williams,RB,2019,194,0,0,,,0.0,3
+Travis Homer,RB,2019,204,0,0,5.15,5.3875,0.0,38
+Rodney Anderson,RB,2019,211,0,0,,,,0
+Darwin Thompson,RB,2019,214,0,0,3.21,3.21,0.0,15
+Mike Weber,RB,2019,218,0,0,,,,0
+Cullen Gillaspia,RB,2019,220,0,0,,,0.0,1
+Kerrith Whyte Jr,RB,2019,222,0,0,,,0.0,6
+Chandler Cox,RB,2019,233,0,0,,,0.0,2
+Myles Gaskin,RB,2019,234,0,0,16.42,16.42,2.0,38
+Clyde Edwards-Helaire,RB,2020,32,1,0,13.538462,13.538462,2.0,50
+D'Andre Swift,RB,2020,35,1,0,16.069231,16.069231,5.0,73
+Jonathan Taylor,RB,2020,41,1,1,21.947059,21.947059,5.0,67
+Cam Akers,RB,2020,52,0,0,9.42,9.42,0.0,49
+J.K. Dobbins,RB,2020,55,1,0,11.233333,14.753846,3.0,37
+AJ Dillon,RB,2020,62,0,0,10.917647,10.917647,1.0,58
+Antonio Gibson,RB,2020,66,1,0,14.442857,14.442857,3.0,78
+Ke'Shawn Vaughn,RB,2020,76,0,0,,,0.0,23
+Zack Moss,RB,2020,86,0,0,8.092308,12.114286,2.0,61
+Darrynton Evans,RB,2020,93,0,0,,,0.0,15
+Joshua Kelley,RB,2020,112,0,0,6.246154,6.246154,0.0,51
+La'Mical Perine,RB,2020,120,0,0,5.833333,5.833333,0.0,13
+Anthony McFarland Jr.,RB,2020,124,0,0,2.063636,2.063636,0.0,15
+DeeJay Dallas,RB,2020,144,0,0,7.1125,7.1125,0.0,47
+Jason Huntley,RB,2020,172,0,0,,,0.0,4
+Eno Benjamin,RB,2020,222,0,0,7.466667,7.466667,0.0,19
+Raymond Calais,RB,2020,245,0,0,,,,0
+Malcolm Perry,RB,2020,246,0,0,3.0875,3.0875,0.0,8
+Najee Harris,RB,2021,24,1,1,17.688235,17.688235,4.0,68
+Travis Etienne,RB,2021,25,1,1,16.611765,16.611765,2.0,49
+Javonte Williams,RB,2021,35,1,0,12.052941,12.052941,2.0,54
+Trey Sermon,RB,2021,88,0,0,2.5375,3.842857,0.0,28
+Michael Carter,RB,2021,107,0,0,11.028571,11.028571,1.0,48
+Kene Nwangwu,RB,2021,119,0,0,,,0.0,13
+Rhamondre Stevenson,RB,2021,120,1,1,14.652941,14.652941,3.0,56
+Chuba Hubbard,RB,2021,126,1,0,10.735294,16.106667,2.0,60
+Kenneth Gainwell,RB,2021,150,0,0,7.7125,7.7125,0.0,65
+Elijah Mitchell,RB,2021,194,1,0,15.0,15.0,1.0,27
+Gary Brightwell,RB,2021,196,0,0,3.625,3.625,0.0,13
+Larry Rountree,RB,2021,198,0,0,1.95,1.95,0.0,10
+Chris Evans,RB,2021,202,0,0,5.533333,5.533333,0.0,14
+Demetric Felton,RB,2021,211,0,0,4.590909,4.590909,0.0,15
+Khalil Herbert,RB,2021,217,0,0,9.375,9.375,0.0,47
+Jake Funk,RB,2021,233,0,0,,,0.0,3
+Gerrid Doaks,RB,2021,244,0,0,,,,0
+Kylin Hill,RB,2021,256,0,0,,,0.0,5
+Jermar Jefferson,RB,2021,257,0,0,,,0.0,6
+Breece Hall,RB,2022,36,1,1,17.088235,17.088235,2.0,40
+Kenneth Walker III,RB,2022,41,1,0,16.472727,16.472727,3.0,41
+James Cook,RB,2022,63,1,1,16.66875,16.66875,2.0,49
+Rachaad White,RB,2022,91,1,1,15.758824,15.758824,2.0,48
+Tyrion Davis-Price,RB,2022,93,0,0,,,0.0,7
+Brian Robinson Jr.,RB,2022,98,0,0,13.206667,13.206667,2.0,41
+Dameon Pierce,RB,2022,107,0,0,12.8,12.8,1.0,35
+Zamir White,RB,2022,122,0,0,5.684615,5.684615,0.0,32
+Isaiah Spiller,RB,2022,123,0,0,2.111111,2.111111,0.0,14
+Pierre Strong,RB,2022,127,0,0,3.292308,3.292308,0.0,28
+Hassan Haskins,RB,2022,131,0,0,2.981818,2.981818,0.0,18
+Tyler Allgeier,RB,2022,151,0,0,9.9625,9.9625,0.0,50
+Snoop Conner,RB,2022,154,0,0,,,0.0,5
+Jerome Ford,RB,2022,156,1,0,12.541176,12.541176,1.0,33
+Kyren Williams,RB,2022,164,1,1,21.25,21.25,2.0,36
+Ty Chandler,RB,2022,169,0,0,7.769231,7.769231,0.0,24
+Kevin Harris,RB,2022,183,0,0,,,0.0,9
+Tyler Badie,RB,2022,196,0,0,,,0.0,4
+Keaontay Ingram,RB,2022,201,0,0,1.81,1.81,0.0,17
+Trestan Ebner,RB,2022,203,0,0,,,0.0,7
+Brittain Brown,RB,2022,250,0,0,,,,0
+Isiah Pacheco,RB,2022,251,1,1,15.278571,15.278571,1.0,38
+Zander Horvath,RB,2022,260,0,0,2.325,2.325,0.0,8
+Bijan Robinson,RB,2023,8,1,1,20.1,20.1,2.0,34
+Jahmyr Gibbs,RB,2023,12,1,1,20.876471,20.876471,2.0,32
+Zach Charbonnet,RB,2023,52,0,0,10.805882,10.805882,1.0,33
+Kendre Miller,RB,2023,71,0,0,,,0.0,13
+Tyjae Spears,RB,2023,81,0,0,9.466667,9.466667,0.0,29
+De'Von Achane,RB,2023,84,1,0,17.641176,17.641176,2.0,28
+Tank Bigsby,RB,2023,88,0,0,8.6,8.6,0.0,28
+Roschon Johnson,RB,2023,115,0,0,6.806667,6.806667,0.0,27
+Israel Abanikanda,RB,2023,143,0,0,,,0.0,6
+Chase Brown,RB,2023,163,1,1,15.9375,15.9375,1.0,26
+Eric Gray,RB,2023,172,0,0,1.93,1.93,0.0,15
+Evan Hull,RB,2023,176,0,0,,,0.0,1
+Chris Rodriguez,RB,2023,193,0,0,4.7375,4.7375,0.0,14
+Deuce Vaughn,RB,2023,212,0,0,,,0.0,11
+Zach Evans,RB,2023,215,0,0,,,0.0,4
+DeWayne McBride,RB,2023,222,0,0,,,,0
+Lew Nichols,RB,2023,235,0,0,,,,0
+Kenny McIntosh,RB,2023,237,0,0,,,0.0,7
+Jonathon Brooks,RB,2024,46,0,0,,,0.0,3
+Trey Benson,RB,2024,66,0,0,3.916667,3.916667,0.0,12
+Blake Corum,RB,2024,83,0,0,2.392857,2.392857,0.0,14
+MarShawn Lloyd,RB,2024,88,0,0,,,0.0,1
+Jaylen Wright,RB,2024,120,0,0,2.053846,2.053846,0.0,13
+Bucky Irving,RB,2024,125,1,1,14.376471,14.376471,1.0,17
+Will Shipley,RB,2024,127,0,0,,,0.0,5
+Ray Davis,RB,2024,128,0,0,7.25625,7.25625,0.0,16
+Isaac Guerendo,RB,2024,129,0,0,7.4,7.4,0.0,13
+Braelon Allen,RB,2024,134,0,0,5.011765,5.011765,0.0,17
+Audric Estime,RB,2024,147,0,0,3.746154,3.746154,0.0,13
+Rasheen Ali,RB,2024,165,0,0,,,0.0,4
+Tyrone Tracy Jr.,RB,2024,166,0,0,10.723529,10.723529,1.0,17
+Keilan Robinson,RB,2024,167,0,0,,,,0
+Isaiah Davis,RB,2024,173,0,0,5.1,5.1,0.0,9
+Kimani Vidal,RB,2024,181,0,0,3.633333,3.633333,0.0,9
+Jase McClellan,RB,2024,186,0,0,,,0.0,2
+Jawhar Jordan,RB,2024,205,0,0,,,,0
+Dylan Laube,RB,2024,208,0,0,,,0.0,1
+Ashton Jeanty,RB,2025,6,1,1,,,,0
+Omarion Hampton,RB,2025,22,0,0,,,,0
+Quinshon Judkins,RB,2025,36,0,0,,,,0
+TreVeyon Henderson,RB,2025,38,1,0,,,,0
+RJ Harvey,RB,2025,60,1,0,,,,0
+Kaleb Johnson,RB,2025,83,0,0,,,,0
+Bhayshul Tuten,RB,2025,104,0,0,,,,0
+Cam Skattebo,RB,2025,105,0,0,,,,0
+Trevor Etienne,RB,2025,114,0,0,,,,0
+Woody Marks,RB,2025,116,0,0,,,,0
+Jarquez Hunter,RB,2025,117,0,0,,,,0
+Dylan Sampson,RB,2025,126,0,0,,,,0
+Jordan James,RB,2025,147,0,0,,,,0
+Jaydon Blue,RB,2025,149,0,0,,,,0
+DJ Giddens,RB,2025,151,0,0,,,,0
+Maxx Williams,TE,2015,55,0,0,5.890909,5.890909,0.0,55
+Clive Walford,TE,2015,68,0,0,5.793333,5.793333,0.0,40
+Tyler Kroft,TE,2015,85,1,0,8.293333,8.293333,0.0,59
+Jeff Heuerman,TE,2015,92,0,0,3.52,7.11,0.0,34
+Blake Bell,TE,2015,117,0,0,3.733333,3.733333,0.0,66
+MyCole Pruitt,TE,2015,143,0,0,1.89,5.5,0.0,65
+C.J. Uzomah,TE,2015,157,1,0,6.8,8.01875,0.0,84
+Jesse James,TE,2015,160,1,0,7.014286,7.014286,0.0,78
+Nick Boyle,TE,2015,171,0,0,4.4125,5.006667,0.0,64
+James O'Shaughnessy,TE,2015,173,0,0,2.492857,3.613333,0.0,62
+Nick O'Leary,TE,2015,194,0,0,4.938462,4.938462,0.0,39
+Malcolm Johnson,TE,2015,195,0,0,,,0.0,10
+Randall Telfer,TE,2015,198,0,0,,,0.0,8
+A.J. Derby,TE,2015,202,0,0,5.036364,5.036364,0.0,20
+Kennard Backman,TE,2015,213,0,0,,,,0
+Ben Koyack,TE,2015,229,0,0,4.566667,4.566667,0.0,18
+Geoff Swaim,TE,2015,246,0,0,,7.025,0.0,64
+Rory Anderson,TE,2015,254,0,0,,,,0
+Gerald Christian,TE,2015,256,0,0,,,0.0,1
+Hunter Henry,TE,2016,35,1,1,10.575,12.516667,4.0,112
+Austin Hooper,TE,2016,81,1,1,10.1875,14.746154,2.0,134
+Nick Vannett,TE,2016,94,0,0,4.926667,4.926667,0.0,75
+Tyler Higbee,TE,2016,110,1,1,4.657143,11.457143,1.0,117
+Seth Devalve,TE,2016,138,0,0,4.78125,4.78125,0.0,37
+Temarrick Hemingway,TE,2016,177,0,0,,,0.0,2
+Jerell Adams,TE,2016,184,0,0,3.8,3.8,0.0,15
+David Morgan,TE,2016,188,0,0,,,0.0,13
+Rico Gathers,TE,2016,217,0,0,,,0.0,6
+Thomas Duarte,TE,2016,231,0,0,,,,0
+Beau Sandland,TE,2016,252,0,0,,,,0
+O.J. Howard,TE,2017,19,1,0,12.05,12.05,1.0,59
+Evan Engram,TE,2017,23,1,1,13.675,13.675,5.0,108
+David Njoku,TE,2017,29,1,1,9.593333,13.5,3.0,101
+Gerald Everett,TE,2017,44,1,1,7.483333,9.3,0.0,109
+Adam Shaheen,TE,2017,45,0,0,,3.461538,0.0,37
+Jonnu Smith,TE,2017,100,1,1,6.98,13.076471,2.0,112
+Michael Roberts,TE,2017,127,0,0,,,0.0,12
+Jake Butt,TE,2017,145,0,0,,,0.0,6
+George Kittle,TE,2017,146,1,1,16.16875,16.16875,7.0,113
+Jordan Leggett,TE,2017,150,0,0,2.415385,2.415385,0.0,13
+Jeremy Sprinkle,TE,2017,154,0,0,3.74,3.74,0.0,28
+Eric Saubert,TE,2017,174,0,0,,3.3375,0.0,40
+Bucky Hodges,TE,2017,201,0,0,,,,0
+Mason Schreck,TE,2017,251,0,0,,,0.0,3
+Hayden Hurst,TE,2018,25,1,1,9.31875,9.31875,0.0,82
+Mike Gesicki,TE,2018,42,1,1,10.62,10.62,1.0,109
+Dallas Goedert,TE,2018,49,1,1,10.581818,11.766667,4.0,91
+Mark Andrews,TE,2018,86,1,1,13.813333,17.711765,6.0,104
+Jordan Akins,TE,2018,98,1,0,6.438462,7.766667,0.0,98
+Ian Thomas,TE,2018,101,0,0,8.13,8.13,0.0,69
+Chris Herndon,TE,2018,107,1,0,8.085714,8.085714,0.0,31
+Will Dissly,TE,2018,120,1,0,4.364286,7.34,0.0,78
+Durham Smythe,TE,2018,123,0,0,4.523077,5.507692,0.0,80
+Dalton Schultz,TE,2018,137,1,1,9.15625,12.282353,2.0,89
+Troy Fumagalli,TE,2018,156,0,0,,,0.0,13
+Tyler Conklin,TE,2018,157,1,0,,8.135294,0.0,83
+Jaylen Samuels,TE,2018,165,0,0,9.944444,9.944444,0.0,32
+Jordan Thomas,TE,2018,211,0,0,4.678571,4.678571,0.0,17
+Ryan Izzo,TE,2018,250,0,0,3.09,3.09,0.0,14
+T.J. Hockenson,TE,2019,8,1,1,12.108333,14.6,4.0,82
+Noah Fant,TE,2019,20,1,1,10.664286,10.664286,1.0,91
+Irv Smith Jr.,TE,2019,50,1,0,8.208333,8.208333,0.0,43
+Drew Sample,TE,2019,52,0,0,4.93125,4.93125,0.0,55
+Josh Oliver,TE,2019,69,0,0,1.56,5.981818,0.0,48
+Jace Sternberger,TE,2019,75,0,0,3.675,3.675,0.0,9
+Kahale Warring,TE,2019,86,0,0,,,0.0,4
+Dawson Knox,TE,2019,96,1,1,10.913333,10.913333,1.0,80
+Trevon Wesco,TE,2019,121,0,0,,,0.0,16
+Foster Moreau,TE,2019,137,0,0,7.108333,7.108333,0.0,70
+Zach Gentry,TE,2019,141,0,0,3.57,3.57,0.0,25
+Kaden Smith,TE,2019,176,0,0,2.246154,2.246154,0.0,22
+Isaac Nauta,TE,2019,224,0,0,,,0.0,4
+Tommy Sweeney,TE,2019,228,0,0,,,0.0,13
+Alizé Mack,TE,2019,231,0,0,,,,0
+Caleb Wilson,TE,2019,254,0,0,,,,0
+Cole Kmet,TE,2020,43,1,1,8.664706,12.073333,1.0,76
+Devin Asiasi,TE,2020,91,0,0,,,0.0,7
+Josiah Deguara,TE,2020,94,0,0,5.125,5.125,0.0,29
+Dalton Keene,TE,2020,101,0,0,,,0.0,3
+Adam Trautman,TE,2020,105,0,0,5.754545,5.754545,0.0,62
+Harrison Bryant,TE,2020,115,0,0,5.15,5.15,0.0,57
+Albert Okwuegbunam,TE,2020,118,0,0,5.846154,5.846154,0.0,24
+Colby Parkinson,TE,2020,133,1,0,4.942857,4.942857,0.0,49
+Brycen Hopkins,TE,2020,136,0,0,,,0.0,12
+Charlie Woerner,TE,2020,190,0,0,,1.45,0.0,20
+Tyler Davis,TE,2020,206,0,0,,,0.0,10
+Stephen Sullivan,TE,2020,251,0,0,,2.45,0.0,16
+Kyle Pitts,TE,2021,4,1,1,10.388235,10.388235,1.0,61
+Pat Freiermuth,TE,2021,55,1,1,9.88,9.9,0.0,59
+Hunter Long,TE,2021,81,0,0,,,0.0,10
+Tommy Tremble,TE,2021,83,0,0,4.646154,5.64,0.0,51
+Tre' McKitty,TE,2021,97,0,0,2.15,2.15,0.0,14
+John Bates,TE,2021,124,0,0,4.627273,4.627273,0.0,44
+Kylen Granson,TE,2021,127,0,0,4.866667,4.866667,0.0,52
+Luke Farrell,TE,2021,145,0,0,3.166667,3.166667,0.0,31
+Brevin Jordan,TE,2021,147,0,0,6.975,6.975,0.0,28
+Noah Gray,TE,2021,162,1,0,4.4125,7.08125,0.0,56
+Zach Davidson,TE,2021,168,0,0,,,0.0,2
+Trey McBride,TE,2022,55,1,1,15.2375,15.2375,2.0,42
+Jelani Woods,TE,2022,73,0,0,6.183333,6.183333,0.0,12
+Greg Dulcich,TE,2022,80,0,0,8.61,8.61,0.0,15
+Jeremy Ruckert,TE,2022,101,0,0,3.11,3.11,0.0,25
+Cade Otton,TE,2022,106,1,0,10.042857,10.042857,1.0,44
+Daniel Bellinger,TE,2022,112,0,0,6.818182,6.818182,0.0,31
+Charlie Kolar,TE,2022,128,0,0,,,0.0,14
+Jake Ferguson,TE,2022,129,1,1,10.417647,10.417647,1.0,42
+Isaiah Likely,TE,2022,139,1,0,8.246667,8.246667,0.0,42
+Chigoziem Okonkwo,TE,2022,143,1,0,7.1,7.1,0.0,48
+Cole Turner,TE,2022,149,0,0,,,0.0,12
+Teagan Quitoriano,TE,2022,170,0,0,,,0.0,10
+James Mitchell,TE,2022,177,0,0,3.5375,3.5375,0.0,10
+Andrew Ogletree,TE,2022,192,0,0,3.57,3.57,0.0,21
+Grant Calcaterra,TE,2022,198,0,0,4.6,4.6,0.0,20
+Connor Heyward,TE,2022,208,0,0,4.475,4.475,0.0,24
+John FitzPatrick,TE,2022,213,0,0,,,0.0,2
+Ko Kieft,TE,2022,218,0,0,2.625,2.625,0.0,11
+Nick Muse,TE,2022,227,0,0,,,0.0,1
+Dalton Kincaid,TE,2023,25,1,1,9.39375,9.39375,0.0,29
+Sam LaPorta,TE,2023,34,1,1,14.076471,14.076471,2.0,33
+Michael Mayer,TE,2023,35,0,0,5.95,5.95,0.0,23
+Luke Musgrave,TE,2023,42,0,0,6.836364,6.836364,0.0,18
+Luke Schoonmaker,TE,2023,58,0,0,5.71,5.71,0.0,21
+Brenton Strange,TE,2023,61,1,0,6.507143,6.507143,0.0,19
+Tucker Kraft,TE,2023,78,1,1,9.605882,9.605882,0.0,27
+Darnell Washington,TE,2023,93,0,0,3.461538,3.461538,0.0,21
+Cameron Latu,TE,2023,101,0,0,,,,0
+Josh Whyle,TE,2023,147,0,0,4.342857,4.342857,0.0,22
+Will Mallory,TE,2023,162,0,0,3.518182,3.518182,0.0,18
+Payne Durham,TE,2023,171,0,0,,,0.0,11
+Davis Allen,TE,2023,175,0,0,,,0.0,10
+Zack Kuntz,TE,2023,220,0,0,,,,0
+Brayden Willis,TE,2023,247,0,0,,,0.0,1
+Brock Bowers,TE,2024,13,1,1,15.452941,15.452941,1.0,17
+Ben Sinnott,TE,2024,53,0,0,,,0.0,4
+Tip Reiman,TE,2024,82,0,0,,,0.0,5
+Ja'Tavion Sanders,TE,2024,101,0,0,4.88,4.88,0.0,15
+Theo Johnson,TE,2024,107,1,0,6.81,6.81,0.0,10
+Erick All,TE,2024,115,0,0,4.475,4.475,0.0,8
+AJ Barner,TE,2024,121,1,0,5.607143,5.607143,0.0,14
+Cade Stover,TE,2024,123,0,0,2.638462,2.638462,0.0,13
+Jared Wiley,TE,2024,131,0,0,,,0.0,1
+Tanner McLachlan,TE,2024,194,0,0,,,,0
+Jaheim Bell,TE,2024,231,0,0,,,0.0,3
+Devin Culp,TE,2024,246,0,0,,,0.0,2
+Colston Loveland,TE,2025,10,1,1,,,,0
+Tyler Warren,TE,2025,14,1,1,,,,0
+Mason Taylor,TE,2025,42,0,0,,,,0
+Terrance Ferguson,TE,2025,46,0,0,,,,0
+Elijah Arroyo,TE,2025,50,0,0,,,,0
+Harold Fannin,TE,2025,67,1,1,,,,0
+Gunnar Helm,TE,2025,120,0,0,,,,0
+Mitchell Evans,TE,2025,163,0,0,,,,0
+Oronde Gadsden II,TE,2025,165,1,0,,,,0
+Jackson Hawes,TE,2025,173,0,0,,,,0
+Robbie Ouzts,TE,2025,175,0,0,,,,0
+Gavin Bartholomew,TE,2025,202,0,0,,,,0
+Thomas Fidone,TE,2025,219,0,0,,,,0
+Caleb Lohner,TE,2025,241,0,0,,,,0
+Moliki Matavao,TE,2025,248,0,0,,,,0
+Luke Lachey,TE,2025,255,0,0,,,,0
+Amari Cooper,WR,2015,4,1,1,14.51875,15.40625,9.0,153
+Kevin White,WR,2015,7,0,0,,,0.0,15
+DeVante Parker,WR,2015,14,1,0,11.675,15.3875,6.0,111
+Nelson Agholor,WR,2015,20,1,0,11.71875,11.71875,3.0,144
+Breshad Perriman,WR,2015,26,0,0,6.74,9.864286,0.0,75
+Phillip Dorsett,WR,2015,29,0,0,6.586667,9.163636,0.0,78
+Devin Smith,WR,2015,37,0,0,,,0.0,12
+Dorial Green-Beckham,WR,2015,40,0,0,8.064286,8.064286,0.0,28
+Devin Funchess,WR,2015,41,0,0,12.1875,12.1875,1.0,61
+Tyler Lockett,WR,2015,69,1,1,10.4625,16.5875,7.0,160
+Jaelen Strong,WR,2015,70,0,0,4.81,4.81,0.0,17
+Chris Conley,WR,2015,76,0,0,6.0625,9.78125,0.0,101
+Sammie Coates,WR,2015,87,0,0,7.081818,7.081818,0.0,19
+Ty Montgomery,WR,2015,94,0,0,11.45,11.45,2.0,73
+Jamison Crowder,WR,2015,105,0,0,12.34375,14.335,4.0,111
+Justin Hardy,WR,2015,107,0,0,6.01,6.01,0.0,49
+Vince Mayle,WR,2015,123,0,0,,,0.0,4
+DeAndre Smelter,WR,2015,132,0,0,,,0.0,1
+Rashad Greene,WR,2015,139,0,0,5.144444,5.144444,0.0,18
+Stefon Diggs,WR,2015,146,1,1,14.869231,20.5375,10.0,144
+Tony Lippett,WR,2015,156,0,0,,,,0
+JJ Nelson,WR,2015,159,0,0,9.935714,9.935714,0.0,49
+Kenny Bell,WR,2015,162,0,0,,,,0
+Keith Mumphery,WR,2015,175,0,0,3.3625,3.3625,0.0,13
+Kaelin Clay,WR,2015,184,0,0,2.109091,2.109091,0.0,12
+Geremy Davis,WR,2015,186,0,0,,,0.0,8
+Evan Spencer,WR,2015,187,0,0,,,,0
+Bud Sasser,WR,2015,201,0,0,,,,0
+Darren Waller,WR,2015,204,0,0,3.8125,17.4125,4.0,77
+Neal Sterling,WR,2015,220,0,0,,,0.0,13
+Andre Debose,WR,2015,221,0,0,,,,0
+Da'Ron Brown,WR,2015,233,0,0,,,,0
+Dezmin Lewis,WR,2015,234,0,0,,,0.0,1
+Mario Alford,WR,2015,238,0,0,,,0.0,1
+Tre McBride,WR,2015,245,0,0,,,0.0,7
+Corey Coleman,WR,2016,15,0,0,9.33,9.33,0.0,25
+Will Fuller,WR,2016,21,0,0,11.32,17.172727,3.0,55
+Josh Doctson,WR,2016,22,0,0,7.986667,7.986667,0.0,32
+Laquon Treadwell,WR,2016,23,0,0,4.746667,6.866667,0.0,59
+Sterling Shepard,WR,2016,40,0,0,13.136364,14.18,5.0,98
+Michael Thomas,WR,2016,47,1,1,19.71875,23.4125,4.0,83
+Tyler Boyd,WR,2016,55,1,0,15.792857,15.792857,5.0,135
+Braxton Miller,WR,2016,85,0,0,4.13,4.13,0.0,19
+Leonte Carroo,WR,2016,86,0,0,,,0.0,12
+Chris Moore,WR,2016,107,0,0,5.99,7.673333,0.0,76
+Malcolm Mitchell,WR,2016,112,0,0,8.008333,8.008333,0.0,12
+Ricardo Louis,WR,2016,114,0,0,4.478571,4.478571,0.0,21
+Pharoh Cooper,WR,2016,117,0,0,2.825,5.045455,0.0,44
+Demarcus Robinson,WR,2016,126,0,0,5.342857,10.925,1.0,109
+Tajae Sharpe,WR,2016,140,0,0,6.58125,6.58125,0.0,60
+Jordan Payton,WR,2016,154,0,0,,,0.0,2
+Trevor Davis,WR,2016,163,0,0,,,0.0,17
+Tyreek Hill,WR,2016,165,1,1,20.875,23.525,9.0,141
+Rashard Higgins,WR,2016,172,0,0,9.092308,10.075,1.0,67
+Moritz Boehringer,WR,2016,180,0,0,,,,0
+Jakeem Grant,WR,2016,186,0,0,7.23,7.23,0.0,52
+Kolby Listenbee,WR,2016,192,0,0,,,,0
+Cody Core,WR,2016,199,0,0,3.7,3.7,0.0,19
+Mike Thomas,WR,2016,206,0,0,,3.03,0.0,34
+Aaron Burbridge,WR,2016,213,0,0,1.975,1.975,0.0,8
+Devin Lucien,WR,2016,225,0,0,,,,0
+Demarcus Ayers,WR,2016,229,0,0,,,0.0,2
+Daniel Braverman,WR,2016,230,0,0,,,0.0,2
+Devin Fuller,WR,2016,238,0,0,,,,0
+Charone Peake,WR,2016,241,0,0,3.418182,3.418182,0.0,15
+Kenny Lawler,WR,2016,243,0,0,,,,0
+Corey Davis,WR,2017,5,0,0,11.475,13.671429,3.0,78
+Mike Williams,WR,2017,7,1,0,11.2625,15.4125,5.0,99
+John Ross,WR,2017,9,0,0,11.875,11.875,1.0,36
+Zay Jones,WR,2017,37,1,0,10.325,12.38125,2.0,101
+Curtis Samuel,WR,2017,40,0,0,11.566667,14.14,4.0,103
+JuJu Smith-Schuster,WR,2017,62,1,1,18.55625,18.55625,4.0,100
+Cooper Kupp,WR,2017,69,1,1,16.90625,25.852941,8.0,104
+Taywan Taylor,WR,2017,72,0,0,6.738462,6.738462,0.0,31
+ArDarius Stewart,WR,2017,79,0,0,1.877778,1.877778,0.0,9
+Carlos Henderson,WR,2017,82,0,0,,,,0
+Chris Godwin,WR,2017,84,1,1,19.721429,19.721429,6.0,110
+Kenny Golladay,WR,2017,96,1,1,15.5,15.5,2.0,67
+Chad Williams,WR,2017,98,0,0,4.1,4.1,0.0,16
+Amara Darboh,WR,2017,106,0,0,1.8875,1.8875,0.0,8
+Dede Westbrook,WR,2017,110,0,0,11.34375,11.34375,2.0,47
+Josh Reynolds,WR,2017,117,0,0,9.090909,9.090909,0.0,97
+Mack Hollins,WR,2017,118,0,0,4.054545,9.068235,0.0,83
+Josh Malone,WR,2017,128,0,0,2.055556,2.055556,0.0,13
+Ryan Switzer,WR,2017,133,0,0,4.3375,4.3375,0.0,26
+Jehu Chesson,WR,2017,139,0,0,,,0.0,5
+Chad Hansen,WR,2017,141,0,0,,,0.0,11
+Shelton Gibson,WR,2017,166,0,0,,,0.0,3
+Rodney Adams,WR,2017,170,0,0,,,0.0,1
+Isaiah McKenzie,WR,2017,172,0,0,5.275,7.986667,0.0,75
+DeAngelo Yancey,WR,2017,175,0,0,,,,0
+Trent Taylor,WR,2017,177,0,0,6.533333,6.533333,0.0,46
+Robert Davis,WR,2017,209,0,0,,,0.0,3
+Stacy Coley,WR,2017,219,0,0,,,0.0,2
+David Moore,WR,2017,226,0,0,7.214286,7.425,0.0,64
+Isaiah Ford,WR,2017,237,0,0,6.0625,6.177778,0.0,28
+Noah Brown,WR,2017,239,0,0,,10.16,1.0,66
+Malachi Dupre,WR,2017,247,0,0,,,,0
+D.J. Moore,WR,2018,24,1,0,15.366667,16.852941,6.0,114
+Calvin Ridley,WR,2018,26,1,1,18.766667,18.766667,5.0,83
+Courtland Sutton,WR,2018,40,1,0,13.90125,15.01875,4.0,97
+Dante Pettis,WR,2018,44,0,0,11.5,11.5,1.0,45
+Christian Kirk,WR,2018,47,1,1,12.853846,14.347059,6.0,93
+Anthony Miller,WR,2018,51,0,0,8.587143,8.587143,0.0,50
+James Washington,WR,2018,60,0,0,8.9,8.9,0.0,59
+DJ Chark,WR,2018,61,0,0,15.053333,15.053333,2.0,70
+Michael Gallup,WR,2018,81,0,0,15.192857,15.192857,3.0,84
+Tre'Quan Smith,WR,2018,91,0,0,7.930769,8.77,0.0,55
+Keke Coutee,WR,2018,103,0,0,11.125,11.125,1.0,24
+Antonio Callaway,WR,2018,105,0,0,8.26875,8.26875,0.0,23
+DaeSean Hamilton,WR,2018,113,0,0,8.2875,8.2875,0.0,32
+Jaleel Scott,WR,2018,132,0,0,,,0.0,2
+J'Mon Moore,WR,2018,133,0,0,,,0.0,2
+Justin Watson,WR,2018,144,0,0,,5.933333,0.0,59
+Daurice Fountain,WR,2018,159,0,0,,,0.0,2
+Jordan Lasley,WR,2018,162,0,0,,,,0
+Marquez Valdes-Scantling,WR,2018,174,0,0,9.807143,9.807143,0.0,101
+Damion Ratley,WR,2018,175,0,0,4.222222,4.222222,0.0,19
+Deon Cain,WR,2018,185,0,0,1.945455,1.945455,0.0,11
+Ray-Ray McCloud,WR,2018,187,0,0,3.109091,8.382353,0.0,70
+Dylan Cantrell,WR,2018,191,0,0,,,,0
+Russell Gage,WR,2018,194,0,0,11.31625,12.538462,2.0,61
+Tremon Smith,WR,2018,196,0,0,,,0.0,2
+Equanimeous St. Brown,WR,2018,207,0,0,4.936364,4.936364,0.0,49
+Cedrick Wilson Jr.,WR,2018,208,0,0,5.162,10.558571,1.0,57
+Braxton Berrios,WR,2018,210,0,0,7.484615,8.073333,0.0,65
+Javon Wims,WR,2018,224,0,0,3.872727,3.872727,0.0,22
+Marcell Ateman,WR,2018,228,0,0,,,0.0,10
+Richie James,WR,2018,240,0,0,,9.892857,0.0,43
+Auden Tate,WR,2018,253,0,0,8.458333,8.458333,0.0,28
+Austin Proehl,WR,2018,255,0,0,,,,0
+Trey Quinn,WR,2018,256,0,0,4.316667,4.316667,0.0,14
+Marquise Brown,WR,2019,25,1,0,14.14375,14.14375,5.0,73
+N'Keal Harry,WR,2019,32,0,0,5.838462,5.838462,0.0,35
+Deebo Samuel,WR,2019,36,1,1,21.185,21.185,5.0,80
+A.J. Brown,WR,2019,51,1,1,17.678571,17.678571,6.0,90
+Mecole Hardman,WR,2019,56,0,0,8.288235,11.725,1.0,70
+JJ Arcega-Whiteside,WR,2019,57,0,0,4.1125,4.1125,0.0,16
+Parris Campbell,WR,2019,59,0,0,,8.770588,0.0,44
+Andy Isabella,WR,2019,62,0,0,4.981818,4.981818,0.0,24
+D.K. Metcalf,WR,2019,64,0,0,17.08125,17.08125,6.0,97
+Diontae Johnson,WR,2019,66,1,1,17.15,17.15,5.0,88
+Jalen Hurd,WR,2019,67,0,0,,,,0
+Terry McLaurin,WR,2019,76,1,1,14.92,15.752941,6.0,97
+Miles Boykin,WR,2019,93,0,0,5.353846,5.353846,0.0,33
+Hakeem Butler,WR,2019,103,0,0,,,0.0,1
+Gary Jennings Jr,WR,2019,120,0,0,,,,0
+Riley Ridley,WR,2019,126,0,0,,,0.0,5
+Hunter Renfrow,WR,2019,149,1,1,15.241176,15.241176,2.0,69
+Darius Slayton,WR,2019,171,0,0,12.142857,12.142857,1.0,89
+KeeSean Johnson,WR,2019,174,0,0,4.6,4.6,0.0,18
+Travis Fulgham,WR,2019,184,0,0,9.658333,9.658333,0.0,14
+Juwann Winfree,WR,2019,187,0,0,,,0.0,9
+Marcus Green,WR,2019,203,0,0,,,,0
+Kelvin Harmon,WR,2019,206,0,0,5.149231,5.149231,0.0,13
+Scott Miller,WR,2019,208,0,0,7.321429,7.321429,0.0,52
+John Ursua,WR,2019,236,0,0,,,0.0,1
+Terry Godwin,WR,2019,237,0,0,,,0.0,2
+Dillon Mitchell,WR,2019,239,0,0,,,,0
+Olabisi Johnson,WR,2019,247,0,0,6.076923,6.076923,0.0,21
+Henry Ruggs III,WR,2020,12,0,0,6.469231,6.469231,0.0,20
+Jerry Jeudy,WR,2020,15,1,0,13.613333,14.170588,2.0,74
+CeeDee Lamb,WR,2020,17,1,1,17.741176,23.835294,5.0,81
+Jalen Reagor,WR,2020,21,0,0,7.927273,7.927273,0.0,54
+Justin Jefferson,WR,2020,22,1,1,21.685882,21.685882,5.0,77
+Brandon Aiyuk,WR,2020,25,1,1,15.375,15.575,4.0,68
+Tee Higgins,WR,2020,33,1,1,15.778571,18.508333,5.0,67
+Michael Pittman Jr.,WR,2020,34,0,0,14.035294,15.7625,4.0,78
+Laviska Shenault Jr.,WR,2020,42,0,0,11.221429,11.221429,1.0,57
+KJ Hamler,WR,2020,46,0,0,7.508333,7.508333,0.0,21
+Chase Claypool,WR,2020,49,1,0,13.43125,13.43125,2.0,53
+Van Jefferson,WR,2020,57,0,0,9.894118,9.894118,0.0,69
+Denzel Mims,WR,2020,59,0,0,6.744444,6.744444,0.0,28
+Lynn Bowden Jr.,WR,2020,80,0,0,5.953333,5.953333,0.0,17
+Bryan Edwards,WR,2020,81,0,0,6.81875,6.81875,0.0,29
+Devin Duvernay,WR,2020,92,0,0,8.292857,8.292857,0.0,59
+Gabriel Davis,WR,2020,128,0,0,11.44,11.44,2.0,71
+Antonio Gandy-Golden,WR,2020,142,0,0,,,0.0,4
+Joe Reed,WR,2020,151,0,0,,,0.0,3
+Tyler Johnson,WR,2020,161,0,0,4.8,5.554545,0.0,37
+Collin Johnson,WR,2020,165,0,0,5.92,5.92,0.0,20
+Quintez Cephus,WR,2020,166,0,0,6.081818,6.081818,0.0,17
+John Hightower,WR,2020,168,0,0,2.88,2.88,0.0,10
+Isaiah Coulter,WR,2020,171,0,0,,,0.0,1
+Darnell Mooney,WR,2020,173,0,0,12.923529,12.923529,2.0,74
+K.J. Osborn,WR,2020,176,0,0,9.323529,9.323529,0.0,55
+Donovan Peoples-Jones,WR,2020,187,0,0,9.829412,9.829412,0.0,49
+Quez Watkins,WR,2020,200,0,0,6.823529,6.823529,0.0,42
+James Proche,WR,2020,201,0,0,,,0.0,21
+Isaiah Hodgins,WR,2020,207,0,0,11.133333,11.133333,1.0,25
+Dezmon Patmon,WR,2020,212,0,0,,,0.0,5
+Freddie Swain,WR,2020,214,0,0,5.40625,5.40625,0.0,31
+Jauan Jennings,WR,2020,217,0,0,6.323077,14.033333,1.0,56
+K.J. Hill,WR,2020,220,0,0,,,0.0,6
+Tyrie Cleveland,WR,2020,252,0,0,,,0.0,9
+Ja'Marr Chase,WR,2021,5,1,1,20.2,23.705882,4.0,62
+Jaylen Waddle,WR,2021,6,1,1,15.4875,15.4875,3.0,62
+DeVonta Smith,WR,2021,10,1,1,14.976471,15.338462,4.0,63
+Kadarius Toney,WR,2021,20,0,0,9.151111,9.151111,0.0,33
+Rashod Bateman,WR,2021,27,0,0,8.625,10.9125,1.0,49
+Elijah Moore,WR,2021,34,0,0,12.563636,12.563636,1.0,58
+Rondale Moore,WR,2021,49,0,0,10.9875,10.9875,1.0,39
+D'Wayne Eskridge,WR,2021,56,0,0,3.5375,3.5375,0.0,22
+Tutu Atwell,WR,2021,57,0,0,8.028571,8.028571,0.0,41
+Terrace Marshall Jr.,WR,2021,59,0,0,6.384615,6.384615,0.0,38
+Josh Palmer,WR,2021,77,0,0,10.67,10.67,2.0,56
+Dyami Brown,WR,2021,82,0,0,3.122222,4.493333,0.0,44
+Amari Rodgers,WR,2021,85,0,0,4.788889,4.788889,0.0,14
+Nico Collins,WR,2021,89,1,1,17.36,17.55,2.0,51
+Anthony Schwartz,WR,2021,91,0,0,2.783333,2.783333,0.0,18
+Dez Fitzpatrick,WR,2021,109,0,0,,,0.0,3
+Amon-Ra St. Brown,WR,2021,112,1,1,20.68125,20.68125,4.0,65
+Jaelon Darden,WR,2021,129,0,0,,,0.0,11
+Tylan Wallace,WR,2021,131,0,0,,4.5375,0.0,19
+Jacob Harris,WR,2021,141,0,0,,,0.0,1
+Ihmir Smith-Marsette,WR,2021,157,0,0,,,0.0,14
+Simi Fehoko,WR,2021,179,0,0,,,0.0,8
+Cornell Powell,WR,2021,181,0,0,,,,0
+Frank Darby,WR,2021,187,0,0,,,0.0,3
+Marquez Stevenson,WR,2021,203,0,0,,,,0
+Shi Smith,WR,2021,204,0,0,4.106667,4.106667,0.0,20
+Racey McMath,WR,2021,205,0,0,,,0.0,9
+Jalen Camp,WR,2021,209,0,0,,,0.0,1
+Seth Williams,WR,2021,219,0,0,,,0.0,1
+Dazz Newsome,WR,2021,221,0,0,,,0.0,3
+Mike Strachan,WR,2021,229,0,0,,,0.0,9
+Tre Nixon,WR,2021,242,0,0,,,,0
+Ben Skowronek,WR,2021,249,0,0,6.021429,6.021429,0.0,34
+Kawaan Baker,WR,2021,255,0,0,,,,0
+Dax Milne,WR,2021,258,0,0,1.711111,1.711111,0.0,16
+Drake London,WR,2022,8,1,1,16.517647,16.517647,3.0,50
+Garrett Wilson,WR,2022,10,1,0,14.817647,14.817647,3.0,51
+Chris Olave,WR,2022,11,1,0,14.45625,14.45625,2.0,39
+Jameson Williams,WR,2022,12,1,0,14.146667,14.146667,1.0,33
+Jahan Dotson,WR,2022,16,0,0,10.883333,10.883333,1.0,43
+Treylon Burks,WR,2022,18,0,0,8.009091,8.009091,0.0,25
+Christian Watson,WR,2022,34,0,0,11.721429,11.721429,2.0,37
+Wan'Dale Robinson,WR,2022,43,0,0,10.747059,10.747059,1.0,38
+John Metchie,WR,2022,44,0,0,5.54,5.54,0.0,24
+Tyquan Thornton,WR,2022,50,0,0,5.525,5.525,0.0,25
+George Pickens,WR,2022,52,0,0,12.282353,12.282353,2.0,48
+Alec Pierce,WR,2022,53,0,0,10.0875,10.0875,1.0,49
+Skyy Moore,WR,2022,54,0,0,4.130769,4.130769,0.0,29
+Velus Jones Jr.,WR,2022,71,0,0,4.222222,4.222222,0.0,21
+Jalen Tolbert,WR,2022,88,0,0,8.941176,8.941176,0.0,32
+David Bell,WR,2022,99,0,0,5.411111,5.411111,0.0,24
+Danny Gray,WR,2022,105,0,0,,,0.0,5
+Erik Ezukanma,WR,2022,125,0,0,,,0.0,4
+Romeo Doubs,WR,2022,132,0,0,10.258824,10.258824,2.0,43
+Calvin Austin III,WR,2022,138,0,0,7.105882,7.105882,0.0,31
+Khalil Shakir,WR,2022,148,0,0,12.166667,12.166667,1.0,41
+Montrell Washington,WR,2022,162,0,0,0.8,0.8,0.0,9
+Kyle Philips,WR,2022,163,0,0,4.1375,4.1375,0.0,12
+Jalen Nailor,WR,2022,191,0,0,7.0,7.0,0.0,22
+Michael Woods II,WR,2022,202,0,0,,,0.0,11
+Bo Melton,WR,2022,229,0,0,2.045455,2.045455,0.0,15
+Dareke Young,WR,2022,233,0,0,,,0.0,2
+Samori Toure,WR,2022,258,0,0,2.225,2.225,0.0,12
+Jaxon Smith-Njigba,WR,2023,20,1,0,14.882353,14.882353,1.0,34
+Quentin Johnston,WR,2023,21,0,0,11.646667,11.646667,1.0,32
+Zay Flowers,WR,2023,22,1,0,12.9,12.9,2.0,33
+Jordan Addison,WR,2023,23,1,0,14.166667,14.166667,2.0,32
+Jonathan Mingo,WR,2023,39,0,0,5.653333,5.653333,0.0,29
+Jayden Reed,WR,2023,50,1,0,13.575,13.575,2.0,33
+Rashee Rice,WR,2023,55,1,0,13.28125,13.28125,1.0,19
+Marvin Mims,WR,2023,63,0,0,8.09375,8.09375,0.0,31
+Tank Dell,WR,2023,69,0,0,16.5,16.5,2.0,24
+Jalin Hyatt,WR,2023,73,0,0,4.638462,4.638462,0.0,23
+Cedric Tillman,WR,2023,74,0,0,8.933333,8.933333,0.0,20
+Josh Downs,WR,2023,79,0,0,13.014286,13.014286,1.0,31
+Michael Wilson,WR,2023,94,0,0,8.807692,8.807692,0.0,29
+Tre Tucker,WR,2023,100,0,0,7.605882,7.605882,0.0,30
+Derius Davis,WR,2023,125,0,0,3.645455,3.645455,0.0,25
+Charlie Jones,WR,2023,131,0,0,,,0.0,7
+Tyler Scott,WR,2023,133,0,0,2.761538,2.761538,0.0,14
+Justin Shorter,WR,2023,150,0,0,,,,0
+Dontayvion Wicks,WR,2023,159,0,0,7.984,7.984,0.0,32
+Puka Nacua,WR,2023,177,1,1,18.781818,18.781818,2.0,28
+Parker Washington,WR,2023,185,0,0,7.461538,7.461538,0.0,19
+Kayshon Boutte,WR,2023,187,0,0,8.126667,8.126667,0.0,18
+Trey Palmer,WR,2023,191,0,0,5.629412,5.629412,0.0,27
+A.T. Perry,WR,2023,195,0,0,7.575,7.575,0.0,8
+Elijah Higgins,WR,2023,197,0,0,4.033333,4.033333,0.0,23
+Xavier Hutchinson,WR,2023,205,0,0,1.990909,1.990909,0.0,25
+Andrei Iosivas,WR,2023,206,0,0,7.052941,7.052941,0.0,26
+DeMario Douglas,WR,2023,210,0,0,9.23125,9.23125,0.0,30
+Antoine Green,WR,2023,219,0,0,,,0.0,2
+Colton Dowell,WR,2023,228,0,0,,,0.0,2
+Jalen Brooks,WR,2023,244,0,0,2.975,2.975,0.0,15
+Ronnie Bell,WR,2023,253,0,0,3.85,3.85,0.0,11
+Grant Dubose,WR,2023,256,0,0,,,0.0,2
+Marvin Harrison Jr.,WR,2024,4,0,0,11.558824,11.558824,1.0,17
+Malik Nabers,WR,2024,6,1,1,18.24,18.24,1.0,15
+Rome Odunze,WR,2024,9,0,0,8.523529,8.523529,0.0,17
+Brian Thomas,WR,2024,23,1,1,16.705882,16.705882,1.0,17
+Xavier Worthy,WR,2024,28,1,1,11.7,11.7,1.0,16
+Ricky Pearsall,WR,2024,31,0,0,9.35,9.35,0.0,10
+Xavier Legette,WR,2024,32,0,0,8.34,8.34,0.0,15
+Keon Coleman,WR,2024,33,0,0,8.576923,8.576923,0.0,13
+Ladd McConkey,WR,2024,34,1,1,15.05625,15.05625,1.0,16
+Ja'Lynn Polk,WR,2024,37,0,0,2.515385,2.515385,0.0,13
+Adonai Mitchell,WR,2024,52,0,0,3.162353,3.162353,0.0,17
+Malachi Corley,WR,2024,65,0,0,,,0.0,5
+Jermaine Burton,WR,2024,80,0,0,,,0.0,4
+Roman Wilson,WR,2024,84,0,0,,,,0
+Jalen McMillan,WR,2024,92,0,0,10.415385,10.415385,1.0,13
+Luke McCaffrey,WR,2024,100,0,0,2.9,2.9,0.0,12
+Troy Franklin,WR,2024,102,0,0,4.19375,4.19375,0.0,16
+Javon Baker,WR,2024,110,0,0,,,0.0,4
+Devontez Walker,WR,2024,113,0,0,,,0.0,2
+Jacob Cowing,WR,2024,135,0,0,,,0.0,3
+Anthony Gould,WR,2024,142,0,0,,,0.0,1
+Ainias Smith,WR,2024,152,0,0,,,0.0,3
+Jamari Thrash,WR,2024,156,0,0,,,0.0,6
+Bub Means,WR,2024,170,0,0,,,0.0,4
+Jha'Quan Jackson,WR,2024,182,0,0,,,0.0,2
+Malik Washington,WR,2024,184,0,0,4.733333,4.733333,0.0,12
+Johnny Wilson,WR,2024,185,0,0,1.644444,1.644444,0.0,9
+Casey Washington,WR,2024,187,0,0,,,0.0,2
+Tejhaun Palmer,WR,2024,191,0,0,,,,0
+Jordan Whittington,WR,2024,213,0,0,,,0.0,6
+Ryan Flournoy,WR,2024,216,0,0,,,0.0,7
+Brenden Rice,WR,2024,225,0,0,,,,0
+Devaughn Vele,WR,2024,235,0,0,8.192308,8.192308,0.0,13
+Tahj Washington,WR,2024,241,0,0,,,,0
+Cornelius Johnson,WR,2024,253,0,0,,,,0
+Travis Hunter,WR,2025,2,0,0,,,,0
+Tetairoa McMillan,WR,2025,8,1,0,,,,0
+Emeka Egbuka,WR,2025,19,1,0,,,,0
+Matthew Golden,WR,2025,23,0,0,,,,0
+Jayden Higgins,WR,2025,34,0,0,,,,0
+Luther Burden III,WR,2025,39,0,0,,,,0
+Tre Harris,WR,2025,55,0,0,,,,0
+Kyle Williams,WR,2025,69,0,0,,,,0
+Isaac TeSlaa,WR,2025,70,0,0,,,,0
+Pat Bryant,WR,2025,74,0,0,,,,0
+Chimere Dike,WR,2025,103,0,0,,,,0
+Elic Ayomanor,WR,2025,136,0,0,,,,0
+Tez Johnson,WR,2025,235,0,0,,,,0
