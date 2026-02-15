@@ -1,7 +1,12 @@
 """
 TE SLAP Score Calculator — 2026 Draft Class
 ============================================
-Weights: 65% DC / 15% Breakout / 10% Production / 5% Early Declare / 5% RAS
+VALIDATED weights: 60% DC / 15% Breakout / 15% Production / 10% RAS
+(4-component model — Early Declare dropped per te_ed_investigation.py)
+
+Validated against TE-specific outcomes: top6_10g, top12_10g, best_3yr_ppg, seasons_over_10ppg
+AUC-ROC: top12=0.916, top6=0.904 | SLAP wins 11/11 metrics vs DC-only
+Locked in commit 6e988aa (te_recalculate_outcomes_and_validate.py)
 
 Breakout: 15% dominator threshold (TE-specific)
 RAS: MNAR-imputed (no combine data yet) — Rd 1-2 → 60th pctl, Rd 3+ → 40th pctl
@@ -24,7 +29,8 @@ DRAFT_DATE = date(2026, 4, 25)
 # ============================================================================
 print("=" * 120)
 print("TE SLAP SCORE CALCULATOR — 2026 DRAFT CLASS")
-print("Weights: 65% DC / 15% Breakout / 10% Production / 5% Early Declare / 5% RAS")
+print("VALIDATED weights: 60% DC / 15% Breakout / 15% Production / 10% RAS")
+print("(Early Declare dropped — no mid-round signal per te_ed_investigation.py)")
 print("=" * 120)
 
 df = pd.read_csv('data/te_2026_prospects_raw.csv')
@@ -196,12 +202,12 @@ print(f"\n\n{'='*120}")
 print("CALCULATING SLAP COMPONENTS")
 print("=" * 120)
 
-# --- Component 1: Draft Capital (65%) ---
+# --- Component 1: Draft Capital (60%) ---
 # DC = 100 - 2.40 × (pick^0.62 - 1)
 df['dc_score'] = 100 - 2.40 * (df['projected_pick'] ** 0.62 - 1)
 df['dc_score'] = df['dc_score'].clip(lower=0, upper=100)
 
-print(f"\n  DC Score (65% weight):")
+print(f"\n  DC Score (60% weight):")
 print(f"    Range: {df['dc_score'].min():.1f} — {df['dc_score'].max():.1f}")
 print(f"    Mean: {df['dc_score'].mean():.1f}")
 
@@ -261,7 +267,7 @@ df['production_score'] = np.where(
 prod_avg = df['production_score'].mean()
 df['production_score_filled'] = df['production_score'].fillna(prod_avg)
 
-print(f"\n  Production Score (10% weight, rec_yds/team_pa × age_wt):")
+print(f"\n  Production Score (15% weight, rec_yds/team_pa × age_wt):")
 print(f"    Raw range: {prod_min:.2f} — {prod_max:.2f}")
 print(f"    Scaled range: {df['production_score_filled'].min():.1f} — {df['production_score_filled'].max():.1f}")
 print(f"    Mean: {df['production_score_filled'].mean():.1f}")
@@ -275,16 +281,9 @@ for _, r in top_prod.iterrows():
           f"team_pa={r['cfbd_team_pass_att']:.0f})")
 
 
-# --- Component 4: Early Declare (5%) ---
-df['early_declare_score'] = df['early_declare'] * 100
-
-print(f"\n  Early Declare Score (5% weight):")
-print(f"    Early declares (100): {(df['early_declare_score']==100).sum()}")
-print(f"    Non-early (0): {(df['early_declare_score']==0).sum()}")
-
-
-# --- Component 5: RAS — MNAR Imputed (5%) ---
-# No combine data yet. Rd 1-2 projected → 60, Rd 3+ → 40
+# --- Component 4: RAS — MNAR Imputed (10%) ---
+# No combine data yet. Rd 1-2 projected → 60th pctl, Rd 3+ → 40th pctl
+# Same MNAR approach as RB model (elite prospects skip workouts)
 def impute_ras(pick):
     if pick <= 64:  # Rd 1-2
         return 60.0
@@ -293,20 +292,36 @@ def impute_ras(pick):
 
 df['ras_score'] = df['projected_pick'].apply(impute_ras)
 
-print(f"\n  RAS Score (5% weight, MNAR-imputed — no combine data yet):")
+print(f"\n  RAS Score (10% weight, MNAR-imputed — no combine data yet):")
 print(f"    Rd 1-2 (60th pctl = 60): {(df['ras_score']==60).sum()} prospects")
 print(f"    Rd 3+ (40th pctl = 40):  {(df['ras_score']==40).sum()} prospects")
 
+# NOTE: Early Declare intentionally excluded from TE model.
+# te_ed_investigation.py found: 0/25 mid-round early declares hit top12.
+# ED only correlates at DC 80+ where DC already captures the signal.
+df['early_declare_score'] = df['early_declare'] * 100  # Keep for reference only
+print(f"\n  Early Declare (NOT in model — 0% weight, kept for reference):")
+print(f"    Early declares: {(df['early_declare']==1).sum()}, Non-early: {(df['early_declare']==0).sum()}")
+
 
 # ============================================================================
-# STEP 4: Calculate SLAP Scores
+# STEP 4: Calculate SLAP Scores — VALIDATED 60/15/15/10
 # ============================================================================
 print(f"\n\n{'='*120}")
-print("CALCULATING SLAP SCORES: 65% DC + 15% Breakout + 10% Production + 5% Early Declare + 5% RAS")
+print("CALCULATING SLAP SCORES: 60% DC + 15% Breakout + 15% Production + 10% RAS")
+print("(Validated: AUC-ROC top12=0.916, top6=0.904, wins 11/11 vs DC-only)")
 print("=" * 120)
 
-# Weighted formula
+# Validated 4-component formula (locked commit 6e988aa)
 df['slap_score'] = (
+    df['dc_score'] * 0.60 +
+    df['breakout_score_filled'] * 0.15 +
+    df['production_score_filled'] * 0.15 +
+    df['ras_score'] * 0.10
+)
+
+# Also compute the OLD 65/15/10/5/5 scores for comparison
+df['slap_old_65'] = (
     df['dc_score'] * 0.65 +
     df['breakout_score_filled'] * 0.15 +
     df['production_score_filled'] * 0.10 +
@@ -414,29 +429,39 @@ if boundary_risk:
 # STEP 6: FULL RANKINGS
 # ============================================================================
 print(f"\n\n{'='*120}")
-print("2026 TE SLAP RANKINGS — V5 (65/15/10/5/5)")
+print("2026 TE SLAP RANKINGS — VALIDATED (60/15/15/10: DC/Breakout/Production/RAS)")
 print(f"{'='*120}")
 
 df_ranked = df.sort_values('slap_score', ascending=False).reset_index(drop=True)
 df_ranked['rank'] = range(1, len(df_ranked) + 1)
 
+# Old ranking for comparison
+df_ranked_old = df.sort_values('slap_old_65', ascending=False).reset_index(drop=True)
+df_ranked_old['rank_old'] = range(1, len(df_ranked_old) + 1)
+old_rank_map = dict(zip(df_ranked_old['player_name'], df_ranked_old['rank_old']))
+old_score_map = dict(zip(df_ranked_old['player_name'], df_ranked_old['slap_old_65']))
+df_ranked['rank_old'] = df_ranked['player_name'].map(old_rank_map)
+df_ranked['slap_old_65'] = df_ranked['player_name'].map(old_score_map)
+df_ranked['rank_change'] = df_ranked['rank_old'] - df_ranked['rank']  # positive = moved up
+df_ranked['score_change'] = df_ranked['slap_score'] - df_ranked['slap_old_65']
+
 print(f"\n  {'Rk':>3} {'Name':<28} {'College':<18} {'Pick':>4} {'Age':>5} {'SLAP':>6} {'DC':>5} "
-      f"{'BO':>5} {'Prod':>5} {'ED':>3} {'RAS':>4} {'Δ DC':>6}")
-print(f"  {'-'*110}")
+      f"{'BO':>5} {'Prod':>5} {'RAS':>4} {'Δ DC':>6} {'Rk Δ':>5}")
+print(f"  {'-'*115}")
 
 for _, r in df_ranked.iterrows():
     bd_flag = "*" if r['birthdate_source'] == 'estimated' else " "
-    ed_flag = "Y" if r['early_declare'] == 1 else "N"
     delta_str = f"+{r['delta_vs_dc']:.1f}" if r['delta_vs_dc'] >= 0 else f"{r['delta_vs_dc']:.1f}"
+    rk_chg = int(r['rank_change'])
+    rk_str = f"+{rk_chg}" if rk_chg > 0 else f"{rk_chg}" if rk_chg < 0 else "="
     print(f"  {int(r['rank']):>3} {r['player_name']:<28} {r['college']:<18} {int(r['projected_pick']):>4} "
           f"{r['draft_age']:>4.1f}{bd_flag} {r['slap_score']:>5.1f} {r['dc_score']:>5.1f} "
           f"{r['breakout_score_filled']:>5.1f} {r['production_score_filled']:>5.1f} "
-          f"{ed_flag:>3} {r['ras_score']:>4.0f} {delta_str:>6}")
+          f"{r['ras_score']:>4.0f} {delta_str:>6} {rk_str:>5}")
 
 print(f"\n  * = estimated birthdate (verified for top-100 picks)")
-print(f"  ED: Y = early declare, N = stayed full eligibility")
+print(f"  Rk Δ = rank change from old 65/15/10/5/5 model (positive = moved UP)")
 print(f"  Δ DC: positive = model likes player MORE than their draft slot")
-print(f"        negative = model likes player LESS than their draft slot")
 
 # Summary stats
 print(f"\n  SUMMARY:")
@@ -450,8 +475,8 @@ print(f"    Biggest positive delta: {df_ranked.loc[df_ranked['delta_vs_dc'].idxm
 print(f"    Biggest negative delta: {df_ranked.loc[df_ranked['delta_vs_dc'].idxmin(), 'player_name']} "
       f"({df_ranked['delta_vs_dc'].min():.1f})")
 
-# Top 10 biggest disagreements
-print(f"\n  TOP 10 BIGGEST DISAGREEMENTS (|Δ DC| > 0):")
+# Top 10 biggest disagreements vs DC
+print(f"\n  TOP 10 BIGGEST DISAGREEMENTS VS DC-ONLY:")
 df_ranked['abs_delta'] = df_ranked['delta_vs_dc'].abs()
 top_disagree = df_ranked.nlargest(10, 'abs_delta')
 for _, r in top_disagree.iterrows():
@@ -460,12 +485,64 @@ for _, r in top_disagree.iterrows():
     print(f"    {r['player_name']:<28} pick {int(r['projected_pick']):>3} | "
           f"DC {r['dc_score']:.1f} → SLAP {r['slap_score']:.1f} | {direction} {delta_str}")
 
+# ============================================================================
+# STEP 7: COMPARISON — Who moved most from old 65/15/10/5/5?
+# ============================================================================
+print(f"\n\n{'='*120}")
+print("COMPARISON: Old 65/15/10/5/5 → New VALIDATED 60/15/15/10")
+print(f"{'='*120}")
+
+print(f"\n  Weight changes: DC 65→60 | Breakout 15→15 | Production 10→15 | ED 5→DROPPED | RAS 5→10")
+print(f"  Net effect: +5% to Production, +5% to RAS, -5% from DC, -5% from ED removal")
+
+# Biggest movers by rank
+df_ranked['abs_rank_change'] = df_ranked['rank_change'].abs()
+big_movers = df_ranked[df_ranked['abs_rank_change'] > 0].nlargest(15, 'abs_rank_change')
+
+print(f"\n  BIGGEST RANK MOVERS (old → new):")
+print(f"  {'Name':<28} {'Old Rk':>6} {'New Rk':>6} {'Rk Δ':>5} {'Old SLAP':>8} {'New SLAP':>8} {'Sc Δ':>6} {'Why'}")
+print(f"  {'-'*110}")
+for _, r in big_movers.iterrows():
+    rk_chg = int(r['rank_change'])
+    rk_str = f"+{rk_chg}" if rk_chg > 0 else f"{rk_chg}"
+    sc_chg = r['score_change']
+    sc_str = f"+{sc_chg:.1f}" if sc_chg >= 0 else f"{sc_chg:.1f}"
+
+    # Explain why they moved
+    reasons = []
+    if r['production_score_filled'] > 60:
+        reasons.append(f"prod={r['production_score_filled']:.0f}")
+    if r['early_declare'] == 1:
+        reasons.append("lost ED bonus")
+    if r['early_declare'] == 0 and sc_chg > 0:
+        reasons.append("no ED to lose")
+    if r['production_score_filled'] < 30:
+        reasons.append(f"low prod={r['production_score_filled']:.0f}")
+    why = ", ".join(reasons) if reasons else ""
+
+    print(f"  {r['player_name']:<28} {int(r['rank_old']):>6} {int(r['rank']):>6} {rk_str:>5} "
+          f"{r['slap_old_65']:>8.1f} {r['slap_score']:>8.1f} {sc_str:>6}  {why}")
+
+# Summary of systematic effects
+ed_players = df_ranked[df_ranked['early_declare'] == 1]
+non_ed = df_ranked[df_ranked['early_declare'] == 0]
+print(f"\n  SYSTEMATIC EFFECTS:")
+print(f"    Early declares (n={len(ed_players)}): avg score change {ed_players['score_change'].mean():+.1f} "
+      f"(lost 5% ED bonus, but gained from higher Prod+RAS weights)")
+print(f"    Non-early (n={len(non_ed)}):       avg score change {non_ed['score_change'].mean():+.1f} "
+      f"(no ED to lose, benefit from Production/RAS getting more weight)")
+print(f"    High producers (prod>60, n={(df_ranked['production_score_filled']>60).sum()}): "
+      f"avg change {df_ranked[df_ranked['production_score_filled']>60]['score_change'].mean():+.1f}")
+print(f"    Low producers (prod<30, n={(df_ranked['production_score_filled']<30).sum()}): "
+      f"avg change {df_ranked[df_ranked['production_score_filled']<30]['score_change'].mean():+.1f}")
+
 # Save results
 output_cols = [
     'rank', 'player_name', 'position', 'college', 'projected_pick', 'projected_pick_raw',
     'draft_age', 'birthdate', 'birthdate_source', 'early_declare',
     'slap_score', 'dc_score', 'breakout_score_filled', 'production_score_filled',
-    'early_declare_score', 'ras_score', 'delta_vs_dc',
+    'ras_score', 'delta_vs_dc',
+    'slap_old_65', 'rank_old', 'rank_change', 'score_change',
     'breakout_age', 'peak_dominator', 'breakout_score',
     'cfbd_receptions', 'cfbd_rec_yards', 'cfbd_team_pass_att', 'cfbd_rush_yards',
     'production_raw', 'production_score',
