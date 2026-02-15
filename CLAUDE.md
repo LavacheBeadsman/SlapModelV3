@@ -11,7 +11,7 @@
 
 **SLAP Score V3**: Statistical Likelihood of Achieving Production
 
-A draft-capital-anchored prospect model that rates 2026 NFL Draft RBs and WRs on a 0-100 scale.
+A draft-capital-anchored prospect model that rates 2026 NFL Draft RBs, WRs, and TEs on a 0-100 scale.
 
 ### Model Outputs
 1. A **0-100 SLAP Score** for each prospect
@@ -213,8 +213,9 @@ on every metric tested. See Decision #9 for full details.
 
    **WRs (V5): 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare**
    **RBs (V5): 65% DC / 30% Receiving Production (RYPTPA) / 5% Speed Score**
+   **TEs (V5): 60% DC / 15% Breakout (15% dominator) / 15% Production (Rec/TPA) / 10% RAS**
 
-   Both models are now final and locked.
+   All three models are now final and locked.
 
    **WR V5 — 4-Component Model (Feb 2026):**
 
@@ -394,7 +395,7 @@ on every metric tested. See Decision #9 for full details.
    - Teammate = 100 if total_teammate_dc > 150, else 0
    - Early_Declare = 100 if declared early, else 0
 
-   **Status:** Both WR V5 and RB V5 formulas are locked.
+   **Status:** WR V5, RB V5, and TE V5 formulas are all locked.
 
 10. **RB V5: Reoptimization Complete** (Feb 2026)
 
@@ -426,6 +427,44 @@ on every metric tested. See Decision #9 for full details.
    - RAS replaced by Speed Score at 5% (RAS had no raw measurements; Speed Score uses
      actual weight + 40 time with better coverage via weight recovery)
    - MNAR-aware imputation for missing athletic data
+
+11. **TE V5: 4-Component Model Locked** (Feb 2026)
+
+   The TE model was built from scratch using the same methodology as WR and RB.
+   160 TEs from 2015-2024 drafts backtested against TE-specific outcomes (top12_10g,
+   top6_10g, best_3yr_ppg_10g with 10-game season minimum).
+
+   **TE V5 Formula:**
+   ```
+   TE SLAP = DC × 0.60 + Breakout × 0.15 + Production × 0.15 + RAS × 0.10
+   ```
+
+   Where:
+   - DC = `100 - 2.40 × (pick^0.62 - 1)` (same gentler curve)
+   - Breakout = TE-specific breakout age score (**15% dominator threshold**, not 20% like WRs)
+   - Production = `Rec yards / team pass attempts × age_weight × 100` (min-max normalized)
+   - RAS = Relative Athletic Score × 10 (MNAR-imputed when missing)
+
+   **Key TE-specific differences from WR/RB:**
+   - **15% dominator threshold** (vs 20% for WRs) — TEs have lower target shares
+   - **No Early Declare** — 0/25 mid-round early-declare TEs hit top12; signal only at DC 80+
+   - **No Teammate Score** — tested 3 pool definitions (WR-only, WR+TE, WR+TE+RB); all null or
+     negative. TEs at WR-rich programs get buried in the target tree, opposite of WR finding
+   - **RAS kept at 10%** — Speed Score and broad jump have real signal for TEs (r=+0.24, p=0.02)
+     unlike WRs where DC already prices in athleticism
+   - **Production uses CFBD primary, PFF fallback** — Rec/TPA (CFBD receiving yards / team pass attempts)
+
+   **Validation Results (AUC-ROC):**
+   - top12_10g: 0.916 (excellent)
+   - top6_10g: 0.904 (excellent)
+   - SLAP wins 11/11 metrics vs DC-only
+
+   **63 PFF sub-metrics tested with partial correlations controlling for DC.**
+   Key findings: PFF Offense Grade (+0.252, p=0.008), Speed Score (+0.241, p=0.021),
+   PFF Target Rate (+0.208, p=0.029) all significant. Blocking grades NOT significant
+   (pass block: r=+0.046, p=0.632). Weight is NEGATIVE (r=-0.180, p=0.042).
+
+   **Status:** TE V5 formula locked.
 
 ## Technical Preferences
 
@@ -473,13 +512,28 @@ SlapModelV3/
 - Weight and 40-yard dash time (for Speed Score)
 - Data sources: CFBD API for receiving (92.8% coverage), combine.parquet + CFBD player search for weight/40
 
+**For TEs specifically:**
+- Breakout age (age when first hit 15%+ dominator rating — lower threshold than WRs)
+- Requires multi-season PFF data to calculate
+- Receiving yards (FINAL college season, CFBD primary, PFF fallback)
+- Team pass attempts (same season)
+- RAS (Relative Athletic Score, 0-10 scale → ×10 for 0-100)
+- Data sources: PFF receiving summaries, CFBD API, combine.parquet
+
 ## Commands
 
 ```bash
-# MAIN COMMAND: Recalculate ALL SLAP V5 scores + full backtest analysis
+# MAIN COMMAND: Build unified master database (ALL 3 positions × backtest + 2026)
 # WR V5: 70/20/5/5 (DC / Enhanced Breakout / Teammate / Early Declare)
 # RB V5: 65/30/5 (DC / RYPTPA / Speed Score)
+# TE V5: 60/15/15/10 (DC / Breakout / Production / RAS)
+python src/build_master_database_v5.py
+
+# WR/RB backtest analysis only (V5 vs V4 vs DC-only comparison)
 python src/recalculate_slap_v5.py
+
+# TE 2026 prospect scores (standalone)
+python src/calculate_te_slap_2026.py
 
 # Fetch RB receiving stats from CFBD API
 python src/fetch_rb_receiving_stats.py
@@ -500,23 +554,28 @@ python src/fill_missing_ages.py
 
 ## Output Files
 
-### Current Output (V5: WR 70/20/5/5, RB 65/30/5, gentler DC curve)
-- `output/slap_v5_database.csv` - Master V5 database with all SLAP scores (WRs + RBs, 2015-2026)
+### Current Output (V5: WR 70/20/5/5, RB 65/30/5, TE 60/15/15/10)
+- `output/slap_v5_master_database.csv` - **Unified master** (939 rows: 448 WR + 279 RB + 212 TE, backtest + 2026)
+- `output/slap_v5_wr.csv` - WR only (339 backtest + 109 prospects)
+- `output/slap_v5_rb.csv` - RB only (223 backtest + 56 prospects)
+- `output/slap_v5_te.csv` - TE only (160 backtest + 52 prospects)
+- `output/slap_v5_2026_all.csv` - 2026 prospects only (217 across all positions, ranked)
 
-### Legacy Output (V4 — superseded by V5)
+### Legacy Output (superseded by master database)
+- `output/slap_v5_database.csv` - Old V5 master (WR + RB only, no TE)
 - `output/slap_complete_database_v4.csv` - V4 master database
-- `output/slap_complete_all_players.csv` - V4 all players
-- `output/slap_complete_wr.csv` - V4 WR scores
-- `output/slap_complete_rb.csv` - V4 RB scores
 - `output/slap_wr_2026.csv` - V4 2026 WR projections
 - `output/slap_rb_2026.csv` - V4 2026 RB projections
+- `output/te_slap_2026.csv` - TE 2026 standalone (now included in master)
 
 ### Data Files
 - `data/rb_backtest_with_receiving.csv` - RB backtest data with receiving stats from CFBD
-- `data/wr_backtest_expanded_final.csv` - WR backtest data with breakout ages
 - `data/wr_backtest_all_components.csv` - WR backtest with all V5 components (breakout, rush yards, early declare)
 - `data/wr_teammate_scores.csv` - WR teammate DC scores
-- `data/prospects_final.csv` - 2026 prospect data
+- `data/te_backtest_master.csv` - TE backtest data (160 TEs, 2015-2024)
+- `data/te_2026_prospects_final.csv` - TE 2026 prospect data
+- `data/prospects_final.csv` - WR/RB 2026 prospect data
+- `data/backtest_outcomes_complete.csv` - NFL outcomes for WR/RB backtest
 
 ### Legacy Output (superseded)
 - `output/slap_v3_fixed_all_players.csv` - Old scores (before DC formula change)
