@@ -1,0 +1,225 @@
+================================================================================
+SLAP V5 MODEL SUMMARY
+Statistical Likelihood of Achieving Production — Version 5
+================================================================================
+Exported: 2026-02-15
+Sample: 2015-2025 NFL Drafts (backtest) + 2026 Prospects
+Outcomes: Includes 2025 NFL season data, 6-game minimum threshold
+
+================================================================================
+1. FINAL WEIGHTS (LOCKED)
+================================================================================
+
+  WR V5: 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare
+  RB V5: 65% DC / 30% RYPTPA / 5% Speed Score
+  TE V5: 60% DC / 15% Breakout / 15% Production / 10% RAS
+
+================================================================================
+2. COMPONENT DEFINITIONS AND FORMULAS
+================================================================================
+
+DRAFT CAPITAL (all positions):
+  DC = 100 - 2.40 * (pick^0.62 - 1)
+  "Gentler curve" — pick 1 = 100, pick 32 ~ 82, pick 100 ~ 61, pick 250 ~ 29
+  Uses actual draft pick (backtest) or consensus projected pick (2026 prospects)
+
+--- WR COMPONENTS ---
+
+  Enhanced Breakout (20%):
+    Base = age tier score when player first hit 20%+ dominator rating
+      Age 18: 100 | Age 19: 90 | Age 20: 75 | Age 21: 60 | Age 22: 45 | Age 23: 30
+      Never hit 20%: min(35, 15 + peak_dominator)
+    Bonus = min((dominator_pct - 20) * 0.5, 9.9) if dominator >= 20%
+    Rush bonus = +5 if college rushing yards >= 20
+    Final = min(base + bonus + rush_bonus, 99.9)
+
+  Teammate Score (5%):
+    Binary: 100 if sum of teammate WR/TE draft capital > 150, else 0
+    Signals production in a competitive target environment
+
+  Early Declare (5%):
+    Binary: 100 if player declared before senior season, else 0
+
+  WR SLAP = DC * 0.70 + Enhanced_Breakout * 0.20 + Teammate * 0.05 + Early_Declare * 0.05
+
+--- RB COMPONENTS ---
+
+  RYPTPA — Receiving Yards Per Team Pass Attempt (30%):
+    raw = (rec_yards / team_pass_att) * age_weight * 100
+    scaled = min(99.9, raw / 1.75)
+    Age weights: 19 -> 1.15x, 20 -> 1.10x, 21 -> 1.05x, 22 -> 1.00x, 23 -> 0.95x, 24+ -> 0.90x
+    ALWAYS uses FINAL college season (draft_year - 1)
+
+  Speed Score (5%):
+    raw = (weight * 200) / (40_time ^ 4)
+    Normalized 0-100 via min-max within RB position
+    MNAR imputation for missing data:
+      Rd 1-2 missing -> 60th percentile (elite prospects skip workouts)
+      Rd 3+ missing -> 40th percentile (replacement-level)
+
+  RB SLAP = DC * 0.65 + RYPTPA * 0.30 + Speed_Score * 0.05
+
+--- TE COMPONENTS ---
+
+  Breakout (15%):
+    Same age-tier formula as WR but with 15% dominator threshold (not 20%)
+    TEs have lower target shares, so lower breakout bar
+
+  Production — Rec/TPA (15%):
+    raw = (rec_yards / team_pass_att) * age_weight * 100
+    Min-max normalized 0-99.9 within TE position
+    CFBD API primary, PFF fallback
+
+  RAS — Relative Athletic Score (10%):
+    0-10 scale from Kent Lee Platte, multiplied by 10 for 0-100
+    MNAR imputation same as RB Speed Score (Rd 1-2: 60th pctl, Rd 3+: 40th pctl)
+
+  TE SLAP = DC * 0.60 + Breakout * 0.15 + Production * 0.15 + RAS * 0.10
+
+================================================================================
+3. DATA SOURCES AND COVERAGE
+================================================================================
+
+  Backtest Sample:
+    WR: 339 players (2015-2025 drafts)
+    RB: 223 players (2015-2025 drafts)
+    TE: 160 players (2015-2025 drafts)
+    Total: 722 backtest players
+
+  2026 Prospects:
+    WR: 109 prospects
+    RB: 56 prospects
+    TE: 52 prospects
+    Total: 217 prospects
+
+  NFL Outcomes (with 2025 season, 6-game minimum):
+    WR: 251/339 (74.0%) have first_3yr_ppg, 252/339 (74.3%) have career_ppg
+    RB: 167/223 (74.9%) have first_3yr_ppg, 172/223 (77.1%) have career_ppg
+    TE: 94/160 (58.8%) have first_3yr_ppg, 104/160 (65.0%) have career_ppg
+
+  Data Sources:
+    - Draft capital: NFL draft history
+    - WR breakout ages: Multi-season college dominator ratings
+    - WR teammate scores: Same-year WR/TE teammate draft capital
+    - RB receiving stats: CFBD API (92.8% coverage)
+    - RB weight/40 time: combine.parquet + CFBD player search (96% weight coverage)
+    - TE breakout/production: PFF receiving summaries + CFBD API
+    - TE RAS: Kent Lee Platte Relative Athletic Score database
+    - NFL outcomes: nflverse player stats (PPR scoring, 6-game season minimum)
+
+  Data Quality Flags:
+    WR: 339/339 (100%) real breakout data
+    RB: 219/223 (98.2%) real production, 168/223 (75.3%) real speed score
+    TE: 112/160 (70.0%) real breakout, 113/160 (70.6%) real production, 140/160 (87.5%) real RAS
+
+================================================================================
+4. VALIDATION RESULTS
+================================================================================
+
+  All correlations use Pearson r on the backtest sample (2015-2025 drafts).
+  Outcomes include 2025 NFL season data with 6-game minimum threshold.
+
+  --- WR (n=339) ---
+
+  Metric                    DC-only   SLAP V5   Delta
+  -------------------------------------------------------
+  r(first_3yr_ppg)          +0.482    +0.501    +0.019
+  r(career_ppg)             +0.456    +0.474    +0.018
+  r(hit24)                  +0.464    +0.479    +0.015
+  r(hit12)                  +0.288    +0.312    +0.024
+  r(seasons_over_10ppg)     +0.407    +0.414    +0.007
+
+  Top-decile hit24 rate:    DC=54.5%  SLAP=63.6%  (n=33)
+  Top-decile avg PPG:       DC=13.3   SLAP=13.8
+
+  --- RB (n=223) ---
+
+  Metric                    DC-only   SLAP V5   Delta
+  -------------------------------------------------------
+  r(first_3yr_ppg)          +0.579    +0.601    +0.022
+  r(career_ppg)             +0.603    +0.609    +0.006
+  r(hit24)                  +0.514    +0.520    +0.006
+  r(hit12)                  +0.464    +0.475    +0.011
+  r(seasons_over_10ppg)     +0.571    +0.576    +0.005
+
+  Top-decile hit24 rate:    DC=81.8%  SLAP=86.4%  (n=22)
+  Top-decile avg PPG:       DC=17.3   SLAP=17.9
+
+  --- TE (n=160) ---
+
+  Metric                    DC-only   SLAP V5   Delta
+  -------------------------------------------------------
+  r(first_3yr_ppg)          +0.590    +0.624    +0.034
+  r(career_ppg)             +0.577    +0.604    +0.027
+  r(hit24)                  +0.521    +0.546    +0.025
+  r(hit12)                  +0.329    +0.376    +0.046
+  r(seasons_over_10ppg)     +0.364    +0.391    +0.027
+
+  Top-decile hit24 rate:    DC=75.0%  SLAP=68.8%  (n=16)
+  Top-decile avg PPG:       DC=10.7   SLAP=10.5
+
+  --- PRIORITY-WEIGHTED AVERAGE (40% hit24 / 25% first_3yr / 20% career / 15% szn10) ---
+
+  WR: DC=+0.458  SLAP=+0.474  delta=+0.015  -> SLAP wins
+  RB: DC=+0.557  SLAP=+0.566  delta=+0.010  -> SLAP wins
+  TE: DC=+0.526  SLAP=+0.554  delta=+0.028  -> SLAP wins
+
+  SLAP V5 beats DC-only on every correlation metric for all 3 positions.
+  TE top-decile hit24 dip (75% -> 69%) is 1 player out of 16 (noise at small n).
+
+  --- TE AUC-ROC (from original TE model build) ---
+
+  top12_10g AUC: 0.916 (excellent)
+  top6_10g AUC:  0.904 (excellent)
+
+================================================================================
+5. KNOWN LIMITATIONS
+================================================================================
+
+  1. Draft capital dominates all models (60-70% weight). SLAP is primarily a
+     draft-capital model with production adjustments. If DC is wrong, SLAP is wrong.
+
+  2. 2026 prospects use projected picks (consensus mocks). Actual draft position
+     will change scores significantly. Re-run after the draft with actual picks.
+
+  3. TE sample is smaller (160 backtest, 52 prospects) than WR/RB. TE validation
+     metrics are noisier — top-decile stats based on only 16 players.
+
+  4. Missing athletic data is imputed using MNAR-aware percentiles. This is better
+     than simple averages but still introduces estimation error.
+     - RB Speed Score: 75.3% real data, 24.7% imputed
+     - TE RAS: 87.5% real data, 12.5% imputed
+     - WR: No athletic component (removed in V5), so no missing data issue
+
+  5. RB production uses FINAL college season only. Players who were injured or
+     transferred mid-season may have unrepresentative scores.
+
+  6. NFL outcomes now include 2025 season data with a 6-game minimum threshold
+     (lowered from 8 games). This expanded coverage from ~63% to ~75% for PPG
+     metrics. Younger draft classes (2024-2025) have limited NFL track records.
+
+  7. The model does not account for: NFL landing spot, coaching scheme, team
+     offensive line quality, or injury history. These are real factors but were
+     excluded to keep the model prospect-focused and draft-day applicable.
+
+  8. Binary components (Teammate Score, Early Declare) create discrete jumps
+     rather than smooth gradients. At 5% weight each, the impact is small
+     (max +/- 5 points per component).
+
+================================================================================
+6. OUTPUT FILES
+================================================================================
+
+  output/slap_v5_master_database.csv  — 939 rows (all positions, backtest + 2026)
+  output/slap_v5_wr.csv              — 448 rows (WR only, backtest + 2026)
+  output/slap_v5_rb.csv              — 279 rows (RB only, backtest + 2026)
+  output/slap_v5_te.csv              — 212 rows (TE only, backtest + 2026)
+  output/slap_v5_2026_all.csv        — 217 rows (2026 prospects, all positions, ranked)
+  output/slap_v5_wr_2026.csv         — 109 rows (WR 2026 prospects, ranked)
+  output/slap_v5_rb_2026.csv         — 56 rows (RB 2026 prospects, ranked)
+  output/slap_v5_te_2026.csv         — 52 rows (TE 2026 prospects, ranked)
+  output/slap_v5_model_summary.txt   — This file
+
+================================================================================
+END OF MODEL SUMMARY
+================================================================================
