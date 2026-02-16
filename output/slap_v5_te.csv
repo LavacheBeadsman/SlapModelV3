@@ -1,213 +1,213 @@
 player_name,position,college,draft_year,pick,round,slap_v5,dc_score,delta_vs_dc,data_type,te_breakout_score,te_production_score,ras_score,breakout_age,peak_dominator,rec_yards,team_pass_att,nfl_hit24,nfl_hit12,nfl_first_3yr_ppg,nfl_career_ppg,nfl_best_ppr,nfl_best_ppg,breakout_data_flag,production_data_flag,athletic_data_flag
-Maxx Williams,TE,Minnesota,2015,55,2,68.6,67.9,0.7,backtest,98.4,97.2,6.6,19.0,36.8,569.0,254.0,0.0,0.0,5.890909090909091,5.890909090909091,64.8,5.890909090909091,real,real,real
-Clive Walford,TE,Miami (FL),2015,68,3,60.4,62.7,-2.3,backtest,82.2,87.2,5.9,22.0,23.9,676.0,391.0,0.0,0.0,5.793333333333334,5.793333333333334,86.9,5.793333333333334,real,real,real
-Jeff Heuerman,TE,Ohio St.,2015,92,3,47.6,54.0,-6.4,backtest,27.5,51.6,82.2,,,,,0.0,0.0,3.5200000000000005,7.109999999999999,71.1,7.109999999999999,imputed,imputed,real
-MyCole Pruitt,TE,Southern Illinois,2015,143,5,46.4,38.1,8.3,backtest,94.7,51.6,46.6,20.0,68.8,136.0,,0.0,0.0,1.89,5.5,55.0,5.5,real,imputed,real
-Tyler Kroft,TE,Rutgers,2015,85,3,44.9,56.5,-11.6,backtest,73.4,19.7,29.1,,18.7,269.0,357.0,0.0,0.0,8.293333333333333,8.293333333333333,124.4,8.293333333333333,real,real,real
-Nick Boyle,TE,Delaware,2015,171,5,35.8,30.2,5.6,backtest,92.8,51.6,3.4,20.0,31.3,,,0.0,0.0,3.353333333333333,5.006666666666666,75.1,5.006666666666666,real,imputed,real
-Jesse James,TE,Penn St.,2015,160,5,28.7,33.3,-4.6,backtest,27.5,51.6,32.5,,,,,0.0,0.0,7.014285714285714,7.014285714285714,98.2,7.014285714285714,imputed,imputed,real
-James O'Shaughnessy,TE,Illinois St.,2015,173,5,28.6,29.7,-1.1,backtest,27.5,51.6,47.8,,,,,0.0,0.0,2.492857142857143,3.61333335240682,54.200000286102295,7.199999979564121,imputed,imputed,real
-Malcolm Johnson,TE,Mississippi St.,2015,195,6,24.0,23.9,0.1,backtest,27.5,51.6,39.4,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,mnar_imputed
-Blake Bell,TE,Oklahoma,2015,117,4,23.7,45.9,-22.2,backtest,9.1,9.7,24.7,,8.1,214.0,386.0,0.0,0.0,,2.0181818333539097,33.6,3.733333333333333,real,real,real
-C.J. Uzomah,TE,Auburn,2015,157,5,21.4,34.1,-12.7,backtest,5.9,8.4,68.4,,7.2,145.0,332.0,0.0,0.0,,8.018750101327896,128.30000162124634,8.018750101327896,real,real,real
-A.J. Derby,TE,Arkansas,2015,202,6,20.5,22.1,-1.6,backtest,27.5,51.6,20.3,,,,359.0,0.0,0.0,5.036363636363636,5.036363636363636,55.4,5.036363636363636,imputed,imputed,real
-Nick O'Leary,TE,Florida St.,2015,194,6,19.3,24.2,-4.9,backtest,27.5,51.6,1.6,,,,,0.0,0.0,4.938461538461539,4.938461538461539,64.2,4.938461538461539,imputed,imputed,real
-Kennard Backman,TE,Ala-Birmingham,2015,213,6,18.8,19.4,-0.6,backtest,27.5,51.6,19.7,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,real
-Ben Koyack,TE,Notre Dame,2015,229,7,12.7,15.4,-2.7,backtest,50.3,15.9,9.7,,12.1,317.0,463.0,0.0,0.0,,,41.1,4.566666666666666,real,real,real
-Randall Telfer,TE,USC,2015,198,6,11.2,23.2,-12.0,backtest,7.8,7.2,39.4,,7.7,197.0,460.0,0.0,0.0,,,6.6,0.0,real,real,mnar_imputed
-Gerald Christian,TE,Louisville,2015,256,7,8.7,9.1,-0.4,backtest,49.1,22.8,0.3,,11.6,384.0,428.0,0.0,0.0,,,2.4,0.0,real,real,real
-Rory Anderson,TE,South Carolina,2015,254,7,4.4,9.5,-5.1,backtest,10.9,10.9,39.4,,8.8,260.0,468.0,0.0,0.0,,,0.0,0.0,real,real,mnar_imputed
-Geoff Swaim,TE,Texas,2015,246,7,2.9,11.4,-8.5,backtest,0.9,1.6,48.4,,2.7,70.0,418.0,0.0,0.0,,4.374999940395355,69.99999904632568,7.025,real,real,real
-Hunter Henry,TE,Arkansas,2016,35,2,75.8,76.9,-1.1,backtest,98.4,94.1,25.3,18.0,24.0,739.0,374.0,1.0,0.0,10.575,12.516666666666666,178.8,12.516666666666666,real,real,real
-Austin Hooper,TE,Stanford,2016,81,3,59.4,57.9,1.5,backtest,65.9,79.1,57.5,,16.7,438.0,318.0,1.0,0.0,10.1875,14.746153846153844,191.7,14.746153846153844,real,real,real
-Nick Vannett,TE,Ohio St.,2016,94,3,38.8,53.4,-14.6,backtest,27.5,51.6,16.6,,,,,0.0,0.0,4.926666666666667,4.926666666666667,73.9,4.926666666666667,imputed,imputed,real
-Tyler Higbee,TE,Western Kentucky,2016,110,4,38.6,48.1,-9.5,backtest,47.2,32.2,39.4,,10.8,563.0,554.0,0.0,0.0,4.6571428571428575,11.457142857142856,160.4,11.457142857142856,real,real,mnar_imputed
-Seth Devalve,TE,Princeton,2016,138,4,38.2,39.5,-1.3,backtest,27.5,51.6,76.6,,,,,0.0,0.0,4.78125,4.78125,76.5,4.78125,imputed,imputed,real
-Thomas Duarte,TE,UCLA,2016,231,7,36.1,15.0,21.1,backtest,90.3,89.7,24.1,20.0,24.9,872.0,510.0,0.0,0.0,,,0.0,0.0,real,real,real
-Jerell Adams,TE,South Carolina,2016,184,6,33.7,26.8,6.9,backtest,66.6,36.6,65.3,,16.9,421.0,351.0,0.0,0.0,,,34.2,3.8,real,real,real
-Temarrick Hemingway,TE,South Carolina St.,2016,177,6,25.8,28.6,-2.8,backtest,27.5,51.6,31.6,,,,,0.0,0.0,,,2.0,0.0,imputed,imputed,real
-David Morgan,TE,Texas-San Antonio,2016,188,6,21.9,25.7,-3.8,backtest,27.5,51.6,14.7,,,,,0.0,0.0,,,25.5,3.642857142857143,imputed,imputed,real
-Rico Gathers,TE,Baylor,2016,217,6,19.8,18.4,1.4,backtest,27.5,51.6,32.5,,,,389.0,0.0,0.0,,,7.5,1.25,imputed,imputed,real
-Beau Sandland,TE,Montana St.,2016,252,7,19.7,10.0,9.7,backtest,27.5,51.6,70.9,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,real
-O.J. Howard,TE,Alabama,2017,19,1,82.1,85.7,-3.6,backtest,74.7,77.2,94.1,,18.9,595.0,417.0,1.0,1.0,12.05,12.05,120.5,12.05,real,real,real
-David Njoku,TE,Miami (FL),2017,29,1,80.5,80.0,0.5,backtest,78.4,88.4,85.6,,19.6,698.0,426.0,1.0,0.0,9.593333333333334,13.5,201.2,13.5,real,real,real
-Gerald Everett,TE,South Alabama,2017,44,2,76.4,72.7,3.7,backtest,87.2,86.6,77.5,21.0,24.0,717.0,415.0,0.0,0.0,7.483333333333333,9.3,139.5,9.3,real,real,real
-Adam Shaheen,TE,Ashland,2017,45,2,65.9,72.2,-6.3,backtest,27.5,98.4,69.7,,,867.0,328.0,0.0,0.0,,3.4615384890482974,45.00000035762787,7.116666666666667,imputed,real,real
-Evan Engram,TE,Mississippi,2017,23,1,65.1,83.3,-18.2,backtest,27.5,51.6,81.6,,,,,1.0,1.0,11.573333333333332,13.547058823529412,230.3,13.675,imputed,imputed,real
-Jonnu Smith,TE,Florida International,2017,100,3,60.7,51.4,9.3,backtest,98.4,71.6,60.9,18.0,35.2,506.0,407.0,0.0,0.0,6.98,13.076470588235296,222.3,13.076470588235296,real,real,real
-Jake Butt,TE,Michigan,2017,145,5,49.4,37.5,11.9,backtest,89.1,79.7,39.4,20.0,21.2,546.0,370.0,0.0,0.0,,,16.5,0.0,real,real,mnar_imputed
-Bucky Hodges,TE,Virginia Tech,2017,201,6,45.0,22.4,22.6,backtest,74.1,82.8,93.4,,18.8,691.0,449.0,0.0,0.0,,,0.0,0.0,real,real,real
-Jordan Leggett,TE,Clemson,2017,150,5,42.5,36.1,6.4,backtest,60.9,66.6,54.1,,14.7,736.0,629.0,0.0,0.0,2.415384615384616,2.415384615384616,31.4,2.415384615384616,real,real,real
-George Kittle,TE,Iowa,2017,146,5,41.8,37.2,4.6,backtest,64.7,31.6,90.3,,15.8,314.0,310.0,1.0,1.0,16.16875,16.16875,258.7,16.16875,real,real,real
-Michael Roberts,TE,Toledo,2017,127,4,40.2,42.8,-2.6,backtest,52.8,68.4,14.1,,12.7,533.0,423.0,0.0,0.0,,,37.0,5.285714285714286,real,real,real
-Mason Schreck,TE,Buffalo,2017,251,7,34.8,10.2,24.6,backtest,84.7,84.1,52.8,22.0,27.1,651.0,397.0,0.0,0.0,,,2.6,0.0,real,real,real
-Eric Saubert,TE,Drake,2017,174,5,28.8,29.4,-0.6,backtest,27.5,51.6,50.9,,,,,0.0,0.0,,3.2545454545454544,35.8,3.3375,imputed,imputed,real
-Jeremy Sprinkle,TE,Arkansas,2017,154,5,26.7,34.9,-8.2,backtest,47.8,26.6,15.9,,11.2,380.0,406.0,0.0,0.0,3.74,3.74,56.1,3.74,real,real,real
-Hayden Hurst,TE,South Carolina,2018,25,1,72.1,82.2,-10.1,backtest,71.6,70.3,47.2,23.0,22.2,559.0,397.0,0.0,0.0,9.318750075995922,9.318750075995922,149.10000121593475,9.318750075995922,real,real,real
-Dallas Goedert,TE,South Dakota St.,2018,49,2,67.1,70.5,-3.4,backtest,27.5,96.6,89.7,,,1111.0,455.0,1.0,0.0,10.581818385557694,12.34,185.1,12.34,imputed,real,real
-Mark Andrews,TE,Oklahoma,2018,86,3,61.7,56.1,5.6,backtest,76.6,94.7,44.1,,18.9,958.0,433.0,1.0,1.0,13.813333333333333,17.711764503927792,301.09999656677246,17.711764503927792,real,real,real
-Mike Gesicki,TE,Penn St.,2018,42,2,61.4,73.6,-12.2,backtest,27.5,51.6,98.4,,,,,1.0,0.0,10.6199999332428,10.6199999332428,165.00000143051147,10.6199999332428,imputed,imputed,real
-Troy Fumagalli,TE,Wisconsin,2018,156,5,48.1,34.4,13.7,backtest,86.6,85.3,39.4,21.0,23.1,547.0,325.0,0.0,0.0,,,22.00000023841858,3.14285717691694,real,real,mnar_imputed
-Ian Thomas,TE,Indiana,2018,101,4,44.1,51.0,-6.9,backtest,49.7,19.1,84.7,,11.8,376.0,502.0,0.0,0.0,8.13,8.13,81.30000000000001,8.13,real,real,real
-Jordan Akins,TE,Central Florida,2018,98,3,39.6,52.0,-12.4,backtest,27.5,51.6,29.7,,,,,0.0,0.0,6.438461544422003,7.766666666666667,116.5,7.766666666666667,imputed,imputed,real
-Chris Herndon,TE,Miami (FL),2018,107,4,35.7,49.1,-13.4,backtest,27.5,51.6,12.8,,,,425.0,0.0,0.0,8.085714285714285,8.085714285714285,113.2,8.085714285714285,imputed,imputed,real
-Tyler Conklin,TE,Central Michigan,2018,157,5,35.2,34.1,1.1,backtest,63.4,34.7,50.3,,15.6,504.0,469.0,0.0,0.0,,8.135294170940623,138.3000009059906,8.135294170940623,real,real,real
-Jaylen Samuels,TE,North Carolina St.,2018,165,5,30.8,31.9,-1.1,backtest,27.5,51.6,54.7,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,real
-Durham Smythe,TE,Notre Dame,2018,123,4,30.2,44.0,-13.8,backtest,44.7,15.3,22.2,,10.5,244.0,351.0,0.0,0.0,4.523076919408945,5.5076923076923086,71.60000000000001,5.5076923076923086,real,real,real
-Dalton Schultz,TE,Stanford,2018,137,4,29.0,39.8,-10.8,backtest,46.6,12.8,33.4,,10.8,212.0,363.0,0.0,0.0,9.156249977648258,12.28235295940848,208.80000030994407,12.28235295940848,real,real,real
-Will Dissly,TE,Washington,2018,120,4,23.5,45.0,-21.5,backtest,12.2,22.2,4.1,,9.8,281.0,348.0,0.0,0.0,4.364285698958805,7.34,110.1,12.316666666666668,real,real,real
-Jordan Thomas,TE,Mississippi St.,2018,211,6,17.2,19.9,-2.7,backtest,27.5,51.6,5.3,,,,,0.0,0.0,4.678571428571429,4.678571428571429,65.5,4.678571428571429,imputed,imputed,real
-Ryan Izzo,TE,Florida St.,2018,250,7,11.9,10.4,1.5,backtest,27.5,51.6,7.8,,,,,0.0,0.0,3.09000004529953,3.09000004529953,30.9000004529953,3.09000004529953,imputed,imputed,real
-T.J. Hockenson,TE,Iowa,2019,8,1,90.6,93.7,-3.1,backtest,87.8,90.9,82.8,21.0,25.7,750.0,407.0,1.0,1.0,12.108333349227903,14.6,219.0,14.6,real,real,real
-Noah Fant,TE,Iowa,2019,20,1,82.7,85.1,-2.4,backtest,80.3,74.7,96.6,,20.0,518.0,407.0,1.0,0.0,10.664285778999329,10.664285778999329,159.0000011920929,10.664285778999329,real,real,real
-Irv Smith Jr.,TE,Alabama,2019,50,2,61.4,70.0,-8.6,backtest,60.3,87.8,11.6,,14.6,710.0,438.0,0.0,0.0,8.2083331545194,8.2083331545194,98.4999978542328,8.2083331545194,real,real,real
-Jace Sternberger,TE,Texas A&M,2019,75,3,60.6,60.1,0.5,backtest,83.4,90.3,13.4,22.0,25.4,832.0,439.0,0.0,0.0,,,29.40000021457672,3.67500002682209,real,real,real
-Kahale Warring,TE,San Diego St.,2019,86,3,49.6,56.1,-6.5,backtest,27.5,51.6,87.8,,,,,0.0,0.0,,,6.499999761581421,0.0,imputed,imputed,real
-Josh Oliver,TE,San Jose St.,2019,69,3,49.5,62.3,-12.8,backtest,27.5,51.6,58.4,,,,,0.0,0.0,1.5600000143051147,5.9818181818181815,65.8,5.9818181818181815,imputed,imputed,real
-Dawson Knox,TE,Mississippi,2019,96,3,46.9,52.7,-5.8,backtest,27.5,51.6,83.4,,,,,1.0,0.0,10.913333527247111,10.913333527247111,163.7000029087067,10.913333527247111,imputed,imputed,real
-Drew Sample,TE,Washington,2019,52,2,44.5,69.2,-24.7,backtest,6.6,11.6,78.4,,7.4,245.0,405.0,0.0,0.0,4.9312499538064,4.9312499538064,78.8999992609024,4.9312499538064,real,real,real
-Zach Gentry,TE,Michigan,2019,141,5,42.5,38.7,3.8,backtest,72.2,81.6,2.2,,18.6,514.0,340.0,0.0,0.0,3.570000010728836,3.570000010728836,35.70000010728836,3.570000010728836,real,real,real
-Foster Moreau,TE,LSU,2019,137,4,36.7,39.8,-3.1,backtest,45.3,17.2,88.4,,10.5,272.0,387.0,0.0,0.0,7.108333259820938,7.108333259820938,103.3,7.108333259820938,real,real,real
-Kaden Smith,TE,Stanford,2019,176,6,36.1,28.9,7.2,backtest,69.1,80.3,4.7,,17.9,635.0,423.0,0.0,0.0,2.246153840651879,2.246153840651879,75.8,10.828571428571427,real,real,real
-Caleb Wilson,TE,UCLA,2019,254,7,32.2,9.5,22.7,backtest,85.3,95.9,17.2,22.0,33.6,965.0,402.0,0.0,0.0,,,0.0,0.0,real,real,real
-Trevon Wesco,TE,West Virginia,2019,121,4,24.6,44.6,-20.0,backtest,10.3,20.9,18.4,,8.6,366.0,445.0,0.0,0.0,,,6.9,0.0,real,real,real
-Isaac Nauta,TE,Georgia,2019,224,7,24.5,16.7,7.8,backtest,59.1,70.9,0.9,,14.4,430.0,356.0,0.0,0.0,,,3.3,0.0,real,real,real
-Alizé Mack,TE,Notre Dame,2019,231,7,20.7,15.0,5.7,backtest,45.9,25.9,66.6,,10.8,360.0,418.0,0.0,0.0,,,0.0,0.0,real,real,real
-Tommy Sweeney,TE,Boston Col.,2019,228,7,16.5,15.7,0.8,backtest,27.5,51.6,19.1,,,,,0.0,0.0,,,19.4,2.771428568022592,imputed,imputed,real
-Cole Kmet,TE,Notre Dame,2020,43,2,69.6,73.1,-3.5,backtest,64.1,74.1,75.9,,15.7,515.0,416.0,0.0,0.0,8.66470588235294,12.073333333333332,181.1,12.073333333333332,real,real,real
-Josiah Deguara,TE,Cincinnati,2020,94,3,55.8,53.4,2.4,backtest,79.7,72.8,39.4,,19.7,504.0,377.0,0.0,0.0,5.125,5.125,61.5,5.125,real,real,mnar_imputed
-Devin Asiasi,TE,UCLA,2020,91,3,55.4,54.4,1.0,backtest,80.9,78.4,20.9,22.0,20.9,641.0,426.0,0.0,0.0,,,11.899999618530272,0.0,real,real,real
-Harrison Bryant,TE,Florida Atlantic,2020,115,4,53.9,46.5,7.4,backtest,90.9,93.4,9.1,20.0,25.6,1004.0,502.0,0.0,0.0,5.15000004072984,5.15000004072984,62.299999833107,5.15000004072984,real,real,real
-Brycen Hopkins,TE,Purdue,2020,136,4,52.6,40.1,12.5,backtest,81.6,82.2,59.1,22.0,22.3,830.0,520.0,0.0,0.0,,,17.900000000000002,2.5571428571428574,real,real,real
-Colby Parkinson,TE,Stanford,2020,133,4,46.0,41.0,5.0,backtest,75.3,76.6,21.6,,18.9,589.0,442.0,0.0,0.0,4.942857142857143,9.414285714285716,131.8,9.414285714285716,real,real,real
-Adam Trautman,TE,Dayton,2020,105,3,43.6,49.7,-6.1,backtest,27.5,51.6,71.6,,,,,0.0,0.0,5.754545396024531,5.754545396024531,63.29999935626984,5.754545396024531,imputed,imputed,real
-Dalton Keene,TE,Virginia Tech,2020,101,3,43.4,51.0,-7.6,backtest,43.4,20.3,86.6,,10.2,236.0,317.0,0.0,0.0,,,4.600000023841858,0.0,real,real,real
-Albert Okwuegbunam,TE,Missouri,2020,118,4,36.7,45.6,-8.9,backtest,54.1,23.4,39.4,,12.8,306.0,376.0,0.0,0.0,5.846153910343464,5.846153910343464,76.00000083446503,5.846153910343464,real,real,mnar_imputed
-Tyler Davis,TE,Georgia Tech,2020,206,6,13.1,21.1,-8.0,backtest,11.6,10.3,53.4,,9.2,148.0,269.0,0.0,0.0,,,7.5000001192092896,0.0,real,real,real
-Stephen Sullivan,TE,LSU,2020,251,7,11.9,10.2,1.7,backtest,50.9,3.4,45.9,,12.2,130.0,567.0,0.0,0.0,,2.45,24.5,2.45,real,real,real
-Charlie Woerner,TE,Georgia,2020,190,6,9.5,25.2,-15.7,backtest,3.4,2.2,30.3,,4.7,78.0,415.0,0.0,0.0,,,12.8,2.1333333333333333,real,real,real
-Kyle Pitts,TE,Florida,2021,4,1,89.7,97.6,-7.9,backtest,67.2,89.1,91.2,,16.9,770.0,473.0,1.0,0.0,10.388235260458554,12.4,210.8,12.4,real,real,real
-Pat Freiermuth,TE,Penn St.,2021,55,2,53.5,67.9,-14.4,backtest,27.5,51.6,63.1,,,,,1.0,0.0,9.88,9.9,168.3,9.9,imputed,imputed,mnar_imputed
-Kylen Granson,TE,SMU,2021,127,4,49.6,42.8,6.8,backtest,69.7,75.3,51.6,,17.9,536.0,376.0,0.0,0.0,4.866666666666666,4.866666666666666,73.0,4.866666666666666,real,real,real
-Hunter Long,TE,Boston Col.,2021,81,3,48.0,57.9,-9.9,backtest,27.5,51.6,67.5,,,,,0.0,0.0,,,32.5,4.642857142857143,imputed,imputed,real
-Brevin Jordan,TE,Miami (FL),2021,147,5,43.5,36.9,6.6,backtest,75.9,84.7,8.4,,18.9,576.0,381.0,0.0,0.0,,,55.80000150203705,6.975000187754631,real,real,real
-Tommy Tremble,TE,Notre Dame,2021,83,3,37.5,57.2,-19.7,backtest,7.2,14.1,75.3,,7.6,217.0,362.0,0.0,0.0,4.646153846153846,5.64,63.900000000000006,5.64,real,real,real
-Luke Farrell,TE,Ohio St.,2021,145,5,36.0,37.5,-1.5,backtest,27.5,51.6,69.1,,,,,0.0,0.0,,1.87,31.5,3.5,imputed,imputed,real
-John Bates,TE,Boise St.,2021,124,4,34.5,43.7,-9.2,backtest,27.5,51.6,28.4,,,,,0.0,0.0,4.627272746779702,4.627272746779702,50.90000021457672,4.627272746779702,imputed,imputed,real
-Zach Davidson,TE,Central Missouri St.,2021,168,5,32.6,31.1,1.5,backtest,27.5,51.6,72.8,,,,,0.0,0.0,,,1.5,0.0,imputed,imputed,real
-Noah Gray,TE,Duke,2021,162,5,30.1,32.7,-2.6,backtest,70.9,17.8,30.9,,18.2,278.0,390.0,0.0,0.0,4.4125,7.08125,113.3,7.08125,real,real,real
-Tre' McKitty,TE,Georgia,2021,97,3,25.4,52.4,-27.0,backtest,2.8,5.9,22.8,,4.3,108.0,306.0,0.0,0.0,,,17.2,2.15,real,real,real
-Greg Dulcich,TE,UCLA,2022,80,3,68.5,58.3,10.2,backtest,94.1,95.3,60.3,20.0,32.9,725.0,335.0,0.0,0.0,8.610000000000001,8.610000000000001,86.10000000000001,8.610000000000001,real,real,real
-Jelani Woods,TE,Virginia,2022,73,3,55.5,60.8,-5.3,backtest,52.2,35.3,99.4,,12.7,598.0,554.0,0.0,0.0,6.183333333333334,6.183333333333334,74.2,6.183333333333334,real,real,real
-Trey McBride,TE,Colorado St.,2022,55,2,52.5,67.9,-15.4,backtest,27.5,51.6,55.9,,,,,1.0,1.0,15.2375,18.582352941176477,315.90000000000003,18.58235294117648,imputed,imputed,real
-Jake Ferguson,TE,Wisconsin,2022,129,4,51.6,42.2,9.4,backtest,95.3,77.8,27.8,19.0,24.1,450.0,300.0,1.0,0.0,10.41764705882353,11.18235294117647,190.1,11.18235294117647,real,real,real
-Isaiah Likely,TE,Coastal Carolina,2022,139,4,51.2,39.2,12.0,backtest,91.6,99.1,12.2,20.0,26.4,912.0,322.0,0.0,0.0,8.246666666666666,8.246666666666666,123.7,8.246666666666666,real,real,real
-Cole Turner,TE,Nevada,2022,149,5,47.2,36.4,10.8,backtest,89.7,67.8,44.7,20.0,21.2,677.0,572.0,0.0,0.0,,,23.0,3.2857142857142856,real,real,real
-Daniel Bellinger,TE,San Diego St.,2022,112,4,44.8,47.5,-2.7,backtest,27.5,51.6,91.2,,,,,0.0,0.0,6.818181818181818,6.818181818181818,75.0,6.818181818181818,imputed,imputed,real
-Cade Otton,TE,Washington,2022,106,4,43.4,49.4,-6.0,backtest,88.4,12.2,39.4,21.0,28.5,250.0,409.0,1.0,0.0,10.042857142857144,10.042857142857144,140.6,10.042857142857144,real,real,mnar_imputed
-Charlie Kolar,TE,Iowa St.,2022,128,4,40.5,42.5,-2.0,backtest,27.5,51.6,80.9,,,,,0.0,0.0,,3.290909090909091,36.2,4.042857142857143,imputed,imputed,real
-Jeremy Ruckert,TE,Ohio St.,2022,101,3,40.3,51.0,-10.7,backtest,27.5,51.6,39.4,,,,,0.0,0.0,3.1100000000000003,3.5230769230769234,45.8,3.5230769230769234,imputed,imputed,mnar_imputed
-Andrew Ogletree,TE,Youngstown St.,2022,192,6,30.6,24.7,5.9,backtest,27.5,51.6,87.2,,,,,0.0,0.0,3.5700000000000003,3.5700000000000003,35.7,3.5700000000000003,imputed,imputed,real
-Chigoziem Okonkwo,TE,Maryland,2022,143,4,30.1,38.1,-8.0,backtest,48.4,27.2,25.9,,11.3,447.0,489.0,0.0,0.0,7.1000000000000005,7.294117647058823,124.0,7.294117647058823,real,real,real
-Nick Muse,TE,South Carolina,2022,227,7,27.3,15.9,11.4,backtest,85.9,13.4,72.2,21.0,22.9,222.0,360.0,0.0,0.0,,,3.2,0.0,real,real,real
-James Mitchell,TE,Virginia Tech,2022,177,5,26.9,28.6,-1.7,backtest,79.1,0.3,39.4,,19.7,42.0,316.0,0.0,0.0,,,28.3,3.5375,real,real,mnar_imputed
-Grant Calcaterra,TE,SMU,2022,198,6,26.9,23.2,3.7,backtest,53.4,30.9,57.5,,12.7,465.0,468.0,0.0,0.0,4.6000000000000005,4.6000000000000005,59.8,4.6000000000000005,real,real,real
-Teagan Quitoriano,TE,Oregon St.,2022,170,5,24.3,30.5,-6.2,backtest,27.5,51.6,10.9,,,,,0.0,0.0,,,30.3,4.328571428571428,imputed,imputed,real
-Connor Heyward,TE,Michigan St.,2022,208,6,22.0,20.6,1.4,backtest,27.5,51.6,39.4,,,,,0.0,0.0,3.609090909090909,3.609090909090909,39.7,4.4750000000000005,imputed,imputed,mnar_imputed
-John FitzPatrick,TE,Georgia,2022,213,6,7.0,19.4,-12.4,backtest,2.2,2.8,39.4,,3.8,83.0,407.0,0.0,0.0,,2.52,25.2,2.52,real,real,mnar_imputed
-Ko Kieft,TE,Minnesota,2022,218,6,2.7,18.1,-15.4,backtest,4.1,6.6,2.8,,4.8,101.0,256.0,0.0,0.0,,,21.0,2.625,real,real,real
-Sam LaPorta,TE,Iowa,2023,34,2,81.6,77.4,4.2,backtest,93.4,91.6,79.1,20.0,32.2,656.0,349.0,1.0,1.0,14.076470588235296,14.076470588235296,239.3,14.076470588235296,real,real,real
-Dalton Kincaid,TE,Utah,2023,25,1,80.7,82.2,-1.5,backtest,84.1,92.2,63.1,22.0,25.5,890.0,446.0,1.0,0.0,10.508333333333336,10.508333333333336,150.3,10.508333333333336,real,real,mnar_imputed
-Michael Mayer,TE,Notre Dame,2023,35,2,78.4,76.9,1.5,backtest,92.2,97.8,49.4,20.0,30.0,809.0,338.0,0.0,0.0,6.15,6.15,73.8,6.15,real,real,real
-Luke Musgrave,TE,Oregon St.,2023,42,2,60.9,73.6,-12.7,backtest,27.5,51.6,94.7,,,,,0.0,0.0,6.836363636363637,6.836363636363637,75.2,6.836363636363637,imputed,imputed,real
-Luke Schoonmaker,TE,Michigan,2023,58,2,59.2,66.7,-7.5,backtest,57.2,34.1,95.3,,13.6,418.0,370.0,0.0,0.0,5.71,5.71,57.1,5.71,real,real,real
-Brenton Strange,TE,Penn St.,2023,61,2,54.2,65.5,-11.3,backtest,27.5,51.6,80.3,,,,,0.0,0.0,9.833333333333334,9.833333333333334,118.0,9.833333333333334,imputed,imputed,real
-Tucker Kraft,TE,South Dakota St.,2023,78,3,47.6,59.0,-11.4,backtest,27.5,29.7,92.2,,,348.0,369.0,0.0,0.0,9.605882352941178,9.605882352941178,163.3,14.65,imputed,real,real
-Darnell Washington,TE,Georgia,2023,93,3,47.6,53.7,-6.1,backtest,42.8,28.4,95.9,,10.2,454.0,492.0,0.0,0.0,5.646153846153847,5.646153846153847,73.4,5.646153846153847,real,real,real
-Will Mallory,TE,Miami (FL),2023,162,5,46.2,32.7,13.5,backtest,72.8,67.2,79.7,,18.7,538.0,413.0,0.0,0.0,3.5181818181818185,3.5181818181818185,38.7,3.5181818181818185,real,real,real
-Josh Whyle,TE,Cincinnati,2023,147,5,36.9,36.9,-0.0,backtest,61.6,18.4,77.5,,14.8,326.0,417.0,0.0,0.0,4.342857142857143,4.342857142857143,60.8,4.342857142857143,real,real,real
-Cameron Latu,TE,Alabama,2023,101,3,36.3,51.0,-14.7,backtest,44.1,24.7,23.4,,10.3,377.0,438.0,0.0,0.0,,,0.0,0.0,real,real,real
-Davis Allen,TE,Clemson,2023,175,5,32.3,29.2,3.1,backtest,57.8,29.1,67.5,,13.6,443.0,478.0,0.0,0.0,4.1866666666666665,4.1866666666666665,62.8,4.1866666666666665,real,real,real
-Zack Kuntz,TE,Old Dominion,2023,220,7,29.6,17.6,12.0,backtest,82.8,4.7,99.4,22.0,24.8,144.0,417.0,0.0,0.0,,,0.0,0.0,real,real,real
-Payne Durham,TE,Purdue,2023,171,5,27.8,30.2,-2.4,backtest,59.7,27.8,26.6,,14.5,560.0,581.0,0.0,0.0,,,34.5,1.8,real,real,real
-Brayden Willis,TE,Oklahoma,2023,247,7,22.8,11.2,11.6,backtest,62.8,69.1,10.3,,15.5,514.0,407.0,0.0,0.0,,,0.0,0.0,real,real,real
-Brock Bowers,TE,Georgia,2024,13,1,86.8,89.7,-2.9,backtest,98.4,85.9,63.1,18.0,23.3,714.0,456.0,1.0,1.0,15.452941176470588,15.452941176470588,262.7,15.452941176470588,real,real,mnar_imputed
-Ben Sinnott,TE,Kansas St.,2024,53,2,57.8,68.8,-11.0,backtest,27.5,51.6,92.8,,,,,0.0,0.0,,,28.4,3.55,imputed,imputed,real
-Ja'Tavion Sanders,TE,Texas,2024,101,4,52.8,51.0,1.8,backtest,77.8,80.9,17.8,,19.5,682.0,475.0,0.0,0.0,4.909090909090909,4.909090909090909,73.2,4.909090909090909,real,real,real
-Theo Johnson,TE,Penn St.,2024,107,4,46.6,49.1,-2.5,backtest,27.5,51.6,97.8,,,,,0.0,0.0,8.52,8.52,127.8,8.52,imputed,imputed,real
-Jared Wiley,TE,TCU,2024,131,4,42.8,41.6,1.2,backtest,58.4,33.4,84.1,,13.9,520.0,503.0,0.0,0.0,,,1.7000000000000002,0.0,real,real,real
-Erick All,TE,Iowa,2024,115,4,40.5,46.5,-6.0,backtest,70.3,24.1,39.4,,18.0,299.0,348.0,0.0,0.0,,,35.800000000000004,4.4750000000000005,real,real,mnar_imputed
-Tip Reiman,TE,Illinois,2024,82,3,39.2,57.5,-18.3,backtest,5.3,9.1,97.2,,6.4,203.0,414.0,0.0,0.0,,,9.7,0.0,real,real,real
-Cade Stover,TE,Ohio St.,2024,123,4,38.7,44.0,-5.3,backtest,27.5,51.6,59.7,,,,,0.0,0.0,2.6384615384615384,2.6384615384615384,34.3,3.316666666666667,imputed,imputed,real
-AJ Barner,TE,Michigan,2024,121,4,30.0,44.6,-14.6,backtest,8.4,16.6,70.3,,7.8,249.0,361.0,0.0,0.0,8.664705882352942,8.664705882352942,147.3,8.664705882352942,real,real,real
-Tanner McLachlan,TE,Arizona,2024,194,6,27.2,24.2,3.0,backtest,55.3,32.8,49.4,,13.2,528.0,464.0,0.0,0.0,,,0.0,0.0,real,real,real
-Jaheim Bell,TE,Florida St.,2024,231,7,22.1,15.0,7.1,backtest,27.5,51.6,65.9,,,,,0.0,0.0,,,4.0,0.0,imputed,imputed,real
-Devin Culp,TE,Washington,2024,246,7,6.4,11.4,-5.0,backtest,9.7,5.3,56.6,,8.2,208.0,575.0,0.0,0.0,,,13.8,0.0,real,real,real
-Colston Loveland,TE,Michigan,2025,10,1,89.1,92.0,-2.9,backtest,96.6,92.8,63.1,19.0,34.7,582.0,308.0,0.0,0.0,10.31875,10.31875,165.1,10.31875,real,real,mnar_imputed
-Harold Fannin,TE,Bowling Green,2025,67,3,72.1,63.1,9.0,backtest,98.4,99.7,52.2,19.0,49.6,1550.0,419.0,1.0,1.0,11.775,11.775,188.4,11.775,real,real,real
-Terrance Ferguson,TE,Oregon,2025,46,2,69.5,71.8,-2.3,backtest,62.2,73.4,85.6,,15.1,591.0,460.0,0.0,0.0,4.736363636363636,4.736363636363636,52.1,4.736363636363636,real,real,real
-Tyler Warren,TE,Penn St.,2025,14,1,66.1,89.0,-22.9,backtest,27.5,51.6,63.1,,,,,1.0,0.0,11.088235294117649,11.088235294117649,188.5,11.088235294117649,imputed,imputed,mnar_imputed
-Elijah Arroyo,TE,Miami (FL),2025,50,2,63.4,70.0,-6.6,backtest,54.7,69.7,63.1,,13.0,590.0,489.0,0.0,0.0,2.9923076923076923,2.9923076923076923,38.9,2.9923076923076923,real,real,mnar_imputed
-Mason Taylor,TE,LSU,2025,42,2,60.9,73.6,-12.7,backtest,56.6,35.9,74.7,,13.4,546.0,533.0,0.0,0.0,6.684615384615385,6.684615384615385,86.9,6.684615384615385,real,real,real
-Oronde Gadsden II,TE,Syracuse,2025,165,5,50.1,31.9,18.2,backtest,95.9,83.4,55.3,19.0,32.2,922.0,598.0,0.0,0.0,8.893333333333334,8.893333333333334,133.4,8.893333333333334,real,real,real
-Gunnar Helm,TE,Texas,2025,120,4,45.1,45.0,0.1,backtest,68.4,75.9,7.2,,17.8,786.0,541.0,0.0,0.0,5.73125,5.73125,91.7,5.73125,real,real,real
-Mitchell Evans,TE,Notre Dame,2025,163,5,29.9,32.4,-2.5,backtest,55.9,30.3,34.7,,13.3,421.0,445.0,0.0,0.0,3.707692307692308,3.707692307692308,48.2,3.707692307692308,real,real,real
-Thomas Fidone,TE,Nebraska,2025,219,7,29.0,17.9,11.1,backtest,65.3,25.3,89.1,,15.9,373.0,434.0,0.0,0.0,,,0.0,0.0,real,real,real
-Moliki Matavao,TE,UCLA,2025,248,7,26.4,10.9,15.5,backtest,67.8,72.2,27.2,,17.4,506.0,398.0,0.0,0.0,,,3.0,0.0,real,real,real
-Gavin Bartholomew,TE,Pittsburgh,2025,202,6,24.9,22.1,2.8,backtest,51.6,14.7,74.1,,12.6,329.0,499.0,0.0,0.0,,,0.0,0.0,real,real,real
-Luke Lachey,TE,Iowa,2025,255,7,19.8,9.3,10.5,backtest,77.2,21.6,45.3,,19.5,231.0,260.0,0.0,0.0,,,0.0,0.0,real,real,real
-Jackson Hawes,TE,Georgia Tech,2025,173,5,14.0,29.7,-15.7,backtest,4.7,7.8,34.1,,6.3,195.0,410.0,0.0,0.0,4.053846153846154,4.053846153846154,52.7,4.053846153846154,real,real,real
-Robbie Ouzts,TE,Alabama,2025,175,5,10.0,29.2,-19.2,backtest,1.6,4.1,15.3,,3.5,108.0,354.0,0.0,0.0,,,0.0,0.0,real,real,real
-Caleb Lohner,TE,Utah,2025,241,7,6.6,12.6,-6.0,backtest,0.3,0.9,73.4,,2.3,54.0,358.0,0.0,0.0,,,0.0,0.0,real,real,real
-Kenyon Sadiq,TE,Oregon,2026,19,1,74.3,85.7,-11.4,2026_prospect,61.9,98.8,20.0,,14.826581943341278,560.0,437.0,,,,,,,imputed,real,mnar_imputed
-Eli Stowers,TE,Vanderbilt,2026,74,3,62.5,60.5,2.0,2026_prospect,88.1,99.7,5.6,21.0,27.806563039723663,765.0,400.0,,,,,,,real,real,mnar_imputed
-Max Klare,TE,Ohio State,2026,81,3,60.3,57.9,2.4,2026_prospect,88.8,95.6,5.6,20.8,30.908269317668324,448.0,408.0,,,,,,,real,real,mnar_imputed
-Justin Joly,TE,NC State,2026,103,4,56.3,50.4,5.9,2026_prospect,90.6,96.2,5.6,19.3,25.55604012211077,489.0,413.0,,,,,,,real,real,mnar_imputed
-Michael Trigg,TE,Baylor,2026,94,3,53.8,53.4,0.4,2026_prospect,66.2,98.1,5.6,22.8,18.670971213344096,694.0,510.0,,,,,,,real,real,mnar_imputed
-Jack Endries,TE,Texas,2026,125,4,48.2,43.4,4.8,2026_prospect,80.6,85.6,5.6,21.4,18.59701492537313,346.0,420.0,,,,,,,real,real,mnar_imputed
-Eli Raridon,TE,Notre Dame,2026,140,5,48.1,38.9,9.2,2026_prospect,80.6,99.4,5.6,21.8,16.19079610345986,482.0,322.0,,,,,,,real,real,mnar_imputed
-Dallen Bentley,TE,Utah,2026,141,5,47.2,38.7,8.5,2026_prospect,76.9,99.4,5.6,22.5,23.16890881913304,620.0,373.0,,,,,,,real,real,mnar_imputed
-Tanner Koziol,TE,Houston,2026,158,5,46.5,33.8,12.7,2026_prospect,88.1,99.4,5.6,20.3,28.34964562942963,727.0,377.0,,,,,,,real,real,mnar_imputed
-Joe Royer,TE,Cincinnati,2026,142,5,43.9,38.4,5.5,2026_prospect,65.6,94.4,5.6,22.7,18.39323467230444,416.0,363.0,,,,,,,real,real,mnar_imputed
-Dae'Quan Wright,TE,Mississippi,2026,179,6,37.2,28.1,9.1,2026_prospect,58.8,98.1,5.6,,13.996175908221796,635.0,523.0,,,,,,,imputed,real,mnar_imputed
-Oscar Delp,TE,Georgia,2026,113,4,34.5,47.1,-12.6,2026_prospect,10.0,73.8,5.6,,8.432956381260096,261.0,417.0,,,,,,,imputed,real,mnar_imputed
-Jaren Kanak,TE,Oklahoma,2026,250,7,31.7,10.4,21.3,2026_prospect,85.6,98.1,5.6,20.8,17.29200652528548,533.0,431.0,,,,,,,real,real,mnar_imputed
-Seydou Traore,TE,Mississippi State,2026,250,7,31.3,10.4,20.9,2026_prospect,90.0,91.2,5.6,19.8,23.25925925925926,372.0,390.0,,,,,,,real,real,mnar_imputed
-Sam Roush,TE,Stanford,2026,159,5,30.7,33.5,-2.8,2026_prospect,8.1,98.1,5.6,23.4,20.473328324567994,545.0,391.0,,,,,,,real,real,mnar_imputed
-John Michael Gyllenborg,TE,Wyoming,2026,178,6,30.6,28.4,2.2,2026_prospect,85.6,36.2,5.6,20.9,19.200351493848856,217.0,384.0,,,,,,,real,real,mnar_imputed
-Jack Velling,TE,Michigan State,2026,250,7,29.5,10.4,19.1,2026_prospect,80.6,91.2,5.6,21.7,15.777351247600768,359.0,378.0,,,,,,,real,real,mnar_imputed
-Marlin Klein,TE,Michigan,2026,187,6,29.3,26.0,3.3,2026_prospect,42.5,80.0,5.6,,10.214168039538714,248.0,340.0,,,,,,,imputed,real,mnar_imputed
-Josh Cuevas,TE,Alabama,2026,197,6,28.6,23.4,5.2,2026_prospect,44.4,82.5,5.6,,10.423535379152929,411.0,523.0,,,,,,,imputed,real,mnar_imputed
-Riley Nowakowski,TE,Indiana,2026,211,6,27.8,19.9,7.9,2026_prospect,42.5,91.2,5.6,,10.128238680973569,387.0,406.0,,,,,,,imputed,real,mnar_imputed
-Toby Payne,TE,Marshall,2026,250,7,26.8,10.4,16.4,2026_prospect,62.5,95.6,5.6,22.9,15.770465489566613,387.0,335.0,,,,,,,real,real,mnar_imputed
-Nate Rutchena,TE,UC Davis,2026,250,7,25.6,10.4,15.2,2026_prospect,66.2,85.6,5.6,,,,,,,,,,,imputed,imputed,mnar_imputed
-Lake McRee,TE,USC,2026,250,7,24.2,10.4,13.8,2026_prospect,48.8,95.6,5.6,,11.564449064449065,450.0,420.0,,,,,,,imputed,real,mnar_imputed
-Chamon Metayer,TE,Arizona State,2026,250,7,23.8,10.4,13.4,2026_prospect,54.4,88.1,5.6,,12.980269989615785,375.0,430.0,,,,,,,imputed,real,mnar_imputed
-Matthew Hibner,TE,SMU,2026,250,7,23.1,10.4,12.7,2026_prospect,50.0,88.8,5.6,,11.825332248440466,436.0,460.0,,,,,,,imputed,real,mnar_imputed
-R.J. Maryland,TE,SMU,2026,250,7,21.5,10.4,11.1,2026_prospect,56.2,74.4,5.6,,13.31619537275064,322.0,460.0,,,,,,,imputed,real,mnar_imputed
-Bauer Sharp,TE,LSU,2026,250,7,20.8,10.4,10.4,2026_prospect,60.0,66.9,5.6,,14.522635589421784,252.0,443.0,,,,,,,imputed,real,mnar_imputed
-Brett Norfleet,TE,Missouri,2026,250,7,20.2,10.4,9.8,2026_prospect,44.4,79.4,5.6,,10.39279869067103,254.0,361.0,,,,,,,imputed,real,mnar_imputed
-Lance Mason,TE,Wisconsin,2026,250,7,17.7,10.4,7.3,2026_prospect,11.9,98.8,5.6,23.4,24.312767257177764,398.0,272.0,,,,,,,real,real,mnar_imputed
-Carsen Ryan,TE,BYU,2026,250,7,16.7,10.4,6.3,2026_prospect,6.9,98.8,5.6,23.2,20.090732339598187,620.0,403.0,,,,,,,real,real,mnar_imputed
-Nate Boerkircher,TE,Texas A&M,2026,173,5,15.3,29.7,-14.4,2026_prospect,4.4,33.8,5.6,,5.88410104011887,204.0,408.0,,,,,,,imputed,real,mnar_imputed
-Dan Villari,TE,Syracuse,2026,250,7,14.8,10.4,4.4,2026_prospect,4.4,91.2,5.6,24.1,15.77924601632336,412.0,408.0,,,,,,,real,real,mnar_imputed
-Ty Thompson,TE,Tulane,2026,250,7,14.8,10.4,4.4,2026_prospect,10.0,85.6,5.6,,8.252032520325203,,425.0,,,,,,,imputed,imputed,mnar_imputed
-DJ Rogers,TE,TCU,2026,250,7,12.9,10.4,2.5,2026_prospect,10.0,75.6,5.6,,8.508935716190983,319.0,460.0,,,,,,,imputed,real,mnar_imputed
-Cooper Flanagan,TE,Notre Dame,2026,250,7,12.9,10.4,2.5,2026_prospect,0.1,85.6,5.6,,1.7421602787456445,,322.0,,,,,,,imputed,imputed,mnar_imputed
-Miles Kitselman,TE,Tennessee,2026,250,7,11.9,10.4,1.5,2026_prospect,44.4,36.2,5.6,,10.465924895688456,253.0,437.0,,,,,,,imputed,real,mnar_imputed
-Jameson Geers,TE,Minnesota,2026,250,7,11.1,10.4,0.7,2026_prospect,42.5,33.8,5.6,,10.13631597343586,206.0,399.0,,,,,,,imputed,real,mnar_imputed
-Benji Gosnell,TE,Virginia Tech,2026,250,7,10.2,10.4,-0.2,2026_prospect,58.1,13.8,5.6,,13.878713878713878,86.0,319.0,,,,,,,imputed,real,mnar_imputed
-Amari Niblack,TE,Texas A&M,2026,250,7,6.5,10.4,-3.9,2026_prospect,45.6,6.9,5.6,,10.579100614687803,69.0,408.0,,,,,,,imputed,real,mnar_imputed
-Luke Hasz,TE,Mississippi,2026,250,7,5.9,10.4,-4.5,2026_prospect,48.1,1.2,5.6,,11.244444444444444,28.0,523.0,,,,,,,imputed,real,mnar_imputed
-Josh Kattus,TE,Kentucky,2026,250,7,4.9,10.4,-5.5,2026_prospect,8.8,35.6,5.6,,7.995079950799508,195.0,367.0,,,,,,,imputed,real,mnar_imputed
-Ethan Davis,TE,Tennessee,2026,250,7,4.6,10.4,-5.8,2026_prospect,5.6,36.9,5.6,,6.756046267087276,257.0,437.0,,,,,,,imputed,real,mnar_imputed
-Andrew Rappleyea,TE,Penn State,2026,250,7,4.5,10.4,-5.9,2026_prospect,6.2,35.6,5.6,,7.395234182415776,180.0,339.0,,,,,,,imputed,real,mnar_imputed
-Jaleel Skinner,TE,Louisville,2026,250,7,4.0,10.4,-6.4,2026_prospect,5.6,33.8,5.6,,7.150368033648791,204.0,418.0,,,,,,,imputed,real,mnar_imputed
-Khalil Dinkins,TE,Penn State,2026,250,7,3.7,10.4,-6.7,2026_prospect,5.6,32.5,5.6,,6.86113393590797,167.0,339.0,,,,,,,imputed,real,mnar_imputed
-Will Kacmarek,TE,Ohio State,2026,250,7,3.6,10.4,-6.8,2026_prospect,11.2,26.2,5.6,,9.204545454545451,168.0,408.0,,,,,,,imputed,real,mnar_imputed
-Tanner Arkin,TE,Illinois,2026,250,7,0.0,10.4,-10.4,2026_prospect,4.4,13.8,5.6,,4.948805460750854,114.0,372.0,,,,,,,imputed,real,mnar_imputed
-Jack Pedersen,TE,UCLA,2026,250,7,0.0,10.4,-10.4,2026_prospect,2.5,7.5,5.6,,4.203997243280496,72.0,361.0,,,,,,,imputed,real,mnar_imputed
-Holden Staes,TE,Indiana,2026,250,7,0.0,10.4,-10.4,2026_prospect,4.4,5.6,5.6,,5.472636815920398,62.0,406.0,,,,,,,imputed,real,mnar_imputed
-Davin Stoffel,TE,Illinois,2026,250,7,0.0,10.4,-10.4,2026_prospect,0.1,1.2,5.6,,0.787143325680551,24.0,372.0,,,,,,,imputed,real,mnar_imputed
-Joey Schlaffer,TE,Penn State,2026,250,7,0.0,10.4,-10.4,2026_prospect,0.1,1.2,5.6,,0.780608052588332,19.0,339.0,,,,,,,imputed,real,mnar_imputed
-Shamar Easter,TE,North Carolina,2026,250,7,0.0,10.4,-10.4,2026_prospect,0.1,0.3,5.6,,0.8608971454463071,17.0,355.0,,,,,,,imputed,real,mnar_imputed
+Maxx Williams,TE,Minnesota,2015,55,2,44.1,73.6,26.0,backtest,98.4,97.2,6.6,19.0,36.8,569.0,254.0,0.0,0.0,5.890909090909091,5.890909090909091,64.8,5.890909090909091,real,real,real
+Clive Walford,TE,Miami (FL),2015,68,3,25.8,69.6,11.9,backtest,82.2,87.2,5.9,22.0,23.9,676.0,391.0,0.0,0.0,5.793333333333334,5.793333333333334,86.9,5.793333333333334,real,real,real
+Jeff Heuerman,TE,Ohio St.,2015,92,3,8.9,62.8,0.1,backtest,27.5,51.6,82.2,,,,,0.0,0.0,3.5200000000000005,7.109999999999999,71.1,7.109999999999999,imputed,imputed,real
+MyCole Pruitt,TE,Southern Illinois,2015,143,5,7.9,50.3,4.3,backtest,94.7,51.6,46.6,20.0,68.8,136.0,,0.0,0.0,1.89,5.5,55.0,5.5,real,imputed,real
+Tyler Kroft,TE,Rutgers,2015,85,3,7.0,64.7,-3.0,backtest,73.4,19.7,29.1,,18.7,269.0,357.0,0.0,0.0,8.293333333333333,8.293333333333333,124.4,8.293333333333333,real,real,real
+Nick Boyle,TE,Delaware,2015,171,5,2.9,44.2,0.6,backtest,92.8,51.6,3.4,20.0,31.3,,,0.0,0.0,3.353333333333333,5.006666666666666,75.1,5.006666666666666,real,imputed,real
+Jesse James,TE,Penn St.,2015,160,5,1.5,46.6,-1.2,backtest,27.5,51.6,32.5,,,,,0.0,0.0,7.014285714285714,7.014285714285714,98.2,7.014285714285714,imputed,imputed,real
+James O'Shaughnessy,TE,Illinois St.,2015,173,5,1.4,43.8,-0.8,backtest,27.5,51.6,47.8,,,,,0.0,0.0,2.492857142857143,3.61333335240682,54.200000286102295,7.199999979564121,imputed,imputed,real
+Blake Bell,TE,Oklahoma,2015,117,4,0.9,56.4,-4.7,backtest,9.1,9.7,24.7,,8.1,214.0,386.0,0.0,0.0,,2.0181818333539097,33.6,3.733333333333333,real,real,real
+Malcolm Johnson,TE,Mississippi St.,2015,195,6,0.9,39.3,-0.7,backtest,27.5,51.6,39.4,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,mnar_imputed
+C.J. Uzomah,TE,Auburn,2015,157,5,0.7,47.2,-2.1,backtest,5.9,8.4,68.4,,7.2,145.0,332.0,0.0,0.0,,8.018750101327896,128.30000162124634,8.018750101327896,real,real,real
+A.J. Derby,TE,Arkansas,2015,202,6,0.7,37.9,-0.7,backtest,27.5,51.6,20.3,,,,359.0,0.0,0.0,5.036363636363636,5.036363636363636,55.4,5.036363636363636,imputed,imputed,real
+Nick O'Leary,TE,Florida St.,2015,194,6,0.6,39.5,-1.0,backtest,27.5,51.6,1.6,,,,,0.0,0.0,4.938461538461539,4.938461538461539,64.2,4.938461538461539,imputed,imputed,real
+Kennard Backman,TE,Ala-Birmingham,2015,213,6,0.6,35.7,-0.6,backtest,27.5,51.6,19.7,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,real
+Randall Telfer,TE,USC,2015,198,6,0.3,38.7,-1.2,backtest,7.8,7.2,39.4,,7.7,197.0,460.0,0.0,0.0,,,6.6,0.0,real,real,mnar_imputed
+Ben Koyack,TE,Notre Dame,2015,229,7,0.3,32.7,-0.7,backtest,50.3,15.9,9.7,,12.1,317.0,463.0,0.0,0.0,,,41.1,4.566666666666666,real,real,real
+Gerald Christian,TE,Louisville,2015,256,7,0.2,27.7,-0.5,backtest,49.1,22.8,0.3,,11.6,384.0,428.0,0.0,0.0,,,2.4,0.0,real,real,real
+Geoff Swaim,TE,Texas,2015,246,7,0.1,29.5,-0.6,backtest,0.9,1.6,48.4,,2.7,70.0,418.0,0.0,0.0,,4.374999940395355,69.99999904632568,7.025,real,real,real
+Rory Anderson,TE,South Carolina,2015,254,7,0.1,28.1,-0.6,backtest,10.9,10.9,39.4,,8.8,260.0,468.0,0.0,0.0,,,0.0,0.0,real,real,mnar_imputed
+Hunter Henry,TE,Arkansas,2016,35,2,61.8,80.6,34.4,backtest,98.4,94.1,25.3,18.0,24.0,739.0,374.0,1.0,0.0,10.575,12.516666666666666,178.8,12.516666666666666,real,real,real
+Austin Hooper,TE,Stanford,2016,81,3,24.0,65.8,13.2,backtest,65.9,79.1,57.5,,16.7,438.0,318.0,1.0,0.0,10.1875,14.746153846153844,191.7,14.746153846153844,real,real,real
+Nick Vannett,TE,Ohio St.,2016,94,3,3.9,62.3,-4.6,backtest,27.5,51.6,16.6,,,,,0.0,0.0,4.926666666666667,4.926666666666667,73.9,4.926666666666667,imputed,imputed,real
+Tyler Higbee,TE,Western Kentucky,2016,110,4,3.8,58.2,-2.5,backtest,47.2,32.2,39.4,,10.8,563.0,554.0,0.0,0.0,4.6571428571428575,11.457142857142856,160.4,11.457142857142856,real,real,mnar_imputed
+Seth Devalve,TE,Princeton,2016,138,4,3.7,51.5,-0.2,backtest,27.5,51.6,76.6,,,,,0.0,0.0,4.78125,4.78125,76.5,4.78125,imputed,imputed,real
+Thomas Duarte,TE,UCLA,2016,231,7,3.0,32.3,2.1,backtest,90.3,89.7,24.1,20.0,24.9,872.0,510.0,0.0,0.0,,,0.0,0.0,real,real,real
+Jerell Adams,TE,South Carolina,2016,184,6,2.4,41.5,0.5,backtest,66.6,36.6,65.3,,16.9,421.0,351.0,0.0,0.0,,,34.2,3.8,real,real,real
+Temarrick Hemingway,TE,South Carolina St.,2016,177,6,1.1,43.0,-1.0,backtest,27.5,51.6,31.6,,,,,0.0,0.0,,,2.0,0.0,imputed,imputed,real
+David Morgan,TE,Texas-San Antonio,2016,188,6,0.8,40.7,-0.9,backtest,27.5,51.6,14.7,,,,,0.0,0.0,,,25.5,3.642857142857143,imputed,imputed,real
+Rico Gathers,TE,Baylor,2016,217,6,0.6,35.0,-0.5,backtest,27.5,51.6,32.5,,,,389.0,0.0,0.0,,,7.5,1.25,imputed,imputed,real
+Beau Sandland,TE,Montana St.,2016,252,7,0.6,28.4,-0.1,backtest,27.5,51.6,70.9,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,real
+O.J. Howard,TE,Alabama,2017,19,1,75.1,87.5,36.1,backtest,74.7,77.2,94.1,,18.9,595.0,417.0,1.0,1.0,12.05,12.05,120.5,12.05,real,real,real
+David Njoku,TE,Miami (FL),2017,29,1,72.0,83.0,40.8,backtest,78.4,88.4,85.6,,19.6,698.0,426.0,1.0,0.0,9.593333333333334,13.5,201.2,13.5,real,real,real
+Gerald Everett,TE,South Alabama,2017,44,2,63.1,77.3,40.4,backtest,87.2,86.6,77.5,21.0,24.0,717.0,415.0,0.0,0.0,7.483333333333333,9.3,139.5,9.3,real,real,real
+Adam Shaheen,TE,Ashland,2017,45,2,37.6,77.0,15.4,backtest,27.5,98.4,69.7,,,867.0,328.0,0.0,0.0,,3.4615384890482974,45.00000035762787,7.116666666666667,imputed,real,real
+Evan Engram,TE,Mississippi,2017,23,1,35.7,85.6,0.1,backtest,27.5,51.6,81.6,,,,,1.0,1.0,11.573333333333332,13.547058823529412,230.3,13.675,imputed,imputed,real
+Jonnu Smith,TE,Florida International,2017,100,3,26.5,60.7,18.9,backtest,98.4,71.6,60.9,18.0,35.2,506.0,407.0,0.0,0.0,6.98,13.076470588235296,222.3,13.076470588235296,real,real,real
+Jake Butt,TE,Michigan,2017,145,5,10.5,49.9,7.0,backtest,89.1,79.7,39.4,20.0,21.2,546.0,370.0,0.0,0.0,,,16.5,0.0,real,real,mnar_imputed
+Bucky Hodges,TE,Virginia Tech,2017,201,6,7.0,38.1,5.6,backtest,74.1,82.8,93.4,,18.8,691.0,449.0,0.0,0.0,,,0.0,0.0,real,real,real
+Jordan Leggett,TE,Clemson,2017,150,5,5.5,48.8,2.3,backtest,60.9,66.6,54.1,,14.7,736.0,629.0,0.0,0.0,2.415384615384616,2.415384615384616,31.4,2.415384615384616,real,real,real
+George Kittle,TE,Iowa,2017,146,5,5.2,49.7,1.8,backtest,64.7,31.6,90.3,,15.8,314.0,310.0,1.0,1.0,16.16875,16.16875,258.7,16.16875,real,real,real
+Michael Roberts,TE,Toledo,2017,127,4,4.5,54.0,-0.2,backtest,52.8,68.4,14.1,,12.7,533.0,423.0,0.0,0.0,,,37.0,5.285714285714286,real,real,real
+Mason Schreck,TE,Buffalo,2017,251,7,2.6,28.6,1.9,backtest,84.7,84.1,52.8,22.0,27.1,651.0,397.0,0.0,0.0,,,2.6,0.0,real,real,real
+Eric Saubert,TE,Drake,2017,174,5,1.5,43.6,-0.7,backtest,27.5,51.6,50.9,,,,,0.0,0.0,,3.2545454545454544,35.8,3.3375,imputed,imputed,real
+Jeremy Sprinkle,TE,Arkansas,2017,154,5,1.2,47.9,-1.8,backtest,47.8,26.6,15.9,,11.2,380.0,406.0,0.0,0.0,3.74,3.74,56.1,3.74,real,real,real
+Hayden Hurst,TE,South Carolina,2018,25,1,52.6,84.7,18.5,backtest,71.6,70.3,47.2,23.0,22.2,559.0,397.0,0.0,0.0,9.318750075995922,9.318750075995922,149.10000121593475,9.318750075995922,real,real,real
+Dallas Goedert,TE,South Dakota St.,2018,49,2,40.3,75.6,19.9,backtest,27.5,96.6,89.7,,,1111.0,455.0,1.0,0.0,10.581818385557694,12.34,185.1,12.34,imputed,real,real
+Mark Andrews,TE,Oklahoma,2018,86,3,28.3,64.4,18.5,backtest,76.6,94.7,44.1,,18.9,958.0,433.0,1.0,1.0,13.813333333333333,17.711764503927792,301.09999656677246,17.711764503927792,real,real,real
+Mike Gesicki,TE,Penn St.,2018,42,2,27.8,78.0,4.2,backtest,27.5,51.6,98.4,,,,,1.0,0.0,10.6199999332428,10.6199999332428,165.00000143051147,10.6199999332428,imputed,imputed,real
+Troy Fumagalli,TE,Wisconsin,2018,156,5,9.3,47.5,6.4,backtest,86.6,85.3,39.4,21.0,23.1,547.0,325.0,0.0,0.0,,,22.00000023841858,3.14285717691694,real,real,mnar_imputed
+Ian Thomas,TE,Indiana,2018,101,4,6.4,60.4,-1.0,backtest,49.7,19.1,84.7,,11.8,376.0,502.0,0.0,0.0,8.13,8.13,81.30000000000001,8.13,real,real,real
+Jordan Akins,TE,Central Florida,2018,98,3,4.2,61.2,-3.7,backtest,27.5,51.6,29.7,,,,,0.0,0.0,6.438461544422003,7.766666666666667,116.5,7.766666666666667,imputed,imputed,real
+Chris Herndon,TE,Miami (FL),2018,107,4,2.9,58.9,-3.8,backtest,27.5,51.6,12.8,,,,425.0,0.0,0.0,8.085714285714285,8.085714285714285,113.2,8.085714285714285,imputed,imputed,real
+Tyler Conklin,TE,Central Michigan,2018,157,5,2.8,47.2,0.0,backtest,63.4,34.7,50.3,,15.6,504.0,469.0,0.0,0.0,,8.135294170940623,138.3000009059906,8.135294170940623,real,real,real
+Jaylen Samuels,TE,North Carolina St.,2018,165,5,1.8,45.5,-0.7,backtest,27.5,51.6,54.7,,,,,0.0,0.0,,,0.0,0.0,imputed,imputed,real
+Durham Smythe,TE,Notre Dame,2018,123,4,1.7,55.0,-3.3,backtest,44.7,15.3,22.2,,10.5,244.0,351.0,0.0,0.0,4.523076919408945,5.5076923076923086,71.60000000000001,5.5076923076923086,real,real,real
+Dalton Schultz,TE,Stanford,2018,137,4,1.5,51.7,-2.5,backtest,46.6,12.8,33.4,,10.8,212.0,363.0,0.0,0.0,9.156249977648258,12.28235295940848,208.80000030994407,12.28235295940848,real,real,real
+Will Dissly,TE,Washington,2018,120,4,0.9,55.7,-4.4,backtest,12.2,22.2,4.1,,9.8,281.0,348.0,0.0,0.0,4.364285698958805,7.34,110.1,12.316666666666668,real,real,real
+Jordan Thomas,TE,Mississippi St.,2018,211,6,0.5,36.1,-0.7,backtest,27.5,51.6,5.3,,,,,0.0,0.0,4.678571428571429,4.678571428571429,65.5,4.678571428571429,imputed,imputed,real
+Ryan Izzo,TE,Florida St.,2018,250,7,0.3,28.8,-0.4,backtest,27.5,51.6,7.8,,,,,0.0,0.0,3.09000004529953,3.09000004529953,30.9000004529953,3.09000004529953,imputed,imputed,real
+T.J. Hockenson,TE,Iowa,2019,8,1,87.5,93.7,36.9,backtest,87.8,90.9,82.8,21.0,25.7,750.0,407.0,1.0,1.0,12.108333349227903,14.6,219.0,14.6,real,real,real
+Noah Fant,TE,Iowa,2019,20,1,76.1,87.0,38.0,backtest,80.3,74.7,96.6,,20.0,518.0,407.0,1.0,0.0,10.664285778999329,10.664285778999329,159.0000011920929,10.664285778999329,real,real,real
+Irv Smith Jr.,TE,Alabama,2019,50,2,27.8,75.3,7.8,backtest,60.3,87.8,11.6,,14.6,710.0,438.0,0.0,0.0,8.2083331545194,8.2083331545194,98.4999978542328,8.2083331545194,real,real,real
+Jace Sternberger,TE,Texas A&M,2019,75,3,26.2,67.5,14.1,backtest,83.4,90.3,13.4,22.0,25.4,832.0,439.0,0.0,0.0,,,29.40000021457672,3.67500002682209,real,real,real
+Josh Oliver,TE,San Jose St.,2019,69,3,10.6,69.3,-3.1,backtest,27.5,51.6,58.4,,,,,0.0,0.0,1.5600000143051147,5.9818181818181815,65.8,5.9818181818181815,imputed,imputed,real
+Kahale Warring,TE,San Diego St.,2019,86,3,10.6,64.4,0.8,backtest,27.5,51.6,87.8,,,,,0.0,0.0,,,6.499999761581421,0.0,imputed,imputed,real
+Dawson Knox,TE,Mississippi,2019,96,3,8.4,61.7,0.2,backtest,27.5,51.6,83.4,,,,,1.0,0.0,10.913333527247111,10.913333527247111,163.7000029087067,10.913333527247111,imputed,imputed,real
+Drew Sample,TE,Washington,2019,52,2,6.7,74.6,-12.5,backtest,6.6,11.6,78.4,,7.4,245.0,405.0,0.0,0.0,4.9312499538064,4.9312499538064,78.8999992609024,4.9312499538064,real,real,real
+Zach Gentry,TE,Michigan,2019,141,5,5.5,50.8,1.8,backtest,72.2,81.6,2.2,,18.6,514.0,340.0,0.0,0.0,3.570000010728836,3.570000010728836,35.70000010728836,3.570000010728836,real,real,real
+Foster Moreau,TE,LSU,2019,137,4,3.2,51.7,-0.8,backtest,45.3,17.2,88.4,,10.5,272.0,387.0,0.0,0.0,7.108333259820938,7.108333259820938,103.3,7.108333259820938,real,real,real
+Kaden Smith,TE,Stanford,2019,176,6,3.0,43.2,0.9,backtest,69.1,80.3,4.7,,17.9,635.0,423.0,0.0,0.0,2.246153840651879,2.246153840651879,75.8,10.828571428571427,real,real,real
+Caleb Wilson,TE,UCLA,2019,254,7,2.1,28.1,1.4,backtest,85.3,95.9,17.2,22.0,33.6,965.0,402.0,0.0,0.0,,,0.0,0.0,real,real,real
+Trevon Wesco,TE,West Virginia,2019,121,4,1.0,55.5,-4.2,backtest,10.3,20.9,18.4,,8.6,366.0,445.0,0.0,0.0,,,6.9,0.0,real,real,real
+Isaac Nauta,TE,Georgia,2019,224,7,1.0,33.6,0.0,backtest,59.1,70.9,0.9,,14.4,430.0,356.0,0.0,0.0,,,3.3,0.0,real,real,real
+Alizé Mack,TE,Notre Dame,2019,231,7,0.7,32.3,-0.2,backtest,45.9,25.9,66.6,,10.8,360.0,418.0,0.0,0.0,,,0.0,0.0,real,real,real
+Tommy Sweeney,TE,Boston Col.,2019,228,7,0.4,32.9,-0.6,backtest,27.5,51.6,19.1,,,,,0.0,0.0,,,19.4,2.771428568022592,imputed,imputed,real
+Cole Kmet,TE,Notre Dame,2020,43,2,46.5,77.7,23.4,backtest,64.1,74.1,75.9,,15.7,515.0,416.0,0.0,0.0,8.66470588235294,12.073333333333332,181.1,12.073333333333332,real,real,real
+Josiah Deguara,TE,Cincinnati,2020,94,3,18.1,62.3,9.6,backtest,79.7,72.8,39.4,,19.7,504.0,377.0,0.0,0.0,5.125,5.125,61.5,5.125,real,real,mnar_imputed
+Devin Asiasi,TE,UCLA,2020,91,3,17.5,63.1,8.5,backtest,80.9,78.4,20.9,22.0,20.9,641.0,426.0,0.0,0.0,,,11.899999618530272,0.0,real,real,real
+Harrison Bryant,TE,Florida Atlantic,2020,115,4,15.5,56.9,9.7,backtest,90.9,93.4,9.1,20.0,25.6,1004.0,502.0,0.0,0.0,5.15000004072984,5.15000004072984,62.299999833107,5.15000004072984,real,real,real
+Brycen Hopkins,TE,Purdue,2020,136,4,13.8,51.9,9.8,backtest,81.6,82.2,59.1,22.0,22.3,830.0,520.0,0.0,0.0,,,17.900000000000002,2.5571428571428574,real,real,real
+Colby Parkinson,TE,Stanford,2020,133,4,7.7,52.6,3.5,backtest,75.3,76.6,21.6,,18.9,589.0,442.0,0.0,0.0,4.942857142857143,9.414285714285716,131.8,9.414285714285716,real,real,real
+Adam Trautman,TE,Dayton,2020,105,3,6.2,59.4,-0.7,backtest,27.5,51.6,71.6,,,,,0.0,0.0,5.754545396024531,5.754545396024531,63.29999935626984,5.754545396024531,imputed,imputed,real
+Dalton Keene,TE,Virginia Tech,2020,101,3,6.0,60.4,-1.4,backtest,43.4,20.3,86.6,,10.2,236.0,317.0,0.0,0.0,,,4.600000023841858,0.0,real,real,real
+Albert Okwuegbunam,TE,Missouri,2020,118,4,3.2,56.2,-2.3,backtest,54.1,23.4,39.4,,12.8,306.0,376.0,0.0,0.0,5.846153910343464,5.846153910343464,76.00000083446503,5.846153910343464,real,real,mnar_imputed
+Tyler Davis,TE,Georgia Tech,2020,206,6,0.3,37.1,-1.0,backtest,11.6,10.3,53.4,,9.2,148.0,269.0,0.0,0.0,,,7.5000001192092896,0.0,real,real,real
+Stephen Sullivan,TE,LSU,2020,251,7,0.3,28.6,-0.4,backtest,50.9,3.4,45.9,,12.2,130.0,567.0,0.0,0.0,,2.45,24.5,2.45,real,real,real
+Charlie Woerner,TE,Georgia,2020,190,6,0.2,40.3,-1.5,backtest,3.4,2.2,30.3,,4.7,78.0,415.0,0.0,0.0,,,12.8,2.1333333333333333,real,real,real
+Kyle Pitts,TE,Florida,2021,4,1,86.5,96.7,30.1,backtest,67.2,89.1,91.2,,16.9,770.0,473.0,1.0,0.0,10.388235260458554,12.4,210.8,12.4,real,real,real
+Pat Freiermuth,TE,Penn St.,2021,55,2,14.9,73.6,-3.2,backtest,27.5,51.6,63.1,,,,,1.0,0.0,9.88,9.9,168.3,9.9,imputed,imputed,mnar_imputed
+Kylen Granson,TE,SMU,2021,127,4,10.6,54.0,5.9,backtest,69.7,75.3,51.6,,17.9,536.0,376.0,0.0,0.0,4.866666666666666,4.866666666666666,73.0,4.866666666666666,real,real,real
+Hunter Long,TE,Boston Col.,2021,81,3,9.2,65.8,-1.6,backtest,27.5,51.6,67.5,,,,,0.0,0.0,,,32.5,4.642857142857143,imputed,imputed,real
+Brevin Jordan,TE,Miami (FL),2021,147,5,6.1,49.4,2.7,backtest,75.9,84.7,8.4,,18.9,576.0,381.0,0.0,0.0,,,55.80000150203705,6.975000187754631,real,real,real
+Tommy Tremble,TE,Notre Dame,2021,83,3,3.4,65.2,-7.0,backtest,7.2,14.1,75.3,,7.6,217.0,362.0,0.0,0.0,4.646153846153846,5.64,63.900000000000006,5.64,real,real,real
+Luke Farrell,TE,Ohio St.,2021,145,5,3.0,49.9,-0.5,backtest,27.5,51.6,69.1,,,,,0.0,0.0,,1.87,31.5,3.5,imputed,imputed,real
+John Bates,TE,Boise St.,2021,124,4,2.6,54.7,-2.3,backtest,27.5,51.6,28.4,,,,,0.0,0.0,4.627272746779702,4.627272746779702,50.90000021457672,4.627272746779702,imputed,imputed,real
+Zach Davidson,TE,Central Missouri St.,2021,168,5,2.1,44.9,-0.3,backtest,27.5,51.6,72.8,,,,,0.0,0.0,,,1.5,0.0,imputed,imputed,real
+Noah Gray,TE,Duke,2021,162,5,1.7,46.2,-0.9,backtest,70.9,17.8,30.9,,18.2,278.0,390.0,0.0,0.0,4.4125,7.08125,113.3,7.08125,real,real,real
+Tre' McKitty,TE,Georgia,2021,97,3,1.1,61.5,-6.9,backtest,2.8,5.9,22.8,,4.3,108.0,306.0,0.0,0.0,,,17.2,2.15,real,real,real
+Greg Dulcich,TE,UCLA,2022,80,3,43.9,66.1,32.9,backtest,94.1,95.3,60.3,20.0,32.9,725.0,335.0,0.0,0.0,8.610000000000001,8.610000000000001,86.10000000000001,8.610000000000001,real,real,real
+Jelani Woods,TE,Virginia,2022,73,3,17.6,68.1,5.0,backtest,52.2,35.3,99.4,,12.7,598.0,554.0,0.0,0.0,6.183333333333334,6.183333333333334,74.2,6.183333333333334,real,real,real
+Trey McBride,TE,Colorado St.,2022,55,2,13.7,73.6,-4.4,backtest,27.5,51.6,55.9,,,,,1.0,1.0,15.2375,18.582352941176477,315.90000000000003,18.58235294117648,imputed,imputed,real
+Jake Ferguson,TE,Wisconsin,2022,129,4,12.7,53.6,8.2,backtest,95.3,77.8,27.8,19.0,24.1,450.0,300.0,1.0,0.0,10.41764705882353,11.18235294117647,190.1,11.18235294117647,real,real,real
+Isaiah Likely,TE,Coastal Carolina,2022,139,4,12.2,51.2,8.4,backtest,91.6,99.1,12.2,20.0,26.4,912.0,322.0,0.0,0.0,8.246666666666666,8.246666666666666,123.7,8.246666666666666,real,real,real
+Cole Turner,TE,Nevada,2022,149,5,8.6,49.0,5.4,backtest,89.7,67.8,44.7,20.0,21.2,677.0,572.0,0.0,0.0,,,23.0,3.2857142857142856,real,real,real
+Daniel Bellinger,TE,San Diego St.,2022,112,4,6.9,57.7,0.8,backtest,27.5,51.6,91.2,,,,,0.0,0.0,6.818181818181818,6.818181818181818,75.0,6.818181818181818,imputed,imputed,real
+Cade Otton,TE,Washington,2022,106,4,6.1,59.2,-0.7,backtest,88.4,12.2,39.4,21.0,28.5,250.0,409.0,1.0,0.0,10.042857142857144,10.042857142857144,140.6,10.042857142857144,real,real,mnar_imputed
+Charlie Kolar,TE,Iowa St.,2022,128,4,4.6,53.8,0.0,backtest,27.5,51.6,80.9,,,,,0.0,0.0,,3.290909090909091,36.2,4.042857142857143,imputed,imputed,real
+Jeremy Ruckert,TE,Ohio St.,2022,101,3,4.5,60.4,-2.9,backtest,27.5,51.6,39.4,,,,,0.0,0.0,3.1100000000000003,3.5230769230769234,45.8,3.5230769230769234,imputed,imputed,mnar_imputed
+Andrew Ogletree,TE,Youngstown St.,2022,192,6,1.8,39.9,0.2,backtest,27.5,51.6,87.2,,,,,0.0,0.0,3.5700000000000003,3.5700000000000003,35.7,3.5700000000000003,imputed,imputed,real
+Chigoziem Okonkwo,TE,Maryland,2022,143,4,1.7,50.3,-1.9,backtest,48.4,27.2,25.9,,11.3,447.0,489.0,0.0,0.0,7.1000000000000005,7.294117647058823,124.0,7.294117647058823,real,real,real
+Nick Muse,TE,South Carolina,2022,227,7,1.3,33.1,0.3,backtest,85.9,13.4,72.2,21.0,22.9,222.0,360.0,0.0,0.0,,,3.2,0.0,real,real,real
+James Mitchell,TE,Virginia Tech,2022,177,5,1.2,43.0,-0.9,backtest,79.1,0.3,39.4,,19.7,42.0,316.0,0.0,0.0,,,28.3,3.5375,real,real,mnar_imputed
+Grant Calcaterra,TE,SMU,2022,198,6,1.2,38.7,-0.3,backtest,53.4,30.9,57.5,,12.7,465.0,468.0,0.0,0.0,4.6000000000000005,4.6000000000000005,59.8,4.6000000000000005,real,real,real
+Teagan Quitoriano,TE,Oregon St.,2022,170,5,1.0,44.4,-1.3,backtest,27.5,51.6,10.9,,,,,0.0,0.0,,,30.3,4.328571428571428,imputed,imputed,real
+Connor Heyward,TE,Michigan St.,2022,208,6,0.8,36.7,-0.5,backtest,27.5,51.6,39.4,,,,,0.0,0.0,3.609090909090909,3.609090909090909,39.7,4.4750000000000005,imputed,imputed,mnar_imputed
+John FitzPatrick,TE,Georgia,2022,213,6,0.2,35.7,-1.0,backtest,2.2,2.8,39.4,,3.8,83.0,407.0,0.0,0.0,,2.52,25.2,2.52,real,real,mnar_imputed
+Ko Kieft,TE,Minnesota,2022,218,6,0.1,34.8,-1.0,backtest,4.1,6.6,2.8,,4.8,101.0,256.0,0.0,0.0,,,21.0,2.625,real,real,real
+Sam LaPorta,TE,Iowa,2023,34,2,74.1,81.0,46.1,backtest,93.4,91.6,79.1,20.0,32.2,656.0,349.0,1.0,1.0,14.076470588235296,14.076470588235296,239.3,14.076470588235296,real,real,real
+Dalton Kincaid,TE,Utah,2023,25,1,72.4,84.7,38.3,backtest,84.1,92.2,63.1,22.0,25.5,890.0,446.0,1.0,0.0,10.508333333333336,10.508333333333336,150.3,10.508333333333336,real,real,mnar_imputed
+Michael Mayer,TE,Notre Dame,2023,35,2,67.7,80.6,40.3,backtest,92.2,97.8,49.4,20.0,30.0,809.0,338.0,0.0,0.0,6.15,6.15,73.8,6.15,real,real,real
+Luke Musgrave,TE,Oregon St.,2023,42,2,26.8,78.0,3.2,backtest,27.5,51.6,94.7,,,,,0.0,0.0,6.836363636363637,6.836363636363637,75.2,6.836363636363637,imputed,imputed,real
+Luke Schoonmaker,TE,Michigan,2023,58,2,23.6,72.6,6.6,backtest,57.2,34.1,95.3,,13.6,418.0,370.0,0.0,0.0,5.71,5.71,57.1,5.71,real,real,real
+Brenton Strange,TE,Penn St.,2023,61,2,15.8,71.7,-0.2,backtest,27.5,51.6,80.3,,,,,0.0,0.0,9.833333333333334,9.833333333333334,118.0,9.833333333333334,imputed,imputed,real
+Tucker Kraft,TE,South Dakota St.,2023,78,3,8.9,66.6,-2.6,backtest,27.5,29.7,92.2,,,348.0,369.0,0.0,0.0,9.605882352941178,9.605882352941178,163.3,14.65,imputed,real,real
+Darnell Washington,TE,Georgia,2023,93,3,8.9,62.5,0.3,backtest,42.8,28.4,95.9,,10.2,454.0,492.0,0.0,0.0,5.646153846153847,5.646153846153847,73.4,5.646153846153847,real,real,real
+Will Mallory,TE,Miami (FL),2023,162,5,7.8,46.2,5.2,backtest,72.8,67.2,79.7,,18.7,538.0,413.0,0.0,0.0,3.5181818181818185,3.5181818181818185,38.7,3.5181818181818185,real,real,real
+Josh Whyle,TE,Cincinnati,2023,147,5,3.2,49.4,-0.2,backtest,61.6,18.4,77.5,,14.8,326.0,417.0,0.0,0.0,4.342857142857143,4.342857142857143,60.8,4.342857142857143,real,real,real
+Cameron Latu,TE,Alabama,2023,101,3,3.1,60.4,-4.3,backtest,44.1,24.7,23.4,,10.3,377.0,438.0,0.0,0.0,,,0.0,0.0,real,real,real
+Davis Allen,TE,Clemson,2023,175,5,2.1,43.4,0.0,backtest,57.8,29.1,67.5,,13.6,443.0,478.0,0.0,0.0,4.1866666666666665,4.1866666666666665,62.8,4.1866666666666665,real,real,real
+Zack Kuntz,TE,Old Dominion,2023,220,7,1.6,34.4,0.5,backtest,82.8,4.7,99.4,22.0,24.8,144.0,417.0,0.0,0.0,,,0.0,0.0,real,real,real
+Payne Durham,TE,Purdue,2023,171,5,1.3,44.2,-1.0,backtest,59.7,27.8,26.6,,14.5,560.0,581.0,0.0,0.0,,,34.5,1.8,real,real,real
+Brayden Willis,TE,Oklahoma,2023,247,7,0.8,29.3,0.1,backtest,62.8,69.1,10.3,,15.5,514.0,407.0,0.0,0.0,,,0.0,0.0,real,real,real
+Brock Bowers,TE,Georgia,2024,13,1,82.8,90.6,38.0,backtest,98.4,85.9,63.1,18.0,23.3,714.0,456.0,1.0,1.0,15.452941176470588,15.452941176470588,262.7,15.452941176470588,real,real,mnar_imputed
+Ben Sinnott,TE,Kansas St.,2024,53,2,21.1,74.3,2.3,backtest,27.5,51.6,92.8,,,,,0.0,0.0,,,28.4,3.55,imputed,imputed,real
+Ja'Tavion Sanders,TE,Texas,2024,101,4,14.1,60.4,6.7,backtest,77.8,80.9,17.8,,19.5,682.0,475.0,0.0,0.0,4.909090909090909,4.909090909090909,73.2,4.909090909090909,real,real,real
+Theo Johnson,TE,Penn St.,2024,107,4,8.1,58.9,1.4,backtest,27.5,51.6,97.8,,,,,0.0,0.0,8.52,8.52,127.8,8.52,imputed,imputed,real
+Jared Wiley,TE,TCU,2024,131,4,5.7,53.1,1.3,backtest,58.4,33.4,84.1,,13.9,520.0,503.0,0.0,0.0,,,1.7000000000000002,0.0,real,real,real
+Erick All,TE,Iowa,2024,115,4,4.6,56.9,-1.2,backtest,70.3,24.1,39.4,,18.0,299.0,348.0,0.0,0.0,,,35.800000000000004,4.4750000000000005,real,real,mnar_imputed
+Tip Reiman,TE,Illinois,2024,82,3,4.0,65.5,-6.6,backtest,5.3,9.1,97.2,,6.4,203.0,414.0,0.0,0.0,,,9.7,0.0,real,real,real
+Cade Stover,TE,Ohio St.,2024,123,4,3.9,55.0,-1.1,backtest,27.5,51.6,59.7,,,,,0.0,0.0,2.6384615384615384,2.6384615384615384,34.3,3.316666666666667,imputed,imputed,real
+AJ Barner,TE,Michigan,2024,121,4,1.7,55.5,-3.5,backtest,8.4,16.6,70.3,,7.8,249.0,361.0,0.0,0.0,8.664705882352942,8.664705882352942,147.3,8.664705882352942,real,real,real
+Tanner McLachlan,TE,Arizona,2024,194,6,1.3,39.5,-0.3,backtest,55.3,32.8,49.4,,13.2,528.0,464.0,0.0,0.0,,,0.0,0.0,real,real,real
+Jaheim Bell,TE,Florida St.,2024,231,7,0.8,32.3,-0.1,backtest,27.5,51.6,65.9,,,,,0.0,0.0,,,4.0,0.0,imputed,imputed,real
+Devin Culp,TE,Washington,2024,246,7,0.2,29.5,-0.5,backtest,9.7,5.3,56.6,,8.2,208.0,575.0,0.0,0.0,,,13.8,0.0,real,real,real
+Colston Loveland,TE,Michigan,2025,10,1,85.9,92.4,37.8,backtest,96.6,92.8,63.1,19.0,34.7,582.0,308.0,0.0,0.0,10.31875,10.31875,165.1,10.31875,real,real,mnar_imputed
+Harold Fannin,TE,Bowling Green,2025,67,3,52.7,69.9,38.5,backtest,98.4,99.7,52.2,19.0,49.6,1550.0,419.0,1.0,1.0,11.775,11.775,188.4,11.775,real,real,real
+Terrance Ferguson,TE,Oregon,2025,46,2,46.4,76.6,24.7,backtest,62.2,73.4,85.6,,15.1,591.0,460.0,0.0,0.0,4.736363636363636,4.736363636363636,52.1,4.736363636363636,real,real,real
+Tyler Warren,TE,Penn St.,2025,14,1,38.1,90.1,-5.6,backtest,27.5,51.6,63.1,,,,,1.0,0.0,11.088235294117649,11.088235294117649,188.5,11.088235294117649,imputed,imputed,mnar_imputed
+Elijah Arroyo,TE,Miami (FL),2025,50,2,32.0,75.3,12.0,backtest,54.7,69.7,63.1,,13.0,590.0,489.0,0.0,0.0,2.9923076923076923,2.9923076923076923,38.9,2.9923076923076923,real,real,mnar_imputed
+Mason Taylor,TE,LSU,2025,42,2,26.9,78.0,3.3,backtest,56.6,35.9,74.7,,13.4,546.0,533.0,0.0,0.0,6.684615384615385,6.684615384615385,86.9,6.684615384615385,real,real,real
+Oronde Gadsden II,TE,Syracuse,2025,165,5,11.1,45.5,8.6,backtest,95.9,83.4,55.3,19.0,32.2,922.0,598.0,0.0,0.0,8.893333333333334,8.893333333333334,133.4,8.893333333333334,real,real,real
+Gunnar Helm,TE,Texas,2025,120,4,7.0,55.7,1.7,backtest,68.4,75.9,7.2,,17.8,786.0,541.0,0.0,0.0,5.73125,5.73125,91.7,5.73125,real,real,real
+Mitchell Evans,TE,Notre Dame,2025,163,5,1.6,45.9,-1.0,backtest,55.9,30.3,34.7,,13.3,421.0,445.0,0.0,0.0,3.707692307692308,3.707692307692308,48.2,3.707692307692308,real,real,real
+Thomas Fidone,TE,Nebraska,2025,219,7,1.5,34.6,0.4,backtest,65.3,25.3,89.1,,15.9,373.0,434.0,0.0,0.0,,,0.0,0.0,real,real,real
+Moliki Matavao,TE,UCLA,2025,248,7,1.2,29.2,0.5,backtest,67.8,72.2,27.2,,17.4,506.0,398.0,0.0,0.0,,,3.0,0.0,real,real,real
+Gavin Bartholomew,TE,Pittsburgh,2025,202,6,1.0,37.9,-0.4,backtest,51.6,14.7,74.1,,12.6,329.0,499.0,0.0,0.0,,,0.0,0.0,real,real,real
+Luke Lachey,TE,Iowa,2025,255,7,0.6,27.9,-0.1,backtest,77.2,21.6,45.3,,19.5,231.0,260.0,0.0,0.0,,,0.0,0.0,real,real,real
+Jackson Hawes,TE,Georgia Tech,2025,173,5,0.3,43.8,-1.9,backtest,4.7,7.8,34.1,,6.3,195.0,410.0,0.0,0.0,4.053846153846154,4.053846153846154,52.7,4.053846153846154,real,real,real
+Robbie Ouzts,TE,Alabama,2025,175,5,0.2,43.4,-1.9,backtest,1.6,4.1,15.3,,3.5,108.0,354.0,0.0,0.0,,,0.0,0.0,real,real,real
+Caleb Lohner,TE,Utah,2025,241,7,0.2,30.4,-0.6,backtest,0.3,0.9,73.4,,2.3,54.0,358.0,0.0,0.0,,,0.0,0.0,real,real,real
+Kenyon Sadiq,TE,Oregon,2026,19,1,58.1,87.5,19.1,2026_prospect,61.9,98.8,20.0,,14.826581943341278,560.0,437.0,,,,,,,imputed,real,mnar_imputed
+Eli Stowers,TE,Vanderbilt,2026,74,3,30.1,67.8,17.7,2026_prospect,88.1,99.7,5.6,21.0,27.806563039723663,765.0,400.0,,,,,,,real,real,mnar_imputed
+Max Klare,TE,Ohio State,2026,81,3,25.7,65.8,14.9,2026_prospect,88.8,95.6,5.6,20.8,30.908269317668324,448.0,408.0,,,,,,,real,real,mnar_imputed
+Justin Joly,TE,NC State,2026,103,4,18.8,59.9,11.6,2026_prospect,90.6,96.2,5.6,19.3,25.55604012211077,489.0,413.0,,,,,,,real,real,mnar_imputed
+Michael Trigg,TE,Baylor,2026,94,3,15.3,62.3,6.8,2026_prospect,66.2,98.1,5.6,22.8,18.670971213344096,694.0,510.0,,,,,,,real,real,mnar_imputed
+Eli Raridon,TE,Notre Dame,2026,140,5,9.3,51.0,5.5,2026_prospect,80.6,99.4,5.6,21.8,16.19079610345986,482.0,322.0,,,,,,,real,real,mnar_imputed
+Jack Endries,TE,Texas,2026,125,4,9.3,54.5,4.4,2026_prospect,80.6,85.6,5.6,21.4,18.59701492537313,346.0,420.0,,,,,,,real,real,mnar_imputed
+Dallen Bentley,TE,Utah,2026,141,5,8.6,50.8,4.9,2026_prospect,76.9,99.4,5.6,22.5,23.16890881913304,620.0,373.0,,,,,,,real,real,mnar_imputed
+Tanner Koziol,TE,Houston,2026,158,5,8.0,47.0,5.2,2026_prospect,88.1,99.4,5.6,20.3,28.34964562942963,727.0,377.0,,,,,,,real,real,mnar_imputed
+Joe Royer,TE,Cincinnati,2026,142,5,6.3,50.6,2.7,2026_prospect,65.6,94.4,5.6,22.7,18.39323467230444,416.0,363.0,,,,,,,real,real,mnar_imputed
+Dae'Quan Wright,TE,Mississippi,2026,179,6,3.3,42.6,1.3,2026_prospect,58.8,98.1,5.6,,13.996175908221796,635.0,523.0,,,,,,,imputed,real,mnar_imputed
+Oscar Delp,TE,Georgia,2026,113,4,2.6,57.4,-3.4,2026_prospect,10.0,73.8,5.6,,8.432956381260096,261.0,417.0,,,,,,,imputed,real,mnar_imputed
+Jaren Kanak,TE,Oklahoma,2026,250,7,2.0,28.8,1.3,2026_prospect,85.6,98.1,5.6,20.8,17.29200652528548,533.0,431.0,,,,,,,real,real,mnar_imputed
+Seydou Traore,TE,Mississippi State,2026,250,7,1.9,28.8,1.2,2026_prospect,90.0,91.2,5.6,19.8,23.25925925925926,372.0,390.0,,,,,,,real,real,mnar_imputed
+Sam Roush,TE,Stanford,2026,159,5,1.8,46.8,-1.0,2026_prospect,8.1,98.1,5.6,23.4,20.473328324567994,545.0,391.0,,,,,,,real,real,mnar_imputed
+John Michael Gyllenborg,TE,Wyoming,2026,178,6,1.8,42.8,-0.2,2026_prospect,85.6,36.2,5.6,20.9,19.200351493848856,217.0,384.0,,,,,,,real,real,mnar_imputed
+Marlin Klein,TE,Michigan,2026,187,6,1.6,40.9,-0.2,2026_prospect,42.5,80.0,5.6,,10.214168039538714,248.0,340.0,,,,,,,imputed,real,mnar_imputed
+Jack Velling,TE,Michigan State,2026,250,7,1.6,28.8,0.9,2026_prospect,80.6,91.2,5.6,21.7,15.777351247600768,359.0,378.0,,,,,,,real,real,mnar_imputed
+Josh Cuevas,TE,Alabama,2026,197,6,1.4,38.9,-0.1,2026_prospect,44.4,82.5,5.6,,10.423535379152929,411.0,523.0,,,,,,,imputed,real,mnar_imputed
+Riley Nowakowski,TE,Indiana,2026,211,6,1.3,36.1,0.1,2026_prospect,42.5,91.2,5.6,,10.128238680973569,387.0,406.0,,,,,,,imputed,real,mnar_imputed
+Toby Payne,TE,Marshall,2026,250,7,1.2,28.8,0.5,2026_prospect,62.5,95.6,5.6,22.9,15.770465489566613,387.0,335.0,,,,,,,real,real,mnar_imputed
+Nate Rutchena,TE,UC Davis,2026,250,7,1.1,28.8,0.4,2026_prospect,66.2,85.6,5.6,,,,,,,,,,,imputed,imputed,mnar_imputed
+Lake McRee,TE,USC,2026,250,7,0.9,28.8,0.2,2026_prospect,48.8,95.6,5.6,,11.564449064449065,450.0,420.0,,,,,,,imputed,real,mnar_imputed
+Chamon Metayer,TE,Arizona State,2026,250,7,0.9,28.8,0.2,2026_prospect,54.4,88.1,5.6,,12.980269989615785,375.0,430.0,,,,,,,imputed,real,mnar_imputed
+Matthew Hibner,TE,SMU,2026,250,7,0.8,28.8,0.1,2026_prospect,50.0,88.8,5.6,,11.825332248440466,436.0,460.0,,,,,,,imputed,real,mnar_imputed
+R.J. Maryland,TE,SMU,2026,250,7,0.7,28.8,0.0,2026_prospect,56.2,74.4,5.6,,13.31619537275064,322.0,460.0,,,,,,,imputed,real,mnar_imputed
+Bauer Sharp,TE,LSU,2026,250,7,0.7,28.8,0.0,2026_prospect,60.0,66.9,5.6,,14.522635589421784,252.0,443.0,,,,,,,imputed,real,mnar_imputed
+Brett Norfleet,TE,Missouri,2026,250,7,0.6,28.8,-0.1,2026_prospect,44.4,79.4,5.6,,10.39279869067103,254.0,361.0,,,,,,,imputed,real,mnar_imputed
+Lance Mason,TE,Wisconsin,2026,250,7,0.5,28.8,-0.2,2026_prospect,11.9,98.8,5.6,23.4,24.312767257177764,398.0,272.0,,,,,,,real,real,mnar_imputed
+Nate Boerkircher,TE,Texas A&M,2026,173,5,0.4,43.8,-1.8,2026_prospect,4.4,33.8,5.6,,5.88410104011887,204.0,408.0,,,,,,,imputed,real,mnar_imputed
+Carsen Ryan,TE,BYU,2026,250,7,0.4,28.8,-0.3,2026_prospect,6.9,98.8,5.6,23.2,20.090732339598187,620.0,403.0,,,,,,,real,real,mnar_imputed
+Dan Villari,TE,Syracuse,2026,250,7,0.4,28.8,-0.3,2026_prospect,4.4,91.2,5.6,24.1,15.77924601632336,412.0,408.0,,,,,,,real,real,mnar_imputed
+Ty Thompson,TE,Tulane,2026,250,7,0.4,28.8,-0.3,2026_prospect,10.0,85.6,5.6,,8.252032520325203,,425.0,,,,,,,imputed,imputed,mnar_imputed
+DJ Rogers,TE,TCU,2026,250,7,0.3,28.8,-0.4,2026_prospect,10.0,75.6,5.6,,8.508935716190983,319.0,460.0,,,,,,,imputed,real,mnar_imputed
+Cooper Flanagan,TE,Notre Dame,2026,250,7,0.3,28.8,-0.4,2026_prospect,0.1,85.6,5.6,,1.7421602787456445,,322.0,,,,,,,imputed,imputed,mnar_imputed
+Miles Kitselman,TE,Tennessee,2026,250,7,0.3,28.8,-0.4,2026_prospect,44.4,36.2,5.6,,10.465924895688456,253.0,437.0,,,,,,,imputed,real,mnar_imputed
+Jameson Geers,TE,Minnesota,2026,250,7,0.3,28.8,-0.4,2026_prospect,42.5,33.8,5.6,,10.13631597343586,206.0,399.0,,,,,,,imputed,real,mnar_imputed
+Benji Gosnell,TE,Virginia Tech,2026,250,7,0.2,28.8,-0.5,2026_prospect,58.1,13.8,5.6,,13.878713878713878,86.0,319.0,,,,,,,imputed,real,mnar_imputed
+Amari Niblack,TE,Texas A&M,2026,250,7,0.2,28.8,-0.5,2026_prospect,45.6,6.9,5.6,,10.579100614687803,69.0,408.0,,,,,,,imputed,real,mnar_imputed
+Luke Hasz,TE,Mississippi,2026,250,7,0.2,28.8,-0.5,2026_prospect,48.1,1.2,5.6,,11.244444444444444,28.0,523.0,,,,,,,imputed,real,mnar_imputed
+Ethan Davis,TE,Tennessee,2026,250,7,0.1,28.8,-0.6,2026_prospect,5.6,36.9,5.6,,6.756046267087276,257.0,437.0,,,,,,,imputed,real,mnar_imputed
+Josh Kattus,TE,Kentucky,2026,250,7,0.1,28.8,-0.6,2026_prospect,8.8,35.6,5.6,,7.995079950799508,195.0,367.0,,,,,,,imputed,real,mnar_imputed
+Andrew Rappleyea,TE,Penn State,2026,250,7,0.1,28.8,-0.6,2026_prospect,6.2,35.6,5.6,,7.395234182415776,180.0,339.0,,,,,,,imputed,real,mnar_imputed
+Jaleel Skinner,TE,Louisville,2026,250,7,0.1,28.8,-0.6,2026_prospect,5.6,33.8,5.6,,7.150368033648791,204.0,418.0,,,,,,,imputed,real,mnar_imputed
+Khalil Dinkins,TE,Penn State,2026,250,7,0.1,28.8,-0.6,2026_prospect,5.6,32.5,5.6,,6.86113393590797,167.0,339.0,,,,,,,imputed,real,mnar_imputed
+Will Kacmarek,TE,Ohio State,2026,250,7,0.1,28.8,-0.6,2026_prospect,11.2,26.2,5.6,,9.204545454545451,168.0,408.0,,,,,,,imputed,real,mnar_imputed
+Tanner Arkin,TE,Illinois,2026,250,7,0.1,28.8,-0.6,2026_prospect,4.4,13.8,5.6,,4.948805460750854,114.0,372.0,,,,,,,imputed,real,mnar_imputed
+Jack Pedersen,TE,UCLA,2026,250,7,0.1,28.8,-0.6,2026_prospect,2.5,7.5,5.6,,4.203997243280496,72.0,361.0,,,,,,,imputed,real,mnar_imputed
+Holden Staes,TE,Indiana,2026,250,7,0.1,28.8,-0.6,2026_prospect,4.4,5.6,5.6,,5.472636815920398,62.0,406.0,,,,,,,imputed,real,mnar_imputed
+Davin Stoffel,TE,Illinois,2026,250,7,0.1,28.8,-0.6,2026_prospect,0.1,1.2,5.6,,0.787143325680551,24.0,372.0,,,,,,,imputed,real,mnar_imputed
+Joey Schlaffer,TE,Penn State,2026,250,7,0.1,28.8,-0.6,2026_prospect,0.1,1.2,5.6,,0.780608052588332,19.0,339.0,,,,,,,imputed,real,mnar_imputed
+Shamar Easter,TE,North Carolina,2026,250,7,0.1,28.8,-0.6,2026_prospect,0.1,0.3,5.6,,0.8608971454463071,17.0,355.0,,,,,,,imputed,real,mnar_imputed

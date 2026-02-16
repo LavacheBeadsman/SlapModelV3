@@ -9,9 +9,16 @@ percentile ranks (0-100) using the backtest distribution as reference. 2026
 prospects are scored against that backtest distribution. Binary components
 (Teammate, Early Declare) are left as 0/100 — already position-neutral by design.
 
-POOLED RESCALING: After computing weighted SLAP scores, final scores are rescaled
-using the POOLED min/max across ALL positions so that a pick-10 RB and a pick-10
-WR with similar percentile profiles get comparable SLAP scores.
+PROBABILITY-CALIBRATED SCORING: After computing within-position raw SLAP scores,
+a logistic regression is fit per position: P(hit) = f(SLAP_raw). The final SLAP
+score = predicted probability × 100, so a SLAP of 80 ≈ 80% chance of hitting.
+This means cross-position comparisons are meaningful: an RB with SLAP 80 and a WR
+with SLAP 80 have roughly similar hit chances. RBs hit more often than WRs at the
+same draft slot, so pick-15 RBs will score HIGHER than pick-15 WRs.
+
+Hit definitions:
+  WR/RB: hit24 (top-24 fantasy season)
+  TE: top12_10g (top-12 TE season with 10+ game minimum)
 
 LOCKED MODELS:
   WR V5: 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare
@@ -30,11 +37,12 @@ import pandas as pd
 import numpy as np
 import warnings, os
 from scipy import stats as sp_stats
+from sklearn.linear_model import LogisticRegression
 warnings.filterwarnings('ignore')
 os.chdir('/home/user/SlapModelV3')
 
 print("=" * 120)
-print("SLAP V5 — UNIFIED MASTER DATABASE BUILDER (with percentile normalization + pooled rescaling)")
+print("SLAP V5 — UNIFIED MASTER DATABASE BUILDER (probability-calibrated scoring)")
 print("=" * 120)
 
 # ============================================================================
@@ -177,7 +185,7 @@ print(f"    WR V5: {int(WR_V5['dc']*100)}/{int(WR_V5['breakout']*100)}/{int(WR_V
 print(f"    RB V5: {int(RB_V5['dc']*100)}/{int(RB_V5['production']*100)}/{int(RB_V5['speed_score']*100)} (DC/RYPTPA/SpeedScore)")
 print(f"    TE V5: {int(TE_V5['dc']*100)}/{int(TE_V5['breakout']*100)}/{int(TE_V5['production']*100)}/{int(TE_V5['ras']*100)} (DC/Breakout/Production/RAS)")
 print(f"\n  PERCENTILE NORMALIZATION: ON (non-DC components → within-position percentile ranks)")
-print(f"  POOLED RESCALING: ON (final SLAP rescaled using all-position min/max)")
+print(f"  PROBABILITY CALIBRATION: ON (logistic regression per position → SLAP = P(hit) × 100)")
 
 
 # ============================================================================
@@ -563,55 +571,100 @@ print(f"  Breakout pctl range: {te26['s_breakout_pctl'].min():.1f} - {te26['s_br
 
 
 # ============================================================================
-# POOLED RESCALING — use min/max across ALL positions to rescale to 0-100
+# PROBABILITY-CALIBRATED SCORING — logistic regression per position
 # ============================================================================
 print(f"\n\n{'='*120}")
-print("POOLED RESCALING: Rescaling all SLAP scores using cross-position min/max")
+print("PROBABILITY-CALIBRATED SCORING: Fitting logistic regression per position")
 print("=" * 120)
 
-# Collect all raw SLAP scores from backtest (these set the scale)
-all_raw = np.concatenate([
-    wr_bt['slap_v5_raw'].values,
-    rb_bt['slap_v5_raw'].values,
-    te_bt['slap_v5_raw'].values,
-])
-pooled_min = np.min(all_raw)
-pooled_max = np.max(all_raw)
-print(f"  Backtest raw SLAP range: {pooled_min:.2f} - {pooled_max:.2f}")
-print(f"  Pooled rescaling: score = (raw - {pooled_min:.2f}) / ({pooled_max:.2f} - {pooled_min:.2f}) × 100")
+# Fit logistic regression: P(hit) = f(slap_v5_raw) for each position
+# WR/RB use hit24, TE uses top12_10g
+logistic_models = {}
 
-def pooled_rescale(raw_score):
-    """Rescale a raw weighted SLAP to 0-100 using pooled min/max."""
-    return ((raw_score - pooled_min) / (pooled_max - pooled_min) * 100)
+# --- WR logistic ---
+wr_fit = wr_bt[wr_bt['hit24'].notna()].copy()
+X_wr = wr_fit[['slap_v5_raw']].values
+y_wr = wr_fit['hit24'].astype(int).values
+lr_wr = LogisticRegression(solver='lbfgs', max_iter=1000)
+lr_wr.fit(X_wr, y_wr)
+logistic_models['WR'] = lr_wr
+print(f"  WR: coef={lr_wr.coef_[0][0]:.4f}, intercept={lr_wr.intercept_[0]:.4f}, "
+      f"n={len(wr_fit)}, hit_rate={y_wr.mean():.3f}")
+
+# --- RB logistic ---
+rb_fit = rb_bt[rb_bt['hit24'].notna()].copy()
+X_rb = rb_fit[['slap_v5_raw']].values
+y_rb = rb_fit['hit24'].astype(int).values
+lr_rb = LogisticRegression(solver='lbfgs', max_iter=1000)
+lr_rb.fit(X_rb, y_rb)
+logistic_models['RB'] = lr_rb
+print(f"  RB: coef={lr_rb.coef_[0][0]:.4f}, intercept={lr_rb.intercept_[0]:.4f}, "
+      f"n={len(rb_fit)}, hit_rate={y_rb.mean():.3f}")
+
+# --- TE logistic ---
+te_fit = te_bt[te_bt['top12_10g'].notna()].copy()
+X_te = te_fit[['slap_v5_raw']].values
+y_te = te_fit['top12_10g'].astype(int).values
+lr_te = LogisticRegression(solver='lbfgs', max_iter=1000)
+lr_te.fit(X_te, y_te)
+logistic_models['TE'] = lr_te
+print(f"  TE: coef={lr_te.coef_[0][0]:.4f}, intercept={lr_te.intercept_[0]:.4f}, "
+      f"n={len(te_fit)}, hit_rate={y_te.mean():.3f}")
+
+def prob_calibrate(raw_scores, model):
+    """Convert raw SLAP scores to probability-calibrated scores (0-100)."""
+    X = raw_scores.values.reshape(-1, 1)
+    probs = model.predict_proba(X)[:, 1]
+    return pd.Series(probs * 100, index=raw_scores.index)
 
 # Apply to all backtest
-wr_bt['slap_v5'] = pooled_rescale(wr_bt['slap_v5_raw']).round(1)
-rb_bt['slap_v5'] = pooled_rescale(rb_bt['slap_v5_raw']).round(1)
-te_bt['slap_v5'] = pooled_rescale(te_bt['slap_v5_raw']).round(1)
+wr_bt['slap_v5'] = prob_calibrate(wr_bt['slap_v5_raw'], lr_wr).round(1)
+rb_bt['slap_v5'] = prob_calibrate(rb_bt['slap_v5_raw'], lr_rb).round(1)
+te_bt['slap_v5'] = prob_calibrate(te_bt['slap_v5_raw'], lr_te).round(1)
 
-# Apply to all 2026 prospects (clip to 0-100, prospects could theoretically exceed backtest range)
-wr26['slap_v5'] = pooled_rescale(wr26['slap_v5_raw']).clip(0, 100).round(1)
-rb_prospects['slap_v5'] = pooled_rescale(rb_prospects['slap_v5_raw']).clip(0, 100).round(1)
-te26['slap_v5'] = pooled_rescale(te26['slap_v5_raw']).clip(0, 100).round(1)
+# Apply to all 2026 prospects
+wr26['slap_v5'] = prob_calibrate(wr26['slap_v5_raw'], lr_wr).round(1)
+rb_prospects['slap_v5'] = prob_calibrate(rb_prospects['slap_v5_raw'], lr_rb).round(1)
+te26['slap_v5'] = prob_calibrate(te26['slap_v5_raw'], lr_te).round(1)
 
-# Delta vs DC (also rescale DC to pooled scale for fair comparison)
-# DC-only raw score = pick's DC score (as if all non-DC components were at the 50th percentile)
-# But delta should show: "how much does the full model disagree with pure draft capital?"
-# So compute delta as the difference between SLAP rank position and where DC alone would put them
-wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - pooled_rescale(wr_bt['s_dc'])).round(1)
-rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - pooled_rescale(rb_bt['s_dc'])).round(1)
-te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - pooled_rescale(te_bt['s_dc'])).round(1)
-wr26['delta_vs_dc'] = (wr26['slap_v5'] - pooled_rescale(wr26['s_dc'])).round(1)
-rb_prospects['delta_vs_dc'] = (rb_prospects['slap_v5'] - pooled_rescale(rb_prospects['s_dc'])).round(1)
-te26['delta_vs_dc'] = (te26['slap_v5'] - pooled_rescale(te26['s_dc'])).round(1)
+# DC-only calibrated scores (for delta calculation)
+# For each position, compute what a DC-only raw score would be (non-DC components at 50th pctl)
+# Then calibrate that through the same logistic model
+def dc_only_raw(dc_val, weights, dc_weight_key='dc'):
+    """Compute what raw SLAP would be if all non-DC components were at 50th percentile."""
+    non_dc_contribution = sum(w * 50 for k, w in weights.items() if k != dc_weight_key)
+    return weights[dc_weight_key] * dc_val + non_dc_contribution
 
-# Also store the rescaled DC for the output
-wr_bt['dc_score_final'] = pooled_rescale(wr_bt['s_dc']).round(1)
-rb_bt['dc_score_final'] = pooled_rescale(rb_bt['s_dc']).round(1)
-te_bt['dc_score_final'] = pooled_rescale(te_bt['s_dc']).round(1)
-wr26['dc_score_final'] = pooled_rescale(wr26['s_dc']).round(1)
-rb_prospects['dc_score_final'] = pooled_rescale(rb_prospects['s_dc']).round(1)
-te26['dc_score_final'] = pooled_rescale(te26['s_dc']).round(1)
+wr_bt['dc_raw_equiv'] = wr_bt['s_dc'].apply(lambda d: dc_only_raw(d, WR_V5))
+rb_bt['dc_raw_equiv'] = rb_bt['s_dc'].apply(lambda d: dc_only_raw(d, RB_V5))
+te_bt['dc_raw_equiv'] = te_bt['s_dc'].apply(lambda d: dc_only_raw(d, TE_V5))
+wr26['dc_raw_equiv'] = wr26['s_dc'].apply(lambda d: dc_only_raw(d, WR_V5))
+rb_prospects['dc_raw_equiv'] = rb_prospects['s_dc'].apply(lambda d: dc_only_raw(d, RB_V5))
+te26['dc_raw_equiv'] = te26['s_dc'].apply(lambda d: dc_only_raw(d, TE_V5))
+
+# Calibrate DC-only through the same logistic model
+wr_bt['dc_score_calibrated'] = prob_calibrate(wr_bt['dc_raw_equiv'], lr_wr).round(1)
+rb_bt['dc_score_calibrated'] = prob_calibrate(rb_bt['dc_raw_equiv'], lr_rb).round(1)
+te_bt['dc_score_calibrated'] = prob_calibrate(te_bt['dc_raw_equiv'], lr_te).round(1)
+wr26['dc_score_calibrated'] = prob_calibrate(wr26['dc_raw_equiv'], lr_wr).round(1)
+rb_prospects['dc_score_calibrated'] = prob_calibrate(rb_prospects['dc_raw_equiv'], lr_rb).round(1)
+te26['dc_score_calibrated'] = prob_calibrate(te26['dc_raw_equiv'], lr_te).round(1)
+
+# Delta = SLAP - DC-only calibrated (how much does the model disagree with pure DC?)
+wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - wr_bt['dc_score_calibrated']).round(1)
+rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - rb_bt['dc_score_calibrated']).round(1)
+te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - te_bt['dc_score_calibrated']).round(1)
+wr26['delta_vs_dc'] = (wr26['slap_v5'] - wr26['dc_score_calibrated']).round(1)
+rb_prospects['delta_vs_dc'] = (rb_prospects['slap_v5'] - rb_prospects['dc_score_calibrated']).round(1)
+te26['delta_vs_dc'] = (te26['slap_v5'] - te26['dc_score_calibrated']).round(1)
+
+# Store DC score for output (the raw DC score on 0-100 scale, same as before)
+wr_bt['dc_score_final'] = wr_bt['s_dc'].round(1)
+rb_bt['dc_score_final'] = rb_bt['s_dc'].round(1)
+te_bt['dc_score_final'] = te_bt['s_dc'].round(1)
+wr26['dc_score_final'] = wr26['s_dc'].round(1)
+rb_prospects['dc_score_final'] = rb_prospects['s_dc'].round(1)
+te26['dc_score_final'] = te26['s_dc'].round(1)
 
 # Per-position stats
 for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
@@ -619,41 +672,21 @@ for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
 
 
 # ============================================================================
-# RANKING PRESERVATION CHECK (Spearman correlation within position)
+# RANKING PRESERVATION CHECK
 # ============================================================================
 print(f"\n{'='*120}")
-print("RANKING PRESERVATION CHECK")
+print("RANKING PRESERVATION CHECK (logistic transform is monotonic → within-position rankings perfectly preserved)")
 print("=" * 120)
 
-# We need old-style scores to compare against. Compute them inline.
-wr_bt['slap_old'] = (
-    WR_V5['dc'] * wr_bt['s_dc'] +
-    WR_V5['breakout'] * wr_bt['s_breakout_raw'] +
-    WR_V5['teammate'] * wr_bt['s_teammate'] +
-    WR_V5['early_declare'] * wr_bt['s_early_declare']
-)
-rb_bt['slap_old'] = (
-    RB_V5['dc'] * rb_bt['s_dc'] +
-    RB_V5['production'] * rb_bt['s_production_raw_filled'] +
-    RB_V5['speed_score'] * rb_bt['s_speed_raw']
-)
-te_bt['slap_old'] = (
-    TE_V5['dc'] * te_bt['s_dc'] +
-    TE_V5['breakout'] * te_bt['s_breakout_raw_filled'] +
-    TE_V5['production'] * te_bt['s_production_raw_filled'] +
-    TE_V5['ras'] * te_bt['s_ras_raw']
-)
-
+# Logistic regression is a monotonic transform, so within-position rankings
+# are identical between slap_v5_raw and slap_v5. Verify this:
 for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
-    old_rank = df['slap_old'].rank(ascending=False, method='min')
-    new_rank = df['slap_v5'].rank(ascending=False, method='min')
-    spearman_r = old_rank.corr(new_rank, method='spearman')
-    rank_diff = (old_rank - new_rank).abs()
-    moved_0 = (rank_diff == 0).sum()
-    moved_1_3 = ((rank_diff >= 1) & (rank_diff <= 3)).sum()
-    moved_4_plus = (rank_diff >= 4).sum()
+    raw_rank = df['slap_v5_raw'].rank(ascending=False, method='min')
+    cal_rank = df['slap_v5'].rank(ascending=False, method='min')
+    spearman_r = raw_rank.corr(cal_rank, method='spearman')
+    rank_diff = (raw_rank - cal_rank).abs()
     max_move = rank_diff.max()
-    print(f"  {pos}: Spearman r={spearman_r:.4f} | Same rank: {moved_0} | Moved 1-3: {moved_1_3} | Moved 4+: {moved_4_plus} | Max move: {max_move:.0f}")
+    print(f"  {pos}: Spearman r={spearman_r:.4f} | Max rank change: {max_move:.0f} (should be 0 — monotonic transform)")
 
 
 # ============================================================================
@@ -984,17 +1017,38 @@ for pos in ['WR', 'RB', 'TE']:
         print(f"    2026 SLAP:     {p26['slap_v5'].min():.1f} - {p26['slap_v5'].max():.1f} (mean {p26['slap_v5'].mean():.1f})")
 
 # Cross-position calibration check: average SLAP by round
-print(f"\n  CROSS-POSITION CALIBRATION (avg SLAP by draft round):")
-print(f"  {'Round':>5} | {'WR':>7} | {'RB':>7} | {'TE':>7} | {'WR-RB':>6} | {'WR-TE':>6}")
-print(f"  {'-'*50}")
+print(f"\n  PROBABILITY CALIBRATION CHECK (avg SLAP by round vs actual hit rate):")
+print(f"  {'Round':>5} | {'WR SLAP':>7} {'WR Hit%':>7} | {'RB SLAP':>7} {'RB Hit%':>7} | {'TE SLAP':>7} {'TE Hit%':>7}")
+print(f"  {'-'*75}")
 bt_all = master[master['data_type'] == 'backtest']
 for rd in range(1, 8):
     vals = {}
     for pos in ['WR', 'RB', 'TE']:
         sub = bt_all[(bt_all['position'] == pos) & (bt_all['round'] == rd)]
-        vals[pos] = sub['slap_v5'].mean() if len(sub) > 0 else float('nan')
-    wr_a, rb_a, te_a = vals['WR'], vals['RB'], vals['TE']
-    print(f"  {rd:>5} | {wr_a:>7.1f} | {rb_a:>7.1f} | {te_a:>7.1f} | {wr_a-rb_a:>+6.1f} | {wr_a-te_a:>+6.1f}")
+        hit_col = 'nfl_hit24' if pos in ['WR', 'RB'] else 'nfl_hit24'
+        avg_slap = sub['slap_v5'].mean() if len(sub) > 0 else float('nan')
+        avg_hit = sub[hit_col].mean() * 100 if len(sub) > 0 and sub[hit_col].notna().sum() > 0 else float('nan')
+        vals[pos] = (avg_slap, avg_hit)
+    print(f"  {rd:>5} | {vals['WR'][0]:>7.1f} {vals['WR'][1]:>6.1f}% | {vals['RB'][0]:>7.1f} {vals['RB'][1]:>6.1f}% | {vals['TE'][0]:>7.1f} {vals['TE'][1]:>6.1f}%")
+
+# Pick 15 comparison: WR vs RB
+print(f"\n  PICK 15 COMPARISON (cross-position calibration test):")
+for pos in ['WR', 'RB', 'TE']:
+    p15 = bt_all[(bt_all['position'] == pos) & (bt_all['pick'].between(10, 20))]
+    if len(p15) > 0:
+        hit_col = 'nfl_hit24'
+        avg_slap = p15['slap_v5'].mean()
+        actual_hit = p15[hit_col].mean() * 100
+        print(f"    {pos} picks 10-20: avg SLAP={avg_slap:.1f}, actual hit rate={actual_hit:.1f}% (n={len(p15)})")
+
+# Within-position differentiation check
+print(f"\n  WITHIN-POSITION DIFFERENTIATION (top vs bottom decile):")
+for pos in ['WR', 'RB', 'TE']:
+    bt = master[(master['position'] == pos) & (master['data_type'] == 'backtest')]
+    top_10pct = bt.nlargest(max(1, len(bt) // 10), 'slap_v5')
+    bot_10pct = bt.nsmallest(max(1, len(bt) // 10), 'slap_v5')
+    spread = top_10pct['slap_v5'].mean() - bot_10pct['slap_v5'].mean()
+    print(f"    {pos}: top decile avg={top_10pct['slap_v5'].mean():.1f}, bottom decile avg={bot_10pct['slap_v5'].mean():.1f}, spread={spread:.1f}")
 
 # Show top 5 2026 prospects per position
 print(f"\n\n  TOP 5 2026 PROSPECTS PER POSITION:")
@@ -1009,7 +1063,7 @@ for pos in ['WR', 'RB', 'TE']:
               f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {delta_str:>6}")
 
 # TOP 60 OVERALL (the key cross-position check)
-print(f"\n\n  TOP 60 BACKTEST PLAYERS (cross-position — should show interspersed positions):")
+print(f"\n\n  TOP 60 BACKTEST PLAYERS (probability-calibrated — RBs should be well-represented):")
 top60 = bt_all.nlargest(60, 'slap_v5')
 print(f"  {'#':>3} {'Player':<25} {'Pos':>3} {'Year':>4} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
 print(f"  {'-'*60}")
@@ -1040,8 +1094,13 @@ for pos in ['WR', 'RB', 'TE']:
         real_ath = (bt['athletic_data_flag'] == 'real').sum()
         print(f"  TE: {real_bo}/{total_n} real breakout, {real_prod}/{total_n} real production, {real_ath}/{total_n} real RAS")
 
+# Logistic model summary
+print(f"\n\n  LOGISTIC REGRESSION MODELS:")
+for pos, lr in [('WR', lr_wr), ('RB', lr_rb), ('TE', lr_te)]:
+    print(f"    {pos}: P(hit) = 1 / (1 + exp(-({lr.coef_[0][0]:.4f} × SLAP_raw + ({lr.intercept_[0]:.4f}))))")
+
 print(f"\n\n{'='*120}")
-print("MASTER DATABASE BUILD COMPLETE")
+print("MASTER DATABASE BUILD COMPLETE (PROBABILITY-CALIBRATED)")
 print(f"{'='*120}")
 print(f"\n  Files saved:")
 print(f"    output/slap_v5_master_database.csv  ({len(master)} rows)")
