@@ -1,110 +1,110 @@
 rank,player_name,college,pick,round,slap_v5,dc_score,delta_vs_dc,enhanced_breakout,teammate_score,early_declare_score,breakout_age,peak_dominator,rush_yards,breakout_data_flag
-1,Jordyn Tyson,Arizona State,10,1,89.3,92.4,-3.1,98.2,0.0,100.0,19.0,36.4,4.0,real
-2,Carnell Tate,Ohio State,7,1,86.6,94.4,-7.8,77.6,0.0,100.0,20.0,25.3,16.0,real
-3,Makai Lemon,USC,13,1,82.1,90.6,-8.6,68.1,0.0,100.0,21.0,36.2,4.0,real
-4,Denzel Boston,Washington,22,1,81.8,86.1,-4.3,82.5,0.0,100.0,20.0,35.0,,real
-5,Kevin Concepcion,Texas A&M,26,1,81.1,84.3,-3.2,85.5,0.0,100.0,20.0,30.9,75.0,real
-6,Omar Cooper Jr.,Indiana,48,2,71.8,75.9,-4.1,68.3,0.0,100.0,21.0,26.7,74.0,real
-7,Ja'Kobi Lane,USC,76,3,70.8,67.2,3.6,93.8,0.0,100.0,19.0,27.6,,real
-8,Zachariah Branch,Georgia,49,2,70.4,75.6,-5.2,62.6,0.0,100.0,21.0,25.2,7.0,real
-9,Antonio Williams,Clemson,68,3,70.3,69.6,0.8,83.2,0.0,100.0,20.0,26.4,78.0,real
-10,Germie Bernard,Alabama,55,2,69.7,73.6,-3.9,65.9,0.0,100.0,21.0,21.8,101.0,real
-11,Chris Brazzell,Tennessee,57,2,64.1,73.0,-8.8,65.3,0.0,0.0,21.0,30.7,,real
-12,Elijah Sarratt,Indiana,59,2,63.3,72.3,-9.0,63.4,0.0,0.0,21.0,26.8,,real
-13,Malachi Fields,Notre Dame,50,2,59.7,75.3,-15.6,35.0,0.0,0.0,,20.3,,imputed
-14,Chris Bell,Louisville,51,2,59.4,74.9,-15.5,35.0,0.0,0.0,,32.7,,imputed
-15,Skyler Bell,UConn,99,3,53.6,61.0,-7.4,54.5,0.0,0.0,22.0,39.0,-2.0,real
-16,Ted Hurst,Georgia State,82,3,52.9,65.5,-12.7,35.0,0.0,0.0,,37.1,,imputed
-17,Kevin Coleman Jr.,Missouri,121,4,51.5,55.5,-4.0,38.3,0.0,100.0,,18.3,76.0,imputed
-18,Josh Cameron,Baylor,136,5,49.1,51.9,-2.9,63.6,0.0,0.0,21.0,27.2,,real
-19,Bryce Lance,North Dakota State,132,4,48.7,52.9,-4.1,58.7,0.0,0.0,22.0,37.4,92.0,real
-20,Deion Burks,Oklahoma,118,4,48.5,56.2,-7.7,46.0,0.0,0.0,22.0,21.9,-3.0,real
-21,Caleb Douglas,Texas Tech,192,6,48.1,39.9,8.2,75.6,0.0,100.0,20.0,21.3,,real
-22,Brenen Thompson,Mississippi State,131,4,47.3,53.1,-5.7,50.9,0.0,0.0,22.0,31.8,14.0,real
-23,Reggie Virgil,Texas Tech,152,5,45.5,48.3,-2.9,33.2,0.0,100.0,,18.2,,imputed
-24,Zavion Thomas,LSU,250,7,45.1,28.8,16.3,99.9,0.0,100.0,18.0,32.7,99.0,real
-25,Amare Thomas,Houston,250,7,45.1,28.8,16.3,99.9,0.0,100.0,19.0,40.2,9.0,real
-26,C.J. Daniels,Miami (FL),138,5,42.6,51.5,-8.9,32.8,0.0,0.0,,17.8,,imputed
-27,Shelton Sampson Jr.,Louisiana-Lafayette,250,7,41.9,28.8,13.1,83.9,0.0,100.0,20.0,37.8,,real
-28,Anthony Evans III,Mississippi State,250,7,41.5,28.8,12.7,81.6,0.0,100.0,20.0,23.2,47.0,real
-29,Eli Heidenreich,Navy,223,7,38.7,33.8,4.8,74.9,0.0,0.0,21.0,52.8,499.0,real
-30,Hank Beatty,Illinois,250,7,38.2,28.8,9.4,65.3,0.0,100.0,21.0,20.6,46.0,real
-31,De'Zhaun Stribling,Mississippi,186,6,37.8,41.1,-3.3,45.1,0.0,0.0,22.0,20.2,,real
-32,Lewis Bond,Boston College,185,6,35.9,41.3,-5.4,35.0,0.0,0.0,,36.8,3.0,imputed
-33,Noah Thomas,Georgia,250,7,35.6,28.8,6.8,27.1,100.0,100.0,,12.1,,imputed
-34,Jordan Hudson,SMU,227,7,35.3,33.1,2.3,61.0,0.0,0.0,21.0,21.9,6.0,real
-35,London Humphreys,Georgia,250,7,35.2,28.8,6.5,25.5,100.0,100.0,,10.5,7.0,imputed
-36,Eric McAlister,TCU,193,6,34.8,39.7,-4.9,35.0,0.0,0.0,,32.4,,imputed
-37,Barion Brown,LSU,225,7,34.7,33.4,1.2,31.4,0.0,100.0,,11.4,33.0,imputed
-38,Chase Roberts,BYU,198,6,34.1,38.7,-4.6,35.0,0.0,0.0,,33.0,,imputed
-39,Ja'Varrius Johnson,UCF,250,7,33.0,28.8,4.2,64.3,0.0,0.0,21.0,28.6,,real
-40,Tyler Brown,Clemson,250,7,32.9,28.8,4.2,38.9,0.0,100.0,,18.9,71.0,imputed
-41,Cyrus Allen,Cincinnati,219,6,32.2,34.6,-2.4,40.0,0.0,0.0,,31.7,34.0,imputed
-42,Aaron Anderson,LSU,211,6,32.2,36.1,-4.0,34.3,0.0,0.0,,19.3,2.0,imputed
-43,Dillon Bell,Georgia,250,7,31.7,28.8,2.9,32.8,100.0,0.0,,12.8,109.0,imputed
-44,Kobe Prentice,Baylor,250,7,31.1,28.8,2.3,29.8,0.0,100.0,,14.8,,imputed
-45,Mikey Matthews,UCLA,250,7,31.1,28.8,2.3,29.7,0.0,100.0,,14.7,1.0,imputed
-46,Kaden Wetjen,Iowa,212,6,30.8,35.9,-5.1,28.2,0.0,0.0,,8.2,79.0,imputed
-47,Ayden Williams,Mississippi State,250,7,30.5,28.8,1.7,26.7,0.0,100.0,,11.7,,imputed
-48,Kendrick Law,Kentucky,250,7,30.3,28.8,1.5,50.6,0.0,0.0,22.0,21.1,53.0,real
-49,Braylin Presley,Tulsa,250,7,30.3,28.8,1.5,25.5,0.0,100.0,,5.5,215.0,imputed
-50,Cordale Russell,Miami (OH),250,7,30.1,28.8,1.3,24.7,0.0,100.0,,9.7,,imputed
-51,Kaleb Brown,UAB,250,7,30.0,28.8,1.2,24.0,0.0,100.0,,9.0,5.0,imputed
-52,Brandon Inniss,Ohio State,250,7,29.8,28.8,1.0,23.2,0.0,100.0,,8.2,16.0,imputed
-53,Colbie Young,Georgia,250,7,29.7,28.8,0.9,22.8,100.0,0.0,,7.8,,imputed
-54,Emmanuel Henderson,Kansas,250,7,29.7,28.8,0.9,47.7,0.0,0.0,22.0,25.4,16.0,real
-55,Jalen Brown,Arkansas,250,7,29.6,28.8,0.8,22.2,0.0,100.0,,7.2,,imputed
-56,Antonio Gates Jr.,Delaware State,250,7,29.2,28.8,0.4,20.3,0.0,100.0,,5.3,,imputed
-57,Raymond Cottrell,West Alabama,250,7,28.6,28.8,-0.2,17.3,0.0,100.0,,2.3,,imputed
-58,Dane Key,Nebraska,237,7,28.6,31.2,-2.6,33.6,0.0,0.0,,18.6,,imputed
-59,Hykeem Williams,Colorado,250,7,28.5,28.8,-0.3,16.7,0.0,100.0,,1.7,,imputed
-60,Eric Rivers,Georgia Tech,242,7,28.4,30.3,-1.9,36.1,0.0,0.0,,16.1,56.0,imputed
-61,Nathan Leacock,North Carolina,250,7,28.4,28.8,-0.4,16.1,0.0,100.0,,1.1,6.0,imputed
-62,Ryan Niblett,Texas,250,7,28.3,28.8,-0.5,15.9,0.0,100.0,,0.9,15.0,imputed
-63,Squirrel White,Florida State,250,7,28.3,28.8,-0.5,15.9,0.0,100.0,,0.9,6.0,imputed
-64,Jaquaize Pettaway,East Carolina,250,7,28.2,28.8,-0.5,15.5,0.0,100.0,,0.5,2.0,imputed
-65,Braylon James,TCU,250,7,28.2,28.8,-0.6,15.2,0.0,100.0,,0.2,,imputed
-66,Jalen Walthall,Incarnate Word,250,7,28.2,28.8,-0.6,40.0,0.0,0.0,,55.9,50.0,imputed
-67,Vinny Anthony II,Wisconsin,250,7,28.2,28.8,-0.6,40.0,0.0,0.0,,28.5,27.0,imputed
-68,Tyren Montgomery,John Carroll,229,7,27.9,32.7,-4.8,25.0,0.0,0.0,,,,imputed
-69,Trebor Pena,Penn State,250,7,27.7,28.8,-1.1,37.6,0.0,0.0,,17.6,69.0,imputed
-70,Caullin Lacy,Louisville,250,7,27.5,28.8,-1.3,36.6,0.0,0.0,,16.6,53.0,imputed
-71,Rara Thomas,Troy,250,7,27.5,28.8,-1.3,36.6,0.0,0.0,23.0,23.2,39.0,real
-72,Cody Jackson,Tarleton State,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,53.4,6.0,imputed
-73,Ja'Mori Maclin,Kentucky,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,20.4,,imputed
-74,Jordan Dwyer,TCU,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,21.3,,imputed
-75,Griffin Wilde,Northwestern,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,41.7,5.0,imputed
-76,C.J. Williams,Stanford,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,35.6,,imputed
-77,Justus Ross-Simmons,Syracuse,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,20.7,,imputed
-78,Jalil Farooq,Maryland,250,7,27.2,28.8,-1.6,35.0,0.0,0.0,,20.0,8.0,imputed
-79,Malik Benson,Oregon,250,7,27.0,28.8,-1.8,34.1,0.0,0.0,,19.1,-4.0,imputed
-80,Jeff Caldwell,Cincinnati,250,7,26.8,28.8,-2.0,33.3,0.0,0.0,,18.3,,imputed
-81,Harrison Wallace III,Mississippi,250,7,26.7,28.8,-2.1,32.6,0.0,0.0,,17.6,,imputed
-82,J.Michael Sturdivant,Florida,250,7,26.5,28.8,-2.3,31.6,0.0,0.0,,16.6,1.0,imputed
-83,Jayden Ballard,Wisconsin,250,7,26.3,28.8,-2.5,30.7,0.0,0.0,,15.7,,imputed
-84,Michael Wortham,Montana,250,7,26.2,28.8,-2.6,30.0,0.0,0.0,,,345.0,imputed
-85,Romello Brinson,SMU,250,7,26.0,28.8,-2.7,29.4,0.0,0.0,,14.4,4.0,imputed
-86,E.J. Williams,Indiana,250,7,26.0,28.8,-2.8,29.2,0.0,0.0,,14.2,,imputed
-87,Joseph Manjack IV,TCU,250,7,25.7,28.8,-3.1,27.7,0.0,0.0,,12.7,-4.0,imputed
-88,Donavon Greene,Virginia Tech,250,7,25.7,28.8,-3.1,27.6,0.0,0.0,,12.6,,imputed
-89,Keelan Marion,Miami (FL),250,7,25.6,28.8,-3.2,27.3,0.0,0.0,,12.3,,imputed
-90,Kyron Ware-Hudson,Penn State,250,7,25.6,28.8,-3.2,27.2,0.0,0.0,,12.2,,imputed
-91,Jared Brown,South Carolina,250,7,25.5,28.8,-3.3,26.6,0.0,0.0,,6.6,33.0,imputed
-92,Jaron Glover,Mississippi State,250,7,25.4,28.8,-3.4,26.4,0.0,0.0,,11.4,,imputed
-93,Andrel Anthony,Duke,250,7,25.2,28.8,-3.6,25.4,0.0,0.0,,10.4,,imputed
-94,Malik McClain,Arizona State,250,7,25.2,28.8,-3.6,25.1,0.0,0.0,,10.1,,imputed
-95,Devin Voisin,South Alabama,250,7,25.2,28.8,-3.6,25.0,0.0,0.0,,,,imputed
-96,Max Tomzcak,Youngstown State,250,7,25.2,28.8,-3.6,25.0,0.0,0.0,,,,imputed
-97,Jerand Bradley,Kansas State,250,7,25.0,28.8,-3.8,24.4,0.0,0.0,,9.4,,imputed
-98,JoJo Earle,UNLV,250,7,24.9,28.8,-3.9,23.7,0.0,0.0,,3.7,102.0,imputed
-99,Chris Hilton,LSU,250,7,24.8,28.8,-4.0,23.1,0.0,0.0,,8.1,,imputed
-100,Christian Leary,Western Michigan,250,7,24.7,28.8,-4.0,23.0,0.0,0.0,,3.0,46.0,imputed
-101,Dacari Collins,Louisville,250,7,24.5,28.8,-4.3,21.6,0.0,0.0,,6.6,,imputed
-102,Deion Colzie,Miami (OH),250,7,24.4,28.8,-4.4,21.3,0.0,0.0,,6.3,,imputed
-103,Talyn Shettron,Oklahoma State,250,7,24.4,28.8,-4.4,21.1,0.0,0.0,,6.1,,imputed
-104,Tobias Merriweather,Utah,250,7,23.6,28.8,-5.2,17.3,0.0,0.0,,2.3,,imputed
-105,Jaden Bray,West Virginia,250,7,23.6,28.8,-5.2,17.1,0.0,0.0,,2.1,,imputed
-106,Andre Greene Jr.,Virginia,250,7,23.4,28.8,-5.4,16.3,0.0,0.0,,1.3,,imputed
-107,Kyion Grayes,California,250,7,23.2,28.8,-5.6,15.3,0.0,0.0,,0.3,,imputed
-108,Jayden McGowan,Charlotte,250,7,23.2,28.8,-5.6,15.1,0.0,0.0,,0.1,,imputed
-109,Jayden Thomas,Virginia,250,7,23.2,28.8,-5.6,15.1,0.0,0.0,,0.1,,imputed
+1,Jordyn Tyson,Arizona State,10,1,85.0,92.0,-7.0,86.1,0.0,100.0,19.0,36.4,4.0,real
+2,Carnell Tate,Ohio State,7,1,77.3,94.5,-17.2,49.3,0.0,100.0,20.0,25.3,16.0,real
+3,Denzel Boston,Washington,22,1,73.0,83.9,-10.9,61.7,0.0,100.0,20.0,35.0,,real
+4,Kevin Concepcion,Texas A&M,26,1,72.7,81.6,-8.9,66.7,0.0,100.0,20.0,30.9,75.0,real
+5,Makai Lemon,USC,13,1,70.8,89.7,-18.9,37.2,0.0,100.0,21.0,36.2,4.0,real
+6,Ja'Kobi Lane,USC,76,3,60.5,59.7,0.8,78.8,0.0,100.0,19.0,27.6,,real
+7,Antonio Williams,Clemson,68,3,58.7,62.7,-4.0,63.7,0.0,100.0,20.0,26.4,78.0,real
+8,Omar Cooper Jr.,Indiana,48,2,57.6,70.9,-13.3,37.2,0.0,100.0,21.0,26.7,74.0,real
+9,Zachariah Branch,Georgia,49,2,55.1,70.5,-15.4,28.6,0.0,100.0,21.0,25.2,7.0,real
+10,Germie Bernard,Alabama,55,2,54.6,67.9,-13.3,33.3,0.0,100.0,21.0,21.8,101.0,real
+11,Chris Brazzell,Tennessee,57,2,47.3,67.1,-19.8,32.4,0.0,0.0,21.0,30.7,,real
+12,Elijah Sarratt,Indiana,59,2,46.2,66.3,-20.1,30.1,0.0,0.0,21.0,26.8,,real
+13,Malachi Fields,Notre Dame,50,2,42.7,70.0,-27.3,6.2,0.0,0.0,,20.3,,imputed
+14,Chris Bell,Louisville,51,2,42.4,69.6,-27.2,6.2,0.0,0.0,,32.7,,imputed
+15,Ted Hurst,Georgia State,82,3,33.9,57.5,-23.6,6.2,0.0,0.0,,37.1,,imputed
+16,Skyler Bell,UConn,99,3,33.7,51.7,-18.0,21.2,0.0,0.0,22.0,39.0,-2.0,real
+17,Kevin Coleman Jr.,Missouri,121,4,31.5,44.6,-13.1,6.8,0.0,100.0,,18.3,76.0,imputed
+18,Zavion Thomas,LSU,250,7,30.0,10.4,19.6,94.4,0.0,100.0,18.0,32.7,99.0,real
+19,Amare Thomas,Houston,250,7,30.0,10.4,19.6,94.4,0.0,100.0,19.0,40.2,9.0,real
+20,Caleb Douglas,Texas Tech,192,6,28.1,24.7,3.4,48.1,0.0,100.0,20.0,21.3,,real
+21,Josh Cameron,Baylor,136,5,27.9,40.1,-12.2,30.1,0.0,0.0,21.0,27.2,,real
+22,Bryce Lance,North Dakota State,132,4,26.8,41.3,-14.5,22.7,0.0,0.0,22.0,37.4,92.0,real
+23,Deion Burks,Oklahoma,118,4,26.7,45.6,-18.9,10.6,0.0,0.0,22.0,21.9,-3.0,real
+24,Brenen Thompson,Mississippi State,131,4,25.7,41.6,-15.9,17.7,0.0,0.0,22.0,31.8,14.0,real
+25,Reggie Virgil,Texas Tech,152,5,24.8,35.5,-10.7,5.6,0.0,100.0,,18.2,,imputed
+26,Shelton Sampson Jr.,Louisiana-Lafayette,250,7,22.3,10.4,11.9,64.3,0.0,100.0,20.0,37.8,,real
+27,C.J. Daniels,Miami (FL),138,5,21.2,39.5,-18.3,5.6,0.0,0.0,,17.8,,imputed
+28,Anthony Evans III,Mississippi State,250,7,21.1,10.4,10.7,59.6,0.0,100.0,20.0,23.2,47.0,real
+29,Eli Heidenreich,Navy,223,7,15.6,16.9,-1.3,45.6,0.0,0.0,21.0,52.8,499.0,real
+30,Hank Beatty,Illinois,250,7,14.1,10.4,3.7,32.4,0.0,100.0,21.0,20.6,46.0,real
+31,Noah Thomas,Georgia,250,7,13.2,10.4,2.8,3.8,100.0,100.0,,12.1,,imputed
+32,London Humphreys,Georgia,250,7,13.2,10.4,2.8,3.8,100.0,100.0,,10.5,7.0,imputed
+33,De'Zhaun Stribling,Mississippi,186,6,13.0,26.3,-13.3,10.0,0.0,0.0,22.0,20.2,,real
+34,Lewis Bond,Boston College,185,6,12.2,26.5,-14.3,6.2,0.0,0.0,,36.8,3.0,imputed
+35,Barion Brown,LSU,225,7,11.3,16.4,-5.1,5.3,0.0,100.0,,11.4,33.0,imputed
+36,Eric McAlister,TCU,193,6,10.8,24.4,-13.6,6.2,0.0,0.0,,32.4,,imputed
+37,Jordan Hudson,SMU,227,7,10.3,15.9,-5.6,27.7,0.0,0.0,21.0,21.9,6.0,real
+38,Chase Roberts,BYU,198,6,9.9,23.2,-13.3,6.2,0.0,0.0,,33.0,,imputed
+39,Tyler Brown,Clemson,250,7,7.6,10.4,-2.8,7.1,0.0,100.0,,18.9,71.0,imputed
+40,Aaron Anderson,LSU,211,6,7.6,19.9,-12.3,6.2,0.0,0.0,,19.3,2.0,imputed
+41,Dillon Bell,Georgia,250,7,7.2,10.4,-3.2,5.6,100.0,0.0,,12.8,109.0,imputed
+42,Ja'Varrius Johnson,UCF,250,7,7.1,10.4,-3.3,30.1,0.0,0.0,21.0,28.6,,real
+43,Kobe Prentice,Baylor,250,7,6.8,10.4,-3.6,3.8,0.0,100.0,,14.8,,imputed
+44,Mikey Matthews,UCLA,250,7,6.8,10.4,-3.6,3.8,0.0,100.0,,14.7,1.0,imputed
+45,Kaden Wetjen,Iowa,212,6,6.8,19.6,-12.8,3.8,0.0,0.0,,8.2,79.0,imputed
+46,Ayden Williams,Mississippi State,250,7,6.8,10.4,-3.6,3.8,0.0,100.0,,11.7,,imputed
+47,Braylin Presley,Tulsa,250,7,6.8,10.4,-3.6,3.8,0.0,100.0,,5.5,215.0,imputed
+48,Cyrus Allen,Cincinnati,219,6,6.5,17.9,-11.4,7.4,0.0,0.0,,31.7,34.0,imputed
+49,Cordale Russell,Miami (OH),250,7,6.5,10.4,-3.9,2.7,0.0,100.0,,9.7,,imputed
+50,Kaleb Brown,UAB,250,7,6.5,10.4,-3.9,2.7,0.0,100.0,,9.0,5.0,imputed
+51,Brandon Inniss,Ohio State,250,7,6.5,10.4,-3.9,2.7,0.0,100.0,,8.2,16.0,imputed
+52,Colbie Young,Georgia,250,7,6.5,10.4,-3.9,2.7,100.0,0.0,,7.8,,imputed
+53,Jalen Brown,Arkansas,250,7,6.5,10.4,-3.9,2.7,0.0,100.0,,7.2,,imputed
+54,Antonio Gates Jr.,Delaware State,250,7,6.4,10.4,-4.0,2.4,0.0,100.0,,5.3,,imputed
+55,Raymond Cottrell,West Alabama,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,2.3,,imputed
+56,Hykeem Williams,Colorado,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,1.7,,imputed
+57,Nathan Leacock,North Carolina,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,1.1,6.0,imputed
+58,Ryan Niblett,Texas,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,0.9,15.0,imputed
+59,Squirrel White,Florida State,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,0.9,6.0,imputed
+60,Jaquaize Pettaway,East Carolina,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,0.5,2.0,imputed
+61,Braylon James,TCU,250,7,5.8,10.4,-4.6,0.1,0.0,100.0,,0.2,,imputed
+62,Kendrick Law,Kentucky,250,7,3.8,10.4,-6.6,17.1,0.0,0.0,22.0,21.1,53.0,real
+63,Tyren Montgomery,John Carroll,229,7,3.7,15.4,-11.7,3.2,0.0,0.0,,,,imputed
+64,Dane Key,Nebraska,237,7,3.0,13.5,-10.5,5.6,0.0,0.0,,18.6,,imputed
+65,Emmanuel Henderson,Kansas,250,7,2.5,10.4,-7.9,12.1,0.0,0.0,22.0,25.4,16.0,real
+66,Eric Rivers,Georgia Tech,242,7,2.3,12.3,-10.0,6.2,0.0,0.0,,16.1,56.0,imputed
+67,Jalen Walthall,Incarnate Word,250,7,1.3,10.4,-9.1,7.4,0.0,0.0,,55.9,50.0,imputed
+68,Vinny Anthony II,Wisconsin,250,7,1.3,10.4,-9.1,7.4,0.0,0.0,,28.5,27.0,imputed
+69,Trebor Pena,Penn State,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,17.6,69.0,imputed
+70,Caullin Lacy,Louisville,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,16.6,53.0,imputed
+71,Rara Thomas,Troy,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,23.0,23.2,39.0,real
+72,Cody Jackson,Tarleton State,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,53.4,6.0,imputed
+73,Ja'Mori Maclin,Kentucky,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,20.4,,imputed
+74,Jordan Dwyer,TCU,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,21.3,,imputed
+75,Griffin Wilde,Northwestern,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,41.7,5.0,imputed
+76,C.J. Williams,Stanford,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,35.6,,imputed
+77,Justus Ross-Simmons,Syracuse,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,20.7,,imputed
+78,Jalil Farooq,Maryland,250,7,1.0,10.4,-9.4,6.2,0.0,0.0,,20.0,8.0,imputed
+79,Malik Benson,Oregon,250,7,0.8,10.4,-9.6,5.6,0.0,0.0,,19.1,-4.0,imputed
+80,Jeff Caldwell,Cincinnati,250,7,0.8,10.4,-9.6,5.6,0.0,0.0,,18.3,,imputed
+81,Harrison Wallace III,Mississippi,250,7,0.8,10.4,-9.6,5.6,0.0,0.0,,17.6,,imputed
+82,J.Michael Sturdivant,Florida,250,7,0.7,10.4,-9.7,5.3,0.0,0.0,,16.6,1.0,imputed
+83,Jayden Ballard,Wisconsin,250,7,0.6,10.4,-9.8,4.7,0.0,0.0,,15.7,,imputed
+84,Michael Wortham,Montana,250,7,0.4,10.4,-10.0,4.1,0.0,0.0,,,345.0,imputed
+85,Romello Brinson,SMU,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,14.4,4.0,imputed
+86,E.J. Williams,Indiana,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,14.2,,imputed
+87,Joseph Manjack IV,TCU,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,12.7,-4.0,imputed
+88,Donavon Greene,Virginia Tech,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,12.6,,imputed
+89,Keelan Marion,Miami (FL),250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,12.3,,imputed
+90,Kyron Ware-Hudson,Penn State,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,12.2,,imputed
+91,Jared Brown,South Carolina,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,6.6,33.0,imputed
+92,Jaron Glover,Mississippi State,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,11.4,,imputed
+93,Andrel Anthony,Duke,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,10.4,,imputed
+94,Malik McClain,Arizona State,250,7,0.4,10.4,-10.0,3.8,0.0,0.0,,10.1,,imputed
+95,Devin Voisin,South Alabama,250,7,0.2,10.4,-10.2,3.2,0.0,0.0,,,,imputed
+96,Max Tomzcak,Youngstown State,250,7,0.2,10.4,-10.2,3.2,0.0,0.0,,,,imputed
+97,Jerand Bradley,Kansas State,250,7,0.1,10.4,-10.3,2.7,0.0,0.0,,9.4,,imputed
+98,JoJo Earle,UNLV,250,7,0.1,10.4,-10.3,2.7,0.0,0.0,,3.7,102.0,imputed
+99,Chris Hilton,LSU,250,7,0.1,10.4,-10.3,2.7,0.0,0.0,,8.1,,imputed
+100,Christian Leary,Western Michigan,250,7,0.1,10.4,-10.3,2.7,0.0,0.0,,3.0,46.0,imputed
+101,Dacari Collins,Louisville,250,7,0.0,10.4,-10.4,2.4,0.0,0.0,,6.6,,imputed
+102,Deion Colzie,Miami (OH),250,7,0.0,10.4,-10.4,2.4,0.0,0.0,,6.3,,imputed
+103,Talyn Shettron,Oklahoma State,250,7,0.0,10.4,-10.4,2.4,0.0,0.0,,6.1,,imputed
+104,Tobias Merriweather,Utah,250,7,0.0,10.4,-10.4,0.1,0.0,0.0,,2.3,,imputed
+105,Jaden Bray,West Virginia,250,7,0.0,10.4,-10.4,0.1,0.0,0.0,,2.1,,imputed
+106,Andre Greene Jr.,Virginia,250,7,0.0,10.4,-10.4,0.1,0.0,0.0,,1.3,,imputed
+107,Kyion Grayes,California,250,7,0.0,10.4,-10.4,0.1,0.0,0.0,,0.3,,imputed
+108,Jayden McGowan,Charlotte,250,7,0.0,10.4,-10.4,0.1,0.0,0.0,,0.1,,imputed
+109,Jayden Thomas,Virginia,250,7,0.0,10.4,-10.4,0.1,0.0,0.0,,0.1,,imputed

@@ -1,57 +1,57 @@
 rank,player_name,college,pick,round,slap_v5,dc_score,delta_vs_dc,production_score,speed_score,rec_yards,team_pass_att,production_data_flag,athletic_data_flag
-1,Jeremiyah Love,Notre Dame,9,1,80.1,93.0,-12.9,57.1,49.7,280.0,322.0,real,mnar_imputed
-2,Emmett Johnson,Nebraska,74,3,64.7,67.8,-3.1,61.5,42.6,370.0,378.0,real,mnar_imputed
-3,Jonah Coleman,Washington,73,3,63.6,68.1,-4.5,57.4,42.6,354.0,370.0,real,mnar_imputed
-4,Jadarian Price,Notre Dame,61,2,54.2,71.7,-17.5,17.0,49.7,87.0,322.0,real,mnar_imputed
-5,Mike Washington Jr.,Arkansas,100,3,52.3,60.7,-8.4,35.6,42.6,226.0,381.0,real,mnar_imputed
-6,Kaytron Allen,Penn State,101,4,45.0,60.4,-15.4,12.0,42.6,68.0,339.0,real,mnar_imputed
-7,Nick Singleton,Penn State,115,4,39.1,56.9,-17.8,0.0,42.6,219.0,,missing,mnar_imputed
-8,Adam Randall,Clemson,190,6,38.4,40.3,-1.9,33.7,42.6,254.0,474.0,real,mnar_imputed
-9,Demond Claiborne,Wake Forest,172,5,37.2,44.0,-6.8,21.7,42.6,140.0,406.0,real,mnar_imputed
-10,Roman Hemby,Indiana,183,6,36.2,41.7,-5.5,23.2,42.6,165.0,406.0,real,mnar_imputed
-11,J'Mari Taylor,Virginia,207,6,34.9,36.9,-2.0,29.4,42.6,253.0,492.0,real,mnar_imputed
-12,Seth McGowan,Kentucky,191,6,34.1,40.1,-6.0,19.6,42.6,126.0,367.0,real,mnar_imputed
-13,Desmond Reid,Pittsburgh,250,7,33.7,28.8,4.9,42.9,42.6,317.0,464.0,real,mnar_imputed
-14,Dean Connors,Houston,250,7,33.0,28.8,4.2,40.4,42.6,254.0,377.0,real,mnar_imputed
-15,Jamal Haynes,Georgia Tech,250,7,32.6,28.8,3.8,39.1,42.6,257.0,394.0,real,mnar_imputed
-16,Kaelon Black,Indiana,182,6,30.9,41.9,-11.0,5.1,42.6,36.0,406.0,real,mnar_imputed
-17,Kaden Feagin,Illinois,250,7,30.4,28.8,1.6,31.8,42.6,188.0,372.0,real,mnar_imputed
-18,Sedrick Alexander,Vanderbilt,250,7,29.8,28.8,1.0,30.0,42.6,200.0,400.0,real,mnar_imputed
-19,Kadarius Calloway,New Mexico State,250,7,27.5,28.8,-1.3,22.2,42.6,175.0,472.0,real,mnar_imputed
-20,Byron Cardwell,San Diego State,250,7,27.2,28.8,-1.6,21.3,42.6,108.0,290.0,real,mnar_imputed
-21,Rueben Owens,Texas A&M,250,7,26.6,28.8,-2.2,19.1,42.6,130.0,408.0,real,mnar_imputed
-22,Rahsul Faison,South Carolina,250,7,26.2,28.8,-2.6,17.7,42.6,118.0,342.0,real,mnar_imputed
-23,Noah Whittington,Oregon,238,7,26.1,31.0,-4.9,12.8,42.6,98.0,437.0,real,mnar_imputed
-24,Dominic Richardson,Tulsa,250,7,25.7,28.8,-3.1,16.3,42.6,130.0,409.0,real,mnar_imputed
-25,Jamarion Miller,Alabama,245,7,25.2,29.7,-4.5,12.5,42.6,109.0,523.0,real,mnar_imputed
-26,Robert Henry Jr.,UTSA,215,6,25.1,35.4,-10.3,0.0,42.6,114.0,,missing,mnar_imputed
-27,Richard Reese,Stephen F. Austin,250,7,24.5,28.8,-4.3,12.1,42.6,94.0,510.0,real,mnar_imputed
-28,Jaydn Ott,Oklahoma,222,7,24.2,34.0,-9.8,0.0,42.6,,,missing,mnar_imputed
-29,Jalen Berger,UCLA,250,7,24.0,28.8,-4.8,10.5,42.6,70.0,361.0,real,mnar_imputed
-30,Le'Veon Moss,Texas A&M,226,7,23.9,33.3,-9.4,0.4,42.6,3.0,408.0,real,mnar_imputed
-31,Kentrel Bullock,South Alabama,250,7,23.8,28.8,-5.0,9.8,42.6,53.0,310.0,real,mnar_imputed
-32,Kejon Owens,Florida International,250,7,23.7,28.8,-5.1,9.4,42.6,67.0,429.0,real,mnar_imputed
-33,Jaylon Glover,UNLV,250,7,23.1,28.8,-5.7,7.6,42.6,51.0,424.0,real,mnar_imputed
-34,Logan Diggs,Mississippi,250,7,22.7,28.8,-6.1,6.1,42.6,56.0,523.0,real,mnar_imputed
-35,Andrew Paul,Jacksonville State,250,7,22.5,28.8,-6.3,5.6,42.6,29.0,328.0,real,mnar_imputed
-36,Terion Stewart,Virginia Tech,250,7,21.9,28.8,-6.9,3.4,42.6,19.0,319.0,real,mnar_imputed
-37,Cam Porter,Northwestern,250,7,21.9,28.8,-6.9,3.7,42.6,23.0,378.0,real,mnar_imputed
-38,Roydell Williams,Florida State,250,7,21.8,28.8,-7.0,3.0,42.6,19.0,339.0,real,mnar_imputed
-39,Branson Robinson,Georgia State,250,7,21.7,28.8,-7.1,2.9,42.6,22.0,475.0,real,mnar_imputed
-40,E.J. Smith,Texas A&M,250,7,21.6,28.8,-7.2,2.5,42.6,18.0,408.0,real,mnar_imputed
-41,Djay Braswell,Georgia State,250,7,21.5,28.8,-7.3,2.2,42.6,17.0,475.0,real,mnar_imputed
-42,Armoni Goodwin,UT Martin,250,7,21.5,28.8,-7.3,2.2,42.6,18.0,443.0,real,mnar_imputed
-43,Max Bredeson,Michigan,250,7,21.4,28.8,-7.4,1.9,42.6,11.0,340.0,real,mnar_imputed
-44,Kedrick Reescano,Arizona,250,7,21.3,28.8,-7.5,1.6,42.6,12.0,447.0,real,mnar_imputed
-45,C.J. Donaldson,Ohio State,250,7,20.8,28.8,-8.0,0.0,42.6,96.0,,missing,mnar_imputed
-46,Chip Trayanum,Toledo,250,7,20.8,28.8,-8.0,0.0,42.6,212.0,,missing,mnar_imputed
-47,Quinten Joyner,Texas Tech,250,7,20.8,28.8,-8.0,0.0,42.6,,486.0,missing,mnar_imputed
-48,Samuel Singleton Jr.,Florida State,250,7,20.8,28.8,-8.0,0.0,42.6,,,missing,mnar_imputed
-49,TreVonte Citizen,McNeese State,250,7,20.8,28.8,-8.0,0.0,42.6,,,missing,mnar_imputed
-50,Savion Red,Sacramento State,250,7,20.8,28.8,-8.0,0.0,42.6,,308.0,missing,mnar_imputed
-51,L.J. Johnson Jr.,California,250,7,20.8,28.8,-8.0,0.0,42.6,,361.0,missing,mnar_imputed
-52,Trevion Cooley,Troy,250,7,20.8,28.8,-8.0,0.0,42.6,,394.0,missing,mnar_imputed
-53,Derrick Davis Jr.,Pittsburgh,250,7,20.8,28.8,-8.0,0.0,42.6,,443.0,missing,mnar_imputed
-54,Barika Kpeenu,North Dakota State,250,7,20.8,28.8,-8.0,0.0,42.6,211.0,,missing,mnar_imputed
-55,Alton McCaskill IV,Sam Houston State,250,7,20.8,28.8,-8.0,0.0,42.6,,,missing,mnar_imputed
-56,Curtis Allen,Virginia Union,250,7,20.8,28.8,-8.0,0.0,42.6,,,missing,mnar_imputed
+1,Jeremiyah Love,Notre Dame,9,1,89.0,92.8,-3.8,88.6,60.1,280.0,322.0,real,mnar_imputed
+2,Emmett Johnson,Nebraska,74,3,67.8,60.5,7.3,91.5,40.8,370.0,378.0,real,mnar_imputed
+3,Jonah Coleman,Washington,73,3,67.4,60.8,6.6,89.7,40.8,354.0,370.0,real,mnar_imputed
+4,Mike Washington Jr.,Arkansas,100,3,51.9,51.4,0.5,65.5,40.8,226.0,381.0,real,mnar_imputed
+5,Jadarian Price,Notre Dame,61,2,46.8,65.5,-18.7,25.1,60.1,87.0,322.0,real,mnar_imputed
+6,Adam Randall,Clemson,190,6,34.1,25.2,8.9,63.2,40.8,254.0,474.0,real,mnar_imputed
+7,Kaytron Allen,Penn State,101,4,32.7,51.0,-18.3,16.1,40.8,68.0,339.0,real,mnar_imputed
+8,Desmond Reid,Pittsburgh,250,7,29.5,10.4,19.1,76.2,40.8,317.0,464.0,real,mnar_imputed
+9,Dean Connors,Houston,250,7,27.9,10.4,17.5,72.2,40.8,254.0,377.0,real,mnar_imputed
+10,Jamal Haynes,Georgia Tech,250,7,27.2,10.4,16.8,70.4,40.8,257.0,394.0,real,mnar_imputed
+11,J'Mari Taylor,Virginia,207,6,26.4,20.9,5.5,50.7,40.8,253.0,492.0,real,mnar_imputed
+12,Demond Claiborne,Wake Forest,172,5,25.9,30.0,-4.1,34.1,40.8,140.0,406.0,real,mnar_imputed
+13,Roman Hemby,Indiana,183,6,25.4,27.0,-1.6,37.7,40.8,165.0,406.0,real,mnar_imputed
+14,Nick Singleton,Penn State,115,4,23.9,46.5,-22.6,0.9,40.8,219.0,,real,mnar_imputed
+15,Kaden Feagin,Illinois,250,7,22.4,10.4,12.0,57.8,40.8,188.0,372.0,real,mnar_imputed
+16,Seth McGowan,Kentucky,191,6,21.5,25.0,-3.5,30.9,40.8,126.0,367.0,real,mnar_imputed
+17,Sedrick Alexander,Vanderbilt,250,7,20.3,10.4,9.9,52.5,40.8,200.0,400.0,real,mnar_imputed
+18,Kadarius Calloway,New Mexico State,250,7,13.9,10.4,3.5,35.9,40.8,175.0,472.0,real,mnar_imputed
+19,Byron Cardwell,San Diego State,250,7,13.1,10.4,2.7,33.6,40.8,108.0,290.0,real,mnar_imputed
+20,Kaelon Black,Indiana,182,6,12.8,27.3,-14.5,4.5,40.8,36.0,406.0,real,mnar_imputed
+21,Rueben Owens,Texas A&M,250,7,11.9,10.4,1.5,30.5,40.8,130.0,408.0,real,mnar_imputed
+22,Rahsul Faison,South Carolina,250,7,10.0,10.4,-0.4,25.6,40.8,118.0,342.0,real,mnar_imputed
+23,Dominic Richardson,Tulsa,250,7,9.5,10.4,-0.9,24.2,40.8,130.0,409.0,real,mnar_imputed
+24,Noah Whittington,Oregon,238,7,9.2,13.3,-4.1,18.8,40.8,98.0,437.0,real,mnar_imputed
+25,Jamarion Miller,Alabama,245,7,7.8,11.6,-3.8,17.9,40.8,109.0,523.0,real,mnar_imputed
+26,Richard Reese,Stephen F. Austin,250,7,6.5,10.4,-3.9,16.6,40.8,94.0,510.0,real,mnar_imputed
+27,Robert Henry Jr.,UTSA,215,6,6.0,18.9,-12.9,0.9,40.8,114.0,,real,mnar_imputed
+28,Jaydn Ott,Oklahoma,222,7,4.8,17.1,-12.3,0.9,40.8,,,real,mnar_imputed
+29,Le'Veon Moss,Texas A&M,226,7,4.6,16.2,-11.6,1.8,40.8,3.0,408.0,real,mnar_imputed
+30,Jalen Berger,UCLA,250,7,4.6,10.4,-5.8,11.7,40.8,70.0,361.0,real,mnar_imputed
+31,Kentrel Bullock,South Alabama,250,7,4.5,10.4,-5.9,11.2,40.8,53.0,310.0,real,mnar_imputed
+32,Kejon Owens,Florida International,250,7,4.3,10.4,-6.1,10.8,40.8,67.0,429.0,real,mnar_imputed
+33,Jaylon Glover,UNLV,250,7,3.6,10.4,-6.8,9.0,40.8,51.0,424.0,real,mnar_imputed
+34,Logan Diggs,Mississippi,250,7,2.7,10.4,-7.7,6.7,40.8,56.0,523.0,real,mnar_imputed
+35,Andrew Paul,Jacksonville State,250,7,2.0,10.4,-8.4,4.9,40.8,29.0,328.0,real,mnar_imputed
+36,Cam Porter,Northwestern,250,7,1.9,10.4,-8.5,4.5,40.8,23.0,378.0,real,mnar_imputed
+37,Terion Stewart,Virginia Tech,250,7,1.7,10.4,-8.7,4.0,40.8,19.0,319.0,real,mnar_imputed
+38,Branson Robinson,Georgia State,250,7,1.5,10.4,-8.9,3.6,40.8,22.0,475.0,real,mnar_imputed
+39,E.J. Smith,Texas A&M,250,7,1.5,10.4,-8.9,3.6,40.8,18.0,408.0,real,mnar_imputed
+40,Roydell Williams,Florida State,250,7,1.5,10.4,-8.9,3.6,40.8,19.0,339.0,real,mnar_imputed
+41,Max Bredeson,Michigan,250,7,1.4,10.4,-9.0,3.1,40.8,11.0,340.0,real,mnar_imputed
+42,Djay Braswell,Georgia State,250,7,1.4,10.4,-9.0,3.1,40.8,17.0,475.0,real,mnar_imputed
+43,Armoni Goodwin,UT Martin,250,7,1.4,10.4,-9.0,3.1,40.8,18.0,443.0,real,mnar_imputed
+44,Kedrick Reescano,Arizona,250,7,1.2,10.4,-9.2,2.7,40.8,12.0,447.0,real,mnar_imputed
+45,C.J. Donaldson,Ohio State,250,7,0.5,10.4,-9.9,0.9,40.8,96.0,,real,mnar_imputed
+46,Chip Trayanum,Toledo,250,7,0.5,10.4,-9.9,0.9,40.8,212.0,,real,mnar_imputed
+47,Quinten Joyner,Texas Tech,250,7,0.5,10.4,-9.9,0.9,40.8,,486.0,real,mnar_imputed
+48,Samuel Singleton Jr.,Florida State,250,7,0.5,10.4,-9.9,0.9,40.8,,,real,mnar_imputed
+49,TreVonte Citizen,McNeese State,250,7,0.5,10.4,-9.9,0.9,40.8,,,real,mnar_imputed
+50,Savion Red,Sacramento State,250,7,0.5,10.4,-9.9,0.9,40.8,,308.0,real,mnar_imputed
+51,L.J. Johnson Jr.,California,250,7,0.5,10.4,-9.9,0.9,40.8,,361.0,real,mnar_imputed
+52,Trevion Cooley,Troy,250,7,0.5,10.4,-9.9,0.9,40.8,,394.0,real,mnar_imputed
+53,Derrick Davis Jr.,Pittsburgh,250,7,0.5,10.4,-9.9,0.9,40.8,,443.0,real,mnar_imputed
+54,Barika Kpeenu,North Dakota State,250,7,0.5,10.4,-9.9,0.9,40.8,211.0,,real,mnar_imputed
+55,Alton McCaskill IV,Sam Houston State,250,7,0.5,10.4,-9.9,0.9,40.8,,,real,mnar_imputed
+56,Curtis Allen,Virginia Union,250,7,0.5,10.4,-9.9,0.9,40.8,,,real,mnar_imputed
