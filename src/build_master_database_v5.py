@@ -9,9 +9,13 @@ percentile ranks (0-100) using the backtest distribution as reference. 2026
 prospects are scored against that backtest distribution. Binary components
 (Teammate, Early Declare) are left as 0/100 — already position-neutral by design.
 
-POOLED RESCALING: After computing weighted SLAP scores, final scores are rescaled
-using the POOLED min/max across ALL positions so that a pick-10 RB and a pick-10
-WR with similar percentile profiles get comparable SLAP scores.
+PER-POSITION RESCALING: After computing weighted SLAP scores, final scores are
+rescaled WITHIN EACH POSITION so that:
+  - Best backtest player at that position = 99
+  - Worst backtest player at that position = 1
+  - 2026 prospects mapped onto the same position-specific scale (can exceed 1-99)
+Each position lives on its own 1-99 scale. SLAP answers "how good is this
+profile vs others at your position" — not "should I draft an RB or a WR."
 
 LOCKED MODELS:
   WR V5: 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare
@@ -34,7 +38,7 @@ warnings.filterwarnings('ignore')
 os.chdir('/home/user/SlapModelV3')
 
 print("=" * 120)
-print("SLAP V5 — UNIFIED MASTER DATABASE BUILDER (with percentile normalization + pooled rescaling)")
+print("SLAP V5 — UNIFIED MASTER DATABASE BUILDER (percentile normalization + per-position 1-99 rescaling)")
 print("=" * 120)
 
 # ============================================================================
@@ -177,7 +181,7 @@ print(f"    WR V5: {int(WR_V5['dc']*100)}/{int(WR_V5['breakout']*100)}/{int(WR_V
 print(f"    RB V5: {int(RB_V5['dc']*100)}/{int(RB_V5['production']*100)}/{int(RB_V5['speed_score']*100)} (DC/RYPTPA/SpeedScore)")
 print(f"    TE V5: {int(TE_V5['dc']*100)}/{int(TE_V5['breakout']*100)}/{int(TE_V5['production']*100)}/{int(TE_V5['ras']*100)} (DC/Breakout/Production/RAS)")
 print(f"\n  PERCENTILE NORMALIZATION: ON (non-DC components → within-position percentile ranks)")
-print(f"  POOLED RESCALING: ON (final SLAP rescaled using all-position min/max)")
+print(f"  PER-POSITION RESCALING: ON (best backtest = 99, worst = 1, within each position)")
 
 
 # ============================================================================
@@ -563,55 +567,53 @@ print(f"  Breakout pctl range: {te26['s_breakout_pctl'].min():.1f} - {te26['s_br
 
 
 # ============================================================================
-# POOLED RESCALING — use min/max across ALL positions to rescale to 0-100
+# PER-POSITION RESCALING — best backtest = 99, worst = 1, within each position
 # ============================================================================
 print(f"\n\n{'='*120}")
-print("POOLED RESCALING: Rescaling all SLAP scores using cross-position min/max")
+print("PER-POSITION RESCALING: Each position on its own 1-99 scale")
 print("=" * 120)
 
-# Collect all raw SLAP scores from backtest (these set the scale)
-all_raw = np.concatenate([
-    wr_bt['slap_v5_raw'].values,
-    rb_bt['slap_v5_raw'].values,
-    te_bt['slap_v5_raw'].values,
-])
-pooled_min = np.min(all_raw)
-pooled_max = np.max(all_raw)
-print(f"  Backtest raw SLAP range: {pooled_min:.2f} - {pooled_max:.2f}")
-print(f"  Pooled rescaling: score = (raw - {pooled_min:.2f}) / ({pooled_max:.2f} - {pooled_min:.2f}) × 100")
+# Store per-position scaling parameters (from backtest only — these define the scale)
+pos_scale = {}
+for pos, bt_df, p26_df in [('WR', wr_bt, wr26), ('RB', rb_bt, rb_prospects), ('TE', te_bt, te26)]:
+    raw_min = bt_df['slap_v5_raw'].min()
+    raw_max = bt_df['slap_v5_raw'].max()
+    pos_scale[pos] = {'min': raw_min, 'max': raw_max}
+    print(f"  {pos} backtest raw range: {raw_min:.2f} - {raw_max:.2f}")
 
-def pooled_rescale(raw_score):
-    """Rescale a raw weighted SLAP to 0-100 using pooled min/max."""
-    return ((raw_score - pooled_min) / (pooled_max - pooled_min) * 100)
+def position_rescale(raw_score, pos):
+    """Rescale raw SLAP to 1-99 using that position's backtest min/max."""
+    mn = pos_scale[pos]['min']
+    mx = pos_scale[pos]['max']
+    if mx == mn:
+        return 50.0
+    return 1 + (raw_score - mn) / (mx - mn) * 98  # Maps min→1, max→99
 
-# Apply to all backtest
-wr_bt['slap_v5'] = pooled_rescale(wr_bt['slap_v5_raw']).round(1)
-rb_bt['slap_v5'] = pooled_rescale(rb_bt['slap_v5_raw']).round(1)
-te_bt['slap_v5'] = pooled_rescale(te_bt['slap_v5_raw']).round(1)
+# Apply per-position rescaling to backtest
+wr_bt['slap_v5'] = wr_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR')).round(1)
+rb_bt['slap_v5'] = rb_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).round(1)
+te_bt['slap_v5'] = te_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).round(1)
 
-# Apply to all 2026 prospects (clip to 0-100, prospects could theoretically exceed backtest range)
-wr26['slap_v5'] = pooled_rescale(wr26['slap_v5_raw']).clip(0, 100).round(1)
-rb_prospects['slap_v5'] = pooled_rescale(rb_prospects['slap_v5_raw']).clip(0, 100).round(1)
-te26['slap_v5'] = pooled_rescale(te26['slap_v5_raw']).clip(0, 100).round(1)
+# Apply to 2026 prospects (same position scale — can go outside 1-99 if prospect exceeds backtest range)
+wr26['slap_v5'] = wr26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
+rb_prospects['slap_v5'] = rb_prospects['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
+te26['slap_v5'] = te26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
 
-# Delta vs DC (also rescale DC to pooled scale for fair comparison)
-# DC-only raw score = pick's DC score (as if all non-DC components were at the 50th percentile)
-# But delta should show: "how much does the full model disagree with pure draft capital?"
-# So compute delta as the difference between SLAP rank position and where DC alone would put them
-wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - pooled_rescale(wr_bt['s_dc'])).round(1)
-rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - pooled_rescale(rb_bt['s_dc'])).round(1)
-te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - pooled_rescale(te_bt['s_dc'])).round(1)
-wr26['delta_vs_dc'] = (wr26['slap_v5'] - pooled_rescale(wr26['s_dc'])).round(1)
-rb_prospects['delta_vs_dc'] = (rb_prospects['slap_v5'] - pooled_rescale(rb_prospects['s_dc'])).round(1)
-te26['delta_vs_dc'] = (te26['slap_v5'] - pooled_rescale(te26['s_dc'])).round(1)
+# DC rescaled within position (so delta is position-relative)
+wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + 50 * (1 - WR_V5['dc']), 'WR')).round(1)
+rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + 50 * (1 - RB_V5['dc']), 'RB')).round(1)
+te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + 50 * (1 - TE_V5['dc']), 'TE')).round(1)
+wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + 50 * (1 - WR_V5['dc']), 'WR')).round(1)
+rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + 50 * (1 - RB_V5['dc']), 'RB')).round(1)
+te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + 50 * (1 - TE_V5['dc']), 'TE')).round(1)
 
-# Also store the rescaled DC for the output
-wr_bt['dc_score_final'] = pooled_rescale(wr_bt['s_dc']).round(1)
-rb_bt['dc_score_final'] = pooled_rescale(rb_bt['s_dc']).round(1)
-te_bt['dc_score_final'] = pooled_rescale(te_bt['s_dc']).round(1)
-wr26['dc_score_final'] = pooled_rescale(wr26['s_dc']).round(1)
-rb_prospects['dc_score_final'] = pooled_rescale(rb_prospects['s_dc']).round(1)
-te26['dc_score_final'] = pooled_rescale(te26['s_dc']).round(1)
+# Delta = SLAP minus DC-only (within same position scale)
+wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - wr_bt['dc_score_final']).round(1)
+rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - rb_bt['dc_score_final']).round(1)
+te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - te_bt['dc_score_final']).round(1)
+wr26['delta_vs_dc'] = (wr26['slap_v5'] - wr26['dc_score_final']).round(1)
+rb_prospects['delta_vs_dc'] = (rb_prospects['slap_v5'] - rb_prospects['dc_score_final']).round(1)
+te26['delta_vs_dc'] = (te26['slap_v5'] - te26['dc_score_final']).round(1)
 
 # Per-position stats
 for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
@@ -959,12 +961,12 @@ te_all = te_all.drop(columns=['enhanced_breakout', 'teammate_score', 'early_decl
 te_all.to_csv('output/slap_v5_te.csv', index=False)
 print(f"  output/slap_v5_te.csv: {len(te_all)} rows ({(te_all['data_type']=='backtest').sum()} backtest + {(te_all['data_type']=='2026_prospect').sum()} prospects)")
 
-# 2026 prospects only (all positions)
+# 2026 prospects only (all positions) — ranked within position
 prospects_2026 = master[master['data_type'] == '2026_prospect'].copy()
-prospects_2026 = prospects_2026.sort_values('slap_v5', ascending=False).reset_index(drop=True)
-prospects_2026.insert(0, 'overall_rank', range(1, len(prospects_2026) + 1))
+prospects_2026['pos_rank'] = prospects_2026.groupby('position')['slap_v5'].rank(ascending=False, method='min').astype(int)
+prospects_2026 = prospects_2026.sort_values(['position', 'pos_rank']).reset_index(drop=True)
 prospects_2026.to_csv('output/slap_v5_2026_all.csv', index=False)
-print(f"  output/slap_v5_2026_all.csv: {len(prospects_2026)} prospects (all positions)")
+print(f"  output/slap_v5_2026_all.csv: {len(prospects_2026)} prospects (all positions, ranked within position)")
 
 
 # ============================================================================
@@ -983,44 +985,40 @@ for pos in ['WR', 'RB', 'TE']:
     if len(p26) > 0:
         print(f"    2026 SLAP:     {p26['slap_v5'].min():.1f} - {p26['slap_v5'].max():.1f} (mean {p26['slap_v5'].mean():.1f})")
 
-# Cross-position calibration check: average SLAP by round
-print(f"\n  CROSS-POSITION CALIBRATION (avg SLAP by draft round):")
-print(f"  {'Round':>5} | {'WR':>7} | {'RB':>7} | {'TE':>7} | {'WR-RB':>6} | {'WR-TE':>6}")
-print(f"  {'-'*50}")
+# Per-position score distribution by round
 bt_all = master[master['data_type'] == 'backtest']
-for rd in range(1, 8):
-    vals = {}
-    for pos in ['WR', 'RB', 'TE']:
-        sub = bt_all[(bt_all['position'] == pos) & (bt_all['round'] == rd)]
-        vals[pos] = sub['slap_v5'].mean() if len(sub) > 0 else float('nan')
-    wr_a, rb_a, te_a = vals['WR'], vals['RB'], vals['TE']
-    print(f"  {rd:>5} | {wr_a:>7.1f} | {rb_a:>7.1f} | {te_a:>7.1f} | {wr_a-rb_a:>+6.1f} | {wr_a-te_a:>+6.1f}")
-
-# Show top 5 2026 prospects per position
-print(f"\n\n  TOP 5 2026 PROSPECTS PER POSITION:")
+print(f"\n  PER-POSITION SLAP BY DRAFT ROUND (each position on its own 1-99 scale):")
 for pos in ['WR', 'RB', 'TE']:
-    p26 = prospects_2026[prospects_2026['position'] == pos].head(5)
-    print(f"\n  ── {pos} ──")
-    print(f"  {'Rk':>3} {'Player':<25} {'School':<18} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
-    print(f"  {'-'*70}")
-    for _, r in p26.iterrows():
+    print(f"\n  {pos}:")
+    print(f"  {'Round':>5} | {'Count':>5} | {'Mean':>6} | {'Min':>5} | {'Max':>5}")
+    print(f"  {'-'*40}")
+    for rd in range(1, 8):
+        sub = bt_all[(bt_all['position'] == pos) & (bt_all['round'] == rd)]
+        if len(sub) > 0:
+            print(f"  {rd:>5} | {len(sub):>5} | {sub['slap_v5'].mean():>6.1f} | {sub['slap_v5'].min():>5.1f} | {sub['slap_v5'].max():>5.1f}")
+
+# Show top 20 per position (backtest + 2026 combined, ranked within position)
+for pos in ['WR', 'RB', 'TE']:
+    pos_all = master[master['position'] == pos].sort_values('slap_v5', ascending=False)
+    print(f"\n\n  TOP 20 {pos}s (backtest + 2026, within-position 1-99 scale):")
+    print(f"  {'#':>3} {'Player':<25} {'Type':<10} {'Year':>4} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
+    print(f"  {'-'*72}")
+    for i, (_, r) in enumerate(pos_all.head(20).iterrows(), 1):
         delta_str = f"+{r['delta_vs_dc']:.1f}" if r['delta_vs_dc'] >= 0 else f"{r['delta_vs_dc']:.1f}"
-        print(f"  {int(r['overall_rank']):>3} {r['player_name']:<25} {r['college']:<18} {int(r['pick']):>4} "
+        dtype = 'BT' if r['data_type'] == 'backtest' else '2026'
+        print(f"  {i:>3} {r['player_name']:<25} {dtype:<10} {int(r['draft_year']):>4} {int(r['pick']):>4} "
               f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {delta_str:>6}")
 
-# TOP 60 OVERALL (the key cross-position check)
-print(f"\n\n  TOP 60 BACKTEST PLAYERS (cross-position — should show interspersed positions):")
-top60 = bt_all.nlargest(60, 'slap_v5')
-print(f"  {'#':>3} {'Player':<25} {'Pos':>3} {'Year':>4} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
-print(f"  {'-'*60}")
-for i, (_, r) in enumerate(top60.iterrows(), 1):
-    delta_str = f"+{r['delta_vs_dc']:.1f}" if r['delta_vs_dc'] >= 0 else f"{r['delta_vs_dc']:.1f}"
-    print(f"  {i:>3} {r['player_name']:<25} {r['position']:>3} {int(r['draft_year']):>4} {int(r['pick']):>4} "
-          f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {delta_str:>6}")
-
-# Position counts in top 60
-pos_counts = top60['position'].value_counts()
-print(f"\n  Top 60 position breakdown: {dict(pos_counts)}")
+# Show top 20 2026 prospects per position
+for pos in ['WR', 'RB', 'TE']:
+    p26 = prospects_2026[prospects_2026['position'] == pos].head(20)
+    print(f"\n\n  TOP 20 {pos} 2026 PROSPECTS:")
+    print(f"  {'Rk':>3} {'Player':<25} {'School':<18} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
+    print(f"  {'-'*72}")
+    for i, (_, r) in enumerate(p26.iterrows(), 1):
+        delta_str = f"+{r['delta_vs_dc']:.1f}" if r['delta_vs_dc'] >= 0 else f"{r['delta_vs_dc']:.1f}"
+        print(f"  {i:>3} {r['player_name']:<25} {str(r['college']):<18} {int(r['pick']):>4} "
+              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {delta_str:>6}")
 
 # Data quality summary
 print(f"\n\n  DATA QUALITY SUMMARY:")
