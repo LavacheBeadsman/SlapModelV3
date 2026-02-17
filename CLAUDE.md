@@ -257,11 +257,13 @@ on every metric tested. See Decision #9 for full details.
 
 2. **Age Weight Function (RB Production)**: Moderate adjustment
    - Used to weight RB receiving production by college age
-   - Age 19: 1.20x (20% bonus for early production)
-   - Age 20: 1.10x (10% bonus)
-   - Age 21: 1.00x (baseline)
-   - Age 22: 0.90x (10% penalty)
-   - Age 23+: 0.80x (20% penalty)
+   - Season age 19: 1.15x (15% bonus for early production)
+   - Season age 20: 1.10x (10% bonus)
+   - Season age 21: 1.05x (5% bonus)
+   - Season age 22: 1.00x (baseline)
+   - Season age 23: 0.95x (5% penalty)
+   - Season age 24+: 0.90x (10% penalty)
+   - Code: `age_w = max(0.85, min(1.15, 1.15 - 0.05 * (season_age - 19)))`
 
 3. **Athletic Score Function**: Position-specific
    - RBs: Speed Score (Barnwell formula) = (Weight × 200) / (40 time)^4

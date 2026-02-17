@@ -114,7 +114,7 @@ def wr_enhanced_breakout(breakout_age, dominator_pct, rush_yards):
 # ============================================================================
 
 def rb_production_score(rec_yards, team_pass_att, age):
-    """RYPTPA with age weighting, scaled by 1.75."""
+    """RYPTPA with age weighting. Raw score — percentile-normalized downstream."""
     if pd.isna(rec_yards) or pd.isna(team_pass_att) or team_pass_att == 0:
         return np.nan
     try:
@@ -124,8 +124,7 @@ def rb_production_score(rec_yards, team_pass_att, age):
     if pd.isna(age): age = 22
     season_age = age - 1
     age_w = max(0.85, min(1.15, 1.15 - 0.05 * (season_age - 19)))
-    raw = (rec_yards / team_pass_att) * age_w * 100
-    return min(99.9, max(0, raw / 1.75))
+    return (rec_yards / team_pass_att) * age_w * 100
 
 def speed_score_fn(weight, forty):
     if pd.isna(weight) or pd.isna(forty) or forty <= 0 or weight <= 0:
@@ -204,15 +203,33 @@ wr_bt = wr_bt.merge(wr_out, on=['player_name', 'draft_year', 'pick'], how='left'
 wr_bt['s_dc'] = wr_bt['pick'].apply(dc_score)
 wr_bt['s_breakout_raw'] = wr_bt.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
-wr_bt['s_teammate'] = wr_bt['total_teammate_dc'].apply(lambda x: 100 if pd.notna(x) and x > 150 else 0)
-wr_bt['s_early_declare'] = wr_bt['early_declare'].apply(lambda x: 100 if x == 1 else 0)
+wr_bt['s_teammate_binary'] = wr_bt['total_teammate_dc'].apply(lambda x: 1 if pd.notna(x) and x > 150 else 0)
+wr_bt['s_early_declare_binary'] = wr_bt['early_declare'].apply(lambda x: 1 if x == 1 else 0)
 
-# PERCENTILE NORMALIZATION: breakout → percentile rank within WR backtest
-# Binary components (teammate, early_declare) stay as 0/100
+# PERCENTILE NORMALIZATION: all non-DC components → percentile-equivalent scores
+# Breakout: continuous → standard percentile rank
 wr_bt['s_breakout_pctl'] = percentile_rank(wr_bt['s_breakout_raw'])
 wr_bt_breakout_ref = wr_bt['s_breakout_raw'].copy()  # Save for scoring 2026 prospects
 
-# V5 score (using percentile-normalized breakout)
+# Binary components → percentile-equivalent scores based on backtest proportions
+# If X% have the flag, then YES = midpoint of top (100-X)% and NO = midpoint of bottom X%
+tm_pct = wr_bt['s_teammate_binary'].mean()   # proportion with teammate flag
+ed_pct = wr_bt['s_early_declare_binary'].mean()  # proportion with early declare flag
+wr_tm_yes = (1 - tm_pct / 2) * 100   # percentile midpoint for YES group
+wr_tm_no  = (1 - tm_pct) / 2 / (1 - tm_pct) * (1 - tm_pct) * 100  # simplified: midpoint of NO group
+# Cleaner: NO group spans 0 to (1-pct), midpoint = (1-pct)/2; YES group spans (1-pct) to 1, midpoint = (1-pct) + pct/2
+wr_tm_no  = (1 - tm_pct) / 2 * 100
+wr_tm_yes = ((1 - tm_pct) + tm_pct / 2) * 100
+wr_ed_no  = (1 - ed_pct) / 2 * 100
+wr_ed_yes = ((1 - ed_pct) + ed_pct / 2) * 100
+
+wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, wr_tm_yes, wr_tm_no)
+wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, wr_ed_yes, wr_ed_no)
+
+print(f"  Teammate: {tm_pct*100:.1f}% have flag → YES={wr_tm_yes:.1f}, NO={wr_tm_no:.1f}")
+print(f"  Early Declare: {ed_pct*100:.1f}% have flag → YES={wr_ed_yes:.1f}, NO={wr_ed_no:.1f}")
+
+# V5 score (using percentile-normalized components)
 wr_bt['slap_v5_raw'] = (
     WR_V5['dc'] * wr_bt['s_dc'] +
     WR_V5['breakout'] * wr_bt['s_breakout_pctl'] +
@@ -225,6 +242,7 @@ wr_bt['breakout_data'] = np.where(wr_bt['breakout_age'].notna(), 'real', 'impute
 
 print(f"  WR backtest: {len(wr_bt)} players, draft years {wr_bt['draft_year'].min()}-{wr_bt['draft_year'].max()}")
 print(f"  Breakout: raw mean={wr_bt['s_breakout_raw'].mean():.1f} → pctl mean={wr_bt['s_breakout_pctl'].mean():.1f}")
+print(f"  Teammate pctl mean={wr_bt['s_teammate'].mean():.1f}, Early Declare pctl mean={wr_bt['s_early_declare'].mean():.1f}")
 
 
 # ============================================================================
@@ -486,12 +504,18 @@ wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
 wr26['s_breakout_pctl'] = wr26['enhanced_breakout'].apply(
     lambda v: score_prospect_against_backtest(v, wr_bt_breakout_ref))
 
-# V5 score (using percentile-normalized breakout)
+# Binary components → same percentile-equivalent scores as backtest
+wr26['s_teammate_binary'] = wr26['teammate_score'].apply(lambda x: 1 if x == 100 else 0)
+wr26['s_early_declare_binary'] = wr26['early_declare'].apply(lambda x: 1 if x == 100 or x == 1 else 0)
+wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, wr_tm_yes, wr_tm_no)
+wr26['s_early_declare'] = np.where(wr26['s_early_declare_binary'] == 1, wr_ed_yes, wr_ed_no)
+
+# V5 score (using percentile-normalized components)
 wr26['slap_v5_raw'] = (
     WR_V5['dc'] * wr26['s_dc'] +
     WR_V5['breakout'] * wr26['s_breakout_pctl'] +
-    WR_V5['teammate'] * wr26['teammate_score'] +
-    WR_V5['early_declare'] * wr26['early_declare']
+    WR_V5['teammate'] * wr26['s_teammate'] +
+    WR_V5['early_declare'] * wr26['s_early_declare']
 )
 
 print(f"  WR 2026 prospects: {len(wr26)} players")
@@ -628,11 +652,12 @@ print("RANKING PRESERVATION CHECK")
 print("=" * 120)
 
 # We need old-style scores to compare against. Compute them inline.
+# Old style: raw breakout (not percentile), binary 0/100 teammate/early_declare
 wr_bt['slap_old'] = (
     WR_V5['dc'] * wr_bt['s_dc'] +
     WR_V5['breakout'] * wr_bt['s_breakout_raw'] +
-    WR_V5['teammate'] * wr_bt['s_teammate'] +
-    WR_V5['early_declare'] * wr_bt['s_early_declare']
+    WR_V5['teammate'] * np.where(wr_bt['s_teammate_binary'] == 1, 100, 0) +
+    WR_V5['early_declare'] * np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0)
 )
 rb_bt['slap_old'] = (
     RB_V5['dc'] * rb_bt['s_dc'] +
@@ -678,8 +703,8 @@ wr_rows = pd.DataFrame({
     'delta_vs_dc': wr_bt['delta_vs_dc'],
     'data_type': 'backtest',
     'enhanced_breakout': wr_bt['s_breakout_pctl'].round(1),
-    'teammate_score': wr_bt['s_teammate'].astype(int),
-    'early_declare_score': wr_bt['s_early_declare'].astype(int),
+    'teammate_score': wr_bt['s_teammate'].round(1),
+    'early_declare_score': wr_bt['s_early_declare'].round(1),
     'breakout_age': wr_bt['breakout_age'],
     'peak_dominator': wr_bt['peak_dominator'].round(1),
     'rush_yards': wr_bt['rush_yards'],
@@ -786,8 +811,8 @@ wr26_rows = pd.DataFrame({
     'delta_vs_dc': wr26['delta_vs_dc'],
     'data_type': '2026_prospect',
     'enhanced_breakout': wr26['s_breakout_pctl'].round(1),
-    'teammate_score': wr26['teammate_score'].astype(int),
-    'early_declare_score': wr26['early_declare'].astype(int),
+    'teammate_score': wr26['s_teammate'].round(1),
+    'early_declare_score': wr26['s_early_declare'].round(1),
     'breakout_age': wr26['breakout_age'],
     'peak_dominator': wr26['peak_dominator'].round(1) if 'peak_dominator' in wr26.columns else np.nan,
     'rush_yards': wr26['rush_yards'],
@@ -1037,6 +1062,39 @@ for pos in ['WR', 'RB', 'TE']:
         real_prod = (bt['production_data_flag'] == 'real').sum()
         real_ath = (bt['athletic_data_flag'] == 'real').sum()
         print(f"  TE: {real_bo}/{total_n} real breakout, {real_prod}/{total_n} real production, {real_ath}/{total_n} real RAS")
+
+# NON-DC COMPONENT MEANS (should all be ~50 for delta assumption to hold)
+print(f"\n\n  NON-DC COMPONENT MEANS (backtest, should be ~50 for delta to work correctly):")
+wr_nondc = (WR_V5['breakout'] * wr_bt['s_breakout_pctl'] + WR_V5['teammate'] * wr_bt['s_teammate'] + WR_V5['early_declare'] * wr_bt['s_early_declare']) / (1 - WR_V5['dc'])
+rb_nondc = (RB_V5['production'] * rb_bt['s_production_pctl'] + RB_V5['speed_score'] * rb_bt['s_speed_pctl']) / (1 - RB_V5['dc'])
+te_nondc = (TE_V5['breakout'] * te_bt['s_breakout_pctl'] + TE_V5['production'] * te_bt['s_production_pctl'] + TE_V5['ras'] * te_bt['s_ras_pctl']) / (1 - TE_V5['dc'])
+print(f"    WR weighted non-DC mean: {wr_nondc.mean():.1f}")
+print(f"    RB weighted non-DC mean: {rb_nondc.mean():.1f}")
+print(f"    TE weighted non-DC mean: {te_nondc.mean():.1f}")
+
+# WR BINARY→PERCENTILE IMPACT: show top 10 biggest score changes
+print(f"\n\n  WR BINARY→PERCENTILE CONVERSION: Top 10 biggest SLAP changes vs old binary scoring:")
+wr_bt['slap_old_binary'] = (
+    WR_V5['dc'] * wr_bt['s_dc'] +
+    WR_V5['breakout'] * wr_bt['s_breakout_pctl'] +
+    WR_V5['teammate'] * np.where(wr_bt['s_teammate_binary'] == 1, 100, 0) +
+    WR_V5['early_declare'] * np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0)
+)
+wr_bt['pctl_vs_binary_diff'] = wr_bt['slap_v5_raw'] - wr_bt['slap_old_binary']
+biggest_changes = wr_bt.nlargest(10, 'pctl_vs_binary_diff')[['player_name', 'draft_year', 'pick', 's_teammate_binary', 's_early_declare_binary', 'pctl_vs_binary_diff']]
+print(f"  {'Player':<25} {'Year':>4} {'Pk':>3} {'TM':>3} {'ED':>3} {'Raw Δ':>7}")
+for _, r in biggest_changes.iterrows():
+    print(f"  {r['player_name']:<25} {int(r['draft_year']):>4} {int(r['pick']):>3} {int(r['s_teammate_binary']):>3} {int(r['s_early_declare_binary']):>3} {r['pctl_vs_binary_diff']:>+7.2f}")
+biggest_neg = wr_bt.nsmallest(10, 'pctl_vs_binary_diff')[['player_name', 'draft_year', 'pick', 's_teammate_binary', 's_early_declare_binary', 'pctl_vs_binary_diff']]
+print(f"\n  Biggest NEGATIVE changes (lost most):")
+print(f"  {'Player':<25} {'Year':>4} {'Pk':>3} {'TM':>3} {'ED':>3} {'Raw Δ':>7}")
+for _, r in biggest_neg.iterrows():
+    print(f"  {r['player_name']:<25} {int(r['draft_year']):>4} {int(r['pick']):>3} {int(r['s_teammate_binary']):>3} {int(r['s_early_declare_binary']):>3} {r['pctl_vs_binary_diff']:>+7.2f}")
+
+# Spearman between old binary and new percentile WR scores (should be very high)
+from scipy.stats import spearmanr
+wr_spearman = spearmanr(wr_bt['slap_old_binary'].rank(), wr_bt['slap_v5_raw'].rank())[0]
+print(f"\n  WR ranking preservation (binary vs percentile): Spearman r={wr_spearman:.4f}")
 
 print(f"\n\n{'='*120}")
 print("MASTER DATABASE BUILD COMPLETE")
