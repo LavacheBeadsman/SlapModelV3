@@ -2,11 +2,13 @@
 Rebuild backtest_outcomes_complete.csv from nflverse weekly data.
 
 Matches ALL 339 WRs + 223 RBs + 160 TEs to nflverse game logs.
-Calculates:
-  - first_3yr_ppg: BEST single-season PPR PPG in first 3 NFL seasons (min 6 games)
-  - career_ppg: BEST single-season PPR PPG across entire career (min 6 games)
-  - seasons_over_10ppg: count of seasons averaging 10+ PPR PPG (min 6 games)
+Calculates (all with 8-game minimum per season):
+  - first_3yr_ppg: BEST single-season PPR PPG in first 3 NFL seasons (min 8 games)
+  - career_ppg: BEST single-season PPR PPG across entire career (min 8 games)
+  - seasons_over_10ppg: count of seasons averaging 10+ PPR PPG (min 8 games)
+  - seasons_over_10ppg_3yr: count of first-3-year seasons averaging 10+ PPG (min 8 games)
 Preserves existing hit24/hit12 from backtest files (does NOT recalculate).
+For TEs: uses top12_8g/top6_8g as hit24/hit12 (8-game minimum consistency).
 """
 import pandas as pd
 import numpy as np
@@ -60,10 +62,13 @@ for _, r in rb_bt.iterrows():
         'hit24': int(r['hit24']), 'hit12': int(r['hit12']),
     })
 for _, r in te_bt.iterrows():
+    # Use 8-game minimum binary outcomes for TE (top12_8g/top6_8g)
+    h24 = int(r['top12_8g']) if pd.notna(r.get('top12_8g')) else int(r['hit24'])
+    h12 = int(r['top6_8g']) if pd.notna(r.get('top6_8g')) else int(r['hit12'])
     players.append({
         'player_name': r['player_name'], 'position': 'TE',
         'draft_year': int(r['draft_year']), 'pick': int(r['pick']),
-        'hit24': int(r['hit24']), 'hit12': int(r['hit12']),
+        'hit24': h24, 'hit12': h12,
     })
 
 players_df = pd.DataFrame(players)
@@ -235,6 +240,7 @@ print(f"  Season-level records: {len(season_stats)}")
 first_3yr_ppg = []
 career_ppg = []
 seasons_over_10ppg = []
+seasons_over_10ppg_3yr = []
 nfl_games_total = []
 
 for _, p in players_df.iterrows():
@@ -245,6 +251,7 @@ for _, p in players_df.iterrows():
         first_3yr_ppg.append(np.nan)
         career_ppg.append(np.nan)
         seasons_over_10ppg.append(np.nan)
+        seasons_over_10ppg_3yr.append(np.nan)
         nfl_games_total.append(0)
         continue
 
@@ -254,14 +261,15 @@ for _, p in players_df.iterrows():
         first_3yr_ppg.append(np.nan)
         career_ppg.append(np.nan)
         seasons_over_10ppg.append(np.nan)
+        seasons_over_10ppg_3yr.append(np.nan)
         nfl_games_total.append(0)
         continue
 
     total_games = int(player_seasons['games'].sum())
     nfl_games_total.append(total_games)
 
-    # Min 6 games per season to qualify
-    qualified = player_seasons[player_seasons['games'] >= 6]
+    # Min 8 games per season to qualify
+    qualified = player_seasons[player_seasons['games'] >= 8]
 
     # First 3 NFL seasons (draft year through draft year + 2)
     first3 = qualified[
@@ -278,13 +286,21 @@ for _, p in players_df.iterrows():
     else:
         career_ppg.append(np.nan)
 
-    # Seasons over 10 PPG (min 6 games)
+    # Seasons over 10 PPG (min 8 games) — all career
     over_10 = qualified[qualified['ppg'] >= 10.0]
     seasons_over_10ppg.append(len(over_10))
+
+    # Seasons over 10 PPG in first 3 years only (min 8 games)
+    if not first3.empty:
+        over_10_first3 = first3[first3['ppg'] >= 10.0]
+        seasons_over_10ppg_3yr.append(len(over_10_first3))
+    else:
+        seasons_over_10ppg_3yr.append(np.nan)
 
 players_df['first_3yr_ppg'] = first_3yr_ppg
 players_df['career_ppg'] = career_ppg
 players_df['seasons_over_10ppg'] = seasons_over_10ppg
+players_df['seasons_over_10ppg_3yr'] = seasons_over_10ppg_3yr
 players_df['nfl_games'] = nfl_games_total
 
 # ─── Coverage summary ──────────────────────────────────────────────
@@ -340,7 +356,7 @@ print("=" * 70)
 
 output = players_df[['player_name', 'position', 'draft_year', 'pick',
                       'hit24', 'hit12', 'first_3yr_ppg', 'career_ppg',
-                      'seasons_over_10ppg', 'nfl_games']].copy()
+                      'seasons_over_10ppg', 'seasons_over_10ppg_3yr', 'nfl_games']].copy()
 output = output.sort_values(['position', 'draft_year', 'pick']).reset_index(drop=True)
 output.to_csv('data/backtest_outcomes_complete.csv', index=False)
 print(f"Saved: data/backtest_outcomes_complete.csv ({len(output)} rows)")

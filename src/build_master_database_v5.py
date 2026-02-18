@@ -196,7 +196,7 @@ wr_bt = wr_bt.merge(wr_tm[['player_name', 'draft_year', 'total_teammate_dc']], o
 
 # Merge outcomes
 outcomes = pd.read_csv('data/backtest_outcomes_complete.csv')
-wr_out = outcomes[outcomes['position'] == 'WR'][['player_name', 'draft_year', 'pick', 'first_3yr_ppg', 'career_ppg']].copy()
+wr_out = outcomes[outcomes['position'] == 'WR'][['player_name', 'draft_year', 'pick', 'first_3yr_ppg', 'career_ppg', 'seasons_over_10ppg_3yr']].copy()
 wr_bt = wr_bt.merge(wr_out, on=['player_name', 'draft_year', 'pick'], how='left')
 
 # Calculate RAW components
@@ -253,7 +253,7 @@ print("PART 2: RB BACKTEST (with Speed Score MNAR imputation)")
 print("=" * 120)
 
 rb_bt = pd.read_csv('data/rb_backtest_with_receiving.csv')
-rb_out = outcomes[outcomes['position'] == 'RB'][['player_name', 'draft_year', 'pick', 'first_3yr_ppg', 'career_ppg']].copy()
+rb_out = outcomes[outcomes['position'] == 'RB'][['player_name', 'draft_year', 'pick', 'first_3yr_ppg', 'career_ppg', 'seasons_over_10ppg_3yr']].copy()
 rb_bt = rb_bt.merge(rb_out, on=['player_name', 'draft_year', 'pick'], how='left')
 
 # DC and Production (RAW)
@@ -370,6 +370,10 @@ print("PART 3: TE BACKTEST")
 print("=" * 120)
 
 te_bt = pd.read_csv('data/te_backtest_master.csv')
+
+# Merge seasons_over_10ppg_3yr from outcomes
+te_out_s10 = outcomes[outcomes['position'] == 'TE'][['player_name', 'draft_year', 'pick', 'seasons_over_10ppg_3yr']].copy()
+te_bt = te_bt.merge(te_out_s10, on=['player_name', 'draft_year', 'pick'], how='left')
 
 # DC
 te_bt['s_dc'] = te_bt['pick'].apply(dc_score)
@@ -721,6 +725,7 @@ wr_rows = pd.DataFrame({
     'nfl_career_ppg': wr_bt.get('career_ppg'),
     'nfl_best_ppr': wr_bt['best_ppr'],
     'nfl_best_ppg': np.nan,
+    'nfl_seasons_10ppg_3yr': wr_bt.get('seasons_over_10ppg_3yr'),
     'breakout_data_flag': wr_bt['breakout_data'],
     'production_data_flag': np.nan,
     'athletic_data_flag': np.nan,
@@ -757,6 +762,7 @@ rb_rows = pd.DataFrame({
     'nfl_career_ppg': rb_bt.get('career_ppg'),
     'nfl_best_ppr': rb_bt['best_ppr'],
     'nfl_best_ppg': rb_bt['best_ppg'],
+    'nfl_seasons_10ppg_3yr': rb_bt.get('seasons_over_10ppg_3yr'),
     'breakout_data_flag': np.nan,
     'production_data_flag': np.where(rb_bt['s_production_raw'].notna(), 'real', 'missing'),
     'athletic_data_flag': rb_bt['athletic_flag'],
@@ -787,12 +793,13 @@ te_rows = pd.DataFrame({
     'te_breakout_score': te_bt['s_breakout_pctl'].round(1),
     'te_production_score': te_bt['s_production_pctl'].round(1),
     'ras_score': te_bt['s_ras_pctl'].round(1),
-    'nfl_hit24': te_bt['top12_10g'],
-    'nfl_hit12': te_bt['top6_10g'],
-    'nfl_first_3yr_ppg': te_bt['best_3yr_ppg_10g'],
-    'nfl_career_ppg': te_bt['best_career_ppg_10g'],
+    'nfl_hit24': te_bt['top12_8g'] if 'top12_8g' in te_bt.columns else te_bt['top12_10g'],
+    'nfl_hit12': te_bt['top6_8g'] if 'top6_8g' in te_bt.columns else te_bt['top6_10g'],
+    'nfl_first_3yr_ppg': te_bt['best_3yr_ppg_8g'] if 'best_3yr_ppg_8g' in te_bt.columns else te_bt['best_3yr_ppg_10g'],
+    'nfl_career_ppg': te_bt['best_career_ppg_8g'] if 'best_career_ppg_8g' in te_bt.columns else te_bt['best_career_ppg_10g'],
     'nfl_best_ppr': te_bt['best_ppr'],
     'nfl_best_ppg': te_bt['best_ppg'],
+    'nfl_seasons_10ppg_3yr': te_bt.get('seasons_over_10ppg_3yr'),
     'breakout_data_flag': te_bt['breakout_flag'],
     'production_data_flag': te_bt['production_flag'],
     'athletic_data_flag': te_bt['ras_flag'],
@@ -829,6 +836,7 @@ wr26_rows = pd.DataFrame({
     'nfl_career_ppg': np.nan,
     'nfl_best_ppr': np.nan,
     'nfl_best_ppg': np.nan,
+    'nfl_seasons_10ppg_3yr': np.nan,
     'breakout_data_flag': np.where(wr26['breakout_age'].notna(), 'real', 'imputed'),
     'production_data_flag': np.nan,
     'athletic_data_flag': np.nan,
@@ -865,6 +873,7 @@ rb26_rows = pd.DataFrame({
     'nfl_career_ppg': np.nan,
     'nfl_best_ppr': np.nan,
     'nfl_best_ppg': np.nan,
+    'nfl_seasons_10ppg_3yr': np.nan,
     'breakout_data_flag': np.nan,
     'production_data_flag': np.where(rb_prospects['s_production_raw'].notna(), 'real', 'missing'),
     'athletic_data_flag': 'mnar_imputed',
@@ -901,6 +910,7 @@ te26_rows = pd.DataFrame({
     'nfl_career_ppg': np.nan,
     'nfl_best_ppr': np.nan,
     'nfl_best_ppg': np.nan,
+    'nfl_seasons_10ppg_3yr': np.nan,
     'breakout_data_flag': np.where(te26['breakout_age'].notna(), 'real', 'imputed'),
     'production_data_flag': np.where(te26['production_score'].notna(), 'real', 'imputed'),
     'athletic_data_flag': 'mnar_imputed',
@@ -935,7 +945,7 @@ col_order = [
     'rec_yards', 'team_pass_att',
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
-    'nfl_best_ppr', 'nfl_best_ppg',
+    'nfl_best_ppr', 'nfl_best_ppg', 'nfl_seasons_10ppg_3yr',
     # Data quality
     'breakout_data_flag', 'production_data_flag', 'athletic_data_flag',
 ]
