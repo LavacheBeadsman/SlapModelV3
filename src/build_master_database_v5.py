@@ -591,15 +591,7 @@ wr26['slap_v5'] = wr26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR'))
 rb_prospects['slap_v5'] = rb_prospects['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
 te26['slap_v5'] = te26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
 
-# DC-only display score: what the player's display score would be if SLAP = 100% DC
-# dc_only_raw = player's raw DC score (100 - 2.40 * (pick^0.62 - 1))
-# dc_only_display = rescale dc_only_raw to 1-99 using same backtest min/max
-# Positive delta = non-DC components (production, breakout, athleticism) BOOST the player
-# Negative delta = non-DC components DRAG the player below their draft slot
-for bt_df in [wr_bt, rb_bt, te_bt, wr26, rb_prospects, te26]:
-    bt_df['dc_score_final'] = bt_df['s_dc'].copy()
-
-# Rescale raw DC scores through same position_rescale, clipped to 1-99
+# DC-only display score: rescale raw DC score to 1-99 using same backtest min/max
 wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
 rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
 te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
@@ -607,14 +599,18 @@ wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x, 'WR'))
 rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
 te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
 
-# Delta = slap_display minus DC-only display
-# Same rescaling applied to both, so delta shows the pure effect of non-DC components
-wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - wr_bt['dc_score_final']).round(1)
-rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - rb_bt['dc_score_final']).round(1)
-te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - te_bt['dc_score_final']).round(1)
-wr26['delta_vs_dc'] = (wr26['slap_v5'] - wr26['dc_score_final']).round(1)
-rb_prospects['delta_vs_dc'] = (rb_prospects['slap_v5'] - rb_prospects['dc_score_final']).round(1)
-te26['delta_vs_dc'] = (te26['slap_v5'] - te26['dc_score_final']).round(1)
+# Profile Score: weighted average of ONLY the non-DC components (0-100 scale)
+# Shows the quality of a player's college profile independent of draft capital.
+#   80+ = elite profile   |   50 = average   |   20 = weak, carried by DC alone
+# WR: (breakout*0.20 + teammate*0.05 + early_declare*0.05) / 0.30
+# RB: (production*0.30 + speed*0.05) / 0.35
+# TE: (breakout*0.15 + production*0.15 + RAS*0.10) / 0.40
+wr_bt['profile_score'] = ((wr_bt['s_breakout_raw'] * 0.20 + wr_bt['s_teammate'] * 0.05 + wr_bt['s_early_declare'] * 0.05) / 0.30).round(1)
+rb_bt['profile_score'] = ((rb_bt['s_production_scaled'] * 0.30 + rb_bt['s_speed_raw'] * 0.05) / 0.35).round(1)
+te_bt['profile_score'] = ((te_bt['s_breakout_raw_filled'] * 0.15 + te_bt['s_production_raw_filled'] * 0.15 + te_bt['s_ras_raw'] * 0.10) / 0.40).round(1)
+wr26['profile_score'] = ((wr26['s_breakout_raw'] * 0.20 + wr26['s_teammate'] * 0.05 + wr26['s_early_declare'] * 0.05) / 0.30).round(1)
+rb_prospects['profile_score'] = ((rb_prospects['s_production_scaled'] * 0.30 + rb_prospects['s_speed_raw'] * 0.05) / 0.35).round(1)
+te26['profile_score'] = ((te26['s_breakout_raw'] * 0.15 + te26['s_production_raw'] * 0.15 + te26['s_ras_raw'] * 0.10) / 0.40).round(1)
 
 # Per-position stats
 for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
@@ -655,7 +651,7 @@ wr_rows = pd.DataFrame({
     'round': wr_bt['round'].astype(int),
     'slap_v5': wr_bt['slap_v5'],
     'dc_score': wr_bt['dc_score_final'],
-    'delta_vs_dc': wr_bt['delta_vs_dc'],
+    'profile_score': wr_bt['profile_score'],
     'data_type': 'backtest',
     'slap_raw': wr_bt['slap_v5_raw'].round(2),
     'enhanced_breakout': wr_bt['s_breakout_raw'].round(1),
@@ -693,7 +689,7 @@ rb_rows = pd.DataFrame({
     'round': rb_bt['round'].astype(int),
     'slap_v5': rb_bt['slap_v5'],
     'dc_score': rb_bt['dc_score_final'],
-    'delta_vs_dc': rb_bt['delta_vs_dc'],
+    'profile_score': rb_bt['profile_score'],
     'data_type': 'backtest',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
@@ -731,7 +727,7 @@ te_rows = pd.DataFrame({
     'round': te_bt['round'].astype(int),
     'slap_v5': te_bt['slap_v5'],
     'dc_score': te_bt['dc_score_final'],
-    'delta_vs_dc': te_bt['delta_vs_dc'],
+    'profile_score': te_bt['profile_score'],
     'data_type': 'backtest',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
@@ -769,7 +765,7 @@ wr26_rows = pd.DataFrame({
     'round': wr26['projected_pick'].apply(pick_to_round).astype(int),
     'slap_v5': wr26['slap_v5'],
     'dc_score': wr26['dc_score_final'],
-    'delta_vs_dc': wr26['delta_vs_dc'],
+    'profile_score': wr26['profile_score'],
     'data_type': '2026_prospect',
     'slap_raw': wr26['slap_v5_raw'].round(2),
     'enhanced_breakout': wr26['s_breakout_raw'].round(1),
@@ -807,7 +803,7 @@ rb26_rows = pd.DataFrame({
     'round': rb_prospects['projected_pick'].apply(pick_to_round).astype(int),
     'slap_v5': rb_prospects['slap_v5'],
     'dc_score': rb_prospects['dc_score_final'],
-    'delta_vs_dc': rb_prospects['delta_vs_dc'],
+    'profile_score': rb_prospects['profile_score'],
     'data_type': '2026_prospect',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
@@ -845,7 +841,7 @@ te26_rows = pd.DataFrame({
     'round': te26['projected_pick'].apply(pick_to_round).astype(int),
     'slap_v5': te26['slap_v5'],
     'dc_score': te26['dc_score_final'],
-    'delta_vs_dc': te26['delta_vs_dc'],
+    'profile_score': te26['profile_score'],
     'data_type': '2026_prospect',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
@@ -890,7 +886,7 @@ master = master.reset_index(drop=True)
 # Column order
 col_order = [
     'player_name', 'position', 'college', 'draft_year', 'pick', 'round',
-    'slap_v5', 'slap_raw', 'dc_score', 'delta_vs_dc', 'data_type',
+    'slap_v5', 'slap_raw', 'dc_score', 'profile_score', 'data_type',
     # WR components
     'enhanced_breakout', 'teammate_score', 'early_declare_score',
     # RB components
@@ -993,24 +989,22 @@ for pos in ['WR', 'RB', 'TE']:
 for pos in ['WR', 'RB', 'TE']:
     pos_all = master[master['position'] == pos].sort_values('slap_v5', ascending=False)
     print(f"\n\n  TOP 20 {pos}s (backtest + 2026, within-position 1-99 scale):")
-    print(f"  {'#':>3} {'Player':<25} {'Type':<10} {'Year':>4} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
-    print(f"  {'-'*72}")
+    print(f"  {'#':>3} {'Player':<25} {'Type':<10} {'Year':>4} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Profile':>7}")
+    print(f"  {'-'*75}")
     for i, (_, r) in enumerate(pos_all.head(20).iterrows(), 1):
-        delta_str = f"+{r['delta_vs_dc']:.1f}" if r['delta_vs_dc'] >= 0 else f"{r['delta_vs_dc']:.1f}"
         dtype = 'BT' if r['data_type'] == 'backtest' else '2026'
         print(f"  {i:>3} {r['player_name']:<25} {dtype:<10} {int(r['draft_year']):>4} {int(r['pick']):>4} "
-              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {delta_str:>6}")
+              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {r['profile_score']:>7.1f}")
 
 # Show top 20 2026 prospects per position
 for pos in ['WR', 'RB', 'TE']:
     p26 = prospects_2026[prospects_2026['position'] == pos].head(20)
     print(f"\n\n  TOP 20 {pos} 2026 PROSPECTS:")
-    print(f"  {'Rk':>3} {'Player':<25} {'School':<18} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Delta':>6}")
-    print(f"  {'-'*72}")
+    print(f"  {'Rk':>3} {'Player':<25} {'School':<18} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Profile':>7}")
+    print(f"  {'-'*75}")
     for i, (_, r) in enumerate(p26.iterrows(), 1):
-        delta_str = f"+{r['delta_vs_dc']:.1f}" if r['delta_vs_dc'] >= 0 else f"{r['delta_vs_dc']:.1f}"
         print(f"  {i:>3} {r['player_name']:<25} {str(r['college']):<18} {int(r['pick']):>4} "
-              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {delta_str:>6}")
+              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {r['profile_score']:>7.1f}")
 
 # Data quality summary
 print(f"\n\n  DATA QUALITY SUMMARY:")
