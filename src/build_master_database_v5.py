@@ -425,23 +425,29 @@ print(f"\n{'='*120}")
 print("PART 4: WR 2026 PROSPECTS (scored against WR backtest distribution)")
 print("=" * 120)
 
-# Load pre-computed WR 2026 raw data
-wr26 = pd.read_csv('output/slap_v5_wr_2026.csv')
+# Load WR 2026 prospect data from multiple sources and compute breakout from scratch
+# (Previously read pre-computed file, but breakout scores were on wrong scale — P0 bug fix)
+wr26_pre = pd.read_csv('output/slap_v5_wr_2026.csv')
 
-# Also load breakout ages for raw data
+# Load breakout ages (primary source for breakout_age + peak_dominator)
 wr26_bo = pd.read_csv('data/wr_breakout_ages_2026.csv')
-wr26 = wr26.merge(
+wr26 = wr26_pre.merge(
     wr26_bo[['player_name', 'breakout_age', 'peak_dominator']].rename(
         columns={'breakout_age': 'bo_age_src', 'peak_dominator': 'pd_src'}),
     on='player_name', how='left')
-wr26['breakout_age'] = wr26['breakout_age'].fillna(wr26['bo_age_src'])
-wr26['peak_dominator'] = wr26['peak_dominator'].fillna(wr26['pd_src'])
+wr26['breakout_age'] = wr26['bo_age_src'].fillna(wr26['breakout_age'])
+wr26['peak_dominator'] = wr26['pd_src'].fillna(wr26['peak_dominator'])
 
 # Load prospect data for additional fields
 prospects = pd.read_csv('data/prospects_final.csv')
 wr_prospects = prospects[prospects['position'] == 'WR'].copy()
 wr26 = wr26.merge(wr_prospects[['player_name', 'age', 'weight', 'age_estimated']],
                    on='player_name', how='left')
+
+# Compute enhanced_breakout from scratch (same function as backtest — native 0-99.9 scale)
+wr26['enhanced_breakout'] = wr26.apply(
+    lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
+print(f"  Breakout computed from scratch: {wr26['breakout_age'].notna().sum()}/{len(wr26)} have real breakout_age")
 
 def pick_to_round(pick):
     if pd.isna(pick): return np.nan
@@ -465,7 +471,7 @@ if 'early_declare' not in wr26.columns and 'early_declare_score' in wr26.columns
 wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
 
 # Native-scale scoring (same as backtest: breakout 0-99.9, binaries 0/100)
-wr26['s_breakout_raw'] = wr26['enhanced_breakout']  # Already on native 0-99.9 scale
+wr26['s_breakout_raw'] = wr26['enhanced_breakout']  # Computed from scratch above (native 0-99.9 scale)
 wr26['s_teammate_binary'] = wr26['teammate_score'].apply(lambda x: 1 if x == 100 else 0)
 wr26['s_early_declare_binary'] = wr26['early_declare'].apply(lambda x: 1 if x == 100 or x == 1 else 0)
 wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, 100, 0).astype(float)
