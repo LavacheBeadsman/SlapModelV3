@@ -1,60 +1,60 @@
 player_name,position,college,draft_year,pick,round,slap_v5,slap_raw,dc_score,delta_vs_dc,data_type,enhanced_breakout,teammate_score,early_declare_score,production_score,speed_score,te_breakout_score,te_production_score,ras_score,breakout_age,peak_dominator,rush_yards,rec_yards,team_pass_att,nfl_hit24,nfl_hit12,nfl_first_3yr_ppg,nfl_career_ppg,nfl_best_ppr,nfl_best_ppg,nfl_seasons_10ppg_3yr,breakout_data_flag,production_data_flag,athletic_data_flag,pos_rank
-Jeremiyah Love,RB,Notre Dame,2026,9,1,78.9,80.09,68.3,10.6,2026_prospect,,,,57.1,49.7,,,,,,,280.0,322.0,,,,,,,,,real,mnar_imputed,1
-Emmett Johnson,RB,Nebraska,2026,74,3,58.0,64.65,46.0,12.0,2026_prospect,,,,61.5,42.6,,,,,,,370.0,378.0,,,,,,,,,real,mnar_imputed,2
-Jonah Coleman,RB,Washington,2026,73,3,56.6,63.61,46.3,10.3,2026_prospect,,,,57.4,42.6,,,,,,,354.0,370.0,,,,,,,,,real,mnar_imputed,3
-Jadarian Price,RB,Notre Dame,2026,61,2,43.8,54.18,49.5,-5.7,2026_prospect,,,,17.0,49.7,,,,,,,87.0,322.0,,,,,,,,,real,mnar_imputed,4
-Mike Washington Jr.,RB,Arkansas,2026,100,3,41.2,52.26,39.8,1.4,2026_prospect,,,,35.6,42.6,,,,,,,226.0,381.0,,,,,,,,,real,mnar_imputed,5
-Kaytron Allen,RB,Penn State,2026,101,4,31.4,45.02,39.6,-8.2,2026_prospect,,,,12.0,42.6,,,,,,,68.0,339.0,,,,,,,,,real,mnar_imputed,6
-Nick Singleton,RB,Penn State,2026,115,4,23.4,39.13,36.5,-13.1,2026_prospect,,,,0.0,42.6,,,,,,,219.0,,,,,,,,,,real,mnar_imputed,7
-Adam Randall,RB,Clemson,2026,190,6,22.4,38.43,21.8,0.6,2026_prospect,,,,33.7,42.6,,,,,,,254.0,474.0,,,,,,,,,real,mnar_imputed,8
-Demond Claiborne,RB,Wake Forest,2026,172,5,20.8,37.25,25.1,-4.3,2026_prospect,,,,21.7,42.6,,,,,,,140.0,406.0,,,,,,,,,real,mnar_imputed,9
-Roman Hemby,RB,Indiana,2026,183,6,19.4,36.22,23.1,-3.7,2026_prospect,,,,23.2,42.6,,,,,,,165.0,406.0,,,,,,,,,real,mnar_imputed,10
-J'Mari Taylor,RB,Virginia,2026,207,6,17.7,34.94,18.8,-1.1,2026_prospect,,,,29.4,42.6,,,,,,,253.0,492.0,,,,,,,,,real,mnar_imputed,11
-Seth McGowan,RB,Kentucky,2026,191,6,16.5,34.08,21.6,-5.1,2026_prospect,,,,19.6,42.6,,,,,,,126.0,367.0,,,,,,,,,real,mnar_imputed,12
-Desmond Reid,RB,Pittsburgh,2026,250,7,16.0,33.73,11.7,4.3,2026_prospect,,,,42.9,42.6,,,,,,,317.0,464.0,,,,,,,,,real,mnar_imputed,13
-Dean Connors,RB,Houston,2026,250,7,15.0,32.97,11.7,3.3,2026_prospect,,,,40.4,42.6,,,,,,,254.0,377.0,,,,,,,,,real,mnar_imputed,14
-Jamal Haynes,RB,Georgia Tech,2026,250,7,14.5,32.58,11.7,2.8,2026_prospect,,,,39.1,42.6,,,,,,,257.0,394.0,,,,,,,,,real,mnar_imputed,15
-Kaelon Black,RB,Indiana,2026,182,6,12.2,30.91,23.3,-11.1,2026_prospect,,,,5.1,42.6,,,,,,,36.0,406.0,,,,,,,,,real,mnar_imputed,16
-Kaden Feagin,RB,Illinois,2026,250,7,11.5,30.37,11.7,-0.2,2026_prospect,,,,31.8,42.6,,,,,,,188.0,372.0,,,,,,,,,real,mnar_imputed,17
-Sedrick Alexander,RB,Vanderbilt,2026,250,7,10.8,29.84,11.7,-0.9,2026_prospect,,,,30.0,42.6,,,,,,,200.0,400.0,,,,,,,,,real,mnar_imputed,18
-Kadarius Calloway,RB,New Mexico State,2026,250,7,7.6,27.52,11.7,-4.1,2026_prospect,,,,22.2,42.6,,,,,,,175.0,472.0,,,,,,,,,real,mnar_imputed,19
-Byron Cardwell,RB,San Diego State,2026,250,7,7.2,27.23,11.7,-4.5,2026_prospect,,,,21.3,42.6,,,,,,,108.0,290.0,,,,,,,,,real,mnar_imputed,20
-Rueben Owens,RB,Texas A&M,2026,250,7,6.3,26.58,11.7,-5.4,2026_prospect,,,,19.1,42.6,,,,,,,130.0,408.0,,,,,,,,,real,mnar_imputed,21
-Rahsul Faison,RB,South Carolina,2026,250,7,5.8,26.17,11.7,-5.9,2026_prospect,,,,17.7,42.6,,,,,,,118.0,342.0,,,,,,,,,real,mnar_imputed,22
-Noah Whittington,RB,Oregon,2026,238,7,5.7,26.12,13.6,-7.9,2026_prospect,,,,12.8,42.6,,,,,,,98.0,437.0,,,,,,,,,real,mnar_imputed,23
-Dominic Richardson,RB,Tulsa,2026,250,7,5.2,25.75,11.7,-6.5,2026_prospect,,,,16.3,42.6,,,,,,,130.0,409.0,,,,,,,,,real,mnar_imputed,24
-Jamarion Miller,RB,Alabama,2026,245,7,4.5,25.19,12.5,-8.0,2026_prospect,,,,12.5,42.6,,,,,,,109.0,523.0,,,,,,,,,real,mnar_imputed,25
-Robert Henry Jr.,RB,UTSA,2026,215,6,4.4,25.11,17.5,-13.1,2026_prospect,,,,0.0,42.6,,,,,,,114.0,,,,,,,,,,real,mnar_imputed,26
-Richard Reese,RB,Stephen F. Austin,2026,250,7,3.5,24.48,11.7,-8.2,2026_prospect,,,,12.1,42.6,,,,,,,94.0,510.0,,,,,,,,,real,mnar_imputed,27
-Jaydn Ott,RB,Oklahoma,2026,222,7,3.2,24.24,16.3,-13.1,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,28
-Jalen Berger,RB,UCLA,2026,250,7,2.8,24.0,11.7,-8.9,2026_prospect,,,,10.5,42.6,,,,,,,70.0,361.0,,,,,,,,,real,mnar_imputed,29
-Le'Veon Moss,RB,Texas A&M,2026,226,7,2.7,23.88,15.6,-12.9,2026_prospect,,,,0.4,42.6,,,,,,,3.0,408.0,,,,,,,,,real,mnar_imputed,30
-Kentrel Bullock,RB,South Alabama,2026,250,7,2.5,23.77,11.7,-9.2,2026_prospect,,,,9.8,42.6,,,,,,,53.0,310.0,,,,,,,,,real,mnar_imputed,31
-Kejon Owens,RB,Florida International,2026,250,7,2.4,23.65,11.7,-9.3,2026_prospect,,,,9.4,42.6,,,,,,,67.0,429.0,,,,,,,,,real,mnar_imputed,32
-Jaylon Glover,RB,UNLV,2026,250,7,1.6,23.11,11.7,-10.1,2026_prospect,,,,7.6,42.6,,,,,,,51.0,424.0,,,,,,,,,real,mnar_imputed,33
-Logan Diggs,RB,Mississippi,2026,250,7,1.1,22.68,11.7,-10.6,2026_prospect,,,,6.1,42.6,,,,,,,56.0,523.0,,,,,,,,,real,mnar_imputed,34
-C.J. Donaldson,RB,Ohio State,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,96.0,,,,,,,,,,real,mnar_imputed,35
-Max Bredeson,RB,Michigan,2026,250,7,1.0,21.43,11.7,-10.7,2026_prospect,,,,1.9,42.6,,,,,,,11.0,340.0,,,,,,,,,real,mnar_imputed,35
-Chip Trayanum,RB,Toledo,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,212.0,,,,,,,,,,real,mnar_imputed,35
-Terion Stewart,RB,Virginia Tech,2026,250,7,1.0,21.86,11.7,-10.7,2026_prospect,,,,3.4,42.6,,,,,,,19.0,319.0,,,,,,,,,real,mnar_imputed,35
-Kedrick Reescano,RB,Arizona,2026,250,7,1.0,21.33,11.7,-10.7,2026_prospect,,,,1.6,42.6,,,,,,,12.0,447.0,,,,,,,,,real,mnar_imputed,35
-Djay Braswell,RB,Georgia State,2026,250,7,1.0,21.52,11.7,-10.7,2026_prospect,,,,2.2,42.6,,,,,,,17.0,475.0,,,,,,,,,real,mnar_imputed,35
-Quinten Joyner,RB,Texas Tech,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,486.0,,,,,,,,,real,mnar_imputed,35
-Samuel Singleton Jr.,RB,Florida State,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,35
-TreVonte Citizen,RB,McNeese State,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,35
-Branson Robinson,RB,Georgia State,2026,250,7,1.0,21.72,11.7,-10.7,2026_prospect,,,,2.9,42.6,,,,,,,22.0,475.0,,,,,,,,,real,mnar_imputed,35
-Savion Red,RB,Sacramento State,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,308.0,,,,,,,,,real,mnar_imputed,35
-Andrew Paul,RB,Jacksonville State,2026,250,7,1.0,22.51,11.7,-10.7,2026_prospect,,,,5.6,42.6,,,,,,,29.0,328.0,,,,,,,,,real,mnar_imputed,35
-Armoni Goodwin,RB,UT Martin,2026,250,7,1.0,21.51,11.7,-10.7,2026_prospect,,,,2.2,42.6,,,,,,,18.0,443.0,,,,,,,,,real,mnar_imputed,35
-L.J. Johnson Jr.,RB,California,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,361.0,,,,,,,,,real,mnar_imputed,35
-Trevion Cooley,RB,Troy,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,394.0,,,,,,,,,real,mnar_imputed,35
-Derrick Davis Jr.,RB,Pittsburgh,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,443.0,,,,,,,,,real,mnar_imputed,35
-Barika Kpeenu,RB,North Dakota State,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,211.0,,,,,,,,,,real,mnar_imputed,35
-Alton McCaskill IV,RB,Sam Houston State,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,35
-E.J. Smith,RB,Texas A&M,2026,250,7,1.0,21.6,11.7,-10.7,2026_prospect,,,,2.5,42.6,,,,,,,18.0,408.0,,,,,,,,,real,mnar_imputed,35
-Roydell Williams,RB,Florida State,2026,250,7,1.0,21.76,11.7,-10.7,2026_prospect,,,,3.0,42.6,,,,,,,19.0,339.0,,,,,,,,,real,mnar_imputed,35
-Cam Porter,RB,Northwestern,2026,250,7,1.0,21.94,11.7,-10.7,2026_prospect,,,,3.7,42.6,,,,,,,23.0,378.0,,,,,,,,,real,mnar_imputed,35
-Curtis Allen,RB,Virginia Union,2026,250,7,1.0,20.84,11.7,-10.7,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,35
+Jeremiyah Love,RB,Notre Dame,2026,9,1,78.9,80.09,68.5,10.4,2026_prospect,,,,57.1,49.7,,,,,,,280.0,322.0,,,,,,,,,real,mnar_imputed,1
+Emmett Johnson,RB,Nebraska,2026,74,3,58.0,64.65,46.2,11.8,2026_prospect,,,,61.5,42.6,,,,,,,370.0,378.0,,,,,,,,,real,mnar_imputed,2
+Jonah Coleman,RB,Washington,2026,73,3,56.6,63.61,46.5,10.1,2026_prospect,,,,57.4,42.6,,,,,,,354.0,370.0,,,,,,,,,real,mnar_imputed,3
+Jadarian Price,RB,Notre Dame,2026,61,2,43.8,54.18,49.7,-5.9,2026_prospect,,,,17.0,49.7,,,,,,,87.0,322.0,,,,,,,,,real,mnar_imputed,4
+Mike Washington Jr.,RB,Arkansas,2026,100,3,41.2,52.26,40.0,1.2,2026_prospect,,,,35.6,42.6,,,,,,,226.0,381.0,,,,,,,,,real,mnar_imputed,5
+Nick Singleton,RB,Penn State,2026,115,4,39.9,51.31,36.6,3.3,2026_prospect,,,,40.6,42.6,,,,,,,219.0,339.0,,,,,,,,,real,mnar_imputed,6
+Kaytron Allen,RB,Penn State,2026,101,4,31.4,45.02,39.7,-8.3,2026_prospect,,,,12.0,42.6,,,,,,,68.0,339.0,,,,,,,,,real,mnar_imputed,7
+Adam Randall,RB,Clemson,2026,190,6,22.4,38.43,22.0,0.4,2026_prospect,,,,33.7,42.6,,,,,,,254.0,474.0,,,,,,,,,real,mnar_imputed,8
+Demond Claiborne,RB,Wake Forest,2026,172,5,20.8,37.25,25.3,-4.5,2026_prospect,,,,21.7,42.6,,,,,,,140.0,406.0,,,,,,,,,real,mnar_imputed,9
+Roman Hemby,RB,Indiana,2026,183,6,19.4,36.22,23.2,-3.8,2026_prospect,,,,23.2,42.6,,,,,,,165.0,406.0,,,,,,,,,real,mnar_imputed,10
+J'Mari Taylor,RB,Virginia,2026,207,6,17.7,34.94,19.0,-1.3,2026_prospect,,,,29.4,42.6,,,,,,,253.0,492.0,,,,,,,,,real,mnar_imputed,11
+Seth McGowan,RB,Kentucky,2026,191,6,16.5,34.08,21.8,-5.3,2026_prospect,,,,19.6,42.6,,,,,,,126.0,367.0,,,,,,,,,real,mnar_imputed,12
+Desmond Reid,RB,Pittsburgh,2026,250,7,16.0,33.73,11.8,4.2,2026_prospect,,,,42.9,42.6,,,,,,,317.0,464.0,,,,,,,,,real,mnar_imputed,13
+Barika Kpeenu,RB,North Dakota State,2026,250,7,15.8,33.57,11.8,4.0,2026_prospect,,,,42.4,42.6,,,,,,,211.0,270.0,,,,,,,,,real,mnar_imputed,14
+Dean Connors,RB,Houston,2026,250,7,15.0,32.97,11.8,3.2,2026_prospect,,,,40.4,42.6,,,,,,,254.0,377.0,,,,,,,,,real,mnar_imputed,15
+Jamal Haynes,RB,Georgia Tech,2026,250,7,14.5,32.58,11.8,2.7,2026_prospect,,,,39.1,42.6,,,,,,,257.0,394.0,,,,,,,,,real,mnar_imputed,16
+Kaelon Black,RB,Indiana,2026,182,6,12.2,30.91,23.4,-11.2,2026_prospect,,,,5.1,42.6,,,,,,,36.0,406.0,,,,,,,,,real,mnar_imputed,17
+Kaden Feagin,RB,Illinois,2026,250,7,11.5,30.37,11.8,-0.3,2026_prospect,,,,31.8,42.6,,,,,,,188.0,372.0,,,,,,,,,real,mnar_imputed,18
+Sedrick Alexander,RB,Vanderbilt,2026,250,7,10.8,29.84,11.8,-1.0,2026_prospect,,,,30.0,42.6,,,,,,,200.0,400.0,,,,,,,,,real,mnar_imputed,19
+Chip Trayanum,RB,Toledo,2026,250,7,10.3,29.5,11.8,-1.5,2026_prospect,,,,28.8,42.6,,,,,,,212.0,399.0,,,,,,,,,real,mnar_imputed,20
+Robert Henry Jr.,RB,UTSA,2026,215,6,10.0,29.26,17.6,-7.6,2026_prospect,,,,13.8,42.6,,,,,,,114.0,448.0,,,,,,,,,real,mnar_imputed,21
+Kadarius Calloway,RB,New Mexico State,2026,250,7,7.6,27.52,11.8,-4.2,2026_prospect,,,,22.2,42.6,,,,,,,175.0,472.0,,,,,,,,,real,mnar_imputed,22
+Byron Cardwell,RB,San Diego State,2026,250,7,7.2,27.23,11.8,-4.6,2026_prospect,,,,21.3,42.6,,,,,,,108.0,290.0,,,,,,,,,real,mnar_imputed,23
+Rueben Owens,RB,Texas A&M,2026,250,7,6.3,26.58,11.8,-5.5,2026_prospect,,,,19.1,42.6,,,,,,,130.0,408.0,,,,,,,,,real,mnar_imputed,24
+Rahsul Faison,RB,South Carolina,2026,250,7,5.8,26.17,11.8,-6.0,2026_prospect,,,,17.7,42.6,,,,,,,118.0,342.0,,,,,,,,,real,mnar_imputed,25
+Noah Whittington,RB,Oregon,2026,238,7,5.7,26.12,13.8,-8.1,2026_prospect,,,,12.8,42.6,,,,,,,98.0,437.0,,,,,,,,,real,mnar_imputed,26
+Dominic Richardson,RB,Tulsa,2026,250,7,5.2,25.75,11.8,-6.6,2026_prospect,,,,16.3,42.6,,,,,,,130.0,409.0,,,,,,,,,real,mnar_imputed,27
+C.J. Donaldson,RB,Ohio State,2026,250,7,4.6,25.28,11.8,-7.2,2026_prospect,,,,14.8,42.6,,,,,,,96.0,408.0,,,,,,,,,real,mnar_imputed,28
+Jamarion Miller,RB,Alabama,2026,245,7,4.5,25.19,12.6,-8.1,2026_prospect,,,,12.5,42.6,,,,,,,109.0,523.0,,,,,,,,,real,mnar_imputed,29
+Richard Reese,RB,Stephen F. Austin,2026,250,7,3.5,24.48,11.8,-8.3,2026_prospect,,,,12.1,42.6,,,,,,,94.0,510.0,,,,,,,,,real,mnar_imputed,30
+Jaydn Ott,RB,Oklahoma,2026,222,7,3.2,24.24,16.4,-13.2,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,31
+Jalen Berger,RB,UCLA,2026,250,7,2.8,24.0,11.8,-9.0,2026_prospect,,,,10.5,42.6,,,,,,,70.0,361.0,,,,,,,,,real,mnar_imputed,32
+Le'Veon Moss,RB,Texas A&M,2026,226,7,2.7,23.88,15.8,-13.1,2026_prospect,,,,0.4,42.6,,,,,,,3.0,408.0,,,,,,,,,real,mnar_imputed,33
+Kentrel Bullock,RB,South Alabama,2026,250,7,2.5,23.77,11.8,-9.3,2026_prospect,,,,9.8,42.6,,,,,,,53.0,310.0,,,,,,,,,real,mnar_imputed,34
+Kejon Owens,RB,Florida International,2026,250,7,2.4,23.65,11.8,-9.4,2026_prospect,,,,9.4,42.6,,,,,,,67.0,429.0,,,,,,,,,real,mnar_imputed,35
+Jaylon Glover,RB,UNLV,2026,250,7,1.6,23.11,11.8,-10.2,2026_prospect,,,,7.6,42.6,,,,,,,51.0,424.0,,,,,,,,,real,mnar_imputed,36
+Logan Diggs,RB,Mississippi,2026,250,7,1.1,22.68,11.8,-10.7,2026_prospect,,,,6.1,42.6,,,,,,,56.0,523.0,,,,,,,,,real,mnar_imputed,37
+Max Bredeson,RB,Michigan,2026,250,7,1.0,21.43,11.8,-10.8,2026_prospect,,,,1.9,42.6,,,,,,,11.0,340.0,,,,,,,,,real,mnar_imputed,38
+Terion Stewart,RB,Virginia Tech,2026,250,7,1.0,21.86,11.8,-10.8,2026_prospect,,,,3.4,42.6,,,,,,,19.0,319.0,,,,,,,,,real,mnar_imputed,38
+Kedrick Reescano,RB,Arizona,2026,250,7,1.0,21.33,11.8,-10.8,2026_prospect,,,,1.6,42.6,,,,,,,12.0,447.0,,,,,,,,,real,mnar_imputed,38
+Djay Braswell,RB,Georgia State,2026,250,7,1.0,21.52,11.8,-10.8,2026_prospect,,,,2.2,42.6,,,,,,,17.0,475.0,,,,,,,,,real,mnar_imputed,38
+Quinten Joyner,RB,Texas Tech,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,486.0,,,,,,,,,real,mnar_imputed,38
+Samuel Singleton Jr.,RB,Florida State,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,38
+TreVonte Citizen,RB,McNeese State,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,38
+Branson Robinson,RB,Georgia State,2026,250,7,1.0,21.72,11.8,-10.8,2026_prospect,,,,2.9,42.6,,,,,,,22.0,475.0,,,,,,,,,real,mnar_imputed,38
+Savion Red,RB,Sacramento State,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,308.0,,,,,,,,,real,mnar_imputed,38
+Andrew Paul,RB,Jacksonville State,2026,250,7,1.0,22.51,11.8,-10.8,2026_prospect,,,,5.6,42.6,,,,,,,29.0,328.0,,,,,,,,,real,mnar_imputed,38
+Armoni Goodwin,RB,UT Martin,2026,250,7,1.0,21.51,11.8,-10.8,2026_prospect,,,,2.2,42.6,,,,,,,18.0,443.0,,,,,,,,,real,mnar_imputed,38
+L.J. Johnson Jr.,RB,California,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,361.0,,,,,,,,,real,mnar_imputed,38
+Trevion Cooley,RB,Troy,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,394.0,,,,,,,,,real,mnar_imputed,38
+Derrick Davis Jr.,RB,Pittsburgh,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,443.0,,,,,,,,,real,mnar_imputed,38
+Alton McCaskill IV,RB,Sam Houston State,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,38
+E.J. Smith,RB,Texas A&M,2026,250,7,1.0,21.6,11.8,-10.8,2026_prospect,,,,2.5,42.6,,,,,,,18.0,408.0,,,,,,,,,real,mnar_imputed,38
+Roydell Williams,RB,Florida State,2026,250,7,1.0,21.76,11.8,-10.8,2026_prospect,,,,3.0,42.6,,,,,,,19.0,339.0,,,,,,,,,real,mnar_imputed,38
+Cam Porter,RB,Northwestern,2026,250,7,1.0,21.94,11.8,-10.8,2026_prospect,,,,3.7,42.6,,,,,,,23.0,378.0,,,,,,,,,real,mnar_imputed,38
+Curtis Allen,RB,Virginia Union,2026,250,7,1.0,20.84,11.8,-10.8,2026_prospect,,,,0.0,42.6,,,,,,,,,,,,,,,,,real,mnar_imputed,38
 Kenyon Sadiq,TE,Oregon,2026,19,1,65.9,65.12,72.8,-6.9,2026_prospect,,,,,,29.8,14.3,60.0,,14.826581943341278,,560.0,437.0,,,,,,,,imputed,real,mnar_imputed,1
 Eli Stowers,TE,Vanderbilt,2026,74,3,54.6,57.93,54.2,0.4,2026_prospect,,,,,,66.4,22.0,40.0,21.0,27.806563039723663,,765.0,400.0,,,,,,,,real,real,mnar_imputed,2
 Max Klare,TE,Ohio State,2026,81,3,50.4,55.31,52.3,-1.9,2026_prospect,,,,,,68.0,10.9,40.0,20.8,30.908269317668324,,448.0,408.0,,,,,,,,real,real,mnar_imputed,3
