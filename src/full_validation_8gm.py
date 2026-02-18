@@ -18,7 +18,6 @@ seasons_over_10ppg_3yr included as supplementary (NOT used in validation scoring
 
 import pandas as pd
 import numpy as np
-from scipy import stats as sp_stats
 from scipy.stats import pearsonr, spearmanr
 from sklearn.metrics import roc_auc_score
 import warnings, os
@@ -44,15 +43,6 @@ def normalize_name(name):
     for suffix in [' iv', ' iii', ' ii', ' jr', ' sr', ' v']:
         if s.endswith(suffix): s = s[:-len(suffix)]
     return s.strip()
-
-def percentile_rank(series):
-    valid = series.dropna()
-    if len(valid) == 0: return series.copy()
-    ranks = sp_stats.rankdata(valid.values, method='average')
-    pctiles = (ranks - 0.5) / len(ranks) * 100
-    result = series.copy().astype(float)
-    result.loc[valid.index] = pctiles
-    return result
 
 def normalize_0_100(series):
     mn, mx = series.dropna().min(), series.dropna().max()
@@ -145,18 +135,12 @@ print("Computing WR SLAP V5...")
 wr_bt['s_dc'] = wr_bt['pick'].apply(dc_score)
 wr_bt['s_breakout_raw'] = wr_bt.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
-wr_bt['s_breakout_pctl'] = percentile_rank(wr_bt['s_breakout_raw'])
 wr_bt['s_teammate_binary'] = wr_bt['total_teammate_dc'].apply(lambda x: 1 if pd.notna(x) and x > 150 else 0)
 wr_bt['s_early_declare_binary'] = wr_bt['early_declare'].apply(lambda x: 1 if x == 1 else 0)
-tm_pct = wr_bt['s_teammate_binary'].mean()
-ed_pct = wr_bt['s_early_declare_binary'].mean()
-wr_tm_no = (1 - tm_pct) / 2 * 100
-wr_tm_yes = ((1 - tm_pct) + tm_pct / 2) * 100
-wr_ed_no = (1 - ed_pct) / 2 * 100
-wr_ed_yes = ((1 - ed_pct) + ed_pct / 2) * 100
-wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, wr_tm_yes, wr_tm_no)
-wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, wr_ed_yes, wr_ed_no)
-wr_bt['slap'] = (WR_W['dc'] * wr_bt['s_dc'] + WR_W['breakout'] * wr_bt['s_breakout_pctl'] +
+# Native-scale: breakout 0-99.9, binaries 0/100 (no percentile normalization)
+wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, 100, 0).astype(float)
+wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0).astype(float)
+wr_bt['slap'] = (WR_W['dc'] * wr_bt['s_dc'] + WR_W['breakout'] * wr_bt['s_breakout_raw'] +
                   WR_W['teammate'] * wr_bt['s_teammate'] + WR_W['early_declare'] * wr_bt['s_early_declare'])
 wr_bt['dc_only'] = wr_bt['s_dc']
 
@@ -237,10 +221,10 @@ for idx in rb_bt[rb_bt['raw_ss'].isna()].index:
     rb_bt.loc[idx, 'raw_ss'] = p60 if rb_bt.loc[idx, 'round'] <= 2 else p40
 rb_bt['s_speed_raw'] = normalize_0_100(rb_bt['raw_ss'])
 
-rb_bt['s_prod_pctl'] = percentile_rank(rb_bt['s_prod_filled'])
-rb_bt['s_speed_pctl'] = percentile_rank(rb_bt['s_speed_raw'])
-rb_bt['slap'] = (RB_W['dc'] * rb_bt['s_dc'] + RB_W['production'] * rb_bt['s_prod_pctl'] +
-                  RB_W['speed_score'] * rb_bt['s_speed_pctl'])
+# Native-scale: production /1.75 (0-99.9), speed already 0-100 (no percentile normalization)
+rb_bt['s_prod_scaled'] = (rb_bt['s_prod_filled'] / 1.75).clip(0, 99.9)
+rb_bt['slap'] = (RB_W['dc'] * rb_bt['s_dc'] + RB_W['production'] * rb_bt['s_prod_scaled'] +
+                  RB_W['speed_score'] * rb_bt['s_speed_raw'])
 rb_bt['dc_only'] = rb_bt['s_dc']
 
 # Merge outcomes
@@ -287,11 +271,9 @@ te_ras_p40 = ras_real.quantile(0.40)
 for idx in te_bt[te_bt['s_ras_raw'].isna()].index:
     te_bt.loc[idx, 's_ras_raw'] = te_ras_p60 if te_bt.loc[idx, 'round'] <= 2 else te_ras_p40
 
-te_bt['s_bo_pctl'] = percentile_rank(te_bt['s_breakout_filled'])
-te_bt['s_prod_pctl'] = percentile_rank(te_bt['s_prod_filled'])
-te_bt['s_ras_pctl'] = percentile_rank(te_bt['s_ras_raw'])
-te_bt['slap'] = (TE_W['dc'] * te_bt['s_dc'] + TE_W['breakout'] * te_bt['s_bo_pctl'] +
-                  TE_W['production'] * te_bt['s_prod_pctl'] + TE_W['ras'] * te_bt['s_ras_pctl'])
+# Native-scale: breakout 0-99.9, production min-max 0-99.9, RAS×10 0-100 (no percentile normalization)
+te_bt['slap'] = (TE_W['dc'] * te_bt['s_dc'] + TE_W['breakout'] * te_bt['s_breakout_filled'] +
+                  TE_W['production'] * te_bt['s_prod_filled'] + TE_W['ras'] * te_bt['s_ras_raw'])
 te_bt['dc_only'] = te_bt['s_dc']
 
 # TE outcomes: use 8gm columns from te_backtest_master + rebuilt outcomes for PPG

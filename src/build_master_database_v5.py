@@ -4,18 +4,15 @@ SLAP V5 — Unified Master Database Builder
 Combines ALL three positions (WR, RB, TE) × (backtest + 2026 prospects)
 into a single master CSV with consistent columns.
 
-PERCENTILE NORMALIZATION: All non-DC components are converted to within-position
-percentile ranks (0-100) using the backtest distribution as reference. 2026
-prospects are scored against that backtest distribution. Binary components
-(Teammate, Early Declare) are left as 0/100 — already position-neutral by design.
-
-PER-POSITION RESCALING: After computing weighted SLAP scores, final scores are
-rescaled WITHIN EACH POSITION so that:
-  - Best backtest player at that position = 99
-  - Worst backtest player at that position = 1
-  - 2026 prospects mapped onto the same position-specific scale (can exceed 1-99)
-Each position lives on its own 1-99 scale. SLAP answers "how good is this
-profile vs others at your position" — not "should I draft an RB or a WR."
+TWO-LAYER SCORING SYSTEM:
+  Layer 1 — slap_raw: Weighted composite using each component's native 0-100 scale.
+    NO percentile normalization on components. This is what we validate against.
+    - WR: DC (0-100) + Enhanced Breakout (0-99.9) + Teammate (0/100) + Early Declare (0/100)
+    - RB: DC (0-100) + Production/1.75 (0-99.9) + Speed Score (0-100)
+    - TE: DC (0-100) + Breakout (0-99.9) + Production min-max (0-99.9) + RAS×10 (0-100)
+  Layer 2 — slap_display: Per-position 1-99 rescale of slap_raw.
+    Best backtest player at each position = 99, worst = 1.
+    This is what we publish. 2026 prospects on same scale (clipped 1-99).
 
 LOCKED MODELS:
   WR V5: 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare
@@ -33,12 +30,11 @@ Outputs:
 import pandas as pd
 import numpy as np
 import warnings, os
-from scipy import stats as sp_stats
 warnings.filterwarnings('ignore')
 os.chdir('/home/user/SlapModelV3')
 
 print("=" * 120)
-print("SLAP V5 — UNIFIED MASTER DATABASE BUILDER (percentile normalization + per-position 1-99 rescaling)")
+print("SLAP V5 — UNIFIED MASTER DATABASE BUILDER (native-scale components + per-position 1-99 display rescaling)")
 print("=" * 120)
 
 # ============================================================================
@@ -59,30 +55,8 @@ def normalize_name(name):
         if s.endswith(suffix): s = s[:-len(suffix)]
     return s.strip()
 
-def percentile_rank(series):
-    """Convert a series to percentile ranks (0-100). Ties get average rank.
-    NaN values stay NaN."""
-    valid = series.dropna()
-    if len(valid) == 0:
-        return series.copy()
-    ranks = sp_stats.rankdata(valid.values, method='average')
-    pctiles = (ranks - 0.5) / len(ranks) * 100
-    result = series.copy().astype(float)
-    result.loc[valid.index] = pctiles
-    return result
-
-def score_prospect_against_backtest(prospect_val, backtest_values):
-    """Score a single prospect value as a percentile against the backtest distribution.
-    Returns 0-100 percentile."""
-    if pd.isna(prospect_val):
-        return np.nan
-    bt = backtest_values.dropna().values
-    if len(bt) == 0:
-        return 50.0
-    below = np.sum(bt < prospect_val)
-    tied = np.sum(bt == prospect_val)
-    pctile = (below + 0.5 * tied) / len(bt) * 100
-    return min(99.9, max(0.1, pctile))
+# percentile_rank and score_prospect_against_backtest REMOVED in favor of native-scale scoring.
+# Diagnostic testing showed percentile normalization destroys production signal for all 3 positions.
 
 
 # ============================================================================
@@ -179,8 +153,8 @@ print(f"\n  LOCKED WEIGHTS:")
 print(f"    WR V5: {int(WR_V5['dc']*100)}/{int(WR_V5['breakout']*100)}/{int(WR_V5['teammate']*100)}/{int(WR_V5['early_declare']*100)} (DC/EnhBreakout/Teammate/EarlyDeclare)")
 print(f"    RB V5: {int(RB_V5['dc']*100)}/{int(RB_V5['production']*100)}/{int(RB_V5['speed_score']*100)} (DC/RYPTPA/SpeedScore)")
 print(f"    TE V5: {int(TE_V5['dc']*100)}/{int(TE_V5['breakout']*100)}/{int(TE_V5['production']*100)}/{int(TE_V5['ras']*100)} (DC/Breakout/Production/RAS)")
-print(f"\n  PERCENTILE NORMALIZATION: ON (non-DC components → within-position percentile ranks)")
-print(f"  PER-POSITION RESCALING: ON (best backtest = 99, worst = 1, within each position)")
+print(f"\n  COMPONENT SCORING: NATIVE SCALE (no percentile normalization — /1.75 for RB, min-max for TE prod)")
+print(f"  TWO-LAYER OUTPUT: slap_raw (validated) + slap_display (1-99 rescaled per position)")
 
 
 # ============================================================================
@@ -206,33 +180,20 @@ wr_bt['s_breakout_raw'] = wr_bt.apply(
 wr_bt['s_teammate_binary'] = wr_bt['total_teammate_dc'].apply(lambda x: 1 if pd.notna(x) and x > 150 else 0)
 wr_bt['s_early_declare_binary'] = wr_bt['early_declare'].apply(lambda x: 1 if x == 1 else 0)
 
-# PERCENTILE NORMALIZATION: all non-DC components → percentile-equivalent scores
-# Breakout: continuous → standard percentile rank
-wr_bt['s_breakout_pctl'] = percentile_rank(wr_bt['s_breakout_raw'])
-wr_bt_breakout_ref = wr_bt['s_breakout_raw'].copy()  # Save for scoring 2026 prospects
+# NATIVE-SCALE SCORING: breakout is 0-99.9, binaries are 0/100 — all naturally 0-100 scale
+# No percentile normalization needed (diagnostic confirmed raw beats percentile on all metrics)
+wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, 100, 0).astype(float)
+wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0).astype(float)
 
-# Binary components → percentile-equivalent scores based on backtest proportions
-# If X% have the flag, then YES = midpoint of top (100-X)% and NO = midpoint of bottom X%
-tm_pct = wr_bt['s_teammate_binary'].mean()   # proportion with teammate flag
-ed_pct = wr_bt['s_early_declare_binary'].mean()  # proportion with early declare flag
-wr_tm_yes = (1 - tm_pct / 2) * 100   # percentile midpoint for YES group
-wr_tm_no  = (1 - tm_pct) / 2 / (1 - tm_pct) * (1 - tm_pct) * 100  # simplified: midpoint of NO group
-# Cleaner: NO group spans 0 to (1-pct), midpoint = (1-pct)/2; YES group spans (1-pct) to 1, midpoint = (1-pct) + pct/2
-wr_tm_no  = (1 - tm_pct) / 2 * 100
-wr_tm_yes = ((1 - tm_pct) + tm_pct / 2) * 100
-wr_ed_no  = (1 - ed_pct) / 2 * 100
-wr_ed_yes = ((1 - ed_pct) + ed_pct / 2) * 100
+tm_pct = wr_bt['s_teammate_binary'].mean()
+ed_pct = wr_bt['s_early_declare_binary'].mean()
+print(f"  Teammate: {tm_pct*100:.1f}% have flag (binary 0/100)")
+print(f"  Early Declare: {ed_pct*100:.1f}% have flag (binary 0/100)")
 
-wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, wr_tm_yes, wr_tm_no)
-wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, wr_ed_yes, wr_ed_no)
-
-print(f"  Teammate: {tm_pct*100:.1f}% have flag → YES={wr_tm_yes:.1f}, NO={wr_tm_no:.1f}")
-print(f"  Early Declare: {ed_pct*100:.1f}% have flag → YES={wr_ed_yes:.1f}, NO={wr_ed_no:.1f}")
-
-# V5 score (using percentile-normalized components)
+# V5 score (native-scale components — this is slap_raw for validation)
 wr_bt['slap_v5_raw'] = (
     WR_V5['dc'] * wr_bt['s_dc'] +
-    WR_V5['breakout'] * wr_bt['s_breakout_pctl'] +
+    WR_V5['breakout'] * wr_bt['s_breakout_raw'] +
     WR_V5['teammate'] * wr_bt['s_teammate'] +
     WR_V5['early_declare'] * wr_bt['s_early_declare']
 )
@@ -241,8 +202,8 @@ wr_bt['slap_v5_raw'] = (
 wr_bt['breakout_data'] = np.where(wr_bt['breakout_age'].notna(), 'real', 'imputed')
 
 print(f"  WR backtest: {len(wr_bt)} players, draft years {wr_bt['draft_year'].min()}-{wr_bt['draft_year'].max()}")
-print(f"  Breakout: raw mean={wr_bt['s_breakout_raw'].mean():.1f} → pctl mean={wr_bt['s_breakout_pctl'].mean():.1f}")
-print(f"  Teammate pctl mean={wr_bt['s_teammate'].mean():.1f}, Early Declare pctl mean={wr_bt['s_early_declare'].mean():.1f}")
+print(f"  Breakout: mean={wr_bt['s_breakout_raw'].mean():.1f}, range={wr_bt['s_breakout_raw'].min():.1f}-{wr_bt['s_breakout_raw'].max():.1f}")
+print(f"  Teammate mean={wr_bt['s_teammate'].mean():.1f}, Early Declare mean={wr_bt['s_early_declare'].mean():.1f}")
 
 
 # ============================================================================
@@ -335,17 +296,14 @@ for idx in rb_bt[rb_bt['raw_ss'].isna()].index:
 # Normalize raw speed score to 0-100 (used as the "raw" scale before percentile)
 rb_bt['s_speed_raw'] = normalize_0_100(rb_bt['raw_ss'])
 
-# PERCENTILE NORMALIZATION: production and speed → percentile ranks within RB backtest
-rb_bt['s_production_pctl'] = percentile_rank(rb_bt['s_production_raw_filled'])
-rb_bt['s_speed_pctl'] = percentile_rank(rb_bt['s_speed_raw'])
-rb_bt_prod_ref = rb_bt['s_production_raw_filled'].copy()  # Save for scoring 2026 prospects
-rb_bt_speed_ref = rb_bt['s_speed_raw'].copy()
+# NATIVE-SCALE SCORING: production scaled by /1.75 (0-99.9 range), speed already 0-100
+rb_bt['s_production_scaled'] = (rb_bt['s_production_raw_filled'] / 1.75).clip(0, 99.9)
 
-# V5 Score (using percentile-normalized components)
+# V5 Score (native-scale components — this is slap_raw for validation)
 rb_bt['slap_v5_raw'] = (
     RB_V5['dc'] * rb_bt['s_dc'] +
-    RB_V5['production'] * rb_bt['s_production_pctl'] +
-    RB_V5['speed_score'] * rb_bt['s_speed_pctl']
+    RB_V5['production'] * rb_bt['s_production_scaled'] +
+    RB_V5['speed_score'] * rb_bt['s_speed_raw']
 )
 
 # Athletic data flags
@@ -358,8 +316,8 @@ n_imp40 = impute_mask.sum()
 n_mnar = (rb_bt['weight'].isna()).sum()
 print(f"  RB backtest: {len(rb_bt)} players, draft years {rb_bt['draft_year'].min()}-{rb_bt['draft_year'].max()}")
 print(f"  Speed Score: {n_real_ss} real, {n_imp40} estimated-40, {n_mnar} MNAR-imputed")
-print(f"  Production: raw mean={rb_bt['s_production_raw_filled'].mean():.1f} → pctl mean={rb_bt['s_production_pctl'].mean():.1f}")
-print(f"  Speed:      raw mean={rb_bt['s_speed_raw'].mean():.1f} → pctl mean={rb_bt['s_speed_pctl'].mean():.1f}")
+print(f"  Production: raw mean={rb_bt['s_production_raw_filled'].mean():.1f} → scaled/1.75 mean={rb_bt['s_production_scaled'].mean():.1f}")
+print(f"  Speed:      raw mean={rb_bt['s_speed_raw'].mean():.1f} (0-100 min-max normalized)")
 
 
 # ============================================================================
@@ -425,20 +383,15 @@ for idx in te_bt[te_bt['s_ras_raw'].isna()].index:
     rd = te_bt.loc[idx, 'round']
     te_bt.loc[idx, 's_ras_raw'] = te_ras_p60 if rd <= 2 else te_ras_p40
 
-# PERCENTILE NORMALIZATION: breakout, production, RAS → percentile ranks within TE backtest
-te_bt['s_breakout_pctl'] = percentile_rank(te_bt['s_breakout_raw_filled'])
-te_bt['s_production_pctl'] = percentile_rank(te_bt['s_production_raw_filled'])
-te_bt['s_ras_pctl'] = percentile_rank(te_bt['s_ras_raw'])
-te_bt_bo_ref = te_bt['s_breakout_raw_filled'].copy()    # Save for scoring 2026 prospects
-te_bt_prod_ref = te_bt['s_production_raw_filled'].copy()
-te_bt_ras_ref = te_bt['s_ras_raw'].copy()
+# NATIVE-SCALE SCORING: breakout (0-99.9), production min-max (0-99.9), RAS×10 (0-100)
+# No percentile normalization — all components already on ~0-100 native scales
 
-# V5 Score (using percentile-normalized components)
+# V5 Score (native-scale components — this is slap_raw for validation)
 te_bt['slap_v5_raw'] = (
     TE_V5['dc'] * te_bt['s_dc'] +
-    TE_V5['breakout'] * te_bt['s_breakout_pctl'] +
-    TE_V5['production'] * te_bt['s_production_pctl'] +
-    TE_V5['ras'] * te_bt['s_ras_pctl']
+    TE_V5['breakout'] * te_bt['s_breakout_raw_filled'] +
+    TE_V5['production'] * te_bt['s_production_raw_filled'] +
+    TE_V5['ras'] * te_bt['s_ras_raw']
 )
 
 # Data flags
@@ -453,9 +406,9 @@ n_pff = te_bt['peak_dominator'].notna().sum()
 print(f"  Breakout: {n_bo}/{len(te_bt)} broke out, {n_pff}/{len(te_bt)} have PFF data, {len(te_bt)-n_pff} no data (default=25)")
 print(f"  Production: {te_bt['te_prod_raw'].notna().sum()}/{len(te_bt)} real, rest imputed (avg={prod_avg_te_mm:.1f})")
 print(f"  RAS: {n_ras_real}/{len(te_bt)} real, rest MNAR-imputed (p60={te_ras_p60:.1f}, p40={te_ras_p40:.1f})")
-print(f"  Breakout:   raw mean={te_bt['s_breakout_raw_filled'].mean():.1f} → pctl mean={te_bt['s_breakout_pctl'].mean():.1f}")
-print(f"  Production: raw mean={te_bt['s_production_raw_filled'].mean():.1f} → pctl mean={te_bt['s_production_pctl'].mean():.1f}")
-print(f"  RAS:        raw mean={te_bt['s_ras_raw'].mean():.1f} → pctl mean={te_bt['s_ras_pctl'].mean():.1f}")
+print(f"  Breakout:   mean={te_bt['s_breakout_raw_filled'].mean():.1f}, range={te_bt['s_breakout_raw_filled'].min():.1f}-{te_bt['s_breakout_raw_filled'].max():.1f}")
+print(f"  Production: mean={te_bt['s_production_raw_filled'].mean():.1f}, range={te_bt['s_production_raw_filled'].min():.1f}-{te_bt['s_production_raw_filled'].max():.1f}")
+print(f"  RAS:        mean={te_bt['s_ras_raw'].mean():.1f}, range={te_bt['s_ras_raw'].min():.1f}-{te_bt['s_ras_raw'].max():.1f}")
 
 
 # ============================================================================
@@ -504,26 +457,23 @@ if 'early_declare' not in wr26.columns and 'early_declare_score' in wr26.columns
 # DC
 wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
 
-# Score breakout against WR backtest distribution
-wr26['s_breakout_pctl'] = wr26['enhanced_breakout'].apply(
-    lambda v: score_prospect_against_backtest(v, wr_bt_breakout_ref))
-
-# Binary components → same percentile-equivalent scores as backtest
+# Native-scale scoring (same as backtest: breakout 0-99.9, binaries 0/100)
+wr26['s_breakout_raw'] = wr26['enhanced_breakout']  # Already on native 0-99.9 scale
 wr26['s_teammate_binary'] = wr26['teammate_score'].apply(lambda x: 1 if x == 100 else 0)
 wr26['s_early_declare_binary'] = wr26['early_declare'].apply(lambda x: 1 if x == 100 or x == 1 else 0)
-wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, wr_tm_yes, wr_tm_no)
-wr26['s_early_declare'] = np.where(wr26['s_early_declare_binary'] == 1, wr_ed_yes, wr_ed_no)
+wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, 100, 0).astype(float)
+wr26['s_early_declare'] = np.where(wr26['s_early_declare_binary'] == 1, 100, 0).astype(float)
 
-# V5 score (using percentile-normalized components)
+# V5 score (native-scale components)
 wr26['slap_v5_raw'] = (
     WR_V5['dc'] * wr26['s_dc'] +
-    WR_V5['breakout'] * wr26['s_breakout_pctl'] +
+    WR_V5['breakout'] * wr26['s_breakout_raw'] +
     WR_V5['teammate'] * wr26['s_teammate'] +
     WR_V5['early_declare'] * wr26['s_early_declare']
 )
 
 print(f"  WR 2026 prospects: {len(wr26)} players")
-print(f"  Breakout pctl range: {wr26['s_breakout_pctl'].min():.1f} - {wr26['s_breakout_pctl'].max():.1f}")
+print(f"  Breakout range: {wr26['s_breakout_raw'].min():.1f} - {wr26['s_breakout_raw'].max():.1f}")
 
 
 # ============================================================================
@@ -540,27 +490,24 @@ rb_prospects['s_production_raw'] = rb_prospects.apply(
     lambda r: rb_production_score(r['rec_yards'], r['team_pass_attempts'], r['age']), axis=1)
 rb_prospects['s_production_raw'] = rb_prospects['s_production_raw'].fillna(0)
 
-# Score production against RB backtest distribution
-rb_prospects['s_production_pctl'] = rb_prospects['s_production_raw'].apply(
-    lambda v: score_prospect_against_backtest(v, rb_bt_prod_ref))
+# Native-scale scoring (same as backtest: production /1.75, speed 0-100)
+rb_prospects['s_production_scaled'] = (rb_prospects['s_production_raw'] / 1.75).clip(0, 99.9)
 
-# Speed score for 2026 RBs: MNAR imputed → score against backtest
+# Speed score for 2026 RBs: MNAR imputed on native 0-100 scale
 ss_p60_raw = rb_bt['s_speed_raw'].quantile(0.60)
 ss_p40_raw = rb_bt['s_speed_raw'].quantile(0.40)
 rb_prospects['s_speed_raw'] = rb_prospects['projected_pick'].apply(
     lambda p: ss_p60_raw if p <= 64 else ss_p40_raw)
-rb_prospects['s_speed_pctl'] = rb_prospects['s_speed_raw'].apply(
-    lambda v: score_prospect_against_backtest(v, rb_bt_speed_ref))
 
-# V5 Score (using percentile-normalized components)
+# V5 Score (native-scale components)
 rb_prospects['slap_v5_raw'] = (
     RB_V5['dc'] * rb_prospects['s_dc'] +
-    RB_V5['production'] * rb_prospects['s_production_pctl'] +
-    RB_V5['speed_score'] * rb_prospects['s_speed_pctl']
+    RB_V5['production'] * rb_prospects['s_production_scaled'] +
+    RB_V5['speed_score'] * rb_prospects['s_speed_raw']
 )
 
 print(f"  RB 2026 prospects: {len(rb_prospects)} players")
-print(f"  Production pctl range: {rb_prospects['s_production_pctl'].min():.1f} - {rb_prospects['s_production_pctl'].max():.1f}")
+print(f"  Production scaled range: {rb_prospects['s_production_scaled'].min():.1f} - {rb_prospects['s_production_scaled'].max():.1f}")
 
 
 # ============================================================================
@@ -574,31 +521,36 @@ te26 = pd.read_csv('data/te_2026_prospects_final.csv')
 
 te26['s_dc'] = te26['projected_pick'].apply(dc_score)
 
-# Score components against TE backtest distributions
-te26['s_breakout_pctl'] = te26['breakout_score_filled'].apply(
-    lambda v: score_prospect_against_backtest(v, te_bt_bo_ref))
-te26['s_production_pctl'] = te26['production_score_filled'].apply(
-    lambda v: score_prospect_against_backtest(v, te_bt_prod_ref))
-te26['s_ras_pctl'] = te26['ras_score'].apply(
-    lambda v: score_prospect_against_backtest(v, te_bt_ras_ref))
+# Native-scale scoring (same as backtest: breakout 0-99.9, production min-max 0-99.9, RAS×10 0-100)
+te26['s_breakout_raw'] = te26['breakout_score_filled']  # Already on native 0-99.9 scale
 
-# V5 Score (using percentile-normalized components)
+# Production: need to min-max normalize against the same TE backtest range
+te26['s_production_raw'] = np.where(
+    te26['production_score_filled'].notna(),
+    ((te26['production_score_filled'] - te_prod_min) / (te_prod_max - te_prod_min) * 99.9).clip(0, 99.9),
+    prod_avg_te_mm  # imputed with backtest avg
+)
+
+# RAS: already on 0-100 scale (RAS × 10)
+te26['s_ras_raw'] = te26['ras_score']  # Already 0-100
+
+# V5 Score (native-scale components)
 te26['slap_v5_raw'] = (
     TE_V5['dc'] * te26['s_dc'] +
-    TE_V5['breakout'] * te26['s_breakout_pctl'] +
-    TE_V5['production'] * te26['s_production_pctl'] +
-    TE_V5['ras'] * te26['s_ras_pctl']
+    TE_V5['breakout'] * te26['s_breakout_raw'] +
+    TE_V5['production'] * te26['s_production_raw'] +
+    TE_V5['ras'] * te26['s_ras_raw']
 )
 
 print(f"  TE 2026 prospects: {len(te26)} players")
-print(f"  Breakout pctl range: {te26['s_breakout_pctl'].min():.1f} - {te26['s_breakout_pctl'].max():.1f}")
+print(f"  Breakout range: {te26['s_breakout_raw'].min():.1f} - {te26['s_breakout_raw'].max():.1f}")
 
 
 # ============================================================================
-# PER-POSITION RESCALING — best backtest = 99, worst = 1, within each position
+# PER-POSITION RESCALING — slap_raw → slap_display (best backtest = 99, worst = 1)
 # ============================================================================
 print(f"\n\n{'='*120}")
-print("PER-POSITION RESCALING: Each position on its own 1-99 scale")
+print("PER-POSITION RESCALING: slap_raw → slap_display (1-99 per position)")
 print("=" * 120)
 
 # Store per-position scaling parameters (from backtest only — these define the scale)
@@ -607,35 +559,40 @@ for pos, bt_df, p26_df in [('WR', wr_bt, wr26), ('RB', rb_bt, rb_prospects), ('T
     raw_min = bt_df['slap_v5_raw'].min()
     raw_max = bt_df['slap_v5_raw'].max()
     pos_scale[pos] = {'min': raw_min, 'max': raw_max}
-    print(f"  {pos} backtest raw range: {raw_min:.2f} - {raw_max:.2f}")
+    print(f"  {pos} backtest slap_raw range: {raw_min:.2f} - {raw_max:.2f}")
 
 def position_rescale(raw_score, pos):
-    """Rescale raw SLAP to 1-99 using that position's backtest min/max."""
+    """Rescale slap_raw to 1-99 using that position's backtest min/max."""
     mn = pos_scale[pos]['min']
     mx = pos_scale[pos]['max']
     if mx == mn:
         return 50.0
     return 1 + (raw_score - mn) / (mx - mn) * 98  # Maps min→1, max→99
 
-# Apply per-position rescaling to backtest
+# slap_display: per-position 1-99 rescale of slap_raw (this is what we publish)
 wr_bt['slap_v5'] = wr_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR')).round(1)
 rb_bt['slap_v5'] = rb_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).round(1)
 te_bt['slap_v5'] = te_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).round(1)
 
-# Apply to 2026 prospects (same position scale — can go outside 1-99 if prospect exceeds backtest range)
 wr26['slap_v5'] = wr26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
 rb_prospects['slap_v5'] = rb_prospects['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
 te26['slap_v5'] = te26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
 
-# DC rescaled within position (so delta is position-relative)
-wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + 50 * (1 - WR_V5['dc']), 'WR')).round(1)
-rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + 50 * (1 - RB_V5['dc']), 'RB')).round(1)
-te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + 50 * (1 - TE_V5['dc']), 'TE')).round(1)
-wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + 50 * (1 - WR_V5['dc']), 'WR')).round(1)
-rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + 50 * (1 - RB_V5['dc']), 'RB')).round(1)
-te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + 50 * (1 - TE_V5['dc']), 'TE')).round(1)
+# DC-only display score (rescaled within position for apples-to-apples delta)
+# DC-only raw = DC × dc_weight + avg_non_dc_component × (1 - dc_weight)
+# We approximate the "non-DC avg" from the backtest mean of non-DC components
+wr_nondc_mean = (WR_V5['breakout'] * wr_bt['s_breakout_raw'].mean() + WR_V5['teammate'] * wr_bt['s_teammate'].mean() + WR_V5['early_declare'] * wr_bt['s_early_declare'].mean()) / (1 - WR_V5['dc'])
+rb_nondc_mean = (RB_V5['production'] * rb_bt['s_production_scaled'].mean() + RB_V5['speed_score'] * rb_bt['s_speed_raw'].mean()) / (1 - RB_V5['dc'])
+te_nondc_mean = (TE_V5['breakout'] * te_bt['s_breakout_raw_filled'].mean() + TE_V5['production'] * te_bt['s_production_raw_filled'].mean() + TE_V5['ras'] * te_bt['s_ras_raw'].mean()) / (1 - TE_V5['dc'])
 
-# Delta = SLAP minus DC-only (within same position scale)
+wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + wr_nondc_mean * (1 - WR_V5['dc']), 'WR')).round(1)
+rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + rb_nondc_mean * (1 - RB_V5['dc']), 'RB')).round(1)
+te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + te_nondc_mean * (1 - TE_V5['dc']), 'TE')).round(1)
+wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + wr_nondc_mean * (1 - WR_V5['dc']), 'WR')).round(1)
+rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + rb_nondc_mean * (1 - RB_V5['dc']), 'RB')).round(1)
+te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + te_nondc_mean * (1 - TE_V5['dc']), 'TE')).round(1)
+
+# Delta = slap_display minus DC-only display (within same position scale)
 wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - wr_bt['dc_score_final']).round(1)
 rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - rb_bt['dc_score_final']).round(1)
 te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - te_bt['dc_score_final']).round(1)
@@ -645,46 +602,24 @@ te26['delta_vs_dc'] = (te26['slap_v5'] - te26['dc_score_final']).round(1)
 
 # Per-position stats
 for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
-    print(f"  {pos} backtest: {df['slap_v5'].min():.1f} - {df['slap_v5'].max():.1f} (mean {df['slap_v5'].mean():.1f})")
+    print(f"  {pos} backtest display: {df['slap_v5'].min():.1f} - {df['slap_v5'].max():.1f} (mean {df['slap_v5'].mean():.1f})")
+    print(f"  {pos} backtest raw:     {df['slap_v5_raw'].min():.1f} - {df['slap_v5_raw'].max():.1f} (mean {df['slap_v5_raw'].mean():.1f})")
 
 
 # ============================================================================
-# RANKING PRESERVATION CHECK (Spearman correlation within position)
+# RANKING CHECK: slap_raw vs slap_display should be perfectly rank-correlated
 # ============================================================================
 print(f"\n{'='*120}")
-print("RANKING PRESERVATION CHECK")
+print("RANKING CHECK: slap_raw vs slap_display (should be perfectly correlated)")
 print("=" * 120)
 
-# We need old-style scores to compare against. Compute them inline.
-# Old style: raw breakout (not percentile), binary 0/100 teammate/early_declare
-wr_bt['slap_old'] = (
-    WR_V5['dc'] * wr_bt['s_dc'] +
-    WR_V5['breakout'] * wr_bt['s_breakout_raw'] +
-    WR_V5['teammate'] * np.where(wr_bt['s_teammate_binary'] == 1, 100, 0) +
-    WR_V5['early_declare'] * np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0)
-)
-rb_bt['slap_old'] = (
-    RB_V5['dc'] * rb_bt['s_dc'] +
-    RB_V5['production'] * rb_bt['s_production_raw_filled'] +
-    RB_V5['speed_score'] * rb_bt['s_speed_raw']
-)
-te_bt['slap_old'] = (
-    TE_V5['dc'] * te_bt['s_dc'] +
-    TE_V5['breakout'] * te_bt['s_breakout_raw_filled'] +
-    TE_V5['production'] * te_bt['s_production_raw_filled'] +
-    TE_V5['ras'] * te_bt['s_ras_raw']
-)
-
 for pos, df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
-    old_rank = df['slap_old'].rank(ascending=False, method='min')
-    new_rank = df['slap_v5'].rank(ascending=False, method='min')
-    spearman_r = old_rank.corr(new_rank, method='spearman')
-    rank_diff = (old_rank - new_rank).abs()
-    moved_0 = (rank_diff == 0).sum()
-    moved_1_3 = ((rank_diff >= 1) & (rank_diff <= 3)).sum()
-    moved_4_plus = (rank_diff >= 4).sum()
+    raw_rank = df['slap_v5_raw'].rank(ascending=False, method='min')
+    display_rank = df['slap_v5'].rank(ascending=False, method='min')
+    spearman_r = raw_rank.corr(display_rank, method='spearman')
+    rank_diff = (raw_rank - display_rank).abs()
     max_move = rank_diff.max()
-    print(f"  {pos}: Spearman r={spearman_r:.4f} | Same rank: {moved_0} | Moved 1-3: {moved_1_3} | Moved 4+: {moved_4_plus} | Max move: {max_move:.0f}")
+    print(f"  {pos}: Spearman r={spearman_r:.4f} | Max rank diff: {max_move:.0f} (should be 0)")
 
 
 # ============================================================================
@@ -706,7 +641,8 @@ wr_rows = pd.DataFrame({
     'dc_score': wr_bt['dc_score_final'],
     'delta_vs_dc': wr_bt['delta_vs_dc'],
     'data_type': 'backtest',
-    'enhanced_breakout': wr_bt['s_breakout_pctl'].round(1),
+    'slap_raw': wr_bt['slap_v5_raw'].round(2),
+    'enhanced_breakout': wr_bt['s_breakout_raw'].round(1),
     'teammate_score': wr_bt['s_teammate'].round(1),
     'early_declare_score': wr_bt['s_early_declare'].round(1),
     'breakout_age': wr_bt['breakout_age'],
@@ -749,8 +685,9 @@ rb_rows = pd.DataFrame({
     'breakout_age': np.nan,
     'peak_dominator': np.nan,
     'rush_yards': np.nan,
-    'production_score': rb_bt['s_production_pctl'].round(1),
-    'speed_score': rb_bt['s_speed_pctl'].round(1),
+    'slap_raw': rb_bt['slap_v5_raw'].round(2),
+    'production_score': rb_bt['s_production_scaled'].round(1),
+    'speed_score': rb_bt['s_speed_raw'].round(1),
     'rec_yards': rb_bt['rec_yards'],
     'team_pass_att': rb_bt['team_pass_att'],
     'te_breakout_score': np.nan,
@@ -790,9 +727,10 @@ te_rows = pd.DataFrame({
     'speed_score': np.nan,
     'rec_yards': te_bt['cfbd_rec_yards'],
     'team_pass_att': te_bt['cfbd_team_pass_att'],
-    'te_breakout_score': te_bt['s_breakout_pctl'].round(1),
-    'te_production_score': te_bt['s_production_pctl'].round(1),
-    'ras_score': te_bt['s_ras_pctl'].round(1),
+    'slap_raw': te_bt['slap_v5_raw'].round(2),
+    'te_breakout_score': te_bt['s_breakout_raw_filled'].round(1),
+    'te_production_score': te_bt['s_production_raw_filled'].round(1),
+    'ras_score': te_bt['s_ras_raw'].round(1),
     'nfl_hit24': te_bt['top12_8g'] if 'top12_8g' in te_bt.columns else te_bt['top12_10g'],
     'nfl_hit12': te_bt['top6_8g'] if 'top6_8g' in te_bt.columns else te_bt['top6_10g'],
     'nfl_first_3yr_ppg': te_bt['best_3yr_ppg_8g'] if 'best_3yr_ppg_8g' in te_bt.columns else te_bt['best_3yr_ppg_10g'],
@@ -817,7 +755,8 @@ wr26_rows = pd.DataFrame({
     'dc_score': wr26['dc_score_final'],
     'delta_vs_dc': wr26['delta_vs_dc'],
     'data_type': '2026_prospect',
-    'enhanced_breakout': wr26['s_breakout_pctl'].round(1),
+    'slap_raw': wr26['slap_v5_raw'].round(2),
+    'enhanced_breakout': wr26['s_breakout_raw'].round(1),
     'teammate_score': wr26['s_teammate'].round(1),
     'early_declare_score': wr26['s_early_declare'].round(1),
     'breakout_age': wr26['breakout_age'],
@@ -860,8 +799,9 @@ rb26_rows = pd.DataFrame({
     'breakout_age': np.nan,
     'peak_dominator': np.nan,
     'rush_yards': np.nan,
-    'production_score': rb_prospects['s_production_pctl'].round(1),
-    'speed_score': rb_prospects['s_speed_pctl'].round(1),
+    'slap_raw': rb_prospects['slap_v5_raw'].round(2),
+    'production_score': rb_prospects['s_production_scaled'].round(1),
+    'speed_score': rb_prospects['s_speed_raw'].round(1),
     'rec_yards': rb_prospects['rec_yards'],
     'team_pass_att': rb_prospects['team_pass_attempts'],
     'te_breakout_score': np.nan,
@@ -901,9 +841,10 @@ te26_rows = pd.DataFrame({
     'speed_score': np.nan,
     'rec_yards': te26['cfbd_rec_yards'],
     'team_pass_att': te26['cfbd_team_pass_att'],
-    'te_breakout_score': te26['s_breakout_pctl'].round(1),
-    'te_production_score': te26['s_production_pctl'].round(1),
-    'ras_score': te26['s_ras_pctl'].round(1),
+    'slap_raw': te26['slap_v5_raw'].round(2),
+    'te_breakout_score': te26['s_breakout_raw'].round(1),
+    'te_production_score': te26['s_production_raw'].round(1),
+    'ras_score': te26['s_ras_raw'].round(1),
     'nfl_hit24': np.nan,
     'nfl_hit12': np.nan,
     'nfl_first_3yr_ppg': np.nan,
@@ -933,7 +874,7 @@ master = master.reset_index(drop=True)
 # Column order
 col_order = [
     'player_name', 'position', 'college', 'draft_year', 'pick', 'round',
-    'slap_v5', 'dc_score', 'delta_vs_dc', 'data_type',
+    'slap_v5', 'slap_raw', 'dc_score', 'delta_vs_dc', 'data_type',
     # WR components
     'enhanced_breakout', 'teammate_score', 'early_declare_score',
     # RB components
@@ -1073,38 +1014,11 @@ for pos in ['WR', 'RB', 'TE']:
         real_ath = (bt['athletic_data_flag'] == 'real').sum()
         print(f"  TE: {real_bo}/{total_n} real breakout, {real_prod}/{total_n} real production, {real_ath}/{total_n} real RAS")
 
-# NON-DC COMPONENT MEANS (should all be ~50 for delta assumption to hold)
-print(f"\n\n  NON-DC COMPONENT MEANS (backtest, should be ~50 for delta to work correctly):")
-wr_nondc = (WR_V5['breakout'] * wr_bt['s_breakout_pctl'] + WR_V5['teammate'] * wr_bt['s_teammate'] + WR_V5['early_declare'] * wr_bt['s_early_declare']) / (1 - WR_V5['dc'])
-rb_nondc = (RB_V5['production'] * rb_bt['s_production_pctl'] + RB_V5['speed_score'] * rb_bt['s_speed_pctl']) / (1 - RB_V5['dc'])
-te_nondc = (TE_V5['breakout'] * te_bt['s_breakout_pctl'] + TE_V5['production'] * te_bt['s_production_pctl'] + TE_V5['ras'] * te_bt['s_ras_pctl']) / (1 - TE_V5['dc'])
-print(f"    WR weighted non-DC mean: {wr_nondc.mean():.1f}")
-print(f"    RB weighted non-DC mean: {rb_nondc.mean():.1f}")
-print(f"    TE weighted non-DC mean: {te_nondc.mean():.1f}")
-
-# WR BINARY→PERCENTILE IMPACT: show top 10 biggest score changes
-print(f"\n\n  WR BINARY→PERCENTILE CONVERSION: Top 10 biggest SLAP changes vs old binary scoring:")
-wr_bt['slap_old_binary'] = (
-    WR_V5['dc'] * wr_bt['s_dc'] +
-    WR_V5['breakout'] * wr_bt['s_breakout_pctl'] +
-    WR_V5['teammate'] * np.where(wr_bt['s_teammate_binary'] == 1, 100, 0) +
-    WR_V5['early_declare'] * np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0)
-)
-wr_bt['pctl_vs_binary_diff'] = wr_bt['slap_v5_raw'] - wr_bt['slap_old_binary']
-biggest_changes = wr_bt.nlargest(10, 'pctl_vs_binary_diff')[['player_name', 'draft_year', 'pick', 's_teammate_binary', 's_early_declare_binary', 'pctl_vs_binary_diff']]
-print(f"  {'Player':<25} {'Year':>4} {'Pk':>3} {'TM':>3} {'ED':>3} {'Raw Δ':>7}")
-for _, r in biggest_changes.iterrows():
-    print(f"  {r['player_name']:<25} {int(r['draft_year']):>4} {int(r['pick']):>3} {int(r['s_teammate_binary']):>3} {int(r['s_early_declare_binary']):>3} {r['pctl_vs_binary_diff']:>+7.2f}")
-biggest_neg = wr_bt.nsmallest(10, 'pctl_vs_binary_diff')[['player_name', 'draft_year', 'pick', 's_teammate_binary', 's_early_declare_binary', 'pctl_vs_binary_diff']]
-print(f"\n  Biggest NEGATIVE changes (lost most):")
-print(f"  {'Player':<25} {'Year':>4} {'Pk':>3} {'TM':>3} {'ED':>3} {'Raw Δ':>7}")
-for _, r in biggest_neg.iterrows():
-    print(f"  {r['player_name']:<25} {int(r['draft_year']):>4} {int(r['pick']):>3} {int(r['s_teammate_binary']):>3} {int(r['s_early_declare_binary']):>3} {r['pctl_vs_binary_diff']:>+7.2f}")
-
-# Spearman between old binary and new percentile WR scores (should be very high)
-from scipy.stats import spearmanr
-wr_spearman = spearmanr(wr_bt['slap_old_binary'].rank(), wr_bt['slap_v5_raw'].rank())[0]
-print(f"\n  WR ranking preservation (binary vs percentile): Spearman r={wr_spearman:.4f}")
+# NON-DC COMPONENT MEANS (native scale)
+print(f"\n\n  NON-DC COMPONENT MEANS (backtest, native scale):")
+print(f"    WR: breakout mean={wr_bt['s_breakout_raw'].mean():.1f}, teammate mean={wr_bt['s_teammate'].mean():.1f}, early_declare mean={wr_bt['s_early_declare'].mean():.1f}")
+print(f"    RB: production/1.75 mean={rb_bt['s_production_scaled'].mean():.1f}, speed mean={rb_bt['s_speed_raw'].mean():.1f}")
+print(f"    TE: breakout mean={te_bt['s_breakout_raw_filled'].mean():.1f}, production mean={te_bt['s_production_raw_filled'].mean():.1f}, RAS mean={te_bt['s_ras_raw'].mean():.1f}")
 
 print(f"\n\n{'='*120}")
 print("MASTER DATABASE BUILD COMPLETE")
