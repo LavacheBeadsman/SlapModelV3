@@ -591,21 +591,24 @@ wr26['slap_v5'] = wr26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR'))
 rb_prospects['slap_v5'] = rb_prospects['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
 te26['slap_v5'] = te26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
 
-# DC-only display score (rescaled within position for apples-to-apples delta)
-# DC-only raw = DC × dc_weight + avg_non_dc_component × (1 - dc_weight)
-# We approximate the "non-DC avg" from the backtest mean of non-DC components
-wr_nondc_mean = (WR_V5['breakout'] * wr_bt['s_breakout_raw'].mean() + WR_V5['teammate'] * wr_bt['s_teammate'].mean() + WR_V5['early_declare'] * wr_bt['s_early_declare'].mean()) / (1 - WR_V5['dc'])
-rb_nondc_mean = (RB_V5['production'] * rb_bt['s_production_scaled'].mean() + RB_V5['speed_score'] * rb_bt['s_speed_raw'].mean()) / (1 - RB_V5['dc'])
-te_nondc_mean = (TE_V5['breakout'] * te_bt['s_breakout_raw_filled'].mean() + TE_V5['production'] * te_bt['s_production_raw_filled'].mean() + TE_V5['ras'] * te_bt['s_ras_raw'].mean()) / (1 - TE_V5['dc'])
+# DC-only display score: what the player's display score would be if SLAP = 100% DC
+# dc_only_raw = player's raw DC score (100 - 2.40 * (pick^0.62 - 1))
+# dc_only_display = rescale dc_only_raw to 1-99 using same backtest min/max
+# Positive delta = non-DC components (production, breakout, athleticism) BOOST the player
+# Negative delta = non-DC components DRAG the player below their draft slot
+for bt_df in [wr_bt, rb_bt, te_bt, wr26, rb_prospects, te26]:
+    bt_df['dc_score_final'] = bt_df['s_dc'].copy()
 
-wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + wr_nondc_mean * (1 - WR_V5['dc']), 'WR')).round(1)
-rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + rb_nondc_mean * (1 - RB_V5['dc']), 'RB')).round(1)
-te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + te_nondc_mean * (1 - TE_V5['dc']), 'TE')).round(1)
-wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x * WR_V5['dc'] + wr_nondc_mean * (1 - WR_V5['dc']), 'WR')).round(1)
-rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x * RB_V5['dc'] + rb_nondc_mean * (1 - RB_V5['dc']), 'RB')).round(1)
-te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x * TE_V5['dc'] + te_nondc_mean * (1 - TE_V5['dc']), 'TE')).round(1)
+# Rescale raw DC scores through same position_rescale, clipped to 1-99
+wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
+rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
+te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
+wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
+rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
+te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
 
-# Delta = slap_display minus DC-only display (within same position scale)
+# Delta = slap_display minus DC-only display
+# Same rescaling applied to both, so delta shows the pure effect of non-DC components
 wr_bt['delta_vs_dc'] = (wr_bt['slap_v5'] - wr_bt['dc_score_final']).round(1)
 rb_bt['delta_vs_dc'] = (rb_bt['slap_v5'] - rb_bt['dc_score_final']).round(1)
 te_bt['delta_vs_dc'] = (te_bt['slap_v5'] - te_bt['dc_score_final']).round(1)
