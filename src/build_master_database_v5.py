@@ -359,8 +359,15 @@ for name, vals in {
 # PFF fallback for remaining missing
 for idx in te_bt[te_bt['te_prod_raw'].isna()].index:
     r = te_bt.loc[idx]
-    if pd.notna(r.get('pff_yards')) and pd.notna(r.get('pff_receptions')):
-        pass  # Leave as NaN — will be imputed
+    if pd.notna(r.get('pff_yards')) and pd.notna(r.get('pff_pass_plays')) and r['pff_pass_plays'] > 0:
+        season_age = (r['draft_age'] - 1) if pd.notna(r['draft_age']) else 22
+        if season_age <= 19: aw = 1.15
+        elif season_age <= 20: aw = 1.10
+        elif season_age <= 21: aw = 1.05
+        elif season_age <= 22: aw = 1.00
+        elif season_age <= 23: aw = 0.95
+        else: aw = 0.90
+        te_bt.loc[idx, 'te_prod_raw'] = r['pff_yards'] / (r['pff_pass_plays'] * 1.15) * aw * 100
 
 # Normalize production to 0-99.9 using min-max (this is the "raw" scale before percentile)
 prod_vals = te_bt['te_prod_raw'].dropna()
