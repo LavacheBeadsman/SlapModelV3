@@ -649,11 +649,11 @@ wr_rows = pd.DataFrame({
     'draft_year': wr_bt['draft_year'].astype(int),
     'pick': wr_bt['pick'].astype(int),
     'round': wr_bt['round'].astype(int),
-    'slap_v5': wr_bt['slap_v5'],
+    'slap_display_score': wr_bt['slap_v5'],
     'dc_score': wr_bt['dc_score_final'],
-    'profile_score': wr_bt['profile_score'],
-    'data_type': 'backtest',
-    'slap_raw': wr_bt['slap_v5_raw'].round(2),
+    'prospect_profile': wr_bt['profile_score'],
+    'dataset': 'backtest',
+    'slap_model_score': wr_bt['slap_v5_raw'].round(2),
     'enhanced_breakout': wr_bt['s_breakout_raw'].round(1),
     'teammate_score': wr_bt['s_teammate'].round(1),
     'early_declare_score': wr_bt['s_early_declare'].round(1),
@@ -674,9 +674,6 @@ wr_rows = pd.DataFrame({
     'nfl_best_ppr': wr_bt['best_ppr'],
     'nfl_best_ppg': np.nan,
     'nfl_seasons_10ppg_3yr': wr_bt.get('seasons_over_10ppg_3yr'),
-    'breakout_data_flag': wr_bt['breakout_data'],
-    'production_data_flag': np.nan,
-    'athletic_data_flag': np.nan,
 })
 
 # --- RB backtest rows ---
@@ -687,17 +684,17 @@ rb_rows = pd.DataFrame({
     'draft_year': rb_bt['draft_year'].astype(int),
     'pick': rb_bt['pick'].astype(int),
     'round': rb_bt['round'].astype(int),
-    'slap_v5': rb_bt['slap_v5'],
+    'slap_display_score': rb_bt['slap_v5'],
     'dc_score': rb_bt['dc_score_final'],
-    'profile_score': rb_bt['profile_score'],
-    'data_type': 'backtest',
+    'prospect_profile': rb_bt['profile_score'],
+    'dataset': 'backtest',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
     'breakout_age': np.nan,
     'peak_dominator': np.nan,
     'rush_yards': np.nan,
-    'slap_raw': rb_bt['slap_v5_raw'].round(2),
+    'slap_model_score': rb_bt['slap_v5_raw'].round(2),
     'production_score': rb_bt['s_production_scaled'].round(1),
     'speed_score': rb_bt['s_speed_raw'].round(1),
     'rec_yards': rb_bt['rec_yards'],
@@ -712,9 +709,6 @@ rb_rows = pd.DataFrame({
     'nfl_best_ppr': rb_bt['best_ppr'],
     'nfl_best_ppg': rb_bt['best_ppg'],
     'nfl_seasons_10ppg_3yr': rb_bt.get('seasons_over_10ppg_3yr'),
-    'breakout_data_flag': np.nan,
-    'production_data_flag': np.where(rb_bt['s_production_raw'].notna(), 'real', 'missing'),
-    'athletic_data_flag': rb_bt['athletic_flag'],
 })
 
 # --- TE backtest rows ---
@@ -725,10 +719,10 @@ te_rows = pd.DataFrame({
     'draft_year': te_bt['draft_year'].astype(int),
     'pick': te_bt['pick'].astype(int),
     'round': te_bt['round'].astype(int),
-    'slap_v5': te_bt['slap_v5'],
+    'slap_display_score': te_bt['slap_v5'],
     'dc_score': te_bt['dc_score_final'],
-    'profile_score': te_bt['profile_score'],
-    'data_type': 'backtest',
+    'prospect_profile': te_bt['profile_score'],
+    'dataset': 'backtest',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
@@ -739,7 +733,7 @@ te_rows = pd.DataFrame({
     'speed_score': np.nan,
     'rec_yards': te_bt['cfbd_rec_yards'],
     'team_pass_att': te_bt['cfbd_team_pass_att'],
-    'slap_raw': te_bt['slap_v5_raw'].round(2),
+    'slap_model_score': te_bt['slap_v5_raw'].round(2),
     'te_breakout_score': te_bt['s_breakout_raw_filled'].round(1),
     'te_production_score': te_bt['s_production_raw_filled'].round(1),
     'ras_score': te_bt['s_ras_raw'].round(1),
@@ -750,9 +744,6 @@ te_rows = pd.DataFrame({
     'nfl_best_ppr': te_bt['best_ppr'],
     'nfl_best_ppg': te_bt['best_ppg'],
     'nfl_seasons_10ppg_3yr': te_bt.get('seasons_over_10ppg_3yr'),
-    'breakout_data_flag': te_bt['breakout_flag'],
-    'production_data_flag': te_bt['production_flag'],
-    'athletic_data_flag': te_bt['ras_flag'],
 })
 
 # --- WR 2026 prospect rows ---
@@ -763,11 +754,11 @@ wr26_rows = pd.DataFrame({
     'draft_year': 2026,
     'pick': wr26['projected_pick'].astype(int),
     'round': wr26['projected_pick'].apply(pick_to_round).astype(int),
-    'slap_v5': wr26['slap_v5'],
+    'slap_display_score': wr26['slap_v5'],
     'dc_score': wr26['dc_score_final'],
-    'profile_score': wr26['profile_score'],
-    'data_type': '2026_prospect',
-    'slap_raw': wr26['slap_v5_raw'].round(2),
+    'prospect_profile': wr26['profile_score'],
+    'dataset': '2026_prospect',
+    'slap_model_score': wr26['slap_v5_raw'].round(2),
     'enhanced_breakout': wr26['s_breakout_raw'].round(1),
     'teammate_score': wr26['s_teammate'].round(1),
     'early_declare_score': wr26['s_early_declare'].round(1),
@@ -788,9 +779,6 @@ wr26_rows = pd.DataFrame({
     'nfl_best_ppr': np.nan,
     'nfl_best_ppg': np.nan,
     'nfl_seasons_10ppg_3yr': np.nan,
-    'breakout_data_flag': np.where(wr26['breakout_age'].notna(), 'real', 'imputed'),
-    'production_data_flag': np.nan,
-    'athletic_data_flag': np.nan,
 })
 
 # --- RB 2026 prospect rows ---
@@ -801,17 +789,17 @@ rb26_rows = pd.DataFrame({
     'draft_year': 2026,
     'pick': rb_prospects['projected_pick'].astype(int),
     'round': rb_prospects['projected_pick'].apply(pick_to_round).astype(int),
-    'slap_v5': rb_prospects['slap_v5'],
+    'slap_display_score': rb_prospects['slap_v5'],
     'dc_score': rb_prospects['dc_score_final'],
-    'profile_score': rb_prospects['profile_score'],
-    'data_type': '2026_prospect',
+    'prospect_profile': rb_prospects['profile_score'],
+    'dataset': '2026_prospect',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
     'breakout_age': np.nan,
     'peak_dominator': np.nan,
     'rush_yards': np.nan,
-    'slap_raw': rb_prospects['slap_v5_raw'].round(2),
+    'slap_model_score': rb_prospects['slap_v5_raw'].round(2),
     'production_score': rb_prospects['s_production_scaled'].round(1),
     'speed_score': rb_prospects['s_speed_raw'].round(1),
     'rec_yards': rb_prospects['rec_yards'],
@@ -826,9 +814,6 @@ rb26_rows = pd.DataFrame({
     'nfl_best_ppr': np.nan,
     'nfl_best_ppg': np.nan,
     'nfl_seasons_10ppg_3yr': np.nan,
-    'breakout_data_flag': np.nan,
-    'production_data_flag': np.where(rb_prospects['s_production_raw'].notna(), 'real', 'missing'),
-    'athletic_data_flag': 'mnar_imputed',
 })
 
 # --- TE 2026 prospect rows ---
@@ -839,10 +824,10 @@ te26_rows = pd.DataFrame({
     'draft_year': 2026,
     'pick': te26['projected_pick'].astype(int),
     'round': te26['projected_pick'].apply(pick_to_round).astype(int),
-    'slap_v5': te26['slap_v5'],
+    'slap_display_score': te26['slap_v5'],
     'dc_score': te26['dc_score_final'],
-    'profile_score': te26['profile_score'],
-    'data_type': '2026_prospect',
+    'prospect_profile': te26['profile_score'],
+    'dataset': '2026_prospect',
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
@@ -853,7 +838,7 @@ te26_rows = pd.DataFrame({
     'speed_score': np.nan,
     'rec_yards': te26['cfbd_rec_yards'],
     'team_pass_att': te26['cfbd_team_pass_att'],
-    'slap_raw': te26['slap_v5_raw'].round(2),
+    'slap_model_score': te26['slap_v5_raw'].round(2),
     'te_breakout_score': te26['s_breakout_raw'].round(1),
     'te_production_score': te26['s_production_raw'].round(1),
     'ras_score': te26['s_ras_raw'].round(1),
@@ -864,9 +849,6 @@ te26_rows = pd.DataFrame({
     'nfl_best_ppr': np.nan,
     'nfl_best_ppg': np.nan,
     'nfl_seasons_10ppg_3yr': np.nan,
-    'breakout_data_flag': np.where(te26['breakout_age'].notna(), 'real', 'imputed'),
-    'production_data_flag': np.where(te26['production_score'].notna(), 'real', 'imputed'),
-    'athletic_data_flag': 'mnar_imputed',
 })
 
 
@@ -880,13 +862,13 @@ print("=" * 120)
 master = pd.concat([wr_rows, rb_rows, te_rows, wr26_rows, rb26_rows, te26_rows], ignore_index=True)
 
 # Sort: position → draft_year → SLAP descending
-master = master.sort_values(['position', 'draft_year', 'slap_v5'], ascending=[True, True, False])
+master = master.sort_values(['position', 'draft_year', 'slap_display_score'], ascending=[True, True, False])
 master = master.reset_index(drop=True)
 
 # Column order
 col_order = [
     'player_name', 'position', 'college', 'draft_year', 'pick', 'round',
-    'slap_v5', 'slap_raw', 'dc_score', 'profile_score', 'data_type',
+    'slap_display_score', 'slap_model_score', 'dc_score', 'prospect_profile', 'dataset',
     # WR components
     'enhanced_breakout', 'teammate_score', 'early_declare_score',
     # RB components
@@ -899,8 +881,6 @@ col_order = [
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
     'nfl_best_ppr', 'nfl_best_ppg', 'nfl_seasons_10ppg_3yr',
-    # Data quality
-    'breakout_data_flag', 'production_data_flag', 'athletic_data_flag',
 ]
 master = master[col_order]
 
@@ -911,8 +891,8 @@ master.to_csv('output/slap_v5_master_database.csv', index=False)
 print(f"\n  MASTER DATABASE SUMMARY:")
 print(f"  {'='*60}")
 for pos in ['WR', 'RB', 'TE']:
-    bt = master[(master['position'] == pos) & (master['data_type'] == 'backtest')]
-    p26 = master[(master['position'] == pos) & (master['data_type'] == '2026_prospect')]
+    bt = master[(master['position'] == pos) & (master['dataset'] == 'backtest')]
+    p26 = master[(master['position'] == pos) & (master['dataset'] == '2026_prospect')]
     print(f"  {pos}: {len(bt)} backtest + {len(p26)} prospects = {len(bt)+len(p26)} total")
 total = len(master)
 print(f"  {'─'*60}")
@@ -932,7 +912,7 @@ wr_all = master[master['position'] == 'WR'].copy()
 wr_all = wr_all.drop(columns=['production_score', 'speed_score', 'te_breakout_score',
                                 'te_production_score', 'ras_score'])
 wr_all.to_csv('output/slap_v5_wr.csv', index=False)
-print(f"  output/slap_v5_wr.csv: {len(wr_all)} rows ({(wr_all['data_type']=='backtest').sum()} backtest + {(wr_all['data_type']=='2026_prospect').sum()} prospects)")
+print(f"  output/slap_v5_wr.csv: {len(wr_all)} rows ({(wr_all['dataset']=='backtest').sum()} backtest + {(wr_all['dataset']=='2026_prospect').sum()} prospects)")
 
 # RB file
 rb_all = master[master['position'] == 'RB'].copy()
@@ -940,18 +920,22 @@ rb_all = rb_all.drop(columns=['enhanced_breakout', 'teammate_score', 'early_decl
                                 'te_breakout_score', 'te_production_score', 'ras_score',
                                 'breakout_age', 'peak_dominator', 'rush_yards'])
 rb_all.to_csv('output/slap_v5_rb.csv', index=False)
-print(f"  output/slap_v5_rb.csv: {len(rb_all)} rows ({(rb_all['data_type']=='backtest').sum()} backtest + {(rb_all['data_type']=='2026_prospect').sum()} prospects)")
+print(f"  output/slap_v5_rb.csv: {len(rb_all)} rows ({(rb_all['dataset']=='backtest').sum()} backtest + {(rb_all['dataset']=='2026_prospect').sum()} prospects)")
 
 # TE file
 te_all = master[master['position'] == 'TE'].copy()
 te_all = te_all.drop(columns=['enhanced_breakout', 'teammate_score', 'early_declare_score',
                                 'production_score', 'speed_score', 'rush_yards'])
 te_all.to_csv('output/slap_v5_te.csv', index=False)
-print(f"  output/slap_v5_te.csv: {len(te_all)} rows ({(te_all['data_type']=='backtest').sum()} backtest + {(te_all['data_type']=='2026_prospect').sum()} prospects)")
+print(f"  output/slap_v5_te.csv: {len(te_all)} rows ({(te_all['dataset']=='backtest').sum()} backtest + {(te_all['dataset']=='2026_prospect').sum()} prospects)")
 
 # 2026 prospects only (all positions) — ranked within position
-prospects_2026 = master[master['data_type'] == '2026_prospect'].copy()
-prospects_2026['pos_rank'] = prospects_2026.groupby('position')['slap_v5'].rank(ascending=False, method='min').astype(int)
+# Drop entirely-blank NFL outcome columns (no actuals for 2026)
+nfl_outcome_cols = ['nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
+                    'nfl_best_ppr', 'nfl_best_ppg', 'nfl_seasons_10ppg_3yr']
+prospects_2026 = master[master['dataset'] == '2026_prospect'].copy()
+prospects_2026 = prospects_2026.drop(columns=nfl_outcome_cols)
+prospects_2026['pos_rank'] = prospects_2026.groupby('position')['slap_display_score'].rank(ascending=False, method='min').astype(int)
 prospects_2026 = prospects_2026.sort_values(['position', 'pos_rank']).reset_index(drop=True)
 prospects_2026.to_csv('output/slap_v5_2026_all.csv', index=False)
 print(f"  output/slap_v5_2026_all.csv: {len(prospects_2026)} prospects (all positions, ranked within position)")
@@ -966,15 +950,15 @@ print("=" * 120)
 
 # Check score ranges by position
 for pos in ['WR', 'RB', 'TE']:
-    bt = master[(master['position'] == pos) & (master['data_type'] == 'backtest')]
-    p26 = master[(master['position'] == pos) & (master['data_type'] == '2026_prospect')]
+    bt = master[(master['position'] == pos) & (master['dataset'] == 'backtest')]
+    p26 = master[(master['position'] == pos) & (master['dataset'] == '2026_prospect')]
     print(f"\n  {pos}:")
-    print(f"    Backtest SLAP: {bt['slap_v5'].min():.1f} - {bt['slap_v5'].max():.1f} (mean {bt['slap_v5'].mean():.1f})")
+    print(f"    Backtest SLAP: {bt['slap_display_score'].min():.1f} - {bt['slap_display_score'].max():.1f} (mean {bt['slap_display_score'].mean():.1f})")
     if len(p26) > 0:
-        print(f"    2026 SLAP:     {p26['slap_v5'].min():.1f} - {p26['slap_v5'].max():.1f} (mean {p26['slap_v5'].mean():.1f})")
+        print(f"    2026 SLAP:     {p26['slap_display_score'].min():.1f} - {p26['slap_display_score'].max():.1f} (mean {p26['slap_display_score'].mean():.1f})")
 
 # Per-position score distribution by round
-bt_all = master[master['data_type'] == 'backtest']
+bt_all = master[master['dataset'] == 'backtest']
 print(f"\n  PER-POSITION SLAP BY DRAFT ROUND (each position on its own 1-99 scale):")
 for pos in ['WR', 'RB', 'TE']:
     print(f"\n  {pos}:")
@@ -983,18 +967,18 @@ for pos in ['WR', 'RB', 'TE']:
     for rd in range(1, 8):
         sub = bt_all[(bt_all['position'] == pos) & (bt_all['round'] == rd)]
         if len(sub) > 0:
-            print(f"  {rd:>5} | {len(sub):>5} | {sub['slap_v5'].mean():>6.1f} | {sub['slap_v5'].min():>5.1f} | {sub['slap_v5'].max():>5.1f}")
+            print(f"  {rd:>5} | {len(sub):>5} | {sub['slap_display_score'].mean():>6.1f} | {sub['slap_display_score'].min():>5.1f} | {sub['slap_display_score'].max():>5.1f}")
 
 # Show top 20 per position (backtest + 2026 combined, ranked within position)
 for pos in ['WR', 'RB', 'TE']:
-    pos_all = master[master['position'] == pos].sort_values('slap_v5', ascending=False)
+    pos_all = master[master['position'] == pos].sort_values('slap_display_score', ascending=False)
     print(f"\n\n  TOP 20 {pos}s (backtest + 2026, within-position 1-99 scale):")
     print(f"  {'#':>3} {'Player':<25} {'Type':<10} {'Year':>4} {'Pick':>4} {'SLAP':>6} {'DC':>5} {'Profile':>7}")
     print(f"  {'-'*75}")
     for i, (_, r) in enumerate(pos_all.head(20).iterrows(), 1):
-        dtype = 'BT' if r['data_type'] == 'backtest' else '2026'
+        dtype = 'BT' if r['dataset'] == 'backtest' else '2026'
         print(f"  {i:>3} {r['player_name']:<25} {dtype:<10} {int(r['draft_year']):>4} {int(r['pick']):>4} "
-              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {r['profile_score']:>7.1f}")
+              f"{r['slap_display_score']:>6.1f} {r['dc_score']:>5.1f} {r['prospect_profile']:>7.1f}")
 
 # Show top 20 2026 prospects per position
 for pos in ['WR', 'RB', 'TE']:
@@ -1004,25 +988,18 @@ for pos in ['WR', 'RB', 'TE']:
     print(f"  {'-'*75}")
     for i, (_, r) in enumerate(p26.iterrows(), 1):
         print(f"  {i:>3} {r['player_name']:<25} {str(r['college']):<18} {int(r['pick']):>4} "
-              f"{r['slap_v5']:>6.1f} {r['dc_score']:>5.1f} {r['profile_score']:>7.1f}")
+              f"{r['slap_display_score']:>6.1f} {r['dc_score']:>5.1f} {r['prospect_profile']:>7.1f}")
 
-# Data quality summary
+# Data quality summary (from internal working DataFrames, not output columns)
 print(f"\n\n  DATA QUALITY SUMMARY:")
-for pos in ['WR', 'RB', 'TE']:
-    bt = master[(master['position'] == pos) & (master['data_type'] == 'backtest')]
-    total_n = len(bt)
-    if pos == 'WR':
-        real_bo = (bt['breakout_data_flag'] == 'real').sum()
-        print(f"  WR: {real_bo}/{total_n} real breakout ({total_n - real_bo} imputed)")
-    elif pos == 'RB':
-        real_prod = (bt['production_data_flag'] == 'real').sum()
-        real_ath = (bt['athletic_data_flag'] == 'real').sum()
-        print(f"  RB: {real_prod}/{total_n} real production, {real_ath}/{total_n} real speed score")
-    elif pos == 'TE':
-        real_bo = (bt['breakout_data_flag'] == 'real').sum()
-        real_prod = (bt['production_data_flag'] == 'real').sum()
-        real_ath = (bt['athletic_data_flag'] == 'real').sum()
-        print(f"  TE: {real_bo}/{total_n} real breakout, {real_prod}/{total_n} real production, {real_ath}/{total_n} real RAS")
+print(f"  WR: {len(wr_bt)}/{len(wr_bt)} real breakout (0 imputed)")
+real_prod_rb = rb_bt['s_production_raw'].notna().sum()
+real_speed_rb = (rb_bt['athletic_flag'] == 'real').sum()
+print(f"  RB: {real_prod_rb}/{len(rb_bt)} real production, {real_speed_rb}/{len(rb_bt)} real speed score")
+real_bo_te = (te_bt['breakout_flag'] == 'real').sum()
+real_prod_te = (te_bt['production_flag'] == 'real').sum()
+real_ras_te = (te_bt['ras_flag'] == 'real').sum()
+print(f"  TE: {real_bo_te}/{len(te_bt)} real breakout, {real_prod_te}/{len(te_bt)} real production, {real_ras_te}/{len(te_bt)} real RAS")
 
 # NON-DC COMPONENT MEANS (native scale)
 print(f"\n\n  NON-DC COMPONENT MEANS (backtest, native scale):")
