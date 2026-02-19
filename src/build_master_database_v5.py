@@ -10,9 +10,10 @@ TWO-LAYER SCORING SYSTEM:
     - WR: DC (0-100) + Enhanced Breakout (0-99.9) + Teammate (0/100) + Early Declare (0/100)
     - RB: DC (0-100) + Production/1.75 (0-99.9) + Speed Score (0-100)
     - TE: DC (0-100) + Breakout (0-99.9) + Production min-max (0-99.9) + RAS×10 (0-100)
-  Layer 2 — slap_display: Per-position 1-99 rescale of slap_raw.
-    Best backtest player at each position = 99, worst = 1.
-    This is what we publish. 2026 prospects on same scale (clipped 1-99).
+  Layer 2 — slap_display: Per-position percentile rank of slap_raw vs backtest.
+    "What % of drafted players at this position did this player beat?"
+    Uses percentileofscore(backtest, raw, kind='rank') → mapped to 1-99 scale.
+    This is what we publish. 2026 prospects scored against backtest distribution.
 
 LOCKED MODELS:
   WR V5: 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare
@@ -29,6 +30,7 @@ Outputs:
 
 import pandas as pd
 import numpy as np
+from scipy.stats import percentileofscore
 import warnings, os
 warnings.filterwarnings('ignore')
 os.chdir('/home/user/SlapModelV3')
@@ -567,37 +569,35 @@ print("PER-POSITION RESCALING: slap_raw → slap_display (1-99 per position)")
 print("=" * 120)
 
 # Store per-position scaling parameters (from backtest only — these define the scale)
-pos_scale = {}
-for pos, bt_df, p26_df in [('WR', wr_bt, wr26), ('RB', rb_bt, rb_prospects), ('TE', te_bt, te26)]:
-    raw_min = bt_df['slap_v5_raw'].min()
-    raw_max = bt_df['slap_v5_raw'].max()
-    pos_scale[pos] = {'min': raw_min, 'max': raw_max}
-    print(f"  {pos} backtest slap_raw range: {raw_min:.2f} - {raw_max:.2f}")
+# Build per-position backtest reference distributions for percentile scoring
+pos_ref = {}
+for pos, bt_df in [('WR', wr_bt), ('RB', rb_bt), ('TE', te_bt)]:
+    raw_vals = bt_df['slap_v5_raw'].dropna().values
+    dc_vals = bt_df['s_dc'].dropna().values
+    pos_ref[pos] = {'raw': raw_vals, 'dc': dc_vals}
+    print(f"  {pos} backtest slap_raw range: {raw_vals.min():.2f} - {raw_vals.max():.2f} (n={len(raw_vals)})")
 
-def position_rescale(raw_score, pos):
-    """Rescale slap_raw to 1-99 using that position's backtest min/max."""
-    mn = pos_scale[pos]['min']
-    mx = pos_scale[pos]['max']
-    if mx == mn:
-        return 50.0
-    return 1 + (raw_score - mn) / (mx - mn) * 98  # Maps min→1, max→99
+def pctl_score(value, ref_values):
+    """Convert a raw value to a 1-99 display score using percentile rank against backtest."""
+    pctl = percentileofscore(ref_values, value, kind='rank')
+    return np.clip(pctl / 100 * 98 + 1, 1, 99)
 
-# slap_display: per-position 1-99 rescale of slap_raw (this is what we publish)
-wr_bt['slap_v5'] = wr_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR')).round(1)
-rb_bt['slap_v5'] = rb_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).round(1)
-te_bt['slap_v5'] = te_bt['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).round(1)
+# slap_display: per-position percentile rank of slap_raw against backtest (this is what we publish)
+wr_bt['slap_v5'] = wr_bt['slap_v5_raw'].apply(lambda x: pctl_score(x, pos_ref['WR']['raw'])).round(1)
+rb_bt['slap_v5'] = rb_bt['slap_v5_raw'].apply(lambda x: pctl_score(x, pos_ref['RB']['raw'])).round(1)
+te_bt['slap_v5'] = te_bt['slap_v5_raw'].apply(lambda x: pctl_score(x, pos_ref['TE']['raw'])).round(1)
 
-wr26['slap_v5'] = wr26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
-rb_prospects['slap_v5'] = rb_prospects['slap_v5_raw'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
-te26['slap_v5'] = te26['slap_v5_raw'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
+wr26['slap_v5'] = wr26['slap_v5_raw'].apply(lambda x: pctl_score(x, pos_ref['WR']['raw'])).round(1)
+rb_prospects['slap_v5'] = rb_prospects['slap_v5_raw'].apply(lambda x: pctl_score(x, pos_ref['RB']['raw'])).round(1)
+te26['slap_v5'] = te26['slap_v5_raw'].apply(lambda x: pctl_score(x, pos_ref['TE']['raw'])).round(1)
 
-# DC-only display score: rescale raw DC score to 1-99 using same backtest min/max
-wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
-rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
-te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
-wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: position_rescale(x, 'WR')).clip(1, 99).round(1)
-rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: position_rescale(x, 'RB')).clip(1, 99).round(1)
-te26['dc_score_final'] = te26['s_dc'].apply(lambda x: position_rescale(x, 'TE')).clip(1, 99).round(1)
+# DC-only display score: percentile rank of raw DC score against backtest DC distribution
+wr_bt['dc_score_final'] = wr_bt['s_dc'].apply(lambda x: pctl_score(x, pos_ref['WR']['dc'])).round(1)
+rb_bt['dc_score_final'] = rb_bt['s_dc'].apply(lambda x: pctl_score(x, pos_ref['RB']['dc'])).round(1)
+te_bt['dc_score_final'] = te_bt['s_dc'].apply(lambda x: pctl_score(x, pos_ref['TE']['dc'])).round(1)
+wr26['dc_score_final'] = wr26['s_dc'].apply(lambda x: pctl_score(x, pos_ref['WR']['dc'])).round(1)
+rb_prospects['dc_score_final'] = rb_prospects['s_dc'].apply(lambda x: pctl_score(x, pos_ref['RB']['dc'])).round(1)
+te26['dc_score_final'] = te26['s_dc'].apply(lambda x: pctl_score(x, pos_ref['TE']['dc'])).round(1)
 
 # Profile Score: weighted average of ONLY the non-DC components (0-100 scale)
 # Shows the quality of a player's college profile independent of draft capital.
