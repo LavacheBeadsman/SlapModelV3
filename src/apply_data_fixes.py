@@ -398,6 +398,21 @@ print(f"  Existing: {n_has_declare - declare_total_fixed}")
 print(f"  Derived: {declare_total_fixed}")
 print(f"  Coverage: {n_has_declare}/339 = {n_has_declare/339*100:.1f}%")
 
+# OVERRIDE: 4+ college seasons → NOT early declare, regardless of age
+# A player who played 4+ college seasons exhausted eligibility (true senior)
+ed_override_count = 0
+for idx, row in wr.iterrows():
+    name = row['player_name']
+    year = int(row['draft_year'])
+    num_seasons = seasons_lookup.get((name, year))
+    if num_seasons is not None and num_seasons >= 4 and row.get('early_declare') == 1:
+        wr.loc[idx, 'declare_status'] = 'STANDARD'
+        wr.loc[idx, 'early_declare'] = 0
+        ed_override_count += 1
+
+if ed_override_count > 0:
+    print(f"  Season override: {ed_override_count} WRs changed from EARLY→STANDARD (4+ college seasons)")
+
 
 # ============================================================================
 # FIX 3: RUSHING PRODUCTION

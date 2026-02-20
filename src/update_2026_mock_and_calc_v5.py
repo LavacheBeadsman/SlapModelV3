@@ -499,13 +499,29 @@ wr_prospects['teammate_score'] = wr_prospects['teammate_dc'].apply(
 n_tm = (wr_prospects['teammate_score'] == 100).sum()
 print(f"  Teammate = 100: {n_tm}/{len(wr_prospects)} WRs")
 
-# Early Declare Score: estimate from draft age
-# Players who are 21 or younger at draft time (April 2026) likely declared early
-# Players who are 22+ likely completed eligibility
-# This is an approximation — exact data would require researching each player
+# Early Declare Score: based on age AND college seasons
+# Rule: A player is early declare ONLY if they played 3 or fewer college seasons.
+# If they played 4+ seasons, early_declare = 0 regardless of age.
+# Age is used as a proxy only when college season data is unavailable.
+
+# Build seasons lookup from breakout ages file (seasons_found = CFBD college seasons)
+seasons_2026_lookup = {}
+for _, r in wr_bo.iterrows():
+    if pd.notna(r.get('seasons_found')):
+        seasons_2026_lookup[r['player_name']] = int(r['seasons_found'])
+
 wr_prospects['early_declare'] = 0
 for idx in wr_prospects.index:
+    name = wr_prospects.loc[idx, 'player_name']
     age = wr_prospects.loc[idx, 'age']
+    college_seasons = seasons_2026_lookup.get(name)
+
+    # If we have college season data, use it as the definitive check
+    if college_seasons is not None and college_seasons >= 4:
+        wr_prospects.loc[idx, 'early_declare'] = 0  # 4+ seasons = true senior
+        continue
+
+    # Age-based estimate (only if seasons < 4 or unknown)
     if pd.notna(age) and float(age) <= 21:
         wr_prospects.loc[idx, 'early_declare'] = 100
     # Also check birthdate-based age
@@ -519,6 +535,10 @@ for idx in wr_prospects.index:
                 wr_prospects.loc[idx, 'early_declare'] = 100
         except:
             pass
+
+    # Final override: if we know they played 4+ seasons, force to 0
+    if college_seasons is not None and college_seasons >= 4:
+        wr_prospects.loc[idx, 'early_declare'] = 0
 
 n_ed = (wr_prospects['early_declare'] == 100).sum()
 print(f"  Early declare = 100: {n_ed}/{len(wr_prospects)} WRs")
