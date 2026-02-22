@@ -1,0 +1,132 @@
+draft_year,player_name,position,college,pick,age,rec_yards,team_pass_attempts,weight,forty,weight_source,forty_source,full_athletic_data,draft_capital_score,breakout_score,athletic_score,slap_score,position_convert,tier,breakout_score_new
+2020,Henry Ruggs III,WR,Alabama,12,21.0,746.0,406.0,188.0,4.27,combine,combine,True,77.8,49.6,94.02173913043478,70.36326086956521,False,Good,37.0
+2020,Jerry Jeudy,WR,Alabama,15,21.0,1163.0,406.0,193.0,4.45,combine,combine,True,72.6,70.5,39.130434782608695,66.84456521739129,False,Average,49.0
+2020,CeeDee Lamb,WR,Oklahoma,17,21.0,1327.0,381.0,198.0,4.5,combine,combine,True,69.9,83.1,33.15217391304348,69.00782608695651,False,Average,67.6
+2020,Jalen Reagor,WR,TCU,21,21.0,611.0,394.0,206.0,4.47,combine,combine,True,65.8,43.8,61.95652173913043,57.52347826086956,False,Average,58.1
+2020,Justin Jefferson,WR,LSU,22,21.0,1540.0,567.0,202.0,4.43,combine,combine,True,64.9,67.5,66.84782608695652,66.10217391304349,False,Average,55.5
+2020,Brandon Aiyuk,WR,Arizona State,25,22.0,1192.0,383.0,205.0,4.5,combine,combine,True,62.7,69.2,48.91304347826087,62.90695652173913,False,Average,65.1
+2020,Tee Higgins,WR,Clemson,33,21.0,1167.0,509.0,216.0,4.54,combine,pro_day,True,58.2,58.9,57.33695652173913,58.31554347826087,False,Average,58.9
+2020,Michael Pittman Jr.,WR,USC,34,22.0,1275.0,514.0,223.0,4.52,combine,combine,True,57.8,57.7,72.82608695652173,60.01891304347826,False,Average,55.1
+2020,Laviska Shenault Jr.,WR,Colorado,42,21.0,764.0,411.0,227.0,4.58,combine,combine,True,54.9,50.1,61.41304347826087,54.196956521739125,False,Below Avg,50.9
+2020,KJ Hamler,WR,Penn State,46,21.0,904.0,369.0,178.0,4.27,combine,school,True,53.7,62.1,73.91304347826086,59.67195652173913,False,Average,61.9
+2020,Chase Claypool,WR,Notre Dame,49,22.0,1037.0,416.0,238.0,4.42,combine,combine,True,52.9,57.9,100.0,61.715,False,Average,59.4
+2020,Van Jefferson,WR,Florida,57,24.0,657.0,467.0,200.0,4.39,combine,pro_day,True,51.1,32.3,77.44565217391305,48.47184782608696,False,Below Avg,32.0
+2020,Denzel Mims,WR,Baylor,59,22.0,1020.0,444.0,207.0,4.38,combine,combine,True,50.7,54.3,92.93478260869566,58.29521739130435,False,Average,67.6
+2020,Lynn Bowden Jr.,WR,Kentucky,80,22.0,348.0,257.0,204.0,4.38,combine,high_school,True,47.6,37.1,87.5,49.91,False,Below Avg,37.1
+2020,Bryan Edwards,WR,South Carolina,81,21.0,816.0,,212.0,4.53,combine,high_school,True,47.5,,53.2608695652174,,False,,75.2
+2020,Devin Duvernay,WR,Texas,92,22.0,1386.0,470.0,200.0,4.39,combine,combine,True,46.3,66.2,77.44565217391305,57.93684782608695,False,Average,58.2
+2020,Gabriel Davis,WR,UCF,128,21.0,1241.0,457.0,216.0,4.54,combine,combine,True,43.6,67.5,57.33695652173913,54.02554347826087,False,Below Avg,61.9
+2020,Antonio Gandy-Golden,WR,Liberty,142,22.0,1396.0,452.0,223.0,4.6,combine,combine,True,42.8,68.8,46.19565217391305,52.40934782608696,False,Below Avg,62.7
+2020,Joe Reed,WR,Virginia,151,22.0,679.0,520.0,224.0,4.47,combine,combine,True,42.4,36.2,92.3913043478261,47.72869565217391,False,Below Avg,46.8
+2020,Tyler Johnson,WR,Minnesota,161,22.0,1318.0,323.0,206.0,4.7,combine,pro_day,True,41.9,86.9,5.978260869565218,52.261739130434776,False,Below Avg,69.9
+2020,Collin Johnson,WR,Texas,165,22.0,559.0,470.0,222.0,4.65,combine,pro_day,True,41.8,34.0,23.91304347826087,36.38695652173913,False,Below Avg,29.9
+2020,Quintez Cephus,WR,Wisconsin,166,22.0,901.0,351.0,202.0,4.73,combine,combine,True,41.7,59.2,1.6304347826086956,41.814565217391305,False,Below Avg,62.3
+2020,John Hightower,WR,Boise State,168,24.0,943.0,,189.0,4.43,combine,combine,True,41.7,,38.58695652173913,,False,,40.9
+2020,Isaiah Coulter,WR,Rhode Island,171,21.0,205.0,,198.0,4.45,combine,combine,True,41.5,,54.891304347826086,,False,,
+2020,Darnell Mooney,WR,Tulane,173,22.0,713.0,336.0,176.0,4.38,combine,combine,True,41.5,51.1,29.89130434782609,43.11869565217391,False,Below Avg,49.9
+2020,K.J. Osborn,WR,Miami,176,23.0,547.0,437.0,203.0,4.48,combine,combine,True,41.4,32.6,54.34782608695652,40.26217391304348,False,Below Avg,34.9
+2020,Donovan Peoples-Jones,WR,Michigan,187,21.0,438.0,410.0,212.0,4.48,combine,combine,True,41.0,34.0,68.47826086956522,42.67173913043478,False,Below Avg,41.9
+2020,Quez Watkins,WR,Southern Miss,200,22.0,1178.0,438.0,185.0,4.35,combine,combine,True,40.6,61.5,63.04347826086957,51.28152173913044,False,Below Avg,55.5
+2020,James Proche,WR,SMU,201,23.0,1225.0,503.0,201.0,4.39,combine,high_school,True,40.5,51.9,80.97826086956522,50.56173913043478,False,Below Avg,58.3
+2020,Isaiah Hodgins,WR,Oregon State,207,21.0,1171.0,420.0,210.0,4.61,combine,combine,True,40.4,69.0,20.65217391304348,47.44782608695652,False,Below Avg,75.9
+2020,Dezmon Patmon,WR,Washington State,212,22.0,762.0,710.0,225.0,4.48,combine,combine,True,40.2,31.9,90.21739130434784,44.79760869565217,False,Below Avg,33.5
+2020,Freddie Swain,WR,Florida,214,22.0,517.0,467.0,197.0,4.46,combine,combine,True,40.2,32.5,45.65217391304348,38.322826086956525,False,Below Avg,37.0
+2020,Jauan Jennings,WR,Tennessee,217,23.0,969.0,360.0,215.0,4.72,combine,combine,True,40.1,56.1,8.695652173913043,40.98934782608696,False,Below Avg,59.8
+2020,K.J. Hill,WR,Ohio State,220,22.0,636.0,406.0,196.0,4.6,combine,combine,True,40.0,40.9,9.782608695652174,35.782391304347826,False,Below Avg,39.5
+2020,Tyrie Cleveland,WR,Florida,252,22.0,351.0,467.0,209.0,4.46,combine,combine,True,39.2,26.0,69.02173913043478,39.05326086956522,False,Below Avg,21.5
+2021,Ja'Marr Chase,WR,LSU,5,21.0,1780.0,567.0,201.0,4.34,combine,combine,True,100.0,76.1,94.56521739130434,90.81978260869565,False,Elite,61.2
+2021,Jaylen Waddle,WR,Alabama,6,22.0,591.0,425.0,180.0,4.37,pro_day,high_school,True,98.3,37.7,41.30434782608695,68.54065217391305,False,Average,28.5
+2021,DeVonta Smith,WR,Alabama,10,22.0,1856.0,425.0,170.0,4.48,combine,pro_day,True,82.6,92.2,5.434782608695652,74.38521739130434,False,Good,78.7
+2021,Kadarius Toney,WR,Florida,20,22.0,984.0,473.0,193.0,4.39,combine,combine,True,66.7,50.3,64.67391304347827,60.65608695652174,False,Average,43.2
+2021,Rashod Bateman,WR,Minnesota,27,21.0,472.0,184.0,190.0,4.39,combine,combine,True,61.4,64.4,59.2391304347826,62.125869565217386,False,Average,61.2
+2021,Elijah Moore,WR,Ole Miss,34,21.0,1193.0,335.0,178.0,4.35,combine,combine,True,57.8,84.7,44.02173913043478,65.14826086956522,False,Average,60.2
+2021,Rondale Moore,WR,Purdue,49,21.0,270.0,,180.0,4.28,combine,combine,True,52.9,,75.0,,False,,24.4
+2021,D'Wayne Eskridge,WR,Western Michigan,56,24.0,768.0,155.0,190.0,4.38,combine,combine,True,51.3,82.8,62.5,64.005,False,Average,61.4
+2021,Tutu Atwell,WR,Louisville,57,21.0,625.0,315.0,155.0,4.42,combine,combine,True,51.1,52.6,2.717391304347826,44.36760869565217,False,Below Avg,53.5
+2021,Terrace Marshall Jr.,WR,LSU,59,21.0,731.0,421.0,205.0,4.4,combine,combine,True,50.7,47.6,83.69565217391305,54.56434782608696,False,Below Avg,63.2
+2021,Josh Palmer,WR,Tennessee,77,21.0,475.0,285.0,210.0,4.52,pro_day,pro_day,True,48.0,46.2,52.71739130434783,48.077608695652174,False,Below Avg,53.0
+2021,Dyami Brown,WR,North Carolina,82,21.0,1084.0,357.0,189.0,4.46,combine,pro_day,True,47.4,74.0,29.347826086956523,54.00217391304347,False,Below Avg,56.1
+2021,Amari Rodgers,WR,Clemson,85,21.0,1020.0,490.0,212.0,4.52,combine,combine,True,47.0,54.6,56.52173913043478,51.08826086956522,False,Below Avg,49.3
+2021,Nico Collins,WR,Michigan,89,22.0,729.0,410.0,215.0,4.43,combine,combine,True,46.6,44.8,89.67391304347827,52.43108695652174,False,Below Avg,49.7
+2021,Anthony Schwartz,WR,Auburn,91,21.0,652.0,362.0,186.0,4.27,combine,combine,True,46.4,48.9,91.30434782608695,54.01065217391304,False,Below Avg,53.2
+2021,Dez Fitzpatrick,WR,Louisville,109,23.0,833.0,315.0,208.0,4.43,combine,combine,True,44.8,55.3,79.34782608695652,53.65717391304347,False,Below Avg,41.5
+2021,Amon-Ra St. Brown,WR,USC,112,21.0,478.0,263.0,197.0,4.51,combine,combine,True,44.6,49.2,27.173913043478255,43.59608695652173,False,Below Avg,64.1
+2021,Jaelon Darden,WR,North Texas,129,22.0,1190.0,336.0,174.0,4.47,combine,combine,True,43.5,77.1,9.239130434782608,50.12086956521739,False,Below Avg,89.3
+2021,Tylan Wallace,WR,Oklahoma State,131,22.0,917.0,340.0,194.0,4.48,combine,combine,True,43.4,61.6,31.521739130434785,47.98826086956522,False,Below Avg,60.4
+2021,Jacob Harris,WR,UCF,141,24.0,539.0,408.0,219.0,4.39,combine,combine,True,42.9,31.1,96.7391304347826,46.84586956521739,False,Below Avg,34.9
+2021,Ihmir Smith-Marsette,WR,Iowa,157,22.0,345.0,248.0,181.0,4.43,combine,combine,True,42.1,37.7,22.82608695652174,37.66891304347826,False,Below Avg,59.0
+2021,Simi Fehoko,WR,Stanford,179,23.0,584.0,220.0,222.0,4.44,combine,combine,True,41.2,55.5,95.1086956521739,54.291304347826085,False,Below Avg,60.3
+2021,Cornell Powell,WR,Clemson,181,23.0,882.0,490.0,204.0,4.53,combine,combine,True,41.2,41.6,34.78260869565217,40.37739130434783,False,Below Avg,40.0
+2021,Frank Darby,WR,Arizona State,187,23.0,46.0,87.0,201.0,4.56,combine,combine,True,41.0,20.9,20.108695652173918,30.831304347826084,False,Below Avg,29.2
+2021,Marquez Stevenson,WR,Houston,203,23.0,307.0,297.0,180.0,4.48,combine,combine,True,40.5,29.1,10.869565217391305,32.0654347826087,False,Below Avg,38.5
+2021,Shi Smith,WR,South Carolina,204,22.0,621.0,295.0,237.0,4.79,combine,combine,True,40.4,50.8,11.956521739130435,39.77347826086956,False,Below Avg,70.8
+2021,Racey McMath,WR,LSU,205,22.0,195.0,421.0,217.0,4.36,combine,combine,True,40.4,20.8,99.45652173913044,42.39847826086956,False,Below Avg,20.4
+2021,Jalen Camp,WR,Georgia Tech,209,23.0,392.0,283.0,226.0,4.48,combine,combine,True,40.3,34.8,91.84782608695652,46.10717391304348,False,Below Avg,42.8
+2021,Seth Williams,WR,Auburn,219,21.0,744.0,362.0,211.0,4.49,combine,combine,True,40.0,54.1,64.13043478260869,48.55456521739131,False,Below Avg,62.4
+2021,Dazz Newsome,WR,North Carolina,221,22.0,684.0,357.0,190.0,4.59,combine,combine,True,40.0,47.3,7.608695652173914,37.696304347826086,False,Below Avg,39.6
+2021,Mike Strachan,WR,Charleston (WV),229,24.0,,,,,missing,missing,False,39.8,,,,False,,
+2021,Tre Nixon,WR,UCF,242,23.0,258.0,408.0,187.0,4.44,combine,combine,True,39.5,22.6,30.97826086956521,32.306739130434785,False,Below Avg,21.5
+2021,Ben Skowronek,WR,Notre Dame,249,24.0,439.0,362.0,220.0,4.62,combine,pro_day,True,39.3,29.5,33.69565217391305,35.029347826086955,False,Below Avg,39.4
+2021,Kawaan Baker,WR,South Alabama,255,23.0,656.0,350.0,210.0,4.44,combine,combine,True,39.2,42.8,79.8913043478261,46.56369565217391,False,Below Avg,55.4
+2021,Dax Milne,WR,BYU,258,22.0,1189.0,375.0,,4.54,missing,combine,False,39.1,70.3,,,False,,50.5
+2022,Drake London,WR,USC,8,21.0,1084.0,500.0,219.0,4.5,existing,training,True,88.9,56.4,71.73913043478261,74.95086956521739,False,Good,62.1
+2022,Garrett Wilson,WR,Ohio State,10,22.0,1058.0,494.0,183.0,4.38,existing,existing,True,82.6,51.5,44.83695652173913,66.05054347826086,False,Average,46.0
+2022,Chris Olave,WR,Ohio State,11,22.0,936.0,494.0,187.0,4.39,existing,existing,True,80.0,46.9,53.80434782608695,64.48565217391304,False,Average,45.8
+2022,Jameson Williams,WR,Alabama,12,21.0,1572.0,571.0,179.0,4.25,existing,estimate,True,77.8,68.2,84.23913043478261,75.40586956521739,False,Good,61.0
+2022,Jahan Dotson,WR,Penn State,16,22.0,1182.0,486.0,178.0,4.43,existing,existing,True,71.2,56.8,19.021739130434785,58.33326086956522,False,Average,69.8
+2022,Treylon Burks,WR,Arkansas,18,22.0,1104.0,314.0,225.0,4.55,existing,existing,True,68.8,76.6,67.3913043478261,71.31869565217391,False,Good,75.2
+2022,Christian Watson,WR,North Dakota State,34,23.0,801.0,255.0,208.0,4.36,existing,existing,True,57.8,63.4,95.65217391304348,65.43782608695652,False,Average,
+2022,Wan'Dale Robinson,WR,Kentucky,43,21.0,1334.0,366.0,178.0,4.44,existing,existing,True,54.5,86.4,16.847826086956523,60.01717391304347,False,Average,70.5
+2022,John Metchie,WR,Alabama,44,22.0,1142.0,571.0,187.0,4.48,existing,pro_day,True,54.2,48.9,19.565217391304348,47.14978260869565,False,Below Avg,40.3
+2022,Tyquan Thornton,WR,Baylor,50,21.0,948.0,365.0,181.0,4.28,existing,existing,True,52.7,65.1,78.80434782608695,60.95565217391304,False,Average,70.9
+2022,George Pickens,WR,Georgia,52,21.0,107.0,407.0,195.0,4.47,existing,existing,True,52.2,17.6,37.5,37.885000000000005,False,Below Avg,15.3
+2022,Alec Pierce,WR,Cincinnati,53,22.0,884.0,400.0,211.0,4.41,existing,existing,True,52.0,52.7,89.13043478260869,57.814565217391305,False,Average,48.1
+2022,Skyy Moore,WR,Western Michigan,54,21.0,1292.0,368.0,195.0,4.41,existing,existing,True,51.7,83.7,60.32608695652174,64.19391304347826,False,Average,76.7
+2022,Velus Jones Jr.,WR,Tennessee,71,25.0,807.0,375.0,204.0,4.31,combine,combine,True,48.8,38.5,97.28260869565216,52.46739130434783,False,Below Avg,34.1
+2022,Jalen Tolbert,WR,South Alabama,88,23.0,1474.0,407.0,194.0,4.49,existing,existing,True,46.7,71.2,28.80434782608696,52.59065217391304,False,Below Avg,65.1
+2022,David Bell,WR,Purdue,99,21.0,1286.0,576.0,212.0,4.65,existing,existing,True,45.7,57.7,13.586956521739127,45.08304347826087,False,Below Avg,47.8
+2022,Danny Gray,WR,SMU,105,23.0,803.0,468.0,186.0,4.33,existing,existing,True,45.2,40.2,69.56521739130434,47.10478260869565,False,Below Avg,40.9
+2022,Erik Ezukanma,WR,Texas Tech,125,22.0,705.0,388.0,209.0,4.53,existing,pro_day,True,43.8,45.5,43.47826086956522,44.34673913043478,False,Below Avg,43.2
+2022,Romeo Doubs,WR,Nevada,132,22.0,1109.0,572.0,201.0,4.5,existing,pro_day,True,43.4,47.8,38.04347826086957,44.13652173913043,False,Below Avg,50.3
+2022,Calvin Austin III,WR,Memphis,138,23.0,1149.0,445.0,170.0,4.32,combine,combine,True,43.0,54.3,36.95652173913043,46.04847826086956,False,Below Avg,51.8
+2022,Khalil Shakir,WR,Boise State,148,22.0,1117.0,410.0,196.0,4.43,existing,existing,True,42.5,62.1,58.69565217391305,51.78934782608695,False,Below Avg,62.2
+2022,Montrell Washington,WR,Samford,162,23.0,124.0,,,,missing,not_recorded,False,41.9,,,,False,,
+2022,Kyle Philips,WR,UCLA,163,23.0,739.0,335.0,189.0,4.58,existing,existing,True,41.9,48.2,8.152173913043478,39.04282608695653,False,Below Avg,56.7
+2022,Jalen Nailor,WR,Michigan State,191,23.0,695.0,400.0,186.0,4.5,existing,existing,True,40.8,40.5,14.130434782608695,36.6945652173913,False,Below Avg,39.7
+2022,Michael Woods II,WR,Oklahoma,202,22.0,400.0,403.0,204.0,4.55,existing,existing,True,40.5,30.4,26.6304347826087,34.884565217391305,False,Below Avg,25.2
+2022,Bo Melton,WR,Rutgers,229,23.0,618.0,394.0,189.0,4.34,existing,existing,True,39.8,37.8,71.19565217391305,43.80934782608695,False,Below Avg,50.7
+2022,Dareke Young,WR,Lenoir-Rhyne,233,23.0,303.0,,,,missing,not_recorded,False,39.7,,,,False,,
+2022,Samori Toure,WR,Nebraska,258,24.0,898.0,342.0,,,missing,not_recorded,False,39.1,49.6,,,False,,47.5
+2023,Jaxon Smith-Njigba,WR,Ohio State,20,21.0,43.0,410.0,196.0,4.48,existing,pro_day,True,66.7,14.4,36.41304347826087,43.85195652173913,False,Below Avg,14.1
+2023,Quentin Johnston,WR,TCU,21,22.0,1069.0,454.0,208.0,4.49,existing,pro_day,True,65.8,55.4,59.78260869565217,61.25739130434782,False,Average,44.6
+2023,Zay Flowers,WR,Boston Col.,22,22.0,1077.0,440.0,182.0,4.42,existing,existing,True,64.9,57.1,27.717391304347828,56.592608695652174,False,Average,77.8
+2023,Jordan Addison,WR,USC,23,21.0,875.0,514.0,173.0,4.49,existing,existing,True,64.1,46.9,7.065217391304348,49.524782608695645,False,Below Avg,41.8
+2023,Jonathan Mingo,WR,Mississippi,39,22.0,862.0,386.0,220.0,4.46,existing,existing,True,55.9,53.1,88.58695652173914,59.82304347826087,False,Average,48.1
+2023,Jayden Reed,WR,Michigan State,50,23.0,636.0,412.0,187.0,4.45,existing,existing,True,52.7,37.4,28.26086956521739,43.67913043478261,False,Below Avg,40.1
+2023,Rashee Rice,WR,SMU,55,23.0,1355.0,513.0,204.0,4.51,existing,existing,True,51.5,55.2,40.21739130434783,51.10260869565217,False,Below Avg,50.5
+2023,Marvin Mims,WR,Oklahoma,63,21.0,1083.0,407.0,183.0,4.38,existing,existing,True,50.0,66.4,44.83695652173913,54.96554347826087,False,Below Avg,55.5
+2023,Tank Dell,WR,Houston,69,23.0,1398.0,501.0,165.0,4.49,existing,existing,True,49.1,57.7,2.1739130434782608,45.07108695652175,False,Below Avg,63.3
+2023,Jalin Hyatt,WR,Tennessee,73,21.0,1267.0,422.0,176.0,4.4,existing,existing,True,48.5,73.3,22.28260869565217,53.24739130434783,False,Below Avg,66.5
+2023,Cedric Tillman,WR,Tennessee,74,23.0,417.0,422.0,213.0,4.54,existing,existing,True,48.3,28.4,50.54347826086957,41.671521739130434,False,Below Avg,24.1
+2023,Josh Downs,WR,North Carolina,79,22.0,1029.0,525.0,171.0,4.48,existing,existing,True,47.7,48.1,6.521739130434782,41.66326086956522,False,Below Avg,49.7
+2023,Michael Wilson,WR,Stanford,94,23.0,418.0,448.0,213.0,4.58,existing,existing,True,46.1,27.5,34.23913043478261,37.81086956521739,False,Below Avg,38.0
+2023,Tre Tucker,WR,Cincinnati,100,22.0,672.0,417.0,182.0,4.4,existing,existing,True,45.6,41.8,35.32608695652174,42.72891304347826,False,Below Avg,37.4
+2023,Derius Davis,WR,TCU,125,22.0,531.0,454.0,165.0,4.36,existing,existing,True,43.8,33.7,16.304347826086957,36.14065217391305,False,Below Avg,33.0
+2023,Charlie Jones,WR,Purdue,131,24.0,1361.0,581.0,175.0,4.43,existing,existing,True,43.4,45.6,14.673913043478262,39.86108695652174,False,Below Avg,56.8
+2023,Tyler Scott,WR,Cincinnati,133,21.0,899.0,417.0,177.0,4.44,existing,existing,True,43.3,56.1,15.217391304347828,43.56760869565217,False,Below Avg,66.5
+2023,Justin Shorter,WR,Florida,150,23.0,577.0,366.0,229.0,4.55,existing,existing,True,42.4,37.9,73.36956521739131,45.47043478260869,False,Below Avg,32.2
+2023,Dontayvion Wicks,WR,Virginia,159,22.0,430.0,342.0,206.0,4.62,existing,existing,True,42.0,35.3,13.043478260869565,35.311521739130434,False,Below Avg,46.4
+2023,Puka Nacua,WR,BYU,177,22.0,625.0,392.0,201.0,4.57,existing,combine,True,41.3,41.5,18.206521739130437,37.90597826086956,False,Below Avg,37.3
+2023,Parker Washington,WR,Penn State,185,21.0,611.0,422.0,204.0,4.49,existing,combine,True,41.0,41.7,52.17391304347826,42.92108695652173,False,Below Avg,32.8
+2023,Kayshon Boutte,WR,LSU,187,21.0,538.0,480.0,195.0,4.5,existing,existing,True,41.0,35.1,25.543478260869566,36.616521739130434,False,Below Avg,30.8
+2023,Trey Palmer,WR,Nebraska,191,22.0,1043.0,340.0,192.0,4.33,existing,existing,True,40.8,68.4,83.15217391304348,56.81282608695653,False,Average,77.0
+2023,A.T. Perry,WR,Wake Forest,195,23.0,1096.0,474.0,198.0,4.47,existing,existing,True,40.7,49.9,42.934782608695656,44.25521739130435,False,Below Avg,45.5
+2023,Elijah Higgins,WR,Stanford,197,22.0,704.0,448.0,235.0,4.54,existing,existing,True,40.6,41.0,86.41304347826086,47.61195652173913,False,Below Avg,38.4
+2023,Xavier Hutchinson,WR,Iowa State,205,23.0,1171.0,479.0,203.0,4.53,existing,existing,True,40.4,52.0,32.065217391304344,43.20978260869565,False,Below Avg,55.5
+2023,Andrei Iosivas,WR,Princeton,206,23.0,943.0,352.0,205.0,4.43,existing,existing,True,40.4,55.9,70.65217391304348,50.36282608695653,False,Below Avg,
+2023,DeMario Douglas,WR,Liberty,210,22.0,993.0,395.0,179.0,4.44,existing,existing,True,40.3,58.3,17.391304347826086,43.16369565217391,False,Below Avg,57.3
+2023,Antoine Green,WR,North Carolina,219,23.0,798.0,525.0,199.0,4.47,existing,existing,True,40.0,37.0,47.28260869565217,40.04239130434783,False,Below Avg,35.8
+2023,Colton Dowell,WR,UT Martin,228,24.0,1032.0,389.0,,,missing,not_recorded,False,39.8,50.0,,,False,,
+2023,Jalen Brooks,WR,South Carolina,244,23.0,504.0,419.0,201.0,4.69,existing,existing,True,39.4,31.8,4.3478260869565215,31.482173913043475,False,Below Avg,25.0
+2023,Ronnie Bell,WR,Michigan,253,23.0,889.0,370.0,191.0,4.54,existing,existing,True,39.2,51.4,11.41304347826087,39.301956521739136,False,Below Avg,41.2
+2023,Grant Dubose,WR,Charlotte,256,22.0,792.0,429.0,201.0,4.57,existing,existing,True,39.2,46.1,18.206521739130437,38.46597826086956,False,Below Avg,53.0

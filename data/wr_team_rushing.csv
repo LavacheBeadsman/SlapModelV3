@@ -1,0 +1,340 @@
+player_name,draft_year,pick,college,final_season,team_rush_yds,team_pass_yds,team_total_yds,has_data
+Amari Cooper,2015,4,Alabama,2014,2893.0,3890.0,6783.0,True
+Kevin White,2015,7,West Virginia,2014,2376.0,4121.0,6497.0,True
+DeVante Parker,2015,14,Louisville,2014,1855.0,3276.0,5131.0,True
+Nelson Agholor,2015,20,USC,2014,2092.0,3856.0,5948.0,True
+Breshad Perriman,2015,26,Central Florida,2014,1668.0,3059.0,4727.0,True
+Phillip Dorsett,2015,29,Miami (FL),2014,2345.0,3249.0,5594.0,True
+Devin Smith,2015,37,Ohio St.,2014,3967.0,3707.0,7674.0,True
+Dorial Green-Beckham,2015,40,Oklahoma,2014,3395.0,2646.0,6041.0,True
+Devin Funchess,2015,41,Michigan,2014,1954.0,2042.0,3996.0,True
+Tyler Lockett,2015,69,Kansas St.,2014,1745.0,3736.0,5481.0,True
+Jaelen Strong,2015,70,Arizona St.,2014,2194.0,3556.0,5750.0,True
+Chris Conley,2015,76,Georgia,2014,3352.0,2599.0,5951.0,True
+Sammie Coates,2015,87,Auburn,2014,3321.0,2984.0,6305.0,True
+Ty Montgomery,2015,94,Stanford,2014,2064.0,2988.0,5052.0,True
+Jamison Crowder,2015,105,Duke,2014,2364.0,2814.0,5178.0,True
+Justin Hardy,2015,107,East Carolina,2014,2094.0,4835.0,6929.0,True
+Vince Mayle,2015,123,Washington St.,2014,,,,False
+DeAndre Smelter,2015,132,Georgia Tech,2014,4789.0,1882.0,6671.0,True
+Rashad Greene,2015,139,Florida St.,2014,1933.0,4246.0,6179.0,True
+Stefon Diggs,2015,146,Maryland,2014,1582.0,2863.0,4445.0,True
+Tony Lippett,2015,156,Michigan St.,2014,3057.0,3453.0,6510.0,True
+JJ Nelson,2015,159,Ala-Birmingham,2014,2545.0,2637.0,5182.0,True
+Kenny Bell,2015,162,Nebraska,2014,3123.0,2757.0,5880.0,True
+Keith Mumphery,2015,175,Michigan St.,2014,3057.0,3453.0,6510.0,True
+Kaelin Clay,2015,184,Utah,2014,2475.0,2570.0,5045.0,True
+Geremy Davis,2015,186,Connecticut,2014,,,,False
+Evan Spencer,2015,187,Ohio St.,2014,3967.0,3707.0,7674.0,True
+Bud Sasser,2015,201,Missouri,2014,2490.0,2648.0,5138.0,True
+Darren Waller,2015,204,Georgia Tech,2014,4789.0,1882.0,6671.0,True
+Neal Sterling,2015,220,Monmouth,2014,,,,False
+Andre Debose,2015,221,Florida,2014,2252.0,2159.0,4411.0,True
+Da'Ron Brown,2015,233,Northern Illinois,2014,3488.0,2689.0,6177.0,True
+Dezmin Lewis,2015,234,Central Arkansas,2014,,,,False
+Mario Alford,2015,238,West Virginia,2014,2376.0,4121.0,6497.0,True
+Tre McBride,2015,245,William & Mary,2014,,,,False
+Corey Coleman,2016,15,Baylor,2015,4247.0,3764.0,8011.0,True
+Will Fuller,2016,21,Notre Dame,2015,2699.0,3364.0,6063.0,True
+Josh Doctson,2016,22,TCU,2015,2800.0,4517.0,7317.0,True
+Laquon Treadwell,2016,23,Mississippi,2015,2380.0,4351.0,6731.0,True
+Sterling Shepard,2016,40,Oklahoma,2015,2887.0,4006.0,6893.0,True
+Michael Thomas,2016,47,Ohio St.,2015,3188.0,2455.0,5643.0,True
+Tyler Boyd,2016,55,Pittsburgh,2015,2430.0,2478.0,4908.0,True
+Braxton Miller,2016,85,Ohio St.,2015,3188.0,2455.0,5643.0,True
+Leonte Carroo,2016,86,Rutgers,2015,2039.0,2485.0,4524.0,True
+Chris Moore,2016,107,Cincinnati,2015,2313.0,4679.0,6992.0,True
+Malcolm Mitchell,2016,112,Georgia,2015,2498.0,2406.0,4904.0,True
+Ricardo Louis,2016,114,Auburn,2015,2553.0,2257.0,4810.0,True
+Pharoh Cooper,2016,117,South Carolina,2015,1856.0,2490.0,4346.0,True
+Demarcus Robinson,2016,126,Florida,2015,1777.0,2899.0,4676.0,True
+Tajae Sharpe,2016,140,Massachusetts,2015,1707.0,3090.0,4797.0,True
+Jordan Payton,2016,154,UCLA,2015,2308.0,3749.0,6057.0,True
+Trevor Davis,2016,163,California,2015,1987.0,4892.0,6879.0,True
+Tyreek Hill,2016,165,West Alabama,2015,,,,False
+Rashard Higgins,2016,172,Colorado St.,2015,2571.0,2965.0,5536.0,True
+Moritz Boehringer,2016,180,,2015,,,,False
+Jakeem Grant,2016,186,Texas Tech,2015,2487.0,5046.0,7533.0,True
+Kolby Listenbee,2016,192,TCU,2015,2800.0,4517.0,7317.0,True
+Cody Core,2016,199,Mississippi,2015,2380.0,4351.0,6731.0,True
+Mike Thomas,2016,206,Southern Miss,2015,2517.0,4616.0,7133.0,True
+Aaron Burbridge,2016,213,Michigan St.,2015,2118.0,3279.0,5397.0,True
+Devin Lucien,2016,225,Arizona St.,2015,2319.0,3887.0,6206.0,True
+Demarcus Ayers,2016,229,Houston,2015,3301.0,3477.0,6778.0,True
+Daniel Braverman,2016,230,Western Michigan,2015,2648.0,3732.0,6380.0,True
+Devin Fuller,2016,238,UCLA,2015,2308.0,3749.0,6057.0,True
+Charone Peake,2016,241,Clemson,2015,3345.0,4373.0,7718.0,True
+Kenny Lawler,2016,243,California,2015,1987.0,4892.0,6879.0,True
+Corey Davis,2017,5,Western Michigan,2016,3194.0,3533.0,6727.0,True
+Mike Williams,2017,7,Clemson,2016,2546.0,5009.0,7555.0,True
+John Ross,2017,9,Washington,2016,2774.0,3623.0,6397.0,True
+Zay Jones,2017,37,East Carolina,2016,1589.0,4016.0,5605.0,True
+Curtis Samuel,2017,40,Ohio St.,2016,3188.0,2781.0,5969.0,True
+JuJu Smith-Schuster,2017,62,USC,2016,2609.0,3593.0,6202.0,True
+Cooper Kupp,2017,69,Eastern Washington,2016,,,,False
+Taywan Taylor,2017,72,Western Kentucky,2016,2609.0,4715.0,7324.0,True
+ArDarius Stewart,2017,79,Alabama,2016,3675.0,3154.0,6829.0,True
+Carlos Henderson,2017,82,Louisiana Tech,2016,2119.0,5087.0,7206.0,True
+Chris Godwin,2017,84,Penn St.,2016,2406.0,3650.0,6056.0,True
+Kenny Golladay,2017,96,Northern Illinois,2016,2877.0,2688.0,5565.0,True
+Chad Williams,2017,98,Grambling St.,2016,,,,False
+Amara Darboh,2017,106,Michigan,2016,2768.0,2756.0,5524.0,True
+Dede Westbrook,2017,110,Oklahoma,2016,3078.0,4134.0,7212.0,True
+Josh Reynolds,2017,117,Texas A&M,2016,2754.0,3317.0,6071.0,True
+Mack Hollins,2017,118,North Carolina,2016,1896.0,3811.0,5707.0,True
+Josh Malone,2017,128,Tennessee,2016,2668.0,3100.0,5768.0,True
+Ryan Switzer,2017,133,North Carolina,2016,1896.0,3811.0,5707.0,True
+Jehu Chesson,2017,139,Michigan,2016,2768.0,2756.0,5524.0,True
+Chad Hansen,2017,141,California,2016,1852.0,4306.0,6158.0,True
+Shelton Gibson,2017,166,West Virginia,2016,2969.0,3343.0,6312.0,True
+Rodney Adams,2017,170,South Florida,2016,3709.0,2941.0,6650.0,True
+Isaiah McKenzie,2017,172,Georgia,2016,2486.0,2515.0,5001.0,True
+DeAngelo Yancey,2017,175,Purdue,2016,1154.0,3539.0,4693.0,True
+Trent Taylor,2017,177,Louisiana Tech,2016,2119.0,5087.0,7206.0,True
+Robert Davis,2017,209,Georgia St.,2016,1052.0,2955.0,4007.0,True
+Stacy Coley,2017,219,Miami (FL),2016,1973.0,3564.0,5537.0,True
+David Moore,2017,226,East Central (OK),2016,,,,False
+Isaiah Ford,2017,237,Virginia Tech,2016,2563.0,3666.0,6229.0,True
+Noah Brown,2017,239,Ohio St.,2016,3188.0,2781.0,5969.0,True
+Malachi Dupre,2017,247,LSU,2016,2796.0,2281.0,5077.0,True
+D.J. Moore,2018,24,Maryland,2017,1940.0,1940.0,3880.0,True
+Calvin Ridley,2018,26,Alabama,2017,3509.0,2708.0,6217.0,True
+Courtland Sutton,2018,40,SMU,2017,2397.0,3823.0,6220.0,True
+Dante Pettis,2018,44,Washington,2017,2382.0,2889.0,5271.0,True
+Christian Kirk,2018,47,Texas A&M,2017,2023.0,3266.0,5289.0,True
+Anthony Miller,2018,51,Memphis,2017,2562.0,4355.0,6917.0,True
+James Washington,2018,60,Oklahoma St.,2017,2337.0,5059.0,7396.0,True
+DJ Chark,2018,61,LSU,2017,2699.0,2645.0,5344.0,True
+Michael Gallup,2018,81,Colorado St.,2017,2603.0,3799.0,6402.0,True
+Tre'Quan Smith,2018,91,Central Florida,2017,2583.0,4313.0,6896.0,True
+Keke Coutee,2018,103,Texas Tech,2017,1832.0,4338.0,6170.0,True
+Antonio Callaway,2018,105,Florida,2017,1720.0,1975.0,3695.0,True
+DaeSean Hamilton,2018,113,Penn St.,2017,2212.0,3772.0,5984.0,True
+Jaleel Scott,2018,132,New Mexico St.,2017,1388.0,4422.0,5810.0,True
+J'Mon Moore,2018,133,Missouri,2017,2516.0,4012.0,6528.0,True
+Justin Watson,2018,144,Pennsylvania,2017,,,,False
+Daurice Fountain,2018,159,Northern Iowa,2017,,,,False
+Jordan Lasley,2018,162,UCLA,2017,1513.0,4439.0,5952.0,True
+Marquez Valdes-Scantling,2018,174,South Florida,2017,3169.0,2987.0,6156.0,True
+Damion Ratley,2018,175,Texas A&M,2017,2023.0,3266.0,5289.0,True
+Deon Cain,2018,185,Clemson,2017,2717.0,3297.0,6014.0,True
+Ray-Ray McCloud,2018,187,Clemson,2017,2717.0,3297.0,6014.0,True
+Dylan Cantrell,2018,191,Texas Tech,2017,1832.0,4338.0,6170.0,True
+Russell Gage,2018,194,LSU,2017,2699.0,2645.0,5344.0,True
+Tremon Smith,2018,196,Central Arkansas,2017,,,,False
+Equanimeous St. Brown,2018,207,Notre Dame,2017,3501.0,2327.0,5828.0,True
+Cedrick Wilson Jr.,2018,208,Boise St.,2017,2004.0,3677.0,5681.0,True
+Braxton Berrios,2018,210,Miami (FL),2017,2104.0,3144.0,5248.0,True
+Javon Wims,2018,224,Georgia,2017,3876.0,2653.0,6529.0,True
+Marcell Ateman,2018,228,Oklahoma St.,2017,2337.0,5059.0,7396.0,True
+Richie James,2018,240,Middle Tenn. St.,2017,1850.0,3264.0,5114.0,True
+Auden Tate,2018,253,Florida St.,2017,2024.0,2551.0,4575.0,True
+Austin Proehl,2018,255,North Carolina,2017,1730.0,2705.0,4435.0,True
+Trey Quinn,2018,256,SMU,2017,2397.0,3823.0,6220.0,True
+Marquise Brown,2019,25,Oklahoma,2018,3468.0,4523.0,7991.0,True
+N'Keal Harry,2019,32,Arizona St.,2018,2393.0,3023.0,5416.0,True
+Deebo Samuel,2019,36,South Carolina,2018,2003.0,3547.0,5550.0,True
+A.J. Brown,2019,51,Mississippi,2018,1971.0,4157.0,6128.0,True
+Mecole Hardman,2019,56,Georgia,2018,3343.0,3165.0,6508.0,True
+JJ Arcega-Whiteside,2019,57,Stanford,2018,1403.0,3531.0,4934.0,True
+Parris Campbell,2019,59,Ohio St.,2018,2460.0,5020.0,7480.0,True
+Andy Isabella,2019,62,Massachusetts,2018,1674.0,3576.0,5250.0,True
+D.K. Metcalf,2019,64,Mississippi,2018,1971.0,4157.0,6128.0,True
+Diontae Johnson,2019,66,Toledo,2018,2809.0,2963.0,5772.0,True
+Jalen Hurd,2019,67,Baylor,2018,2190.0,3775.0,5965.0,True
+Terry McLaurin,2019,76,Ohio St.,2018,2460.0,5020.0,7480.0,True
+Miles Boykin,2019,93,Notre Dame,2018,2376.0,3347.0,5723.0,True
+Hakeem Butler,2019,103,Iowa St.,2018,1659.0,3132.0,4791.0,True
+Gary Jennings Jr,2019,120,West Virginia,2018,1927.0,4216.0,6143.0,True
+Riley Ridley,2019,126,Georgia,2018,3343.0,3165.0,6508.0,True
+Hunter Renfrow,2019,149,Clemson,2018,3722.0,4185.0,7907.0,True
+Darius Slayton,2019,171,Auburn,2018,2177.0,2892.0,5069.0,True
+KeeSean Johnson,2019,174,Fresno St.,2018,2161.0,3739.0,5900.0,True
+Travis Fulgham,2019,184,Old Dominion,2018,1569.0,3557.0,5126.0,True
+Juwann Winfree,2019,187,Colorado,2018,1718.0,2994.0,4712.0,True
+Marcus Green,2019,203,La-Monroe,2018,,,,False
+Kelvin Harmon,2019,206,North Carolina St.,2018,1694.0,3717.0,5411.0,True
+Scott Miller,2019,208,Bowling Green,2018,1396.0,2864.0,4260.0,True
+John Ursua,2019,236,Hawaii,2018,,,,False
+Terry Godwin,2019,237,Georgia,2018,3343.0,3165.0,6508.0,True
+Dillon Mitchell,2019,239,Oregon,2018,2335.0,3222.0,5557.0,True
+Olabisi Johnson,2019,247,Colorado St.,2018,1267.0,3659.0,4926.0,True
+Henry Ruggs III,2020,12,Alabama,2019,2191.0,4449.0,6640.0,True
+Jerry Jeudy,2020,15,Alabama,2019,2191.0,4449.0,6640.0,True
+CeeDee Lamb,2020,17,Oklahoma,2019,3361.0,4164.0,7525.0,True
+Jalen Reagor,2020,21,TCU,2019,2448.0,2444.0,4892.0,True
+Justin Jefferson,2020,22,LSU,2019,2502.0,6024.0,8526.0,True
+Brandon Aiyuk,2020,25,Arizona St.,2019,1602.0,3235.0,4837.0,True
+Tee Higgins,2020,33,Clemson,2019,3606.0,4325.0,7931.0,True
+Michael Pittman Jr.,2020,34,USC,2019,1540.0,4365.0,5905.0,True
+Laviska Shenault Jr.,2020,42,Colorado,2019,1804.0,2858.0,4662.0,True
+KJ Hamler,2020,46,Penn St.,2019,2479.0,2877.0,5356.0,True
+Chase Claypool,2020,49,Notre Dame,2019,2311.0,3278.0,5589.0,True
+Van Jefferson,2020,57,Florida,2019,1687.0,3910.0,5597.0,True
+Denzel Mims,2020,59,Baylor,2019,2329.0,3571.0,5900.0,True
+Lynn Bowden Jr.,2020,80,Kentucky,2019,3624.0,1478.0,5102.0,True
+Bryan Edwards,2020,81,South Carolina,2019,1796.0,2667.0,4463.0,True
+Devin Duvernay,2020,92,Texas,2019,2295.0,3761.0,6056.0,True
+Gabriel Davis,2020,128,Central Florida,2019,2909.0,4117.0,7026.0,True
+Antonio Gandy-Golden,2020,142,Liberty,2019,1956.0,3756.0,5712.0,True
+Joe Reed,2020,151,Virginia,2019,1697.0,3748.0,5445.0,True
+Tyler Johnson,2020,161,Minnesota,2019,2323.0,3293.0,5616.0,True
+Collin Johnson,2020,165,Texas,2019,2295.0,3761.0,6056.0,True
+Quintez Cephus,2020,166,Wisconsin,2019,3262.0,2802.0,6064.0,True
+John Hightower,2020,168,Boise St.,2019,2309.0,3664.0,5973.0,True
+Isaiah Coulter,2020,171,Rhode Island,2019,,,,False
+Darnell Mooney,2020,173,Tulane,2019,3162.0,2679.0,5841.0,True
+K.J. Osborn,2020,176,Miami (FL),2019,1535.0,3239.0,4774.0,True
+Donovan Peoples-Jones,2020,187,Michigan,2019,1959.0,3261.0,5220.0,True
+Quez Watkins,2020,200,Southern Miss,2019,1527.0,3764.0,5291.0,True
+James Proche,2020,201,SMU,2019,2317.0,4018.0,6335.0,True
+Isaiah Hodgins,2020,207,Oregon St.,2019,1881.0,3061.0,4942.0,True
+Dezmon Patmon,2020,212,Washington St.,2019,,,,False
+Freddie Swain,2020,214,Florida,2019,1687.0,3910.0,5597.0,True
+Jauan Jennings,2020,217,Tennessee,2019,1874.0,2878.0,4752.0,True
+K.J. Hill,2020,220,Ohio St.,2019,3735.0,3684.0,7419.0,True
+Tyrie Cleveland,2020,252,Florida,2019,1687.0,3910.0,5597.0,True
+Ja'Marr Chase,2021,5,LSU,2020,1219.0,3121.0,4340.0,True
+Jaylen Waddle,2021,6,Alabama,2020,2378.0,4656.0,7034.0,True
+DeVonta Smith,2021,10,Alabama,2020,2378.0,4656.0,7034.0,True
+Kadarius Toney,2021,20,Florida,2020,1576.0,4543.0,6119.0,True
+Rashod Bateman,2021,27,Minnesota,2020,1350.0,1394.0,2744.0,True
+Elijah Moore,2021,34,Mississippi,2020,2116.0,3450.0,5566.0,True
+Rondale Moore,2021,49,Purdue,2020,488.0,1854.0,2342.0,True
+D'Wayne Eskridge,2021,56,Western Michigan,2020,1175.0,1704.0,2879.0,True
+Tutu Atwell,2021,57,Louisville,2020,2199.0,2686.0,4885.0,True
+Terrace Marshall Jr.,2021,59,LSU,2020,1219.0,3121.0,4340.0,True
+Josh Palmer,2021,77,Tennessee,2020,1415.0,2047.0,3462.0,True
+Dyami Brown,2021,82,North Carolina,2020,2830.0,3617.0,6447.0,True
+Amari Rodgers,2021,85,Clemson,2020,1848.0,4182.0,6030.0,True
+Nico Collins,2021,89,Michigan,2020,787.0,1502.0,2289.0,True
+Anthony Schwartz,2021,91,Auburn,2020,1788.0,2422.0,4210.0,True
+Dez Fitzpatrick,2021,109,Louisville,2020,2199.0,2686.0,4885.0,True
+Amon-Ra St. Brown,2021,112,USC,2020,584.0,1916.0,2500.0,True
+Jaelon Darden,2021,129,North Texas,2020,2302.0,2830.0,5132.0,True
+Tylan Wallace,2021,131,Oklahoma St.,2020,2065.0,2630.0,4695.0,True
+Jacob Harris,2021,141,Central Florida,2020,2107.0,3521.0,5628.0,True
+Ihmir Smith-Marsette,2021,157,Iowa,2020,1369.0,1581.0,2950.0,True
+Simi Fehoko,2021,179,Stanford,2020,790.0,1726.0,2516.0,True
+Cornell Powell,2021,181,Clemson,2020,1848.0,4182.0,6030.0,True
+Frank Darby,2021,187,Arizona St.,2020,1058.0,777.0,1835.0,True
+Marquez Stevenson,2021,203,Houston,2020,1140.0,2126.0,3266.0,True
+Shi Smith,2021,204,South Carolina,2020,1671.0,1872.0,3543.0,True
+Racey McMath,2021,205,LSU,2020,1219.0,3121.0,4340.0,True
+Jalen Camp,2021,209,Georgia Tech,2020,1904.0,1991.0,3895.0,True
+Seth Williams,2021,219,Auburn,2020,1788.0,2422.0,4210.0,True
+Dazz Newsome,2021,221,North Carolina,2020,2830.0,3617.0,6447.0,True
+Mike Strachan,2021,229,Charleston (WV),2020,,,,False
+Tre Nixon,2021,242,Central Florida,2020,2107.0,3521.0,5628.0,True
+Ben Skowronek,2021,249,Notre Dame,2020,2537.0,2849.0,5386.0,True
+Kawaan Baker,2021,255,South Alabama,2020,1238.0,2718.0,3956.0,True
+Dax Milne,2021,258,BYU,2020,2284.0,3984.0,6268.0,True
+Drake London,2022,8,USC,2021,1747.0,3580.0,5327.0,True
+Garrett Wilson,2022,10,Ohio St.,2021,2344.0,4952.0,7296.0,True
+Chris Olave,2022,11,Ohio St.,2021,2344.0,4952.0,7296.0,True
+Jameson Williams,2022,12,Alabama,2021,2250.0,5073.0,7323.0,True
+Jahan Dotson,2022,16,Penn St.,2021,1402.0,3491.0,4893.0,True
+Treylon Burks,2022,18,Arkansas,2021,2961.0,2781.0,5742.0,True
+Christian Watson,2022,34,North Dakota St.,2021,,,,False
+Wan'Dale Robinson,2022,43,Kentucky,2021,2594.0,2933.0,5527.0,True
+John Metchie,2022,44,Alabama,2021,2250.0,5073.0,7323.0,True
+Tyquan Thornton,2022,50,Baylor,2021,3070.0,2843.0,5913.0,True
+George Pickens,2022,52,Georgia,2021,2864.0,3778.0,6642.0,True
+Alec Pierce,2022,53,Cincinnati,2021,2406.0,3377.0,5783.0,True
+Skyy Moore,2022,54,Western Michigan,2021,2783.0,3297.0,6080.0,True
+Velus Jones Jr.,2022,71,Tennessee,2021,2832.0,3342.0,6174.0,True
+Jalen Tolbert,2022,88,South Alabama,2021,1337.0,3072.0,4409.0,True
+David Bell,2022,99,Purdue,2021,1095.0,4620.0,5715.0,True
+Danny Gray,2022,105,SMU,2021,1937.0,3654.0,5591.0,True
+Erik Ezukanma,2022,125,Texas Tech,2021,2068.0,3344.0,5412.0,True
+Romeo Doubs,2022,132,Nevada,2021,1006.0,4511.0,5517.0,True
+Calvin Austin III,2022,138,Memphis,2021,1645.0,3585.0,5230.0,True
+Khalil Shakir,2022,148,Boise St.,2021,1466.0,3127.0,4593.0,True
+Montrell Washington,2022,162,Samford,2021,,,,False
+Kyle Philips,2022,163,UCLA,2021,2582.0,2714.0,5296.0,True
+Jalen Nailor,2022,191,Michigan St.,2021,2283.0,3298.0,5581.0,True
+Michael Woods II,2022,202,Oklahoma,2021,2438.0,3425.0,5863.0,True
+Bo Melton,2022,229,Rutgers,2021,1799.0,2229.0,4028.0,True
+Dareke Young,2022,233,Lenoir-Rhyne,2021,,,,False
+Samori Toure,2022,258,Nebraska,2021,2174.0,3197.0,5371.0,True
+Jaxon Smith-Njigba,2023,20,Ohio St.,2022,2501.0,3878.0,6379.0,True
+Quentin Johnston,2023,21,TCU,2022,2899.0,3926.0,6825.0,True
+Zay Flowers,2023,22,Boston Col.,2022,768.0,2965.0,3733.0,True
+Jordan Addison,2023,23,USC,2022,2396.0,4694.0,7090.0,True
+Jonathan Mingo,2023,39,Mississippi,2022,3335.0,3118.0,6453.0,True
+Jayden Reed,2023,50,Michigan St.,2022,1356.0,2880.0,4236.0,True
+Rashee Rice,2023,55,SMU,2022,2030.0,4117.0,6147.0,True
+Marvin Mims,2023,63,Oklahoma,2022,2859.0,3310.0,6169.0,True
+Tank Dell,2023,69,Houston,2022,1847.0,4082.0,5929.0,True
+Jalin Hyatt,2023,73,Tennessee,2022,2593.0,4239.0,6832.0,True
+Cedric Tillman,2023,74,Tennessee,2022,2593.0,4239.0,6832.0,True
+Josh Downs,2023,79,North Carolina,2022,2148.0,4330.0,6478.0,True
+Michael Wilson,2023,94,Stanford,2022,1288.0,3051.0,4339.0,True
+Tre Tucker,2023,100,Cincinnati,2022,1686.0,3155.0,4841.0,True
+Derius Davis,2023,125,TCU,2022,2899.0,3926.0,6825.0,True
+Charlie Jones,2023,131,Purdue,2022,1695.0,3895.0,5590.0,True
+Tyler Scott,2023,133,Cincinnati,2022,1686.0,3155.0,4841.0,True
+Justin Shorter,2023,150,Florida,2022,2603.0,2910.0,5513.0,True
+Dontayvion Wicks,2023,159,Virginia,2022,1230.0,2210.0,3440.0,True
+Puka Nacua,2023,177,BYU,2022,2293.0,3246.0,5539.0,True
+Parker Washington,2023,185,Penn St.,2022,2354.0,3283.0,5637.0,True
+Kayshon Boutte,2023,187,LSU,2022,2573.0,3770.0,6343.0,True
+Trey Palmer,2023,191,Nebraska,2022,1480.0,2650.0,4130.0,True
+A.T. Perry,2023,195,Wake Forest,2022,1711.0,4055.0,5766.0,True
+Elijah Higgins,2023,197,Stanford,2022,1288.0,3051.0,4339.0,True
+Xavier Hutchinson,2023,205,Iowa St.,2022,1286.0,3141.0,4427.0,True
+Andrei Iosivas,2023,206,Princeton,2022,,,,False
+DeMario Douglas,2023,210,Liberty,2022,2241.0,2815.0,5056.0,True
+Antoine Green,2023,219,North Carolina,2022,2148.0,4330.0,6478.0,True
+Colton Dowell,2023,228,UT Martin,2022,,,,False
+Jalen Brooks,2023,244,South Carolina,2022,1555.0,3379.0,4934.0,True
+Ronnie Bell,2023,253,Michigan,2022,3344.0,3078.0,6422.0,True
+Grant Dubose,2023,256,Charlotte,2022,1389.0,3254.0,4643.0,True
+Marvin Harrison Jr.,2024,4,Ohio St.,2023,1805.0,3498.0,5303.0,True
+Malik Nabers,2024,6,LSU,2023,2658.0,4407.0,7065.0,True
+Rome Odunze,2024,9,Washington,2023,1776.0,5155.0,6931.0,True
+Brian Thomas,2024,23,LSU,2023,2658.0,4407.0,7065.0,True
+Xavier Worthy,2024,28,Texas,2023,2638.0,4047.0,6685.0,True
+Ricky Pearsall,2024,31,Florida,2023,1819.0,3086.0,4905.0,True
+Xavier Legette,2024,32,South Carolina,2023,1021.0,3336.0,4357.0,True
+Keon Coleman,2024,33,Florida St.,2023,2102.0,3508.0,5610.0,True
+Ladd McConkey,2024,34,Georgia,2023,2676.0,4274.0,6950.0,True
+Ja'Lynn Polk,2024,37,Washington,2023,1776.0,5155.0,6931.0,True
+Adonai Mitchell,2024,52,Texas,2023,2638.0,4047.0,6685.0,True
+Malachi Corley,2024,65,Western Kentucky,2023,1386.0,3837.0,5223.0,True
+Jermaine Burton,2024,80,Alabama,2023,2417.0,3086.0,5503.0,True
+Roman Wilson,2024,84,Michigan,2023,2536.0,3205.0,5741.0,True
+Jalen McMillan,2024,92,Washington,2023,1776.0,5155.0,6931.0,True
+Luke McCaffrey,2024,100,Rice,2023,1436.0,3282.0,4718.0,True
+Troy Franklin,2024,102,Oregon,2023,2583.0,4857.0,7440.0,True
+Javon Baker,2024,110,Central Florida,2023,2967.0,3364.0,6331.0,True
+Devontez Walker,2024,113,North Carolina,2023,2505.0,3881.0,6386.0,True
+Jacob Cowing,2024,135,Arizona,2023,1816.0,4008.0,5824.0,True
+Anthony Gould,2024,142,Oregon St.,2023,2172.0,3148.0,5320.0,True
+Ainias Smith,2024,152,Texas A&M,2023,1770.0,3520.0,5290.0,True
+Jamari Thrash,2024,156,Louisville,2023,2499.0,3313.0,5812.0,True
+Bub Means,2024,170,Pittsburgh,2023,1223.0,2592.0,3815.0,True
+Jha'Quan Jackson,2024,182,Tulane,2023,2171.0,3010.0,5181.0,True
+Malik Washington,2024,184,Virginia,2023,1415.0,3010.0,4425.0,True
+Johnny Wilson,2024,185,Florida St.,2023,2102.0,3508.0,5610.0,True
+Casey Washington,2024,187,Illinois,2023,1501.0,3191.0,4692.0,True
+Tejhaun Palmer,2024,191,Ala-Birmingham,2023,1933.0,3467.0,5400.0,True
+Jordan Whittington,2024,213,Texas,2023,2638.0,4047.0,6685.0,True
+Ryan Flournoy,2024,216,SE Missouri St.,2023,,,,False
+Brenden Rice,2024,225,USC,2023,1735.0,4329.0,6064.0,True
+Devaughn Vele,2024,235,Utah,2023,2373.0,2156.0,4529.0,True
+Tahj Washington,2024,241,USC,2023,1735.0,4329.0,6064.0,True
+Cornelius Johnson,2024,253,Michigan,2023,2536.0,3205.0,5741.0,True
+Travis Hunter,2025,2,Colorado,2024,860.0,4134.0,4994.0,True
+Tetairoa McMillan,2025,8,Arizona,2024,1280.0,2975.0,4255.0,True
+Emeka Egbuka,2025,19,Ohio State,2024,2665.0,4208.0,6873.0,True
+Matthew Golden,2025,23,Texas,2024,2546.0,4459.0,7005.0,True
+Jayden Higgins,2025,34,Iowa State,2024,2248.0,3580.0,5828.0,True
+Luther Burden III,2025,39,Missouri,2024,2152.0,2916.0,5068.0,True
+Tre Harris,2025,55,Ole Miss,2024,2286.0,4561.0,6847.0,True
+Kyle Williams,2025,69,Washington State,2024,2173.0,3589.0,5762.0,True
+Isaac TeSlaa,2025,70,Arkansas,2024,2401.0,3570.0,5971.0,True
+Pat Bryant,2025,74,Illinois,2024,2003.0,2746.0,4749.0,True
+Elic Ayomanor,2025,136,Stanford,2024,1606.0,2295.0,3901.0,True
+Chimere Dike,2025,103,Florida,2024,2128.0,2934.0,5062.0,True
+Tez Johnson,2025,235,Oregon,2024,2216.0,3913.0,6129.0,True

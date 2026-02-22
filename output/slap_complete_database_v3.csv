@@ -1,0 +1,696 @@
+player_name,position,draft_year,pick,college,dc_score,breakout_age,breakout_score,production_raw,production_score,ras_raw,ras_score,ras_status,slap_score,slap_tier,delta,delta_tier,best_season_ppg,hit24,hit12,outcome_status,data_source
+Kevin White,WR,2015,7,West Virginia,94.4,19.0,90.0,,,9.7,97.2,observed,93.3,Elite (90+),-1.1,Neutral (-5 to +5),38.6,0.0,0.0,Miss,backtest
+Amari Cooper,WR,2015,4,Alabama,96.7,19.0,90.0,,,8.6,85.7,observed,92.7,Elite (90+),-4.0,Neutral (-5 to +5),253.6,1.0,1.0,Hit,backtest
+DeVante Parker,WR,2015,14,Louisville,90.1,19.0,90.0,,,9.8,97.5,observed,91.2,Elite (90+),1.1,Neutral (-5 to +5),246.2,1.0,0.0,Hit,backtest
+Phillip Dorsett,WR,2015,29,Miami (FL),83.0,19.0,90.0,,,8.5,84.7,observed,85.7,Great (80-89),2.7,Neutral (-5 to +5),105.9,0.0,0.0,Miss,backtest
+Devin Smith,WR,2015,37,Ohio St.,79.9,19.0,90.0,,,8.6,86.1,observed,84.4,Great (80-89),4.5,Neutral (-5 to +5),26.5,0.0,0.0,Miss,backtest
+Breshad Perriman,WR,2015,26,Central Florida,84.3,20.0,75.0,,,9.9,99.5,observed,83.3,Great (80-89),-1.0,Neutral (-5 to +5),138.1,0.0,0.0,Miss,backtest
+Nelson Agholor,WR,2015,20,USC,87.0,20.0,75.0,,,7.4,73.8,observed,80.8,Great (80-89),-6.2,Bust Risk (-5 to -15),222.1,1.0,0.0,Hit,backtest
+Chris Conley,WR,2015,76,Georgia,67.2,19.0,90.0,,,9.7,96.8,observed,79.6,Good (70-79),12.4,Sleeper (+5 to +15),156.5,0.0,0.0,Miss,backtest
+Tyler Lockett,WR,2015,69,Kansas St.,69.3,19.0,90.0,,,7.7,77.1,observed,77.7,Good (70-79),8.4,Sleeper (+5 to +15),274.0,1.0,1.0,Hit,backtest
+Ameer Abdullah,RB,2015,54,Nebraska,73.9,,,0.749,74.9,8.7,86.6,observed,76.2,Good (70-79),2.2,Neutral (-5 to +5),7.364705882352942,0.0,0.0,Miss,backtest
+Dorial Green-Beckham,WR,2015,40,Oklahoma,78.8,20.0,75.0,,,6.3,63.0,observed,75.1,Good (70-79),-3.7,Neutral (-5 to +5),112.9,0.0,0.0,Miss,backtest
+Melvin Gordon,RB,2015,15,Wisconsin,89.5,,,0.475,47.5,8.7,87.4,observed,74.5,Good (70-79),-15.0,Big Bust (<-15),17.435294117647057,1.0,1.0,Hit,backtest
+Jaelen Strong,WR,2015,70,Arizona St.,69.0,20.0,75.0,,,9.1,91.4,observed,74.4,Good (70-79),5.5,Sleeper (+5 to +15),50.8,0.0,0.0,Miss,backtest
+Ty Montgomery,WR,2015,94,Stanford,62.3,19.0,90.0,,,7.8,77.5,observed,74.3,Good (70-79),12.0,Sleeper (+5 to +15),179.3,0.0,0.0,Miss,backtest
+Javorius Allen,RB,2015,125,USC,54.5,,,0.996,99.6,8.0,80.2,observed,74.1,Good (70-79),19.6,Big Sleeper (+15),9.770588235294117,0.0,0.0,Miss,backtest
+Devin Funchess,WR,2015,41,Michigan,78.4,20.0,75.0,,,5.3,52.6,observed,73.3,Good (70-79),-5.1,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Sammie Coates,WR,2015,87,Auburn,64.1,20.0,75.0,,,9.9,98.6,observed,73.1,Good (70-79),9.0,Sleeper (+5 to +15),83.3,0.0,0.0,Miss,backtest
+Jay Ajayi,RB,2015,149,Boise St.,49.0,,,1.186,100.0,8.6,86.3,observed,72.4,Good (70-79),23.4,Big Sleeper (+15),13.105882352941178,1.0,1.0,Hit,backtest
+Kenny Bell,WR,2015,162,Nebraska,46.2,19.0,90.0,,,9.2,92.0,observed,68.4,Average (60-69),22.2,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Justin Hardy,WR,2015,107,East Carolina,58.9,19.0,90.0,,,4.9,48.7,observed,68.3,Average (60-69),9.4,Sleeper (+5 to +15),69.1,0.0,0.0,Miss,backtest
+Todd Gurley,RB,2015,10,Georgia,92.4,,,,30.0,,66.5,imputed,66.7,Average (60-69),-25.7,Big Bust (<-15),23.8,1.0,1.0,Hit,backtest
+Geremy Davis,WR,2015,186,Connecticut,41.1,19.0,90.0,,,9.7,96.6,observed,66.6,Average (60-69),25.4,Big Sleeper (+15),6.8,0.0,0.0,Miss,backtest
+Rashad Greene,WR,2015,139,Florida St.,51.2,19.0,90.0,,,5.4,53.7,observed,65.2,Average (60-69),13.9,Sleeper (+5 to +15),40.3,0.0,0.0,Miss,backtest
+JJ Nelson,WR,2015,159,Ala-Birmingham,46.8,19.0,90.0,,,,68.9,imputed,65.2,Average (60-69),18.4,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+T.J. Yeldon,RB,2015,36,Alabama,80.3,,,0.399,39.9,7.0,70.5,observed,64.7,Average (60-69),-15.6,Big Bust (<-15),10.18235294117647,0.0,0.0,Miss,backtest
+Evan Spencer,WR,2015,187,Ohio St.,40.9,19.0,90.0,,,8.4,83.7,observed,64.5,Average (60-69),23.6,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Tevin Coleman,RB,2015,73,Indiana,68.1,,,0.45,45.0,9.7,97.2,observed,64.4,Average (60-69),-3.7,Neutral (-5 to +5),13.758823529411766,1.0,1.0,Hit,backtest
+Mike Davis,RB,2015,126,South Carolina,54.3,,,0.786,78.6,6.1,60.9,observed,63.8,Average (60-69),9.5,Sleeper (+5 to +15),12.147058823529411,1.0,0.0,Hit,backtest
+Jamison Crowder,WR,2015,105,Duke,59.4,19.0,90.0,,,1.3,13.1,observed,63.2,Average (60-69),3.8,Neutral (-5 to +5),197.7,0.0,0.0,Miss,backtest
+Andre Debose,WR,2015,221,Florida,34.2,19.0,90.0,,,8.1,81.3,observed,60.8,Average (60-69),26.6,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Stefon Diggs,WR,2015,146,Maryland,49.7,20.0,75.0,,,5.7,56.6,observed,59.6,Below Avg (50-59),9.9,Sleeper (+5 to +15),391.7000000000001,1.0,1.0,Hit,backtest
+Neal Sterling,WR,2015,220,Monmouth,34.4,19.0,90.0,,,6.6,66.2,observed,58.6,Below Avg (50-59),24.2,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+DeAndre Smelter,WR,2015,132,Georgia Tech,52.9,21.0,60.0,,,,68.9,imputed,57.8,Below Avg (50-59),4.9,Neutral (-5 to +5),3.3000000000000003,0.0,0.0,Miss,backtest
+Da'Ron Brown,WR,2015,233,Northern Illinois,31.9,19.0,90.0,,,,68.9,imputed,57.8,Below Avg (50-59),25.9,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+David Johnson,RB,2015,86,Northern Iowa,64.4,,,,30.0,9.8,98.4,observed,57.5,Below Avg (50-59),-6.9,Bust Risk (-5 to -15),23.988235294117647,1.0,1.0,Hit,backtest
+Tre McBride,WR,2015,245,William & Mary,29.7,,79.7,,,9.6,95.6,observed,57.1,Below Avg (50-59),27.4,Big Sleeper (+15),22.4,0.0,0.0,Miss,backtest
+Bud Sasser,WR,2015,201,Missouri,38.1,20.0,75.0,,,7.5,74.5,observed,56.5,Below Avg (50-59),18.4,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Tony Lippett,WR,2015,156,Michigan St.,47.5,20.0,75.0,,,4.0,39.9,observed,56.0,Below Avg (50-59),8.5,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Kaelin Clay,WR,2015,184,Utah,41.5,19.0,90.0,,,2.2,21.8,observed,55.5,Below Avg (50-59),14.0,Sleeper (+5 to +15),23.4,0.0,0.0,Miss,backtest
+Vince Mayle,WR,2015,123,Washington St.,55.0,21.0,60.0,,,4.6,46.3,observed,55.4,Below Avg (50-59),0.5,Neutral (-5 to +5),6.2,0.0,0.0,Miss,backtest
+Darren Waller,WR,2015,204,Georgia Tech,37.5,20.0,75.0,,,,68.9,imputed,55.3,Below Avg (50-59),17.8,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Mario Alford,WR,2015,238,West Virginia,31.0,19.0,90.0,,,5.4,54.0,observed,55.1,Below Avg (50-59),24.1,Big Sleeper (+15),2.5,0.0,0.0,Miss,backtest
+David Cobb,RB,2015,138,Minnesota,51.5,,,0.638,63.8,4.5,45.5,observed,54.9,Below Avg (50-59),3.4,Neutral (-5 to +5),1.258823529411765,0.0,0.0,Miss,backtest
+Keith Mumphery,WR,2015,175,Michigan St.,43.4,20.0,75.0,,,4.4,43.6,observed,54.5,Below Avg (50-59),11.1,Sleeper (+5 to +15),26.9,0.0,0.0,Miss,backtest
+Dezmin Lewis,WR,2015,234,Central Arkansas,31.7,19.0,90.0,,,4.8,47.7,observed,54.5,Below Avg (50-59),22.8,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Duke Johnson,RB,2015,77,Miami (FL),66.9,,,,30.0,7.0,69.8,observed,54.4,Below Avg (50-59),-12.5,Bust Risk (-5 to -15),12.711764705882352,1.0,0.0,Hit,backtest
+Karlos Williams,RB,2015,155,Florida St.,47.7,,,0.514,51.4,6.4,64.1,observed,51.4,Below Avg (50-59),3.8,Neutral (-5 to +5),7.311764705882353,0.0,0.0,Miss,backtest
+Josh Robinson,RB,2015,205,Mississippi St.,37.3,,,0.875,87.5,1.1,11.0,observed,50.9,Below Avg (50-59),13.6,Sleeper (+5 to +15),0.6588235294117647,0.0,0.0,Miss,backtest
+Jeremy Langford,RB,2015,106,Michigan St.,59.2,,,0.155,15.5,7.5,75.2,observed,46.3,Poor (<50),-12.9,Bust Risk (-5 to -15),8.68235294117647,0.0,0.0,Miss,backtest
+Cameron Artis-Payne,RB,2015,174,Auburn,43.6,,,0.443,44.3,6.0,60.0,observed,46.3,Poor (<50),2.7,Neutral (-5 to +5),2.170588235294117,0.0,0.0,Miss,backtest
+Matt Jones,RB,2015,95,Florida,62.0,,,0.201,20.1,5.2,52.3,observed,45.9,Poor (<50),-16.1,Big Bust (<-15),6.847058823529412,0.0,0.0,Miss,backtest
+Marcus Murphy,RB,2015,230,Missouri,32.5,,,0.511,51.1,0.2,2.4,observed,34.5,Poor (<50),2.0,Neutral (-5 to +5),2.2705882352941176,0.0,0.0,Miss,backtest
+Kenny Hilliard,RB,2015,235,LSU,31.6,,,0.127,12.7,0.9,9.1,observed,21.6,Poor (<50),-10.0,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Corey Coleman,WR,2016,15,Baylor,89.5,18.0,100.0,,,9.7,96.6,observed,94.3,Elite (90+),4.7,Neutral (-5 to +5),93.3,0.0,0.0,Miss,backtest
+Josh Doctson,WR,2016,22,TCU,86.1,18.0,100.0,,,9.4,94.1,observed,92.2,Elite (90+),6.1,Sleeper (+5 to +15),119.8,0.0,0.0,Miss,backtest
+Will Fuller,WR,2016,21,Notre Dame,86.6,18.0,100.0,,,7.2,71.7,observed,89.0,Great (80-89),2.5,Neutral (-5 to +5),188.9,0.0,0.0,Miss,backtest
+Michael Thomas,WR,2016,47,Ohio St.,76.3,18.0,100.0,,,9.1,91.1,observed,86.8,Great (80-89),10.5,Sleeper (+5 to +15),388.6,1.0,1.0,Hit,backtest
+Sterling Shepard,WR,2016,40,Oklahoma,78.8,18.0,100.0,,,7.6,76.2,observed,85.8,Great (80-89),7.0,Sleeper (+5 to +15),194.7,0.0,0.0,Miss,backtest
+Ezekiel Elliott,RB,2016,4,Ohio St.,96.7,,,0.634,63.4,8.7,86.5,observed,83.5,Great (80-89),-13.2,Bust Risk (-5 to -15),21.8,1.0,1.0,Hit,backtest
+Braxton Miller,WR,2016,85,Ohio St.,64.7,18.0,100.0,,,8.6,85.9,observed,80.2,Great (80-89),15.5,Big Sleeper (+15),41.3,0.0,0.0,Miss,backtest
+Tyler Boyd,WR,2016,55,Pittsburgh,73.6,18.0,100.0,,,4.3,42.7,observed,78.2,Good (70-79),4.6,Neutral (-5 to +5),222.9,1.0,0.0,Hit,backtest
+Chris Moore,WR,2016,107,Cincinnati,58.9,18.0,100.0,,,8.0,79.6,observed,76.4,Good (70-79),17.5,Big Sleeper (+15),115.1,0.0,0.0,Miss,backtest
+Malcolm Mitchell,WR,2016,112,Georgia,57.7,18.0,100.0,,,8.1,80.8,observed,75.9,Good (70-79),18.3,Big Sleeper (+15),110.6,0.0,0.0,Miss,backtest
+Laquon Treadwell,WR,2016,23,Mississippi,85.6,20.0,75.0,,,3.3,33.3,observed,74.1,Good (70-79),-11.6,Bust Risk (-5 to -15),82.4,0.0,0.0,Miss,backtest
+Tyreek Hill,WR,2016,165,West Alabama,45.5,18.0,100.0,,,9.4,93.9,observed,71.8,Good (70-79),26.3,Big Sleeper (+15),393.6,1.0,1.0,Hit,backtest
+C.J. Prosise,RB,2016,90,Notre Dame,63.3,,,0.8,80.0,8.1,80.7,observed,71.8,Good (70-79),8.4,Sleeper (+5 to +15),3.588235294117647,0.0,0.0,Miss,backtest
+Trevor Davis,WR,2016,163,California,45.9,18.0,100.0,,,9.1,91.4,observed,71.7,Good (70-79),25.7,Big Sleeper (+15),30.4,0.0,0.0,Miss,backtest
+Demarcus Robinson,WR,2016,126,Florida,54.3,18.0,100.0,,,5.9,58.6,observed,70.9,Good (70-79),16.7,Big Sleeper (+15),137.2,0.0,0.0,Miss,backtest
+Kenneth Dixon,RB,2016,134,Louisiana Tech,52.4,,,0.975,97.5,6.9,68.6,observed,70.6,Good (70-79),18.2,Big Sleeper (+15),6.023529411764706,0.0,0.0,Miss,backtest
+Jordan Payton,WR,2016,154,UCLA,47.9,18.0,100.0,,,6.8,68.4,observed,69.2,Average (60-69),21.3,Big Sleeper (+15),1.3,0.0,0.0,Miss,backtest
+Leonte Carroo,WR,2016,86,Rutgers,64.4,20.0,75.0,,,7.0,69.6,observed,68.9,Average (60-69),4.5,Neutral (-5 to +5),18.8,0.0,0.0,Miss,backtest
+Ricardo Louis,WR,2016,114,Auburn,57.2,20.0,75.0,,,9.2,92.3,observed,68.7,Average (60-69),11.5,Sleeper (+5 to +15),62.7,0.0,0.0,Miss,backtest
+Devontae Booker,RB,2016,136,Utah,51.9,,,0.903,90.3,,66.5,imputed,67.6,Average (60-69),15.6,Big Sleeper (+15),8.476470588235296,0.0,0.0,Miss,backtest
+Pharoh Cooper,WR,2016,117,South Carolina,56.4,18.0,100.0,,,2.1,20.6,observed,66.3,Average (60-69),9.9,Sleeper (+5 to +15),55.5,0.0,0.0,Miss,backtest
+Kenyan Drake,RB,2016,73,Alabama,68.1,,,0.619,61.9,7.0,69.8,observed,66.2,Average (60-69),-1.9,Neutral (-5 to +5),12.411764705882351,1.0,0.0,Hit,backtest
+Cody Core,WR,2016,199,Mississippi,38.5,18.0,100.0,,,7.4,73.8,observed,65.3,Average (60-69),26.8,Big Sleeper (+15),37.0,0.0,0.0,Miss,backtest
+Jakeem Grant,WR,2016,186,Texas Tech,41.1,18.0,100.0,,,6.4,63.9,observed,65.1,Average (60-69),24.0,Big Sleeper (+15),81.3,0.0,0.0,Miss,backtest
+Tajae Sharpe,WR,2016,140,Massachusetts,51.0,19.0,90.0,,,5.3,53.0,observed,65.0,Average (60-69),13.9,Sleeper (+5 to +15),105.3,0.0,0.0,Miss,backtest
+Mike Thomas,WR,2016,206,Southern Miss,37.1,18.0,100.0,,,7.7,76.6,observed,65.0,Average (60-69),27.9,Big Sleeper (+15),30.3,0.0,0.0,Miss,backtest
+Moritz Boehringer,WR,2016,180,,42.4,,79.7,,,10.0,99.8,observed,64.0,Average (60-69),21.7,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Devin Fuller,WR,2016,238,UCLA,31.0,18.0,100.0,,,8.3,83.4,observed,63.0,Average (60-69),32.0,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Derrick Henry,RB,2016,45,Alabama,77.0,,,0.204,20.4,8.8,87.7,observed,58.8,Below Avg (50-59),-18.2,Big Bust (<-15),22.43529411764706,1.0,1.0,Hit,backtest
+Dwayne Washington,RB,2016,236,Washington,31.4,,,0.795,79.5,9.8,98.2,observed,58.3,Below Avg (50-59),26.9,Big Sleeper (+15),2.864705882352941,0.0,0.0,Miss,backtest
+Devin Lucien,WR,2016,225,Arizona St.,33.4,19.0,90.0,,,6.7,66.8,observed,58.2,Below Avg (50-59),24.8,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+DeAndre Washington,RB,2016,143,Texas Tech,50.3,,,0.621,62.1,7.3,73.1,observed,57.9,Below Avg (50-59),7.5,Sleeper (+5 to +15),7.170588235294118,0.0,0.0,Miss,backtest
+Charone Peake,WR,2016,241,Clemson,30.4,19.0,90.0,,,5.8,57.6,observed,55.4,Below Avg (50-59),24.9,Big Sleeper (+15),37.6,0.0,0.0,Miss,backtest
+Aaron Burbridge,WR,2016,213,Michigan St.,35.7,19.0,90.0,,,2.8,27.8,observed,53.5,Below Avg (50-59),17.8,Big Sleeper (+15),15.8,0.0,0.0,Miss,backtest
+Daniel Braverman,WR,2016,230,Western Michigan,32.5,19.0,90.0,,,2.6,25.6,observed,51.6,Below Avg (50-59),19.1,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Rashard Higgins,WR,2016,172,Colorado St.,44.0,20.0,75.0,,,1.6,16.5,observed,50.7,Below Avg (50-59),6.7,Sleeper (+5 to +15),139.5,0.0,0.0,Miss,backtest
+Tyler Ervin,RB,2016,119,San Jose St.,55.9,,,,30.0,7.7,77.0,observed,50.0,Below Avg (50-59),-5.9,Bust Risk (-5 to -15),1.535294117647059,0.0,0.0,Miss,backtest
+Darius Jackson,RB,2016,216,Eastern Michigan,35.2,,,0.491,49.1,9.8,98.5,observed,49.6,Poor (<50),14.4,Sleeper (+5 to +15),0.0941176470588235,0.0,0.0,Miss,backtest
+Paul Perkins,RB,2016,149,UCLA,49.0,,,0.475,47.5,5.4,53.9,observed,49.2,Poor (<50),0.2,Neutral (-5 to +5),5.029411764705882,0.0,0.0,Miss,backtest
+Wendell Smallwood,RB,2016,153,West Virginia,48.1,,,0.373,37.3,7.1,70.9,observed,47.7,Poor (<50),-0.4,Neutral (-5 to +5),7.547058823529412,0.0,0.0,Miss,backtest
+Kolby Listenbee,WR,2016,192,TCU,39.9,22.0,45.0,,,7.9,79.1,observed,47.6,Poor (<50),7.7,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Kenny Lawler,WR,2016,243,California,30.1,20.0,75.0,,,2.1,20.9,observed,44.4,Poor (<50),14.3,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Demarcus Ayers,WR,2016,229,Houston,32.7,20.0,75.0,,,0.9,8.9,observed,43.9,Poor (<50),11.2,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Keenan Reynolds,RB,2016,182,Navy,41.9,,,0.385,38.5,4.5,45.5,observed,41.3,Poor (<50),-0.7,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Jordan Howard,RB,2016,150,Indiana,48.8,,,0.23,23.0,5.4,54.1,observed,40.5,Poor (<50),-8.2,Bust Risk (-5 to -15),13.53529411764706,1.0,1.0,Hit,backtest
+Jonathan Williams,RB,2016,156,Arkansas,47.5,,,0.181,18.1,6.4,64.0,observed,39.7,Poor (<50),-7.8,Bust Risk (-5 to -15),2.3764705882352946,0.0,0.0,Miss,backtest
+Alex Collins,RB,2016,171,Arkansas,44.2,,,0.254,25.4,3.0,29.6,observed,35.4,Poor (<50),-8.8,Bust Risk (-5 to -15),10.058823529411764,1.0,0.0,Hit,backtest
+Kelvin Taylor,RB,2016,211,Florida,36.1,,,0.37,37.0,2.7,26.6,observed,35.0,Poor (<50),-1.1,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Zac Brooks,RB,2016,247,Clemson,29.3,,,0.214,21.4,7.9,79.4,observed,34.1,Poor (<50),4.7,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Keith Marshall,RB,2016,242,Georgia,30.3,,,0.086,8.6,9.3,93.5,observed,32.2,Poor (<50),1.9,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Daniel Lasco,RB,2016,237,California,31.2,,,0.044,4.4,9.6,96.1,observed,31.5,Poor (<50),0.3,Neutral (-5 to +5),0.3705882352941176,0.0,0.0,Miss,backtest
+John Ross,WR,2017,9,Washington,93.0,18.0,100.0,,,9.5,95.0,observed,95.8,Elite (90+),2.7,Neutral (-5 to +5),95.0,0.0,0.0,Miss,backtest
+Christian McCaffrey,RB,2017,8,Stanford,93.7,,,1.02,100.0,8.5,85.2,observed,94.6,Elite (90+),0.9,Neutral (-5 to +5),28.25294117647059,1.0,1.0,Hit,backtest
+Corey Davis,WR,2017,5,Western Michigan,95.9,18.0,100.0,,,,68.9,imputed,93.3,Elite (90+),-2.6,Neutral (-5 to +5),191.4,0.0,0.0,Miss,backtest
+Mike Williams,WR,2017,7,Clemson,94.4,18.0,100.0,,,7.2,72.4,observed,93.1,Elite (90+),-1.3,Neutral (-5 to +5),246.6,1.0,0.0,Hit,backtest
+Zay Jones,WR,2017,37,East Carolina,79.9,18.0,100.0,,,9.7,97.1,observed,89.5,Great (80-89),9.6,Sleeper (+5 to +15),232.8,1.0,0.0,Hit,backtest
+Joe Mixon,RB,2017,48,Oklahoma,75.9,,,1.401,100.0,9.5,94.6,observed,87.2,Great (80-89),11.2,Sleeper (+5 to +15),20.51764705882353,1.0,1.0,Hit,backtest
+Curtis Samuel,WR,2017,40,Ohio St.,78.8,18.0,100.0,,,7.5,74.5,observed,85.6,Great (80-89),6.8,Sleeper (+5 to +15),212.1,0.0,0.0,Miss,backtest
+Taywan Taylor,WR,2017,72,Western Kentucky,68.4,18.0,100.0,,,8.7,87.0,observed,82.2,Great (80-89),13.9,Sleeper (+5 to +15),87.6,0.0,0.0,Miss,backtest
+Alvin Kamara,RB,2017,67,Tennessee,69.9,,,1.034,100.0,8.1,80.8,observed,82.1,Great (80-89),12.2,Sleeper (+5 to +15),24.170588235294115,1.0,1.0,Hit,backtest
+Dalvin Cook,RB,2017,41,Florida St.,78.4,,,1.159,100.0,4.7,46.5,observed,81.2,Great (80-89),2.8,Neutral (-5 to +5),19.87058823529412,1.0,1.0,Hit,backtest
+Chad Williams,WR,2017,98,Grambling St.,61.2,18.0,100.0,,,9.0,90.1,observed,79.1,Good (70-79),17.9,Big Sleeper (+15),41.0,0.0,0.0,Miss,backtest
+ArDarius Stewart,WR,2017,79,Alabama,66.4,18.0,100.0,,,,68.9,imputed,78.5,Good (70-79),12.2,Sleeper (+5 to +15),16.900000000000002,0.0,0.0,Miss,backtest
+Leonard Fournette,RB,2017,4,LSU,96.7,,,0.49,49.0,8.0,80.4,observed,77.6,Good (70-79),-19.2,Big Bust (<-15),17.04705882352941,1.0,1.0,Hit,backtest
+Josh Reynolds,WR,2017,117,Texas A&M,56.4,18.0,100.0,,,9.1,91.0,observed,76.9,Good (70-79),20.4,Big Sleeper (+15),156.0,0.0,0.0,Miss,backtest
+Cooper Kupp,WR,2017,69,Eastern Washington,69.3,19.5,90.0,,,5.0,50.0,observed,73.6,Good (70-79),4.4,Neutral (-5 to +5),554.8,1.0,1.0,Hit,backtest
+Kareem Hunt,RB,2017,86,Toledo,64.4,,,0.953,95.3,5.2,51.5,observed,73.3,Good (70-79),8.9,Sleeper (+5 to +15),18.17058823529412,1.0,1.0,Hit,backtest
+Carlos Henderson,WR,2017,82,Louisiana Tech,65.5,19.0,90.0,,,5.8,57.5,observed,72.9,Good (70-79),7.4,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Josh Malone,WR,2017,128,Tennessee,53.8,18.0,100.0,,,7.0,70.3,observed,72.4,Good (70-79),18.6,Big Sleeper (+15),18.5,0.0,0.0,Miss,backtest
+Jehu Chesson,WR,2017,139,Michigan,51.2,19.0,90.0,,,7.9,79.4,observed,69.0,Average (60-69),17.8,Big Sleeper (+15),3.8,0.0,0.0,Miss,backtest
+James Conner,RB,2017,105,Pittsburgh,59.4,,,0.932,93.2,4.3,43.3,observed,68.8,Average (60-69),9.4,Sleeper (+5 to +15),16.470588235294116,1.0,1.0,Hit,backtest
+Jeremy McNichols,RB,2017,162,Boise St.,46.2,,,1.167,100.0,,66.5,imputed,68.1,Average (60-69),21.9,Big Sleeper (+15),4.329411764705883,0.0,0.0,Miss,backtest
+Chris Godwin,WR,2017,84,Penn St.,65.0,21.0,60.0,,,9.7,96.6,observed,68.0,Average (60-69),3.0,Neutral (-5 to +5),276.1,1.0,1.0,Hit,backtest
+Robert Davis,WR,2017,209,Georgia St.,36.5,18.0,100.0,,,9.8,97.9,observed,67.9,Average (60-69),31.4,Big Sleeper (+15),3.7,0.0,0.0,Miss,backtest
+JuJu Smith-Schuster,WR,2017,62,USC,71.4,21.0,60.0,,,,68.9,imputed,67.0,Average (60-69),-4.4,Neutral (-5 to +5),296.90000000000003,1.0,1.0,Hit,backtest
+DeAngelo Yancey,WR,2017,175,Purdue,43.4,19.0,90.0,,,9.1,90.8,observed,66.8,Average (60-69),23.4,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Rodney Adams,WR,2017,170,South Florida,44.4,18.0,100.0,,,6.0,60.2,observed,66.3,Average (60-69),21.8,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Kenny Golladay,WR,2017,96,Northern Illinois,61.7,21.0,60.0,,,8.9,89.4,observed,65.3,Average (60-69),3.5,Neutral (-5 to +5),248.0,1.0,1.0,Hit,backtest
+Ryan Switzer,WR,2017,133,North Carolina,52.6,19.0,90.0,,,4.8,48.3,observed,65.1,Average (60-69),12.4,Sleeper (+5 to +15),69.4,0.0,0.0,Miss,backtest
+David Moore,WR,2017,226,East Central (OK),33.3,18.0,100.0,,,9.0,89.9,observed,65.1,Average (60-69),31.9,Big Sleeper (+15),120.3,0.0,0.0,Miss,backtest
+Amara Darboh,WR,2017,106,Michigan,59.2,21.0,60.0,,,9.6,96.0,observed,65.0,Average (60-69),5.8,Sleeper (+5 to +15),15.1,0.0,0.0,Miss,backtest
+Donnel Pumphrey,RB,2017,132,San Diego St.,52.9,,,0.902,90.2,4.0,40.1,observed,64.0,Average (60-69),11.2,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Trent Taylor,WR,2017,177,Louisiana Tech,43.0,18.0,100.0,,,4.0,40.0,observed,62.5,Average (60-69),19.5,Big Sleeper (+15),98.0,0.0,0.0,Miss,backtest
+Noah Brown,WR,2017,239,Ohio St.,30.8,18.0,100.0,,,6.9,68.8,observed,60.7,Average (60-69),29.9,Big Sleeper (+15),122.4,0.0,0.0,Miss,backtest
+Marlon Mack,RB,2017,143,South Florida,50.3,,,0.634,63.4,8.8,87.8,observed,60.5,Average (60-69),10.2,Sleeper (+5 to +15),12.123529411764707,1.0,0.0,Hit,backtest
+Shelton Gibson,WR,2017,166,West Virginia,45.3,19.0,90.0,,,4.0,39.8,observed,60.1,Average (60-69),14.8,Sleeper (+5 to +15),5.800000000000001,0.0,0.0,Miss,backtest
+Aaron Jones,RB,2017,182,Texas-El Paso,41.9,,,0.713,71.3,9.2,92.1,observed,59.7,Below Avg (50-59),17.8,Big Sleeper (+15),21.15882352941177,1.0,1.0,Hit,backtest
+Mack Hollins,WR,2017,118,North Carolina,56.2,21.0,60.0,,,,68.9,imputed,59.4,Below Avg (50-59),3.2,Neutral (-5 to +5),154.0,0.0,0.0,Miss,backtest
+Isaiah Ford,WR,2017,237,Virginia Tech,31.2,18.0,100.0,,,5.0,50.5,observed,58.2,Below Avg (50-59),27.0,Big Sleeper (+15),55.6,0.0,0.0,Miss,backtest
+Chad Hansen,WR,2017,141,California,50.8,21.0,60.0,,,7.4,73.9,observed,57.5,Below Avg (50-59),6.7,Sleeper (+5 to +15),46.6,0.0,0.0,Miss,backtest
+Dede Westbrook,WR,2017,110,Oklahoma,58.2,21.0,60.0,,,4.8,48.4,observed,57.3,Below Avg (50-59),-0.8,Neutral (-5 to +5),175.5,0.0,0.0,Miss,backtest
+Stacy Coley,WR,2017,219,Miami (FL),34.6,19.0,90.0,,,4.5,44.6,observed,55.5,Below Avg (50-59),20.9,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Elijah McGuire,RB,2017,188,Louisiana,40.7,,,0.696,69.6,,66.5,imputed,54.7,Below Avg (50-59),14.0,Sleeper (+5 to +15),5.052941176470589,0.0,0.0,Miss,backtest
+Isaiah McKenzie,WR,2017,172,Georgia,44.0,21.0,60.0,,,,68.9,imputed,53.3,Below Avg (50-59),9.3,Sleeper (+5 to +15),122.8,0.0,0.0,Miss,backtest
+T.J. Logan,RB,2017,179,North Carolina,42.6,,,0.533,53.3,7.6,75.6,observed,51.3,Below Avg (50-59),8.7,Sleeper (+5 to +15),0.6411764705882353,0.0,0.0,Miss,backtest
+D'Onta Foreman,RB,2017,89,Texas,63.6,,,0.187,18.7,7.8,78.2,observed,50.1,Below Avg (50-59),-13.5,Bust Risk (-5 to -15),7.705882352941177,0.0,0.0,Miss,backtest
+Joe Williams,RB,2017,121,Utah,55.5,,,0.268,26.8,7.8,77.8,observed,48.8,Poor (<50),-6.7,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Malachi Dupre,WR,2017,247,LSU,29.3,21.0,60.0,,,7.2,72.0,observed,46.5,Poor (<50),17.1,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Samaje Perine,RB,2017,114,Oklahoma,57.2,,,0.276,27.6,4.9,49.4,observed,45.7,Poor (<50),-11.5,Bust Risk (-5 to -15),9.729411764705883,0.0,0.0,Miss,backtest
+Matthew Dayes,RB,2017,252,North Carolina St.,28.4,,,0.61,61.0,,66.5,imputed,45.5,Poor (<50),17.1,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Tarik Cohen,RB,2017,119,North Carolina A&T,55.9,,,,30.0,3.9,39.2,observed,44.4,Poor (<50),-11.6,Bust Risk (-5 to -15),13.858823529411763,1.0,1.0,Hit,backtest
+Wayne Gallman,RB,2017,140,Clemson,51.0,,,0.242,24.2,6.3,62.8,observed,43.4,Poor (<50),-7.6,Bust Risk (-5 to -15),8.035294117647059,0.0,0.0,Miss,backtest
+Brian Hill,RB,2017,156,Wyoming,47.5,,,0.177,17.7,7.4,74.0,observed,41.0,Poor (<50),-6.4,Bust Risk (-5 to -15),5.611764705882353,0.0,0.0,Miss,backtest
+Jamaal Williams,RB,2017,134,BYU,52.4,,,0.194,19.4,4.5,45.5,observed,39.8,Poor (<50),-12.6,Bust Risk (-5 to -15),13.288235294117648,1.0,0.0,Hit,backtest
+De'Angelo Henderson,RB,2017,203,Coastal Carolina,37.7,,,,30.0,5.7,56.6,observed,37.8,Poor (<50),0.1,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Devante Mays,RB,2017,238,Utah St.,31.0,,,,30.0,7.7,76.6,observed,37.5,Poor (<50),6.5,Sleeper (+5 to +15),0.0647058823529411,0.0,0.0,Miss,backtest
+Chris Carson,RB,2017,249,Oklahoma St.,29.0,,,0.275,27.5,7.9,79.1,observed,36.0,Poor (<50),7.0,Sleeper (+5 to +15),13.682352941176472,1.0,0.0,Hit,backtest
+Elijah Hood,RB,2017,242,North Carolina,30.3,,,0.31,31.0,5.7,56.9,observed,34.5,Poor (<50),4.3,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Khalfani Muhammad,RB,2017,241,California,30.4,,,0.213,21.3,7.5,75.2,observed,33.9,Poor (<50),3.5,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Brandon Wilson,RB,2017,207,Houston,36.9,,,0.099,9.9,,66.5,imputed,31.9,Poor (<50),-5.0,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Saquon Barkley,RB,2018,2,Penn St.,98.7,,,1.38,100.0,10.0,99.7,observed,99.3,Elite (90+),0.6,Neutral (-5 to +5),26.80588235294117,1.0,1.0,Hit,backtest
+D.J. Moore,WR,2018,24,Maryland,85.2,18.0,100.0,,,9.7,96.5,observed,92.1,Elite (90+),6.9,Sleeper (+5 to +15),238.1,1.0,0.0,Hit,backtest
+Anthony Miller,WR,2018,51,Memphis,74.9,18.0,100.0,,,9.3,92.7,observed,86.4,Great (80-89),11.4,Sleeper (+5 to +15),127.5,0.0,0.0,Miss,backtest
+Calvin Ridley,WR,2018,26,Alabama,84.3,18.0,100.0,,,5.1,51.2,observed,84.8,Great (80-89),0.5,Neutral (-5 to +5),281.5,1.0,1.0,Hit,backtest
+Dante Pettis,WR,2018,44,Washington,77.3,18.0,100.0,,,,68.9,imputed,84.0,Great (80-89),6.7,Sleeper (+5 to +15),103.5,0.0,0.0,Miss,backtest
+Christian Kirk,WR,2018,47,Texas A&M,76.3,18.0,100.0,,,6.2,62.3,observed,82.5,Great (80-89),6.2,Sleeper (+5 to +15),285.7,1.0,1.0,Hit,backtest
+Courtland Sutton,WR,2018,40,SMU,78.8,20.0,75.0,,,9.8,98.1,observed,80.3,Great (80-89),1.6,Neutral (-5 to +5),247.6,1.0,0.0,Hit,backtest
+James Washington,WR,2018,60,Oklahoma St.,72.0,18.0,100.0,,,5.5,55.5,observed,79.3,Good (70-79),7.3,Sleeper (+5 to +15),133.5,0.0,0.0,Miss,backtest
+Tre'Quan Smith,WR,2018,91,Central Florida,63.1,18.0,100.0,,,6.8,68.5,observed,76.8,Good (70-79),13.7,Sleeper (+5 to +15),126.6,0.0,0.0,Miss,backtest
+DaeSean Hamilton,WR,2018,113,Penn St.,57.4,18.0,100.0,,,8.1,80.9,observed,75.8,Good (70-79),18.4,Big Sleeper (+15),66.3,0.0,0.0,Miss,backtest
+Justin Watson,WR,2018,144,Pennsylvania,50.1,18.0,100.0,,,9.6,96.1,observed,74.5,Good (70-79),24.4,Big Sleeper (+15),104.0,0.0,0.0,Miss,backtest
+J'Mon Moore,WR,2018,133,Missouri,52.6,18.0,100.0,,,8.4,84.3,observed,74.0,Good (70-79),21.3,Big Sleeper (+15),3.5,0.0,0.0,Miss,backtest
+Jaleel Scott,WR,2018,132,New Mexico St.,52.9,18.0,100.0,,,7.6,76.0,observed,72.8,Good (70-79),20.0,Big Sleeper (+15),2.6,0.0,0.0,Miss,backtest
+Rashaad Penny,RB,2018,27,San Diego St.,83.9,,,0.536,53.6,7.3,72.6,observed,71.6,Good (70-79),-12.3,Bust Risk (-5 to -15),7.158823529411765,0.0,0.0,Miss,backtest
+Marquez Valdes-Scantling,WR,2018,174,South Florida,43.6,18.0,100.0,,,9.3,92.6,observed,70.7,Good (70-79),27.1,Big Sleeper (+15),166.1,0.0,0.0,Miss,backtest
+Equanimeous St. Brown,WR,2018,207,Notre Dame,36.9,18.0,100.0,,,9.8,98.5,observed,68.2,Average (60-69),31.3,Big Sleeper (+15),62.7,0.0,0.0,Miss,backtest
+Kerryon Johnson,RB,2018,43,Auburn,77.7,,,0.508,50.8,7.1,70.9,observed,67.3,Average (60-69),-10.4,Bust Risk (-5 to -15),8.200000000000001,0.0,0.0,Miss,backtest
+Sony Michel,RB,2018,31,Georgia,82.2,,,0.315,31.5,8.9,89.5,observed,65.6,Average (60-69),-16.7,Big Bust (<-15),12.388235294117647,1.0,0.0,Hit,backtest
+Antonio Callaway,WR,2018,105,Florida,59.4,20.0,75.0,,,6.2,62.0,observed,65.3,Average (60-69),5.8,Sleeper (+5 to +15),132.3,0.0,0.0,Miss,backtest
+Royce Freeman,RB,2018,71,Oregon,68.7,,,0.527,52.7,8.3,82.6,observed,65.2,Average (60-69),-3.5,Neutral (-5 to +5),8.364705882352942,0.0,0.0,Miss,backtest
+Tremon Smith,WR,2018,196,Central Arkansas,39.1,18.0,100.0,,,,68.9,imputed,64.9,Average (60-69),25.8,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Cedrick Wilson Jr.,WR,2018,208,Boise St.,36.7,18.0,100.0,,,,68.9,imputed,63.7,Average (60-69),27.0,Big Sleeper (+15),76.3,0.0,0.0,Miss,backtest
+Daurice Fountain,WR,2018,159,Northern Iowa,46.8,,79.7,,,8.0,79.8,observed,63.3,Average (60-69),16.5,Big Sleeper (+15),4.300000000000001,0.0,0.0,Miss,backtest
+Ronald Jones II,RB,2018,38,USC,79.5,,,0.381,38.1,,66.5,imputed,63.1,Average (60-69),-16.4,Big Bust (<-15),0.0,0.0,0.0,Miss,backtest
+DJ Chark,WR,2018,61,LSU,71.7,22.0,45.0,,,,68.9,imputed,61.9,Average (60-69),-9.8,Bust Risk (-5 to -15),115.5,0.0,0.0,Miss,backtest
+Derrius Guice,RB,2018,59,LSU,72.3,,,0.413,41.3,7.4,73.7,observed,61.7,Average (60-69),-10.6,Bust Risk (-5 to -15),3.3764705882352946,0.0,0.0,Miss,backtest
+Damion Ratley,WR,2018,175,Texas A&M,43.4,20.0,75.0,,,9.0,90.2,observed,61.5,Average (60-69),18.1,Big Sleeper (+15),38.0,0.0,0.0,Miss,backtest
+John Kelly,RB,2018,176,Tennessee,43.2,,,0.937,93.7,4.4,44.3,observed,61.0,Average (60-69),17.9,Big Sleeper (+15),0.7117647058823531,0.0,0.0,Miss,backtest
+Russell Gage,WR,2018,194,LSU,39.5,,79.7,,,8.0,80.0,observed,59.6,Below Avg (50-59),20.1,Big Sleeper (+15),175.5,0.0,0.0,Miss,backtest
+Richie James,WR,2018,240,Middle Tenn. St.,30.6,18.0,100.0,,,6.0,59.9,observed,59.3,Below Avg (50-59),28.7,Big Sleeper (+15),157.70000000000002,0.0,0.0,Miss,backtest
+Marcell Ateman,WR,2018,228,Oklahoma St.,32.9,18.0,100.0,,,5.2,51.8,observed,59.2,Below Avg (50-59),26.3,Big Sleeper (+15),36.4,0.0,0.0,Miss,backtest
+Michael Gallup,WR,2018,81,Colorado St.,65.8,22.0,45.0,,,5.9,58.7,observed,57.5,Below Avg (50-59),-8.3,Bust Risk (-5 to -15),212.7,0.0,0.0,Miss,backtest
+Nick Chubb,RB,2018,35,Georgia,80.6,,,0.098,9.8,9.2,91.5,observed,57.5,Below Avg (50-59),-23.2,Big Bust (<-15),16.552941176470586,1.0,1.0,Hit,backtest
+Deon Cain,WR,2018,185,Clemson,41.3,20.0,75.0,,,6.5,64.7,observed,56.6,Below Avg (50-59),15.3,Big Sleeper (+15),21.4,0.0,0.0,Miss,backtest
+Braxton Berrios,WR,2018,210,Miami (FL),36.3,,79.7,,,5.7,56.8,observed,54.6,Below Avg (50-59),18.2,Big Sleeper (+15),115.1,0.0,0.0,Miss,backtest
+Keke Coutee,WR,2018,103,Texas Tech,59.9,22.0,45.0,,,5.6,56.4,observed,54.2,Below Avg (50-59),-5.8,Bust Risk (-5 to -15),90.7,0.0,0.0,Miss,backtest
+Jordan Wilkins,RB,2018,169,Mississippi,44.7,,,0.555,55.5,7.7,77.4,observed,53.4,Below Avg (50-59),8.7,Sleeper (+5 to +15),3.605882352941177,0.0,0.0,Miss,backtest
+Javon Wims,WR,2018,224,Georgia,33.6,,79.7,,,5.4,54.4,observed,52.9,Below Avg (50-59),19.2,Big Sleeper (+15),42.6,0.0,0.0,Miss,backtest
+Ray-Ray McCloud,WR,2018,187,Clemson,40.9,20.0,75.0,,,3.7,37.1,observed,52.3,Below Avg (50-59),11.4,Sleeper (+5 to +15),142.5,0.0,0.0,Miss,backtest
+Auden Tate,WR,2018,253,Florida St.,28.2,18.0,100.0,,,1.8,18.2,observed,51.9,Below Avg (50-59),23.6,Big Sleeper (+15),101.5,0.0,0.0,Miss,backtest
+Dylan Cantrell,WR,2018,191,Texas Tech,40.1,22.0,45.0,,,9.9,98.6,observed,50.6,Below Avg (50-59),10.5,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Nyheim Hines,RB,2018,104,North Carolina St.,59.7,,,0.314,31.4,5.7,56.8,observed,49.3,Poor (<50),-10.3,Bust Risk (-5 to -15),9.605882352941178,0.0,0.0,Miss,backtest
+Chase Edmonds,RB,2018,134,Fordham,52.4,,,,30.0,7.9,78.9,observed,48.5,Poor (<50),-3.9,Neutral (-5 to +5),9.882352941176473,0.0,0.0,Miss,backtest
+Justin Jackson,RB,2018,251,Northwestern,28.6,,,0.599,59.9,8.8,88.4,observed,48.5,Poor (<50),19.9,Big Sleeper (+15),5.070588235294117,0.0,0.0,Miss,backtest
+Kalen Ballage,RB,2018,131,Arizona St.,53.1,,,0.219,21.9,9.1,91.2,observed,47.9,Poor (<50),-5.2,Bust Risk (-5 to -15),5.523529411764706,0.0,0.0,Miss,backtest
+Boston Scott,RB,2018,201,Louisiana Tech,38.1,,,0.431,43.1,8.8,88.5,observed,47.4,Poor (<50),9.3,Sleeper (+5 to +15),6.417647058823529,0.0,0.0,Miss,backtest
+Ito Smith,RB,2018,126,Southern Miss,54.3,,,,30.0,6.3,62.6,observed,47.0,Poor (<50),-7.2,Bust Risk (-5 to -15),5.747058823529412,0.0,0.0,Miss,backtest
+Austin Proehl,WR,2018,255,North Carolina,27.9,20.0,75.0,,,3.6,36.2,observed,45.6,Poor (<50),17.7,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Jordan Lasley,WR,2018,162,UCLA,46.2,22.0,45.0,,,4.5,44.7,observed,45.5,Poor (<50),-0.6,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Mark Walton,RB,2018,112,Miami (FL),57.7,,,0.214,21.4,4.5,45.5,observed,43.1,Poor (<50),-14.5,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Trenton Cannon,RB,2018,204,Virginia St.,37.5,,,,30.0,9.1,90.7,observed,42.9,Poor (<50),5.4,Sleeper (+5 to +15),2.864705882352941,0.0,0.0,Miss,backtest
+David Williams,RB,2018,226,Arkansas,33.3,,,0.503,50.3,4.8,47.6,observed,41.4,Poor (<50),8.1,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Bo Scarbrough,RB,2018,236,Alabama,31.4,,,0.328,32.8,9.2,92.5,observed,41.1,Poor (<50),9.7,Sleeper (+5 to +15),2.541176470588236,0.0,0.0,Miss,backtest
+Trey Quinn,WR,2018,256,SMU,27.7,22.0,45.0,,,7.0,70.1,observed,40.1,Poor (<50),12.4,Sleeper (+5 to +15),51.8,0.0,0.0,Miss,backtest
+Nick Bawden,RB,2018,237,San Diego St.,31.2,,,0.409,40.9,,66.5,imputed,39.9,Poor (<50),8.7,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Marquise Brown,WR,2019,25,Oklahoma,84.7,19.0,90.0,,,,68.9,imputed,84.2,Great (80-89),-0.5,Neutral (-5 to +5),226.3,1.0,0.0,Hit,backtest
+Deebo Samuel,WR,2019,36,South Carolina,80.3,19.0,90.0,,,7.9,79.1,observed,83.5,Great (80-89),3.2,Neutral (-5 to +5),385.1,1.0,1.0,Hit,backtest
+Parris Campbell,WR,2019,59,Ohio St.,72.3,19.0,90.0,,,9.8,97.6,observed,82.3,Great (80-89),10.0,Sleeper (+5 to +15),149.1,0.0,0.0,Miss,backtest
+A.J. Brown,WR,2019,51,Mississippi,74.9,19.0,90.0,,,8.6,85.9,observed,81.8,Great (80-89),6.9,Sleeper (+5 to +15),333.2,1.0,1.0,Hit,backtest
+Jalen Hurd,WR,2019,67,Baylor,69.9,19.0,90.0,,,8.2,82.1,observed,78.7,Good (70-79),8.9,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+N'Keal Harry,WR,2019,32,Arizona St.,81.8,21.0,60.0,,,8.4,84.4,observed,74.6,Good (70-79),-7.3,Bust Risk (-5 to -15),30.4,0.0,0.0,Miss,backtest
+Diontae Johnson,WR,2019,66,Toledo,70.2,19.0,90.0,,,4.2,41.8,observed,72.9,Good (70-79),2.7,Neutral (-5 to +5),288.8,1.0,1.0,Hit,backtest
+Tony Pollard,RB,2019,128,Memphis,53.8,,,1.075,100.0,7.2,71.7,observed,72.7,Good (70-79),18.9,Big Sleeper (+15),15.647058823529411,1.0,1.0,Hit,backtest
+Darrell Henderson,RB,2019,70,Memphis,69.0,,,0.714,71.4,7.7,76.8,observed,71.0,Good (70-79),2.0,Neutral (-5 to +5),10.08235294117647,0.0,0.0,Miss,backtest
+Josh Jacobs,RB,2019,24,Alabama,85.2,,,0.564,56.4,5.7,56.5,observed,70.8,Good (70-79),-14.4,Bust Risk (-5 to -15),19.31176470588236,1.0,1.0,Hit,backtest
+Gary Jennings Jr,WR,2019,120,West Virginia,55.7,19.0,90.0,,,,68.9,imputed,69.7,Average (60-69),14.0,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+JJ Arcega-Whiteside,WR,2019,57,Stanford,73.0,21.0,60.0,,,,68.9,imputed,67.8,Average (60-69),-5.1,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Andy Isabella,WR,2019,62,Massachusetts,71.4,21.0,60.0,,,7.3,72.6,observed,67.6,Average (60-69),-3.8,Neutral (-5 to +5),54.8,0.0,0.0,Miss,backtest
+Riley Ridley,WR,2019,126,Georgia,54.3,19.0,90.0,,,4.5,45.3,observed,65.4,Average (60-69),11.2,Sleeper (+5 to +15),13.5,0.0,0.0,Miss,backtest
+Mecole Hardman,WR,2019,56,Georgia,73.3,22.0,45.0,,,8.3,83.0,observed,64.8,Average (60-69),-8.4,Bust Risk (-5 to -15),178.5,0.0,0.0,Miss,backtest
+Travis Fulgham,WR,2019,184,Old Dominion,41.5,19.0,90.0,,,8.0,80.1,observed,64.3,Average (60-69),22.7,Big Sleeper (+15),115.9,0.0,0.0,Miss,backtest
+Miles Sanders,RB,2019,53,Penn St.,74.3,,,0.367,36.7,9.5,94.8,observed,64.2,Average (60-69),-10.1,Bust Risk (-5 to -15),14.4,1.0,1.0,Hit,backtest
+Terry McLaurin,WR,2019,76,Ohio St.,67.2,22.0,45.0,,,9.6,95.6,observed,63.7,Average (60-69),-3.5,Neutral (-5 to +5),322.5,1.0,1.0,Hit,backtest
+Miles Boykin,WR,2019,93,Notre Dame,62.5,22.0,45.0,,,9.9,99.4,observed,61.9,Average (60-69),-0.6,Neutral (-5 to +5),74.6,0.0,0.0,Miss,backtest
+D.K. Metcalf,WR,2019,64,Mississippi,70.8,22.0,45.0,,,,68.9,imputed,61.5,Average (60-69),-9.3,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Scott Miller,WR,2019,208,Bowling Green,36.7,19.0,90.0,,,7.8,77.6,observed,61.5,Average (60-69),24.8,Big Sleeper (+15),121.0,0.0,0.0,Miss,backtest
+Marcus Green,WR,2019,203,La-Monroe,37.7,19.0,90.0,,,7.2,72.2,observed,61.2,Average (60-69),23.5,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Hunter Renfrow,WR,2019,149,Clemson,49.0,19.0,90.0,,,2.9,29.1,observed,60.4,Average (60-69),11.4,Sleeper (+5 to +15),272.9,1.0,1.0,Hit,backtest
+Hakeem Butler,WR,2019,103,Iowa St.,59.9,22.0,45.0,,,9.5,94.7,observed,59.9,Below Avg (50-59),-0.0,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Dillon Mitchell,WR,2019,239,Oregon,30.8,19.0,90.0,,,8.0,79.6,observed,58.8,Below Avg (50-59),28.0,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+KeeSean Johnson,WR,2019,174,Fresno St.,43.6,19.0,90.0,,,3.2,31.8,observed,58.1,Below Avg (50-59),14.5,Sleeper (+5 to +15),46.0,0.0,0.0,Miss,backtest
+Damien Harris,RB,2019,87,Alabama,64.1,,,0.466,46.6,6.4,63.6,observed,57.9,Below Avg (50-59),-6.2,Bust Risk (-5 to -15),12.63529411764706,1.0,0.0,Hit,backtest
+David Montgomery,RB,2019,73,Iowa St.,68.1,,,0.433,43.3,5.2,51.5,observed,56.9,Below Avg (50-59),-11.2,Bust Risk (-5 to -15),15.758823529411767,1.0,1.0,Hit,backtest
+Olabisi Johnson,WR,2019,247,Colorado St.,29.3,19.0,90.0,,,,68.9,imputed,56.5,Below Avg (50-59),27.2,Big Sleeper (+15),82.7,0.0,0.0,Miss,backtest
+Terry Godwin,WR,2019,237,Georgia,31.2,19.0,90.0,,,5.3,52.6,observed,55.0,Below Avg (50-59),23.8,Big Sleeper (+15),6.5,0.0,0.0,Miss,backtest
+Alexander Mattison,RB,2019,102,Boise St.,60.2,,,0.376,37.6,6.8,68.1,observed,53.5,Below Avg (50-59),-6.7,Bust Risk (-5 to -15),8.08235294117647,0.0,0.0,Miss,backtest
+Darius Slayton,WR,2019,171,Auburn,44.2,22.0,45.0,,,8.9,89.1,observed,51.2,Below Avg (50-59),7.0,Sleeper (+5 to +15),170.0,0.0,0.0,Miss,backtest
+Rodney Anderson,RB,2019,211,Oklahoma,36.1,,,0.649,64.9,,66.5,imputed,50.8,Below Avg (50-59),14.6,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Benny Snell Jr.,RB,2019,122,Kentucky,55.2,,,0.356,35.6,,66.5,imputed,50.0,Below Avg (50-59),-5.2,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Trayveon Williams,RB,2019,182,Texas A&M,41.9,,,0.631,63.1,4.6,46.0,observed,50.0,Poor (<50),8.0,Sleeper (+5 to +15),1.2764705882352942,0.0,0.0,Miss,backtest
+Travis Homer,RB,2019,204,Miami (FL),37.5,,,0.524,52.4,8.3,83.4,observed,49.6,Poor (<50),12.1,Sleeper (+5 to +15),3.282352941176471,0.0,0.0,Miss,backtest
+Justice Hill,RB,2019,113,Oklahoma St.,57.4,,,0.138,13.8,9.3,93.3,observed,47.5,Poor (<50),-9.9,Bust Risk (-5 to -15),8.664705882352942,0.0,0.0,Miss,backtest
+Bryce Love,RB,2019,112,Stanford,57.7,,,0.234,23.4,,66.5,imputed,47.0,Poor (<50),-10.7,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Juwann Winfree,WR,2019,187,Colorado,40.9,22.0,45.0,,,7.1,71.4,observed,46.9,Poor (<50),6.0,Sleeper (+5 to +15),11.8,0.0,0.0,Miss,backtest
+Kelvin Harmon,WR,2019,206,North Carolina St.,37.1,21.0,60.0,,,4.9,48.8,observed,46.9,Poor (<50),9.8,Sleeper (+5 to +15),66.5,0.0,0.0,Miss,backtest
+Dexter Williams,RB,2019,194,Notre Dame,39.5,,,0.318,31.8,8.1,81.3,observed,43.1,Poor (<50),3.6,Neutral (-5 to +5),0.0647058823529411,0.0,0.0,Miss,backtest
+Kerrith Whyte Jr,RB,2019,222,Florida Atlantic,34.0,,,0.44,44.0,,66.5,imputed,42.4,Poor (<50),8.4,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Ryquell Armstead,RB,2019,140,Temple,51.0,,,0.117,11.7,7.7,77.1,observed,41.2,Poor (<50),-9.8,Bust Risk (-5 to -15),3.011764705882353,0.0,0.0,Miss,backtest
+John Ursua,WR,2019,236,Hawaii,31.4,22.0,45.0,,,6.4,64.4,observed,41.1,Poor (<50),9.7,Sleeper (+5 to +15),2.1,0.0,0.0,Miss,backtest
+Darwin Thompson,RB,2019,214,Utah St.,35.6,,,,30.0,8.0,79.9,observed,40.3,Poor (<50),4.7,Neutral (-5 to +5),1.9529411764705884,0.0,0.0,Miss,backtest
+Devin Singletary,RB,2019,74,Florida Atlantic,67.8,,,0.099,9.9,1.6,16.5,observed,39.8,Poor (<50),-28.0,Big Bust (<-15),13.958823529411765,1.0,1.0,Hit,backtest
+Jordan Scarlett,RB,2019,154,Florida,47.9,,,0.231,23.1,4.7,47.1,observed,39.1,Poor (<50),-8.8,Bust Risk (-5 to -15),0.0529411764705882,0.0,0.0,Miss,backtest
+Ty Johnson,RB,2019,186,Maryland,41.1,,,0.091,9.1,9.7,97.4,observed,38.4,Poor (<50),-2.8,Neutral (-5 to +5),6.882352941176471,0.0,0.0,Miss,backtest
+Qadree Ollison,RB,2019,152,Pittsburgh,48.3,,,0.21,21.0,4.4,44.3,observed,38.1,Poor (<50),-10.2,Bust Risk (-5 to -15),1.8058823529411765,0.0,0.0,Miss,backtest
+Mike Weber,RB,2019,218,Ohio St.,34.8,,,0.2,20.0,7.0,70.1,observed,34.9,Poor (<50),0.1,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Chandler Cox,RB,2019,233,Auburn,31.9,,,0.212,21.2,,66.5,imputed,33.4,Poor (<50),1.4,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Myles Gaskin,RB,2019,234,Washington,31.7,,,0.19,19.0,5.9,59.3,observed,31.4,Poor (<50),-0.3,Neutral (-5 to +5),10.211764705882352,0.0,0.0,Miss,backtest
+Cullen Gillaspia,RB,2019,220,Texas A&M,34.4,,,0.118,11.8,,66.5,imputed,31.3,Poor (<50),-3.1,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+CeeDee Lamb,WR,2020,17,Oklahoma,88.5,19.0,90.0,,,7.4,74.4,observed,86.9,Great (80-89),-1.6,Neutral (-5 to +5),425.7000000000001,1.0,1.0,Hit,backtest
+Henry Ruggs III,WR,2020,12,Alabama,91.2,20.0,75.0,,,9.5,95.4,observed,86.2,Great (80-89),-5.0,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Justin Jefferson,WR,2020,22,LSU,86.1,20.0,75.0,,,9.7,96.9,observed,83.8,Great (80-89),-2.3,Neutral (-5 to +5),379.0,1.0,1.0,Hit,backtest
+Denzel Mims,WR,2020,59,Baylor,72.3,19.0,90.0,,,9.8,97.7,observed,82.3,Great (80-89),10.0,Sleeper (+5 to +15),60.7,0.0,0.0,Miss,backtest
+Jerry Jeudy,WR,2020,15,Alabama,89.5,20.0,75.0,,,6.8,67.6,observed,81.2,Great (80-89),-8.4,Bust Risk (-5 to -15),240.9,1.0,0.0,Hit,backtest
+Antonio Gibson,RB,2020,66,Memphis,70.2,,,1.667,100.0,,66.5,imputed,80.1,Great (80-89),9.9,Sleeper (+5 to +15),13.476470588235296,1.0,0.0,Hit,backtest
+Michael Pittman Jr.,WR,2020,34,USC,81.0,20.0,75.0,,,8.3,82.7,observed,79.2,Good (70-79),-1.9,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Jalen Reagor,WR,2020,21,TCU,86.6,20.0,75.0,,,6.0,60.3,observed,78.6,Good (70-79),-8.0,Bust Risk (-5 to -15),81.2,0.0,0.0,Miss,backtest
+Jonathan Taylor,RB,2020,41,Wisconsin,78.4,,,0.718,71.8,9.5,95.3,observed,78.6,Good (70-79),0.2,Neutral (-5 to +5),21.947058823529414,1.0,1.0,Hit,backtest
+Clyde Edwards-Helaire,RB,2020,32,LSU,81.8,,,0.799,79.9,5.4,54.1,observed,77.0,Good (70-79),-4.8,Neutral (-5 to +5),11.43529411764706,1.0,0.0,Hit,backtest
+Brandon Aiyuk,WR,2020,25,Arizona St.,84.7,21.0,60.0,,,8.5,84.7,observed,76.1,Good (70-79),-8.7,Bust Risk (-5 to -15),279.1,1.0,1.0,Hit,backtest
+Laviska Shenault Jr.,WR,2020,42,Colorado,78.0,20.0,75.0,,,7.0,69.7,observed,75.7,Good (70-79),-2.3,Neutral (-5 to +5),157.1,0.0,0.0,Miss,backtest
+KJ Hamler,WR,2020,46,Penn St.,76.6,20.0,75.0,,,,68.9,imputed,74.9,Good (70-79),-1.7,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Van Jefferson,WR,2020,57,Florida,73.0,,79.7,,,,68.9,imputed,74.7,Good (70-79),1.7,Neutral (-5 to +5),188.9,0.0,0.0,Miss,backtest
+Bryan Edwards,WR,2020,81,South Carolina,65.8,19.0,90.0,,,,68.9,imputed,74.7,Good (70-79),8.9,Sleeper (+5 to +15),116.2,0.0,0.0,Miss,backtest
+Chase Claypool,WR,2020,49,Notre Dame,75.6,21.0,60.0,,,10.0,99.8,observed,73.8,Good (70-79),-1.8,Neutral (-5 to +5),237.8,1.0,0.0,Hit,backtest
+Tee Higgins,WR,2020,33,Clemson,81.4,20.0,75.0,,,4.1,41.2,observed,73.1,Good (70-79),-8.3,Bust Risk (-5 to -15),280.0,1.0,1.0,Hit,backtest
+Zack Moss,RB,2020,86,Utah,64.4,,,1.209,100.0,2.8,28.0,observed,71.4,Good (70-79),7.0,Sleeper (+5 to +15),9.976470588235294,0.0,0.0,Miss,backtest
+D'Andre Swift,RB,2020,35,Georgia,80.6,,,0.52,52.0,7.5,75.5,observed,69.9,Average (60-69),-10.8,Bust Risk (-5 to -15),12.617647058823527,1.0,0.0,Hit,backtest
+Lynn Bowden Jr.,WR,2020,80,Kentucky,66.1,20.0,75.0,,,,68.9,imputed,69.6,Average (60-69),3.5,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Cam Akers,RB,2020,52,Florida St.,74.6,,,0.521,52.1,8.8,87.9,observed,68.7,Average (60-69),-5.9,Bust Risk (-5 to -15),8.588235294117647,0.0,0.0,Miss,backtest
+J.K. Dobbins,RB,2020,55,Ohio St.,73.6,,,0.608,60.8,,66.5,imputed,68.1,Average (60-69),-5.5,Bust Risk (-5 to -15),11.43529411764706,1.0,0.0,Hit,backtest
+AJ Dillon,RB,2020,62,Boston Col.,71.4,,,0.639,63.9,,66.5,imputed,68.0,Average (60-69),-3.3,Neutral (-5 to +5),6.91764705882353,0.0,0.0,Miss,backtest
+Joe Reed,WR,2020,151,Virginia,48.6,,79.7,,,9.3,93.5,observed,66.2,Average (60-69),17.6,Big Sleeper (+15),8.9,0.0,0.0,Miss,backtest
+Tyler Johnson,WR,2020,161,Minnesota,46.4,19.0,90.0,,,,68.9,imputed,65.0,Average (60-69),18.7,Big Sleeper (+15),81.5,0.0,0.0,Miss,backtest
+Collin Johnson,WR,2020,165,Texas,45.5,19.0,90.0,,,,68.9,imputed,64.6,Average (60-69),19.1,Big Sleeper (+15),59.2,0.0,0.0,Miss,backtest
+Devin Duvernay,WR,2020,92,Texas,62.8,21.0,60.0,,,7.9,78.6,observed,64.2,Average (60-69),1.4,Neutral (-5 to +5),110.1,0.0,0.0,Miss,backtest
+Darnell Mooney,WR,2020,173,Tulane,43.8,19.0,90.0,,,7.0,70.4,observed,64.0,Average (60-69),20.2,Big Sleeper (+15),219.7,0.0,0.0,Miss,backtest
+Gabriel Davis,WR,2020,128,Central Florida,53.8,20.0,75.0,,,6.8,68.5,observed,63.4,Average (60-69),9.6,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+K.J. Osborn,WR,2020,176,Miami (FL),43.2,,79.7,,,8.0,80.0,observed,61.5,Average (60-69),18.3,Big Sleeper (+15),165.6,0.0,0.0,Miss,backtest
+Donovan Peoples-Jones,WR,2020,187,Michigan,40.9,20.0,75.0,,,9.6,96.3,observed,61.2,Average (60-69),20.2,Big Sleeper (+15),161.1,0.0,0.0,Miss,backtest
+Antonio Gandy-Golden,WR,2020,142,Liberty,50.6,20.0,75.0,,,6.1,61.3,observed,60.7,Average (60-69),10.2,Sleeper (+5 to +15),3.5,0.0,0.0,Miss,backtest
+Tyrie Cleveland,WR,2020,252,Florida,28.4,19.0,90.0,,,9.7,96.5,observed,60.2,Average (60-69),31.8,Big Sleeper (+15),12.3,0.0,0.0,Miss,backtest
+Isaiah Coulter,WR,2020,171,Rhode Island,44.2,,79.7,,,6.7,66.8,observed,60.0,Average (60-69),15.8,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Malcolm Perry,RB,2020,246,Navy,29.5,,,1.295,100.0,,66.5,imputed,59.7,Below Avg (50-59),30.2,Big Sleeper (+15),1.4529411764705882,0.0,0.0,Miss,backtest
+Freddie Swain,WR,2020,214,Florida,35.6,,79.7,,,8.3,82.9,observed,58.1,Below Avg (50-59),22.6,Big Sleeper (+15),86.5,0.0,0.0,Miss,backtest
+Eno Benjamin,RB,2020,222,Arizona St.,34.0,,,0.906,90.6,5.8,57.6,observed,57.4,Below Avg (50-59),23.3,Big Sleeper (+15),5.270588235294119,0.0,0.0,Miss,backtest
+Dezmon Patmon,WR,2020,212,Washington St.,35.9,20.0,75.0,,,8.5,84.6,observed,56.9,Below Avg (50-59),21.0,Big Sleeper (+15),10.1,0.0,0.0,Miss,backtest
+James Proche,WR,2020,201,SMU,38.1,19.0,90.0,,,4.0,40.4,observed,56.6,Below Avg (50-59),18.5,Big Sleeper (+15),36.2,0.0,0.0,Miss,backtest
+Quez Watkins,WR,2020,200,Southern Miss,38.3,20.0,75.0,,,7.4,74.0,observed,56.5,Below Avg (50-59),18.2,Big Sleeper (+15),121.5,0.0,0.0,Miss,backtest
+Isaiah Hodgins,WR,2020,207,Oregon St.,36.9,20.0,75.0,,,7.6,75.6,observed,56.0,Below Avg (50-59),19.1,Big Sleeper (+15),126.0,0.0,0.0,Miss,backtest
+John Hightower,WR,2020,168,Boise St.,44.9,21.0,60.0,,,8.0,80.2,observed,55.5,Below Avg (50-59),10.6,Sleeper (+5 to +15),28.8,0.0,0.0,Miss,backtest
+Darrynton Evans,RB,2020,93,Appalachian St.,62.5,,,,30.0,9.1,91.1,observed,55.4,Below Avg (50-59),-7.1,Bust Risk (-5 to -15),1.7647058823529411,0.0,0.0,Miss,backtest
+La'Mical Perine,RB,2020,120,Florida,55.7,,,0.561,56.1,5.2,52.5,observed,55.4,Below Avg (50-59),-0.3,Neutral (-5 to +5),3.088235294117647,0.0,0.0,Miss,backtest
+Ke'Shawn Vaughn,RB,2020,76,Illinois,67.2,,,,30.0,5.2,51.7,observed,51.9,Below Avg (50-59),-15.4,Big Bust (<-15),2.988235294117647,0.0,0.0,Miss,backtest
+Quintez Cephus,WR,2020,166,Wisconsin,45.3,21.0,60.0,,,4.5,45.0,observed,50.4,Below Avg (50-59),5.1,Sleeper (+5 to +15),66.9,0.0,0.0,Miss,backtest
+Anthony McFarland Jr.,RB,2020,124,Maryland,54.7,,,0.368,36.8,,66.5,imputed,50.2,Below Avg (50-59),-4.5,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+K.J. Hill,WR,2020,220,Ohio St.,34.4,20.0,75.0,,,3.9,38.9,observed,49.3,Poor (<50),14.9,Sleeper (+5 to +15),14.3,0.0,0.0,Miss,backtest
+Jason Huntley,RB,2020,172,New Mexico St.,44.0,,,0.43,43.0,8.1,80.8,observed,49.2,Poor (<50),5.2,Sleeper (+5 to +15),0.3,0.0,0.0,Miss,backtest
+DeeJay Dallas,RB,2020,144,Miami (FL),50.1,,,0.32,32.0,,66.5,imputed,46.2,Poor (<50),-3.9,Neutral (-5 to +5),3.5352941176470587,0.0,0.0,Miss,backtest
+Joshua Kelley,RB,2020,112,UCLA,57.7,,,0.167,16.7,7.6,75.9,observed,46.0,Poor (<50),-11.6,Bust Risk (-5 to -15),4.776470588235294,0.0,0.0,Miss,backtest
+Jauan Jennings,WR,2020,217,Tennessee,35.0,21.0,60.0,,,2.7,27.0,observed,42.5,Poor (<50),7.6,Sleeper (+5 to +15),210.5,0.0,0.0,Miss,backtest
+Raymond Calais,RB,2020,245,Louisiana,29.7,,,0.163,16.3,7.6,76.0,observed,31.9,Poor (<50),2.2,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Travis Etienne,RB,2021,25,Clemson,84.7,,,1.2,100.0,9.1,91.2,observed,91.1,Elite (90+),6.3,Sleeper (+5 to +15),16.61176470588235,1.0,1.0,Hit,backtest
+Jaylen Waddle,WR,2021,6,Alabama,95.1,19.0,90.0,,,,68.9,imputed,89.4,Great (80-89),-5.7,Bust Risk (-5 to -15),267.40000000000003,1.0,1.0,Hit,backtest
+Ja'Marr Chase,WR,2021,5,LSU,95.9,20.0,75.0,,,9.8,98.2,observed,88.9,Great (80-89),-7.0,Bust Risk (-5 to -15),403.0,1.0,1.0,Hit,backtest
+Najee Harris,RB,2021,24,Alabama,85.2,,,1.0,100.0,,66.5,imputed,87.6,Great (80-89),2.4,Neutral (-5 to +5),17.852941176470587,1.0,1.0,Hit,backtest
+Rashod Bateman,WR,2021,27,Minnesota,83.9,19.0,90.0,,,8.0,80.4,observed,85.5,Great (80-89),1.6,Neutral (-5 to +5),201.6,0.0,0.0,Miss,backtest
+Javonte Williams,RB,2021,35,North Carolina,80.6,,,0.854,85.4,8.8,87.9,observed,83.4,Great (80-89),2.8,Neutral (-5 to +5),12.052941176470588,1.0,0.0,Hit,backtest
+Rondale Moore,WR,2021,49,Purdue,75.6,19.0,90.0,,,9.3,93.3,observed,83.3,Great (80-89),7.7,Sleeper (+5 to +15),119.3,0.0,0.0,Miss,backtest
+DeVonta Smith,WR,2021,10,Alabama,92.4,20.0,75.0,,,,68.9,imputed,82.8,Great (80-89),-9.6,Bust Risk (-5 to -15),295.3,1.0,1.0,Hit,backtest
+D'Wayne Eskridge,WR,2021,56,Western Michigan,73.3,18.0,100.0,,,6.7,67.1,observed,81.7,Great (80-89),8.4,Sleeper (+5 to +15),28.3,0.0,0.0,Miss,backtest
+Elijah Moore,WR,2021,34,Mississippi,81.0,20.0,75.0,,,8.7,86.9,observed,79.8,Good (70-79),-1.2,Neutral (-5 to +5),138.2,0.0,0.0,Miss,backtest
+Kadarius Toney,WR,2021,20,Florida,87.0,21.0,60.0,,,9.0,89.9,observed,78.0,Good (70-79),-9.0,Bust Risk (-5 to -15),81.6,0.0,0.0,Miss,backtest
+Nico Collins,WR,2021,89,Michigan,63.6,19.0,90.0,,,9.6,95.7,observed,77.7,Good (70-79),14.1,Sleeper (+5 to +15),294.2,1.0,1.0,Hit,backtest
+Josh Palmer,WR,2021,77,Tennessee,66.9,19.0,90.0,,,7.6,75.9,observed,76.4,Good (70-79),9.4,Sleeper (+5 to +15),174.4,0.0,0.0,Miss,backtest
+Tutu Atwell,WR,2021,57,Louisville,73.0,20.0,75.0,,,6.2,62.5,observed,72.1,Good (70-79),-0.9,Neutral (-5 to +5),121.2,0.0,0.0,Miss,backtest
+Dyami Brown,WR,2021,82,North Carolina,65.5,20.0,75.0,,,8.4,83.8,observed,71.6,Good (70-79),6.1,Sleeper (+5 to +15),108.3,0.0,0.0,Miss,backtest
+Amon-Ra St. Brown,WR,2021,112,USC,57.7,19.0,90.0,,,7.1,71.3,observed,71.0,Good (70-79),13.4,Sleeper (+5 to +15),386.5,1.0,1.0,Hit,backtest
+Jacob Harris,WR,2021,141,Central Florida,50.8,,79.7,,,9.9,98.8,observed,68.1,Average (60-69),17.3,Big Sleeper (+15),1.6,0.0,0.0,Miss,backtest
+Kenneth Gainwell,RB,2021,150,Memphis,48.8,,,1.383,100.0,5.7,56.6,observed,67.9,Average (60-69),19.1,Big Sleeper (+15),8.229411764705883,0.0,0.0,Miss,backtest
+Terrace Marshall Jr.,WR,2021,59,LSU,72.3,21.0,60.0,,,,68.9,imputed,67.5,Average (60-69),-4.8,Neutral (-5 to +5),32.900000000000006,0.0,0.0,Miss,backtest
+Dez Fitzpatrick,WR,2021,109,Louisville,58.4,20.0,75.0,,,,68.9,imputed,65.8,Average (60-69),7.4,Sleeper (+5 to +15),15.9,0.0,0.0,Miss,backtest
+Michael Carter,RB,2021,107,North Carolina,58.9,,,0.748,74.8,6.2,62.0,observed,64.9,Average (60-69),6.0,Sleeper (+5 to +15),9.08235294117647,0.0,0.0,Miss,backtest
+Jaelon Darden,WR,2021,129,North Texas,53.6,20.0,75.0,,,7.1,71.4,observed,63.7,Average (60-69),10.2,Sleeper (+5 to +15),11.4,0.0,0.0,Miss,backtest
+Anthony Schwartz,WR,2021,91,Auburn,63.1,21.0,60.0,,,6.9,68.9,observed,62.9,Average (60-69),-0.2,Neutral (-5 to +5),33.4,0.0,0.0,Miss,backtest
+Amari Rodgers,WR,2021,85,Clemson,64.7,21.0,60.0,,,5.3,53.5,observed,61.4,Average (60-69),-3.3,Neutral (-5 to +5),43.1,0.0,0.0,Miss,backtest
+Trey Sermon,RB,2021,88,Ohio St.,63.9,,,0.422,42.2,9.7,96.7,observed,61.2,Average (60-69),-2.7,Neutral (-5 to +5),3.164705882352941,0.0,0.0,Miss,backtest
+Jalen Camp,WR,2021,209,Georgia Tech,36.5,,79.7,,,9.8,97.5,observed,60.8,Average (60-69),24.3,Big Sleeper (+15),1.7000000000000002,0.0,0.0,Miss,backtest
+Ihmir Smith-Marsette,WR,2021,157,Iowa,47.2,20.0,75.0,,,6.8,68.1,observed,60.1,Average (60-69),12.8,Sleeper (+5 to +15),28.6,0.0,0.0,Miss,backtest
+Tylan Wallace,WR,2021,131,Oklahoma St.,53.1,20.0,75.0,,,4.7,47.1,observed,59.9,Below Avg (50-59),6.8,Sleeper (+5 to +15),43.1,0.0,0.0,Miss,backtest
+Kawaan Baker,WR,2021,255,South Alabama,27.9,19.0,90.0,,,9.1,90.8,observed,59.1,Below Avg (50-59),31.2,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Marquez Stevenson,WR,2021,203,Houston,37.7,19.0,90.0,,,5.4,53.7,observed,58.4,Below Avg (50-59),20.7,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Racey McMath,WR,2021,205,LSU,37.3,,79.7,,,7.4,74.3,observed,57.7,Below Avg (50-59),20.4,Big Sleeper (+15),6.4,0.0,0.0,Miss,backtest
+Frank Darby,WR,2021,187,Arizona St.,40.9,,79.7,,,5.9,58.9,observed,57.2,Below Avg (50-59),16.3,Big Sleeper (+15),2.5,0.0,0.0,Miss,backtest
+Simi Fehoko,WR,2021,179,Stanford,42.6,21.0,60.0,,,9.2,91.8,observed,56.1,Below Avg (50-59),13.5,Sleeper (+5 to +15),16.6,0.0,0.0,Miss,backtest
+Demetric Felton,RB,2021,211,UCLA,36.1,,,0.795,79.5,,66.5,imputed,55.9,Below Avg (50-59),19.7,Big Sleeper (+15),2.9705882352941178,0.0,0.0,Miss,backtest
+Tre Nixon,WR,2021,242,Central Florida,30.3,20.0,75.0,,,9.0,89.7,observed,54.8,Below Avg (50-59),24.6,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Mike Strachan,WR,2021,229,Charleston (WV),32.7,,79.7,,,,68.9,imputed,54.6,Below Avg (50-59),21.9,Big Sleeper (+15),8.9,0.0,0.0,Miss,backtest
+Rhamondre Stevenson,RB,2021,120,Oklahoma,55.7,,,0.583,58.3,4.0,39.8,observed,54.2,Below Avg (50-59),-1.5,Neutral (-5 to +5),14.65294117647059,1.0,1.0,Hit,backtest
+Seth Williams,WR,2021,219,Auburn,34.6,20.0,75.0,,,6.9,68.6,observed,53.8,Below Avg (50-59),19.2,Big Sleeper (+15),4.4,0.0,0.0,Miss,backtest
+Cornell Powell,WR,2021,181,Clemson,42.1,21.0,60.0,,,7.6,75.7,observed,53.4,Below Avg (50-59),11.3,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Ben Skowronek,WR,2021,249,Notre Dame,29.0,,79.7,,,,68.9,imputed,52.7,Below Avg (50-59),23.7,Big Sleeper (+15),84.30000000000001,0.0,0.0,Miss,backtest
+Khalil Herbert,RB,2021,217,Virginia Tech,35.0,,,0.708,70.8,6.1,61.4,observed,51.5,Below Avg (50-59),16.5,Big Sleeper (+15),6.929411764705883,0.0,0.0,Miss,backtest
+Elijah Mitchell,RB,2021,194,Louisiana,39.5,,,0.497,49.7,9.5,95.0,observed,51.4,Below Avg (50-59),11.9,Sleeper (+5 to +15),11.8,1.0,0.0,Hit,backtest
+Gerrid Doaks,RB,2021,244,Cincinnati,29.9,,,0.685,68.5,8.3,83.0,observed,51.4,Below Avg (50-59),21.5,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Shi Smith,WR,2021,204,South Carolina,37.5,21.0,60.0,,,6.8,67.8,observed,49.9,Poor (<50),12.4,Sleeper (+5 to +15),61.6,0.0,0.0,Miss,backtest
+Chris Evans,RB,2021,202,Michigan,37.9,,,0.408,40.8,9.8,98.4,observed,48.0,Poor (<50),10.1,Sleeper (+5 to +15),3.0823529411764707,0.0,0.0,Miss,backtest
+Dazz Newsome,WR,2021,221,North Carolina,34.2,20.0,75.0,,,2.1,21.3,observed,46.5,Poor (<50),12.3,Sleeper (+5 to +15),4.3,0.0,0.0,Miss,backtest
+Jake Funk,RB,2021,233,Maryland,31.9,,,0.433,43.3,9.8,97.6,observed,45.8,Poor (<50),13.8,Sleeper (+5 to +15),0.188235294117647,0.0,0.0,Miss,backtest
+Chuba Hubbard,RB,2021,126,Oklahoma St.,54.3,,,0.153,15.3,8.4,84.3,observed,45.1,Poor (<50),-9.1,Bust Risk (-5 to -15),14.211764705882352,1.0,0.0,Hit,backtest
+Kene Nwangwu,RB,2021,119,Iowa St.,55.9,,,0.059,5.9,9.9,98.8,observed,44.9,Poor (<50),-11.1,Bust Risk (-5 to -15),0.6470588235294118,0.0,0.0,Miss,backtest
+Dax Milne,WR,2021,258,BYU,27.3,21.0,60.0,,,4.6,45.6,observed,41.5,Poor (<50),14.2,Sleeper (+5 to +15),15.7,0.0,0.0,Miss,backtest
+Kylin Hill,RB,2021,256,Mississippi St.,27.7,,,0.425,42.5,7.3,72.8,observed,39.7,Poor (<50),12.0,Sleeper (+5 to +15),0.2294117647058823,0.0,0.0,Miss,backtest
+Gary Brightwell,RB,2021,196,Arizona,39.1,,,0.309,30.9,4.6,45.7,observed,37.2,Poor (<50),-1.9,Neutral (-5 to +5),1.7647058823529411,0.0,0.0,Miss,backtest
+Larry Rountree,RB,2021,198,Missouri,38.7,,,0.275,27.5,2.0,20.1,observed,32.0,Poor (<50),-6.7,Bust Risk (-5 to -15),0.9176470588235296,0.0,0.0,Miss,backtest
+Jermar Jefferson,RB,2021,257,Oregon St.,27.5,,,0.288,28.8,2.2,22.2,observed,27.2,Poor (<50),-0.4,Neutral (-5 to +5),1.5117647058823531,0.0,0.0,Miss,backtest
+Chris Olave,WR,2022,11,Ohio St.,91.8,19.0,90.0,,,8.6,86.4,observed,90.4,Elite (90+),-1.4,Neutral (-5 to +5),231.3,1.0,0.0,Hit,backtest
+Christian Watson,WR,2022,34,North Dakota St.,81.0,19.0,90.0,,,10.0,99.6,observed,87.0,Great (80-89),5.9,Sleeper (+5 to +15),164.10000000000002,0.0,0.0,Miss,backtest
+Treylon Burks,WR,2022,18,Arkansas,88.0,19.0,90.0,,,5.8,57.9,observed,84.2,Great (80-89),-3.8,Neutral (-5 to +5),88.10000000000001,0.0,0.0,Miss,backtest
+Garrett Wilson,WR,2022,10,Ohio St.,92.4,20.0,75.0,,,7.8,77.7,observed,84.1,Great (80-89),-8.3,Bust Risk (-5 to -15),251.9,1.0,0.0,Hit,backtest
+Drake London,WR,2022,8,USC,93.7,20.0,75.0,,,,68.9,imputed,83.4,Great (80-89),-10.3,Bust Risk (-5 to -15),280.8,1.0,1.0,Hit,backtest
+Alec Pierce,WR,2022,53,Cincinnati,74.3,19.0,90.0,,,9.8,98.3,observed,83.4,Great (80-89),9.1,Sleeper (+5 to +15),161.4,0.0,0.0,Miss,backtest
+George Pickens,WR,2022,52,Georgia,74.6,19.0,90.0,,,9.3,93.5,observed,82.8,Great (80-89),8.2,Sleeper (+5 to +15),218.3,0.0,0.0,Miss,backtest
+Tyquan Thornton,WR,2022,50,Baylor,75.3,19.0,90.0,,,8.5,85.4,observed,81.9,Great (80-89),6.7,Sleeper (+5 to +15),66.3,0.0,0.0,Miss,backtest
+Rachaad White,RB,2022,91,Arizona St.,63.1,,,1.457,100.0,9.9,98.7,observed,81.3,Great (80-89),18.3,Big Sleeper (+15),17.38235294117647,1.0,1.0,Hit,backtest
+Jahan Dotson,WR,2022,16,Penn St.,89.0,20.0,75.0,,,6.3,63.3,observed,80.3,Great (80-89),-8.8,Bust Risk (-5 to -15),130.6,0.0,0.0,Miss,backtest
+Skyy Moore,WR,2022,54,Western Michigan,73.9,19.0,90.0,,,7.6,75.8,observed,79.8,Good (70-79),5.9,Sleeper (+5 to +15),62.8,0.0,0.0,Miss,backtest
+Breece Hall,RB,2022,36,Iowa St.,80.3,,,0.677,67.7,10.0,99.6,observed,78.8,Good (70-79),-1.5,Neutral (-5 to +5),17.08823529411765,1.0,1.0,Hit,backtest
+Jameson Williams,WR,2022,12,Alabama,91.2,21.0,60.0,,,,68.9,imputed,76.9,Good (70-79),-14.3,Bust Risk (-5 to -15),227.2,1.0,0.0,Hit,backtest
+Jalen Tolbert,WR,2022,88,South Alabama,63.9,19.0,90.0,,,8.6,86.2,observed,76.4,Good (70-79),12.5,Sleeper (+5 to +15),152.0,0.0,0.0,Miss,backtest
+John Metchie,WR,2022,44,Alabama,77.3,20.0,75.0,,,,68.9,imputed,75.3,Good (70-79),-2.1,Neutral (-5 to +5),65.7,0.0,0.0,Miss,backtest
+James Cook,RB,2022,63,Georgia,71.1,,,0.698,69.8,8.8,87.5,observed,73.1,Good (70-79),2.0,Neutral (-5 to +5),19.076470588235296,1.0,1.0,Hit,backtest
+Wan'Dale Robinson,WR,2022,43,Kentucky,77.7,21.0,60.0,,,7.4,73.6,observed,70.9,Good (70-79),-6.8,Bust Risk (-5 to -15),182.7,0.0,0.0,Miss,backtest
+Khalil Shakir,WR,2022,148,Boise St.,49.2,19.0,90.0,,,8.3,83.1,observed,68.6,Average (60-69),19.4,Big Sleeper (+15),217.9,0.0,0.0,Miss,backtest
+Romeo Doubs,WR,2022,132,Nevada,52.9,19.0,90.0,,,,68.9,imputed,68.3,Average (60-69),15.4,Big Sleeper (+15),213.8,0.0,0.0,Miss,backtest
+David Bell,WR,2022,99,Purdue,61.0,19.0,90.0,,,4.0,39.8,observed,67.9,Average (60-69),7.0,Sleeper (+5 to +15),62.1,0.0,0.0,Miss,backtest
+Kyle Philips,WR,2022,163,UCLA,45.9,19.0,90.0,,,8.3,83.1,observed,66.9,Average (60-69),21.0,Big Sleeper (+15),33.1,0.0,0.0,Miss,backtest
+Velus Jones Jr.,WR,2022,71,Tennessee,68.7,21.0,60.0,,,7.1,71.0,observed,66.0,Average (60-69),-2.7,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Calvin Austin III,WR,2022,138,Memphis,51.5,20.0,75.0,,,9.1,90.5,observed,65.6,Average (60-69),14.1,Sleeper (+5 to +15),60.4,0.0,0.0,Miss,backtest
+Montrell Washington,WR,2022,162,Samford,46.2,18.0,100.0,,,4.3,43.2,observed,64.6,Average (60-69),18.4,Big Sleeper (+15),7.2,0.0,0.0,Miss,backtest
+Erik Ezukanma,WR,2022,125,Texas Tech,54.5,20.0,75.0,,,7.0,70.3,observed,64.0,Average (60-69),9.5,Sleeper (+5 to +15),2.2,0.0,0.0,Miss,backtest
+Dareke Young,WR,2022,233,Lenoir-Rhyne,31.9,19.0,90.0,,,9.9,99.3,observed,62.4,Average (60-69),30.4,Big Sleeper (+15),6.5,0.0,0.0,Miss,backtest
+Bo Melton,WR,2022,229,Rutgers,32.7,19.0,90.0,,,9.2,92.3,observed,61.7,Average (60-69),29.0,Big Sleeper (+15),56.5,0.0,0.0,Miss,backtest
+Danny Gray,WR,2022,105,SMU,59.4,21.0,60.0,,,6.8,67.6,observed,60.8,Average (60-69),1.4,Neutral (-5 to +5),2.9,0.0,0.0,Miss,backtest
+Kenneth Walker III,RB,2022,41,Michigan St.,78.4,,,0.223,22.2,9.2,92.4,observed,60.8,Average (60-69),-17.6,Big Bust (<-15),11.729411764705883,1.0,0.0,Hit,backtest
+Brian Robinson Jr.,RB,2022,98,Alabama,61.2,,,0.518,51.8,6.6,65.8,observed,58.6,Below Avg (50-59),-2.6,Neutral (-5 to +5),0.0,0.0,0.0,Miss,backtest
+Jalen Nailor,WR,2022,191,Michigan St.,40.1,20.0,75.0,,,8.1,80.9,observed,58.4,Below Avg (50-59),18.3,Big Sleeper (+15),111.3,0.0,0.0,Miss,backtest
+Dameon Pierce,RB,2022,107,Florida,58.9,,,0.519,51.9,7.1,70.9,observed,58.3,Below Avg (50-59),-0.6,Neutral (-5 to +5),9.788235294117648,0.0,0.0,Miss,backtest
+Michael Woods II,WR,2022,202,Oklahoma,37.9,,79.7,,,,68.9,imputed,57.2,Below Avg (50-59),19.3,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Kyren Williams,RB,2022,164,Notre Dame,45.7,,,0.798,79.8,3.5,34.6,observed,56.0,Below Avg (50-59),10.3,Sleeper (+5 to +15),17.63529411764706,1.0,1.0,Hit,backtest
+Tyler Badie,RB,2022,196,Missouri,39.1,,,0.725,72.5,6.4,63.8,observed,54.5,Below Avg (50-59),15.4,Big Sleeper (+15),0.6,0.0,0.0,Miss,backtest
+Isaiah Spiller,RB,2022,123,Texas A&M,55.0,,,0.511,51.1,5.7,56.6,observed,53.9,Below Avg (50-59),-1.1,Neutral (-5 to +5),1.1176470588235294,0.0,0.0,Miss,backtest
+Tyler Allgeier,RB,2022,151,BYU,48.6,,,0.512,51.2,7.4,74.0,observed,53.3,Below Avg (50-59),4.7,Neutral (-5 to +5),9.376470588235296,0.0,0.0,Miss,backtest
+Jerome Ford,RB,2022,156,Cincinnati,47.5,,,0.55,55.0,6.9,69.1,observed,53.3,Below Avg (50-59),5.9,Sleeper (+5 to +15),12.96470588235294,1.0,0.0,Hit,backtest
+Trestan Ebner,RB,2022,203,Baylor,37.7,,,0.778,77.8,4.8,47.7,observed,53.2,Below Avg (50-59),15.5,Big Sleeper (+15),0.4823529411764706,0.0,0.0,Miss,backtest
+Ty Chandler,RB,2022,169,North Carolina,44.7,,,0.565,56.5,6.3,63.5,observed,51.6,Below Avg (50-59),7.0,Sleeper (+5 to +15),5.941176470588236,0.0,0.0,Miss,backtest
+Zamir White,RB,2022,122,Georgia,55.2,,,0.184,18.4,9.8,98.1,observed,48.8,Poor (<50),-6.4,Bust Risk (-5 to -15),4.347058823529412,0.0,0.0,Miss,backtest
+Hassan Haskins,RB,2022,131,Michigan,53.1,,,0.332,33.2,,66.5,imputed,48.1,Poor (<50),-5.0,Neutral (-5 to +5),1.9588235294117649,0.0,0.0,Miss,backtest
+Pierre Strong,RB,2022,127,South Dakota St.,54.0,,,,30.0,,66.5,imputed,47.5,Poor (<50),-6.5,Bust Risk (-5 to -15),2.51764705882353,0.0,0.0,Miss,backtest
+Tyrion Davis-Price,RB,2022,93,LSU,62.5,,,0.144,14.4,6.7,66.5,observed,46.3,Poor (<50),-16.2,Big Bust (<-15),0.5823529411764706,0.0,0.0,Miss,backtest
+Samori Toure,WR,2022,258,Nebraska,27.3,21.0,60.0,,,6.1,61.4,observed,43.9,Poor (<50),16.5,Big Sleeper (+15),19.2,0.0,0.0,Miss,backtest
+Keaontay Ingram,RB,2022,201,USC,38.1,,,0.312,31.2,8.7,86.7,observed,43.0,Poor (<50),4.9,Neutral (-5 to +5),1.0647058823529412,0.0,0.0,Miss,backtest
+Snoop Conner,RB,2022,154,Mississippi,47.9,,,0.191,19.1,7.0,70.3,observed,41.2,Poor (<50),-6.7,Bust Risk (-5 to -15),0.6,0.0,0.0,Miss,backtest
+Kevin Harris,RB,2022,183,South Carolina,41.7,,,0.247,24.7,7.1,71.3,observed,40.2,Poor (<50),-1.5,Neutral (-5 to +5),1.2529411764705882,0.0,0.0,Miss,backtest
+Zander Horvath,RB,2022,260,Purdue,27.0,,,,30.0,9.8,98.3,observed,38.7,Poor (<50),11.8,Sleeper (+5 to +15),1.0941176470588234,0.0,0.0,Miss,backtest
+Isiah Pacheco,RB,2022,251,Rutgers,28.6,,,,30.0,8.8,88.5,observed,38.1,Poor (<50),9.5,Sleeper (+5 to +15),16.423529411764704,1.0,1.0,Hit,backtest
+Brittain Brown,RB,2022,250,UCLA,28.8,,,0.385,38.5,4.8,47.5,observed,35.0,Poor (<50),6.2,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Jahmyr Gibbs,RB,2023,12,Alabama,91.2,,,1.014,100.0,8.1,80.6,observed,92.7,Elite (90+),1.5,Neutral (-5 to +5),22.96470588235294,1.0,1.0,Hit,backtest
+Bijan Robinson,RB,2023,8,Texas,93.7,,,0.775,77.5,9.8,98.5,observed,88.8,Great (80-89),-4.9,Neutral (-5 to +5),20.1,1.0,1.0,Hit,backtest
+Quentin Johnston,WR,2023,21,TCU,86.6,19.0,90.0,,,8.7,86.8,observed,87.8,Great (80-89),1.2,Neutral (-5 to +5),174.70000000000002,0.0,0.0,Miss,backtest
+Zay Flowers,WR,2023,22,Boston Col.,86.1,19.0,90.0,,,8.3,82.9,observed,87.0,Great (80-89),0.9,Neutral (-5 to +5),235.4,1.0,0.0,Hit,backtest
+Rashee Rice,WR,2023,55,SMU,73.6,19.0,90.0,,,9.5,95.3,observed,82.6,Great (80-89),9.0,Sleeper (+5 to +15),271.2,1.0,0.0,Hit,backtest
+Jaxon Smith-Njigba,WR,2023,20,Ohio St.,87.0,20.0,75.0,,,8.3,83.4,observed,82.3,Great (80-89),-4.8,Neutral (-5 to +5),251.6,1.0,0.0,Hit,backtest
+Michael Wilson,WR,2023,94,Stanford,62.3,18.0,100.0,,,9.6,95.5,observed,80.5,Great (80-89),18.2,Big Sleeper (+15),124.5,0.0,0.0,Miss,backtest
+Jayden Reed,WR,2023,50,Michigan St.,75.3,19.0,90.0,,,6.7,67.4,observed,79.2,Good (70-79),4.0,Neutral (-5 to +5),225.6,1.0,0.0,Hit,backtest
+Zach Charbonnet,RB,2023,52,UCLA,74.6,,,0.766,76.6,8.7,87.1,observed,77.2,Good (70-79),2.6,Neutral (-5 to +5),10.805882352941175,0.0,0.0,Miss,backtest
+Tank Dell,WR,2023,69,Houston,69.3,19.0,90.0,,,,68.9,imputed,76.5,Good (70-79),7.2,Sleeper (+5 to +15),165.0,0.0,0.0,Miss,backtest
+Jonathan Mingo,WR,2023,39,Mississippi,79.1,21.0,60.0,,,9.9,98.7,observed,75.4,Good (70-79),-3.8,Neutral (-5 to +5),84.8,0.0,0.0,Miss,backtest
+Cedric Tillman,WR,2023,74,Tennessee,67.8,20.0,75.0,,,8.7,86.7,observed,73.2,Good (70-79),5.4,Sleeper (+5 to +15),80.4,0.0,0.0,Miss,backtest
+Josh Downs,WR,2023,79,North Carolina,66.4,20.0,75.0,,,9.0,89.9,observed,72.9,Good (70-79),6.6,Sleeper (+5 to +15),182.2,0.0,0.0,Miss,backtest
+Jordan Addison,WR,2023,23,USC,85.6,21.0,60.0,,,5.9,59.4,observed,72.7,Good (70-79),-12.9,Bust Risk (-5 to -15),221.3,1.0,0.0,Hit,backtest
+Marvin Mims,WR,2023,63,Oklahoma,71.1,20.0,75.0,,,,68.9,imputed,72.1,Good (70-79),1.0,Neutral (-5 to +5),132.8,0.0,0.0,Miss,backtest
+Evan Hull,RB,2023,176,Northwestern,43.2,,,1.309,100.0,9.3,93.3,observed,70.6,Good (70-79),27.4,Big Sleeper (+15),0.1,0.0,0.0,Miss,backtest
+Jalin Hyatt,WR,2023,73,Tennessee,68.1,21.0,60.0,,,8.8,87.6,observed,68.2,Average (60-69),0.1,Neutral (-5 to +5),60.3,0.0,0.0,Miss,backtest
+Tyjae Spears,RB,2023,81,Tulane,65.8,,,0.675,67.5,7.5,75.1,observed,67.8,Average (60-69),2.0,Neutral (-5 to +5),9.047058823529412,0.0,0.0,Miss,backtest
+Tank Bigsby,RB,2023,88,Auburn,63.9,,,0.584,58.4,8.3,83.2,observed,64.9,Average (60-69),1.0,Neutral (-5 to +5),7.588235294117647,0.0,0.0,Miss,backtest
+Justin Shorter,WR,2023,150,Florida,48.8,,79.7,,,7.9,79.4,observed,64.2,Average (60-69),15.4,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Dontayvion Wicks,WR,2023,159,Virginia,46.8,20.0,75.0,,,9.2,91.7,observed,63.4,Average (60-69),16.6,Big Sleeper (+15),129.7,0.0,0.0,Miss,backtest
+Parker Washington,WR,2023,185,Penn St.,41.3,19.0,90.0,,,,68.9,imputed,62.5,Average (60-69),21.2,Big Sleeper (+15),91.0,0.0,0.0,Miss,backtest
+Tre Tucker,WR,2023,100,Cincinnati,60.7,21.0,60.0,,,7.2,71.6,observed,62.1,Average (60-69),1.4,Neutral (-5 to +5),129.3,0.0,0.0,Miss,backtest
+Derius Davis,WR,2023,125,TCU,54.5,,79.7,,,4.3,42.9,observed,61.6,Average (60-69),7.1,Sleeper (+5 to +15),41.2,0.0,0.0,Miss,backtest
+Ronnie Bell,WR,2023,253,Michigan,28.2,18.0,100.0,,,8.2,82.0,observed,61.4,Average (60-69),33.2,Big Sleeper (+15),30.8,0.0,0.0,Miss,backtest
+Xavier Hutchinson,WR,2023,205,Iowa St.,37.3,19.0,90.0,,,7.3,72.7,observed,61.1,Average (60-69),23.7,Big Sleeper (+15),37.3,0.0,0.0,Miss,backtest
+A.T. Perry,WR,2023,195,Wake Forest,39.3,20.0,75.0,,,9.6,96.2,observed,60.3,Average (60-69),21.0,Big Sleeper (+15),60.6,0.0,0.0,Miss,backtest
+Tyler Scott,WR,2023,133,Cincinnati,52.6,21.0,60.0,,,8.6,86.1,observed,60.2,Average (60-69),7.6,Sleeper (+5 to +15),35.900000000000006,0.0,0.0,Miss,backtest
+De'Von Achane,RB,2023,84,Texas A&M,65.0,,,0.501,50.1,,66.5,imputed,60.0,Average (60-69),-5.0,Neutral (-5 to +5),11.570588235294116,1.0,0.0,Hit,backtest
+Kayshon Boutte,WR,2023,187,LSU,40.9,19.0,90.0,,,5.0,49.9,observed,59.4,Below Avg (50-59),18.5,Big Sleeper (+15),121.9,0.0,0.0,Miss,backtest
+Chase Brown,RB,2023,163,Illinois,45.9,,,0.611,61.1,9.8,98.1,observed,59.1,Below Avg (50-59),13.1,Sleeper (+5 to +15),15.0,1.0,1.0,Hit,backtest
+Deuce Vaughn,RB,2023,212,Kansas St.,35.9,,,0.974,97.4,4.3,43.2,observed,58.5,Below Avg (50-59),22.6,Big Sleeper (+15),0.8823529411764706,0.0,0.0,Miss,backtest
+Charlie Jones,WR,2023,131,Purdue,53.1,21.0,60.0,,,,68.9,imputed,57.9,Below Avg (50-59),4.8,Neutral (-5 to +5),14.7,0.0,0.0,Miss,backtest
+Kenny McIntosh,RB,2023,237,Georgia,31.2,,,1.024,100.0,4.1,40.8,observed,56.7,Below Avg (50-59),25.5,Big Sleeper (+15),1.3176470588235294,0.0,0.0,Miss,backtest
+Puka Nacua,WR,2023,177,BYU,43.0,20.0,75.0,,,5.2,51.8,observed,55.5,Below Avg (50-59),12.5,Sleeper (+5 to +15),331.4,1.0,1.0,Hit,backtest
+DeMario Douglas,WR,2023,210,Liberty,36.3,20.0,75.0,,,,68.9,imputed,54.8,Below Avg (50-59),18.4,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Elijah Higgins,WR,2023,197,Stanford,38.9,21.0,60.0,,,8.9,89.4,observed,53.9,Below Avg (50-59),15.0,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Kendre Miller,RB,2023,71,TCU,68.7,,,0.256,25.6,,66.5,imputed,53.3,Below Avg (50-59),-15.4,Big Bust (<-15),2.547058823529412,0.0,0.0,Miss,backtest
+Israel Abanikanda,RB,2023,143,Pittsburgh,50.3,,,0.372,37.2,9.6,96.3,observed,52.6,Below Avg (50-59),2.3,Neutral (-5 to +5),1.076470588235294,0.0,0.0,Miss,backtest
+Roschon Johnson,RB,2023,115,Texas,56.9,,,0.316,31.6,8.7,86.7,observed,52.5,Below Avg (50-59),-4.4,Neutral (-5 to +5),6.005882352941176,0.0,0.0,Miss,backtest
+Eric Gray,RB,2023,172,Oklahoma,44.0,,,0.563,56.3,6.6,65.6,observed,51.5,Below Avg (50-59),7.5,Sleeper (+5 to +15),1.1352941176470588,0.0,0.0,Miss,backtest
+Antoine Green,WR,2023,219,North Carolina,34.6,21.0,60.0,,,8.7,86.8,observed,51.3,Below Avg (50-59),16.7,Big Sleeper (+15),1.2,0.0,0.0,Miss,backtest
+Jalen Brooks,WR,2023,244,South Carolina,29.9,,79.7,,,5.6,56.0,observed,51.2,Below Avg (50-59),21.3,Big Sleeper (+15),35.7,0.0,0.0,Miss,backtest
+Grant Dubose,WR,2023,256,Charlotte,27.7,20.0,75.0,,,,68.9,imputed,50.4,Below Avg (50-59),22.7,Big Sleeper (+15),0.0,0.0,0.0,Miss,backtest
+Trey Palmer,WR,2023,191,Nebraska,40.1,21.0,60.0,,,6.2,61.8,observed,50.3,Below Avg (50-59),10.2,Sleeper (+5 to +15),114.4,0.0,0.0,Miss,backtest
+Andrei Iosivas,WR,2023,206,Princeton,37.1,22.0,45.0,,,10.0,99.6,observed,49.2,Poor (<50),12.1,Sleeper (+5 to +15),119.9,0.0,0.0,Miss,backtest
+Colton Dowell,WR,2023,228,UT Martin,32.9,22.0,45.0,,,9.8,97.8,observed,46.9,Poor (<50),14.0,Sleeper (+5 to +15),1.3,0.0,0.0,Miss,backtest
+Zach Evans,RB,2023,215,Mississippi,35.4,,,0.308,30.8,8.8,87.5,observed,41.6,Poor (<50),6.2,Sleeper (+5 to +15),0.1117647058823529,0.0,0.0,Miss,backtest
+Lew Nichols,RB,2023,235,Central Michigan,31.6,,,0.329,32.9,,66.5,imputed,37.3,Poor (<50),5.7,Sleeper (+5 to +15),0.0,0.0,0.0,Miss,backtest
+Chris Rodriguez,RB,2023,193,Kentucky,39.7,,,0.117,11.7,,66.5,imputed,33.9,Poor (<50),-5.8,Bust Risk (-5 to -15),1.8529411764705883,0.0,0.0,Miss,backtest
+DeWayne McBride,RB,2023,222,Ala-Birmingham,34.0,,,0.031,3.1,,66.5,imputed,28.1,Poor (<50),-5.9,Bust Risk (-5 to -15),0.0,0.0,0.0,Miss,backtest
+Malik Nabers,WR,2024,6,LSU,95.1,20.0,75.0,,,9.7,96.7,observed,88.3,Great (80-89),-6.8,Bust Risk (-5 to -15),273.6,1.0,1.0,TBD,backtest
+Rome Odunze,WR,2024,9,Washington,93.0,20.0,75.0,,,9.9,99.2,observed,87.6,Great (80-89),-5.4,Bust Risk (-5 to -15),144.9,0.0,0.0,TBD,backtest
+Xavier Worthy,WR,2024,28,Texas,83.5,19.0,90.0,,,9.4,94.1,observed,87.3,Great (80-89),3.9,Neutral (-5 to +5),253.7,1.0,1.0,TBD,backtest
+Marvin Harrison Jr.,WR,2024,4,Ohio St.,96.7,20.0,75.0,,,,68.9,imputed,85.0,Great (80-89),-11.8,Bust Risk (-5 to -15),0.0,0.0,0.0,TBD,backtest
+Ricky Pearsall,WR,2024,31,Florida,82.2,20.0,75.0,,,9.9,99.1,observed,82.2,Great (80-89),0.0,Neutral (-5 to +5),93.5,0.0,0.0,TBD,backtest
+Keon Coleman,WR,2024,33,Florida St.,81.4,,79.7,,,8.2,81.8,observed,80.9,Great (80-89),-0.5,Neutral (-5 to +5),118.7,0.0,0.0,TBD,backtest
+Ladd McConkey,WR,2024,34,Georgia,81.0,20.0,75.0,,,9.3,93.4,observed,80.8,Great (80-89),-0.3,Neutral (-5 to +5),275.6,1.0,1.0,TBD,backtest
+Xavier Legette,WR,2024,32,South Carolina,81.8,21.0,60.0,,,9.9,99.0,observed,76.8,Good (70-79),-5.1,Bust Risk (-5 to -15),125.1,0.0,0.0,TBD,backtest
+Javon Baker,WR,2024,110,Central Florida,58.2,18.0,100.0,,,7.8,78.4,observed,75.8,Good (70-79),17.7,Big Sleeper (+15),2.2,0.0,0.0,TBD,backtest
+Brian Thomas,WR,2024,23,LSU,85.6,21.0,60.0,,,,68.9,imputed,74.2,Good (70-79),-11.5,Bust Risk (-5 to -15),284.0,1.0,1.0,TBD,backtest
+Ja'Lynn Polk,WR,2024,37,Washington,79.9,21.0,60.0,,,8.8,88.5,observed,74.2,Good (70-79),-5.7,Bust Risk (-5 to -15),32.7,0.0,0.0,TBD,backtest
+Adonai Mitchell,WR,2024,52,Texas,74.6,21.0,60.0,,,10.0,99.9,observed,73.3,Good (70-79),-1.3,Neutral (-5 to +5),52.8,0.0,0.0,TBD,backtest
+Malachi Corley,WR,2024,65,Western Kentucky,70.5,20.0,75.0,,,7.8,77.6,observed,73.1,Good (70-79),2.7,Neutral (-5 to +5),7.2,0.0,0.0,TBD,backtest
+Devontez Walker,WR,2024,113,North Carolina,57.4,,79.7,,,9.8,97.6,observed,71.2,Good (70-79),13.8,Sleeper (+5 to +15),9.1,0.0,0.0,TBD,backtest
+Luke McCaffrey,WR,2024,100,Rice,60.7,20.0,75.0,,,9.4,94.4,observed,70.8,Good (70-79),10.1,Sleeper (+5 to +15),34.8,0.0,0.0,TBD,backtest
+Jalen McMillan,WR,2024,92,Washington,62.8,20.0,75.0,,,8.7,86.7,observed,70.7,Good (70-79),7.9,Sleeper (+5 to +15),141.5,0.0,0.0,TBD,backtest
+Ainias Smith,WR,2024,152,Texas A&M,48.3,18.0,100.0,,,7.4,73.6,observed,70.2,Good (70-79),21.9,Big Sleeper (+15),17.7,0.0,0.0,TBD,backtest
+Troy Franklin,WR,2024,102,Oregon,60.2,20.0,75.0,,,9.0,90.2,observed,69.9,Average (60-69),9.7,Sleeper (+5 to +15),80.5,0.0,0.0,TBD,backtest
+Jonathon Brooks,RB,2024,46,Texas,76.6,,,0.602,60.2,,66.5,imputed,69.4,Average (60-69),-7.3,Bust Risk (-5 to -15),0.4411764705882353,0.0,0.0,TBD,backtest
+Trey Benson,RB,2024,66,Florida St.,70.2,,,0.524,52.4,9.8,97.6,observed,68.1,Average (60-69),-2.1,Neutral (-5 to +5),2.764705882352941,0.0,0.0,TBD,backtest
+Jermaine Burton,WR,2024,80,Alabama,66.1,21.0,60.0,,,9.1,90.9,observed,67.7,Average (60-69),1.6,Neutral (-5 to +5),14.7,0.0,0.0,TBD,backtest
+Roman Wilson,WR,2024,84,Michigan,65.0,21.0,60.0,,,8.6,85.9,observed,66.4,Average (60-69),1.4,Neutral (-5 to +5),0.0,0.0,0.0,TBD,backtest
+Jha'Quan Jackson,WR,2024,182,Tulane,41.9,18.0,100.0,,,5.3,53.4,observed,64.0,Average (60-69),22.0,Big Sleeper (+15),1.3,0.0,0.0,TBD,backtest
+MarShawn Lloyd,RB,2024,88,USC,63.9,,,0.503,50.3,8.6,86.2,observed,62.5,Average (60-69),-1.4,Neutral (-5 to +5),0.1647058823529411,0.0,0.0,TBD,backtest
+Jacob Cowing,WR,2024,135,Arizona,52.2,20.0,75.0,,,6.3,62.8,observed,61.8,Average (60-69),9.6,Sleeper (+5 to +15),12.7,0.0,0.0,TBD,backtest
+Isaac Guerendo,RB,2024,129,Louisville,53.6,,,0.574,57.4,9.9,99.0,observed,61.7,Average (60-69),8.1,Sleeper (+5 to +15),5.658823529411765,0.0,0.0,TBD,backtest
+Johnny Wilson,WR,2024,185,Florida St.,41.3,20.0,75.0,,,9.7,97.0,observed,61.5,Average (60-69),20.1,Big Sleeper (+15),14.8,0.0,0.0,TBD,backtest
+Anthony Gould,WR,2024,142,Oregon St.,50.6,21.0,60.0,,,8.9,88.7,observed,59.6,Below Avg (50-59),9.0,Sleeper (+5 to +15),3.3000000000000003,0.0,0.0,TBD,backtest
+Will Shipley,RB,2024,127,Clemson,54.0,,,0.515,51.5,9.6,95.7,observed,59.4,Below Avg (50-59),5.4,Sleeper (+5 to +15),1.7294117647058822,0.0,0.0,TBD,backtest
+Ryan Flournoy,WR,2024,216,SE Missouri St.,35.2,20.0,75.0,,,9.9,98.9,observed,58.7,Below Avg (50-59),23.5,Big Sleeper (+15),18.200000000000003,0.0,0.0,TBD,backtest
+Bub Means,WR,2024,170,Pittsburgh,44.4,21.0,60.0,,,9.3,93.5,observed,57.2,Below Avg (50-59),12.8,Sleeper (+5 to +15),26.8,0.0,0.0,TBD,backtest
+Blake Corum,RB,2024,83,Michigan,65.2,,,0.324,32.4,8.3,82.9,observed,56.4,Below Avg (50-59),-8.8,Bust Risk (-5 to -15),1.9705882352941173,0.0,0.0,TBD,backtest
+Cornelius Johnson,WR,2024,253,Michigan,28.2,,79.7,,,9.5,94.6,observed,56.2,Below Avg (50-59),28.0,Big Sleeper (+15),0.0,0.0,0.0,TBD,backtest
+Tejhaun Palmer,WR,2024,191,Ala-Birmingham,40.1,21.0,60.0,,,9.6,95.7,observed,55.4,Below Avg (50-59),15.3,Big Sleeper (+15),0.0,0.0,0.0,TBD,backtest
+Jamari Thrash,WR,2024,156,Louisville,47.5,21.0,60.0,,,6.8,67.7,observed,54.9,Below Avg (50-59),7.4,Sleeper (+5 to +15),5.2,0.0,0.0,TBD,backtest
+Malik Washington,WR,2024,184,Virginia,41.5,21.0,60.0,,,8.6,86.3,observed,54.7,Below Avg (50-59),13.2,Sleeper (+5 to +15),56.8,0.0,0.0,TBD,backtest
+Jaylen Wright,RB,2024,120,Tennessee,55.7,,,0.343,34.3,9.8,98.1,observed,54.6,Below Avg (50-59),-1.1,Neutral (-5 to +5),1.5705882352941178,0.0,0.0,TBD,backtest
+Jordan Whittington,WR,2024,213,Texas,35.7,20.0,75.0,,,,68.9,imputed,54.5,Below Avg (50-59),18.7,Big Sleeper (+15),54.7,0.0,0.0,TBD,backtest
+Casey Washington,WR,2024,187,Illinois,40.9,21.0,60.0,,,7.2,71.5,observed,52.2,Below Avg (50-59),11.3,Sleeper (+5 to +15),2.4000000000000004,0.0,0.0,TBD,backtest
+Rasheen Ali,RB,2024,165,Marshall,45.5,,,0.501,50.1,,66.5,imputed,50.3,Below Avg (50-59),4.8,Neutral (-5 to +5),0.1823529411764706,0.0,0.0,TBD,backtest
+Kimani Vidal,RB,2024,181,Troy,42.1,,,0.441,44.1,8.9,88.8,observed,49.8,Poor (<50),7.7,Sleeper (+5 to +15),1.9235294117647064,0.0,0.0,TBD,backtest
+Devaughn Vele,WR,2024,235,Utah,31.6,21.0,60.0,,,8.5,84.7,observed,49.5,Poor (<50),17.9,Big Sleeper (+15),106.5,0.0,0.0,TBD,backtest
+Tahj Washington,WR,2024,241,USC,30.4,20.0,75.0,,,5.1,51.3,observed,49.2,Poor (<50),18.7,Big Sleeper (+15),0.0,0.0,0.0,TBD,backtest
+Tyrone Tracy Jr.,RB,2024,166,Purdue,45.3,,,0.337,33.7,9.8,97.8,observed,49.1,Poor (<50),3.8,Neutral (-5 to +5),0.0,0.0,0.0,TBD,backtest
+Audric Estime,RB,2024,147,Notre Dame,49.4,,,0.405,40.5,6.6,65.7,observed,48.7,Poor (<50),-0.7,Neutral (-5 to +5),2.864705882352941,0.0,0.0,TBD,backtest
+Brenden Rice,WR,2024,225,USC,33.4,21.0,60.0,,,7.2,71.7,observed,48.5,Poor (<50),15.0,Big Sleeper (+15),0.0,0.0,0.0,TBD,backtest
+Ray Davis,RB,2024,128,Kentucky,53.8,,,,30.0,,66.5,imputed,47.4,Poor (<50),-6.4,Bust Risk (-5 to -15),7.394117647058824,0.0,0.0,TBD,backtest
+Jawhar Jordan,RB,2024,205,Louisville,37.3,,,0.603,60.3,4.6,46.0,observed,46.7,Poor (<50),9.3,Sleeper (+5 to +15),0.0,0.0,0.0,TBD,backtest
+Braelon Allen,RB,2024,134,Wisconsin,52.4,,,0.279,27.9,,66.5,imputed,45.9,Poor (<50),-6.4,Bust Risk (-5 to -15),5.011764705882353,0.0,0.0,TBD,backtest
+Isaiah Davis,RB,2024,173,South Dakota St.,43.8,,,,30.0,8.9,88.6,observed,45.7,Poor (<50),1.9,Neutral (-5 to +5),2.7,0.0,0.0,TBD,backtest
+Jase McClellan,RB,2024,186,Alabama,41.1,,,0.422,42.2,,66.5,imputed,45.3,Poor (<50),4.2,Neutral (-5 to +5),0.188235294117647,0.0,0.0,TBD,backtest
+Dylan Laube,RB,2024,208,New Hampshire,36.7,,,,30.0,8.8,87.8,observed,42.0,Poor (<50),5.3,Sleeper (+5 to +15),-0.1176470588235294,0.0,0.0,TBD,backtest
+Bucky Irving,RB,2024,125,Oregon,54.5,,,,30.0,2.2,22.2,observed,41.1,Poor (<50),-13.4,Bust Risk (-5 to -15),15.33529411764706,1.0,1.0,TBD,backtest
+Keilan Robinson,RB,2024,167,Texas,45.1,,,0.118,11.8,7.3,73.2,observed,37.6,Poor (<50),-7.4,Bust Risk (-5 to -15),0.0,0.0,0.0,TBD,backtest
+Carnell Tate,WR,2026,4,Ohio State,96.7,19.0,90.0,,,,68.9,imputed,90.2,Elite (90+),-6.5,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Jordyn Tyson,WR,2026,7,Arizona State,94.4,20.0,75.0,,,,68.9,imputed,83.8,Great (80-89),-10.6,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Kevin Concepcion,WR,2026,27,Texas A&M,83.9,19.0,90.0,,,,68.9,imputed,83.8,Great (80-89),-0.1,Neutral (-5 to +5),,,,TBD,prospect_2026
+Makai Lemon,WR,2026,16,USC,89.0,20.0,75.0,,,,68.9,imputed,81.1,Great (80-89),-7.9,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Zachariah Branch,WR,2026,47,Georgia,76.3,19.0,90.0,,,,68.9,imputed,80.0,Good (70-79),3.7,Neutral (-5 to +5),,,,TBD,prospect_2026
+Denzel Boston,WR,2026,24,Washington,85.2,20.0,75.0,,,,68.9,imputed,79.2,Good (70-79),-6.0,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Jeremiyah Love,RB,2026,10,Notre Dame,92.4,,,,61.9,,66.5,imputed,77.8,Good (70-79),-14.6,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Germie Bernard,WR,2026,52,Alabama,74.6,20.0,75.0,,,,68.9,imputed,73.9,Good (70-79),-0.7,Neutral (-5 to +5),,,,TBD,prospect_2026
+Ja'Kobi Lane,WR,2026,65,USC,70.5,20.0,75.0,,,,68.9,imputed,71.8,Good (70-79),1.4,Neutral (-5 to +5),,,,TBD,prospect_2026
+Chris Bell,WR,2026,43,Louisville,77.7,21.0,60.0,,,,68.9,imputed,70.2,Good (70-79),-7.5,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Elijah Sarratt,WR,2026,44,Indiana,77.3,21.0,60.0,,,,68.9,imputed,70.0,Good (70-79),-7.3,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Chris Brazzell,WR,2026,53,Tennessee,74.3,21.0,60.0,,,,68.9,imputed,68.5,Average (60-69),-5.8,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Jonah Coleman,RB,2026,56,Washington,73.3,,,,56.6,,66.5,imputed,66.4,Average (60-69),-6.9,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+C.J. Daniels,WR,2026,112,Miami,57.7,20.0,75.0,,,,68.9,imputed,65.4,Average (60-69),7.8,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Emmett Johnson,RB,2026,83,Nebraska,65.2,,,,63.9,,66.5,imputed,65.0,Average (60-69),-0.3,Neutral (-5 to +5),,,,TBD,prospect_2026
+Omar Cooper Jr.,WR,2026,76,Indiana,67.2,21.0,60.0,,,,68.9,imputed,64.9,Average (60-69),-2.3,Neutral (-5 to +5),,,,TBD,prospect_2026
+Deion Burks,WR,2026,121,Oklahoma,55.5,20.0,75.0,,,,68.9,imputed,64.3,Average (60-69),8.9,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Antonio Williams,WR,2026,85,Clemson,64.7,21.0,60.0,,,,68.9,imputed,63.7,Average (60-69),-1.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+Skyler Bell,WR,2026,88,UConn,63.9,21.0,60.0,,,,68.9,imputed,63.3,Average (60-69),-0.6,Neutral (-5 to +5),,,,TBD,prospect_2026
+Malachi Fields,WR,2026,89,Notre Dame,63.6,21.0,60.0,,,,68.9,imputed,63.1,Average (60-69),-0.5,Neutral (-5 to +5),,,,TBD,prospect_2026
+Noah Thomas,WR,2026,196,Georgia,39.1,19.0,90.0,,,,68.9,imputed,61.4,Average (60-69),22.3,Big Sleeper (+15),,,,TBD,prospect_2026
+Brenen Thompson,WR,2026,113,Mississippi State,57.4,21.0,60.0,,,,68.9,imputed,60.0,Average (60-69),2.6,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kevin Coleman Jr.,WR,2026,162,Missouri,46.2,20.0,75.0,,,,68.9,imputed,59.7,Below Avg (50-59),13.5,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Amare Thomas,WR,2026,250,Houston,28.8,18.0,100.0,,,,68.9,imputed,59.7,Below Avg (50-59),30.9,Big Sleeper (+15),,,,TBD,prospect_2026
+Ted Hurst,WR,2026,132,Georgia State,52.9,21.0,60.0,,,,68.9,imputed,57.8,Below Avg (50-59),4.9,Neutral (-5 to +5),,,,TBD,prospect_2026
+De'Zhaun Stribling,WR,2026,186,Ole Miss,41.1,20.0,75.0,,,,68.9,imputed,57.1,Below Avg (50-59),16.0,Big Sleeper (+15),,,,TBD,prospect_2026
+Keelan Marion,WR,2026,193,Miami,39.7,20.0,75.0,,,,68.9,imputed,56.4,Below Avg (50-59),16.7,Big Sleeper (+15),,,,TBD,prospect_2026
+Jaden Greathouse,WR,2026,250,Notre Dame,28.8,19.0,90.0,,,,68.9,imputed,56.2,Below Avg (50-59),27.4,Big Sleeper (+15),,,,TBD,prospect_2026
+Barion Brown,WR,2026,250,LSU,28.8,19.0,90.0,,,,68.9,imputed,56.2,Below Avg (50-59),27.4,Big Sleeper (+15),,,,TBD,prospect_2026
+Shelton Sampson Jr.,WR,2026,250,Louisiana,28.8,19.0,90.0,,,,68.9,imputed,56.2,Below Avg (50-59),27.4,Big Sleeper (+15),,,,TBD,prospect_2026
+Aaron Anderson,WR,2026,199,LSU,38.5,20.0,75.0,,,,68.9,imputed,55.8,Below Avg (50-59),17.3,Big Sleeper (+15),,,,TBD,prospect_2026
+Bryce Lance,WR,2026,150,North Dakota State,48.8,21.0,60.0,,,,68.9,imputed,55.7,Below Avg (50-59),6.9,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Dane Key,WR,2026,202,Nebraska,37.9,20.0,75.0,,,,68.9,imputed,55.5,Below Avg (50-59),17.6,Big Sleeper (+15),,,,TBD,prospect_2026
+Jordan Hudson,WR,2026,211,SMU,36.1,20.0,75.0,,,,68.9,imputed,54.7,Below Avg (50-59),18.5,Big Sleeper (+15),,,,TBD,prospect_2026
+Caleb Douglas,WR,2026,212,Texas Tech,35.9,20.0,75.0,,,,68.9,imputed,54.6,Below Avg (50-59),18.6,Big Sleeper (+15),,,,TBD,prospect_2026
+Reggie Virgil,WR,2026,216,Texas Tech,35.2,20.0,75.0,,,,68.9,imputed,54.2,Below Avg (50-59),19.0,Big Sleeper (+15),,,,TBD,prospect_2026
+Eric McAlister,WR,2026,171,TCU,44.2,21.0,60.0,,,,68.9,imputed,53.5,Below Avg (50-59),9.2,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Eric Rivers,WR,2026,178,Georgia Tech,42.8,21.0,60.0,,,,68.9,imputed,52.7,Below Avg (50-59),10.0,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Kaden Wetjen,WR,2026,250,Iowa,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Chris Hilton,WR,2026,250,LSU,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Malik Benson,WR,2026,250,Oregon,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jeff Caldwell,WR,2026,250,Cincinnati,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Hank Beatty,WR,2026,250,Illinois,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Eli Heidenreich,WR,2026,250,Navy,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+J.Michael Sturdivant,WR,2026,250,Florida,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Dillon Bell,WR,2026,250,Georgia,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jordan Dwyer,WR,2026,250,TCU,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Griffin Wilde,WR,2026,250,Northwestern,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jalil Farooq,WR,2026,250,Maryland,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Romello Brinson,WR,2026,250,SMU,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jalen Walthall,WR,2026,250,Incarnate Word,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Chase Roberts,WR,2026,250,BYU,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Emmanuel Henderson,WR,2026,250,Kansas,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Zavion Thomas,WR,2026,250,LSU,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Trebor Pena,WR,2026,250,Penn State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jaquaize Pettaway,WR,2026,250,East Carolina,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Raymond Cottrell,WR,2026,250,Texas A&M,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Nathan Leacock,WR,2026,250,North Carolina,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Anthony Evans III,WR,2026,250,Mississippi State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jalen Brown,WR,2026,250,Arkansas,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Brandon Inniss,WR,2026,250,Ohio State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Ryan Niblett,WR,2026,250,Texas,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Cordale Russell,WR,2026,250,Colorado,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Ayden Williams,WR,2026,250,Mississippi State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Braylon James,WR,2026,250,Notre Dame,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+London Humphreys,WR,2026,250,Georgia,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Tyler Brown,WR,2026,250,Clemson,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Mikey Matthews,WR,2026,250,UCLA,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Antonio Gates Jr.,WR,2026,250,Michigan State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+C.J. Williams,WR,2026,250,Stanford,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Andre Greene Jr.,WR,2026,250,Virginia,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Kobe Prentice,WR,2026,250,Baylor,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Kyion Grayes,WR,2026,250,California,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Braylin Presley,WR,2026,250,Tulsa,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Talyn Shettron,WR,2026,250,Oklahoma State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Tobias Merriweather,WR,2026,250,Utah,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Kaleb Brown,WR,2026,250,UAB,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jayden McGowan,WR,2026,250,Charlotte,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Squirrel White,WR,2026,250,Florida State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jaron Glover,WR,2026,250,Michigan State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Justus Ross-Simmons,WR,2026,250,Syracuse,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jayden Ballard,WR,2026,250,Wisconsin,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Christian Leary,WR,2026,250,Western Michigan,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+JoJo Earle,WR,2026,250,UNLV,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Dacari Collins,WR,2026,250,Louisville,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Cody Jackson,WR,2026,250,Tarleton State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Kyron Ware-Hudson,WR,2026,250,Penn State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Malik McClain,WR,2026,250,Arizona State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Deion Colzie,WR,2026,250,Miami (OH),28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jerand Bradley,WR,2026,250,Kansas State,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Andrel Anthony,WR,2026,250,Duke,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jayden Thomas,WR,2026,250,Virginia,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Rara Thomas,WR,2026,250,Troy,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Cyrus Allen,WR,2026,250,Cincinnati,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jared Brown,WR,2026,250,South Carolina,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Jaden Bray,WR,2026,250,West Virginia,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Joseph Manjack IV,WR,2026,250,TCU,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Max Tomzcak,WR,2026,250,Northern Illinois,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+E.J. Williams,WR,2026,250,Indiana,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Ja'Mori Maclin,WR,2026,250,Kentucky,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Ja'Varrius Johnson,WR,2026,250,Auburn,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Donavon Greene,WR,2026,250,Virginia Tech,28.8,,79.7,,,,68.9,imputed,52.6,Below Avg (50-59),23.8,Big Sleeper (+15),,,,TBD,prospect_2026
+Nick Singleton,RB,2026,118,Penn State,56.2,,,,41.5,,66.5,imputed,52.6,Below Avg (50-59),-3.6,Neutral (-5 to +5),,,,TBD,prospect_2026
+Lewis Bond,WR,2026,185,Boston College,41.3,21.0,60.0,,,,68.9,imputed,52.0,Below Avg (50-59),10.7,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Josh Cameron,WR,2026,194,Baylor,39.5,21.0,60.0,,,,68.9,imputed,51.1,Below Avg (50-59),11.6,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Harrison Wallace III,WR,2026,250,Ole Miss,28.8,20.0,75.0,,,,68.9,imputed,51.0,Below Avg (50-59),22.2,Big Sleeper (+15),,,,TBD,prospect_2026
+Hykeem Williams,WR,2026,250,Colorado,28.8,20.0,75.0,,,,68.9,imputed,51.0,Below Avg (50-59),22.2,Big Sleeper (+15),,,,TBD,prospect_2026
+Jadarian Price,RB,2026,79,Notre Dame,66.4,,,,16.3,,66.5,imputed,48.9,Poor (<50),-17.5,Big Bust (<-15),,,,TBD,prospect_2026
+Vinny Anthony II,WR,2026,224,Wisconsin,33.6,21.0,60.0,,,,68.9,imputed,48.2,Poor (<50),14.5,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Caullin Lacy,WR,2026,231,Louisville,32.3,21.0,60.0,,,,68.9,imputed,47.5,Poor (<50),15.2,Big Sleeper (+15),,,,TBD,prospect_2026
+Kendrick Law,WR,2026,250,Kentucky,28.8,21.0,60.0,,,,68.9,imputed,45.7,Poor (<50),16.9,Big Sleeper (+15),,,,TBD,prospect_2026
+Colbie Young,WR,2026,250,Georgia,28.8,21.0,60.0,,,,68.9,imputed,45.7,Poor (<50),16.9,Big Sleeper (+15),,,,TBD,prospect_2026
+Mike Washington Jr.,RB,2026,163,Arkansas,45.9,,,,34.4,,66.5,imputed,45.0,Poor (<50),-1.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+Demond Claiborne,RB,2026,136,Wake Forest,51.9,,,,21.3,,66.5,imputed,43.4,Poor (<50),-8.5,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Adam Randall,RB,2026,180,Clemson,42.4,,,,34.1,,66.5,imputed,43.1,Poor (<50),0.7,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kaytron Allen,RB,2026,124,Penn State,54.7,,,,10.4,,66.5,imputed,41.0,Poor (<50),-13.8,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Desmond Reid,RB,2026,250,Pittsburgh,28.8,,,,44.0,,66.5,imputed,39.8,Poor (<50),11.0,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Dean Connors,RB,2026,250,Houston,28.8,,,,39.3,,66.5,imputed,38.1,Poor (<50),9.3,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Jamal Haynes,RB,2026,250,Georgia Tech,28.8,,,,38.0,,66.5,imputed,37.7,Poor (<50),8.9,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Roman Hemby,RB,2026,197,Indiana,38.9,,,,20.5,,66.5,imputed,36.6,Poor (<50),-2.3,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kaden Feagin,RB,2026,250,Illinois,28.8,,,,32.1,,66.5,imputed,35.6,Poor (<50),6.8,Sleeper (+5 to +15),,,,TBD,prospect_2026
+J'Mari Taylor,RB,2026,245,Virginia,29.7,,,,29.5,,66.5,imputed,35.2,Poor (<50),5.5,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Chip Trayanum,RB,2026,250,Toledo,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Quinten Joyner,RB,2026,250,Texas Tech,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Samuel Singleton Jr.,RB,2026,250,Kansas State,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+TreVonte Citizen,RB,2026,250,LSU,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Richard Reese,RB,2026,250,Stephen F. Austin,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Armoni Goodwin,RB,2026,250,UT Martin,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+L.J. Johnson Jr.,RB,2026,250,Texas State,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Derrick Davis Jr.,RB,2026,250,LSU,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Barika Kpeenu,RB,2026,250,North Dakota State,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Alton McCaskill IV,RB,2026,250,Houston,28.8,,,,30.0,,66.5,imputed,34.9,Poor (<50),6.1,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Noah Whittington,RB,2026,183,Oregon,41.7,,,,10.4,,66.5,imputed,34.5,Poor (<50),-7.2,Bust Risk (-5 to -15),,,,TBD,prospect_2026
+Sedrick Alexander,RB,2026,250,Vanderbilt,28.8,,,,28.7,,66.5,imputed,34.4,Poor (<50),5.6,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Jaydn Ott,RB,2026,250,California,28.8,,,,27.3,,66.5,imputed,33.9,Poor (<50),5.2,Sleeper (+5 to +15),,,,TBD,prospect_2026
+Byron Cardwell,RB,2026,250,San Diego State,28.8,,,,20.9,,66.5,imputed,31.7,Poor (<50),2.9,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kadarius Calloway,RB,2026,250,New Mexico State,28.8,,,,20.8,,66.5,imputed,31.6,Poor (<50),2.8,Neutral (-5 to +5),,,,TBD,prospect_2026
+Rueben Owens,RB,2026,250,Texas A&M,28.8,,,,17.6,,66.5,imputed,30.5,Poor (<50),1.7,Neutral (-5 to +5),,,,TBD,prospect_2026
+Seth McGowan,RB,2026,250,Kentucky,28.8,,,,17.0,,66.5,imputed,30.3,Poor (<50),1.5,Neutral (-5 to +5),,,,TBD,prospect_2026
+Dominic Richardson,RB,2026,250,Tulsa,28.8,,,,15.6,,66.5,imputed,29.8,Poor (<50),1.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+Rahsul Faison,RB,2026,250,South Carolina,28.8,,,,15.0,,66.5,imputed,29.6,Poor (<50),0.8,Neutral (-5 to +5),,,,TBD,prospect_2026
+C.J. Donaldson,RB,2026,242,Ohio State,30.3,,,,12.5,,66.5,imputed,29.5,Poor (<50),-0.8,Neutral (-5 to +5),,,,TBD,prospect_2026
+Robert Henry Jr.,RB,2026,250,UTSA,28.8,,,,13.7,,66.5,imputed,29.2,Poor (<50),0.4,Neutral (-5 to +5),,,,TBD,prospect_2026
+Jamarion Miller,RB,2026,246,Alabama,29.5,,,,12.1,,66.5,imputed,29.0,Poor (<50),-0.5,Neutral (-5 to +5),,,,TBD,prospect_2026
+Savion Red,RB,2026,250,Nevada,28.8,,,,11.7,,66.5,imputed,28.5,Poor (<50),-0.3,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kentrel Bullock,RB,2026,250,South Alabama,28.8,,,,7.5,,66.5,imputed,27.0,Poor (<50),-1.8,Neutral (-5 to +5),,,,TBD,prospect_2026
+Jalen Berger,RB,2026,250,UCLA,28.8,,,,7.6,,66.5,imputed,27.0,Poor (<50),-1.8,Neutral (-5 to +5),,,,TBD,prospect_2026
+Jaylon Glover,RB,2026,250,UNLV,28.8,,,,6.2,,66.5,imputed,26.5,Poor (<50),-2.3,Neutral (-5 to +5),,,,TBD,prospect_2026
+Andrew Paul,RB,2026,250,Jacksonville State,28.8,,,,4.0,,66.5,imputed,25.8,Poor (<50),-3.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+Logan Diggs,RB,2026,250,Ole Miss,28.8,,,,4.0,,66.5,imputed,25.8,Poor (<50),-3.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kaelon Black,RB,2026,250,Indiana,28.8,,,,3.0,,66.5,imputed,25.4,Poor (<50),-3.4,Neutral (-5 to +5),,,,TBD,prospect_2026
+Cam Porter,RB,2026,250,Northwestern,28.8,,,,1.8,,66.5,imputed,25.0,Poor (<50),-3.8,Neutral (-5 to +5),,,,TBD,prospect_2026
+Terion Stewart,RB,2026,250,Virginia Tech,28.8,,,,1.4,,66.5,imputed,24.9,Poor (<50),-3.9,Neutral (-5 to +5),,,,TBD,prospect_2026
+Branson Robinson,RB,2026,250,Georgia State,28.8,,,,1.2,,66.5,imputed,24.8,Poor (<50),-4.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+Roydell Williams,RB,2026,250,Florida State,28.8,,,,1.2,,66.5,imputed,24.8,Poor (<50),-4.0,Neutral (-5 to +5),,,,TBD,prospect_2026
+E.J. Smith,RB,2026,250,Texas A&M,28.8,,,,0.5,,66.5,imputed,24.6,Poor (<50),-4.2,Neutral (-5 to +5),,,,TBD,prospect_2026
+Djay Braswell,RB,2026,250,Georgia State,28.8,,,,0.3,,66.5,imputed,24.5,Poor (<50),-4.3,Neutral (-5 to +5),,,,TBD,prospect_2026
+Max Bredeson,RB,2026,250,Michigan,28.8,,,,0.1,,66.5,imputed,24.4,Poor (<50),-4.4,Neutral (-5 to +5),,,,TBD,prospect_2026
+Le'Veon Moss,RB,2026,250,Texas A&M,28.8,,,,0.0,,66.5,imputed,24.4,Poor (<50),-4.4,Neutral (-5 to +5),,,,TBD,prospect_2026
+Kedrick Reescano,RB,2026,250,Arizona,28.8,,,,0.0,,66.5,imputed,24.4,Poor (<50),-4.4,Neutral (-5 to +5),,,,TBD,prospect_2026
+Trevion Cooley,RB,2026,250,Georgia Tech,28.8,,,,0.0,,66.5,imputed,24.4,Poor (<50),-4.4,Neutral (-5 to +5),,,,TBD,prospect_2026
