@@ -1,4 +1,4 @@
-# CLAUDE.md - SLAP Score V3 Project Guide
+# CLAUDE.md - SLAP Score V5 Project Guide
 
 ## About the User
 
@@ -6,473 +6,6 @@
 - Fantasy football content creator (YouTube and Patreon)
 - Wants to understand what the code does, not just have it work
 - **Honesty is critical** - Never claim something is possible if it isn't
-
-## Project Overview
-
-**SLAP Score V3**: Statistical Likelihood of Achieving Production
-
-A draft-capital-anchored prospect model that rates 2026 NFL Draft RBs, WRs, and TEs on a 0-100 scale.
-
-### Model Outputs
-1. A **0-100 SLAP Score** for each prospect
-2. A **delta vs draft-only baseline** - Shows when the model disagrees with where a player was drafted (positive = model likes them more than their draft slot, negative = model likes them less)
-
-## The Formula (Core Structure)
-
-### 1. Draft Capital Anchor
-Transform draft pick into a strength score using the "gentler curve" formula:
-```
-DC = 100 - 2.40 × (pick^0.62 - 1)
-```
-
-**Why This Formula?**
-- Creates a gentler decay than the original 1/sqrt(pick) formula
-- Better differentiates between early picks while still penalizing late picks
-- Produces more intuitive scores that match expectations
-
-**DC Score Examples:**
-| Pick | DC Score |
-|------|----------|
-| 1    | 100      |
-| 5    | ~96      |
-| 10   | ~92      |
-| 32   | ~82      |
-| 64   | ~71      |
-| 100  | ~61      |
-| 150  | ~49      |
-| 200  | ~38      |
-| 250  | ~29      |
-
-- Uses actual draft pick OR expected pick from consensus mock drafts (for pre-draft analysis)
-- Higher picks = higher scores (pick 1 is best)
-
-### 2. Production Component (Position-Specific)
-
-**For WRs: Enhanced Breakout Age (Continuous Scoring + Rush Bonus)**
-```
-enhanced_breakout = min(wr_breakout_score(breakout_age, dominator_pct) + rush_bonus, 99.9)
-```
-Where:
-- `breakout_age` = age when player first hit 20%+ dominator rating
-- `rush_bonus` = +5 if player had 20+ college rushing yards, 0 otherwise
-
-**Continuous Scoring Formula (Feb 2026 update):**
-Uses age tier as base score + dominator magnitude as tiebreaker:
-```python
-# For players who broke out (hit 20%+ dominator):
-base_score = age_tier (100, 90, 75, 60, 45, 30, 20)
-bonus = min((dominator_pct - 20) × 0.5, 9.9)
-breakout_score = min(base_score + bonus, 99.9)
-
-# For players who never broke out:
-breakout_score = min(35, 15 + dominator_pct)  # Maps 0-20% to 15-35
-
-# Then add rush bonus:
-rush_bonus = 5 if rush_yards >= 20 else 0
-enhanced_breakout = min(breakout_score + rush_bonus, 99.9)
-```
-
-**Age Tier Base Scores:**
-- Age 18: 100 → final range 99.9 (capped)
-- Age 19: 90 → final range 90.0 - 99.9
-- Age 20: 75 → final range 75.0 - 84.9
-- Age 21: 60 → final range 60.0 - 69.9
-- Age 22: 45 → final range 45.0 - 54.9
-- Age 23: 30 → final range 30.0 - 39.9
-- Never hit 20%: 15-35 (based on peak dominator)
-
-**Why the +5 Rush Bonus?**
-- WRs with 20+ college rushing yards show slightly better NFL outcomes
-- Signals versatility and scheme usage (jet sweeps, gadget plays, etc.)
-- Small bonus (+5 on a 0-100 scale) — a tiebreaker, not a game-changer
-- Binary threshold (20 yards) keeps it simple and avoids overfitting to exact yardage
-
-**Why Continuous Scoring?**
-- Discrete tiers created artificial cliffs (19.9 years = 90, 20.0 years = 75)
-- Dominator tiebreaker differentiates within age tiers
-- Creates 180+ unique scores vs 7 discrete tiers
-- Works with integer ages (backtest data has no exact birthdates)
-
-**Why Breakout Age for WRs?**
-- Dominator Rating alone had weak correlation (r=0.175) with NFL success
-- High dominator often came from weak competition (small schools, late-round busts)
-- Breakout Age has stronger correlation (r=0.395) - younger breakouts predict NFL success
-- Draft capital already prices in production context (teammates, transfers, competition)
-- This avoids penalizing players like Jaylen Waddle (competed with 3 future 1st-rounders)
-
-**For RBs: Receiving Production Score (Continuous Scoring)**
-```
-production = (receiving_yards / team_pass_attempts) × age_weight × 100 / 1.75
-```
-
-**Continuous Scoring Formula (Feb 2026 update):**
-```python
-raw_score = (rec_yards / team_pass_att) × age_weight × 100
-scaled_score = raw_score / 1.75  # Normalize to 0-99.9 range
-final_score = min(99.9, scaled_score)
-```
-
-Where `age_weight` adjusts for when production occurred:
-- Season age 19: 1.15x (15% bonus for early production)
-- Season age 20: 1.10x (10% bonus)
-- Season age 21: 1.05x (5% bonus)
-- Season age 22: 1.00x (baseline)
-- Season age 23: 0.95x (5% penalty)
-- Season age 24+: 0.90x (10% penalty)
-
-**Why Scale by 1.75?**
-- Old formula capped 21 RBs at 100, losing differentiation at the top
-- Elite producers like Antonio Gibson (175 raw) and Joe Mixon (154 raw) were all 100
-- Scaling by 1.75 spreads scores across 0-99.9 range:
-  - Antonio Gibson: 99.9 (was 100)
-  - Joe Mixon: 88.1 (was 100)
-  - Saquon Barkley: 86.7 (was 100)
-  - Average RB: ~30 (was ~52)
-
-**Why Receiving Production for RBs (not Breakout Age)?**
-- Backtest analysis (2015-2024, 188 RBs) proved receiving production is better:
-  - Production metric: r=0.30, **adds significant value beyond DC (p=0.004)**
-  - Breakout age: r=0.10, **does NOT add value (p=0.80)**
-- Receiving yards / team pass attempts measures a RB's share of the passing game
-- Age-weighting rewards younger players who caught passes early
-- Creates 189 unique scores (fully continuous)
-
-**CRITICAL: Season Selection for RB Production**
-- **ALWAYS use FINAL college season** (draft_year - 1)
-- This matches the backtest methodology that validated the metric
-- For 2026 draft class: use 2025 college season
-- For 2025 draft class: use 2024 college season
-- Do NOT use "best season" - this was not validated and inflates scores
-- Exception: If player has no final season data (injury, transfer mid-season), use most recent available season and flag as "no_final_season_data"
-
-### 3. Teammate Score (WR only)
-
-**Binary elite-program indicator:**
-```
-teammate_score = 100 if total_teammate_dc > 150 else 0
-```
-- `total_teammate_dc` = sum of DC scores for all WR/TE teammates drafted in the same draft year
-- Threshold of 150 means the player shared targets with other high-draft-capital receivers
-- Binary (0 or 100) — either the player competed for targets with elite teammates, or didn't
-
-**Why Teammate Score?**
-- Players who produced despite sharing with other highly-drafted receivers showed better NFL outcomes
-- This is the opposite of what you might expect — it signals the player earned targets in a competitive room
-- Examples: Jaylen Waddle (Alabama with DeVonta Smith), Chris Olave (Ohio State with Garrett Wilson)
-- Only a 5% weight — a small tiebreaker, not a major driver
-
-### 4. Early Declare (WR only)
-
-**Binary declaration status:**
-```
-early_declare = 100 if player declared early (before senior season) else 0
-```
-- Players who left college early (juniors, redshirt sophomores) score 100
-- Players who stayed for their full eligibility score 0
-
-**Why Early Declare?**
-- Early declaration signals NFL-readiness and confidence in draft stock
-- Correlates with youth at draft (younger players tend to have longer NFL careers)
-- Draft capital already captures some of this, but early declare adds a small independent signal
-- Only a 5% weight — another small tiebreaker
-
-### 5. Speed Score (RB only — 5% weight)
-
-**For RBs:**
-```
-speed_score = (weight × 200) / (40_time ^ 4)
-```
-- Uses Bill Barnwell Speed Score formula
-- Rewards players who are fast for their size
-- Normalized 0-100 within position (min-max scaling)
-
-**Missing Speed Score Handling (MNAR-aware imputation):**
-- 68% of backtest RBs have real weight + 40 time → real speed score
-- Weight recovery from combine.parquet + CFBD API → 96% have weight
-- For players with weight but no 40 time: estimate 40 from weight×round bucket averages
-- For players with no weight at all: MNAR-aware imputation
-  - Round 1-2 missing → 60th percentile speed score (elite prospects skip workouts)
-  - Round 3+ missing → 40th percentile speed score (replacement-level, no combine invite)
-
-**Why Only 5% Weight?**
-- RB reoptimization tested Speed Score at 5%, 7%, 10%, and 15% weight
-- No weight above 0% improved all 12 evaluation metrics vs the 65/35 DC/RYPTPA baseline
-- 5% chosen as a small tiebreaker — adds athlete diversity to rankings without hurting prediction
-- DC already prices in most of the athletic signal (NFL teams see combine before drafting)
-
-**Note on WR RAS (Removed in V5):**
-RAS (Relative Athletic Score) was used in previous WR SLAP versions at 15% weight.
-Extensive testing during the V5 reoptimization showed RAS does not add predictive value
-for WRs after controlling for draft capital. The new 4-component WR model (DC / Enhanced
-Breakout / Teammate / Early Declare) outperforms the old 3-component model (DC / Breakout / RAS)
-on every metric tested. See Decision #9 for full details.
-
-## Decisions Made
-
-1. **Component Weights**: Position-Specific (Updated Feb 2026 — Both V5 Final)
-
-   **WRs (V5): 70% DC / 20% Enhanced Breakout / 5% Teammate / 5% Early Declare**
-   **RBs (V5): 65% DC / 30% Receiving Production (RYPTPA) / 5% Speed Score**
-   **TEs (V5): 60% DC / 15% Breakout (15% dominator) / 15% Production (Rec/TPA) / 10% RAS**
-
-   All three models are now final and locked.
-
-   **WR V5 — 4-Component Model (Feb 2026):**
-
-   The WR model was reoptimized from a 3-component model (DC/Breakout/RAS) to a
-   4-component model (DC/Enhanced Breakout/Teammate/Early Declare). RAS was dropped
-   because it does not add predictive value after controlling for draft capital.
-
-   Systematic testing of DC weight from 75% down to 50% found:
-   - 75/17/4/4 and 70/20/5/5 perform identically on top-decile precision (62.5% hit24 rate)
-   - Below 70% DC, top-decile hit24 drops (59.4% at 65%, 56.2% at 60%)
-   - 70% DC chosen as the floor: no performance loss vs 75%, more room for non-DC components
-
-   **WR V5 vs V4 vs DC-only (priority-weighted correlation, 40/25/20/15):**
-   | Config | PRI-AVG r | Top 10% Hit24 | Top 10% PPG | Disagree 10+ |
-   |--------|-----------|---------------|-------------|--------------|
-   | DC only | +0.435 | 53.1% | 10.70 | 0 |
-   | V4 (65/20/15 DC/BO/RAS) | ~+0.445 | ~56% | ~10.9 | ~220 |
-   | V5 (70/20/5/5 DC/BO+R/TM/ED) | +0.452 | 62.5% | 11.36 | 246 |
-
-   Key improvements in V5:
-   - Top-decile hit24: 62.5% (vs ~56% in V4, 53.1% DC-only)
-   - 246 ranking disagreements vs pure DC (interesting content)
-   - Boosted players average +1.3 PPG over dinged players (disagreements are correct)
-
-   **RB V5 — 3-Component Model (Feb 2026):**
-
-   The RB model was reoptimized from 50/35/15 (DC/Production/RAS) to 65/30/5
-   (DC/RYPTPA/Speed Score). Key findings from comprehensive reoptimization:
-
-   - DC/RYPTPA 65/35 wins 8 of 12 metrics vs any 3-component model
-   - No third component (RAS, weight, 40 time, early declare) meaningfully helps
-   - 22 PFF sub-metrics tested; RYPTPA ranked #1-2 on every outcome
-   - Speed Score added at 5% as a tiebreaker (doesn't hurt, adds athlete diversity)
-   - MNAR-aware imputation handles missing combine data (elite players skip workouts)
-
-   **Why 65/30/5 instead of 65/35/0:**
-   Speed Score at 5% doesn't improve the 12-metric battery, but it adds athlete
-   diversity to rankings and is the user's preference for content creation purposes.
-
-2. **Age Weight Function (RB Production)**: Moderate adjustment
-   - Used to weight RB receiving production by college age
-   - Season age 19: 1.15x (15% bonus for early production)
-   - Season age 20: 1.10x (10% bonus)
-   - Season age 21: 1.05x (5% bonus)
-   - Season age 22: 1.00x (baseline)
-   - Season age 23: 0.95x (5% penalty)
-   - Season age 24+: 0.90x (10% penalty)
-   - Code: `age_w = max(0.85, min(1.15, 1.15 - 0.05 * (season_age - 19)))`
-
-3. **Athletic Score Function**: Position-specific
-   - RBs: Speed Score (Barnwell formula) = (Weight × 200) / (40 time)^4
-   - **WRs: RAS removed in V5** — replaced by Teammate Score and Early Declare
-   - See Decision #9 for full rationale on RAS removal
-
-4. **Position Handling**: Position-Split Production Metrics
-   - **RBs**: Receiving yards ÷ Team pass attempts × age weight (validated: p=0.004)
-   - **WRs**: Breakout Age scoring (age when first hit 20%+ dominator)
-   - Both metrics normalized 0-100 within position (50 = average)
-   - Data source for RB receiving: CFBD API (193/208 RBs = 92.8% coverage)
-   - Outputs separate RB and WR rankings
-
-5. **WR Breakout Age Methodology** (updated after backtest analysis)
-   - Originally tested Dominator Rating but it had weak signal (r=0.175)
-   - Dominator penalized players with elite teammates (Waddle at Alabama)
-   - Breakout Age (when player first hit 20% dominator) has stronger signal (r=0.395)
-   - Logistic regression coefficient is positive (+0.388), confirming predictive value
-   - Draft capital already accounts for context (teammates, transfers, competition level)
-
-6. **Missing Athletic Data Handling** (MNAR-aware approach)
-
-   **WRs (V5): No longer applicable.** RAS was removed from the WR model. All four
-   WR V5 components (DC, Enhanced Breakout, Teammate, Early Declare) have near-complete
-   data coverage, eliminating the missing-data problem that plagued the RAS-based model.
-
-   **RBs (V5): MNAR-aware Speed Score imputation.**
-   Speed Score requires weight and 40-yard dash time. Coverage: 68% have both from
-   combine.parquet, 96% have weight (after CFBD API recovery).
-
-   ```
-   Step 1: Weight recovery
-     - combine.parquet (primary), CFBD player search API (fallback)
-     - 215/223 RBs have weight (96%)
-
-   Step 2: 40-time estimation for players with weight but no 40
-     - Group known players into weight buckets × round buckets
-     - Assign bucket-average 40 time to missing players
-     - Calculate speed score using real weight + estimated 40
-
-   Step 3: MNAR-aware imputation for players with no weight at all
-     - Round 1-2 missing → 60th percentile of known speed scores
-     - Round 3+ missing → 40th percentile of known speed scores
-
-   Final formula:
-     RB SLAP = DC × 0.65 + RYPTPA × 0.30 + Speed_Score × 0.05
-   ```
-
-   **Why MNAR-aware (not simple average)?**
-   Missing data is NOT random. Rd 1-2 RBs missing combine data (Jeanty, Harris, Mixon)
-   are elite prospects who skipped workouts — 64% hit rate. Rd 3+ missing are
-   replacement-level players — 0% hit rate. Simple average would penalize elites and
-   reward busts.
-
-7. **Season Selection for RB Production** (CRITICAL for consistency)
-   - **ALWAYS use FINAL college season** (draft_year - 1)
-   - Backtest validated using final season only - do NOT use "best season"
-   - Using "best season" inflates scores and creates methodological inconsistency
-
-   **Season Mapping:**
-   | Draft Year | College Season to Use |
-   |------------|----------------------|
-   | 2026       | 2025                 |
-   | 2025       | 2024                 |
-   | 2024       | 2023                 |
-   | etc.       | draft_year - 1       |
-
-   **Exception Handling:**
-   - If player has NO final season data (injury, redshirt, mid-season transfer):
-     - Use most recent available season
-     - Flag status as "no_final_season_data"
-     - Document the exception
-
-   **Why This Matters:**
-   - Backtest showed production predicts NFL success using final season
-   - Using "best season" cherry-picks data not validated as predictive
-   - 19 players had inflated scores before this fix (avg +12.6 production, +1.26 SLAP)
-
-8. **DC Formula Change: Gentler Curve (Option B)** (Jan 2026)
-   - Changed from `normalize(1/sqrt(pick))` to `100 - 2.40 × (pick^0.62 - 1)`
-
-   **Why We Changed It:**
-   - Old formula created steep drops early (pick 1 to pick 10 dropped ~30 points)
-   - Scouts don't see that much difference between pick 1 and pick 10
-   - New formula creates gentler, more realistic decay
-
-   **Old vs New DC Scores:**
-   | Pick | Old DC | New DC |
-   |------|--------|--------|
-   | 1    | 100    | 100    |
-   | 5    | 81     | 96     |
-   | 10   | 69     | 92     |
-   | 32   | 44     | 82     |
-   | 100  | 24     | 61     |
-   | 200  | 13     | 38     |
-
-   **Impact on Final SLAP Scores:**
-   - Scores now range from ~21 (late picks, poor profile) to ~99 (early picks, elite profile)
-   - WR average SLAP: ~65 (was ~55)
-   - RB average SLAP: ~50 (was ~40)
-   - Scores better match intuitive expectations (pick 10 player with great profile = ~90+)
-
-9. **WR V5: RAS Removed, 4-Component Model Adopted** (Feb 2026)
-
-   RAS (Relative Athletic Score) was extensively tested and **removed** from the WR model.
-   It was replaced by two new components: Teammate Score and Early Declare.
-
-   **Why RAS Was Removed:**
-   - RAS does not add predictive value for WRs after controlling for draft capital
-   - DC already prices in athleticism — NFL teams see combine results before drafting
-   - RAS had severe missing-data problems (MNAR pattern): elite prospects skip workouts,
-     creating a biased sample where the best players often had no RAS data
-   - Imputing missing RAS introduced noise without improving predictions
-   - Removing RAS and adding Teammate + Early Declare improved every metric tested
-
-   **What Replaced RAS (15% total → 5% Teammate + 5% Early Declare):**
-   - **Teammate Score (5%)**: Binary — did the player produce despite sharing with other
-     highly-drafted receivers? Signals competitive production in elite programs.
-   - **Early Declare (5%)**: Binary — did the player leave early? Signals NFL-readiness
-     and youth at draft.
-   - Both are simple binary flags with near-complete data coverage (no missing-data issues)
-
-   **V5 Formula:**
-   ```
-   WR SLAP = DC × 0.70 + Enhanced_Breakout × 0.20 + Teammate × 0.05 + Early_Declare × 0.05
-   ```
-
-   Where:
-   - DC = `100 - 2.40 × (pick^0.62 - 1)` (gentler curve)
-   - Enhanced_Breakout = breakout age score + 5 if 20+ college rush yards
-   - Teammate = 100 if total_teammate_dc > 150, else 0
-   - Early_Declare = 100 if declared early, else 0
-
-   **Status:** WR V5, RB V5, and TE V5 formulas are all locked.
-
-10. **RB V5: Reoptimization Complete** (Feb 2026)
-
-   The RB model was comprehensively reoptimized. Key analyses performed:
-   - 12-metric comparison of 12 candidate configs across 4 outcomes (hit24, hit12, first_3yr_ppg, career_ppg)
-   - 22 PFF sub-metrics tested with partial correlations controlling for DC
-   - Athletic data audit: coverage bias, name matching fix, normalization, non-linearity
-   - U-shaped weight signal tested (real but too weak: p=.027 but model gain +.008 PRI-AVG)
-   - Speed Score tested with weight recovery (96% coverage) and 3 imputation strategies
-
-   **Old RB Formula (V4):**
-   ```
-   RB SLAP = DC × 0.50 + RYPTPA × 0.35 + RAS × 0.15
-   ```
-
-   **New RB Formula (V5):**
-   ```
-   RB SLAP = DC × 0.65 + RYPTPA × 0.30 + Speed_Score × 0.05
-   ```
-
-   Where:
-   - DC = `100 - 2.40 × (pick^0.62 - 1)` (gentler curve)
-   - RYPTPA = `min(99.9, (rec_yards / team_pass_att) × age_weight × 100 / 1.75)`
-   - Speed_Score = `normalize_0_100((weight × 200) / (forty ^ 4))` with MNAR imputation
-
-   **Key changes from V4 to V5:**
-   - DC weight increased: 50% → 65% (DC is by far the strongest predictor)
-   - Production weight decreased: 35% → 30% (still significant, p=0.004)
-   - RAS replaced by Speed Score at 5% (RAS had no raw measurements; Speed Score uses
-     actual weight + 40 time with better coverage via weight recovery)
-   - MNAR-aware imputation for missing athletic data
-
-11. **TE V5: 4-Component Model Locked** (Feb 2026)
-
-   The TE model was built from scratch using the same methodology as WR and RB.
-   160 TEs from 2015-2024 drafts backtested against TE-specific outcomes (top12_10g,
-   top6_10g, best_3yr_ppg_10g with 10-game season minimum).
-
-   **TE V5 Formula:**
-   ```
-   TE SLAP = DC × 0.60 + Breakout × 0.15 + Production × 0.15 + RAS × 0.10
-   ```
-
-   Where:
-   - DC = `100 - 2.40 × (pick^0.62 - 1)` (same gentler curve)
-   - Breakout = TE-specific breakout age score (**15% dominator threshold**, not 20% like WRs)
-   - Production = `Rec yards / team pass attempts × age_weight × 100` (min-max normalized)
-   - RAS = Relative Athletic Score × 10 (MNAR-imputed when missing)
-
-   **Key TE-specific differences from WR/RB:**
-   - **15% dominator threshold** (vs 20% for WRs) — TEs have lower target shares
-   - **No Early Declare** — 0/25 mid-round early-declare TEs hit top12; signal only at DC 80+
-   - **No Teammate Score** — tested 3 pool definitions (WR-only, WR+TE, WR+TE+RB); all null or
-     negative. TEs at WR-rich programs get buried in the target tree, opposite of WR finding
-   - **RAS kept at 10%** — Speed Score and broad jump have real signal for TEs (r=+0.24, p=0.02)
-     unlike WRs where DC already prices in athleticism
-   - **Production uses CFBD primary, PFF fallback** — Rec/TPA (CFBD receiving yards / team pass attempts)
-
-   **Validation Results (AUC-ROC):**
-   - top12_10g: 0.916 (excellent)
-   - top6_10g: 0.904 (excellent)
-   - SLAP wins 11/11 metrics vs DC-only
-
-   **63 PFF sub-metrics tested with partial correlations controlling for DC.**
-   Key findings: PFF Offense Grade (+0.252, p=0.008), Speed Score (+0.241, p=0.021),
-   PFF Target Rate (+0.208, p=0.029) all significant. Blocking grades NOT significant
-   (pass block: r=+0.046, p=0.632). Weight is NEGATIVE (r=-0.180, p=0.042).
-
-   **Status:** TE V5 formula locked.
-
-## Technical Preferences
-
-- **Language**: Python
-- **Data Storage**: CSV files (can be opened in Excel)
-- **Visualizations**: Clear charts for content creation
 
 ## How to Work Together
 
@@ -482,105 +15,274 @@ on every metric tested. See Decision #9 for full details.
 4. **Options with tradeoffs** - When deciding something, give me choices with clear pros and cons
 5. **NEVER estimate, guess, or make up data** - If data is missing, flag it and ask me how to handle it
 
-## Project Structure
+## Project Overview
 
+**SLAP Score V5**: Statistical Likelihood of Achieving Production
+
+A draft-capital-anchored prospect model that rates NFL Draft RBs, WRs, and TEs on a 0-100 scale. The model backtests against 722 drafted players (2015-2025) and scores 217 2026 prospects.
+
+## Build Pipeline
+
+### One Command Builds Everything
+```bash
+python src/build_master_database_v5.py
 ```
-SlapModelV3/
-├── CLAUDE.md          # This file
-├── README.md          # Project description
-├── data/              # CSV files with prospect data (to be created)
-├── src/               # Python code (to be created)
-└── output/            # Generated scores and charts (to be created)
+This is the **single source of truth** for all output files. It reads data CSVs, calculates scores, and writes output CSVs.
+
+### Input Files (data/)
+
+| File | Position | Contents | Key Columns |
+|------|----------|----------|-------------|
+| `data/wr_backtest_all_components.csv` | WR | 339 backtest WRs (2015-2025) | `breakout_age`, `peak_dominator`, `early_declare`, `rush_yards` |
+| `data/wr_teammate_scores.csv` | WR | Teammate DC scores | `total_teammate_dc` |
+| `data/wr_breakout_ages_2026.csv` | WR | 2026 WR breakout data from CFBD | `breakout_age`, `peak_dominator`, `seasons_found` |
+| `data/rb_backtest_with_receiving.csv` | RB | 223 backtest RBs (2015-2025) | `rec_yards`, `team_pass_att`, `age` |
+| `data/te_backtest_master.csv` | TE | 160 backtest TEs (2015-2025) | `breakout_age`, `peak_dominator`, `cfbd_rec_yards`, `te_ras`, `pff_yards` |
+| `data/prospects_final.csv` | WR/RB | 165 2026 WR+RB prospects | `projected_pick`, `rec_yards`, `team_pass_attempts`, `age`, `weight` |
+| `data/te_2026_prospects_final.csv` | TE | 52 2026 TE prospects | `projected_pick`, `breakout_age`, `ras_score`, `cfbd_rec_yards` |
+| `output/slap_v5_wr_2026.csv` | WR | Pre-calculated 2026 WR scores | `early_declare_score`, `teammate_score` |
+| `data/backtest_outcomes_complete.csv` | WR/RB | NFL outcomes for validation | `hit24`, `hit12`, `first_3yr_ppg`, `career_ppg` |
+| `data/nflverse/combine.parquet` | RB | Combine measurements for Speed Score | `weight`, `forty` |
+
+### Output Files (output/)
+
+| File | Contents | Rows |
+|------|----------|------|
+| `output/slap_v5_master_database.csv` | **Unified master** — all positions, backtest + 2026 | 939 |
+| `output/slap_v5_wr.csv` | WR only | 448 (339 backtest + 109 prospects) |
+| `output/slap_v5_rb.csv` | RB only | 279 (223 backtest + 56 prospects) |
+| `output/slap_v5_te.csv` | TE only | 212 (160 backtest + 52 prospects) |
+| `output/slap_v5_2026_all.csv` | 2026 prospects only, ranked within position | 217 |
+
+### Output Column Definitions
+
+| Column | What It Is | Range | Use For |
+|--------|-----------|-------|---------|
+| `slap_display_score` | Within-position percentile rank vs backtest | 1-99 | **Publication** — what you show on YouTube/Patreon |
+| `slap_model_score` | Native-scale weighted composite (the "real" score) | ~22-98 | **Validation** — what the model actually predicts |
+| `dc_score` | Draft Capital component (percentile rank vs backtest) | 1-99 | Shows draft capital tier |
+| `prospect_profile` | Weighted average of non-DC components | 0-100 | Shows how good the prospect profile is independent of DC |
+| `dataset` | `backtest` or `2026_prospect` | — | Distinguishes historical vs current prospects |
+
+## The Two-Layer Scoring System
+
+**Critical design principle: never let display concerns touch the prediction engine.**
+
+### Layer 1: `slap_model_score` (the prediction engine)
+- Weighted composite of position-specific components on their native 0-100 scales
+- This is what gets validated against NFL outcomes
+- Changes here affect whether the model actually predicts well
+- **Never normalize, percentile-rank, or rescale components before combining them**
+
+### Layer 2: `slap_display_score` (the publication layer)
+- Per-position percentile rank of `slap_model_score` against backtest distribution
+- Formula: `percentileofscore(backtest_values, raw, kind='rank') / 100 * 98 + 1`, clipped 1-99
+- Backtest median is always ~50, best backtest player is always 99
+- 2026 prospects are scored against the same backtest reference
+- **Rankings are always identical** between Layer 1 and Layer 2 (Spearman r = 1.000)
+
+### Why percentile rank, not min-max rescaling?
+- Min-max creates a false ceiling: if one backtest player is an extreme outlier (e.g., Saquon), it compresses everyone else
+- Percentile rank distributes evenly: each point on the 1-99 scale represents ~1% of backtest players
+- Within-position (not pooled): WR, RB, TE each have their own 1-99 scale
+- Why not pooled? WR formulas produce higher raw scores than RB/TE. Pooling would make all top scores WRs
+- Cross-position display differences reflect real formula differences, not a bug
+
+### `prospect_profile` (non-DC quality indicator)
+Shows how strong the prospect's non-draft-capital components are, on a 0-100 scale:
+- WR: `(Enhanced_Breakout × 0.20 + Teammate × 0.05 + Early_Declare × 0.05) / 0.30`
+- RB: `(RYPTPA × 0.30 + Speed_Score × 0.05) / 0.35`
+- TE: `(Breakout × 0.15 + Production × 0.15 + RAS × 0.10) / 0.40`
+
+A high `prospect_profile` with a low `dc_score` means the model thinks the player is better than their draft slot (a "riser"). The reverse means the model thinks they were overdrafted.
+
+## V5 Formulas (All Locked)
+
+### WR V5: 70/20/5/5
+```
+WR SLAP = DC × 0.70 + Enhanced_Breakout × 0.20 + Teammate × 0.05 + Early_Declare × 0.05
 ```
 
-## Data Requirements
+| Component | Weight | Scale | Source |
+|-----------|--------|-------|--------|
+| DC | 70% | `100 - 2.40 × (pick^0.62 - 1)` | Draft pick or projected pick |
+| Enhanced Breakout | 20% | Age tier (18→100, 19→90, 20→75, 21→60, 22→45, 23→30) + dominator bonus + rush bonus | CFBD multi-season receiving data |
+| Teammate | 5% | Binary: 100 if total_teammate_dc > 150, else 0 | Same-year WR/TE drafted teammates |
+| Early Declare | 5% | Binary: 100 if 3 or fewer college seasons, else 0 | College season count (NOT age) |
 
-**For all prospects:**
-- Name, position, school
-- Draft pick (actual or projected)
-- Age at draft
-- Weight, 40-yard dash time (for athletic score)
+**Early Declare rule**: A player is early declare ONLY if they played **3 or fewer college seasons**. Age is irrelevant. Players who enrolled young (age 17) and played 4 full seasons are NOT early declares, even if drafted at age 21.
 
-**For WRs specifically:**
-- Breakout age (age when first hit 20%+ dominator rating)
-- Requires multi-season college data to calculate
-- College rushing yards (for +5 enhanced breakout bonus if 20+ yards)
-- Teammate draft capital (total DC of WR/TE teammates drafted same year)
-- Early declare status (did player leave before senior season?)
+**Breakout Age scoring**:
+- Players who hit 20%+ dominator: base score from age tier + `min((dominator - 20) × 0.5, 9.9)` bonus
+- Players who never hit 20%: `min(35, 15 + peak_dominator)` (fallback formula)
+- Rush bonus: +5 if 20+ college rushing yards (capped at 99.9 total)
+- Uses integer ages (season_year - birth_year), not exact birthdates
 
-**For RBs specifically:**
-- Receiving yards (FINAL college season, not best season)
-- Team pass attempts (same season)
-- Weight and 40-yard dash time (for Speed Score)
-- Data sources: CFBD API for receiving (92.8% coverage), combine.parquet + CFBD player search for weight/40
+### RB V5: 65/30/5
+```
+RB SLAP = DC × 0.65 + RYPTPA × 0.30 + Speed_Score × 0.05
+```
 
-**For TEs specifically:**
-- Breakout age (age when first hit 15%+ dominator rating — lower threshold than WRs)
-- Requires multi-season PFF data to calculate
-- Receiving yards (FINAL college season, CFBD primary, PFF fallback)
-- Team pass attempts (same season)
-- RAS (Relative Athletic Score, 0-10 scale → ×10 for 0-100)
-- Data sources: PFF receiving summaries, CFBD API, combine.parquet
+| Component | Weight | Scale | Source |
+|-----------|--------|-------|--------|
+| DC | 65% | `100 - 2.40 × (pick^0.62 - 1)` | Draft pick or projected pick |
+| RYPTPA | 30% | `min(99.9, (rec_yards / team_pass_att) × age_weight × 100 / 1.75)` | CFBD API, final college season only |
+| Speed Score | 5% | `normalize_0_100((weight × 200) / (forty^4))` with MNAR imputation | combine.parquet + CFBD player search |
 
-## Commands
+**CRITICAL**: Always use **FINAL college season** for RB receiving (draft_year - 1). Never "best season."
+
+**Age weight**: `season_age = draft_age - 1`, then `age_w = max(0.85, min(1.15, 1.15 - 0.05 × (season_age - 19)))`.
+
+**Speed Score MNAR imputation**: 68% have real data. Weight recovery via CFBD gets to 96%. Missing 40 times estimated from weight×round bucket averages. Fully missing players: Rd 1-2 → 60th percentile (elite prospects skip workouts), Rd 3+ → 40th percentile.
+
+### TE V5: 60/15/15/10
+```
+TE SLAP = DC × 0.60 + Breakout × 0.15 + Production × 0.15 + RAS × 0.10
+```
+
+| Component | Weight | Scale | Source |
+|-----------|--------|-------|--------|
+| DC | 60% | `100 - 2.40 × (pick^0.62 - 1)` | Draft pick or projected pick |
+| Breakout | 15% | Same age tiers as WR but **15% dominator threshold** (not 20%) | CFBD multi-season data |
+| Production | 15% | `rec_yards / team_pass_att × age_weight × 100` (min-max normalized) | CFBD primary, PFF fallback |
+| RAS | 10% | Relative Athletic Score × 10 (MNAR-imputed when missing) | combine.parquet |
+
+**Key TE differences from WR/RB**:
+- 15% dominator threshold (TEs have lower target shares)
+- No Early Declare (no signal for TEs after controlling for DC)
+- No Teammate Score (TEs at WR-rich programs get buried, opposite of WR finding)
+- RAS kept at 10% (Speed Score and broad jump have real TE signal: r=+0.24, p=0.02)
+- Production uses CFBD primary, PFF `pff_yards / pff_pass_plays × age_weight × 100` as fallback
+
+## Validation Results
+
+### Current Performance (Feb 2026, after all data quality fixes)
+
+**WR V5** (339 backtest, validated against hit24, hit12, first_3yr_ppg, career_ppg):
+- PRI-AVG: +0.455 (priority-weighted average of 4 Spearman correlations)
+- Top 10% hit24: 63.6% (21/33 top-scored WRs became fantasy-relevant)
+- Top 10% PPG: 13.75
+- V5 wins 12/12 metrics vs V4
+
+**RB V5** (223 backtest):
+- PRI-AVG: +0.565
+- Top 10% hit24: 86.4% (19/22)
+- Top 10% PPG: 17.86
+- V5 wins 10/12 metrics vs V4 (1 tie, 1 marginal loss)
+
+**TE V5** (160 backtest):
+- AUC-ROC: 0.916 (top12_10g), 0.904 (top6_10g)
+- SLAP wins 11/11 metrics vs DC-only
+
+**Full validation**: `python src/full_validation_8gm.py` (all 3 positions, 7 test categories, bootstrap resampling)
+
+## Post-Draft Update Workflow
+
+When 2026 NFL Draft picks are final and combine data is available:
+
+### Step 1: Update 2026 prospect pick numbers
+
+**File: `data/prospects_final.csv`** (WR + RB prospects)
+- Column to update: `projected_pick` → replace with actual draft pick
+- Also update `weight` if combine data is now available (for RB Speed Score)
+
+**File: `data/te_2026_prospects_final.csv`** (TE prospects)
+- Column to update: `projected_pick` → replace with actual draft pick
+- Also update: `ras_score` (if new RAS data available), `weight`, `height`
+
+**File: `output/slap_v5_wr_2026.csv`** (WR pre-calculated scores)
+- Column to update: `projected_pick` → actual draft pick
+- Also verify: `early_declare_score`, `teammate_score` (these are pre-calculated)
+
+### Step 2: Update athletic data (if newly available)
+
+- **RB 40 times**: If new combine/pro day data, update `data/nflverse/combine.parquet` or add 40 times directly. The build script uses weight × 40 time for Speed Score.
+- **TE RAS**: Update `ras_score` in `data/te_2026_prospects_final.csv`
+- **RB receiving stats**: If a player's final college season stats were missing, update `rec_yards` and `team_pass_attempts` in `data/prospects_final.csv`
+
+### Step 3: Rebuild
+```bash
+python src/build_master_database_v5.py
+```
+Backtest scores won't change (same data). Only 2026 prospect scores update.
+
+### Step 4: Validate (optional — backtest metrics won't change)
+```bash
+python src/full_validation_8gm.py        # Full 3-position validation suite
+python src/recalculate_slap_v5.py        # WR/RB V5 vs V4 comparison
+```
+
+### What NOT to change
+- **Backtest data files** — these are locked. Changing them invalidates the model.
+- **Component weights** — WR 70/20/5/5, RB 65/30/5, TE 60/15/15/10 are final.
+- **Scoring formulas** — DC curve, breakout scoring, production scaling are all locked.
+
+## Key Design Decisions
+
+### 1. Why percentile rank over min-max for display scores
+Min-max rescaling was tested (P5/P95 floor/ceiling) but rejected because:
+- 37 players all tied at 99.0 at the top (lost all differentiation)
+- Cross-position spread got worse, not better
+- Percentile rank spreads scores evenly with no clipping
+
+Pooled percentile (all 722 players regardless of position) was also tested and rejected:
+- Top 20 was 19 WR + 1 RB + 0 TE (WR formulas produce higher raw scores)
+- Cross-position spread doubled in most rounds
+
+### 2. Why early declare uses college seasons, not age
+Original logic: `draft_age <= 21.5 → early declare`. This was wrong because players who enrolled at 17 play 4 full college seasons but are still 21 at draft. Fixed rule: **3 or fewer college seasons = early declare, period**. This fix improved WR validation (PRI-AVG +0.004, all 8 correlation metrics improved). 20 total players corrected, all 0-for-hit24 (corrections directionally correct).
+
+### 3. Why athletic testing has minimal weight at WR/RB but 10% at TE
+- **WR (0%)**: RAS removed in V5. DC already prices in athleticism (NFL teams see combine before drafting). RAS had severe missing-data problems and added zero predictive value after controlling for DC.
+- **RB (5% Speed Score)**: Speed Score doesn't improve the 12-metric battery, but adds athlete diversity to rankings. User preference for content creation.
+- **TE (10% RAS)**: Speed Score and broad jump have real signal for TEs (r=+0.24, p=0.02). Unlike WR/RB, TE athleticism adds independent value beyond what DC captures.
+
+### 4. The two-layer system
+The model was nearly broken when percentile normalization was applied to components before combining them. Diagnostic testing showed this destroyed the production signal for all 3 positions. The solution: keep components on their native scales for prediction (Layer 1), then percentile-rank the final composite for publication (Layer 2). The display layer can never affect the prediction engine.
+
+### 5. TE production uses CFBD primary, PFF fallback
+CFBD has direct `rec_yards / team_pass_att`. When CFBD data is missing (smaller schools), the build script falls back to PFF: `pff_yards / pff_pass_plays × age_weight × 100`. This recovered production data for 17 TEs that would otherwise have been imputed at the mean.
+
+### 6. Breakout age data integrity
+- WR breakout_age must be NaN (not a sentinel like 99) when a player never hit 20% dominator. The scoring function uses a different formula path for NaN vs integer ages.
+- TE peak_dominator must be capped at 100 (values above 100% indicate CFBD team-receiving-yard calculation errors). The bonus is capped at +9.9 regardless, so values > 100 don't affect scoring, but they shouldn't appear in published data.
+- Breakout_age uses integer ages (season_year minus birth_year), not exact birthdates.
+
+## Other Commands
 
 ```bash
-# MAIN COMMAND: Build unified master database (ALL 3 positions × backtest + 2026)
-# WR V5: 70/20/5/5 (DC / Enhanced Breakout / Teammate / Early Declare)
-# RB V5: 65/30/5 (DC / RYPTPA / Speed Score)
-# TE V5: 60/15/15/10 (DC / Breakout / Production / RAS)
-python src/build_master_database_v5.py
+# Full validation suite (all 3 positions, 8-game minimum)
+python src/full_validation_8gm.py
 
-# WR/RB backtest analysis only (V5 vs V4 vs DC-only comparison)
+# WR/RB V5 vs V4 vs DC-only comparison
 python src/recalculate_slap_v5.py
 
-# TE 2026 prospect scores (standalone)
-python src/calculate_te_slap_2026.py
-
-# Fetch RB receiving stats from CFBD API
+# Fetch RB receiving stats from CFBD API (if updating data)
 python src/fetch_rb_receiving_stats.py
 
-# Update WR breakout scores with age-only approach
-python src/update_wr_breakout.py
+# Calculate WR breakout ages from CFBD data (if updating 2026 prospects)
+python src/calculate_wr_breakout_age.py
 
-# Refresh data from APIs (birthdates, stats)
-python src/fill_missing_ages.py
+# Apply data fixes to WR backtest (early declare overrides, rush yards, etc.)
+python src/apply_data_fixes.py
 
-# Legacy commands (superseded)
-# python src/recalculate_all_slap_new_dc.py  # V4 weights
-# python src/generate_slap_v3_fixed.py
-# python src/calculate_2026_slap.py
-# python src/calculate_slap_unified.py
-# python src/build_master_database_50_35_15.py
+# Update 2026 WR/RB mock draft picks and recalculate (standalone)
+python src/update_2026_mock_and_calc_v5.py
+
+# TE 2026 prospect scores (standalone, also included in master build)
+python src/calculate_te_slap_2026.py
 ```
 
-## Output Files
+## Technical Preferences
 
-### Current Output (V5: WR 70/20/5/5, RB 65/30/5, TE 60/15/15/10)
-- `output/slap_v5_master_database.csv` - **Unified master** (939 rows: 448 WR + 279 RB + 212 TE, backtest + 2026)
-- `output/slap_v5_wr.csv` - WR only (339 backtest + 109 prospects)
-- `output/slap_v5_rb.csv` - RB only (223 backtest + 56 prospects)
-- `output/slap_v5_te.csv` - TE only (160 backtest + 52 prospects)
-- `output/slap_v5_2026_all.csv` - 2026 prospects only (217 across all positions, ranked)
+- **Language**: Python
+- **Data Storage**: CSV files (can be opened in Excel)
+- **Visualizations**: Clear charts for content creation
 
-### Legacy Output (superseded by master database)
-- `output/slap_v5_database.csv` - Old V5 master (WR + RB only, no TE)
-- `output/slap_complete_database_v4.csv` - V4 master database
-- `output/slap_wr_2026.csv` - V4 2026 WR projections
-- `output/slap_rb_2026.csv` - V4 2026 RB projections
-- `output/te_slap_2026.csv` - TE 2026 standalone (now included in master)
+## Data Sources
 
-### Data Files
-- `data/rb_backtest_with_receiving.csv` - RB backtest data with receiving stats from CFBD
-- `data/wr_backtest_all_components.csv` - WR backtest with all V5 components (breakout, rush yards, early declare)
-- `data/wr_teammate_scores.csv` - WR teammate DC scores
-- `data/te_backtest_master.csv` - TE backtest data (160 TEs, 2015-2024)
-- `data/te_2026_prospects_final.csv` - TE 2026 prospect data
-- `data/prospects_final.csv` - WR/RB 2026 prospect data
-- `data/backtest_outcomes_complete.csv` - NFL outcomes for WR/RB backtest
-
-### Legacy Output (superseded)
-- `output/slap_v3_fixed_all_players.csv` - Old scores (before DC formula change)
-- `output/slap_2026_wr.csv` - Old 2026 WR projections
-- `output/slap_2026_rb.csv` - Old 2026 RB projections
-- `output/slap_master_*_50_35_15.csv` - Old master databases
+- **CFBD API**: College receiving yards, team receiving yards, team pass attempts, rushing yards (primary for WR/RB/TE)
+- **PFF**: TE receiving data (fallback when CFBD missing), 63 sub-metrics tested for TE model
+- **NFLVerse**: `combine.parquet` (weight, 40 time for Speed Score), `draft_picks` (draft outcomes)
+- **RAS**: Relative Athletic Score (Kent Lee Platte), used for TE only
+- **Mock drafts**: Consensus projected picks for 2026 prospects (replaced with actuals post-draft)
