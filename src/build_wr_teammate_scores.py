@@ -210,19 +210,35 @@ for _, wr in wr_backtest.iterrows():
 teammate_df = pd.DataFrame(teammate_results)
 teammate_df = teammate_df.sort_values(['draft_year', 'pick']).reset_index(drop=True)
 
-# Merge breakout data to apply breakout gate
-# Teammate score = 100 ONLY if total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
+# Merge breakout data to apply breakout gate + tiered scoring
+# Tiered teammate score: requires total_teammate_dc > 150 AND breakout (20%+ dominator)
+# Then scores by HOW MUCH the player dominated despite elite teammates:
+#   dom 20-25% → 40, 25-30% → 60, 30-35% → 80, 35%+ → 100, no breakout/no teammates → 0
 wr_components = pd.read_csv('data/wr_backtest_all_components.csv')
 teammate_df = teammate_df.merge(
-    wr_components[['player_name', 'draft_year', 'breakout_age']],
+    wr_components[['player_name', 'draft_year', 'breakout_age', 'peak_dominator']],
     on=['player_name', 'draft_year'],
     how='left'
 )
 teammate_df['broke_out'] = teammate_df['breakout_age'].notna()
-teammate_df['teammate_score'] = np.where(
-    (teammate_df['total_teammate_dc'] > 150) & (teammate_df['broke_out']),
-    100, 0
-)
+
+def tiered_teammate_score(row):
+    """Tiered teammate score: 0/40/60/80/100 based on dominator level."""
+    if row['total_teammate_dc'] <= 150 or not row['broke_out']:
+        return 0
+    dom = row['peak_dominator']
+    if pd.isna(dom) or dom < 20:
+        return 0
+    if dom < 25:
+        return 40
+    elif dom < 30:
+        return 60
+    elif dom < 35:
+        return 80
+    else:
+        return 100
+
+teammate_df['teammate_score'] = teammate_df.apply(tiered_teammate_score, axis=1)
 
 # Save
 teammate_df.to_csv('data/wr_teammate_scores.csv', index=False)
@@ -230,9 +246,9 @@ print(f"Saved: data/wr_teammate_scores.csv")
 print(f"Total WRs: {len(teammate_df)}")
 print(f"WRs with at least 1 teammate: {(teammate_df['teammate_count'] > 0).sum()}")
 print(f"WRs with zero teammates: {(teammate_df['teammate_count'] == 0).sum()}")
-print(f"WRs with teammate_score=100: {(teammate_df['teammate_score'] == 100).sum()} "
-      f"(requires total_teammate_dc > 150 AND breakout)")
-print(f"WRs with DC>150 but no breakout (lost credit): "
+tm_dist = teammate_df[teammate_df['teammate_score'] > 0]['teammate_score'].value_counts().sort_index()
+print(f"Tiered teammate scores: {dict(tm_dist)}")
+print(f"WRs with DC>150 but no breakout (score=0): "
       f"{((teammate_df['total_teammate_dc'] > 150) & (~teammate_df['broke_out'])).sum()}")
 
 # ===========================================================================

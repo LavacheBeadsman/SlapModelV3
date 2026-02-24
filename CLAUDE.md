@@ -107,10 +107,28 @@ WR SLAP = DC × 0.70 + Enhanced_Breakout × 0.20 + Teammate × 0.05 + Early_Decl
 |-----------|--------|-------|--------|
 | DC | 70% | `100 - 2.40 × (pick^0.62 - 1)` | Draft pick or projected pick |
 | Enhanced Breakout | 20% | Age tier (18→100, 19→90, 20→75, 21→60, 22→45, 23→30) + dominator bonus + rush bonus | CFBD multi-season receiving data |
-| Teammate | 5% | Binary: 100 if total_teammate_dc > 150, else 0 | Same-year WR/TE drafted teammates |
+| Teammate | 5% | Tiered: 0/40/60/80/100 based on teammate DC + breakout + dominator tier | Same-year WR/TE drafted teammates |
 | Early Declare | 5% | Binary: 100 if 3 or fewer college seasons, else 0 | College season count (NOT age) |
 
 **Early Declare rule**: A player is early declare ONLY if they played **3 or fewer college seasons**. Age is irrelevant. Players who enrolled young (age 17) and played 4 full seasons are NOT early declares, even if drafted at age 21.
+
+**Teammate Score (Tiered)**:
+Two gates must be passed, then peak_dominator determines the tier:
+1. `total_teammate_dc > 150` (enough drafted pass-catcher teammates)
+2. Player must have broken out (hit 20%+ dominator, i.e., `breakout_age` is not NaN)
+
+If either gate fails → **0**. If both pass, score by peak_dominator tier:
+| Peak Dominator | Teammate Score |
+|----------------|---------------|
+| < 20% | 0 |
+| 20–25% | 40 |
+| 25–30% | 60 |
+| 30–35% | 80 |
+| 35%+ | 100 |
+
+**Why tiered instead of binary?** Testing showed a clear staircase in NFL outcomes by dominator tier among players with high teammate DC. Tiered won 6/11 validation metrics vs binary's 5/11 and significantly improved Brier scores (hit24: 0.2784→0.2740, hit12: 0.3152→0.3095). Players who dominated despite elite teammates (35%+ dominator) deserve more credit than those who barely broke out (20–25%).
+
+**Backtest distribution**: 288 at 0, 15 at 40, 15 at 60, 14 at 80, 7 at 100 (339 total).
 
 **Breakout Age scoring**:
 - Players who hit 20%+ dominator: base score from age tier + `min((dominator - 20) × 0.5, 9.9)` bonus
@@ -159,10 +177,10 @@ TE SLAP = DC × 0.60 + Breakout × 0.15 + Production × 0.15 + RAS × 0.10
 ### Current Performance (Feb 2026, after all data quality fixes)
 
 **WR V5** (339 backtest, validated against hit24, hit12, first_3yr_ppg, career_ppg):
-- PRI-AVG: +0.455 (priority-weighted average of 4 Spearman correlations)
+- PRI-AVG: +0.4552 (priority-weighted average of 4 Spearman correlations)
 - Top 10% hit24: 63.6% (21/33 top-scored WRs became fantasy-relevant)
 - Top 10% PPG: 13.75
-- V5 wins 12/12 metrics vs V4
+- V5 wins 11/11 metrics vs DC-only
 
 **RB V5** (223 backtest):
 - PRI-AVG: +0.565
@@ -243,7 +261,12 @@ The model was nearly broken when percentile normalization was applied to compone
 ### 5. TE production uses CFBD primary, PFF fallback
 CFBD has direct `rec_yards / team_pass_att`. When CFBD data is missing (smaller schools), the build script falls back to PFF: `pff_yards / pff_pass_plays × age_weight × 100`. This recovered production data for 17 TEs that would otherwise have been imputed at the mean.
 
-### 6. Breakout age data integrity
+### 6. Why teammate score uses tiered dominator instead of binary
+Original logic: `total_teammate_dc > 150 → 100, else → 0`. This was improved in two steps:
+1. **Breakout gate added**: Players who never hit 20% dominator get TM=0 regardless of teammate DC. This removed 3 false positives (Van Jefferson, Racey McMath, Freddie Swain — all 0-for-hit24).
+2. **Tiered scoring**: Among players who pass both gates, peak_dominator determines the tier (40/60/80/100). Testing showed a clear staircase in NFL outcomes by dominator level. Four formulas were tested (Simple Dominator, Interaction, Dom Above Threshold, Tiered); Tiered won 6/11 metrics vs binary's 5/11 and improved all Brier scores.
+
+### 7. Breakout age data integrity
 - WR breakout_age must be NaN (not a sentinel like 99) when a player never hit 20% dominator. The scoring function uses a different formula path for NaN vs integer ages.
 - TE peak_dominator must be capped at 100 (values above 100% indicate CFBD team-receiving-yard calculation errors). The bonus is capped at +9.9 regardless, so values > 100 don't affect scoring, but they shouldn't appear in published data.
 - Breakout_age uses integer ages (season_year minus birth_year), not exact birthdates.
@@ -271,6 +294,9 @@ python src/update_2026_mock_and_calc_v5.py
 
 # TE 2026 prospect scores (standalone, also included in master build)
 python src/calculate_te_slap_2026.py
+
+# Test continuous teammate score formulas (analysis script)
+python src/test_continuous_teammate.py
 ```
 
 ## Technical Preferences

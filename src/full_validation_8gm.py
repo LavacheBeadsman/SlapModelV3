@@ -135,11 +135,22 @@ print("Computing WR SLAP V5...")
 wr_bt['s_dc'] = wr_bt['pick'].apply(dc_score)
 wr_bt['s_breakout_raw'] = wr_bt.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
-# Teammate gate: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
-wr_bt['s_teammate_binary'] = ((wr_bt['total_teammate_dc'].fillna(0) > 150) & (wr_bt['breakout_age'].notna())).astype(int)
+
+# Tiered teammate score: DC>150 + breakout gate, then 20-25%→40, 25-30%→60, 30-35%→80, 35%+→100
+def tiered_teammate_score(tm_dc, broke_out, peak_dom):
+    if pd.isna(tm_dc) or tm_dc <= 150 or not broke_out:
+        return 0.0
+    if pd.isna(peak_dom) or peak_dom < 20:
+        return 0.0
+    if peak_dom < 25: return 40.0
+    elif peak_dom < 30: return 60.0
+    elif peak_dom < 35: return 80.0
+    else: return 100.0
+
+wr_bt['s_teammate'] = wr_bt.apply(
+    lambda r: tiered_teammate_score(r['total_teammate_dc'], r['breakout_age'] == r['breakout_age'], r['peak_dominator']), axis=1)
 wr_bt['s_early_declare_binary'] = wr_bt['early_declare'].apply(lambda x: 1 if x == 1 else 0)
-# Native-scale: breakout 0-99.9, binaries 0/100 (no percentile normalization)
-wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, 100, 0).astype(float)
+# Native-scale: breakout 0-99.9, teammate tiered 0-100, early declare binary 0/100
 wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0).astype(float)
 wr_bt['slap'] = (WR_W['dc'] * wr_bt['s_dc'] + WR_W['breakout'] * wr_bt['s_breakout_raw'] +
                   WR_W['teammate'] * wr_bt['s_teammate'] + WR_W['early_declare'] * wr_bt['s_early_declare'])

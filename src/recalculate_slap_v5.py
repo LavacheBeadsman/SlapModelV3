@@ -143,10 +143,19 @@ wr['s_dc'] = wr['pick'].apply(dc_score)
 wr['s_breakout'] = wr.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
 
-# Teammate score: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
-wr['s_teammate'] = np.where(
-    (wr['total_teammate_dc'].fillna(0) > 150) & (wr['breakout_age'].notna()),
-    100, 0)
+# Tiered teammate score: DC>150 + breakout gate, then 20-25%→40, 25-30%→60, 30-35%→80, 35%+→100
+def tiered_teammate_score(tm_dc, broke_out, peak_dom):
+    if pd.isna(tm_dc) or tm_dc <= 150 or not broke_out:
+        return 0.0
+    if pd.isna(peak_dom) or peak_dom < 20:
+        return 0.0
+    if peak_dom < 25: return 40.0
+    elif peak_dom < 30: return 60.0
+    elif peak_dom < 35: return 80.0
+    else: return 100.0
+
+wr['s_teammate'] = wr.apply(
+    lambda r: tiered_teammate_score(r['total_teammate_dc'], r['breakout_age'] == r['breakout_age'], r['peak_dominator']), axis=1)
 
 # Early declare (binary: 100 or 0)
 wr['s_early_declare'] = wr['early_declare'].apply(lambda x: 100 if x == 1 else 0)

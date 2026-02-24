@@ -179,16 +179,26 @@ wr_bt = wr_bt.merge(wr_out, on=['player_name', 'draft_year', 'pick'], how='left'
 wr_bt['s_dc'] = wr_bt['pick'].apply(dc_score)
 wr_bt['s_breakout_raw'] = wr_bt.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
-# Teammate gate: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
-wr_bt['s_teammate_binary'] = ((wr_bt['total_teammate_dc'].fillna(0) > 150) & (wr_bt['breakout_age'].notna())).astype(int)
+# Tiered teammate score: requires total_teammate_dc > 150 AND breakout (20%+ dominator)
+# Then tiers by dominator level: 20-25%→40, 25-30%→60, 30-35%→80, 35%+→100
+def tiered_teammate_score(tm_dc, broke_out, peak_dom):
+    if pd.isna(tm_dc) or tm_dc <= 150 or not broke_out:
+        return 0.0
+    if pd.isna(peak_dom) or peak_dom < 20:
+        return 0.0
+    if peak_dom < 25: return 40.0
+    elif peak_dom < 30: return 60.0
+    elif peak_dom < 35: return 80.0
+    else: return 100.0
+
+wr_bt['s_teammate'] = wr_bt.apply(
+    lambda r: tiered_teammate_score(r['total_teammate_dc'], r['breakout_age'] == r['breakout_age'], r['peak_dominator']), axis=1)
 wr_bt['s_early_declare_binary'] = wr_bt['early_declare'].apply(lambda x: 1 if x == 1 else 0)
 
-# NATIVE-SCALE SCORING: breakout is 0-99.9, binaries are 0/100 — all naturally 0-100 scale
-# No percentile normalization needed (diagnostic confirmed raw beats percentile on all metrics)
-wr_bt['s_teammate'] = np.where(wr_bt['s_teammate_binary'] == 1, 100, 0).astype(float)
+# NATIVE-SCALE SCORING: breakout is 0-99.9, teammate is tiered 0-100, early declare binary 0/100
 wr_bt['s_early_declare'] = np.where(wr_bt['s_early_declare_binary'] == 1, 100, 0).astype(float)
 
-tm_pct = wr_bt['s_teammate_binary'].mean()
+tm_pct = (wr_bt['s_teammate'] > 0).mean()
 ed_pct = wr_bt['s_early_declare_binary'].mean()
 print(f"  Teammate: {tm_pct*100:.1f}% have flag (binary 0/100)")
 print(f"  Early Declare: {ed_pct*100:.1f}% have flag (binary 0/100)")
@@ -543,15 +553,13 @@ for _, row in wr26.iterrows():
 wr26_tm_df = pd.DataFrame(wr26_tm_results)
 wr26 = wr26.merge(wr26_tm_df, on='player_name', how='left')
 
-# Teammate gate: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
-wr26['s_teammate_binary'] = (
-    (wr26['total_teammate_dc_2026'].fillna(0) > 150) & (wr26['breakout_age'].notna())
-).astype(int)
-print(f"  Teammate scores recalculated from scratch: {wr26['s_teammate_binary'].sum()} with TM=100 "
-      f"(gate: DC>150 AND breakout)")
+# Tiered teammate score (same logic as backtest)
+wr26['s_teammate'] = wr26.apply(
+    lambda r: tiered_teammate_score(r['total_teammate_dc_2026'], r['breakout_age'] == r['breakout_age'], r['peak_dominator']), axis=1)
+tm_dist_26 = wr26[wr26['s_teammate'] > 0]['s_teammate'].value_counts().sort_index()
+print(f"  Tiered teammate scores: {dict(tm_dist_26)} ({(wr26['s_teammate'] > 0).sum()} qualifying)")
 
 wr26['s_early_declare_binary'] = wr26['early_declare'].apply(lambda x: 1 if x == 100 or x == 1 else 0)
-wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, 100, 0).astype(float)
 wr26['s_early_declare'] = np.where(wr26['s_early_declare_binary'] == 1, 100, 0).astype(float)
 
 # V5 score (native-scale components)
