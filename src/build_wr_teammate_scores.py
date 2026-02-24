@@ -210,12 +210,30 @@ for _, wr in wr_backtest.iterrows():
 teammate_df = pd.DataFrame(teammate_results)
 teammate_df = teammate_df.sort_values(['draft_year', 'pick']).reset_index(drop=True)
 
+# Merge breakout data to apply breakout gate
+# Teammate score = 100 ONLY if total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
+wr_components = pd.read_csv('data/wr_backtest_all_components.csv')
+teammate_df = teammate_df.merge(
+    wr_components[['player_name', 'draft_year', 'breakout_age']],
+    on=['player_name', 'draft_year'],
+    how='left'
+)
+teammate_df['broke_out'] = teammate_df['breakout_age'].notna()
+teammate_df['teammate_score'] = np.where(
+    (teammate_df['total_teammate_dc'] > 150) & (teammate_df['broke_out']),
+    100, 0
+)
+
 # Save
 teammate_df.to_csv('data/wr_teammate_scores.csv', index=False)
 print(f"Saved: data/wr_teammate_scores.csv")
 print(f"Total WRs: {len(teammate_df)}")
 print(f"WRs with at least 1 teammate: {(teammate_df['teammate_count'] > 0).sum()}")
 print(f"WRs with zero teammates: {(teammate_df['teammate_count'] == 0).sum()}")
+print(f"WRs with teammate_score=100: {(teammate_df['teammate_score'] == 100).sum()} "
+      f"(requires total_teammate_dc > 150 AND breakout)")
+print(f"WRs with DC>150 but no breakout (lost credit): "
+      f"{((teammate_df['total_teammate_dc'] > 150) & (~teammate_df['broke_out'])).sum()}")
 
 # ===========================================================================
 # Step 3: Top 20 highest total_teammate_dc

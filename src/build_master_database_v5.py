@@ -179,7 +179,8 @@ wr_bt = wr_bt.merge(wr_out, on=['player_name', 'draft_year', 'pick'], how='left'
 wr_bt['s_dc'] = wr_bt['pick'].apply(dc_score)
 wr_bt['s_breakout_raw'] = wr_bt.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
-wr_bt['s_teammate_binary'] = wr_bt['total_teammate_dc'].apply(lambda x: 1 if pd.notna(x) and x > 150 else 0)
+# Teammate gate: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
+wr_bt['s_teammate_binary'] = ((wr_bt['total_teammate_dc'].fillna(0) > 150) & (wr_bt['breakout_age'].notna())).astype(int)
 wr_bt['s_early_declare_binary'] = wr_bt['early_declare'].apply(lambda x: 1 if x == 1 else 0)
 
 # NATIVE-SCALE SCORING: breakout is 0-99.9, binaries are 0/100 — all naturally 0-100 scale
@@ -474,7 +475,81 @@ wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
 
 # Native-scale scoring (same as backtest: breakout 0-99.9, binaries 0/100)
 wr26['s_breakout_raw'] = wr26['enhanced_breakout']  # Computed from scratch above (native 0-99.9 scale)
-wr26['s_teammate_binary'] = wr26['teammate_score'].apply(lambda x: 1 if x == 100 else 0)
+
+# --- Calculate 2026 teammate scores from scratch ---
+# Build pool of potential teammates: 2025 actual picks + other 2026 WR/TE prospects
+def normalize_college(name):
+    """Normalize college name for matching across data sources."""
+    if pd.isna(name): return ""
+    name = str(name).strip()
+    replacements = {
+        'Ohio St.': 'Ohio State', 'Michigan St.': 'Michigan State', 'Penn St.': 'Penn State',
+        'Arizona St.': 'Arizona State', 'Oklahoma St.': 'Oklahoma State', 'Oregon St.': 'Oregon State',
+        'Washington St.': 'Washington State', 'Florida St.': 'Florida State', 'Boise St.': 'Boise State',
+        'Colorado St.': 'Colorado State', 'Iowa St.': 'Iowa State', 'Kansas St.': 'Kansas State',
+        'Fresno St.': 'Fresno State', 'North Carolina St.': 'NC State', 'Central Florida': 'UCF',
+        'Miami (FL)': 'Miami', 'Mississippi': 'Ole Miss', 'Boston Col.': 'Boston College',
+        'North Dakota St.': 'North Dakota State', 'Middle Tenn. St.': 'Middle Tennessee',
+        'Ala-Birmingham': 'UAB', 'SE Missouri St.': 'Southeast Missouri',
+    }
+    for old, new in replacements.items():
+        if name == old:
+            return new.lower()
+    return name.lower()
+
+# 2025 pass catchers from actual draft picks
+draft_picks_all = pd.read_parquet('data/nflverse/draft_picks.parquet')
+pc_2025 = draft_picks_all[
+    (draft_picks_all['position'].isin(['WR', 'TE'])) &
+    (draft_picks_all['season'] == 2025)
+].copy()
+pc_2025['college_norm'] = pc_2025['college'].apply(normalize_college)
+pc_2025['dc'] = pc_2025['pick'].apply(dc_score)
+pc_2025_pool = pc_2025[['pfr_player_name', 'college_norm', 'pick', 'dc']].rename(
+    columns={'pfr_player_name': 'tm_name'})
+
+# 2026 WR prospects
+wr26_pool = wr26[['player_name', 'school', 'projected_pick']].copy()
+wr26_pool['college_norm'] = wr26_pool['school'].apply(normalize_college)
+wr26_pool['dc'] = wr26_pool['projected_pick'].apply(dc_score)
+wr26_pool = wr26_pool[['player_name', 'college_norm', 'projected_pick', 'dc']].rename(
+    columns={'player_name': 'tm_name', 'projected_pick': 'pick'})
+
+# 2026 TE prospects
+te26_prospects = pd.read_csv('data/te_2026_prospects_final.csv')
+te26_pool = te26_prospects[['player_name', 'college', 'projected_pick']].copy()
+te26_pool['college_norm'] = te26_pool['college'].apply(normalize_college)
+te26_pool['dc'] = te26_pool['projected_pick'].apply(dc_score)
+te26_pool = te26_pool[['player_name', 'college_norm', 'projected_pick', 'dc']].rename(
+    columns={'player_name': 'tm_name', 'projected_pick': 'pick'})
+
+# Combine all potential teammates (2025 actual + 2026 WR + 2026 TE)
+all_teammates = pd.concat([pc_2025_pool, wr26_pool, te26_pool], ignore_index=True)
+
+# Calculate total_teammate_dc for each 2026 WR prospect
+wr26['college_norm'] = wr26['school'].apply(normalize_college)
+wr26_tm_results = []
+for _, row in wr26.iterrows():
+    school = row['college_norm']
+    name = row['player_name']
+    # Find teammates from same school, excluding the player themselves
+    tms = all_teammates[
+        (all_teammates['college_norm'] == school) &
+        (all_teammates['tm_name'] != name)
+    ]
+    total_dc = tms['dc'].sum() if len(tms) > 0 else 0.0
+    wr26_tm_results.append({'player_name': name, 'total_teammate_dc_2026': round(total_dc, 1)})
+
+wr26_tm_df = pd.DataFrame(wr26_tm_results)
+wr26 = wr26.merge(wr26_tm_df, on='player_name', how='left')
+
+# Teammate gate: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
+wr26['s_teammate_binary'] = (
+    (wr26['total_teammate_dc_2026'].fillna(0) > 150) & (wr26['breakout_age'].notna())
+).astype(int)
+print(f"  Teammate scores recalculated from scratch: {wr26['s_teammate_binary'].sum()} with TM=100 "
+      f"(gate: DC>150 AND breakout)")
+
 wr26['s_early_declare_binary'] = wr26['early_declare'].apply(lambda x: 1 if x == 100 or x == 1 else 0)
 wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, 100, 0).astype(float)
 wr26['s_early_declare'] = np.where(wr26['s_early_declare_binary'] == 1, 100, 0).astype(float)

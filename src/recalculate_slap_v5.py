@@ -143,8 +143,10 @@ wr['s_dc'] = wr['pick'].apply(dc_score)
 wr['s_breakout'] = wr.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
 
-# Teammate score (binary: total_teammate_dc > 150 → 100, else 0)
-wr['s_teammate'] = wr['total_teammate_dc'].apply(lambda x: 100 if pd.notna(x) and x > 150 else 0)
+# Teammate score: requires BOTH total_teammate_dc > 150 AND player broke out (hit 20%+ dominator)
+wr['s_teammate'] = np.where(
+    (wr['total_teammate_dc'].fillna(0) > 150) & (wr['breakout_age'].notna()),
+    100, 0)
 
 # Early declare (binary: 100 or 0)
 wr['s_early_declare'] = wr['early_declare'].apply(lambda x: 100 if x == 1 else 0)
