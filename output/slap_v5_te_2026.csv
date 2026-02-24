@@ -1,53 +1,53 @@
-rank,player_name,college,pick,round,slap_v5,dc_score,delta_vs_dc,te_breakout_score,te_production_score,ras_score,breakout_age,peak_dominator,rec_yards,team_pass_att,breakout_data_flag,production_data_flag,athletic_data_flag
-1,Kenyon Sadiq,Oregon,19,1,74.3,85.7,-11.4,61.9,98.8,20.0,,14.826581943341278,560.0,437.0,imputed,real,mnar_imputed
-2,Eli Stowers,Vanderbilt,74,3,62.5,60.5,2.0,88.1,99.7,5.6,21.0,27.806563039723663,765.0,400.0,real,real,mnar_imputed
-3,Max Klare,Ohio State,81,3,60.3,57.9,2.4,88.8,95.6,5.6,20.8,30.908269317668324,448.0,408.0,real,real,mnar_imputed
-4,Justin Joly,NC State,103,4,56.3,50.4,5.9,90.6,96.2,5.6,19.3,25.55604012211077,489.0,413.0,real,real,mnar_imputed
-5,Michael Trigg,Baylor,94,3,53.8,53.4,0.4,66.2,98.1,5.6,22.8,18.670971213344096,694.0,510.0,real,real,mnar_imputed
-6,Jack Endries,Texas,125,4,48.2,43.4,4.8,80.6,85.6,5.6,21.4,18.59701492537313,346.0,420.0,real,real,mnar_imputed
-7,Eli Raridon,Notre Dame,140,5,48.1,38.9,9.2,80.6,99.4,5.6,21.8,16.19079610345986,482.0,322.0,real,real,mnar_imputed
-8,Dallen Bentley,Utah,141,5,47.2,38.7,8.5,76.9,99.4,5.6,22.5,23.16890881913304,620.0,373.0,real,real,mnar_imputed
-9,Tanner Koziol,Houston,158,5,46.5,33.8,12.7,88.1,99.4,5.6,20.3,28.34964562942963,727.0,377.0,real,real,mnar_imputed
-10,Joe Royer,Cincinnati,142,5,43.9,38.4,5.5,65.6,94.4,5.6,22.7,18.39323467230444,416.0,363.0,real,real,mnar_imputed
-11,Dae'Quan Wright,Mississippi,179,6,37.2,28.1,9.1,58.8,98.1,5.6,,13.996175908221796,635.0,523.0,imputed,real,mnar_imputed
-12,Oscar Delp,Georgia,113,4,34.5,47.1,-12.6,10.0,73.8,5.6,,8.432956381260096,261.0,417.0,imputed,real,mnar_imputed
-13,Jaren Kanak,Oklahoma,250,7,31.7,10.4,21.3,85.6,98.1,5.6,20.8,17.29200652528548,533.0,431.0,real,real,mnar_imputed
-14,Seydou Traore,Mississippi State,250,7,31.3,10.4,20.9,90.0,91.2,5.6,19.8,23.25925925925926,372.0,390.0,real,real,mnar_imputed
-15,Sam Roush,Stanford,159,5,30.7,33.5,-2.8,8.1,98.1,5.6,23.4,20.473328324567994,545.0,391.0,real,real,mnar_imputed
-16,John Michael Gyllenborg,Wyoming,178,6,30.6,28.4,2.2,85.6,36.2,5.6,20.9,19.200351493848856,217.0,384.0,real,real,mnar_imputed
-17,Jack Velling,Michigan State,250,7,29.5,10.4,19.1,80.6,91.2,5.6,21.7,15.777351247600768,359.0,378.0,real,real,mnar_imputed
-18,Marlin Klein,Michigan,187,6,29.3,26.0,3.3,42.5,80.0,5.6,,10.214168039538714,248.0,340.0,imputed,real,mnar_imputed
-19,Josh Cuevas,Alabama,197,6,28.6,23.4,5.2,44.4,82.5,5.6,,10.423535379152929,411.0,523.0,imputed,real,mnar_imputed
-20,Riley Nowakowski,Indiana,211,6,27.8,19.9,7.9,42.5,91.2,5.6,,10.128238680973569,387.0,406.0,imputed,real,mnar_imputed
-21,Toby Payne,Marshall,250,7,26.8,10.4,16.4,62.5,95.6,5.6,22.9,15.770465489566613,387.0,335.0,real,real,mnar_imputed
-22,Nate Rutchena,UC Davis,250,7,25.6,10.4,15.2,66.2,85.6,5.6,,,,,imputed,imputed,mnar_imputed
-23,Lake McRee,USC,250,7,24.2,10.4,13.8,48.8,95.6,5.6,,11.564449064449065,450.0,420.0,imputed,real,mnar_imputed
-24,Chamon Metayer,Arizona State,250,7,23.8,10.4,13.4,54.4,88.1,5.6,,12.980269989615785,375.0,430.0,imputed,real,mnar_imputed
-25,Matthew Hibner,SMU,250,7,23.1,10.4,12.7,50.0,88.8,5.6,,11.825332248440466,436.0,460.0,imputed,real,mnar_imputed
-26,R.J. Maryland,SMU,250,7,21.5,10.4,11.1,56.2,74.4,5.6,,13.31619537275064,322.0,460.0,imputed,real,mnar_imputed
-27,Bauer Sharp,LSU,250,7,20.8,10.4,10.4,60.0,66.9,5.6,,14.522635589421784,252.0,443.0,imputed,real,mnar_imputed
-28,Brett Norfleet,Missouri,250,7,20.2,10.4,9.8,44.4,79.4,5.6,,10.39279869067103,254.0,361.0,imputed,real,mnar_imputed
-29,Lance Mason,Wisconsin,250,7,17.7,10.4,7.3,11.9,98.8,5.6,23.4,24.312767257177764,398.0,272.0,real,real,mnar_imputed
-30,Carsen Ryan,BYU,250,7,16.7,10.4,6.3,6.9,98.8,5.6,23.2,20.090732339598187,620.0,403.0,real,real,mnar_imputed
-31,Nate Boerkircher,Texas A&M,173,5,15.3,29.7,-14.4,4.4,33.8,5.6,,5.88410104011887,204.0,408.0,imputed,real,mnar_imputed
-32,Dan Villari,Syracuse,250,7,14.8,10.4,4.4,4.4,91.2,5.6,24.1,15.77924601632336,412.0,408.0,real,real,mnar_imputed
-33,Ty Thompson,Tulane,250,7,14.8,10.4,4.4,10.0,85.6,5.6,,8.252032520325203,,425.0,imputed,imputed,mnar_imputed
-34,DJ Rogers,TCU,250,7,12.9,10.4,2.5,10.0,75.6,5.6,,8.508935716190983,319.0,460.0,imputed,real,mnar_imputed
-35,Cooper Flanagan,Notre Dame,250,7,12.9,10.4,2.5,0.1,85.6,5.6,,1.7421602787456445,,322.0,imputed,imputed,mnar_imputed
-36,Miles Kitselman,Tennessee,250,7,11.9,10.4,1.5,44.4,36.2,5.6,,10.465924895688456,253.0,437.0,imputed,real,mnar_imputed
-37,Jameson Geers,Minnesota,250,7,11.1,10.4,0.7,42.5,33.8,5.6,,10.13631597343586,206.0,399.0,imputed,real,mnar_imputed
-38,Benji Gosnell,Virginia Tech,250,7,10.2,10.4,-0.2,58.1,13.8,5.6,,13.878713878713878,86.0,319.0,imputed,real,mnar_imputed
-39,Amari Niblack,Texas A&M,250,7,6.5,10.4,-3.9,45.6,6.9,5.6,,10.579100614687803,69.0,408.0,imputed,real,mnar_imputed
-40,Luke Hasz,Mississippi,250,7,5.9,10.4,-4.5,48.1,1.2,5.6,,11.244444444444444,28.0,523.0,imputed,real,mnar_imputed
-41,Josh Kattus,Kentucky,250,7,4.9,10.4,-5.5,8.8,35.6,5.6,,7.995079950799508,195.0,367.0,imputed,real,mnar_imputed
-42,Ethan Davis,Tennessee,250,7,4.6,10.4,-5.8,5.6,36.9,5.6,,6.756046267087276,257.0,437.0,imputed,real,mnar_imputed
-43,Andrew Rappleyea,Penn State,250,7,4.5,10.4,-5.9,6.2,35.6,5.6,,7.395234182415776,180.0,339.0,imputed,real,mnar_imputed
-44,Jaleel Skinner,Louisville,250,7,4.0,10.4,-6.4,5.6,33.8,5.6,,7.150368033648791,204.0,418.0,imputed,real,mnar_imputed
-45,Khalil Dinkins,Penn State,250,7,3.7,10.4,-6.7,5.6,32.5,5.6,,6.86113393590797,167.0,339.0,imputed,real,mnar_imputed
-46,Will Kacmarek,Ohio State,250,7,3.6,10.4,-6.8,11.2,26.2,5.6,,9.204545454545451,168.0,408.0,imputed,real,mnar_imputed
-47,Tanner Arkin,Illinois,250,7,0.0,10.4,-10.4,4.4,13.8,5.6,,4.948805460750854,114.0,372.0,imputed,real,mnar_imputed
-48,Jack Pedersen,UCLA,250,7,0.0,10.4,-10.4,2.5,7.5,5.6,,4.203997243280496,72.0,361.0,imputed,real,mnar_imputed
-49,Holden Staes,Indiana,250,7,0.0,10.4,-10.4,4.4,5.6,5.6,,5.472636815920398,62.0,406.0,imputed,real,mnar_imputed
-50,Davin Stoffel,Illinois,250,7,0.0,10.4,-10.4,0.1,1.2,5.6,,0.787143325680551,24.0,372.0,imputed,real,mnar_imputed
-51,Joey Schlaffer,Penn State,250,7,0.0,10.4,-10.4,0.1,1.2,5.6,,0.780608052588332,19.0,339.0,imputed,real,mnar_imputed
-52,Shamar Easter,North Carolina,250,7,0.0,10.4,-10.4,0.1,0.3,5.6,,0.8608971454463071,17.0,355.0,imputed,real,mnar_imputed
+player_name,position,college,draft_year,pick,round,slap_display_score,slap_model_score,dc_score,prospect_profile,dataset,te_breakout_score,te_production_score,ras_score,breakout_age,peak_dominator,rec_yards,team_pass_att,pos_rank
+Kenyon Sadiq,TE,Oregon,2026,19,1,82.5,65.12,95.9,31.5,2026_prospect,29.8,14.3,60.0,,14.826581943341278,560.0,437.0,1
+Eli Stowers,TE,Vanderbilt,2026,74,3,66.5,57.93,77.6,43.1,2026_prospect,66.4,22.0,40.0,21.0,27.806563039723663,765.0,400.0,2
+Max Klare,TE,Ohio State,2026,81,3,63.5,55.31,75.4,39.6,2026_prospect,68.0,10.9,40.0,20.8,30.908269317668324,448.0,408.0,3
+Justin Joly,TE,NC State,2026,103,4,59.2,53.69,62.9,44.3,2026_prospect,80.3,11.3,40.0,19.3,25.55604012211077,489.0,413.0,4
+Michael Trigg,TE,Baylor,2026,94,3,48.2,48.17,69.3,27.0,2026_prospect,31.8,13.6,40.0,22.8,18.670971213344096,694.0,510.0,5
+Tanner Koziol,TE,Houston,2026,158,5,38.4,45.34,37.1,42.8,2026_prospect,66.7,20.9,40.0,20.3,28.34964562942963,727.0,377.0,6
+Jack Endries,TE,Texas,2026,125,4,35.9,44.72,52.4,30.0,2026_prospect,46.8,6.6,40.0,21.4,18.59701492537313,346.0,420.0,7
+Eli Raridon,TE,Notre Dame,2026,140,5,34.1,43.9,45.7,33.2,2026_prospect,45.6,16.3,40.0,21.8,16.19079610345986,482.0,322.0,8
+Oscar Delp,TE,Georgia,2026,113,4,29.8,42.64,59.2,20.5,2026_prospect,23.4,4.5,40.0,,8.432956381260096,261.0,417.0,9
+Dallen Bentley,TE,Utah,2026,141,5,29.2,42.21,45.7,29.3,2026_prospect,34.1,17.5,40.0,22.5,23.16890881913304,620.0,373.0,10
+Joe Royer,TE,Cincinnati,2026,142,5,21.8,40.6,45.1,25.6,2026_prospect,31.7,10.0,40.0,22.7,18.39323467230444,416.0,363.0,11
+John Michael Gyllenborg,TE,Wyoming,2026,178,6,20.6,39.47,26.1,34.5,2026_prospect,62.1,3.3,40.0,20.9,19.200351493848856,217.0,384.0,12
+Sam Roush,TE,Stanford,2026,159,5,14.5,37.45,37.1,23.4,2026_prospect,22.7,13.0,40.0,23.4,20.473328324567994,545.0,391.0,13
+Dae'Quan Wright,TE,Mississippi,2026,179,6,12.6,35.76,26.1,25.6,2026_prospect,29.0,12.5,40.0,,13.996175908221796,635.0,523.0,14
+Seydou Traore,TE,Mississippi State,2026,250,7,9.6,34.39,5.9,42.8,2026_prospect,79.1,8.3,40.0,19.8,23.25925925925926,372.0,390.0,15
+Nate Boerkircher,TE,Texas A&M,2026,173,5,9.0,33.79,30.7,18.8,2026_prospect,20.9,2.5,40.0,,5.88410104011887,204.0,408.0,16
+Jaren Kanak,TE,Oklahoma,2026,250,7,8.4,32.49,5.9,38.0,2026_prospect,61.1,13.6,40.0,20.8,17.29200652528548,533.0,431.0,17
+Marlin Klein,TE,Michigan,2026,187,6,8.4,33.22,25.5,21.7,2026_prospect,25.2,5.9,40.0,,10.214168039538714,248.0,340.0,17
+Josh Cuevas,TE,Alabama,2026,197,6,8.4,32.08,21.8,21.8,2026_prospect,25.4,6.1,40.0,,10.423535379152929,411.0,523.0,17
+Riley Nowakowski,TE,Indiana,2026,211,6,6.5,30.7,17.5,22.5,2026_prospect,25.1,8.3,40.0,,10.128238680973569,387.0,406.0,20
+Jack Velling,TE,Michigan State,2026,250,7,3.4,29.32,5.9,30.1,2026_prospect,45.4,8.3,40.0,21.7,15.777351247600768,359.0,378.0,21
+Carsen Ryan,TE,BYU,2026,250,7,1.6,26.88,5.9,24.0,2026_prospect,22.5,14.8,40.0,23.2,20.090732339598187,620.0,403.0,22
+Lance Mason,TE,Wisconsin,2026,250,7,1.6,27.06,5.9,24.5,2026_prospect,24.7,13.9,40.0,23.4,24.312767257177764,398.0,272.0,22
+Toby Payne,TE,Marshall,2026,250,7,1.6,27.47,5.9,25.5,2026_prospect,30.4,10.9,40.0,22.9,15.770465489566613,387.0,335.0,22
+Lake McRee,TE,USC,2026,250,7,1.6,26.84,5.9,23.9,2026_prospect,26.6,10.6,40.0,,11.564449064449065,450.0,420.0,22
+Nate Rutchena,TE,UC Davis,2026,250,7,1.6,27.04,5.9,24.4,2026_prospect,31.8,6.6,40.0,,,,,22
+Matthew Hibner,TE,SMU,2026,250,7,1.6,26.44,5.9,22.9,2026_prospect,26.8,7.6,40.0,,11.825332248440466,436.0,460.0,22
+Chamon Metayer,TE,Arizona State,2026,250,7,1.6,26.56,5.9,23.2,2026_prospect,28.0,7.3,40.0,,12.980269989615785,375.0,430.0,22
+Dan Villari,TE,Syracuse,2026,250,7,1.6,25.59,5.9,20.8,2026_prospect,20.4,8.4,40.0,24.1,15.77924601632336,412.0,408.0,22
+Ty Thompson,TE,Tulane,2026,250,7,1.6,25.76,5.9,21.2,2026_prospect,23.3,6.6,40.0,,8.252032520325203,,425.0,22
+Brett Norfleet,TE,Missouri,2026,250,7,1.6,25.92,5.9,21.6,2026_prospect,25.4,5.6,40.0,,10.39279869067103,254.0,361.0,22
+R.J. Maryland,TE,SMU,2026,250,7,1.6,26.21,5.9,22.3,2026_prospect,28.3,4.6,40.0,,13.31619537275064,322.0,460.0,22
+Bauer Sharp,TE,LSU,2026,250,7,1.6,26.26,5.9,22.5,2026_prospect,29.5,3.7,40.0,,14.522635589421784,252.0,443.0,22
+DJ Rogers,TE,TCU,2026,250,7,1.6,25.54,5.9,20.7,2026_prospect,23.5,5.0,40.0,,8.508935716190983,319.0,460.0,22
+Cooper Flanagan,TE,Notre Dame,2026,250,7,1.6,24.78,5.9,18.8,2026_prospect,16.7,6.6,40.0,,1.7421602787456445,,322.0,22
+Miles Kitselman,TE,Tennessee,2026,250,7,1.6,25.62,5.9,20.9,2026_prospect,25.5,3.5,40.0,,10.465924895688456,253.0,437.0,22
+Ethan Davis,TE,Tennessee,2026,250,7,1.6,25.08,5.9,19.5,2026_prospect,21.8,3.6,40.0,,6.756046267087276,257.0,437.0,22
+Jameson Geers,TE,Minnesota,2026,250,7,1.6,25.45,5.9,20.4,2026_prospect,25.1,2.7,40.0,,10.13631597343586,206.0,399.0,22
+Josh Kattus,TE,Kentucky,2026,250,7,1.6,25.15,5.9,19.7,2026_prospect,23.0,2.9,40.0,,7.995079950799508,195.0,367.0,22
+Andrew Rappleyea,TE,Penn State,2026,250,7,1.6,25.06,5.9,19.5,2026_prospect,22.4,2.9,40.0,,7.395234182415776,180.0,339.0,22
+Jaleel Skinner,TE,Louisville,2026,250,7,1.6,24.99,5.9,19.3,2026_prospect,22.2,2.6,40.0,,7.150368033648791,204.0,418.0,22
+Khalil Dinkins,TE,Penn State,2026,250,7,1.6,24.91,5.9,19.1,2026_prospect,21.9,2.4,40.0,,6.86113393590797,167.0,339.0,22
+Will Kacmarek,TE,Ohio State,2026,250,7,1.6,25.15,5.9,19.7,2026_prospect,24.2,1.6,40.0,,9.204545454545451,168.0,408.0,22
+Benji Gosnell,TE,Virginia Tech,2026,250,7,1.6,25.61,5.9,20.8,2026_prospect,28.9,0.0,40.0,,13.878713878713878,86.0,319.0,22
+Tanner Arkin,TE,Illinois,2026,250,7,1.6,24.27,5.9,17.5,2026_prospect,19.9,0.0,40.0,,4.948805460750854,114.0,372.0,22
+Amari Niblack,TE,Texas A&M,2026,250,7,1.6,25.11,5.9,19.6,2026_prospect,25.6,0.0,40.0,,10.579100614687803,69.0,408.0,22
+Jack Pedersen,TE,UCLA,2026,250,7,1.6,24.15,5.9,17.2,2026_prospect,19.2,0.0,40.0,,4.203997243280496,72.0,361.0,22
+Luke Hasz,TE,Mississippi,2026,250,7,1.6,25.21,5.9,19.8,2026_prospect,26.2,0.0,40.0,,11.244444444444444,28.0,523.0,22
+Holden Staes,TE,Indiana,2026,250,7,1.6,24.35,5.9,17.7,2026_prospect,20.5,0.0,40.0,,5.472636815920398,62.0,406.0,22
+Davin Stoffel,TE,Illinois,2026,250,7,1.0,23.64,5.9,15.9,2026_prospect,15.8,0.0,40.0,,0.787143325680551,24.0,372.0,50
+Joey Schlaffer,TE,Penn State,2026,250,7,1.0,23.64,5.9,15.9,2026_prospect,15.8,0.0,40.0,,0.780608052588332,19.0,339.0,50
+Shamar Easter,TE,North Carolina,2026,250,7,1.0,23.65,5.9,15.9,2026_prospect,15.9,0.0,40.0,,0.8608971454463071,17.0,355.0,50

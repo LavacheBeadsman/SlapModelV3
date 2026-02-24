@@ -1023,6 +1023,20 @@ prospects_2026 = prospects_2026.sort_values(['position', 'pos_rank']).reset_inde
 prospects_2026.to_csv('output/slap_v5_2026_all.csv', index=False)
 print(f"  output/slap_v5_2026_all.csv: {len(prospects_2026)} prospects (all positions, ranked within position)")
 
+# Position-specific 2026 prospect files
+for pos, drop_cols in [
+    ('WR', ['production_score', 'speed_score', 'te_breakout_score', 'te_production_score', 'ras_score']),
+    ('RB', ['enhanced_breakout', 'teammate_score', 'early_declare_score', 'te_breakout_score',
+            'te_production_score', 'ras_score', 'breakout_age', 'peak_dominator', 'rush_yards']),
+    ('TE', ['enhanced_breakout', 'teammate_score', 'early_declare_score', 'production_score',
+            'speed_score', 'rush_yards']),
+]:
+    pos_2026 = prospects_2026[prospects_2026['position'] == pos].copy()
+    pos_2026 = pos_2026.drop(columns=[c for c in drop_cols if c in pos_2026.columns], errors='ignore')
+    fname = f'output/slap_v5_{pos.lower()}_2026.csv'
+    pos_2026.to_csv(fname, index=False)
+    print(f"  {fname}: {len(pos_2026)} {pos} prospects")
+
 
 # ============================================================================
 # FINAL VERIFICATION
@@ -1099,3 +1113,9 @@ print(f"    output/slap_v5_wr.csv               ({len(wr_all)} rows)")
 print(f"    output/slap_v5_rb.csv               ({len(rb_all)} rows)")
 print(f"    output/slap_v5_te.csv               ({len(te_all)} rows)")
 print(f"    output/slap_v5_2026_all.csv         ({len(prospects_2026)} rows)")
+wr26_out = prospects_2026[prospects_2026['position'] == 'WR']
+rb26_out = prospects_2026[prospects_2026['position'] == 'RB']
+te26_out = prospects_2026[prospects_2026['position'] == 'TE']
+print(f"    output/slap_v5_wr_2026.csv          ({len(wr26_out)} WR prospects)")
+print(f"    output/slap_v5_rb_2026.csv          ({len(rb26_out)} RB prospects)")
+print(f"    output/slap_v5_te_2026.csv          ({len(te26_out)} TE prospects)")
