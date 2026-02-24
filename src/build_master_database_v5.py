@@ -431,10 +431,10 @@ print("=" * 120)
 # (Previously read pre-computed file, but breakout scores were on wrong scale — P0 bug fix)
 wr26_pre = pd.read_csv('output/slap_v5_wr_2026.csv')
 
-# Load breakout ages (primary source for breakout_age + peak_dominator)
+# Load breakout ages (primary source for breakout_age + peak_dominator + seasons_found)
 wr26_bo = pd.read_csv('data/wr_breakout_ages_2026.csv')
 wr26 = wr26_pre.merge(
-    wr26_bo[['player_name', 'breakout_age', 'peak_dominator']].rename(
+    wr26_bo[['player_name', 'breakout_age', 'peak_dominator', 'seasons_found']].rename(
         columns={'breakout_age': 'bo_age_src', 'peak_dominator': 'pd_src'}),
     on='player_name', how='left')
 wr26['breakout_age'] = wr26['bo_age_src'].fillna(wr26['breakout_age'])
@@ -443,8 +443,15 @@ wr26['peak_dominator'] = wr26['pd_src'].fillna(wr26['peak_dominator'])
 # Load prospect data for additional fields
 prospects = pd.read_csv('data/prospects_final.csv')
 wr_prospects = prospects[prospects['position'] == 'WR'].copy()
-wr26 = wr26.merge(wr_prospects[['player_name', 'age', 'weight', 'age_estimated']],
+wr26 = wr26.merge(wr_prospects[['player_name', 'birthdate', 'age', 'weight', 'age_estimated']],
                    on='player_name', how='left')
+
+# Also try birthdate from breakout ages file for WRs not in prospects
+if 'birthdate' not in wr26.columns or wr26['birthdate'].isna().any():
+    bo_bday = wr26_bo[['player_name', 'birthdate']].rename(columns={'birthdate': 'bo_birthdate'})
+    wr26 = wr26.merge(bo_bday, on='player_name', how='left')
+    wr26['birthdate'] = wr26['birthdate'].fillna(wr26['bo_birthdate'])
+    wr26 = wr26.drop(columns=['bo_birthdate'], errors='ignore')
 
 # Compute enhanced_breakout from scratch (same function as backtest — native 0-99.9 scale)
 wr26['enhanced_breakout'] = wr26.apply(
@@ -466,8 +473,6 @@ if 'projected_pick' not in wr26.columns and 'pick' in wr26.columns:
     wr26['projected_pick'] = wr26['pick']
 if 'school' not in wr26.columns and 'college' in wr26.columns:
     wr26['school'] = wr26['college']
-if 'early_declare' not in wr26.columns and 'early_declare_score' in wr26.columns:
-    wr26['early_declare'] = wr26['early_declare_score']
 
 # DC
 wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
@@ -475,9 +480,48 @@ wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
 # Native-scale scoring (same as backtest: breakout 0-99.9, binaries 0/100)
 wr26['s_breakout_raw'] = wr26['enhanced_breakout']  # Computed from scratch above (native 0-99.9 scale)
 wr26['s_teammate_binary'] = wr26['teammate_score'].apply(lambda x: 1 if x == 100 else 0)
-wr26['s_early_declare_binary'] = wr26['early_declare'].apply(lambda x: 1 if x == 100 or x == 1 else 0)
+
+# Early declare from CFBD seasons_found (replaces old age-based logic)
+# Rule: 3 or fewer college seasons = early declare. Age is irrelevant per CLAUDE.md.
+# CFBD seasons_found may undercount for transfers (only searches listed college),
+# so we add a draft_age >= 22 sanity check: older players almost certainly have 4+ total seasons.
+def compute_draft_age_from_bd(birthdate, draft_year=2026):
+    if pd.isna(birthdate) or str(birthdate).strip() in ('MISSING', '', 'nan'):
+        return np.nan
+    try:
+        bd = pd.to_datetime(birthdate)
+        return (pd.Timestamp(f'{draft_year}-04-25') - bd).days / 365.25
+    except:
+        return np.nan
+
+wr26['draft_age_calc'] = wr26['birthdate'].apply(compute_draft_age_from_bd) if 'birthdate' in wr26.columns else np.nan
+
+def wr_early_declare_from_seasons(seasons_found, draft_age):
+    """Early declare from CFBD season count + transfer-aware age check."""
+    if pd.notna(seasons_found) and seasons_found >= 4:
+        return 0   # Confirmed 4+ CFBD seasons at one school
+    if pd.notna(seasons_found) and seasons_found >= 1 and seasons_found <= 3:
+        # Transfer check: if player is 22+ at draft, CFBD likely undercounts
+        if pd.notna(draft_age) and draft_age >= 22.0:
+            return 0   # Too old for 1-3 total seasons, likely transfer
+        return 100  # Young player with 1-3 confirmed CFBD seasons = early declare
+    return 0   # No CFBD data (SF=0 or missing) = no ED credit
+
+wr26['s_early_declare_binary'] = wr26.apply(
+    lambda r: 1 if wr_early_declare_from_seasons(r.get('seasons_found', np.nan), r.get('draft_age_calc', np.nan)) == 100 else 0, axis=1)
 wr26['s_teammate'] = np.where(wr26['s_teammate_binary'] == 1, 100, 0).astype(float)
 wr26['s_early_declare'] = np.where(wr26['s_early_declare_binary'] == 1, 100, 0).astype(float)
+
+# Log early declare changes vs old file
+old_ed = wr26['early_declare_score'] if 'early_declare_score' in wr26.columns else wr26.get('early_declare', 0)
+ed_changes = wr26[wr26['s_early_declare'] != old_ed]
+print(f"  Early declare: {wr26['s_early_declare_binary'].sum()}/{len(wr26)} classified as early (seasons_found-based)")
+if len(ed_changes) > 0:
+    print(f"  Early declare changes from old file: {len(ed_changes)} players")
+    for _, r in ed_changes.sort_values('projected_pick').head(10).iterrows():
+        sf = int(r.get('seasons_found', -1)) if pd.notna(r.get('seasons_found')) else '?'
+        da = f"{r.get('draft_age_calc', 0):.1f}" if pd.notna(r.get('draft_age_calc')) else '?'
+        print(f"    {r['player_name']:<28} pick {int(r['projected_pick']):>3} SF={sf} age={da}: {int(old_ed.loc[r.name])}→{int(r['s_early_declare'])}")
 
 # V5 score (native-scale components)
 wr26['slap_v5_raw'] = (
@@ -537,7 +581,10 @@ te26 = pd.read_csv('data/te_2026_prospects_final.csv')
 te26['s_dc'] = te26['projected_pick'].apply(dc_score)
 
 # Native-scale scoring (same as backtest: breakout 0-99.9, production min-max 0-99.9, RAS×10 0-100)
-te26['s_breakout_raw'] = te26['breakout_score_filled']  # Already on native 0-99.9 scale
+# Recompute breakout from scratch using same function as backtest (consistent int() rounding, 15% threshold)
+te26['s_breakout_raw'] = te26.apply(
+    lambda r: te_breakout_score(r['breakout_age'], r['peak_dominator'], threshold=15), axis=1)
+print(f"  Breakout computed from scratch: {te26['breakout_age'].notna().sum()}/{len(te26)} have real breakout_age (15% threshold, int rounding)")
 
 # Production: need to min-max normalize against the same TE backtest range
 te26['s_production_raw'] = np.where(
@@ -831,7 +878,7 @@ te26_rows = pd.DataFrame({
     'enhanced_breakout': np.nan,
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
-    'breakout_age': te26['breakout_age'],
+    'breakout_age': te26['breakout_age'].apply(lambda x: int(x) if pd.notna(x) else np.nan),  # Truncate to integer
     'peak_dominator': te26['peak_dominator'],
     'rush_yards': np.nan,
     'production_score': np.nan,
