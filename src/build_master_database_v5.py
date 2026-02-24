@@ -479,7 +479,74 @@ wr26['s_dc'] = wr26['projected_pick'].apply(dc_score)
 
 # Native-scale scoring (same as backtest: breakout 0-99.9, binaries 0/100)
 wr26['s_breakout_raw'] = wr26['enhanced_breakout']  # Computed from scratch above (native 0-99.9 scale)
-wr26['s_teammate_binary'] = wr26['teammate_score'].apply(lambda x: 1 if x == 100 else 0)
+
+# Teammate score: calculate from ACTUAL 2024+2025 drafted WR/TEs + 2026 same-class WR/TEs
+# The backtest uses draft_year ± 1 from draft_picks.parquet. For 2026, that's 2025-2027.
+# Since there's no 2027 data, we use 2024+2025 actual + 2026 mock (same 3-class window concept).
+def normalize_college_for_tm(name):
+    """Normalize college names between draft_picks.parquet and prospect data."""
+    if pd.isna(name): return ""
+    name = str(name).strip()
+    replacements = {
+        'Ohio St.': 'Ohio State', 'Michigan St.': 'Michigan State', 'Penn St.': 'Penn State',
+        'Arizona St.': 'Arizona State', 'Oklahoma St.': 'Oklahoma State', 'Oregon St.': 'Oregon State',
+        'Washington St.': 'Washington State', 'Florida St.': 'Florida State', 'Boise St.': 'Boise State',
+        'Colorado St.': 'Colorado State', 'Iowa St.': 'Iowa State', 'Kansas St.': 'Kansas State',
+        'Fresno St.': 'Fresno State', 'Georgia St.': 'Georgia State', 'North Carolina St.': 'NC State',
+        'Central Florida': 'UCF', 'Miami (FL)': 'Miami', 'Mississippi': 'Ole Miss',
+        'Ala-Birmingham': 'UAB', 'Boston Col.': 'Boston College', 'Southern Miss': 'Southern Mississippi',
+        'North Dakota St.': 'North Dakota State', 'Connecticut': 'UConn',
+    }
+    for old, new in replacements.items():
+        if name == old:
+            return new.lower()
+    return name.lower()
+
+draft_picks = pd.read_parquet('data/nflverse/draft_picks.parquet')
+actual_pc = draft_picks[
+    (draft_picks['position'].isin(['WR', 'TE'])) &
+    (draft_picks['season'].between(2024, 2025))
+].copy()
+actual_pc['dc'] = actual_pc['pick'].apply(dc_score)
+actual_pc['college_norm'] = actual_pc['college'].apply(normalize_college_for_tm)
+
+# 2026 WR prospects (for same-class teammates)
+mock_wr = wr_prospects.copy()
+mock_wr['dc'] = mock_wr['projected_pick'].apply(dc_score)
+mock_wr['college_norm'] = mock_wr['school'].apply(normalize_college_for_tm)
+
+# 2026 TE prospects (also compete for targets)
+te26_for_tm = pd.read_csv('data/te_2026_prospects_final.csv')
+te26_for_tm['dc'] = te26_for_tm['projected_pick'].apply(dc_score)
+te26_for_tm['college_norm'] = te26_for_tm['college'].apply(normalize_college_for_tm)
+
+wr26['college_norm'] = wr26['college'].apply(normalize_college_for_tm) if 'college' in wr26.columns else wr26['school'].apply(normalize_college_for_tm)
+
+def calc_teammate_dc_2026(player_name, college_norm):
+    """Sum DC of all WR/TE teammates from 2024-2025 drafts + 2026 same-class prospects."""
+    # 2024-2025 actual drafted WR/TEs from same school
+    tm_actual = actual_pc[actual_pc['college_norm'] == college_norm]
+    # 2026 WR prospects from same school (excluding self)
+    tm_wr26 = mock_wr[(mock_wr['college_norm'] == college_norm) & (mock_wr['player_name'] != player_name)]
+    # 2026 TE prospects from same school
+    tm_te26 = te26_for_tm[te26_for_tm['college_norm'] == college_norm]
+    return tm_actual['dc'].sum() + tm_wr26['dc'].sum() + tm_te26['dc'].sum()
+
+wr26['total_teammate_dc'] = wr26.apply(
+    lambda r: calc_teammate_dc_2026(r['player_name'], r['college_norm']), axis=1)
+wr26['s_teammate_binary'] = wr26['total_teammate_dc'].apply(lambda x: 1 if x > 150 else 0)
+
+# Log teammate changes vs old pre-calculated file
+old_tm = wr26['teammate_score'] if 'teammate_score' in wr26.columns else 0
+new_tm = np.where(wr26['s_teammate_binary'] == 1, 100, 0)
+tm_changes = wr26[new_tm != old_tm]
+print(f"  Teammate: {wr26['s_teammate_binary'].sum()}/{len(wr26)} have teammate DC > 150 (using 2024+2025 drafts + 2026 class)")
+if len(tm_changes) > 0:
+    print(f"  Teammate changes from old file: {len(tm_changes)} players")
+    for _, r in tm_changes.sort_values('projected_pick').head(10).iterrows():
+        old_val = int(old_tm.loc[r.name]) if hasattr(old_tm, 'loc') else 0
+        new_val = 100 if r['s_teammate_binary'] == 1 else 0
+        print(f"    {r['player_name']:<28} pick {int(r['projected_pick']):>3} DC={r['total_teammate_dc']:.0f}: {old_val}→{new_val}")
 
 # Early declare from CFBD seasons_found (replaces old age-based logic)
 # Rule: 3 or fewer college seasons = early declare. Age is irrelevant per CLAUDE.md.
