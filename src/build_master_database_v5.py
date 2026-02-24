@@ -181,14 +181,19 @@ wr_bt['s_breakout_raw'] = wr_bt.apply(
     lambda r: wr_enhanced_breakout(r['breakout_age'], r['peak_dominator'], r['rush_yards']), axis=1)
 # Tiered teammate score: requires total_teammate_dc > 150 AND breakout (20%+ dominator)
 # Then tiers by dominator level: 20-25%→40, 25-30%→60, 30-35%→80, 35%+→100
+# EXTREME DC ADJUSTMENT: if total_teammate_dc > 300, shift all tiers down by 5%.
+# Rationale: at programs like Alabama with 5+ drafted WRs, even elite producers
+# can't reach 20% dominator. Waddle (15.5% peak, 442 DC) is the poster child.
 def tiered_teammate_score(tm_dc, broke_out, peak_dom):
     if pd.isna(tm_dc) or tm_dc <= 150 or not broke_out:
         return 0.0
-    if pd.isna(peak_dom) or peak_dom < 20:
+    # Extreme DC (>300): lower thresholds by 5% to account for crowded WR rooms
+    floor = 15 if tm_dc > 300 else 20
+    if pd.isna(peak_dom) or peak_dom < floor:
         return 0.0
-    if peak_dom < 25: return 40.0
-    elif peak_dom < 30: return 60.0
-    elif peak_dom < 35: return 80.0
+    if peak_dom < floor + 5: return 40.0
+    elif peak_dom < floor + 10: return 60.0
+    elif peak_dom < floor + 15: return 80.0
     else: return 100.0
 
 wr_bt['s_teammate'] = wr_bt.apply(
