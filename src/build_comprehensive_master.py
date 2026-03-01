@@ -185,6 +185,13 @@ print(f"  draft_picks: {len(draft_picks)} rows (2015+ WR/RB/TE)")
 bd_backtest = pd.read_csv('data/nflverse_birthdates_2015_2025.csv')
 bd_backtest.rename(columns={'nfl_name': 'player_name', 'birth_date': 'birthdate', 'draft_year': 'draft_year'}, inplace=True)
 bd_2026 = pd.read_csv('data/2026_prospect_birthdates.csv')
+# TE backtest birthdates (from nflverse players dataset)
+te_bd_path = 'data/te_backtest_birthdates.csv'
+if os.path.exists(te_bd_path):
+    te_bd = pd.read_csv(te_bd_path)
+    te_bd = te_bd[te_bd['birthdate'].notna()][['player_name', 'draft_year', 'birthdate']].copy()
+    te_bd['position'] = 'TE'
+    bd_backtest = pd.concat([bd_backtest, te_bd], ignore_index=True)
 print(f"  birthdates: {len(bd_backtest)} backtest + {len(bd_2026)} 2026")
 
 # NFLverse combine (backtest)
