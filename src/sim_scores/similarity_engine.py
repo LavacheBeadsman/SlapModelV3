@@ -48,34 +48,36 @@ MAX_DISTANCE = 4.0  # z-score distance that maps to similarity = 0
 # Variable definitions per position
 # ---------------------------------------------------------------------------
 
-# Base production variables (all positions)
-PRODUCTION_VARS_BASE = [
+# Base production variables shared by all positions
+PRODUCTION_VARS_SHARED = [
     "rec_yards",
     "receptions",
     "rec_tds",
     "rush_yards",
     "rush_att",
-    "dominator_rating",
-    "peak_dominator",
     "yards_per_reception",
     "team_pass_att",
     "games_played",
 ]
 
-# WR adds these to Production
+# WR adds these to Production (dominator_rating + peak_dominator are WR/TE concepts)
 PRODUCTION_VARS_WR_EXTRA = [
+    "dominator_rating",
+    "peak_dominator",
     "breakout_age",
     "early_declare",
     "teammate_score",
 ]
 
-# RB adds this to Production
+# RB adds this to Production (no dominator_rating or peak_dominator — not meaningful for RBs)
 PRODUCTION_VARS_RB_EXTRA = [
     "rec_yards_per_team_pass_att",
 ]
 
-# TE adds these to Production
+# TE adds these to Production (dominator_rating + peak_dominator apply to TEs too)
 PRODUCTION_VARS_TE_EXTRA = [
+    "dominator_rating",
+    "peak_dominator",
     "te_breakout_score",
     "te_production_score",
 ]
@@ -98,21 +100,21 @@ SIZE_SPEED_RB_EXTRA = [
 VAR_CONFIG_WR = {
     "draft_capital": (0.10, ["dc_score"]),
     "size_speed":    (0.25, SIZE_SPEED_BASE),
-    "production":    (0.45, PRODUCTION_VARS_BASE + PRODUCTION_VARS_WR_EXTRA),
+    "production":    (0.45, PRODUCTION_VARS_SHARED + PRODUCTION_VARS_WR_EXTRA),
     "slap_score":    (0.20, ["slap_score"]),
 }
 
 VAR_CONFIG_RB = {
     "draft_capital": (0.10, ["dc_score"]),
     "size_speed":    (0.25, SIZE_SPEED_BASE + SIZE_SPEED_RB_EXTRA),
-    "production":    (0.45, PRODUCTION_VARS_BASE + PRODUCTION_VARS_RB_EXTRA),
+    "production":    (0.45, PRODUCTION_VARS_SHARED + PRODUCTION_VARS_RB_EXTRA),
     "slap_score":    (0.20, ["slap_score"]),
 }
 
 VAR_CONFIG_TE = {
     "draft_capital": (0.10, ["dc_score"]),
     "size_speed":    (0.25, SIZE_SPEED_BASE),
-    "production":    (0.45, PRODUCTION_VARS_BASE + PRODUCTION_VARS_TE_EXTRA),
+    "production":    (0.45, PRODUCTION_VARS_SHARED + PRODUCTION_VARS_TE_EXTRA),
     "slap_score":    (0.20, ["slap_score"]),
 }
 
