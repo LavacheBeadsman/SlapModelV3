@@ -1,0 +1,224 @@
+player_name,college,draft_year,season,cfbd_school,status,cfbd_name,rush_yards,rush_attempts,rush_tds,rec_tds
+Todd Gurley,Georgia,2015,2014,Georgia,not_found,,,,,
+Melvin Gordon,Wisconsin,2015,2014,Wisconsin,found,Melvin Gordon,2587.0,343.0,29.0,3.0
+T.J. Yeldon,Alabama,2015,2014,Alabama,found,T.J. Yeldon,979.0,194.0,11.0,1.0
+Ameer Abdullah,Nebraska,2015,2014,Nebraska,found,Ameer Abdullah,1611.0,264.0,19.0,3.0
+Tevin Coleman,Indiana,2015,2014,Indiana,found,Tevin Coleman,2036.0,270.0,15.0,0.0
+Duke Johnson,Miami (FL),2015,2014,Miami,not_found,,,,,
+David Johnson,Northern Iowa,2015,2014,Northern Iowa,found,David Johnson,80.0,31.0,0.0,1.0
+Matt Jones,Florida,2015,2014,Florida,found,Matt Jones,817.0,166.0,6.0,1.0
+Jeremy Langford,Michigan St.,2015,2014,Michigan State,found,Jeremy Langford,1522.0,276.0,22.0,0.0
+Javorius Allen,USC,2015,2014,USC,found,Javorius Allen,1489.0,276.0,11.0,1.0
+Mike Davis,South Carolina,2015,2014,South Carolina,found,Mike Davis,982.0,199.0,9.0,2.0
+David Cobb,Minnesota,2015,2014,Minnesota,found,David Cobb,1629.0,315.0,13.0,0.0
+Jay Ajayi,Boise St.,2015,2014,Boise State,found,Jay Ajayi,1823.0,347.0,28.0,4.0
+Karlos Williams,Florida St.,2015,2014,Florida State,found,Karlos Williams,689.0,150.0,11.0,1.0
+Cameron Artis-Payne,Auburn,2015,2014,Auburn,found,Cameron Artis-Payne,1608.0,303.0,13.0,0.0
+Josh Robinson,Mississippi St.,2015,2014,Mississippi State,found,Josh Robinson,1203.0,190.0,11.0,1.0
+Marcus Murphy,Missouri,2015,2014,Missouri,found,Marcus Murphy,924.0,177.0,4.0,1.0
+Kenny Hilliard,LSU,2015,2014,LSU,found,Kenny Hilliard,447.0,90.0,6.0,0.0
+Ezekiel Elliott,Ohio St.,2016,2015,Ohio State,found,Ezekiel Elliott,1821.0,289.0,23.0,0.0
+Derrick Henry,Alabama,2016,2015,Alabama,found,Derrick Henry,2219.0,395.0,28.0,0.0
+Kenyan Drake,Alabama,2016,2015,Alabama,found,Kenyan Drake,408.0,77.0,1.0,1.0
+C.J. Prosise,Notre Dame,2016,2015,Notre Dame,found,C.J. Prosise,1032.0,156.0,11.0,1.0
+Tyler Ervin,San Jose St.,2016,2015,San José State,found,Tyler Ervin,1601.0,294.0,13.0,
+Kenneth Dixon,Louisiana Tech,2016,2015,Louisiana Tech,found,Kenneth Dixon,1070.0,197.0,19.0,7.0
+Devontae Booker,Utah,2016,2015,Utah,found,Devontae Booker,1261.0,268.0,11.0,0.0
+DeAndre Washington,Texas Tech,2016,2015,Texas Tech,found,DeAndre Washington,1492.0,233.0,14.0,2.0
+Paul Perkins,UCLA,2016,2015,UCLA,found,Paul Perkins,1343.0,237.0,14.0,1.0
+Jordan Howard,Indiana,2016,2015,Indiana,found,Jordan Howard,1213.0,196.0,9.0,1.0
+Wendell Smallwood,West Virginia,2016,2015,West Virginia,found,Wendell Smallwood,1519.0,238.0,9.0,0.0
+Jonathan Williams,Arkansas,2016,2015,Arkansas,found,Jonathan Williams,1190.0,211.0,12.0,2.0
+Alex Collins,Arkansas,2016,2015,Arkansas,found,Alex Collins,1577.0,271.0,20.0,0.0
+Keenan Reynolds,Navy,2016,2015,Navy,found,Keenan Reynolds,1373.0,265.0,24.0,0.0
+Kelvin Taylor,Florida,2016,2015,Florida,found,Kelvin Taylor,1035.0,259.0,13.0,0.0
+Darius Jackson,Eastern Michigan,2016,2015,Eastern Michigan,found,Darius Jackson,1078.0,208.0,14.0,2.0
+Dwayne Washington,Washington,2016,2015,Washington,found,Dwayne Washington,282.0,47.0,4.0,3.0
+Daniel Lasco,California,2016,2015,California,found,Daniel Lasco,331.0,65.0,3.0,0.0
+Keith Marshall,Georgia,2016,2015,Georgia,found,Keith Marshall,350.0,68.0,3.0,1.0
+Zac Brooks,Clemson,2016,2015,Clemson,found,Zac Brooks,234.0,41.0,3.0,2.0
+Leonard Fournette,LSU,2017,2016,LSU,found,Leonard Fournette,843.0,129.0,8.0,0.0
+Christian McCaffrey,Stanford,2017,2016,Stanford,found,Christian McCaffrey,1603.0,253.0,13.0,3.0
+Dalvin Cook,Florida St.,2017,2016,Florida State,found,Dalvin Cook,1765.0,288.0,19.0,1.0
+Joe Mixon,Oklahoma,2017,2016,Oklahoma,found,Joe Mixon,1274.0,187.0,10.0,5.0
+Alvin Kamara,Tennessee,2017,2016,Tennessee,found,Alvin Kamara,596.0,103.0,9.0,4.0
+Kareem Hunt,Toledo,2017,2016,Toledo,found,Kareem Hunt,1475.0,262.0,10.0,1.0
+D'Onta Foreman,Texas,2017,2016,Texas,found,D'Onta Foreman,2028.0,323.0,15.0,0.0
+James Conner,Pittsburgh,2017,2016,Pittsburgh,found,James Conner,1092.0,216.0,16.0,4.0
+Samaje Perine,Oklahoma,2017,2016,Oklahoma,found,Samaje Perine,1060.0,196.0,12.0,1.0
+Tarik Cohen,North Carolina A&T,2017,2016,,skipped,,,,,
+Joe Williams,Utah,2017,2016,Utah,found,Joe Williams,179.0,34.0,1.0,0.0
+Donnel Pumphrey,San Diego St.,2017,2016,San Diego State,found,Donnel Pumphrey,2133.0,349.0,17.0,0.0
+Jamaal Williams,BYU,2017,2016,BYU,found,Jamaal Williams,1375.0,234.0,12.0,0.0
+Wayne Gallman,Clemson,2017,2016,Clemson,found,Wayne Gallman,1133.0,232.0,17.0,0.0
+Marlon Mack,South Florida,2017,2016,South Florida,found,Marlon Mack,1187.0,174.0,15.0,0.0
+Brian Hill,Wyoming,2017,2016,Wyoming,found,Brian Hill,1860.0,349.0,22.0,0.0
+Jeremy McNichols,Boise St.,2017,2016,Boise State,found,Jeremy McNichols,1709.0,314.0,23.0,4.0
+T.J. Logan,North Carolina,2017,2016,North Carolina,found,T.J. Logan,650.0,120.0,7.0,3.0
+Aaron Jones,Texas-El Paso,2017,2016,UTEP,found,Aaron Jones,1773.0,229.0,17.0,3.0
+Elijah McGuire,Louisiana,2017,2016,Louisiana,found,Elijah McGuire,1127.0,232.0,7.0,2.0
+De'Angelo Henderson,Coastal Carolina,2017,2016,Coastal Carolina,not_found,,,,,
+Brandon Wilson,Houston,2017,2016,Houston,found,Brandon Wilson,6.0,4.0,0.0,0.0
+Devante Mays,Utah St.,2017,2016,Utah State,found,Devante Mays,259.0,37.0,3.0,0.0
+Khalfani Muhammad,California,2017,2016,California,found,Khalfani Muhammad,827.0,152.0,2.0,0.0
+Elijah Hood,North Carolina,2017,2016,North Carolina,found,Elijah Hood,858.0,145.0,8.0,0.0
+Chris Carson,Oklahoma St.,2017,2016,Oklahoma State,found,Chris Carson,559.0,82.0,9.0,1.0
+Matthew Dayes,North Carolina St.,2017,2016,NC State,found,Matthew Dayes,1166.0,249.0,10.0,0.0
+Saquon Barkley,Penn St.,2018,2017,Penn State,found,Saquon Barkley,1271.0,217.0,18.0,3.0
+Rashaad Penny,San Diego St.,2018,2017,San Diego State,found,Rashaad Penny,2248.0,289.0,23.0,2.0
+Sony Michel,Georgia,2018,2017,Georgia,found,Sony Michel,1227.0,156.0,16.0,1.0
+Nick Chubb,Georgia,2018,2017,Georgia,found,Nick Chubb,1345.0,223.0,15.0,0.0
+Ronald Jones II,USC,2018,2017,USC,found,Ronald Jones II,1550.0,261.0,19.0,1.0
+Kerryon Johnson,Auburn,2018,2017,Auburn,found,Kerryon Johnson,1391.0,285.0,18.0,2.0
+Derrius Guice,LSU,2018,2017,LSU,found,Derrius Guice,1251.0,237.0,11.0,2.0
+Royce Freeman,Oregon,2018,2017,Oregon,found,Royce Freeman,1475.0,244.0,16.0,0.0
+Nyheim Hines,North Carolina St.,2018,2017,NC State,found,Nyheim Hines,1112.0,197.0,12.0,0.0
+Mark Walton,Miami (FL),2018,2017,Miami,found,Mark Walton,428.0,56.0,3.0,0.0
+Ito Smith,Southern Miss,2018,2017,Southern Miss,found,Ito Smith,1413.0,248.0,13.0,
+Kalen Ballage,Arizona St.,2018,2017,Arizona State,found,Kalen Ballage,669.0,157.0,6.0,0.0
+Chase Edmonds,Fordham,2018,2017,,skipped,,,,,
+Jordan Wilkins,Mississippi,2018,2017,Ole Miss,found,Jordan Wilkins,1011.0,155.0,9.0,1.0
+John Kelly,Tennessee,2018,2017,Tennessee,found,John Kelly,778.0,189.0,9.0,0.0
+Boston Scott,Louisiana Tech,2018,2017,Louisiana Tech,found,Boston Scott,1040.0,182.0,8.0,1.0
+Trenton Cannon,Virginia St.,2018,2017,,skipped,,,,,
+David Williams,Arkansas,2018,2017,Arkansas,found,David Williams,656.0,117.0,8.0,2.0
+Bo Scarbrough,Alabama,2018,2017,Alabama,found,Bo Scarbrough,596.0,124.0,8.0,0.0
+Nick Bawden,San Diego St.,2018,2017,San Diego State,found,Nick Bawden,4.0,1.0,0.0,1.0
+Justin Jackson,Northwestern,2018,2017,Northwestern,found,Justin Jackson,1311.0,287.0,11.0,0.0
+Josh Jacobs,Alabama,2019,2018,Alabama,found,Josh Jacobs,640.0,120.0,11.0,3.0
+Miles Sanders,Penn St.,2019,2018,Penn State,found,Miles Sanders,1271.0,219.0,9.0,0.0
+Darrell Henderson,Memphis,2019,2018,Memphis,found,Darrell Henderson,1909.0,214.0,22.0,3.0
+David Montgomery,Iowa St.,2019,2018,Iowa State,found,David Montgomery,1185.0,255.0,13.0,0.0
+Devin Singletary,Florida Atlantic,2019,2018,Florida Atlantic,found,Devin Singletary,1348.0,261.0,22.0,0.0
+Damien Harris,Alabama,2019,2018,Alabama,found,Damien Harris,876.0,150.0,9.0,0.0
+Alexander Mattison,Boise St.,2019,2018,Boise State,found,Alexander Mattison,1412.0,302.0,17.0,0.0
+Bryce Love,Stanford,2019,2018,Stanford,found,Bryce Love,736.0,165.0,6.0,0.0
+Justice Hill,Oklahoma St.,2019,2018,Oklahoma State,found,Justice Hill,930.0,158.0,9.0,0.0
+Benny Snell Jr.,Kentucky,2019,2018,Kentucky,found,Benny Snell Jr.,1434.0,288.0,16.0,0.0
+Tony Pollard,Memphis,2019,2018,Memphis,found,Tony Pollard,553.0,79.0,6.0,3.0
+Ryquell Armstead,Temple,2019,2018,Temple,found,Ryquell Armstead,1098.0,210.0,13.0,0.0
+Qadree Ollison,Pittsburgh,2019,2018,Pittsburgh,found,Qadree Ollison,1213.0,194.0,11.0,0.0
+Jordan Scarlett,Florida,2019,2018,Florida,found,Jordan Scarlett,776.0,131.0,5.0,0.0
+Trayveon Williams,Texas A&M,2019,2018,Texas A&M,found,Trayveon Williams,1760.0,271.0,18.0,1.0
+Ty Johnson,Maryland,2019,2018,Maryland,found,Ty Johnson,506.0,66.0,3.0,0.0
+Dexter Williams,Notre Dame,2019,2018,Notre Dame,found,Dexter Williams,995.0,158.0,12.0,1.0
+Travis Homer,Miami (FL),2019,2018,Miami,found,Travis Homer,985.0,164.0,4.0,0.0
+Rodney Anderson,Oklahoma,2019,2018,Oklahoma,found,Rodney Anderson,119.0,11.0,3.0,5.0
+Darwin Thompson,Utah St.,2019,2018,Utah State,found,Darwin Thompson,1044.0,153.0,14.0,2.0
+Mike Weber,Ohio St.,2019,2018,Ohio State,found,Mike Weber,954.0,171.0,5.0,1.0
+Cullen Gillaspia,Texas A&M,2019,2018,Texas A&M,found,Cullen Gillaspia,33.0,5.0,1.0,0.0
+Kerrith Whyte Jr,Florida Atlantic,2019,2018,Florida Atlantic,found,Kerrith Whyte Jr.,866.0,134.0,8.0,2.0
+Chandler Cox,Auburn,2019,2018,Auburn,found,Chandler Cox,3.0,3.0,2.0,1.0
+Myles Gaskin,Washington,2019,2018,Washington,found,Myles Gaskin,1269.0,257.0,12.0,1.0
+Clyde Edwards-Helaire,LSU,2020,2019,LSU,found,Clyde Edwards-Helaire,1414.0,215.0,16.0,1.0
+D'Andre Swift,Georgia,2020,2019,Georgia,found,D'Andre Swift,1218.0,196.0,7.0,1.0
+Jonathan Taylor,Wisconsin,2020,2019,Wisconsin,found,Jonathan Taylor,2003.0,320.0,21.0,5.0
+Cam Akers,Florida St.,2020,2019,Florida State,found,Cam Akers,1144.0,231.0,14.0,4.0
+J.K. Dobbins,Ohio St.,2020,2019,Ohio State,found,J.K. Dobbins,2003.0,301.0,21.0,2.0
+AJ Dillon,Boston Col.,2020,2019,Boston College,found,AJ Dillon,1685.0,318.0,14.0,1.0
+Antonio Gibson,Memphis,2020,2019,Memphis,found,Antonio Gibson,369.0,33.0,4.0,8.0
+Ke'Shawn Vaughn,Illinois,2019,2018,Vanderbilt,found,Ke'Shawn Vaughn,1244.0,157.0,12.0,2.0
+Zack Moss,Utah,2020,2019,Utah,found,Zack Moss,1416.0,235.0,15.0,2.0
+Darrynton Evans,Appalachian St.,2020,2019,Appalachian State,not_found,,,,,
+Joshua Kelley,UCLA,2020,2019,UCLA,found,Joshua Kelley,1060.0,229.0,12.0,1.0
+La'Mical Perine,Florida,2020,2019,Florida,found,Lamical Perine,676.0,132.0,6.0,5.0
+Anthony McFarland Jr.,Maryland,2020,2019,Maryland,found,Anthony McFarland,614.0,114.0,8.0,1.0
+DeeJay Dallas,Miami (FL),2020,2019,Miami,found,DeeJay Dallas,693.0,114.0,8.0,2.0
+Jason Huntley,New Mexico St.,2020,2019,New Mexico State,found,Jason Huntley,1090.0,154.0,9.0,2.0
+Eno Benjamin,Arizona St.,2020,2019,Arizona State,found,Eno Benjamin,1083.0,253.0,10.0,2.0
+Raymond Calais,Louisiana,2020,2019,Louisiana,found,Raymond Calais,886.0,117.0,6.0,1.0
+Malcolm Perry,Navy,2020,2019,Navy,found,Malcolm Perry,2017.0,295.0,21.0,1.0
+Najee Harris,Alabama,2021,2020,Alabama,found,Najee Harris,1466.0,251.0,26.0,4.0
+Travis Etienne,Clemson,2021,2020,Clemson,found,Travis Etienne,914.0,168.0,14.0,2.0
+Javonte Williams,North Carolina,2021,2020,North Carolina,found,Javonte Williams,1140.0,157.0,19.0,3.0
+Trey Sermon,Ohio St.,2021,2020,Ohio State,found,Trey Sermon,870.0,116.0,4.0,0.0
+Michael Carter,North Carolina,2021,2020,North Carolina,found,Michael Carter,1245.0,156.0,9.0,2.0
+Kene Nwangwu,Iowa St.,2021,2020,Iowa State,found,Kene Nwangwu,339.0,61.0,4.0,0.0
+Rhamondre Stevenson,Oklahoma,2021,2020,Oklahoma,found,Rhamondre Stevenson,664.0,101.0,7.0,0.0
+Chuba Hubbard,Oklahoma St.,2021,2020,Oklahoma State,found,Chuba Hubbard,623.0,132.0,5.0,1.0
+Kenneth Gainwell,Memphis,2021,2020,Memphis,found,Kenneth Gainwell,1459.0,231.0,13.0,3.0
+Elijah Mitchell,Louisiana,2021,2020,Louisiana,found,Elijah Mitchell,878.0,141.0,8.0,0.0
+Gary Brightwell,Arizona,2021,2020,Arizona,found,Gary Brightwell,386.0,86.0,1.0,0.0
+Larry Rountree,Missouri,2021,2020,Missouri,found,Larry Rountree III,972.0,209.0,14.0,0.0
+Chris Evans,Michigan,2021,2020,Michigan,found,Chris Evans,73.0,16.0,1.0,0.0
+Demetric Felton,UCLA,2021,2020,UCLA,found,Demetric Felton,668.0,132.0,5.0,3.0
+Khalil Herbert,Virginia Tech,2021,2020,Virginia Tech,found,Khalil Herbert,1183.0,155.0,8.0,1.0
+Jake Funk,Maryland,2021,2020,Maryland,found,Jake Funk,511.0,60.0,3.0,1.0
+Gerrid Doaks,Cincinnati,2021,2020,Cincinnati,found,Gerrid Doaks,673.0,144.0,7.0,2.0
+Kylin Hill,Mississippi St.,2021,2020,Mississippi State,found,Kylin Hill,58.0,15.0,0.0,1.0
+Jermar Jefferson,Oregon St.,2021,2020,Oregon State,found,Jermar Jefferson,858.0,133.0,7.0,0.0
+Breece Hall,Iowa St.,2022,2021,Iowa State,found,Breece Hall,1472.0,253.0,20.0,3.0
+Kenneth Walker III,Michigan St.,2022,2021,Michigan State,found,Kenneth Walker III,1636.0,263.0,18.0,1.0
+James Cook,Georgia,2022,2021,Georgia,found,James Cook,728.0,113.0,7.0,4.0
+Rachaad White,Arizona St.,2022,2021,Arizona State,found,Rachaad White,1006.0,182.0,15.0,1.0
+Tyrion Davis-Price,LSU,2022,2021,LSU,found,Tyrion Davis-Price,1003.0,211.0,6.0,0.0
+Brian Robinson Jr.,Alabama,2022,2021,Alabama,found,Brian Robinson Jr.,1343.0,271.0,14.0,2.0
+Dameon Pierce,Florida,2022,2021,Florida,found,Dameon Pierce,574.0,100.0,13.0,3.0
+Zamir White,Georgia,2022,2021,Georgia,found,Zamir White,856.0,160.0,11.0,0.0
+Isaiah Spiller,Texas A&M,2022,2021,Texas A&M,found,Isaiah Spiller,1011.0,179.0,6.0,1.0
+Pierre Strong,South Dakota St.,2022,2021,South Dakota State,found,Pierre Strong,138.0,13.0,2.0,0.0
+Hassan Haskins,Michigan,2022,2021,Michigan,found,Hassan Haskins,1327.0,270.0,20.0,0.0
+Tyler Allgeier,BYU,2022,2021,BYU,found,Tyler Allgeier,1606.0,276.0,23.0,0.0
+Snoop Conner,Mississippi,2022,2021,Ole Miss,found,Snoop Conner,647.0,130.0,13.0,0.0
+Jerome Ford,Cincinnati,2022,2021,Cincinnati,found,Jerome Ford,1319.0,215.0,19.0,1.0
+Kyren Williams,Notre Dame,2022,2021,Notre Dame,found,Kyren Williams,1002.0,204.0,14.0,3.0
+Ty Chandler,North Carolina,2022,2021,North Carolina,found,Ty Chandler,1092.0,182.0,13.0,1.0
+Kevin Harris,South Carolina,2022,2021,South Carolina,found,Kevin Harris,660.0,152.0,4.0,0.0
+Tyler Badie,Missouri,2022,2021,Missouri,found,Tyler Badie,1604.0,268.0,14.0,4.0
+Keaontay Ingram,USC,2022,2021,USC,found,Keaontay Ingram,911.0,156.0,5.0,0.0
+Trestan Ebner,Baylor,2022,2021,Baylor,found,Trestan Ebner,799.0,148.0,2.0,2.0
+Brittain Brown,UCLA,2022,2021,UCLA,found,Brittain Brown,616.0,102.0,7.0,0.0
+Isiah Pacheco,Rutgers,2022,2021,Rutgers,found,Isaih Pacheco,647.0,167.0,5.0,0.0
+Zander Horvath,Purdue,2022,2021,Purdue,found,Alexander Horvath,320.0,91.0,3.0,0.0
+Bijan Robinson,Texas,2023,2022,Texas,found,Bijan Robinson,1578.0,258.0,18.0,2.0
+Jahmyr Gibbs,Alabama,2023,2022,Alabama,found,Jahmyr Gibbs,926.0,151.0,7.0,3.0
+Zach Charbonnet,UCLA,2023,2022,UCLA,found,Zach Charbonnet,1359.0,195.0,14.0,0.0
+Kendre Miller,TCU,2023,2022,TCU,found,Kendre Miller,1399.0,224.0,17.0,0.0
+Tyjae Spears,Tulane,2023,2022,Tulane,found,Tyjae Spears,1581.0,229.0,19.0,2.0
+De'Von Achane,Texas A&M,2023,2022,Texas A&M,found,Devon Achane,1102.0,196.0,8.0,3.0
+Tank Bigsby,Auburn,2023,2022,Auburn,found,Tank Bigsby,970.0,179.0,10.0,0.0
+Roschon Johnson,Texas,2023,2022,Texas,found,Roschon Johnson,554.0,93.0,5.0,1.0
+Israel Abanikanda,Pittsburgh,2023,2022,Pittsburgh,found,Israel Abanikanda,1431.0,239.0,20.0,1.0
+Chase Brown,Illinois,2023,2022,Illinois,found,Chase Brown,1643.0,328.0,10.0,3.0
+Eric Gray,Oklahoma,2023,2022,Oklahoma,found,Eric Gray,1364.0,213.0,11.0,0.0
+Evan Hull,Northwestern,2023,2022,Northwestern,found,Evan Hull,913.0,221.0,5.0,2.0
+Chris Rodriguez,Kentucky,2023,2022,Kentucky,found,Chris Rodriguez Jr.,903.0,174.0,6.0,0.0
+Deuce Vaughn,Kansas St.,2023,2022,Kansas State,found,Deuce Vaughn,1558.0,293.0,9.0,3.0
+Zach Evans,Mississippi,2023,2022,Ole Miss,found,Zach Evans,936.0,144.0,9.0,1.0
+DeWayne McBride,Ala-Birmingham,2023,2022,UAB,found,DeWayne McBride,1710.0,233.0,19.0,0.0
+Lew Nichols,Central Michigan,2023,2022,Central Michigan,found,Lew Nichols,601.0,177.0,6.0,0.0
+Kenny McIntosh,Georgia,2023,2022,Georgia,found,Kenny McIntosh,829.0,150.0,10.0,2.0
+Jonathon Brooks,Texas,2024,2023,Texas,found,Jonathon Brooks,1139.0,187.0,10.0,1.0
+Trey Benson,Florida St.,2024,2023,Florida State,found,Trey Benson,905.0,156.0,14.0,1.0
+Blake Corum,Michigan,2024,2023,Michigan,found,Blake Corum,1245.0,258.0,27.0,1.0
+MarShawn Lloyd,USC,2024,2023,USC,found,MarShawn Lloyd,820.0,116.0,9.0,0.0
+Jaylen Wright,Tennessee,2024,2023,Tennessee,found,Jaylen Wright,1013.0,137.0,4.0,0.0
+Bucky Irving,Oregon,2024,2023,Oregon,found,Mar'Keise Irving,1180.0,186.0,11.0,2.0
+Will Shipley,Clemson,2024,2023,Clemson,found,Will Shipley,827.0,167.0,5.0,2.0
+Ray Davis,Kentucky,2024,2023,Kentucky,found,Re'Mahn Davis,1129.0,199.0,14.0,7.0
+Isaac Guerendo,Louisville,2024,2023,Louisville,found,Isaac Guerendo,810.0,132.0,11.0,0.0
+Braelon Allen,Wisconsin,2024,2023,Wisconsin,found,Braelon Allen,984.0,181.0,12.0,0.0
+Audric Estime,Notre Dame,2024,2023,Notre Dame,found,Audric Estime,1341.0,210.0,18.0,0.0
+Rasheen Ali,Marshall,2024,2023,Marshall,found,Rasheen Ali,1140.0,212.0,15.0,1.0
+Tyrone Tracy Jr.,Purdue,2024,2023,Purdue,found,Tyrone Tracy Jr.,716.0,113.0,8.0,0.0
+Keilan Robinson,Texas,2024,2023,Texas,found,Keilan Robinson,134.0,12.0,3.0,0.0
+Isaiah Davis,South Dakota St.,2024,2023,South Dakota State,found,Isaiah Davis,1529.0,227.0,17.0,1.0
+Kimani Vidal,Troy,2024,2023,Troy,found,Kimani Vidal,1662.0,296.0,14.0,1.0
+Jase McClellan,Alabama,2024,2023,Alabama,found,Jase McClellan,890.0,180.0,8.0,0.0
+Jawhar Jordan,Louisville,2024,2023,Louisville,found,Jawhar Jordan,1128.0,181.0,13.0,1.0
+Dylan Laube,New Hampshire,2024,2023,,skipped,,,,,
+Ashton Jeanty,Boise St.,2025,2024,Boise State,found,Ashton Jeanty,2601.0,374.0,29.0,1.0
+Omarion Hampton,North Carolina,2025,2024,North Carolina,found,Omarion Hampton,1660.0,281.0,15.0,2.0
+Quinshon Judkins,Ohio St.,2025,2024,Ohio State,found,Quinshon Judkins,1060.0,194.0,14.0,2.0
+TreVeyon Henderson,Ohio St.,2025,2024,Ohio State,found,TreVeyon Henderson,1016.0,144.0,10.0,1.0
+RJ Harvey,Central Florida,2025,2024,UCF,found,RJ Harvey,1577.0,232.0,22.0,3.0
+Kaleb Johnson,Iowa,2025,2024,Iowa,found,Kaleb Johnson,1537.0,240.0,21.0,2.0
+Bhayshul Tuten,Virginia Tech,2025,2024,Virginia Tech,found,Bhayshul Tuten,1158.0,183.0,15.0,2.0
+Cam Skattebo,Arizona St.,2025,2024,Arizona State,found,Cameron Skattebo,1715.0,293.0,21.0,3.0
+Trevor Etienne,Georgia,2025,2024,Georgia,found,Trevor Etienne,609.0,122.0,9.0,0.0
+Woody Marks,USC,2025,2024,Mississippi State,found,Jo'quavious Marks,573.0,121.0,4.0,2.0
+Jarquez Hunter,Auburn,2025,2024,Auburn,found,Jarquez Hunter,1201.0,187.0,8.0,1.0
+Dylan Sampson,Tennessee,2025,2024,Tennessee,found,Dylan Sampson,1491.0,258.0,22.0,0.0
+Jordan James,Oregon,2025,2024,Oregon,found,Jordan James,1267.0,233.0,15.0,0.0
+Jaydon Blue,Texas,2025,2024,Texas,found,Jaydon Blue,730.0,134.0,8.0,6.0
+DJ Giddens,Kansas St.,2025,2024,Kansas State,found,DJ Giddens,1343.0,205.0,7.0,1.0
