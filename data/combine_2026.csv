@@ -1,69 +1,69 @@
-player_name,position,school,forty,ten_yard_split,vertical_jump,broad_jump_inches,bench_press,three_cone,twenty_yard_shuttle
-Brenen Thompson,WR,Mississippi State,4.26,1.54,,,,,,
-Zavion Thomas,WR,LSU,4.28,1.52,36.0,,,,
-Deion Burks,WR,Oklahoma,4.30,1.49,42.5,131,,,,
-Jeff Caldwell,WR,Cincinnati,4.31,1.48,42.0,134,,,,
-Bryce Lance,WR,North Dakota State,4.34,1.49,41.5,133,,7.00,4.15
-Zachariah Branch,WR,Georgia,4.35,1.50,38.0,125,,,,
-Eric Rivers,WR,Georgia Tech,4.35,1.52,37.0,127,,,,
-De'Zhaun Stribling,WR,Mississippi,4.36,1.53,36.0,127,,,,
-Malik Benson,WR,Oregon,4.37,1.55,32.5,122,,,,
-Chris Brazzell,WR,Tennessee,4.37,1.52,,,,,,
-Caleb Douglas,WR,Texas Tech,4.39,1.55,31.5,126,,,,
-Skyler Bell,WR,UConn,4.40,1.53,41.0,133,,,,
-Barion Brown,WR,LSU,4.40,1.62,,,,,,
-J.Michael Sturdivant,WR,Florida,4.40,1.54,39.0,131,,,,
-Chris Hilton,WR,LSU,4.41,1.57,34.5,122,,,7.25,4.41
-Antonio Williams,WR,Clemson,4.41,1.55,39.5,124,,7.00,
-Omar Cooper Jr.,WR,Indiana,4.42,1.55,37.0,,,,
-Ted Hurst,WR,Georgia State,4.42,1.55,36.5,135,,,,
-Emmanuel Henderson,WR,Kansas,4.44,1.56,35.0,120,,,,
-Kendrick Law,WR,Kentucky,4.45,1.56,42.0,128,,,,
-Ja'Kobi Lane,WR,USC,4.47,1.58,40.0,129,,,,
-Kaden Wetjen,WR,Iowa,4.47,1.58,35.5,,,,6.95,4.44
-Germie Bernard,WR,Alabama,4.48,1.52,32.5,125,,6.71,4.31
-Kevin Coleman Jr.,WR,Missouri,4.49,1.62,38.5,126,,,,
-Colbie Young,WR,Georgia,4.49,1.59,,,,,,
-Dillon Bell,WR,Georgia,4.50,1.58,39.0,126,,,,
-Carnell Tate,WR,Ohio State,4.53,1.61,,,,,,
-Vinny Anthony II,WR,Wisconsin,4.54,1.59,34.5,,,,6.86,4.07
-Harrison Wallace III,WR,Mississippi,4.54,1.58,,,,,,
-Caullin Lacy,WR,Louisville,4.55,1.59,33.5,116,,,,
-Reggie Virgil,WR,Texas Tech,4.57,1.58,36.0,127,,,,
-Jalen Walthall,WR,Incarnate Word,4.57,1.59,35.0,131,,,,
-Malachi Fields,WR,Notre Dame,4.61,1.63,38.0,124,,6.98,4.35
-Chase Roberts,WR,BYU,4.64,1.60,37.0,126,,,,
-Denzel Boston,WR,Washington,,,35.0,,,,,4.28
-Aaron Anderson,WR,LSU,,,30.0,113,,,,
-Mike Washington Jr.,RB,Arkansas,4.33,1.51,39.0,128,,,,
-Jeremiyah Love,RB,Notre Dame,4.36,1.55,,,,,,
-Demond Claiborne,RB,Wake Forest,4.37,1.59,,122,,,,
-Jamarion Miller,RB,Alabama,4.42,1.53,30.5,115,,,,
-Eli Heidenreich,RB,Navy,4.44,1.55,35.5,120,,,,
-Seth McGowan,RB,Kentucky,4.49,1.60,42.5,131,,,,,4.50
-Jadarian Price,RB,Notre Dame,4.49,1.61,35.0,124,,,,
-Adam Randall,RB,Clemson,4.50,1.60,37.0,124,,,,4.53
-Robert Henry Jr.,RB,UTSA,4.52,1.62,37.0,124,,,,4.31
-Emmett Johnson,RB,Nebraska,4.56,1.59,35.5,120,,7.32,4.29
-Rahsul Faison,RB,South Carolina,,,37.5,122,,,,
-J'Mari Taylor,RB,Virginia,,,34.5,115,,,,
-Kenyon Sadiq,TE,Oregon,4.39,1.54,43.5,133,26,,,
-Eli Stowers,TE,Vanderbilt,4.51,1.59,45.5,135,,,,
-R.J. Maryland,TE,SMU,4.51,1.64,33.0,122,,,,
-Jaren Kanak,TE,Oklahoma,4.52,1.61,36.0,119,24,,,
-Matthew Hibner,TE,SMU,4.57,1.61,37.0,116,28,,,
-John Michael Gyllenborg,TE,Wyoming,4.60,1.60,35.5,128,,,,4.22
-Marlin Klein,TE,Michigan,4.61,1.64,36.0,117,,7.42,
-Dallen Bentley,TE,Utah,4.62,1.62,35.0,118,24,,4.42
-Jack Endries,TE,Texas,4.62,1.59,36.0,119,,,,
-Eli Raridon,TE,Notre Dame,4.62,1.60,36.0,123,20,,,
-Bauer Sharp,TE,LSU,4.63,1.68,35.0,120,20,,,
-Josh Cuevas,TE,Alabama,4.65,1.65,34.0,118,,7.37,4.38
-Riley Nowakowski,TE,Indiana,4.66,1.70,33.5,119,,,,
-Tanner Koziol,TE,Houston,4.70,1.62,36.5,122,,,,
-Sam Roush,TE,Stanford,4.70,1.61,38.5,126,25,7.08,4.37
-Khalil Dinkins,TE,Penn State,4.72,1.70,32.5,119,25,7.28,4.33
-Will Kacmarek,TE,Ohio State,4.74,1.70,36.0,119,,,,
-Miles Kitselman,TE,Tennessee,4.90,1.71,34.5,116,,,,
-Nate Boerkircher,TE,Texas A&M,,,,,,,,4.40
-Lake McRee,TE,USC,,,,,22,,,
+player_name,position,school,forty,ten_yard_split,vertical_jump,broad_jump_inches,bench_press,three_cone,twenty_yard_shuttle,ras_unofficial,ras_source
+Brenen Thompson,WR,Mississippi State,4.26,1.54,,,,,,,
+Zavion Thomas,WR,LSU,4.28,1.52,36.0,,,,,,9.12,MathBomb
+Deion Burks,WR,Oklahoma,4.30,1.49,42.5,131,,,,,9.24,MathBomb
+Jeff Caldwell,WR,Cincinnati,4.31,1.48,42.0,134,,,,,9.99,MathBomb
+Bryce Lance,WR,North Dakota State,4.34,1.49,41.5,133,,7.00,4.15,9.98,MathBomb
+Zachariah Branch,WR,Georgia,4.35,1.50,38.0,125,,,,,8.30,MathBomb
+Eric Rivers,WR,Georgia Tech,4.35,1.52,37.0,127,,,,,8.74,MathBomb
+De'Zhaun Stribling,WR,Mississippi,4.36,1.53,36.0,127,,,,,9.88,MathBomb
+Malik Benson,WR,Oregon,4.37,1.55,32.5,122,,,,,7.84,MathBomb
+Chris Brazzell,WR,Tennessee,4.37,1.52,,,,,,,
+Caleb Douglas,WR,Texas Tech,4.39,1.55,31.5,126,,,,,9.52,MathBomb
+Skyler Bell,WR,UConn,4.40,1.53,41.0,133,,,,,9.71,MathBomb
+Barion Brown,WR,LSU,4.40,1.62,,,,,,,
+J.Michael Sturdivant,WR,Florida,4.40,1.54,39.0,131,,,,,9.96,MathBomb
+Chris Hilton,WR,LSU,4.41,1.57,34.5,122,,7.25,4.41,6.50,MathBomb
+Antonio Williams,WR,Clemson,4.41,1.55,39.5,124,,7.00,,9.09,MathBomb
+Omar Cooper Jr.,WR,Indiana,4.42,1.55,37.0,,,,,,8.79,MathBomb
+Ted Hurst,WR,Georgia State,4.42,1.55,36.5,135,,,,,9.92,MathBomb
+Emmanuel Henderson,WR,Kansas,4.44,1.56,35.0,120,,,,,7.60,MathBomb
+Kendrick Law,WR,Kentucky,4.45,1.56,42.0,128,,,,,9.45,MathBomb
+Ja'Kobi Lane,WR,USC,4.47,1.58,40.0,129,,,,,9.69,MathBomb
+Kaden Wetjen,WR,Iowa,4.47,1.58,35.5,,,6.95,4.44,7.29,MathBomb
+Germie Bernard,WR,Alabama,4.48,1.52,32.5,125,,6.71,4.31,9.03,MathBomb
+Kevin Coleman Jr.,WR,Missouri,4.49,1.62,38.5,126,,,,,7.86,MathBomb
+Colbie Young,WR,Georgia,4.49,1.59,,,,,,,
+Dillon Bell,WR,Georgia,4.50,1.58,39.0,126,,,,,9.57,MathBomb
+Carnell Tate,WR,Ohio State,4.53,1.61,,,,,,,
+Vinny Anthony II,WR,Wisconsin,4.54,1.59,34.5,,,6.86,4.07,7.68,MathBomb
+Harrison Wallace III,WR,Mississippi,4.54,1.58,,,,,,,
+Caullin Lacy,WR,Louisville,4.55,1.59,33.5,116,,,,,3.66,MathBomb
+Reggie Virgil,WR,Texas Tech,4.57,1.58,36.0,127,,,,,7.34,MathBomb
+Jalen Walthall,WR,Incarnate Word,4.57,1.59,35.0,131,,,,,6.78,MathBomb
+Malachi Fields,WR,Notre Dame,4.61,1.63,38.0,124,,6.98,4.35,8.22,MathBomb
+Chase Roberts,WR,BYU,4.64,1.60,37.0,126,,,,,7.60,MathBomb
+Denzel Boston,WR,Washington,,,35.0,,,,4.28,,
+Aaron Anderson,WR,LSU,,,30.0,113,,,,,,
+Mike Washington Jr.,RB,Arkansas,4.33,1.51,39.0,128,,,,,10.00,MathBomb
+Jeremiyah Love,RB,Notre Dame,4.36,1.55,,,,,,,
+Demond Claiborne,RB,Wake Forest,4.37,1.59,,122,,,,,8.48,MathBomb
+Jamarion Miller,RB,Alabama,4.42,1.53,30.5,115,,,,,7.04,MathBomb
+Eli Heidenreich,RB,Navy,4.44,1.55,35.5,120,,,,,9.12,MathBomb
+Seth McGowan,RB,Kentucky,4.49,1.60,42.5,131,,,,4.50,9.63,MathBomb
+Jadarian Price,RB,Notre Dame,4.49,1.61,35.0,124,,,,,8.76,MathBomb
+Adam Randall,RB,Clemson,4.50,1.60,37.0,124,,,,4.53,9.42,MathBomb
+Robert Henry Jr.,RB,UTSA,4.52,1.62,37.0,124,,,,4.31,7.47,MathBomb
+Emmett Johnson,RB,Nebraska,4.56,1.59,35.5,120,,7.32,4.29,5.85,MathBomb
+Rahsul Faison,RB,South Carolina,,,37.5,122,,,,,,
+J'Mari Taylor,RB,Virginia,,,34.5,115,,,,,,
+Kenyon Sadiq,TE,Oregon,4.39,1.54,43.5,133,26,,,,9.44,MathBomb
+Eli Stowers,TE,Vanderbilt,4.51,1.59,45.5,135,,,,,9.47,MathBomb
+R.J. Maryland,TE,SMU,4.51,1.64,33.0,122,,,,,8.58,MathBomb
+Jaren Kanak,TE,Oklahoma,4.52,1.61,36.0,119,24,,,,7.90,MathBomb
+Matthew Hibner,TE,SMU,4.57,1.61,37.0,116,28,,,,9.56,MathBomb
+John Michael Gyllenborg,TE,Wyoming,4.60,1.60,35.5,128,,,,4.22,9.92,MathBomb
+Marlin Klein,TE,Michigan,4.61,1.64,36.0,117,,7.42,,9.00,MathBomb
+Dallen Bentley,TE,Utah,4.62,1.62,35.0,118,24,,4.42,9.17,MathBomb
+Jack Endries,TE,Texas,4.62,1.59,36.0,119,,,,,8.65,MathBomb
+Eli Raridon,TE,Notre Dame,4.62,1.60,36.0,123,20,,,,9.81,MathBomb
+Bauer Sharp,TE,LSU,4.63,1.68,35.0,120,20,,,,9.09,MathBomb
+Josh Cuevas,TE,Alabama,4.65,1.65,34.0,118,,7.37,4.38,7.56,MathBomb
+Riley Nowakowski,TE,Indiana,4.66,1.70,33.5,119,,,,,7.97,MathBomb
+Tanner Koziol,TE,Houston,4.70,1.62,36.5,122,,,,,9.72,MathBomb
+Sam Roush,TE,Stanford,4.70,1.61,38.5,126,25,7.08,4.37,9.93,MathBomb
+Khalil Dinkins,TE,Penn State,4.72,1.70,32.5,119,25,7.28,4.33,,
+Will Kacmarek,TE,Ohio State,4.74,1.70,36.0,119,,,,,9.14,MathBomb
+Miles Kitselman,TE,Tennessee,4.90,1.71,34.5,116,,,,,5.83,MathBomb
+Nate Boerkircher,TE,Texas A&M,,,,,,,,4.40,,
+Lake McRee,TE,USC,,,,,22,,,,
