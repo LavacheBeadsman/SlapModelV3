@@ -1,5 +1,5 @@
 player_name,position,college,draft_year,pick,round,slap_display_score,slap_model_score,dc_score,prospect_profile,dataset,production_score,speed_score,rec_yards,team_pass_att,pos_rank
-Jeremiyah Love,RB,Notre Dame,2026,9,1,97.2,80.09,96.4,56.1,2026_prospect,57.1,49.7,280.0,322.0,1
+Jeremiyah Love,RB,Notre Dame,2026,9,1,98.1,81.69,96.4,60.6,2026_prospect,57.1,81.5,280.0,322.0,1
 Jonah Coleman,RB,Washington,2026,75,3,85.4,63.23,77.0,55.3,2026_prospect,57.4,42.6,354.0,370.0,2
 Emmett Johnson,RB,Nebraska,2026,77,3,85.4,63.32,76.6,56.6,2026_prospect,61.5,27.2,370.0,378.0,2
 Jadarian Price,RB,Notre Dame,2026,53,2,72.2,55.43,84.5,20.4,2026_prospect,17.0,41.2,87.0,322.0,4

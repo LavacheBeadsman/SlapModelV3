@@ -603,7 +603,7 @@ rb_prospects['s_production_scaled'] = (rb_prospects['s_production_raw'] / 1.75).
 # Speed score for 2026 RBs: use real combine data where available, MNAR fallback
 combine_2026 = pd.read_csv('data/combine_2026.csv')
 rb_combine = combine_2026[combine_2026['position'] == 'RB'][['player_name', 'weight', 'forty']].copy()
-rb_combine = rb_combine.dropna(subset=['weight', 'forty'])
+rb_combine = rb_combine.dropna(subset=['forty'])  # Need at least a forty time; weight can come from prospect file
 rb_combine['_norm'] = rb_combine['player_name'].apply(normalize_name)
 
 # Name aliases for matching (combine name → prospects name)
@@ -636,6 +636,15 @@ for idx, row in rb_prospects.iterrows():
     if not match.empty:
         rb_prospects.loc[idx, 'combine_weight'] = match.iloc[0]['weight']
         rb_prospects.loc[idx, 'combine_forty'] = match.iloc[0]['forty']
+
+# If combine has forty but no weight, fall back to prospect file weight
+if 'weight' in rb_prospects.columns:
+    missing_wt = rb_prospects['combine_forty'].notna() & rb_prospects['combine_weight'].isna()
+    for idx in rb_prospects[missing_wt].index:
+        prospect_wt = rb_prospects.loc[idx, 'weight']
+        if pd.notna(prospect_wt):
+            rb_prospects.loc[idx, 'combine_weight'] = prospect_wt
+            print(f"    Weight recovery: {rb_prospects.loc[idx, 'player_name']} — combine forty={rb_prospects.loc[idx, 'combine_forty']}, weight={prospect_wt} from prospect file")
 
 # Calculate real Speed Score for those with combine data
 rb_prospects['raw_ss'] = rb_prospects.apply(
