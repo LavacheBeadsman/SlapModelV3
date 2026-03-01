@@ -314,6 +314,10 @@ for idx in rb_bt[rb_bt['raw_ss'].isna()].index:
 # Normalize raw speed score to 0-100 (used as the "raw" scale before percentile)
 rb_bt['s_speed_raw'] = normalize_0_100(rb_bt['raw_ss'])
 
+# Save backtest normalization parameters so 2026 prospects use the same scale
+_ss_raw_min = rb_bt['raw_ss'].dropna().min()
+_ss_raw_max = rb_bt['raw_ss'].dropna().max()
+
 # NATIVE-SCALE SCORING: production scaled by /1.75 (0-99.9 range), speed already 0-100
 rb_bt['s_production_scaled'] = (rb_bt['s_production_raw_filled'] / 1.75).clip(0, 99.9)
 
@@ -596,11 +600,67 @@ rb_prospects['s_production_raw'] = rb_prospects['s_production_raw'].fillna(0)
 # Native-scale scoring (same as backtest: production /1.75, speed 0-100)
 rb_prospects['s_production_scaled'] = (rb_prospects['s_production_raw'] / 1.75).clip(0, 99.9)
 
-# Speed score for 2026 RBs: MNAR imputed on native 0-100 scale
+# Speed score for 2026 RBs: use real combine data where available, MNAR fallback
+combine_2026 = pd.read_csv('data/combine_2026.csv')
+rb_combine = combine_2026[combine_2026['position'] == 'RB'][['player_name', 'weight', 'forty']].copy()
+rb_combine = rb_combine.dropna(subset=['weight', 'forty'])
+rb_combine['_norm'] = rb_combine['player_name'].apply(normalize_name)
+
+# Name aliases for matching (combine name → prospects name)
+_rb_name_aliases = {
+    'jam miller': 'jamarion miller',
+}
+
+# Match prospects to combine data
+rb_prospects['_norm'] = rb_prospects['player_name'].apply(normalize_name)
+rb_prospects['combine_weight'] = np.nan
+rb_prospects['combine_forty'] = np.nan
+
+for idx, row in rb_prospects.iterrows():
+    norm = row['_norm']
+    match = rb_combine[rb_combine['_norm'] == norm]
+    if match.empty:
+        # Try alias lookup (combine name that maps to this prospect name)
+        for alias, target in _rb_name_aliases.items():
+            if norm == target:
+                match = rb_combine[rb_combine['_norm'] == alias]
+                break
+    if match.empty:
+        # Partial match fallback: require BOTH first AND last name substrings
+        parts = norm.split()
+        if len(parts) >= 2:
+            match = rb_combine[
+                rb_combine['_norm'].str.contains(parts[0]) &
+                rb_combine['_norm'].str.contains(parts[-1])
+            ]
+    if not match.empty:
+        rb_prospects.loc[idx, 'combine_weight'] = match.iloc[0]['weight']
+        rb_prospects.loc[idx, 'combine_forty'] = match.iloc[0]['forty']
+
+# Calculate real Speed Score for those with combine data
+rb_prospects['raw_ss'] = rb_prospects.apply(
+    lambda r: speed_score_fn(r['combine_weight'], r['combine_forty']), axis=1)
+
+# Normalize on the SAME backtest scale (min/max from backtest raw_ss)
+rb_prospects['s_speed_raw'] = np.where(
+    rb_prospects['raw_ss'].notna(),
+    ((rb_prospects['raw_ss'] - _ss_raw_min) / (_ss_raw_max - _ss_raw_min) * 100).clip(0, 100),
+    np.nan
+)
+
+# MNAR impute only for prospects WITHOUT real combine data
 ss_p60_raw = rb_bt['s_speed_raw'].quantile(0.60)
 ss_p40_raw = rb_bt['s_speed_raw'].quantile(0.40)
-rb_prospects['s_speed_raw'] = rb_prospects['projected_pick'].apply(
+mnar_mask = rb_prospects['s_speed_raw'].isna()
+rb_prospects.loc[mnar_mask, 's_speed_raw'] = rb_prospects.loc[mnar_mask, 'projected_pick'].apply(
     lambda p: ss_p60_raw if p <= 64 else ss_p40_raw)
+
+n_real = rb_prospects['raw_ss'].notna().sum()
+n_mnar = mnar_mask.sum()
+print(f"  Speed Score: {n_real} real (from combine), {n_mnar} MNAR-imputed")
+
+# Clean up temp columns
+rb_prospects.drop(columns=['_norm', 'combine_weight', 'combine_forty', 'raw_ss'], inplace=True)
 
 # V5 Score (native-scale components)
 rb_prospects['slap_v5_raw'] = (
