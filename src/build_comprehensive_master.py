@@ -1021,6 +1021,33 @@ for df, pos_label in [(wr, 'WR'), (rb, 'RB'), (te, 'TE')]:
 
     print(f"  {pos_label} nflverse combine matched: {matched}")
 
+# STEP 7c: Merge CFBD roster height/weight for 2026 prospects
+cfbd_hw_path = 'data/prospect_2026_height_weight_cfbd.csv'
+if os.path.exists(cfbd_hw_path):
+    cfbd_hw = pd.read_csv(cfbd_hw_path)
+    cfbd_hw = cfbd_hw[cfbd_hw['status'] == 'found'][['player_name', 'position', 'height_in', 'weight']].copy()
+    cfbd_hw.rename(columns={'height_in': 'cfbd_height_in', 'weight': 'cfbd_weight'}, inplace=True)
+    cfbd_hw = cfbd_hw.drop_duplicates(subset=['player_name', 'position'], keep='first')
+
+    hw_filled = 0
+    for df, pos_label in [(wr, 'WR'), (rb, 'RB'), (te, 'TE')]:
+        hw_pos = cfbd_hw[cfbd_hw['position'] == pos_label]
+        for idx, row in df.iterrows():
+            if row['dataset'] != '2026_prospect':
+                continue
+            if pd.notna(row.get('height_in')) and pd.notna(row.get('weight')):
+                continue
+            name = normalize_name(row['player_name']).lower()
+            match = hw_pos[hw_pos['player_name'].apply(lambda x: normalize_name(x).lower()) == name]
+            if len(match) > 0:
+                m = match.iloc[0]
+                if pd.isna(row.get('height_in')) and pd.notna(m.get('cfbd_height_in')):
+                    df.at[idx, 'height_in'] = m['cfbd_height_in']
+                if pd.isna(row.get('weight')) and pd.notna(m.get('cfbd_weight')):
+                    df.at[idx, 'weight'] = m['cfbd_weight']
+                hw_filled += 1
+    print(f"\n  CFBD roster height/weight filled for 2026 prospects: {hw_filled}")
+
 
 # ─────────────────────────────────────────────────────────
 # STEP 8: Add identification columns (conference, birthdate, draft_age)
