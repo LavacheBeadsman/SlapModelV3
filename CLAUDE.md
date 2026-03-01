@@ -63,6 +63,7 @@ This is the **single source of truth** for all output files. It reads data CSVs,
 | `dc_score` | Draft Capital component (percentile rank vs backtest) | 1-99 | Shows draft capital tier |
 | `prospect_profile` | Weighted average of non-DC components | 0-100 | Shows how good the prospect profile is independent of DC |
 | `dataset` | `backtest` or `2026_prospect` | — | Distinguishes historical vs current prospects |
+| `bdr` | Backfield Dominator Rating (RB only) | 0-100 | SimScores similarity matching — **not used in SLAP scoring** |
 
 ## The Two-Layer Scoring System
 
@@ -152,6 +153,8 @@ RB SLAP = DC × 0.65 + RYPTPA × 0.30 + Speed_Score × 0.05
 **Age weight**: `season_age = draft_age - 1`, then `age_w = max(0.85, min(1.15, 1.15 - 0.05 × (season_age - 19)))`.
 
 **Speed Score MNAR imputation**: 68% have real data. Weight recovery via CFBD gets to 96%. Missing 40 times estimated from weight×round bucket averages. Fully missing players: Rd 1-2 → 60th percentile (elite prospects skip workouts), Rd 3+ → 40th percentile.
+
+**BDR (Backfield Dominator Rating)**: Included in the dataset but **NOT used in SLAP scoring**. BDR = average of 4 market shares (rush yards, rush TDs, rec yards, rec TDs vs all team RBs) × 100, calculated from CFBD position-level stats for the player's final college season. Tested and found redundant with RYPTPA for prediction (partial r collapses to +0.02–0.08 after controlling for DC + RYPTPA, all p > 0.38). Retained for SimScores similarity matching. Coverage: 199/223 backtest, 47/57 2026 prospects.
 
 ### TE V5: 60/15/15/10
 ```
