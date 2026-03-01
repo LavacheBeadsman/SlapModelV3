@@ -23,6 +23,7 @@ import pandas as pd
 import numpy as np
 import warnings
 import re
+import os
 from thefuzz import fuzz, process
 
 warnings.filterwarnings('ignore')
@@ -533,6 +534,16 @@ cs_wr.rename(columns={'rec_yards': 'rec_yards_cs', 'team_pass_attempts': 'team_p
 cs_wr = cs_wr.drop_duplicates(subset=['player_name', 'draft_year'], keep='first')
 wr = wr.merge(cs_wr, on=['player_name', 'draft_year'], how='left')
 
+# From CFBD API backtest receiving stats (2015-2019 gap fill)
+cfbd_wr_path = 'data/wr_backtest_receiving_cfbd.csv'
+if os.path.exists(cfbd_wr_path):
+    cfbd_wr = pd.read_csv(cfbd_wr_path)
+    cfbd_wr = cfbd_wr[cfbd_wr['status'] == 'found'][['player_name', 'draft_year', 'rec_yards', 'receptions', 'rec_tds', 'team_pass_att']].copy()
+    cfbd_wr.rename(columns={'rec_yards': 'rec_yards_cfbd', 'receptions': 'receptions_cfbd',
+                            'rec_tds': 'rec_tds_cfbd', 'team_pass_att': 'team_pass_att_cfbd'}, inplace=True)
+    cfbd_wr = cfbd_wr.drop_duplicates(subset=['player_name', 'draft_year'], keep='first')
+    wr = wr.merge(cfbd_wr, on=['player_name', 'draft_year'], how='left')
+
 # From prospects_final for 2026
 pf_wr = prospects_final[prospects_final['position'] == 'WR'][['player_name', 'rec_yards', 'team_pass_attempts']].copy()
 pf_wr.rename(columns={'rec_yards': 'rec_yards_pf', 'team_pass_attempts': 'team_pass_att_pf'}, inplace=True)
@@ -544,10 +555,11 @@ wr_cards_rec = wr_cards[['player_name', 'rec_yards', 'team_pass_attempts']].copy
 wr_cards_rec.rename(columns={'rec_yards': 'rec_yards_wc', 'team_pass_attempts': 'team_pass_att_wc'}, inplace=True)
 wr = wr.merge(wr_cards_rec, on='player_name', how='left')
 
-# Fill rec_yards: backbone → college_stats → prospects_final → cards
+# Fill rec_yards: backbone → college_stats → CFBD → prospects_final → cards
 if 'rec_yards' not in wr.columns:
     wr['rec_yards'] = np.nan
 wr['rec_yards'] = wr['rec_yards'].fillna(wr.get('rec_yards_cs', pd.Series(dtype=float)))
+wr['rec_yards'] = wr['rec_yards'].fillna(wr.get('rec_yards_cfbd', pd.Series(dtype=float)))
 wr['rec_yards'] = wr['rec_yards'].fillna(wr.get('rec_yards_pf', pd.Series(dtype=float)))
 wr['rec_yards'] = wr['rec_yards'].fillna(wr.get('rec_yards_wc', pd.Series(dtype=float)))
 
@@ -555,20 +567,23 @@ wr['rec_yards'] = wr['rec_yards'].fillna(wr.get('rec_yards_wc', pd.Series(dtype=
 if 'team_pass_att' not in wr.columns:
     wr['team_pass_att'] = np.nan
 wr['team_pass_att'] = wr['team_pass_att'].fillna(wr.get('team_pass_att_cs', pd.Series(dtype=float)))
+wr['team_pass_att'] = wr['team_pass_att'].fillna(wr.get('team_pass_att_cfbd', pd.Series(dtype=float)))
 wr['team_pass_att'] = wr['team_pass_att'].fillna(wr.get('team_pass_att_pf', pd.Series(dtype=float)))
 wr['team_pass_att'] = wr['team_pass_att'].fillna(wr.get('team_pass_att_wc', pd.Series(dtype=float)))
 print(f"  Merged WR rec_yards: {wr['rec_yards'].notna().sum()}, team_pass_att: {wr['team_pass_att'].notna().sum()}")
 
 # 5i. Fill in consolidated columns
-# receptions: from PFF or cards
+# receptions: from CFBD, PFF, or cards
 if 'receptions' not in wr.columns:
     wr['receptions'] = np.nan
+wr['receptions'] = wr['receptions'].fillna(wr.get('receptions_cfbd', pd.Series(dtype=float)))
 wr['receptions'] = wr['receptions'].fillna(wr.get('receptions_card', pd.Series(dtype=float)))
 wr['receptions'] = wr['receptions'].fillna(wr.get('pff_receptions', pd.Series(dtype=float)))
 
-# rec_tds
+# rec_tds: from CFBD or cards
 if 'rec_tds' not in wr.columns:
     wr['rec_tds'] = np.nan
+wr['rec_tds'] = wr['rec_tds'].fillna(wr.get('rec_tds_cfbd', pd.Series(dtype=float)))
 wr['rec_tds'] = wr['rec_tds'].fillna(wr.get('rec_tds_card', pd.Series(dtype=float)))
 
 # rush_tds
