@@ -791,7 +791,11 @@ te_bt_extra.rename(columns={
     'cfbd_team_rec_yards': 'team_rec_yards_bt',
     'early_declare': 'early_declare_te',
 }, inplace=True)
-te = te.merge(te_bt_extra, on=['player_name', 'draft_year'], how='left')
+te = te.merge(te_bt_extra, on=['player_name', 'draft_year'], how='left', suffixes=('', '_bt'))
+# If draft_age existed in both, coalesce
+if 'draft_age_bt' in te.columns:
+    te['draft_age'] = te['draft_age'].fillna(te['draft_age_bt'])
+    te.drop(columns=['draft_age_bt'], inplace=True)
 print(f"  Merged TE backtest extras: PFF grades, draft_age, college production")
 
 # 7b. TE 2026 extras
@@ -1044,6 +1048,60 @@ for df, pos_label in [(wr, 'WR'), (rb, 'RB'), (te, 'TE')]:
             conf_matched += 1
 
     print(f"  {pos_label} conference matched: {conf_matched}")
+
+# Fill conference for 2026 prospects via CFBD team->conference mapping
+CFBD_CONFERENCE_MAP = {
+    'Alabama': 'SEC', 'Arizona': 'Big 12', 'Arizona State': 'Big 12',
+    'Arkansas': 'SEC', 'BYU': 'Big 12', 'Baylor': 'Big 12',
+    'Boston College': 'ACC', 'California': 'ACC', 'Charlotte': 'American Athletic',
+    'Cincinnati': 'Big 12', 'Clemson': 'ACC', 'Colorado': 'Big 12',
+    'Delaware State': 'MEAC', 'Duke': 'ACC', 'East Carolina': 'American Athletic',
+    'Florida': 'SEC', 'Florida International': 'Conference USA',
+    'Florida State': 'ACC', 'Georgia': 'SEC', 'Georgia State': 'Sun Belt',
+    'Georgia Tech': 'ACC', 'Houston': 'Big 12', 'Illinois': 'Big Ten',
+    'Incarnate Word': 'Southland', 'Indiana': 'Big Ten', 'Iowa': 'Big Ten',
+    'Jacksonville State': 'Conference USA', 'James Madison': 'Sun Belt',
+    'John Carroll': 'Ohio', 'Kansas': 'Big 12', 'Kansas State': 'Big 12',
+    'Kentucky': 'SEC', 'LSU': 'SEC', 'Louisiana-Lafayette': 'Sun Belt',
+    'Louisville': 'ACC', 'Marshall': 'Sun Belt', 'Maryland': 'Big Ten',
+    'McNeese State': 'Southland', 'Miami (FL)': 'ACC', 'Miami (OH)': 'Mid-American',
+    'Michigan': 'Big Ten', 'Michigan State': 'Big Ten', 'Minnesota': 'Big Ten',
+    'Mississippi': 'SEC', 'Mississippi State': 'SEC', 'Missouri': 'SEC',
+    'Montana': 'Big Sky', 'NC State': 'ACC', 'Navy': 'American Athletic',
+    'Nebraska': 'Big Ten', 'New Mexico State': 'Conference USA',
+    'North Carolina': 'ACC', 'North Dakota State': 'MVFC',
+    'Northwestern': 'Big Ten', 'Notre Dame': 'FBS Independents',
+    'Ohio State': 'Big Ten', 'Oklahoma': 'SEC', 'Oklahoma State': 'Big 12',
+    'Oregon': 'Big Ten', 'Penn State': 'Big Ten', 'Pittsburgh': 'ACC',
+    'SMU': 'ACC', 'Sacramento State': 'Big Sky', 'Sam Houston State': 'Conference USA',
+    'San Diego State': 'Mountain West', 'South Alabama': 'Sun Belt',
+    'South Carolina': 'SEC', 'Stanford': 'ACC', 'Stephen F. Austin': 'Southland',
+    'Syracuse': 'ACC', 'TCU': 'Big 12', 'Tarleton State': 'UAC',
+    'Tennessee': 'SEC', 'Texas': 'SEC', 'Texas A&M': 'SEC',
+    'Texas Tech': 'Big 12', 'Toledo': 'Mid-American', 'Troy': 'Sun Belt',
+    'Tulane': 'American Athletic', 'Tulsa': 'American Athletic',
+    'UAB': 'American Athletic', 'UC Davis': 'Big Sky', 'UCF': 'Big 12',
+    'UCLA': 'Big Ten', 'UConn': 'FBS Independents', 'UNLV': 'Mountain West',
+    'USC': 'Big Ten', 'UT Martin': 'Big South-OVC', 'UTSA': 'American Athletic',
+    'Utah': 'Big 12', 'Vanderbilt': 'SEC', 'Virginia': 'ACC',
+    'Virginia Tech': 'ACC', 'Virginia Union': 'CIAA',
+    'Wake Forest': 'ACC', 'Washington': 'Big Ten',
+    'West Alabama': 'Gulf South', 'West Virginia': 'Big 12',
+    'Western Michigan': 'Mid-American', 'Wisconsin': 'Big Ten',
+    'Wyoming': 'Mountain West', 'Youngstown State': 'MVFC',
+}
+
+for df, pos_label in [(wr, 'WR'), (rb, 'RB'), (te, 'TE')]:
+    conf_filled = 0
+    for idx, row in df.iterrows():
+        if pd.notna(row.get('conference')):
+            continue
+        college = row.get('college')
+        if pd.notna(college) and college in CFBD_CONFERENCE_MAP:
+            df.at[idx, 'conference'] = CFBD_CONFERENCE_MAP[college]
+            conf_filled += 1
+    if conf_filled > 0:
+        print(f"  {pos_label} 2026 conference filled via CFBD map: {conf_filled}")
 
 # Add birthdates
 # For backtest: from nflverse birthdates
