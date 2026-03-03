@@ -25,6 +25,7 @@ PROFILE_COLS = {
         "height_in", "weight", "forty", "ras_score",
         "rec_yards", "receptions", "rec_tds", "rush_yards", "rush_attempts",
         "yards_per_reception", "team_pass_att", "games_played", "draft_age",
+        "peak_dominator", "rec_yards_per_team_pass_att",
     ],
     "WR": [
         "breakout_age", "peak_dominator", "dominator_rating",
@@ -635,6 +636,12 @@ const COMPS = {comps_json};
     dataset: p.dataset,
   }}));
 
+  // ---- Player lookup for comp stats ----
+  const playerLookup = {{}};
+  PLAYERS.forEach(p => {{
+    playerLookup[p.player_name + '|' + p.draft_year] = p;
+  }});
+
   // ---- Helpers ----
   function fmt(v, decimals) {{
     if (v === null || v === undefined) return '—';
@@ -876,10 +883,48 @@ const COMPS = {comps_json};
     cardEl.classList.add('visible');
   }}
 
+  // ---- Comp stat helpers ----
+  function getCompPlayer(comp) {{
+    return playerLookup[comp.name + '|' + comp.year] || null;
+  }}
+
+  function calcYPG(cp, stat) {{
+    if (!cp || cp[stat] == null || cp.games_played == null || cp.games_played === 0) return null;
+    return cp[stat] / cp.games_played;
+  }}
+
+  function calcRYPTPA(cp) {{
+    if (!cp) return null;
+    if (cp.rec_yards_per_team_pass_att != null) return cp.rec_yards_per_team_pass_att;
+    if (cp.rec_yards != null && cp.team_pass_att != null && cp.team_pass_att > 0)
+      return cp.rec_yards / cp.team_pass_att;
+    return null;
+  }}
+
+  function prodColLabel(pos) {{
+    return pos === 'RB' ? 'Rush YPG' : 'Rec YPG';
+  }}
+
+  function prodColVal(cp, pos) {{
+    return pos === 'RB' ? calcYPG(cp, 'rush_yards') : calcYPG(cp, 'rec_yards');
+  }}
+
+  function enrichComp(c, pos) {{
+    const cp = getCompPlayer(c);
+    return {{
+      ...c,
+      _weight: cp ? cp.weight : null,
+      _peak_dom: cp ? cp.peak_dominator : null,
+      _prod: prodColVal(cp, pos),
+      _ryptpa: calcRYPTPA(cp),
+    }};
+  }}
+
   // ---- Render comps table ----
   function renderComps(p) {{
     const key = p.player_name + '|' + p.draft_year;
     const comps = COMPS[key];
+    const pos = p.position;
 
     if (!comps || !comps.length) {{
       compEl.innerHTML = '<div style="padding:1rem;color:var(--text-muted);">No SimScore comps available for this player.</div>';
@@ -887,10 +932,12 @@ const COMPS = {comps_json};
       return;
     }}
 
-    // Sort comps
-    let sorted = [...comps];
+    // Enrich comps with player lookup data
+    let enriched = comps.map(c => enrichComp(c, pos));
+
+    // Sort
     if (sortCol) {{
-      sorted.sort((a, b) => {{
+      enriched.sort((a, b) => {{
         let va = a[sortCol], vb = b[sortCol];
         if (va === null || va === undefined) va = -Infinity;
         if (vb === null || vb === undefined) vb = -Infinity;
@@ -900,24 +947,21 @@ const COMPS = {comps_json};
     }}
 
     // Summary stats
-    const hitCount = comps.filter(c => c.hit24 === 1).length;
-    const totalWithData = comps.filter(c => c.hit24 !== null).length;
-    const avgPPG = comps.filter(c => c.career_ppg !== null);
-    const avgPPGVal = avgPPG.length ? (avgPPG.reduce((s, c) => s + c.career_ppg, 0) / avgPPG.length).toFixed(1) : '—';
     const avgSim = (comps.reduce((s, c) => s + c.sim, 0) / comps.length).toFixed(1);
+    const avgCov = (comps.reduce((s, c) => s + (c.cov || 0), 0) / comps.length * 100).toFixed(0);
 
     function thArrow(col) {{
       if (sortCol !== col) return '<span class="sort-arrow">&#9650;</span>';
       return `<span class="sort-arrow">${{sortAsc ? '&#9650;' : '&#9660;'}}</span>`;
     }}
 
+    const prodLabel = prodColLabel(pos);
+
     compEl.innerHTML = `
       <div class="comp-title">
         Top 10 Comps
         <span class="comp-summary">
-          Avg Sim: ${{avgSim}} &bull;
-          ${{totalWithData > 0 ? hitCount + '/' + totalWithData + ' hit24' : ''}}
-          ${{avgPPG.length ? ' &bull; Avg Career PPG: ' + avgPPGVal : ''}}
+          Avg Similarity: ${{avgSim}} &bull; Avg Coverage: ${{avgCov}}%
         </span>
       </div>
       <div class="comp-table-wrap">
@@ -929,19 +973,15 @@ const COMPS = {comps_json};
               <th data-col="cov">Cov ${{thArrow('cov')}}</th>
               <th data-col="name">Player ${{thArrow('name')}}</th>
               <th data-col="college">College ${{thArrow('college')}}</th>
-              <th data-col="pick">Pick ${{thArrow('pick')}}</th>
-              <th data-col="year">Year ${{thArrow('year')}}</th>
-              <th data-col="hit24">Hit24 ${{thArrow('hit24')}}</th>
-              <th data-col="career_ppg">CarPPG ${{thArrow('career_ppg')}}</th>
-              <th data-col="first_3yr_ppg">3yrPPG ${{thArrow('first_3yr_ppg')}}</th>
-              <th data-col="best_ppg">BestPPG ${{thArrow('best_ppg')}}</th>
+              <th data-col="_weight">Weight ${{thArrow('_weight')}}</th>
+              <th data-col="_peak_dom">Peak Dom% ${{thArrow('_peak_dom')}}</th>
+              <th data-col="_prod">${{prodLabel}} ${{thArrow('_prod')}}</th>
+              <th data-col="_ryptpa">RYPTPA ${{thArrow('_ryptpa')}}</th>
               <th data-col="driver">Driver ${{thArrow('driver')}}</th>
             </tr>
           </thead>
           <tbody>
-            ${{sorted.map(c => {{
-              const hitDot = c.hit24 === 1 ? 'yes' : c.hit24 === 0 ? 'no' : 'na';
-              const hitText = c.hit24 === 1 ? '1' : c.hit24 === 0 ? '0' : '—';
+            ${{enriched.map(c => {{
               const driverLabel = c.driver ? c.driver.replace('_', ' ') : '—';
               return `
               <tr>
@@ -950,12 +990,10 @@ const COMPS = {comps_json};
                 <td>${{c.cov != null ? (c.cov * 100).toFixed(0) + '%' : '—'}}</td>
                 <td class="comp-name">${{c.name}}</td>
                 <td>${{c.college || '—'}}</td>
-                <td>${{c.pick || '—'}}</td>
-                <td>${{c.year}}</td>
-                <td><span class="hit-dot ${{hitDot}}"></span>${{hitText}}</td>
-                <td>${{fmt(c.career_ppg, 1)}}</td>
-                <td>${{fmt(c.first_3yr_ppg, 1)}}</td>
-                <td>${{fmt(c.best_ppg, 1)}}</td>
+                <td>${{c._weight != null ? c._weight : '—'}}</td>
+                <td>${{c._peak_dom != null ? fmt(c._peak_dom, 1) + '%' : '—'}}</td>
+                <td>${{c._prod != null ? fmt(c._prod, 1) : '—'}}</td>
+                <td>${{c._ryptpa != null ? fmt(c._ryptpa, 3) : '—'}}</td>
                 <td class="cat-breakdown">
                   ${{driverLabel}}
                   ${{c.cat_breakdown ? '<span class="cat-tip">' + c.cat_breakdown + '</span>' : ''}}
