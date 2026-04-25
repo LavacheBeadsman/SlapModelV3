@@ -97,7 +97,7 @@ DRAFT_PICKS = [
     (254, "Deion Burks",          "WR"),
 ]
 
-UDFA_PICK = 250
+UDFA_PICK = 258  # one past last actual draft pick (257), so all undrafted sort below the draft
 
 
 def pick_to_round(pick: int) -> int:
