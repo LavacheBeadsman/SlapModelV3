@@ -94,6 +94,7 @@ DRAFT_PICKS = [
     (237, "Seth McGowan",         "RB"),
     (245, "Jamarion Miller",      "RB"),   # listed as "Jam Miller"
     (248, "Carsen Ryan",          "TE"),
+    (254, "Deion Burks",          "WR"),
 ]
 
 UDFA_PICK = 250
