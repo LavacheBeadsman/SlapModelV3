@@ -228,6 +228,15 @@ rb_bt = pd.read_csv('data/rb_backtest_with_receiving.csv')
 rb_out = outcomes[outcomes['position'] == 'RB'][['player_name', 'draft_year', 'pick', 'first_3yr_ppg', 'career_ppg', 'seasons_over_10ppg_3yr']].copy()
 rb_bt = rb_bt.merge(rb_out, on=['player_name', 'draft_year', 'pick'], how='left')
 
+# Merge in peak_dominator (informational — not used by RB formula). Computed from
+# cfbfastR PBP across all college seasons. See scripts/compute_rb_dominator.py.
+try:
+    rb_dom = pd.read_csv('data/rb_dominator_scores.csv')
+    rb_dom_bt = rb_dom[rb_dom['dataset'] == 'backtest'][['player_name', 'draft_year', 'peak_dominator']]
+    rb_bt = rb_bt.merge(rb_dom_bt, on=['player_name', 'draft_year'], how='left')
+except FileNotFoundError:
+    rb_bt['peak_dominator'] = np.nan
+
 # DC and Production (RAW)
 rb_bt['s_dc'] = rb_bt['pick'].apply(dc_score)
 rb_bt['s_production_raw'] = rb_bt.apply(
@@ -523,6 +532,15 @@ print("=" * 120)
 
 rb_prospects = prospects[prospects['position'] == 'RB'].copy()
 
+# Merge in peak_dominator (informational — not used by RB formula). Computed from
+# cfbfastR PBP across all college seasons. See scripts/compute_rb_dominator.py.
+try:
+    _rb_dom = pd.read_csv('data/rb_dominator_scores.csv')
+    _rb_dom_p = _rb_dom[_rb_dom['dataset'] == '2026_prospect'][['player_name', 'peak_dominator']]
+    rb_prospects = rb_prospects.merge(_rb_dom_p, on='player_name', how='left')
+except FileNotFoundError:
+    rb_prospects['peak_dominator'] = np.nan
+
 rb_prospects['s_dc'] = rb_prospects['projected_pick'].apply(dc_score)
 rb_prospects['s_production_raw'] = rb_prospects.apply(
     lambda r: rb_production_score(r['rec_yards'], r['team_pass_attempts'], r['age']), axis=1)
@@ -715,7 +733,7 @@ rb_rows = pd.DataFrame({
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
     'breakout_age': np.nan,
-    'peak_dominator': np.nan,
+    'peak_dominator': rb_bt['peak_dominator'],
     'rush_yards': np.nan,
     'slap_model_score': rb_bt['slap_v5_raw'].round(2),
     'production_score': rb_bt['s_production_scaled'].round(1),
@@ -820,7 +838,7 @@ rb26_rows = pd.DataFrame({
     'teammate_score': np.nan,
     'early_declare_score': np.nan,
     'breakout_age': np.nan,
-    'peak_dominator': np.nan,
+    'peak_dominator': rb_prospects['peak_dominator'],
     'rush_yards': np.nan,
     'slap_model_score': rb_prospects['slap_v5_raw'].round(2),
     'production_score': rb_prospects['s_production_scaled'].round(1),

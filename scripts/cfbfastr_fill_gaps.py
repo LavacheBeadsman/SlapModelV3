@@ -89,6 +89,7 @@ NICKNAME_TO_FORMAL = {
     "tim": "timothy", "ben": "benjamin", "sam": "samuel", "ted": "edward",
     "stan": "stanley", "vince": "vincent", "ron": "ronald", "ronny": "ronald",
     "frank": "francis", "tre": "trevon",  # weak — disambiguate with last name
+    "cam": "cameron",
 }
 
 # Manual player-name overrides: SLAP file name -> cfbfastR record name.
@@ -98,6 +99,13 @@ PLAYER_NAME_OVERRIDES = {
     "Pat Bryant": "Patrick Bryant",
     "Will Fuller": "Will Fuller V",  # in case it shows up that way
     "Ja'Mori Maclin": "Jay Maclin",  # listed as 'Jay Maclin' in cfbfastR
+    # RB nickname/spelling mismatches in cfbfastR data
+    "Bucky Irving": "Mar'Keise Irving",
+    "Woody Marks": "Jo'quavious Marks",
+    "Chip Trayanum": "DeaMonte Trayanum",
+    "Isiah Pacheco": "Isaih Pacheco",  # cfbfastR has misspelling
+    "Jaydn Ott": "Jadyn Ott",  # cfbfastR uses 'Jadyn'
+    "Zander Horvath": "Alexander Horvath",
 }
 
 # Manual school overrides: SLAP file player -> actual cfbfastR team for their final season.
