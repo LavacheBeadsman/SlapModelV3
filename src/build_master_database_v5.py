@@ -170,6 +170,15 @@ wr_bt = pd.read_csv('data/wr_backtest_all_components.csv')
 wr_tm = pd.read_csv('data/wr_teammate_scores.csv')
 wr_bt = wr_bt.merge(wr_tm[['player_name', 'draft_year', 'total_teammate_dc']], on=['player_name', 'draft_year'], how='left')
 
+# Merge in rec_yards / team_pass_att for master DB output (not used by the WR formula —
+# WR scoring relies on Enhanced_Breakout). Source: pre-fetched CFBD final-season data.
+# Coverage is ~305/339; 2025 class and older small-school WRs are not in the source file.
+wr_prod = pd.read_csv('data/wr_backtest_with_production.csv')
+wr_bt = wr_bt.merge(
+    wr_prod[['player_name', 'draft_year', 'rec_yards', 'team_pass_att']].rename(
+        columns={'rec_yards': 'rec_yards_src', 'team_pass_att': 'team_pass_att_src'}),
+    on=['player_name', 'draft_year'], how='left')
+
 # Merge outcomes
 outcomes = pd.read_csv('data/backtest_outcomes_complete.csv')
 wr_out = outcomes[outcomes['position'] == 'WR'][['player_name', 'draft_year', 'pick', 'first_3yr_ppg', 'career_ppg', 'seasons_over_10ppg_3yr']].copy()
@@ -676,8 +685,8 @@ wr_rows = pd.DataFrame({
     'rush_yards': wr_bt['rush_yards'],
     'production_score': np.nan,
     'speed_score': np.nan,
-    'rec_yards': np.nan,
-    'team_pass_att': np.nan,
+    'rec_yards': wr_bt['rec_yards_src'],
+    'team_pass_att': wr_bt['team_pass_att_src'],
     'te_breakout_score': np.nan,
     'te_production_score': np.nan,
     'ras_score': np.nan,
