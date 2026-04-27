@@ -357,6 +357,9 @@ for name, vals in {
     if mask.sum() > 0 and pd.isna(te_bt.loc[mask, 'te_prod_raw'].values[0]):
         te_bt.loc[mask, 'te_prod_raw'] = te_production_score_fn(
             vals['cfbd_rec_yards'], vals['cfbd_team_pass_att'], vals['draft_age'], vals['draft_year'])
+        # Also propagate the patched rec_yards/team_pass_att so the master DB shows them
+        te_bt.loc[mask, 'cfbd_rec_yards'] = vals['cfbd_rec_yards']
+        te_bt.loc[mask, 'cfbd_team_pass_att'] = vals['cfbd_team_pass_att']
 
 # PFF fallback for remaining missing
 for idx in te_bt[te_bt['te_prod_raw'].isna()].index:
@@ -370,6 +373,16 @@ for idx in te_bt[te_bt['te_prod_raw'].isna()].index:
         elif season_age <= 23: aw = 0.95
         else: aw = 0.90
         te_bt.loc[idx, 'te_prod_raw'] = r['pff_yards'] / (r['pff_pass_plays'] * 1.15) * aw * 100
+
+# Resolve rec_yards/team_pass_att for master DB output: CFBD primary, PFF fallback.
+# The PFF fallback formula divides pff_pass_plays by 1.15 to normalize to CFBD-equivalent
+# team_pass_att, so we reflect that here for honesty about what the model used.
+te_bt['rec_yards_resolved'] = te_bt['cfbd_rec_yards']
+te_bt['team_pass_att_resolved'] = te_bt['cfbd_team_pass_att']
+pff_mask = te_bt['rec_yards_resolved'].isna() & te_bt.get('pff_yards', pd.Series(dtype=float)).notna() \
+    & te_bt.get('pff_pass_plays', pd.Series(dtype=float)).notna() & (te_bt.get('pff_pass_plays', 0) > 0)
+te_bt.loc[pff_mask, 'rec_yards_resolved'] = te_bt.loc[pff_mask, 'pff_yards']
+te_bt.loc[pff_mask, 'team_pass_att_resolved'] = (te_bt.loc[pff_mask, 'pff_pass_plays'] * 1.15).round(0)
 
 # Normalize production to 0-99.9 using min-max (this is the "raw" scale before percentile)
 prod_vals = te_bt['te_prod_raw'].dropna()
@@ -443,8 +456,9 @@ wr26['peak_dominator'] = wr26['pd_src'].fillna(wr26['peak_dominator'])
 # Load prospect data for additional fields
 prospects = pd.read_csv('data/prospects_final.csv')
 wr_prospects = prospects[prospects['position'] == 'WR'].copy()
-wr26 = wr26.merge(wr_prospects[['player_name', 'age', 'weight', 'age_estimated']],
-                   on='player_name', how='left')
+wr26 = wr26.merge(
+    wr_prospects[['player_name', 'age', 'weight', 'age_estimated', 'rec_yards', 'team_pass_attempts']],
+    on='player_name', how='left')
 
 # Compute enhanced_breakout from scratch (same function as backtest — native 0-99.9 scale)
 wr26['enhanced_breakout'] = wr26.apply(
@@ -731,8 +745,8 @@ te_rows = pd.DataFrame({
     'rush_yards': np.nan,
     'production_score': np.nan,
     'speed_score': np.nan,
-    'rec_yards': te_bt['cfbd_rec_yards'],
-    'team_pass_att': te_bt['cfbd_team_pass_att'],
+    'rec_yards': te_bt['rec_yards_resolved'],
+    'team_pass_att': te_bt['team_pass_att_resolved'],
     'slap_model_score': te_bt['slap_v5_raw'].round(2),
     'te_breakout_score': te_bt['s_breakout_raw_filled'].round(1),
     'te_production_score': te_bt['s_production_raw_filled'].round(1),
@@ -767,8 +781,8 @@ wr26_rows = pd.DataFrame({
     'rush_yards': wr26['rush_yards'],
     'production_score': np.nan,
     'speed_score': np.nan,
-    'rec_yards': np.nan,
-    'team_pass_att': np.nan,
+    'rec_yards': wr26['rec_yards'],
+    'team_pass_att': wr26['team_pass_attempts'],
     'te_breakout_score': np.nan,
     'te_production_score': np.nan,
     'ras_score': np.nan,
@@ -861,6 +875,9 @@ print("=" * 120)
 
 master = pd.concat([wr_rows, rb_rows, te_rows, wr26_rows, rb26_rows, te26_rows], ignore_index=True)
 
+# Computed RYPTPA: receiving yards per team pass attempt. NaN if either input is missing.
+master['ryptpa'] = (master['rec_yards'] / master['team_pass_att']).round(4)
+
 # Sort: position → draft_year → SLAP descending
 master = master.sort_values(['position', 'draft_year', 'slap_display_score'], ascending=[True, True, False])
 master = master.reset_index(drop=True)
@@ -877,7 +894,7 @@ col_order = [
     'te_breakout_score', 'te_production_score', 'ras_score',
     # Shared raw inputs
     'breakout_age', 'peak_dominator', 'rush_yards',
-    'rec_yards', 'team_pass_att',
+    'rec_yards', 'team_pass_att', 'ryptpa',
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
     'nfl_best_ppr', 'nfl_best_ppg', 'nfl_seasons_10ppg_3yr',

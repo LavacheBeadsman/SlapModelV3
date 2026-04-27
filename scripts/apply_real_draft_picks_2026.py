@@ -99,6 +99,10 @@ DRAFT_PICKS = [
 
 UDFA_PICK = 258  # one past last actual draft pick (257), so all undrafted sort below the draft
 
+# Players reclassified to a different position than the WR/RB prospect file originally listed.
+# We need to drop them from any other position's pipeline file so they aren't scored twice.
+RECLASSIFIED_TO_RB = {"Eli Heidenreich"}  # was WR in slap_v5_wr_2026.csv; now RB
+
 
 def pick_to_round(pick: int) -> int:
     """Standard NFL round mapping (32 picks per round, 7th round caps at 257)."""
@@ -184,11 +188,18 @@ def update_te_file():
 def update_wr_pre_file():
     """Update output/slap_v5_wr_2026.csv. Build script reads `pick` column.
 
-    Heidenreich is reclassified to RB, so if he appears in this WR file, set him to UDFA
-    so the WR pipeline ignores him (the build script joins on player_name with the WR/RB file).
+    Drops any player reclassified out of WR (e.g. Heidenreich -> RB) so the
+    build script doesn't double-score them in both pipelines.
     """
     path = ROOT / "output" / "slap_v5_wr_2026.csv"
     df = pd.read_csv(path)
+
+    # Drop reclassified players from the WR pre-calc file
+    before = len(df)
+    df = df[~df["player_name"].isin(RECLASSIFIED_TO_RB)].copy()
+    dropped = before - len(df)
+    if dropped:
+        print(f"[slap_v5_wr_2026.csv] dropped {dropped} reclassified player(s): {sorted(RECLASSIFIED_TO_RB)}")
 
     pick_lookup = {name: pick for pick, name, pos in DRAFT_PICKS if pos == "WR"}
 
