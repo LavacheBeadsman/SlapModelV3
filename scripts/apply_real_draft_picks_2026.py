@@ -43,7 +43,7 @@ DRAFT_PICKS = [
     (75,  "Caleb Douglas",        "WR"),
     (79,  "Zachariah Branch",     "WR"),
     (80,  "Ja'Kobi Lane",         "WR"),
-    (83,  "Chris Brazzell",       "WR"),   # listed as "Chris Brazzell II"
+    (83,  "Chris Brazzell II",    "WR"),
     (84,  "Ted Hurst",            "WR"),
     (87,  "Will Kacmarek",        "TE"),
     (89,  "Zavion Thomas",        "WR"),
@@ -83,7 +83,7 @@ DRAFT_PICKS = [
     (195, "Malik Benson",         "WR"),
     (197, "C.J. Daniels",         "WR"),   # listed as "CJ Daniels"
     (198, "Demond Claiborne",     "RB"),
-    (199, "Emmanuel Henderson",   "WR"),   # listed as "Emmanuel Henderson Jr."
+    (199, "Emmanuel Henderson Jr.", "WR"),
     (203, "C.J. Williams",        "WR"),   # listed as "CJ Williams"
     (204, "Lewis Bond",           "WR"),
     # Round 7

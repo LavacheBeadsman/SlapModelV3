@@ -144,7 +144,7 @@ Andy Isabella,WR,Massachusetts,2019,62,2,Drafted Pick 62,complete,,66.0,64.95,70
 D.K. Metcalf,WR,Mississippi,2019,64,2,Drafted Pick 64,complete,,65.2,63.54,70.1,46.7,backtest,45.0,0.0,100.0,22.0,18.1,0.0,569.0,440.0,1.2932,0.0,0.0,17.08125,17.08125,0.0,,3.0,V5.0,2026-04-29
 Riley Ridley,WR,Georgia,2019,126,4,Drafted Pick 126,complete,,60.6,61.21,49.4,77.4,backtest,91.1,100.0,0.0,19.0,22.2,0.0,570.0,356.0,1.6011,0.0,0.0,,,13.5,,,V5.0,2026-04-29
 Miles Boykin,WR,Notre Dame,2019,93,3,Drafted Pick 93,complete,,55.6,58.81,59.1,50.2,backtest,50.2,100.0,0.0,22.0,30.5,0.0,872.0,418.0,2.0861,0.0,0.0,5.353846,5.353846,74.6,,0.0,V5.0,2026-04-29
-Gary Jennings Jr,WR,West Virginia,2019,120,4,Drafted Pick 120,complete,,53.9,57.78,50.7,62.6,backtest,93.9,0.0,0.0,19.0,27.9,0.0,917.0,445.0,2.0607,0.0,0.0,,,0.0,,,V5.0,2026-04-29
+Gary Jennings Jr.,WR,West Virginia,2019,120,4,Drafted Pick 120,complete,,53.9,57.78,50.7,62.6,backtest,93.9,0.0,0.0,19.0,27.9,0.0,917.0,445.0,2.0607,0.0,0.0,,,0.0,,,V5.0,2026-04-29
 Hunter Renfrow,WR,Clemson,2019,149,5,Drafted Pick 149,complete,,53.0,57.3,42.1,76.7,backtest,90.0,100.0,0.0,19.0,7.9,0.0,544.0,508.0,1.0709,1.0,1.0,15.241176,15.241176,272.9,,2.0,V5.0,2026-04-29
 Terry McLaurin,WR,Ohio St.,2019,76,3,Drafted Pick 76,complete,,51.3,56.05,65.6,30.0,backtest,45.0,0.0,0.0,22.0,18.0,0.0,701.0,559.0,1.254,1.0,1.0,14.92,15.752941,322.5,,3.0,V5.0,2026-04-29
 Hakeem Butler,WR,Iowa St.,2019,103,4,Drafted Pick 103,complete,,46.7,52.92,56.2,36.6,backtest,54.9,0.0,0.0,22.0,43.6,0.0,1318.0,363.0,3.6309,0.0,0.0,,,0.0,,,V5.0,2026-04-29
@@ -352,7 +352,7 @@ Antonio Williams,WR,Clemson,2026,71,3,Drafted Pick 71,complete,,65.8,64.71,67.2,
 Zachariah Branch,WR,Georgia,2026,79,3,Drafted Pick 79,complete,,65.8,63.97,64.7,58.4,2026_prospect,62.6,0.0,100.0,21.0,25.2,7.0,811.0,417.0,1.9448,,,,,,,,V5.0,2026-04-29
 Zavion Thomas,WR,LSU,2026,89,3,Drafted Pick 89,complete,,65.8,64.5,60.6,66.6,2026_prospect,99.9,0.0,0.0,18.0,32.7,99.0,488.0,443.0,1.1016,,,,,,,,V5.0,2026-04-29
 Malachi Fields,WR,Notre Dame,2026,74,3,Drafted Pick 74,complete,,57.9,59.49,66.2,40.1,2026_prospect,60.1,0.0,0.0,21.0,20.3,,630.0,322.0,1.9565,,,,,,,,V5.0,2026-04-29
-Chris Brazzell,WR,Tennessee,2026,83,3,Drafted Pick 83,complete,,55.3,58.74,62.6,43.6,2026_prospect,65.3,0.0,0.0,21.0,30.7,,1017.0,437.0,2.3272,,,,,,,,V5.0,2026-04-29
+Chris Brazzell II,WR,Tennessee,2026,83,3,Drafted Pick 83,complete,,55.3,58.74,62.6,43.6,2026_prospect,65.3,0.0,0.0,21.0,30.7,,1017.0,437.0,2.3272,,,,,,,,V5.0,2026-04-29
 Elijah Sarratt,WR,Indiana,2026,115,4,Drafted Pick 115,complete,,46.1,52.53,51.6,42.3,2026_prospect,63.4,0.0,0.0,21.0,26.8,,806.0,406.0,1.9852,,,,,,,,V5.0,2026-04-29
 Ted Hurst,WR,Georgia State,2026,84,3,Drafted Pick 84,partial_data,,45.8,52.48,62.4,23.3,2026_prospect,35.0,0.0,0.0,,37.1,,1004.0,475.0,2.1137,,,,,,,,V5.0,2026-04-29
 Brenen Thompson,WR,Mississippi State,2026,105,4,Drafted Pick 105,complete,,44.4,51.77,55.3,33.9,2026_prospect,50.9,0.0,0.0,22.0,31.8,14.0,1054.0,390.0,2.7026,,,,,,,,V5.0,2026-04-29
@@ -371,7 +371,7 @@ Josh Cameron,WR,Baylor,2026,191,6,Drafted Pick 191,complete,,19.8,40.8,25.4,42.4
 Shelton Sampson Jr.,WR,Louisiana-Lafayette,2026,258,7,UDFA,complete,,19.8,40.92,1.4,72.6,2026_prospect,83.9,0.0,100.0,20.0,37.8,,537.0,342.0,1.5702,,,,,,,,V5.0,2026-04-29
 Anthony Evans III,WR,Mississippi State,2026,258,7,UDFA,complete,,18.6,40.46,1.4,71.1,2026_prospect,81.6,0.0,100.0,20.0,23.2,47.0,831.0,390.0,2.1308,,,,,,,,V5.0,2026-04-29
 Barion Brown,WR,LSU,2026,190,6,Drafted Pick 190,partial_data,,14.3,39.5,25.9,37.6,2026_prospect,31.4,0.0,100.0,,11.4,33.0,532.0,443.0,1.2009,,,,,,,,V5.0,2026-04-29
-Emmanuel Henderson,WR,Kansas,2026,199,6,Drafted Pick 199,complete,,9.1,36.49,23.3,31.8,2026_prospect,47.7,0.0,0.0,22.0,25.4,16.0,766.0,345.0,2.2203,,,,,,,,V5.0,2026-04-29
+Emmanuel Henderson Jr.,WR,Kansas,2026,199,6,Drafted Pick 199,complete,,9.1,36.49,23.3,31.8,2026_prospect,47.7,0.0,0.0,22.0,25.4,16.0,766.0,345.0,2.2203,,,,,,,,V5.0,2026-04-29
 Cody Jackson,WR,Tarleton State,2026,258,7,UDFA,complete,,7.9,36.12,1.4,56.6,2026_prospect,84.9,0.0,0.0,20.0,53.4,6.0,799.0,126.0,6.3413,,,,,,,,V5.0,2026-04-29
 Noah Thomas,WR,Georgia,2026,258,7,UDFA,partial_data,,6.5,34.56,1.4,51.4,2026_prospect,27.1,100.0,100.0,,12.1,,254.0,417.0,0.6091,,,,,,,,V5.0,2026-04-29
 London Humphreys,WR,Georgia,2026,258,7,UDFA,partial_data,,6.5,34.23,1.4,50.3,2026_prospect,25.5,100.0,100.0,,10.5,7.0,276.0,417.0,0.6619,,,,,,,,V5.0,2026-04-29
