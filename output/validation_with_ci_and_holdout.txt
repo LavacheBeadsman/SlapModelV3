@@ -1,0 +1,194 @@
+SLAP V5 — Validation Report (Bootstrap CIs + Cross-Validation)
+==============================================================================
+Generated:               2026-04-29
+Bootstrap iterations:    1000
+Cross-validation folds:  5 (stratified by draft year)
+Holdout fraction:        0.2
+Seeds tested:            [42, 7, 13, 99, 2024]
+
+METHODOLOGY:
+- Spearman rank correlation (rank-based, robust to outliers)
+- 95% CIs: 1000-iteration percentile bootstrap (resample with replacement)
+- 5-fold CV: each fold held out once, mean ± std reported across folds
+- Seed sensitivity: 5 different random seeds for a single 80/20 split
+
+CAVEAT: V5 weights were tuned on the full backtest, so this validates the
+STABILITY of the predictions across random subsets — not true out-of-sample
+weight generalization (which would require re-tuning weights on each train fold).
+
+==============================================================================
+  WR backtest  (n_total = 339)
+==============================================================================
+
+  1) FULL-SAMPLE correlations with 95% bootstrap CIs (n_iter=1000)
+
+  --- SLAP V5 model ---
+  Outcome                             n              r (95% CI)
+  ----------------------------------------------------------------
+  First 3-year PPG                  237  +0.517 [+0.422, +0.606]
+  Career PPG                        243  +0.496 [+0.394, +0.583]
+  Top-24 hit rate                   339  +0.454 [+0.374, +0.527]
+  Top-12 hit rate                   339  +0.300 [+0.220, +0.375]
+  Seasons over 10 PPG (3yr)         237  +0.505 [+0.402, +0.588]
+
+  --- DC alone ---
+  Outcome                             n              r (95% CI)
+  ----------------------------------------------------------------
+  First 3-year PPG                  237  +0.503 [+0.409, +0.590]
+  Career PPG                        243  +0.481 [+0.374, +0.563]
+  Top-24 hit rate                   339  +0.447 [+0.363, +0.522]
+  Top-12 hit rate                   339  +0.280 [+0.190, +0.361]
+  Seasons over 10 PPG (3yr)         237  +0.484 [+0.377, +0.572]
+
+
+  2) 5-FOLD CROSS-VALIDATION (stratified by draft year)
+     Each fold serves as the held-out test once; reports mean ± std across folds.
+
+  --- SLAP V5 model ---
+  Outcome                           n_test   r_mean    r_std    r_min    r_max
+  ------------------------------------------------------------------------
+  First 3-year PPG                      47   +0.502    0.088   +0.384   +0.646
+  Career PPG                            48   +0.484    0.089   +0.401   +0.657
+  Top-24 hit rate                       67   +0.446    0.099   +0.318   +0.578
+  Top-12 hit rate                       67   +0.275    0.131   +0.088   +0.397
+  Seasons over 10 PPG (3yr)             47   +0.487    0.081   +0.384   +0.627
+
+  --- DC alone ---
+  Outcome                           n_test   r_mean    r_std    r_min    r_max
+  ------------------------------------------------------------------------
+  First 3-year PPG                      47   +0.498    0.067   +0.434   +0.627
+  Career PPG                            48   +0.478    0.092   +0.408   +0.659
+  Top-24 hit rate                       67   +0.433    0.096   +0.302   +0.567
+  Top-12 hit rate                       67   +0.258    0.126   +0.061   +0.389
+  Seasons over 10 PPG (3yr)             47   +0.479    0.091   +0.416   +0.658
+
+
+  3) SEED SENSITIVITY: single stratified 80/20 split, 5 different random seeds
+     Wide spread = high sensitivity to specific random sample.
+
+  Predictor       Outcome          Seed=42  Seed=7   Seed=13  Seed=99  Seed=2024
+  ----------------------------------------------------------------------------------
+  SLAP V5 model   Career PPG        +0.245   +0.436   +0.601   +0.483   +0.474
+  SLAP V5 model   Top-24 hit rate    +0.345   +0.469   +0.490   +0.459   +0.525
+
+  DC alone        Career PPG        +0.292   +0.397   +0.518   +0.494   +0.492
+  DC alone        Top-24 hit rate    +0.350   +0.451   +0.471   +0.449   +0.517
+
+
+==============================================================================
+  RB backtest  (n_total = 223)
+==============================================================================
+
+  1) FULL-SAMPLE correlations with 95% bootstrap CIs (n_iter=1000)
+
+  --- SLAP V5 model ---
+  Outcome                             n              r (95% CI)
+  ----------------------------------------------------------------
+  First 3-year PPG                  150  +0.581 [+0.441, +0.690]
+  Career PPG                        156  +0.590 [+0.457, +0.692]
+  Top-24 hit rate                   223  +0.492 [+0.375, +0.601]
+  Top-12 hit rate                   223  +0.439 [+0.318, +0.545]
+  Seasons over 10 PPG (3yr)         150  +0.548 [+0.407, +0.661]
+
+  --- DC alone ---
+  Outcome                             n              r (95% CI)
+  ----------------------------------------------------------------
+  First 3-year PPG                  150  +0.524 [+0.376, +0.654]
+  Career PPG                        156  +0.549 [+0.411, +0.663]
+  Top-24 hit rate                   223  +0.471 [+0.362, +0.572]
+  Top-12 hit rate                   223  +0.406 [+0.285, +0.517]
+  Seasons over 10 PPG (3yr)         150  +0.522 [+0.386, +0.639]
+
+
+  2) 5-FOLD CROSS-VALIDATION (stratified by draft year)
+     Each fold serves as the held-out test once; reports mean ± std across folds.
+
+  --- SLAP V5 model ---
+  Outcome                           n_test   r_mean    r_std    r_min    r_max
+  ------------------------------------------------------------------------
+  First 3-year PPG                      30   +0.541    0.171   +0.302   +0.750
+  Career PPG                            31   +0.563    0.155   +0.389   +0.754
+  Top-24 hit rate                       44   +0.484    0.121   +0.357   +0.692
+  Top-12 hit rate                       44   +0.440    0.077   +0.347   +0.537
+  Seasons over 10 PPG (3yr)             30   +0.529    0.165   +0.223   +0.675
+
+  --- DC alone ---
+  Outcome                           n_test   r_mean    r_std    r_min    r_max
+  ------------------------------------------------------------------------
+  First 3-year PPG                      30   +0.493    0.134   +0.316   +0.693
+  Career PPG                            31   +0.525    0.144   +0.347   +0.747
+  Top-24 hit rate                       44   +0.461    0.109   +0.318   +0.606
+  Top-12 hit rate                       44   +0.402    0.069   +0.310   +0.481
+  Seasons over 10 PPG (3yr)             30   +0.494    0.141   +0.224   +0.634
+
+
+  3) SEED SENSITIVITY: single stratified 80/20 split, 5 different random seeds
+     Wide spread = high sensitivity to specific random sample.
+
+  Predictor       Outcome          Seed=42  Seed=7   Seed=13  Seed=99  Seed=2024
+  ----------------------------------------------------------------------------------
+  SLAP V5 model   Career PPG        +0.607   +0.741   +0.589   +0.583   +0.624
+  SLAP V5 model   Top-24 hit rate    +0.533   +0.557   +0.497   +0.624   +0.526
+
+  DC alone        Career PPG        +0.604   +0.735   +0.638   +0.620   +0.582
+  DC alone        Top-24 hit rate    +0.530   +0.531   +0.526   +0.643   +0.505
+
+
+==============================================================================
+  TE backtest  (n_total = 160)
+==============================================================================
+
+  1) FULL-SAMPLE correlations with 95% bootstrap CIs (n_iter=1000)
+
+  --- SLAP V5 model ---
+  Outcome                             n              r (95% CI)
+  ----------------------------------------------------------------
+  First 3-year PPG                  106  +0.616 [+0.460, +0.744]
+  Career PPG                        114  +0.599 [+0.462, +0.717]
+  Top-24 hit rate                   160  +0.495 [+0.383, +0.592]
+  Top-12 hit rate                   160  +0.269 [+0.130, +0.373]
+  Seasons over 10 PPG (3yr)         107  +0.536 [+0.397, +0.649]
+
+  --- DC alone ---
+  Outcome                             n              r (95% CI)
+  ----------------------------------------------------------------
+  First 3-year PPG                  106  +0.579 [+0.436, +0.706]
+  Career PPG                        114  +0.573 [+0.429, +0.694]
+  Top-24 hit rate                   160  +0.460 [+0.350, +0.553]
+  Top-12 hit rate                   160  +0.256 [+0.122, +0.367]
+  Seasons over 10 PPG (3yr)         107  +0.490 [+0.321, +0.614]
+
+
+  2) 5-FOLD CROSS-VALIDATION (stratified by draft year)
+     Each fold serves as the held-out test once; reports mean ± std across folds.
+
+  --- SLAP V5 model ---
+  Outcome                           n_test   r_mean    r_std    r_min    r_max
+  ------------------------------------------------------------------------
+  First 3-year PPG                      21   +0.565    0.090   +0.443   +0.720
+  Career PPG                            22   +0.535    0.116   +0.319   +0.653
+  Top-24 hit rate                       32   +0.478    0.126   +0.258   +0.650
+  Top-12 hit rate                       30   +0.266    0.138   +0.036   +0.382
+  Seasons over 10 PPG (3yr)             21   +0.514    0.178   +0.173   +0.689
+
+  --- DC alone ---
+  Outcome                           n_test   r_mean    r_std    r_min    r_max
+  ------------------------------------------------------------------------
+  First 3-year PPG                      21   +0.548    0.083   +0.438   +0.692
+  Career PPG                            22   +0.518    0.054   +0.432   +0.590
+  Top-24 hit rate                       32   +0.434    0.138   +0.172   +0.579
+  Top-12 hit rate                       30   +0.243    0.165   -0.036   +0.385
+  Seasons over 10 PPG (3yr)             21   +0.467    0.176   +0.130   +0.610
+
+
+  3) SEED SENSITIVITY: single stratified 80/20 split, 5 different random seeds
+     Wide spread = high sensitivity to specific random sample.
+
+  Predictor       Outcome          Seed=42  Seed=7   Seed=13  Seed=99  Seed=2024
+  ----------------------------------------------------------------------------------
+  SLAP V5 model   Career PPG        +0.587   +0.573   +0.348   +0.441   +0.784
+  SLAP V5 model   Top-24 hit rate    +0.512   +0.452   +0.317   +0.264   +0.520
+
+  DC alone        Career PPG        +0.594   +0.615   +0.179   +0.481   +0.795
+  DC alone        Top-24 hit rate    +0.488   +0.441   +0.268   +0.250   +0.471
+
