@@ -905,13 +905,73 @@ master = pd.concat([wr_rows, rb_rows, te_rows, wr26_rows, rb26_rows, te26_rows],
 # Computed RYPTPA: receiving yards per team pass attempt. NaN if either input is missing.
 master['ryptpa'] = (master['rec_yards'] / master['team_pass_att']).round(4)
 
+# ----------------------------------------------------------------------------
+# Publication-ready metadata columns
+# ----------------------------------------------------------------------------
+from datetime import date
+
+# Players whose row should be reviewed before publication. Map: name -> short reason.
+# These are surfaced via data_quality_flag='outlier_review' so casual readers know
+# to dig in rather than assume the row is straightforward.
+PUBLICATION_OUTLIERS = {
+    'Eli Heidenreich': 'Navy triple-option offense — receiving rate inflated vs spread-offense backtest',
+}
+
+UDFA_PICK = 258  # convention used by scripts/apply_real_draft_picks_2026.py
+
+
+def _dataset_label(row):
+    """Human-readable status. 'UDFA' for undrafted markers, 'Drafted Pick X' otherwise."""
+    if row['dataset'] == '2026_prospect' and row['pick'] >= UDFA_PICK:
+        return 'UDFA'
+    return f"Drafted Pick {int(row['pick'])}"
+
+
+def _data_quality_flag(row):
+    """Per-row data status for public consumption.
+
+    Values:
+      complete        — all expected scoring inputs populated
+      partial_data    — at least one receiving/dominator field is NaN
+      outlier_review  — known data quirk (manually flagged in PUBLICATION_OUTLIERS)
+    """
+    if row['player_name'] in PUBLICATION_OUTLIERS:
+        return 'outlier_review'
+
+    pos = row['position']
+    # Fields we expect to be populated for each position
+    if pos == 'WR':
+        # WR formula doesn't use rec_yards/team_pass_att, but for transparency we still check
+        critical = ['peak_dominator', 'breakout_age']
+    elif pos == 'RB':
+        # RB needs rec_yards & team_pass_att for production score
+        critical = ['rec_yards', 'team_pass_att']
+    else:  # TE
+        critical = ['rec_yards', 'team_pass_att']
+
+    if any(pd.isna(row.get(c)) for c in critical):
+        return 'partial_data'
+    return 'complete'
+
+
+def _outlier_note(row):
+    return PUBLICATION_OUTLIERS.get(row['player_name'], '')
+
+
+master['dataset_label'] = master.apply(_dataset_label, axis=1)
+master['data_quality_flag'] = master.apply(_data_quality_flag, axis=1)
+master['outlier_note'] = master.apply(_outlier_note, axis=1)
+master['model_version'] = 'V5.0'
+master['data_as_of_date'] = date.today().isoformat()
+
 # Sort: position → draft_year → SLAP descending
 master = master.sort_values(['position', 'draft_year', 'slap_display_score'], ascending=[True, True, False])
 master = master.reset_index(drop=True)
 
-# Column order
+# Column order (publication metadata first so it's visible in CSV preview)
 col_order = [
     'player_name', 'position', 'college', 'draft_year', 'pick', 'round',
+    'dataset_label', 'data_quality_flag', 'outlier_note',
     'slap_display_score', 'slap_model_score', 'dc_score', 'prospect_profile', 'dataset',
     # WR components
     'enhanced_breakout', 'teammate_score', 'early_declare_score',
@@ -925,6 +985,8 @@ col_order = [
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
     'nfl_best_ppr', 'nfl_best_ppg', 'nfl_seasons_10ppg_3yr',
+    # Publication metadata
+    'model_version', 'data_as_of_date',
 ]
 master = master[col_order]
 
