@@ -1,0 +1,109 @@
+Breakout audit — all positions
+==============================================================================
+
+TE 2026 changes:
+
+  Max Klare (born 2003): bo 20 -> 21
+    2023 (age 20) | Purdue                 | rec= 196, team_plays=231 | dom=3.9%
+    2024 (age 21) | Purdue                 | rec= 536, team_plays=178 | dom=21.0% <- HIT 15%
+    2025 (age 22) | Ohio State             | rec= 427, team_plays=301 | dom=8.2%
+
+  Justin Joly (born 2003): bo 19 -> 20
+    2022 (age 19) | UConn                  | rec= 198, team_plays=145 | dom=13.3%
+    2023 (age 20) | UConn                  | rec= 551, team_plays=211 | dom=20.7% <- HIT 15%
+    2024 (age 21) | NC State               | rec= 517, team_plays=224 | dom=15.8% <- HIT 15%
+    2025 (age 22) | NC State               | rec= 476, team_plays=272 | dom=16.4% <- HIT 15%
+
+  Tanner Koziol (born 2003): bo 20 -> 19
+    2022 (age 19) | Ball State             | rec= 356, team_plays=273 | dom=26.3% <- HIT 15%
+    2023 (age 20) | Ball State             | rec= 282, team_plays=177 | dom=25.2% <- HIT 15%
+    2024 (age 21) | Ball State             | rec= 804, team_plays=276 | dom=27.8% <- HIT 15%
+    2025 (age 22) | Houston                | rec= 621, team_plays=225 | dom=15.2% <- HIT 15%
+
+  Michael Trigg (born 2002): bo 22 -> NaN
+    2021 (age 19) | USC                    | rec= 102, team_plays=261 | dom=4.5%
+    2022 (age 20) | Ole Miss               | rec= 144, team_plays=215 | dom=2.6%
+    2023 (age 21) | Ole Miss               | rec=  65, team_plays=229 | dom=3.2%
+    2024 (age 22) | Baylor                 | rec= 390, team_plays=221 | dom=10.2%
+    2025 (age 23) | Baylor                 | rec= 672, team_plays=292 | dom=14.5%
+
+  Eli Raridon (born 2003): bo 21 -> NaN
+    2023 (age 20) | Notre Dame             | rec=  39, team_plays=209 | dom=2.4%
+    2024 (age 21) | Notre Dame             | rec=  54, team_plays=213 | dom=4.0%
+    2025 (age 22) | Notre Dame             | rec= 482, team_plays=202 | dom=8.9%
+
+  Dallen Bentley (born 2002): bo 22 -> 23
+    2024 (age 22) | Utah                   | rec=  15, team_plays=188 | dom=0.3%
+    2025 (age 23) | Utah                   | rec= 506, team_plays=221 | dom=17.3% <- HIT 15%
+
+  Jack Endries (born 2002): bo 21 -> 22
+    2023 (age 21) | California             | rec= 301, team_plays=180 | dom=10.6%
+    2024 (age 22) | California             | rec= 541, team_plays=260 | dom=16.9% <- HIT 15%
+    2025 (age 23) | Texas                  | rec= 335, team_plays=238 | dom=11.9%
+
+  Joe Royer (born 2001): bo 22 -> NaN
+    2021 (age 20) | Ohio State             | rec=   9, team_plays=312 | dom=0.1%
+    2022 (age 21) | Ohio State             | rec=   1, team_plays=252 | dom=0.0%
+    2023 (age 22) | Ohio State             | rec=   5, team_plays=245 | dom=0.1%
+    2024 (age 23) | Cincinnati             | rec= 507, team_plays=251 | dom=14.5%
+    2025 (age 24) | Cincinnati             | rec= 389, team_plays=215 | dom=14.2%
+
+  Dae'Quan Wright (born 2003): bo 21 -> 22
+    2022 (age 19) | Miami                  | rec=  27, team_plays=252 | dom=0.5%
+    2022 (age 19) | Virginia Tech          | rec= 181, team_plays=177 | dom=4.7%
+    2023 (age 20) | Virginia Tech          | rec= 366, team_plays=188 | dom=7.5%
+    2024 (age 21) | Ole Miss               | rec= 288, team_plays=264 | dom=9.1%
+    2025 (age 22) | Ole Miss               | rec= 584, team_plays=327 | dom=16.6% <- HIT 15%
+
+  Seydou Traore (born 2002): bo 19 -> 20
+    2021 (age 19) | Arkansas State         | rec=  47, team_plays=221 | dom=0.9%
+    2022 (age 20) | Arkansas State         | rec= 629, team_plays=245 | dom=21.8% <- HIT 15%
+    2024 (age 22) | Mississippi State      | rec= 314, team_plays=206 | dom=8.5%
+    2025 (age 23) | Mississippi State      | rec= 368, team_plays=235 | dom=16.7% <- HIT 15%
+
+  Josh Cuevas (born 2002): bo NaN -> 20
+    2022 (age 20) | Cal Poly               | rec= 328, team_plays=164 | dom=20.6% <- HIT 15%
+    2023 (age 21) | Washington             | rec= 164, team_plays=311 | dom=3.3%
+    2024 (age 22) | Alabama                | rec= 213, team_plays=214 | dom=6.8%
+    2025 (age 23) | Alabama                | rec= 394, team_plays=337 | dom=10.6%
+
+  Jack Velling (born 2002): bo 21 -> 20
+    2022 (age 20) | Oregon State           | rec= 260, team_plays=183 | dom=15.6% <- HIT 15%
+    2023 (age 21) | Oregon State           | rec= 384, team_plays=204 | dom=18.5% <- HIT 15%
+    2024 (age 22) | Michigan State         | rec= 411, team_plays=193 | dom=12.6%
+    2025 (age 23) | Michigan State         | rec= 350, team_plays=225 | dom=14.7%
+
+  Toby Payne (born 2002): bo 22 -> 23
+    2024 (age 22) | Marshall               | rec= 169, team_plays=188 | dom=14.8%
+    2025 (age 23) | Marshall               | rec= 369, team_plays=209 | dom=15.4% <- HIT 15%
+
+  Dan Villari (born 2001): bo 24 -> NaN
+    2022 (age 21) | Syracuse               | rec=  22, team_plays=189 | dom=0.4%
+    2023 (age 22) | Syracuse               | rec= 139, team_plays=177 | dom=6.3%
+    2024 (age 23) | Syracuse               | rec=  57, team_plays=365 | dom=0.7%
+    2025 (age 24) | Syracuse               | rec= 412, team_plays=221 | dom=8.2%
+
+  Bauer Sharp (born 2004): bo NaN -> 20
+    2022 (age 18) | SE Louisiana           | rec=  37, team_plays=143 | dom=1.2%
+    2023 (age 19) | Northwestern State     | rec=  12, team_plays=114 | dom=0.6%
+    2023 (age 19) | SE Louisiana           | rec= 266, team_plays=196 | dom=9.2%
+    2024 (age 20) | Oklahoma               | rec= 315, team_plays=199 | dom=15.0% <- HIT 15%
+    2025 (age 21) | LSU                    | rec= 208, team_plays=210 | dom=7.9%
+
+  Jameson Geers (born 2002): bo 21 -> 22
+    2024 (age 22) | Minnesota              | rec= 247, team_plays=252 | dom=15.8% <- HIT 15%
+    2025 (age 23) | Minnesota              | rec= 182, team_plays=227 | dom=13.1%
+
+  Luke Hasz (born 2004): bo NaN -> 20
+    2023 (age 19) | Arkansas               | rec= 253, team_plays=208 | dom=12.4%
+    2024 (age 20) | Arkansas               | rec= 281, team_plays=246 | dom=15.0% <- HIT 15%
+    2025 (age 21) | Ole Miss               | rec=  28, team_plays=327 | dom=3.6%
+
+
+WR backtest fills: 0
+
+
+TE backtest fills: 3
+  Jordan Akins               age 24 @ UCF (2016)
+  Tyler Davis                age 21 @ UConn (2018)
+  Jackson Hawes              age 21 @ Yale (2022)
