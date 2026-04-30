@@ -913,6 +913,28 @@ master = pd.concat([wr_rows, rb_rows, te_rows, wr26_rows, rb26_rows, te26_rows],
 # Computed RYPTPA: receiving yards per team pass attempt. NaN if either input is missing.
 master['ryptpa'] = (master['rec_yards'] / master['team_pass_att']).round(4)
 
+# Pull peak_dominator_imputed from source files (added by manual-fill scripts).
+# Players whose peak was filled with position mean (no source data) are flagged.
+imputed_lookup = {}
+for src_file, key_cols in [
+    ('data/te_backtest_master.csv', ['player_name', 'draft_year']),
+    ('data/te_2026_prospects_final.csv', ['player_name']),
+    ('data/wr_breakout_ages_2026.csv', ['player_name']),
+]:
+    try:
+        src_df = pd.read_csv(src_file)
+        if 'peak_dominator_imputed' in src_df.columns:
+            for _, r in src_df[src_df['peak_dominator_imputed'] == True].iterrows():
+                if 'draft_year' in key_cols:
+                    imputed_lookup[(r['player_name'], int(r['draft_year']))] = True
+                else:
+                    imputed_lookup[(r['player_name'], 2026)] = True
+    except (FileNotFoundError, KeyError):
+        pass
+
+master['peak_dominator_imputed'] = master.apply(
+    lambda r: imputed_lookup.get((r['player_name'], int(r['draft_year'])), False), axis=1)
+
 # ----------------------------------------------------------------------------
 # Publication-ready metadata columns
 # ----------------------------------------------------------------------------
@@ -939,22 +961,24 @@ def _data_quality_flag(row):
     """Per-row data status for public consumption.
 
     Values:
-      complete        — all expected scoring inputs populated
+      complete        — all expected scoring inputs populated, no imputation
+      imputed         — peak_dominator filled with position mean (small school w/o source)
       partial_data    — at least one receiving/dominator field is NaN
       outlier_review  — known data quirk (manually flagged in PUBLICATION_OUTLIERS)
     """
     if row['player_name'] in PUBLICATION_OUTLIERS:
         return 'outlier_review'
 
+    # Imputation flag wins over partial_data (more specific)
+    if row.get('peak_dominator_imputed') == True:
+        return 'imputed'
+
     pos = row['position']
-    # Fields we expect to be populated for each position
     if pos == 'WR':
-        # WR formula doesn't use rec_yards/team_pass_att, but for transparency we still check
         critical = ['peak_dominator', 'breakout_age']
     elif pos == 'RB':
-        # RB needs rec_yards & team_pass_att for production score
         critical = ['rec_yards', 'team_pass_att']
-    else:  # TE
+    else:
         critical = ['rec_yards', 'team_pass_att']
 
     if any(pd.isna(row.get(c)) for c in critical):
@@ -988,7 +1012,7 @@ col_order = [
     # TE components
     'te_breakout_score', 'te_production_score', 'ras_score',
     # Shared raw inputs
-    'breakout_age', 'peak_dominator', 'rush_yards',
+    'breakout_age', 'peak_dominator', 'peak_dominator_imputed', 'rush_yards',
     'rec_yards', 'team_pass_att', 'ryptpa',
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
