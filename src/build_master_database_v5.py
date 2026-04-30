@@ -462,14 +462,22 @@ print("=" * 120)
 # (Previously read pre-computed file, but breakout scores were on wrong scale — P0 bug fix)
 wr26_pre = pd.read_csv('output/slap_v5_wr_2026.csv')
 
-# Load breakout ages (primary source for breakout_age + peak_dominator)
+# Load breakout ages (primary source for breakout_age + peak_dominator).
+# Players in this file get their breakout values overridden with canonical
+# (cross-team, reliability-filtered) values from scripts/recompute_wr_breakout_2026.py.
+# Players NOT in this file fall back to whatever wr26_pre had.
 wr26_bo = pd.read_csv('data/wr_breakout_ages_2026.csv')
+wr26_bo['_in_bo_file'] = True
 wr26 = wr26_pre.merge(
-    wr26_bo[['player_name', 'breakout_age', 'peak_dominator']].rename(
+    wr26_bo[['player_name', 'breakout_age', 'peak_dominator', '_in_bo_file']].rename(
         columns={'breakout_age': 'bo_age_src', 'peak_dominator': 'pd_src'}),
     on='player_name', how='left')
-wr26['breakout_age'] = wr26['bo_age_src'].fillna(wr26['breakout_age'])
-wr26['peak_dominator'] = wr26['pd_src'].fillna(wr26['peak_dominator'])
+# When player IS in the breakout file, use the canonical value (even if NaN —
+# NaN means "we verified there was no breakout in reliable seasons").
+in_bo = wr26['_in_bo_file'] == True
+wr26.loc[in_bo, 'breakout_age'] = wr26.loc[in_bo, 'bo_age_src']
+wr26.loc[in_bo, 'peak_dominator'] = wr26.loc[in_bo, 'pd_src']
+wr26 = wr26.drop(columns=['_in_bo_file'])
 
 # Load prospect data for additional fields
 prospects = pd.read_csv('data/prospects_final.csv')
