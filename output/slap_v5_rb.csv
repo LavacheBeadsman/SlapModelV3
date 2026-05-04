@@ -1,7 +1,7 @@
 player_name,position,college,draft_year,pick,round,dataset_label,data_quality_flag,outlier_note,slap_display_score,slap_model_score,dc_score,prospect_profile,dataset,production_score,speed_score,peak_dominator_imputed,rec_yards,team_pass_att,ryptpa,nfl_hit24,nfl_hit12,nfl_first_3yr_ppg,nfl_career_ppg,nfl_best_ppr,nfl_best_ppg,nfl_seasons_10ppg_3yr,model_version,data_as_of_date
 Melvin Gordon,RB,Wisconsin,2015,15,1,Drafted Pick 15,complete,,92.0,69.15,95.5,31.3,backtest,28.5,48.0,False,153.0,322.0,0.4752,1.0,1.0,19.276923,22.958333,296.4,17.435294117647057,2.0,V5.0,2026-05-04
-Todd Gurley,RB,Georgia,2015,10,1,Drafted Pick 10,imputed,,89.3,66.16,96.4,17.4,backtest,11.1,55.3,True,57.0,322.0,0.177,1.0,1.0,25.686667,26.578571,404.6,23.8,3.0,V5.0,2026-05-04
-Duke Johnson,RB,Miami (FL),2015,77,3,Drafted Pick 77,imputed,,88.5,65.6,76.6,63.1,backtest,67.7,35.9,True,421.0,391.0,1.0767,1.0,0.0,13.50625,13.50625,216.1,12.711764705882352,2.0,V5.0,2026-05-04
+Todd Gurley,RB,Georgia,2015,10,1,Drafted Pick 10,complete,,89.3,66.16,96.4,17.4,backtest,11.1,55.3,False,57.0,322.0,0.177,1.0,1.0,25.686667,26.578571,404.6,23.8,3.0,V5.0,2026-05-04
+Duke Johnson,RB,Miami (FL),2015,77,3,Drafted Pick 77,complete,,88.5,65.6,76.6,63.1,backtest,67.7,35.9,False,421.0,391.0,1.0767,1.0,0.0,13.50625,13.50625,216.1,12.711764705882352,2.0,V5.0,2026-05-04
 Ameer Abdullah,RB,Nebraska,2015,54,2,Drafted Pick 54,complete,,84.9,62.7,84.1,41.8,backtest,45.0,23.1,False,269.0,359.0,0.7493,0.0,0.0,8.885714,9.630769,125.2,7.364705882352942,0.0,V5.0,2026-05-04
 T.J. Yeldon,RB,Alabama,2015,36,2,Drafted Pick 36,complete,,83.6,61.78,90.2,27.4,backtest,25.1,41.6,False,180.0,451.0,0.3991,0.0,0.0,12.991667,12.991667,173.1,10.18235294117647,1.0,V5.0,2026-05-04
 David Johnson,RB,Northern Iowa,2015,86,3,Drafted Pick 86,complete,,73.1,56.29,74.0,41.2,backtest,37.8,61.6,False,276.0,417.0,0.6619,1.0,1.0,25.4875,25.4875,407.8,23.988235294117647,2.0,V5.0,2026-05-04
@@ -60,7 +60,7 @@ Brian Hill,RB,Wyoming,2017,156,5,Drafted Pick 156,complete,,23.9,36.59,37.9,16.4
 Matthew Dayes,RB,North Carolina St.,2017,252,7,Drafted Pick 252,complete,,15.1,31.29,2.8,36.6,backtest,34.8,47.3,False,267.0,438.0,0.6096,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
 Elijah Hood,RB,North Carolina,2017,242,7,Drafted Pick 242,complete,,10.2,28.0,6.9,23.8,backtest,19.5,49.6,False,142.0,458.0,0.31,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
 Brandon Wilson,RB,Houston,2017,207,6,Drafted Pick 207,complete,,9.8,27.83,19.9,11.0,backtest,5.7,42.6,False,52.0,523.0,0.0994,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
-De'Angelo Henderson,RB,Coastal Carolina,2017,203,6,Drafted Pick 203,imputed,,8.5,26.94,22.3,6.9,backtest,0.0,48.5,True,,,,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
+De'Angelo Henderson,RB,Coastal Carolina,2017,203,6,Drafted Pick 203,partial_data,,8.5,26.94,22.3,6.9,backtest,0.0,48.5,False,,,,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
 Chris Carson,RB,Oklahoma St.,2017,249,7,Drafted Pick 249,complete,,6.3,25.76,4.5,19.8,backtest,16.5,39.4,False,128.0,465.0,0.2753,1.0,0.0,15.506667,15.65,232.6,13.682352941176472,2.0,V5.0,2026-05-04
 Khalfani Muhammad,RB,California,2017,241,7,Drafted Pick 241,complete,,5.8,25.74,7.6,17.0,backtest,12.8,42.6,False,132.0,621.0,0.2126,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
 Devante Mays,RB,Utah St.,2017,238,7,Drafted Pick 238,complete,,1.4,22.64,8.0,7.1,backtest,1.2,42.6,False,8.0,383.0,0.0209,0.0,0.0,,,1.1,0.0647058823529411,,V5.0,2026-05-04
@@ -84,7 +84,7 @@ David Williams,RB,Arkansas,2018,226,7,Drafted Pick 226,complete,,15.9,31.94,13.3
 Justin Jackson,RB,Northwestern,2018,251,7,Drafted Pick 251,complete,,14.6,30.94,3.4,35.3,backtest,35.9,31.3,False,276.0,461.0,0.5987,0.0,0.0,8.1625,8.1625,86.2,5.070588235294117,0.0,V5.0,2026-05-04
 Nick Bawden,RB,San Diego St.,2018,237,7,Drafted Pick 237,complete,,14.2,30.74,8.9,29.9,backtest,24.5,62.3,False,103.0,252.0,0.4087,0.0,0.0,,,0.0,0.0,,V5.0,2026-05-04
 Bo Scarbrough,RB,Alabama,2018,236,7,Drafted Pick 236,complete,,11.5,29.1,10.0,24.9,backtest,18.8,61.5,False,109.0,332.0,0.3283,0.0,0.0,,,43.2,2.541176470588236,,V5.0,2026-05-04
-Trenton Cannon,RB,Virginia St.,2018,204,6,Drafted Pick 204,imputed,,7.6,26.51,21.4,6.1,backtest,0.0,42.6,True,225.0,,,0.0,0.0,4.427273,4.427273,48.7,2.864705882352941,0.0,V5.0,2026-05-04
+Trenton Cannon,RB,Virginia St.,2018,204,6,Drafted Pick 204,partial_data,,7.6,26.51,21.4,6.1,backtest,0.0,42.6,False,225.0,,,0.0,0.0,4.427273,4.427273,48.7,2.864705882352941,0.0,V5.0,2026-05-04
 Josh Jacobs,RB,Alabama,2019,24,1,Drafted Pick 24,complete,,92.4,69.19,94.4,39.5,backtest,35.4,63.6,False,247.0,438.0,0.5639,1.0,1.0,15.42,19.311765,328.3,19.31176470588236,3.0,V5.0,2026-05-04
 Darrell Henderson,RB,Memphis,2019,70,3,Drafted Pick 70,complete,,81.0,60.01,80.1,43.4,backtest,42.9,46.6,False,295.0,413.0,0.7143,0.0,0.0,13.616667,13.616667,171.4,10.08235294117647,1.0,V5.0,2026-05-04
 Miles Sanders,RB,Penn St.,2019,53,2,Drafted Pick 53,complete,,75.3,57.36,84.5,26.0,backtest,22.0,49.8,False,139.0,379.0,0.3668,1.0,1.0,14.2,14.2,244.8,14.4,2.0,V5.0,2026-05-04
@@ -278,4 +278,4 @@ Logan Diggs,RB,Mississippi,2026,258,7,UDFA,complete,,1.0,21.74,1.4,11.3,2026_pro
 E.J. Smith,RB,Texas A&M,2026,258,7,UDFA,complete,,1.0,20.66,1.4,8.2,2026_prospect,2.5,42.6,False,18.0,408.0,0.0441,,,,,,,,V5.0,2026-05-04
 Roydell Williams,RB,Florida State,2026,258,7,UDFA,complete,,1.0,20.81,1.4,8.7,2026_prospect,3.0,42.6,False,19.0,339.0,0.056,,,,,,,,V5.0,2026-05-04
 Cam Porter,RB,Northwestern,2026,258,7,UDFA,complete,,1.0,21.0,1.4,9.2,2026_prospect,3.7,42.6,False,23.0,378.0,0.0608,,,,,,,,V5.0,2026-05-04
-Curtis Allen,RB,Virginia Union,2026,258,7,UDFA,imputed,,1.0,19.9,1.4,6.1,2026_prospect,0.0,42.6,True,,,,,,,,,,,V5.0,2026-05-04
+Curtis Allen,RB,Virginia Union,2026,258,7,UDFA,partial_data,,1.0,19.9,1.4,6.1,2026_prospect,0.0,42.6,False,,,,,,,,,,,V5.0,2026-05-04

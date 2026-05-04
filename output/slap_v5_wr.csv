@@ -422,7 +422,7 @@ Tyler Brown,WR,Clemson,2026,258,7,UDFA,partial_data,,1.6,27.1,1.4,26.5,2026_pros
 Braylon James,WR,TCU,2026,258,7,UDFA,partial_data,,1.6,27.18,1.4,26.8,2026_prospect,15.2,0.0,100.0,,0.2,False,,6.0,443.0,0.0135,,,,,,,,V5.0,2026-05-04
 Aaron Anderson,WR,LSU,2026,258,7,UDFA,partial_data,,1.0,26.0,1.4,22.9,2026_prospect,34.3,0.0,0.0,,19.3,False,2.0,398.0,443.0,0.8984,,,,,,,,V5.0,2026-05-04
 Kaleb Brown,WR,UAB,2026,258,7,UDFA,partial_data,,1.0,24.36,1.4,17.4,2026_prospect,26.1,0.0,0.0,,11.1,False,5.0,255.0,438.0,0.5822,,,,,,,,V5.0,2026-05-04
-Tyren Montgomery,WR,John Carroll,2026,258,7,UDFA,imputed,,1.0,26.14,1.4,23.3,2026_prospect,35.0,0.0,0.0,,21.6,True,,,,,,,,,,,,V5.0,2026-05-04
+Tyren Montgomery,WR,John Carroll,2026,258,7,UDFA,partial_data,,1.0,24.14,1.4,16.7,2026_prospect,25.0,0.0,0.0,,,False,,,,,,,,,,,,V5.0,2026-05-04
 Rara Thomas,WR,Troy,2026,258,7,UDFA,complete,,1.0,26.46,1.4,24.4,2026_prospect,36.6,0.0,0.0,23.0,23.2,False,39.0,629.0,433.0,1.4527,,,,,,,,V5.0,2026-05-04
 Jalil Farooq,WR,Maryland,2026,258,7,UDFA,complete,,1.0,25.14,1.4,20.0,2026_prospect,30.0,0.0,0.0,23.0,20.0,False,8.0,545.0,491.0,1.11,,,,,,,,V5.0,2026-05-04
 Jeff Caldwell,WR,Cincinnati,2026,258,7,UDFA,partial_data,,1.0,25.8,1.4,22.2,2026_prospect,33.3,0.0,0.0,,18.3,False,,478.0,363.0,1.3168,,,,,,,,V5.0,2026-05-04
@@ -433,7 +433,7 @@ Kyron Ware-Hudson,WR,Penn State,2026,258,7,UDFA,partial_data,,1.0,24.57,1.4,18.1
 Jaron Glover,WR,Mississippi State,2026,258,7,UDFA,partial_data,,1.0,24.41,1.4,17.6,2026_prospect,26.4,0.0,0.0,,11.4,False,,192.0,338.0,0.568,,,,,,,,V5.0,2026-05-04
 Andrel Anthony,WR,Duke,2026,258,7,UDFA,partial_data,,1.0,24.22,1.4,17.0,2026_prospect,25.4,0.0,0.0,,10.4,False,,246.0,506.0,0.4862,,,,,,,,V5.0,2026-05-04
 Malik McClain,WR,Arizona State,2026,258,7,UDFA,partial_data,,1.0,24.15,1.4,16.7,2026_prospect,25.1,0.0,0.0,,10.1,False,,441.0,430.0,1.0256,,,,,,,,V5.0,2026-05-04
-Max Tomzcak,WR,Youngstown State,2026,258,7,UDFA,imputed,,1.0,26.14,1.4,23.3,2026_prospect,35.0,0.0,0.0,,21.6,True,,,,,,,,,,,,V5.0,2026-05-04
+Max Tomzcak,WR,Youngstown State,2026,258,7,UDFA,partial_data,,1.0,24.14,1.4,16.7,2026_prospect,25.0,0.0,0.0,,,False,,,,,,,,,,,,V5.0,2026-05-04
 JoJo Earle,WR,UNLV,2026,258,7,UDFA,partial_data,,1.0,24.62,1.4,18.3,2026_prospect,27.4,0.0,0.0,,7.4,False,102.0,258.0,424.0,0.6085,,,,,,,,V5.0,2026-05-04
 Chris Hilton,WR,LSU,2026,258,7,UDFA,partial_data,,1.0,23.77,1.4,15.4,2026_prospect,23.1,0.0,0.0,,8.1,False,,122.0,443.0,0.2754,,,,,,,,V5.0,2026-05-04
 Christian Leary,WR,Western Michigan,2026,258,7,UDFA,partial_data,,1.0,25.17,1.4,20.1,2026_prospect,30.2,0.0,0.0,,10.2,False,46.0,115.0,305.0,0.377,,,,,,,,V5.0,2026-05-04

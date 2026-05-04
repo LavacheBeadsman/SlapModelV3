@@ -935,23 +935,12 @@ for src_file, key_cols in [
 master['peak_dominator_imputed'] = master.apply(
     lambda r: imputed_lookup.get((r['player_name'], int(r['draft_year'])), False), axis=1)
 
-# ----------------------------------------------------------------------------
-# Final imputation pass: only impute peak_dominator (which is consistent with
-# how the model handles missing values internally via s_breakout_raw_filled).
-#
-# DO NOT impute ryptpa: the production_score uses raw rec_yards / team_pass_att
-# from source files, treating NaN as zero production. Imputing ryptpa in the
-# master DB would create a misleading display value (CSV says "average") while
-# the model treats the player as having zero receiving production.
-# ----------------------------------------------------------------------------
-for (pos, ds), group in master.groupby(['position', 'dataset']):
-    # RB peak_dominator imputation (5 RBs whose receiving data couldn't be sourced)
-    if pos == 'RB':
-        nan_rb_pd = group['peak_dominator'].isna()
-        if nan_rb_pd.any():
-            mean_pd = round(group['peak_dominator'].mean(), 1)
-            master.loc[group[nan_rb_pd].index, 'peak_dominator'] = mean_pd
-            master.loc[group[nan_rb_pd].index, 'peak_dominator_imputed'] = True
+# Per CLAUDE.md "never estimate, guess, or make up data" — we do NOT impute
+# missing peak_dominator or ryptpa values in the master DB. NaN here means
+# "we don't have college receiving data for this player" (D2/D3/Ivy schools,
+# 2014 cfbfastR PBP gaps, basketball converts, etc.). The model handles
+# missing peak_dominator via its internal fallback formula, but we don't
+# pretend the gap doesn't exist in the published CSV.
 
 # ----------------------------------------------------------------------------
 # Publication-ready metadata columns
