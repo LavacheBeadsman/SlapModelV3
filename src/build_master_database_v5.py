@@ -936,28 +936,21 @@ master['peak_dominator_imputed'] = master.apply(
     lambda r: imputed_lookup.get((r['player_name'], int(r['draft_year'])), False), axis=1)
 
 # ----------------------------------------------------------------------------
-# Final imputation pass: fill any remaining NaN in scoring-adjacent columns
-# using position+dataset means. Flagged via data_quality_flag = 'imputed'.
+# Final imputation pass: only impute peak_dominator (which is consistent with
+# how the model handles missing values internally via s_breakout_raw_filled).
+#
+# DO NOT impute ryptpa: the production_score uses raw rec_yards / team_pass_att
+# from source files, treating NaN as zero production. Imputing ryptpa in the
+# master DB would create a misleading display value (CSV says "average") while
+# the model treats the player as having zero receiving production.
 # ----------------------------------------------------------------------------
-master['ryptpa_imputed'] = False
-master['rb_peak_dom_imputed'] = False
-
 for (pos, ds), group in master.groupby(['position', 'dataset']):
-    # ryptpa imputation (where rec_yards or team_pass_att was unavailable)
-    nan_ryptpa = group['ryptpa'].isna()
-    if nan_ryptpa.any():
-        mean_ryptpa = round(group['ryptpa'].mean(), 4)
-        master.loc[group[nan_ryptpa].index, 'ryptpa'] = mean_ryptpa
-        master.loc[group[nan_ryptpa].index, 'ryptpa_imputed'] = True
-
     # RB peak_dominator imputation (5 RBs whose receiving data couldn't be sourced)
     if pos == 'RB':
         nan_rb_pd = group['peak_dominator'].isna()
         if nan_rb_pd.any():
             mean_pd = round(group['peak_dominator'].mean(), 1)
             master.loc[group[nan_rb_pd].index, 'peak_dominator'] = mean_pd
-            master.loc[group[nan_rb_pd].index, 'rb_peak_dom_imputed'] = True
-            # Reuse the same flag column so data_quality_flag picks it up
             master.loc[group[nan_rb_pd].index, 'peak_dominator_imputed'] = True
 
 # ----------------------------------------------------------------------------
@@ -996,7 +989,7 @@ def _data_quality_flag(row):
         return 'outlier_review'
 
     # Imputation flag wins over partial_data (more specific)
-    if row.get('peak_dominator_imputed') == True or row.get('ryptpa_imputed') == True:
+    if row.get('peak_dominator_imputed') == True:
         return 'imputed'
 
     pos = row['position']
@@ -1039,7 +1032,7 @@ col_order = [
     'te_breakout_score', 'te_production_score', 'ras_score',
     # Shared raw inputs
     'breakout_age', 'peak_dominator', 'peak_dominator_imputed', 'rush_yards',
-    'rec_yards', 'team_pass_att', 'ryptpa', 'ryptpa_imputed',
+    'rec_yards', 'team_pass_att', 'ryptpa',
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
     'nfl_best_ppr', 'nfl_best_ppg', 'nfl_seasons_10ppg_3yr',

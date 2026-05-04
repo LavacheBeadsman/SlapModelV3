@@ -1,218 +1,218 @@
-player_name,position,college,draft_year,pick,round,dataset_label,data_quality_flag,outlier_note,slap_display_score,slap_model_score,dc_score,prospect_profile,dataset,enhanced_breakout,teammate_score,early_declare_score,production_score,speed_score,te_breakout_score,te_production_score,ras_score,breakout_age,peak_dominator,peak_dominator_imputed,rush_yards,rec_yards,team_pass_att,ryptpa,ryptpa_imputed,model_version,data_as_of_date,pos_rank
-Jeremiyah Love,RB,Notre Dame,2026,3,1,Drafted Pick 3,complete,,98.6,83.1,98.6,56.1,2026_prospect,,,,57.1,49.7,,,,,16.6,False,,280.0,322.0,0.8696,False,V5.0,2026-05-04,1
-Jadarian Price,RB,Notre Dame,2026,32,1,Drafted Pick 32,complete,,81.4,60.76,92.4,21.7,2026_prospect,,,,17.0,49.7,,,,,5.4,False,,87.0,322.0,0.2702,False,V5.0,2026-05-04,2
-Jonah Coleman,RB,Washington,2026,108,4,Drafted Pick 108,complete,,75.7,57.48,64.7,55.3,2026_prospect,,,,57.4,42.6,,,,,9.2,False,,354.0,370.0,0.9568,False,V5.0,2026-05-04,3
-Eli Heidenreich,RB,Navy,2026,230,7,Drafted Pick 230,outlier_review,Navy triple-option offense — receiving rate inflated vs spread-offense backtest,66.9,53.22,12.9,91.7,2026_prospect,,,,99.9,42.6,,,,,57.1,False,,941.0,182.0,5.1703,False,V5.0,2026-05-04,4
-Emmett Johnson,RB,Nebraska,2026,161,5,Drafted Pick 161,complete,,63.0,50.73,37.0,58.8,2026_prospect,,,,61.5,42.6,,,,,7.7,False,,370.0,378.0,0.9788,False,V5.0,2026-05-04,5
-Mike Washington Jr.,RB,Arkansas,2026,122,4,Drafted Pick 122,complete,,60.8,48.7,57.5,36.6,2026_prospect,,,,35.6,42.6,,,,,7.0,False,,226.0,381.0,0.5932,False,V5.0,2026-05-04,6
-Kaelon Black,RB,Indiana,2026,90,3,Drafted Pick 90,complete,,50.7,44.81,70.9,10.4,2026_prospect,,,,5.1,42.6,,,,,7.8,False,,36.0,406.0,0.0887,False,V5.0,2026-05-04,7
-Nick Singleton,RB,Penn State,2026,165,5,Drafted Pick 165,complete,,48.5,43.89,35.7,40.9,2026_prospect,,,,40.6,42.6,,,,,14.4,False,,219.0,339.0,0.646,False,V5.0,2026-05-04,8
-Adam Randall,RB,Clemson,2026,174,5,Drafted Pick 174,complete,,36.2,40.58,31.8,35.0,2026_prospect,,,,33.7,42.6,,,,,12.7,False,,254.0,474.0,0.5359,False,V5.0,2026-05-04,9
-Demond Claiborne,RB,Wake Forest,2026,198,6,Drafted Pick 198,complete,,19.5,33.79,24.3,24.7,2026_prospect,,,,21.7,42.6,,,,,11.2,False,,140.0,406.0,0.3448,False,V5.0,2026-05-04,10
-Desmond Reid,RB,Pittsburgh,2026,258,7,UDFA,complete,,17.3,32.78,1.4,42.9,2026_prospect,,,,42.9,42.6,,,,,15.7,False,,317.0,464.0,0.6832,False,V5.0,2026-05-04,11
-Barika Kpeenu,RB,North Dakota State,2026,258,7,UDFA,complete,,17.3,32.63,1.4,42.4,2026_prospect,,,,42.4,42.6,,,,,3.7,False,,211.0,270.0,0.7815,False,V5.0,2026-05-04,11
-Kaytron Allen,RB,Penn State,2026,187,6,Drafted Pick 187,complete,,16.8,32.34,26.9,16.4,2026_prospect,,,,12.0,42.6,,,,,5.6,False,,68.0,339.0,0.2006,False,V5.0,2026-05-04,13
-Dean Connors,RB,Houston,2026,258,7,UDFA,complete,,15.9,32.03,1.4,40.7,2026_prospect,,,,40.4,42.6,,,,,15.1,False,,254.0,377.0,0.6737,False,V5.0,2026-05-04,14
-Jamal Haynes,RB,Georgia Tech,2026,258,7,UDFA,complete,,15.5,31.64,1.4,39.6,2026_prospect,,,,39.1,42.6,,,,,9.3,False,,257.0,394.0,0.6523,False,V5.0,2026-05-04,15
-Kaden Feagin,RB,Illinois,2026,258,7,UDFA,complete,,11.5,29.43,1.4,33.3,2026_prospect,,,,31.8,42.6,,,,,5.8,False,,188.0,372.0,0.5054,False,V5.0,2026-05-04,16
-J'Mari Taylor,RB,Virginia,2026,258,7,UDFA,complete,,10.7,28.72,1.4,31.3,2026_prospect,,,,29.4,42.6,,,,,8.2,False,,253.0,492.0,0.5142,False,V5.0,2026-05-04,17
-Sedrick Alexander,RB,Vanderbilt,2026,258,7,UDFA,complete,,10.7,28.9,1.4,31.8,2026_prospect,,,,30.0,42.6,,,,,10.9,False,,200.0,400.0,0.5,False,V5.0,2026-05-04,17
-Chip Trayanum,RB,Toledo,2026,258,7,UDFA,complete,,10.2,28.55,1.4,30.8,2026_prospect,,,,28.8,42.6,,,,,6.6,False,,212.0,399.0,0.5313,False,V5.0,2026-05-04,19
-Seth McGowan,RB,Kentucky,2026,237,7,Drafted Pick 237,complete,,10.2,28.29,8.9,22.9,2026_prospect,,,,19.6,42.6,,,,,21.9,False,,126.0,367.0,0.3433,False,V5.0,2026-05-04,19
-Roman Hemby,RB,Indiana,2026,258,7,UDFA,complete,,8.0,26.87,1.4,26.0,2026_prospect,,,,23.2,42.6,,,,,10.3,False,,165.0,406.0,0.4064,False,V5.0,2026-05-04,21
-Kadarius Calloway,RB,New Mexico State,2026,258,7,UDFA,complete,,8.0,26.57,1.4,25.2,2026_prospect,,,,22.2,42.6,,,,,3.6,False,,175.0,472.0,0.3708,False,V5.0,2026-05-04,21
-Byron Cardwell,RB,San Diego State,2026,258,7,UDFA,complete,,6.7,26.28,1.4,24.3,2026_prospect,,,,21.3,42.6,,,,,2.0,False,,108.0,290.0,0.3724,False,V5.0,2026-05-04,23
-Rueben Owens,RB,Texas A&M,2026,258,7,UDFA,complete,,5.4,25.64,1.4,22.5,2026_prospect,,,,19.1,42.6,,,,,2.2,False,,130.0,408.0,0.3186,False,V5.0,2026-05-04,24
-Jamarion Miller,RB,Alabama,2026,245,7,Drafted Pick 245,complete,,5.0,25.19,5.8,16.8,2026_prospect,,,,12.5,42.6,,,,,1.8,False,,109.0,523.0,0.2084,False,V5.0,2026-05-04,25
-Rahsul Faison,RB,South Carolina,2026,258,7,UDFA,complete,,5.0,25.22,1.4,21.3,2026_prospect,,,,17.7,42.6,,,,,2.7,False,,118.0,342.0,0.345,False,V5.0,2026-05-04,25
-Dominic Richardson,RB,Tulsa,2026,258,7,UDFA,complete,,4.1,24.8,1.4,20.1,2026_prospect,,,,16.3,42.6,,,,,5.8,False,,130.0,409.0,0.3178,False,V5.0,2026-05-04,27
-C.J. Donaldson,RB,Ohio State,2026,258,7,UDFA,complete,,3.6,24.34,1.4,18.8,2026_prospect,,,,14.8,42.6,,,,,3.5,False,,96.0,408.0,0.2353,False,V5.0,2026-05-04,28
-Robert Henry Jr.,RB,UTSA,2026,258,7,UDFA,complete,,3.2,24.04,1.4,17.9,2026_prospect,,,,13.8,42.6,,,,,4.8,False,,114.0,448.0,0.2545,False,V5.0,2026-05-04,29
-Noah Whittington,RB,Oregon,2026,258,7,UDFA,complete,,2.8,23.74,1.4,17.1,2026_prospect,,,,12.8,42.6,,,,,4.7,False,,98.0,437.0,0.2243,False,V5.0,2026-05-04,30
-Quinten Joyner,RB,Texas Tech,2026,258,7,UDFA,complete,,2.3,23.5,1.4,16.4,2026_prospect,,,,12.0,42.6,,,,,3.3,False,,89.0,488.0,0.1824,False,V5.0,2026-05-04,31
-TreVonte Citizen,RB,McNeese State,2026,258,7,UDFA,complete,,2.3,23.55,1.4,16.5,2026_prospect,,,,12.2,42.6,,,,,1.5,False,,67.0,330.0,0.203,False,V5.0,2026-05-04,31
-Richard Reese,RB,Stephen F. Austin,2026,258,7,UDFA,complete,,2.3,23.53,1.4,16.5,2026_prospect,,,,12.1,42.6,,,,,3.8,False,,94.0,510.0,0.1843,False,V5.0,2026-05-04,31
-Jalen Berger,RB,UCLA,2026,258,7,UDFA,complete,,2.3,23.06,1.4,15.1,2026_prospect,,,,10.5,42.6,,,,,11.6,False,,70.0,361.0,0.1939,False,V5.0,2026-05-04,31
-Kentrel Bullock,RB,South Alabama,2026,258,7,UDFA,complete,,1.4,22.83,1.4,14.5,2026_prospect,,,,9.8,42.6,,,,,6.1,False,,53.0,310.0,0.171,False,V5.0,2026-05-04,35
-Alton McCaskill IV,RB,Sam Houston State,2026,258,7,UDFA,complete,,1.4,22.8,1.4,14.4,2026_prospect,,,,9.7,42.6,,,,,9.7,False,,51.0,316.0,0.1614,False,V5.0,2026-05-04,35
-Kejon Owens,RB,Florida International,2026,258,7,UDFA,complete,,1.4,22.71,1.4,14.1,2026_prospect,,,,9.4,42.6,,,,,1.7,False,,67.0,429.0,0.1562,False,V5.0,2026-05-04,35
-Max Bredeson,RB,Michigan,2026,258,7,UDFA,complete,,1.0,20.48,1.4,7.7,2026_prospect,,,,1.9,42.6,,,,,1.4,False,,11.0,340.0,0.0324,False,V5.0,2026-05-04,38
-Le'Veon Moss,RB,Texas A&M,2026,258,7,UDFA,complete,,1.0,20.03,1.4,6.5,2026_prospect,,,,0.4,42.6,,,,,2.7,False,,3.0,408.0,0.0074,False,V5.0,2026-05-04,38
-Jaydn Ott,RB,Oklahoma,2026,258,7,UDFA,complete,,1.0,20.32,1.4,7.3,2026_prospect,,,,1.4,42.6,,,,,11.9,False,,10.0,431.0,0.0232,False,V5.0,2026-05-04,38
-Terion Stewart,RB,Virginia Tech,2026,258,7,UDFA,complete,,1.0,20.92,1.4,9.0,2026_prospect,,,,3.4,42.6,,,,,0.6,False,,19.0,319.0,0.0596,False,V5.0,2026-05-04,38
-Kedrick Reescano,RB,Arizona,2026,258,7,UDFA,complete,,1.0,20.38,1.4,7.5,2026_prospect,,,,1.6,42.6,,,,,0.8,False,,12.0,447.0,0.0268,False,V5.0,2026-05-04,38
-Djay Braswell,RB,Georgia State,2026,258,7,UDFA,complete,,1.0,20.57,1.4,8.0,2026_prospect,,,,2.2,42.6,,,,,0.6,False,,17.0,475.0,0.0358,False,V5.0,2026-05-04,38
-Samuel Singleton Jr.,RB,Florida State,2026,258,7,UDFA,complete,,1.0,20.79,1.4,8.6,2026_prospect,,,,3.0,42.6,,,,,0.3,False,,16.0,339.0,0.0472,False,V5.0,2026-05-04,38
-Branson Robinson,RB,Georgia State,2026,258,7,UDFA,complete,,1.0,20.77,1.4,8.6,2026_prospect,,,,2.9,42.6,,,,,0.5,False,,22.0,475.0,0.0463,False,V5.0,2026-05-04,38
-Jaylon Glover,RB,UNLV,2026,258,7,UDFA,complete,,1.0,22.17,1.4,12.6,2026_prospect,,,,7.6,42.6,,,,,1.2,False,,51.0,424.0,0.1203,False,V5.0,2026-05-04,38
-Savion Red,RB,Sacramento State,2026,258,7,UDFA,complete,,1.0,20.17,1.4,6.9,2026_prospect,,,,0.9,42.6,,,,,1.7,False,,3.0,209.0,0.0144,False,V5.0,2026-05-04,38
-Andrew Paul,RB,Jacksonville State,2026,258,7,UDFA,complete,,1.0,21.57,1.4,10.8,2026_prospect,,,,5.6,42.6,,,,,2.2,False,,29.0,328.0,0.0884,False,V5.0,2026-05-04,38
-Armoni Goodwin,RB,UT Martin,2026,258,7,UDFA,complete,,1.0,20.56,1.4,8.0,2026_prospect,,,,2.2,42.6,,,,,2.4,False,,18.0,443.0,0.0406,False,V5.0,2026-05-04,38
-L.J. Johnson Jr.,RB,California,2026,258,7,UDFA,complete,,1.0,20.88,1.4,8.9,2026_prospect,,,,3.3,42.6,,,,,0.3,False,,18.0,361.0,0.0499,False,V5.0,2026-05-04,38
-Trevion Cooley,RB,Troy,2026,258,7,UDFA,complete,,1.0,20.07,1.4,6.6,2026_prospect,,,,0.6,42.6,,,,,7.6,False,,4.0,382.0,0.0105,False,V5.0,2026-05-04,38
-Derrick Davis Jr.,RB,Pittsburgh,2026,258,7,UDFA,complete,,1.0,20.49,1.4,7.8,2026_prospect,,,,2.0,42.6,,,,,0.2,False,,15.0,461.0,0.0325,False,V5.0,2026-05-04,38
-Logan Diggs,RB,Mississippi,2026,258,7,UDFA,complete,,1.0,21.74,1.4,11.3,2026_prospect,,,,6.1,42.6,,,,,5.4,False,,56.0,523.0,0.1071,False,V5.0,2026-05-04,38
-E.J. Smith,RB,Texas A&M,2026,258,7,UDFA,complete,,1.0,20.66,1.4,8.2,2026_prospect,,,,2.5,42.6,,,,,4.3,False,,18.0,408.0,0.0441,False,V5.0,2026-05-04,38
-Roydell Williams,RB,Florida State,2026,258,7,UDFA,complete,,1.0,20.81,1.4,8.7,2026_prospect,,,,3.0,42.6,,,,,3.3,False,,19.0,339.0,0.056,False,V5.0,2026-05-04,38
-Cam Porter,RB,Northwestern,2026,258,7,UDFA,complete,,1.0,21.0,1.4,9.2,2026_prospect,,,,3.7,42.6,,,,,4.9,False,,23.0,378.0,0.0608,False,V5.0,2026-05-04,38
-Curtis Allen,RB,Virginia Union,2026,258,7,UDFA,imputed,,1.0,19.9,1.4,6.1,2026_prospect,,,,0.0,42.6,,,,,6.8,True,,,,0.3759,True,V5.0,2026-05-04,38
-Kenyon Sadiq,TE,Oregon,2026,16,1,Drafted Pick 16,complete,,81.8,66.02,95.9,31.5,2026_prospect,,,,,,29.8,14.3,60.0,20.0,18.7,False,,560.0,437.0,1.2815,False,V5.0,2026-05-04,1
-Eli Stowers,TE,Vanderbilt,2026,54,2,Drafted Pick 54,complete,,74.5,61.62,83.1,43.1,2026_prospect,,,,,,66.4,22.0,40.0,21.0,27.806563039723663,False,,765.0,400.0,1.9125,False,V5.0,2026-05-04,2
-Max Klare,TE,Ohio State,2026,61,2,Drafted Pick 61,complete,,67.2,58.85,80.6,39.6,2026_prospect,,,,,,68.0,10.9,40.0,20.8,30.908269317668324,False,,448.0,408.0,1.098,False,V5.0,2026-05-04,3
-Marlin Klein,TE,Michigan,2026,59,2,Drafted Pick 59,complete,,50.6,52.07,80.6,21.7,2026_prospect,,,,,,25.2,5.9,40.0,,10.7,False,,248.0,340.0,0.7294,False,V5.0,2026-05-04,4
-Nate Boerkircher,TE,Texas A&M,2026,56,2,Drafted Pick 56,complete,,48.2,51.47,81.2,18.8,2026_prospect,,,,,,20.9,2.5,40.0,,8.69,False,,204.0,408.0,0.5,False,V5.0,2026-05-04,5
-Eli Raridon,TE,Notre Dame,2026,95,3,Drafted Pick 95,complete,,45.1,50.49,68.4,33.2,2026_prospect,,,,,,45.6,16.3,40.0,21.8,16.19079610345986,False,,482.0,322.0,1.4969,False,V5.0,2026-05-04,6
-Sam Roush,TE,Stanford,2026,69,3,Drafted Pick 69,complete,,45.1,50.93,78.8,23.4,2026_prospect,,,,,,22.7,13.0,40.0,23.0,21.51,False,,545.0,391.0,1.3939,False,V5.0,2026-05-04,6
-Oscar Delp,TE,Georgia,2026,73,3,Drafted Pick 73,complete,,42.0,49.04,78.2,20.5,2026_prospect,,,,,,23.4,4.5,40.0,,10.3,False,,261.0,417.0,0.6259,False,V5.0,2026-05-04,8
-Justin Joly,TE,NC State,2026,152,5,Drafted Pick 152,complete,,37.8,46.73,39.6,44.3,2026_prospect,,,,,,80.3,11.3,40.0,19.3,25.55604012211077,False,,489.0,413.0,1.184,False,V5.0,2026-05-04,9
-Will Kacmarek,TE,Ohio State,2026,87,3,Drafted Pick 87,complete,,36.5,46.36,71.4,19.7,2026_prospect,,,,,,24.2,1.6,40.0,,11.51,False,,168.0,408.0,0.4118,False,V5.0,2026-05-04,10
-Tanner Koziol,TE,Houston,2026,164,5,Drafted Pick 164,complete,,31.6,44.57,34.7,42.8,2026_prospect,,,,,,66.7,20.9,40.0,19.0,28.34964562942963,False,,727.0,377.0,1.9284,False,V5.0,2026-05-04,11
-Seydou Traore,TE,Mississippi State,2026,180,6,Drafted Pick 180,complete,,24.3,42.53,26.1,42.8,2026_prospect,,,,,,79.1,8.3,40.0,19.8,23.25925925925926,False,,372.0,390.0,0.9538,False,V5.0,2026-05-04,12
-Matthew Hibner,TE,SMU,2026,133,4,Drafted Pick 133,complete,,20.0,40.74,49.4,22.9,2026_prospect,,,,,,26.8,7.6,40.0,,11.825332248440466,False,,436.0,460.0,0.9478,False,V5.0,2026-05-04,13
-Joe Royer,TE,Cincinnati,2026,170,5,Drafted Pick 170,complete,,11.4,36.92,32.8,25.6,2026_prospect,,,,,,31.7,10.0,40.0,22.7,18.39323467230444,False,,416.0,363.0,1.146,False,V5.0,2026-05-04,14
-Jaren Kanak,TE,Oklahoma,2026,225,7,Drafted Pick 225,complete,,10.2,35.29,12.6,38.0,2026_prospect,,,,,,61.1,13.6,40.0,20.8,17.29200652528548,False,,533.0,431.0,1.2367,False,V5.0,2026-05-04,15
-Josh Cuevas,TE,Alabama,2026,173,5,Drafted Pick 173,complete,,10.2,35.02,30.7,21.8,2026_prospect,,,,,,25.4,6.1,40.0,20.0,20.59,False,,411.0,523.0,0.7859,False,V5.0,2026-05-04,15
-Riley Nowakowski,TE,Indiana,2026,169,5,Drafted Pick 169,complete,,10.2,35.81,32.8,22.5,2026_prospect,,,,,,25.1,8.3,40.0,,10.128238680973569,False,,387.0,406.0,0.9532,False,V5.0,2026-05-04,15
-Bauer Sharp,TE,LSU,2026,185,6,Drafted Pick 185,complete,,7.1,33.78,25.5,22.5,2026_prospect,,,,,,29.5,3.7,40.0,20.0,15.02,False,,252.0,443.0,0.5688,False,V5.0,2026-05-04,18
-Jack Endries,TE,Texas,2026,221,7,Drafted Pick 221,complete,,6.5,32.54,13.2,30.0,2026_prospect,,,,,,46.8,6.6,40.0,21.4,18.59701492537313,False,,346.0,420.0,0.8238,False,V5.0,2026-05-04,19
-John Michael Gyllenborg,TE,Wyoming,2026,258,7,UDFA,complete,,5.3,30.21,1.0,34.5,2026_prospect,,,,,,62.1,3.3,40.0,20.9,19.200351493848856,False,,217.0,384.0,0.5651,False,V5.0,2026-05-04,20
-Jack Velling,TE,Michigan State,2026,258,7,UDFA,complete,,2.8,28.45,1.0,30.1,2026_prospect,,,,,,45.4,8.3,40.0,20.0,18.54,False,,359.0,378.0,0.9497,False,V5.0,2026-05-04,21
-Michael Trigg,TE,Baylor,2026,258,7,UDFA,complete,,1.6,27.21,1.0,27.0,2026_prospect,,,,,,31.8,13.6,40.0,22.8,18.670971213344096,False,,694.0,510.0,1.3608,False,V5.0,2026-05-04,22
-Dallen Bentley,TE,Utah,2026,258,7,UDFA,complete,,1.6,28.13,1.0,29.3,2026_prospect,,,,,,34.1,17.5,40.0,22.5,23.16890881913304,False,,620.0,373.0,1.6622,False,V5.0,2026-05-04,22
-Dae'Quan Wright,TE,Mississippi,2026,258,7,UDFA,complete,,1.6,26.63,1.0,25.6,2026_prospect,,,,,,29.0,12.5,40.0,22.0,16.65,False,,635.0,523.0,1.2141,False,V5.0,2026-05-04,22
-Carsen Ryan,TE,BYU,2026,248,7,Drafted Pick 248,complete,,1.6,27.1,6.5,24.0,2026_prospect,,,,,,22.5,14.8,40.0,23.0,20.090732339598187,False,,620.0,403.0,1.5385,False,V5.0,2026-05-04,22
-Lance Mason,TE,Wisconsin,2026,258,7,UDFA,complete,,1.6,26.19,1.0,24.5,2026_prospect,,,,,,24.7,13.9,40.0,23.0,27.33,False,,398.0,272.0,1.4632,False,V5.0,2026-05-04,22
-Toby Payne,TE,Marshall,2026,258,7,UDFA,complete,,1.6,26.6,1.0,25.5,2026_prospect,,,,,,30.4,10.9,40.0,22.9,15.770465489566613,False,,387.0,335.0,1.1552,False,V5.0,2026-05-04,22
-Lake McRee,TE,USC,2026,258,7,UDFA,complete,,1.6,25.97,1.0,23.9,2026_prospect,,,,,,26.6,10.6,40.0,,11.564449064449065,False,,450.0,420.0,1.0714,False,V5.0,2026-05-04,22
-Nate Rutchena,TE,UC Davis,2026,258,7,UDFA,imputed,,1.6,26.17,1.0,24.4,2026_prospect,,,,,,31.8,6.6,40.0,,15.0,True,,,,0.7873,True,V5.0,2026-05-04,22
-Chamon Metayer,TE,Arizona State,2026,258,7,UDFA,complete,,1.6,25.69,1.0,23.2,2026_prospect,,,,,,28.0,7.3,40.0,,14.23,False,,375.0,430.0,0.8721,False,V5.0,2026-05-04,22
-Dan Villari,TE,Syracuse,2026,258,7,UDFA,complete,,1.6,24.71,1.0,20.8,2026_prospect,,,,,,20.4,8.4,40.0,24.1,15.77924601632336,False,,412.0,408.0,1.0098,False,V5.0,2026-05-04,22
-Ty Thompson,TE,Tulane,2026,258,7,UDFA,complete,,1.6,24.89,1.0,21.2,2026_prospect,,,,,,23.3,6.6,40.0,,8.252032520325203,False,,0.0,391.0,0.0,False,V5.0,2026-05-04,22
-Brett Norfleet,TE,Missouri,2026,258,7,UDFA,complete,,1.6,25.05,1.0,21.6,2026_prospect,,,,,,25.4,5.6,40.0,22.0,22.93,False,,254.0,361.0,0.7036,False,V5.0,2026-05-04,22
-R.J. Maryland,TE,SMU,2026,258,7,UDFA,complete,,1.6,25.34,1.0,22.3,2026_prospect,,,,,,28.3,4.6,40.0,21.0,18.15,False,,322.0,460.0,0.7,False,V5.0,2026-05-04,22
-DJ Rogers,TE,TCU,2026,258,7,UDFA,complete,,1.6,24.67,1.0,20.7,2026_prospect,,,,,,23.5,5.0,40.0,,8.508935716190983,False,,319.0,460.0,0.6935,False,V5.0,2026-05-04,22
-Miles Kitselman,TE,Tennessee,2026,258,7,UDFA,complete,,1.6,24.74,1.0,20.9,2026_prospect,,,,,,25.5,3.5,40.0,22.0,15.63,False,,253.0,437.0,0.5789,False,V5.0,2026-05-04,22
-Ethan Davis,TE,Tennessee,2026,258,7,UDFA,complete,,1.6,24.21,1.0,19.5,2026_prospect,,,,,,21.8,3.6,40.0,,6.756046267087276,False,,257.0,437.0,0.5881,False,V5.0,2026-05-04,22
-Jameson Geers,TE,Minnesota,2026,258,7,UDFA,complete,,1.6,24.57,1.0,20.4,2026_prospect,,,,,,25.1,2.7,40.0,22.0,15.84,False,,206.0,399.0,0.5163,False,V5.0,2026-05-04,22
-Josh Kattus,TE,Kentucky,2026,258,7,UDFA,complete,,1.6,24.28,1.0,19.7,2026_prospect,,,,,,23.0,2.9,40.0,23.0,20.7,False,,195.0,367.0,0.5313,False,V5.0,2026-05-04,22
-Andrew Rappleyea,TE,Penn State,2026,258,7,UDFA,complete,,1.6,24.19,1.0,19.5,2026_prospect,,,,,,22.4,2.9,40.0,,7.395234182415776,False,,180.0,339.0,0.531,False,V5.0,2026-05-04,22
-Jaleel Skinner,TE,Louisville,2026,258,7,UDFA,complete,,1.6,24.12,1.0,19.3,2026_prospect,,,,,,22.2,2.6,40.0,,8.39,False,,204.0,418.0,0.488,False,V5.0,2026-05-04,22
-Khalil Dinkins,TE,Penn State,2026,258,7,UDFA,complete,,1.6,24.04,1.0,19.1,2026_prospect,,,,,,21.9,2.4,40.0,,7.83,False,,167.0,339.0,0.4926,False,V5.0,2026-05-04,22
-Benji Gosnell,TE,Virginia Tech,2026,258,7,UDFA,complete,,1.6,24.74,1.0,20.8,2026_prospect,,,,,,28.9,0.0,40.0,,13.878713878713878,False,,86.0,319.0,0.2696,False,V5.0,2026-05-04,22
-Amari Niblack,TE,Texas A&M,2026,258,7,UDFA,complete,,1.6,24.24,1.0,19.6,2026_prospect,,,,,,25.6,0.0,40.0,,14.11,False,,69.0,408.0,0.1691,False,V5.0,2026-05-04,22
-Luke Hasz,TE,Mississippi,2026,258,7,UDFA,complete,,1.6,24.34,1.0,19.8,2026_prospect,,,,,,26.2,0.0,40.0,20.0,15.03,False,,28.0,523.0,0.0535,False,V5.0,2026-05-04,22
-Cooper Flanagan,TE,Notre Dame,2026,258,7,UDFA,complete,,1.0,23.91,1.0,18.8,2026_prospect,,,,,,16.7,6.6,40.0,,6.75,False,,55.0,329.0,0.1672,False,V5.0,2026-05-04,46
-Tanner Arkin,TE,Illinois,2026,258,7,UDFA,complete,,1.0,23.4,1.0,17.5,2026_prospect,,,,,,19.9,0.0,40.0,,6.46,False,,114.0,372.0,0.3065,False,V5.0,2026-05-04,46
-Jack Pedersen,TE,UCLA,2026,258,7,UDFA,complete,,1.0,23.28,1.0,17.2,2026_prospect,,,,,,19.2,0.0,40.0,,5.57,False,,72.0,361.0,0.1994,False,V5.0,2026-05-04,46
-Holden Staes,TE,Indiana,2026,258,7,UDFA,complete,,1.0,23.47,1.0,17.7,2026_prospect,,,,,,20.5,0.0,40.0,,5.472636815920398,False,,62.0,406.0,0.1527,False,V5.0,2026-05-04,46
-Davin Stoffel,TE,Illinois,2026,258,7,UDFA,complete,,1.0,22.77,1.0,15.9,2026_prospect,,,,,,15.8,0.0,40.0,,2.93,False,,24.0,372.0,0.0645,False,V5.0,2026-05-04,46
-Joey Schlaffer,TE,Penn State,2026,258,7,UDFA,complete,,1.0,22.77,1.0,15.9,2026_prospect,,,,,,15.8,0.0,40.0,,5.43,False,,19.0,339.0,0.056,False,V5.0,2026-05-04,46
-Shamar Easter,TE,North Carolina,2026,258,7,UDFA,complete,,1.0,22.78,1.0,15.9,2026_prospect,,,,,,15.9,0.0,40.0,,0.8608971454463071,False,,17.0,355.0,0.0479,False,V5.0,2026-05-04,46
-Jordyn Tyson,WR,Arizona State,2026,8,1,Drafted Pick 8,complete,,96.1,90.22,96.3,82.1,2026_prospect,98.2,0.0,100.0,,,,,,19.0,36.4,False,4.0,711.0,430.0,1.6535,False,V5.0,2026-05-04,1
-Carnell Tate,WR,Ohio State,2026,4,1,Drafted Pick 4,complete,,94.4,88.24,98.6,68.4,2026_prospect,77.6,0.0,100.0,,,,,,20.0,25.3,False,16.0,875.0,408.0,2.1446,False,V5.0,2026-05-04,2
-Kevin Concepcion,WR,Texas A&M,2026,24,1,Drafted Pick 24,complete,,91.2,84.61,88.0,83.3,2026_prospect,99.9,0.0,100.0,,,,,,19.0,42.4,False,75.0,919.0,408.0,2.2525,False,V5.0,2026-05-04,3
-Makai Lemon,WR,USC,2026,20,1,Drafted Pick 20,complete,,84.8,79.53,91.5,62.1,2026_prospect,68.1,0.0,100.0,,,,,,21.0,36.2,False,4.0,1156.0,420.0,2.7524,False,V5.0,2026-05-04,4
-Omar Cooper Jr.,WR,Indiana,2026,30,1,Drafted Pick 30,complete,,80.8,76.51,85.7,62.2,2026_prospect,68.3,0.0,100.0,,,,,,21.0,26.7,False,74.0,961.0,406.0,2.367,False,V5.0,2026-05-04,5
-Denzel Boston,WR,Washington,2026,39,2,Drafted Pick 39,complete,,75.9,71.9,81.5,55.0,2026_prospect,82.5,0.0,0.0,,,,,,20.0,35.0,False,,881.0,370.0,2.3811,False,V5.0,2026-05-04,6
-Germie Bernard,WR,Alabama,2026,47,2,Drafted Pick 47,complete,,75.9,71.62,78.0,60.8,2026_prospect,66.1,0.0,100.0,,,,,,21.0,22.3,False,101.0,862.0,523.0,1.6482,False,V5.0,2026-05-04,6
-Ja'Kobi Lane,WR,USC,2026,80,3,Drafted Pick 80,complete,,73.3,70.02,64.2,79.2,2026_prospect,93.8,0.0,100.0,,,,,,19.0,27.6,False,,745.0,420.0,1.7738,False,V5.0,2026-05-04,8
-Caleb Douglas,WR,Texas Tech,2026,75,3,Drafted Pick 75,complete,,68.6,67.38,65.8,67.1,2026_prospect,75.6,0.0,100.0,,,,,,20.0,21.3,False,,830.0,486.0,1.7078,False,V5.0,2026-05-04,9
-De'Zhaun Stribling,WR,Mississippi,2026,33,2,Drafted Pick 33,complete,,68.4,66.01,84.7,30.1,2026_prospect,45.1,0.0,0.0,,,,,,22.0,20.2,False,,811.0,523.0,1.5507,False,V5.0,2026-05-04,10
-Malachi Fields,WR,Notre Dame,2026,74,3,Drafted Pick 74,complete,,67.8,65.62,66.2,60.5,2026_prospect,90.8,0.0,0.0,,,,,,19.0,21.6,False,,630.0,322.0,1.9565,False,V5.0,2026-05-04,11
-Ted Hurst,WR,Georgia State,2026,84,3,Drafted Pick 84,complete,,67.8,65.46,62.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,37.1,False,,1004.0,475.0,2.1137,False,V5.0,2026-05-04,11
-Antonio Williams,WR,Clemson,2026,71,3,Drafted Pick 71,complete,,65.8,64.71,67.2,55.5,2026_prospect,83.2,0.0,0.0,,,,,,20.0,26.4,False,78.0,604.0,474.0,1.2743,False,V5.0,2026-05-04,13
-Zachariah Branch,WR,Georgia,2026,79,3,Drafted Pick 79,complete,,65.8,63.97,64.7,58.4,2026_prospect,62.6,0.0,100.0,,,,,,21.0,25.2,False,7.0,811.0,417.0,1.9448,False,V5.0,2026-05-04,13
-Zavion Thomas,WR,LSU,2026,89,3,Drafted Pick 89,complete,,65.8,64.5,60.6,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,32.7,False,99.0,488.0,443.0,1.1016,False,V5.0,2026-05-04,13
-Chris Brazzell II,WR,Tennessee,2026,83,3,Drafted Pick 83,complete,,61.1,61.97,62.6,54.3,2026_prospect,81.5,0.0,0.0,,,,,,20.0,33.0,False,,1017.0,437.0,2.3272,False,V5.0,2026-05-04,16
-Elijah Sarratt,WR,Indiana,2026,115,4,Drafted Pick 115,complete,,55.1,58.53,51.6,62.3,2026_prospect,93.4,0.0,0.0,,,,,,19.0,26.8,False,,806.0,406.0,1.9852,False,V5.0,2026-05-04,17
-Chris Bell,WR,Louisville,2026,94,3,Drafted Pick 94,complete,,52.5,56.85,58.7,44.2,2026_prospect,66.3,0.0,0.0,,,,,,21.0,32.7,False,,917.0,418.0,2.1938,False,V5.0,2026-05-04,18
-Colbie Young,WR,Georgia,2026,140,5,Drafted Pick 140,complete,,51.0,55.74,44.4,66.8,2026_prospect,75.1,100.0,0.0,,,,,,20.0,20.2,False,,358.0,417.0,0.8585,False,V5.0,2026-05-04,19
-Skyler Bell,WR,UConn,2026,125,4,Drafted Pick 125,complete,,50.4,55.05,50.0,56.3,2026_prospect,84.5,0.0,0.0,,,,,,20.0,39.0,False,-2.0,1276.0,451.0,2.8293,False,V5.0,2026-05-04,20
-Brenen Thompson,WR,Mississippi State,2026,105,4,Drafted Pick 105,complete,,44.4,51.77,55.3,33.9,2026_prospect,50.9,0.0,0.0,,,,,,22.0,31.8,False,14.0,1054.0,390.0,2.7026,False,V5.0,2026-05-04,21
-Cyrus Allen,WR,Cincinnati,2026,176,5,Drafted Pick 176,complete,,40.3,50.21,32.2,66.6,2026_prospect,99.9,0.0,0.0,,,,,,19.0,31.7,False,34.0,660.0,363.0,1.8182,False,V5.0,2026-05-04,22
-Kevin Coleman Jr.,WR,Missouri,2026,177,6,Drafted Pick 177,complete,,37.1,48.34,31.8,60.9,2026_prospect,66.3,0.0,100.0,,,,,,21.0,22.6,False,76.0,732.0,361.0,2.0277,False,V5.0,2026-05-04,23
-Bryce Lance,WR,North Dakota State,2026,136,5,Drafted Pick 136,complete,,37.1,48.09,45.5,39.1,2026_prospect,58.7,0.0,0.0,,,,,,22.0,37.4,False,92.0,895.0,274.0,3.2664,False,V5.0,2026-05-04,23
-Reggie Virgil,WR,Texas Tech,2026,143,5,Drafted Pick 143,partial_data,,36.0,46.87,42.9,38.8,2026_prospect,33.2,0.0,100.0,,,,,,,18.2,False,,705.0,486.0,1.4506,False,V5.0,2026-05-04,25
-Lewis Bond,WR,Boston College,2026,204,6,Drafted Pick 204,complete,,33.4,45.94,21.1,65.6,2026_prospect,98.4,0.0,0.0,,,,,,19.0,36.8,False,3.0,1010.0,454.0,2.2247,False,V5.0,2026-05-04,26
-Kaden Wetjen,WR,Iowa,2026,121,4,Drafted Pick 121,partial_data,,31.6,45.35,50.4,21.7,2026_prospect,32.6,0.0,0.0,,,,,,,12.6,False,79.0,151.0,286.0,0.528,False,V5.0,2026-05-04,27
-Noah Thomas,WR,Georgia,2026,258,7,UDFA,complete,,30.2,45.14,1.4,86.7,2026_prospect,80.0,100.0,100.0,,,,,,20.0,30.0,False,,254.0,417.0,0.6091,False,V5.0,2026-05-04,28
-Amare Thomas,WR,Houston,2026,258,7,UDFA,complete,,29.0,44.12,1.4,83.3,2026_prospect,99.9,0.0,100.0,,,,,,19.0,40.2,False,9.0,966.0,377.0,2.5623,False,V5.0,2026-05-04,29
-Kendrick Law,WR,Kentucky,2026,168,5,Drafted Pick 168,complete,,22.4,41.52,36.0,33.7,2026_prospect,50.6,0.0,0.0,,,,,,22.0,21.1,False,53.0,540.0,367.0,1.4714,False,V5.0,2026-05-04,30
-Barion Brown,WR,LSU,2026,190,6,Drafted Pick 190,partial_data,,20.4,40.95,25.9,42.5,2026_prospect,38.7,0.0,100.0,,,,,,,18.7,False,33.0,532.0,443.0,1.2009,False,V5.0,2026-05-04,31
-Josh Cameron,WR,Baylor,2026,191,6,Drafted Pick 191,complete,,19.8,40.8,25.4,42.4,2026_prospect,63.6,0.0,0.0,,,,,,21.0,27.2,False,,872.0,510.0,1.7098,False,V5.0,2026-05-04,32
-Shelton Sampson Jr.,WR,Louisiana-Lafayette,2026,258,7,UDFA,complete,,19.8,40.92,1.4,72.6,2026_prospect,83.9,0.0,100.0,,,,,,20.0,37.8,False,,537.0,342.0,1.5702,False,V5.0,2026-05-04,32
-Anthony Evans III,WR,Mississippi State,2026,258,7,UDFA,complete,,18.6,40.46,1.4,71.1,2026_prospect,81.6,0.0,100.0,,,,,,20.0,23.2,False,47.0,831.0,390.0,2.1308,False,V5.0,2026-05-04,34
-C.J. Daniels,WR,Miami (FL),2026,197,6,Drafted Pick 197,complete,,18.1,40.3,23.5,43.6,2026_prospect,65.4,0.0,0.0,,,,,,21.0,30.7,False,,557.0,496.0,1.123,False,V5.0,2026-05-04,35
-Griffin Wilde,WR,Northwestern,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,19.0,41.7,False,5.0,880.0,378.0,2.328,False,V5.0,2026-05-04,36
-Justus Ross-Simmons,WR,Syracuse,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,20.7,False,,312.0,408.0,0.7647,False,V5.0,2026-05-04,36
-Jared Brown,WR,South Carolina,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,26.4,False,33.0,102.0,342.0,0.2982,False,V5.0,2026-05-04,36
-Devin Voisin,WR,South Alabama,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,38.5,False,,775.0,310.0,2.5,False,V5.0,2026-05-04,36
-Vinny Anthony II,WR,Wisconsin,2026,258,7,UDFA,complete,,12.9,38.99,1.4,66.2,2026_prospect,99.3,0.0,0.0,,,,,,19.0,28.5,False,27.0,382.0,235.0,1.6255,False,V5.0,2026-05-04,40
-Eric McAlister,WR,TCU,2026,258,7,UDFA,complete,,10.5,38.38,1.4,64.1,2026_prospect,96.2,0.0,0.0,,,,,,19.0,32.4,False,,1190.0,460.0,2.587,False,V5.0,2026-05-04,41
-Chase Roberts,WR,BYU,2026,258,7,UDFA,complete,,10.5,38.43,1.4,64.3,2026_prospect,96.5,0.0,0.0,,,,,,19.0,33.0,False,,802.0,403.0,1.9901,False,V5.0,2026-05-04,41
-Dane Key,WR,Nebraska,2026,258,7,UDFA,complete,,9.4,37.29,1.4,60.5,2026_prospect,90.8,0.0,0.0,,,,,,19.0,21.5,False,,452.0,378.0,1.1958,False,V5.0,2026-05-04,43
-Eric Rivers,WR,Georgia Tech,2026,258,7,UDFA,complete,,9.4,37.12,1.4,59.9,2026_prospect,89.9,0.0,0.0,,,,,,20.0,46.6,False,56.0,671.0,394.0,1.703,False,V5.0,2026-05-04,43
-Jalen Walthall,WR,Incarnate Word,2026,258,7,UDFA,complete,,9.4,37.12,1.4,59.9,2026_prospect,89.9,0.0,0.0,,,,,,20.0,55.9,False,50.0,847.0,540.0,1.5685,False,V5.0,2026-05-04,43
-C.J. Williams,WR,Stanford,2026,203,6,Drafted Pick 203,complete,,9.4,36.96,21.7,35.2,2026_prospect,52.8,0.0,0.0,,,,,,22.0,35.6,False,,757.0,391.0,1.9361,False,V5.0,2026-05-04,43
-Joseph Manjack IV,WR,TCU,2026,258,7,UDFA,complete,,9.4,37.41,1.4,60.9,2026_prospect,91.3,0.0,0.0,,,,,,19.0,22.7,False,-4.0,579.0,460.0,1.2587,False,V5.0,2026-05-04,43
-Keelan Marion,WR,Miami (FL),2026,258,7,UDFA,complete,,9.4,37.6,1.4,61.6,2026_prospect,92.3,0.0,0.0,,,,,,19.0,24.7,False,,746.0,496.0,1.504,False,V5.0,2026-05-04,43
-Emmanuel Henderson Jr.,WR,Kansas,2026,199,6,Drafted Pick 199,complete,,9.1,36.51,23.3,31.9,2026_prospect,47.8,0.0,0.0,,,,,,22.0,25.6,False,16.0,766.0,345.0,2.2203,False,V5.0,2026-05-04,49
-Deion Burks,WR,Oklahoma,2026,254,7,Drafted Pick 254,complete,,7.9,35.51,2.7,52.9,2026_prospect,79.4,0.0,0.0,,,,,,20.0,28.7,False,-3.0,620.0,431.0,1.4385,False,V5.0,2026-05-04,50
-Cody Jackson,WR,Tarleton State,2026,258,7,UDFA,complete,,7.9,36.12,1.4,56.6,2026_prospect,84.9,0.0,0.0,,,,,,20.0,53.4,False,6.0,799.0,126.0,6.3413,False,V5.0,2026-05-04,50
-London Humphreys,WR,Georgia,2026,258,7,UDFA,partial_data,,7.1,35.03,1.4,53.0,2026_prospect,29.5,100.0,100.0,,,,,,,14.5,False,7.0,276.0,417.0,0.6619,False,V5.0,2026-05-04,52
-Jordan Dwyer,WR,TCU,2026,258,7,UDFA,complete,,6.5,34.27,1.4,50.4,2026_prospect,75.7,0.0,0.0,,,,,,20.0,21.3,False,,730.0,460.0,1.587,False,V5.0,2026-05-04,53
-Malik Benson,WR,Oregon,2026,195,6,Drafted Pick 195,partial_data,,6.5,34.34,24.1,22.8,2026_prospect,34.1,0.0,0.0,,,,,,,19.1,False,-4.0,719.0,437.0,1.6453,False,V5.0,2026-05-04,53
-J.Michael Sturdivant,WR,Florida,2026,258,7,UDFA,complete,,6.5,34.82,1.4,52.3,2026_prospect,78.4,0.0,0.0,,,,,,20.0,26.8,False,1.0,406.0,374.0,1.0856,False,V5.0,2026-05-04,53
-Jerand Bradley,WR,Kansas State,2026,258,7,UDFA,complete,,6.5,34.34,1.4,50.7,2026_prospect,76.0,0.0,0.0,,,,,,20.0,22.0,False,,184.0,342.0,0.538,False,V5.0,2026-05-04,53
-Caullin Lacy,WR,Louisville,2026,258,7,UDFA,complete,,5.6,33.66,1.4,48.4,2026_prospect,72.6,0.0,0.0,,,,,,21.0,35.2,False,53.0,635.0,418.0,1.5191,False,V5.0,2026-05-04,57
-Michael Wortham,WR,Montana,2026,258,7,UDFA,complete,,5.0,33.05,1.4,46.4,2026_prospect,69.5,0.0,0.0,,,,,,21.0,29.1,False,345.0,1003.0,463.0,2.1663,False,V5.0,2026-05-04,58
-Hank Beatty,WR,Illinois,2026,258,7,UDFA,complete,,4.5,32.2,1.4,43.5,2026_prospect,65.3,0.0,0.0,,,,,,21.0,20.6,False,46.0,864.0,372.0,2.3226,False,V5.0,2026-05-04,59
-Ja'Varrius Johnson,WR,UCF,2026,258,7,UDFA,complete,,4.5,31.99,1.4,42.9,2026_prospect,64.3,0.0,0.0,,,,,,21.0,28.6,False,,62.0,290.0,0.2138,False,V5.0,2026-05-04,59
-Jordan Hudson,WR,SMU,2026,258,7,UDFA,complete,,3.9,31.33,1.4,40.6,2026_prospect,61.0,0.0,0.0,,,,,,21.0,21.9,False,6.0,766.0,460.0,1.6652,False,V5.0,2026-05-04,61
-Dillon Bell,WR,Georgia,2026,258,7,UDFA,partial_data,,3.6,30.7,1.4,38.5,2026_prospect,32.8,100.0,0.0,,,,,,,12.8,False,109.0,268.0,417.0,0.6427,False,V5.0,2026-05-04,62
-Squirrel White,WR,Florida State,2026,258,7,UDFA,partial_data,,3.6,30.75,1.4,38.7,2026_prospect,33.0,0.0,100.0,,,,,,,18.0,False,6.0,52.0,339.0,0.1534,False,V5.0,2026-05-04,62
-Ja'Mori Maclin,WR,Kentucky,2026,258,7,UDFA,complete,,3.6,31.18,1.4,40.1,2026_prospect,60.2,0.0,0.0,,,,,,21.0,20.4,False,,209.0,365.0,0.5726,False,V5.0,2026-05-04,62
-Jayden Ballard,WR,Wisconsin,2026,258,7,UDFA,complete,,3.6,31.28,1.4,40.5,2026_prospect,60.7,0.0,0.0,,,,,,21.0,21.4,False,,150.0,272.0,0.5515,False,V5.0,2026-05-04,62
-Kobe Prentice,WR,Baylor,2026,258,7,UDFA,partial_data,,3.0,30.1,1.4,36.5,2026_prospect,29.8,0.0,100.0,,,,,,,14.8,False,,380.0,510.0,0.7451,False,V5.0,2026-05-04,66
-Mikey Matthews,WR,UCLA,2026,258,7,UDFA,partial_data,,3.0,30.08,1.4,36.5,2026_prospect,29.7,0.0,100.0,,,,,,,14.7,False,1.0,348.0,361.0,0.964,False,V5.0,2026-05-04,66
-Ayden Williams,WR,Mississippi State,2026,258,7,UDFA,partial_data,,3.0,29.47,1.4,34.5,2026_prospect,26.7,0.0,100.0,,,,,,,11.7,False,,252.0,390.0,0.6462,False,V5.0,2026-05-04,66
-Trebor Pena,WR,Penn State,2026,258,7,UDFA,complete,,3.0,29.36,1.4,34.1,2026_prospect,51.1,0.0,0.0,,,,,,22.0,22.3,False,69.0,552.0,339.0,1.6283,False,V5.0,2026-05-04,66
-Braylin Presley,WR,Tulsa,2026,258,7,UDFA,partial_data,,2.7,29.23,1.4,33.7,2026_prospect,25.5,0.0,100.0,,,,,,,5.5,False,215.0,115.0,409.0,0.2812,False,V5.0,2026-05-04,70
-Cordale Russell,WR,Miami (OH),2026,258,7,UDFA,imputed,,2.7,29.09,1.4,33.2,2026_prospect,24.7,0.0,100.0,,,,,,,9.7,False,,,356.0,1.2986,True,V5.0,2026-05-04,70
-Brandon Inniss,WR,Ohio State,2026,258,7,UDFA,partial_data,,2.7,28.77,1.4,32.1,2026_prospect,23.2,0.0,100.0,,,,,,,8.2,False,16.0,271.0,408.0,0.6642,False,V5.0,2026-05-04,70
-Jalen Brown,WR,Arkansas,2026,258,7,UDFA,partial_data,,2.7,29.11,1.4,33.2,2026_prospect,24.9,0.0,100.0,,,,,,,9.9,False,,167.0,381.0,0.4383,False,V5.0,2026-05-04,70
-Hykeem Williams,WR,Colorado,2026,258,7,UDFA,partial_data,,2.7,28.91,1.4,32.6,2026_prospect,23.8,0.0,100.0,,,,,,,8.8,False,,81.0,356.0,0.2275,False,V5.0,2026-05-04,70
-Antonio Gates Jr.,WR,Delaware State,2026,258,7,UDFA,partial_data,,2.2,28.21,1.4,30.2,2026_prospect,20.3,0.0,100.0,,,,,,,5.3,False,,49.0,338.0,0.145,False,V5.0,2026-05-04,75
-Harrison Wallace III,WR,Mississippi,2026,258,7,UDFA,complete,,2.2,28.17,1.4,30.1,2026_prospect,45.2,0.0,0.0,,,,,,22.0,20.4,False,,934.0,523.0,1.7859,False,V5.0,2026-05-04,75
-Raymond Cottrell,WR,West Alabama,2026,258,7,UDFA,imputed,,1.9,27.6,1.4,28.2,2026_prospect,17.3,0.0,100.0,,,,,,,2.3,False,,,408.0,1.2986,True,V5.0,2026-05-04,77
-Nathan Leacock,WR,North Carolina,2026,258,7,UDFA,partial_data,,1.9,27.35,1.4,27.4,2026_prospect,16.1,0.0,100.0,,,,,,,1.1,False,6.0,48.0,355.0,0.1352,False,V5.0,2026-05-04,77
-Ryan Niblett,WR,Texas,2026,258,7,UDFA,partial_data,,1.9,27.35,1.4,27.4,2026_prospect,16.0,0.0,100.0,,,,,,,1.0,False,15.0,60.0,420.0,0.1429,False,V5.0,2026-05-04,77
-Jaquaize Pettaway,WR,East Carolina,2026,258,7,UDFA,partial_data,,1.9,27.57,1.4,28.1,2026_prospect,17.2,0.0,100.0,,,,,,,2.2,False,2.0,32.0,440.0,0.0727,False,V5.0,2026-05-04,77
-Tyler Brown,WR,Clemson,2026,258,7,UDFA,partial_data,,1.6,27.1,1.4,26.5,2026_prospect,39.8,0.0,0.0,,,,,,,19.8,False,71.0,191.0,474.0,0.403,False,V5.0,2026-05-04,81
-Braylon James,WR,TCU,2026,258,7,UDFA,partial_data,,1.6,27.18,1.4,26.8,2026_prospect,15.2,0.0,100.0,,,,,,,0.2,False,,6.0,443.0,0.0135,False,V5.0,2026-05-04,81
-Aaron Anderson,WR,LSU,2026,258,7,UDFA,partial_data,,1.0,26.0,1.4,22.9,2026_prospect,34.3,0.0,0.0,,,,,,,19.3,False,2.0,398.0,443.0,0.8984,False,V5.0,2026-05-04,83
-Kaleb Brown,WR,UAB,2026,258,7,UDFA,partial_data,,1.0,24.36,1.4,17.4,2026_prospect,26.1,0.0,0.0,,,,,,,11.1,False,5.0,255.0,438.0,0.5822,False,V5.0,2026-05-04,83
-Tyren Montgomery,WR,John Carroll,2026,258,7,UDFA,imputed,,1.0,26.14,1.4,23.3,2026_prospect,35.0,0.0,0.0,,,,,,,21.6,True,,,,1.2986,True,V5.0,2026-05-04,83
-Rara Thomas,WR,Troy,2026,258,7,UDFA,complete,,1.0,26.46,1.4,24.4,2026_prospect,36.6,0.0,0.0,,,,,,23.0,23.2,False,39.0,629.0,433.0,1.4527,False,V5.0,2026-05-04,83
-Jalil Farooq,WR,Maryland,2026,258,7,UDFA,complete,,1.0,25.14,1.4,20.0,2026_prospect,30.0,0.0,0.0,,,,,,23.0,20.0,False,8.0,545.0,491.0,1.11,False,V5.0,2026-05-04,83
-Jeff Caldwell,WR,Cincinnati,2026,258,7,UDFA,partial_data,,1.0,25.8,1.4,22.2,2026_prospect,33.3,0.0,0.0,,,,,,,18.3,False,,478.0,363.0,1.3168,False,V5.0,2026-05-04,83
-Romello Brinson,WR,SMU,2026,258,7,UDFA,partial_data,,1.0,25.02,1.4,19.6,2026_prospect,29.4,0.0,0.0,,,,,,,14.4,False,4.0,638.0,460.0,1.387,False,V5.0,2026-05-04,83
-E.J. Williams,WR,Indiana,2026,258,7,UDFA,partial_data,,1.0,24.97,1.4,19.4,2026_prospect,29.2,0.0,0.0,,,,,,,14.2,False,,438.0,406.0,1.0788,False,V5.0,2026-05-04,83
-Donavon Greene,WR,Virginia Tech,2026,258,7,UDFA,partial_data,,1.0,24.65,1.4,18.4,2026_prospect,27.6,0.0,0.0,,,,,,,12.6,False,,267.0,319.0,0.837,False,V5.0,2026-05-04,83
-Kyron Ware-Hudson,WR,Penn State,2026,258,7,UDFA,partial_data,,1.0,24.57,1.4,18.1,2026_prospect,27.2,0.0,0.0,,,,,,,12.2,False,,288.0,339.0,0.8496,False,V5.0,2026-05-04,83
-Jaron Glover,WR,Mississippi State,2026,258,7,UDFA,partial_data,,1.0,24.41,1.4,17.6,2026_prospect,26.4,0.0,0.0,,,,,,,11.4,False,,192.0,338.0,0.568,False,V5.0,2026-05-04,83
-Andrel Anthony,WR,Duke,2026,258,7,UDFA,partial_data,,1.0,24.22,1.4,17.0,2026_prospect,25.4,0.0,0.0,,,,,,,10.4,False,,246.0,506.0,0.4862,False,V5.0,2026-05-04,83
-Malik McClain,WR,Arizona State,2026,258,7,UDFA,partial_data,,1.0,24.15,1.4,16.7,2026_prospect,25.1,0.0,0.0,,,,,,,10.1,False,,441.0,430.0,1.0256,False,V5.0,2026-05-04,83
-Max Tomzcak,WR,Youngstown State,2026,258,7,UDFA,imputed,,1.0,26.14,1.4,23.3,2026_prospect,35.0,0.0,0.0,,,,,,,21.6,True,,,,1.2986,True,V5.0,2026-05-04,83
-JoJo Earle,WR,UNLV,2026,258,7,UDFA,partial_data,,1.0,24.62,1.4,18.3,2026_prospect,27.4,0.0,0.0,,,,,,,7.4,False,102.0,258.0,424.0,0.6085,False,V5.0,2026-05-04,83
-Chris Hilton,WR,LSU,2026,258,7,UDFA,partial_data,,1.0,23.77,1.4,15.4,2026_prospect,23.1,0.0,0.0,,,,,,,8.1,False,,122.0,443.0,0.2754,False,V5.0,2026-05-04,83
-Christian Leary,WR,Western Michigan,2026,258,7,UDFA,partial_data,,1.0,25.17,1.4,20.1,2026_prospect,30.2,0.0,0.0,,,,,,,10.2,False,46.0,115.0,305.0,0.377,False,V5.0,2026-05-04,83
-Dacari Collins,WR,Louisville,2026,258,7,UDFA,partial_data,,1.0,23.82,1.4,15.6,2026_prospect,23.4,0.0,0.0,,,,,,,8.4,False,,219.0,418.0,0.5239,False,V5.0,2026-05-04,83
-Deion Colzie,WR,Miami (OH),2026,258,7,UDFA,partial_data,,1.0,23.76,1.4,15.4,2026_prospect,23.1,0.0,0.0,,,,,,,8.1,False,,178.0,368.0,0.4837,False,V5.0,2026-05-04,83
-Talyn Shettron,WR,Oklahoma State,2026,258,7,UDFA,partial_data,,1.0,23.36,1.4,14.1,2026_prospect,21.1,0.0,0.0,,,,,,,6.1,False,,167.0,426.0,0.392,False,V5.0,2026-05-04,83
-Tobias Merriweather,WR,Utah,2026,258,7,UDFA,partial_data,,1.0,22.6,1.4,11.5,2026_prospect,17.3,0.0,0.0,,,,,,,2.3,False,,130.0,373.0,0.3485,False,V5.0,2026-05-04,83
-Jaden Bray,WR,West Virginia,2026,258,7,UDFA,partial_data,,1.0,24.48,1.4,17.8,2026_prospect,26.7,0.0,0.0,,,,,,,11.7,False,,95.0,327.0,0.2905,False,V5.0,2026-05-04,83
-Andre Greene Jr.,WR,Virginia,2026,258,7,UDFA,partial_data,,1.0,22.41,1.4,10.9,2026_prospect,16.3,0.0,0.0,,,,,,,1.3,False,,7.0,492.0,0.0142,False,V5.0,2026-05-04,83
-Kyion Grayes,WR,California,2026,258,7,UDFA,partial_data,,1.0,22.2,1.4,10.2,2026_prospect,15.3,0.0,0.0,,,,,,,0.3,False,,10.0,505.0,0.0198,False,V5.0,2026-05-04,83
-Jayden McGowan,WR,Charlotte,2026,258,7,UDFA,partial_data,,1.0,22.17,1.4,10.1,2026_prospect,15.1,0.0,0.0,,,,,,,0.1,False,,7.0,379.0,0.0185,False,V5.0,2026-05-04,83
-Jayden Thomas,WR,Virginia,2026,258,7,UDFA,partial_data,,1.0,23.77,1.4,15.4,2026_prospect,23.2,0.0,0.0,,,,,,,8.2,False,,9.0,492.0,0.0183,False,V5.0,2026-05-04,83
+player_name,position,college,draft_year,pick,round,dataset_label,data_quality_flag,outlier_note,slap_display_score,slap_model_score,dc_score,prospect_profile,dataset,enhanced_breakout,teammate_score,early_declare_score,production_score,speed_score,te_breakout_score,te_production_score,ras_score,breakout_age,peak_dominator,peak_dominator_imputed,rush_yards,rec_yards,team_pass_att,ryptpa,model_version,data_as_of_date,pos_rank
+Jeremiyah Love,RB,Notre Dame,2026,3,1,Drafted Pick 3,complete,,98.6,83.1,98.6,56.1,2026_prospect,,,,57.1,49.7,,,,,16.6,False,,280.0,322.0,0.8696,V5.0,2026-05-04,1
+Jadarian Price,RB,Notre Dame,2026,32,1,Drafted Pick 32,complete,,81.4,60.76,92.4,21.7,2026_prospect,,,,17.0,49.7,,,,,5.4,False,,87.0,322.0,0.2702,V5.0,2026-05-04,2
+Jonah Coleman,RB,Washington,2026,108,4,Drafted Pick 108,complete,,75.7,57.48,64.7,55.3,2026_prospect,,,,57.4,42.6,,,,,9.2,False,,354.0,370.0,0.9568,V5.0,2026-05-04,3
+Eli Heidenreich,RB,Navy,2026,230,7,Drafted Pick 230,outlier_review,Navy triple-option offense — receiving rate inflated vs spread-offense backtest,66.9,53.22,12.9,91.7,2026_prospect,,,,99.9,42.6,,,,,57.1,False,,941.0,182.0,5.1703,V5.0,2026-05-04,4
+Emmett Johnson,RB,Nebraska,2026,161,5,Drafted Pick 161,complete,,63.0,50.73,37.0,58.8,2026_prospect,,,,61.5,42.6,,,,,7.7,False,,370.0,378.0,0.9788,V5.0,2026-05-04,5
+Mike Washington Jr.,RB,Arkansas,2026,122,4,Drafted Pick 122,complete,,60.8,48.7,57.5,36.6,2026_prospect,,,,35.6,42.6,,,,,7.0,False,,226.0,381.0,0.5932,V5.0,2026-05-04,6
+Kaelon Black,RB,Indiana,2026,90,3,Drafted Pick 90,complete,,50.7,44.81,70.9,10.4,2026_prospect,,,,5.1,42.6,,,,,7.8,False,,36.0,406.0,0.0887,V5.0,2026-05-04,7
+Nick Singleton,RB,Penn State,2026,165,5,Drafted Pick 165,complete,,48.5,43.89,35.7,40.9,2026_prospect,,,,40.6,42.6,,,,,14.4,False,,219.0,339.0,0.646,V5.0,2026-05-04,8
+Adam Randall,RB,Clemson,2026,174,5,Drafted Pick 174,complete,,36.2,40.58,31.8,35.0,2026_prospect,,,,33.7,42.6,,,,,12.7,False,,254.0,474.0,0.5359,V5.0,2026-05-04,9
+Demond Claiborne,RB,Wake Forest,2026,198,6,Drafted Pick 198,complete,,19.5,33.79,24.3,24.7,2026_prospect,,,,21.7,42.6,,,,,11.2,False,,140.0,406.0,0.3448,V5.0,2026-05-04,10
+Desmond Reid,RB,Pittsburgh,2026,258,7,UDFA,complete,,17.3,32.78,1.4,42.9,2026_prospect,,,,42.9,42.6,,,,,15.7,False,,317.0,464.0,0.6832,V5.0,2026-05-04,11
+Barika Kpeenu,RB,North Dakota State,2026,258,7,UDFA,complete,,17.3,32.63,1.4,42.4,2026_prospect,,,,42.4,42.6,,,,,3.7,False,,211.0,270.0,0.7815,V5.0,2026-05-04,11
+Kaytron Allen,RB,Penn State,2026,187,6,Drafted Pick 187,complete,,16.8,32.34,26.9,16.4,2026_prospect,,,,12.0,42.6,,,,,5.6,False,,68.0,339.0,0.2006,V5.0,2026-05-04,13
+Dean Connors,RB,Houston,2026,258,7,UDFA,complete,,15.9,32.03,1.4,40.7,2026_prospect,,,,40.4,42.6,,,,,15.1,False,,254.0,377.0,0.6737,V5.0,2026-05-04,14
+Jamal Haynes,RB,Georgia Tech,2026,258,7,UDFA,complete,,15.5,31.64,1.4,39.6,2026_prospect,,,,39.1,42.6,,,,,9.3,False,,257.0,394.0,0.6523,V5.0,2026-05-04,15
+Kaden Feagin,RB,Illinois,2026,258,7,UDFA,complete,,11.5,29.43,1.4,33.3,2026_prospect,,,,31.8,42.6,,,,,5.8,False,,188.0,372.0,0.5054,V5.0,2026-05-04,16
+J'Mari Taylor,RB,Virginia,2026,258,7,UDFA,complete,,10.7,28.72,1.4,31.3,2026_prospect,,,,29.4,42.6,,,,,8.2,False,,253.0,492.0,0.5142,V5.0,2026-05-04,17
+Sedrick Alexander,RB,Vanderbilt,2026,258,7,UDFA,complete,,10.7,28.9,1.4,31.8,2026_prospect,,,,30.0,42.6,,,,,10.9,False,,200.0,400.0,0.5,V5.0,2026-05-04,17
+Chip Trayanum,RB,Toledo,2026,258,7,UDFA,complete,,10.2,28.55,1.4,30.8,2026_prospect,,,,28.8,42.6,,,,,6.6,False,,212.0,399.0,0.5313,V5.0,2026-05-04,19
+Seth McGowan,RB,Kentucky,2026,237,7,Drafted Pick 237,complete,,10.2,28.29,8.9,22.9,2026_prospect,,,,19.6,42.6,,,,,21.9,False,,126.0,367.0,0.3433,V5.0,2026-05-04,19
+Roman Hemby,RB,Indiana,2026,258,7,UDFA,complete,,8.0,26.87,1.4,26.0,2026_prospect,,,,23.2,42.6,,,,,10.3,False,,165.0,406.0,0.4064,V5.0,2026-05-04,21
+Kadarius Calloway,RB,New Mexico State,2026,258,7,UDFA,complete,,8.0,26.57,1.4,25.2,2026_prospect,,,,22.2,42.6,,,,,3.6,False,,175.0,472.0,0.3708,V5.0,2026-05-04,21
+Byron Cardwell,RB,San Diego State,2026,258,7,UDFA,complete,,6.7,26.28,1.4,24.3,2026_prospect,,,,21.3,42.6,,,,,2.0,False,,108.0,290.0,0.3724,V5.0,2026-05-04,23
+Rueben Owens,RB,Texas A&M,2026,258,7,UDFA,complete,,5.4,25.64,1.4,22.5,2026_prospect,,,,19.1,42.6,,,,,2.2,False,,130.0,408.0,0.3186,V5.0,2026-05-04,24
+Jamarion Miller,RB,Alabama,2026,245,7,Drafted Pick 245,complete,,5.0,25.19,5.8,16.8,2026_prospect,,,,12.5,42.6,,,,,1.8,False,,109.0,523.0,0.2084,V5.0,2026-05-04,25
+Rahsul Faison,RB,South Carolina,2026,258,7,UDFA,complete,,5.0,25.22,1.4,21.3,2026_prospect,,,,17.7,42.6,,,,,2.7,False,,118.0,342.0,0.345,V5.0,2026-05-04,25
+Dominic Richardson,RB,Tulsa,2026,258,7,UDFA,complete,,4.1,24.8,1.4,20.1,2026_prospect,,,,16.3,42.6,,,,,5.8,False,,130.0,409.0,0.3178,V5.0,2026-05-04,27
+C.J. Donaldson,RB,Ohio State,2026,258,7,UDFA,complete,,3.6,24.34,1.4,18.8,2026_prospect,,,,14.8,42.6,,,,,3.5,False,,96.0,408.0,0.2353,V5.0,2026-05-04,28
+Robert Henry Jr.,RB,UTSA,2026,258,7,UDFA,complete,,3.2,24.04,1.4,17.9,2026_prospect,,,,13.8,42.6,,,,,4.8,False,,114.0,448.0,0.2545,V5.0,2026-05-04,29
+Noah Whittington,RB,Oregon,2026,258,7,UDFA,complete,,2.8,23.74,1.4,17.1,2026_prospect,,,,12.8,42.6,,,,,4.7,False,,98.0,437.0,0.2243,V5.0,2026-05-04,30
+Quinten Joyner,RB,Texas Tech,2026,258,7,UDFA,complete,,2.3,23.5,1.4,16.4,2026_prospect,,,,12.0,42.6,,,,,3.3,False,,89.0,488.0,0.1824,V5.0,2026-05-04,31
+TreVonte Citizen,RB,McNeese State,2026,258,7,UDFA,complete,,2.3,23.55,1.4,16.5,2026_prospect,,,,12.2,42.6,,,,,1.5,False,,67.0,330.0,0.203,V5.0,2026-05-04,31
+Richard Reese,RB,Stephen F. Austin,2026,258,7,UDFA,complete,,2.3,23.53,1.4,16.5,2026_prospect,,,,12.1,42.6,,,,,3.8,False,,94.0,510.0,0.1843,V5.0,2026-05-04,31
+Jalen Berger,RB,UCLA,2026,258,7,UDFA,complete,,2.3,23.06,1.4,15.1,2026_prospect,,,,10.5,42.6,,,,,11.6,False,,70.0,361.0,0.1939,V5.0,2026-05-04,31
+Kentrel Bullock,RB,South Alabama,2026,258,7,UDFA,complete,,1.4,22.83,1.4,14.5,2026_prospect,,,,9.8,42.6,,,,,6.1,False,,53.0,310.0,0.171,V5.0,2026-05-04,35
+Alton McCaskill IV,RB,Sam Houston State,2026,258,7,UDFA,complete,,1.4,22.8,1.4,14.4,2026_prospect,,,,9.7,42.6,,,,,9.7,False,,51.0,316.0,0.1614,V5.0,2026-05-04,35
+Kejon Owens,RB,Florida International,2026,258,7,UDFA,complete,,1.4,22.71,1.4,14.1,2026_prospect,,,,9.4,42.6,,,,,1.7,False,,67.0,429.0,0.1562,V5.0,2026-05-04,35
+Max Bredeson,RB,Michigan,2026,258,7,UDFA,complete,,1.0,20.48,1.4,7.7,2026_prospect,,,,1.9,42.6,,,,,1.4,False,,11.0,340.0,0.0324,V5.0,2026-05-04,38
+Le'Veon Moss,RB,Texas A&M,2026,258,7,UDFA,complete,,1.0,20.03,1.4,6.5,2026_prospect,,,,0.4,42.6,,,,,2.7,False,,3.0,408.0,0.0074,V5.0,2026-05-04,38
+Jaydn Ott,RB,Oklahoma,2026,258,7,UDFA,complete,,1.0,20.32,1.4,7.3,2026_prospect,,,,1.4,42.6,,,,,11.9,False,,10.0,431.0,0.0232,V5.0,2026-05-04,38
+Terion Stewart,RB,Virginia Tech,2026,258,7,UDFA,complete,,1.0,20.92,1.4,9.0,2026_prospect,,,,3.4,42.6,,,,,0.6,False,,19.0,319.0,0.0596,V5.0,2026-05-04,38
+Kedrick Reescano,RB,Arizona,2026,258,7,UDFA,complete,,1.0,20.38,1.4,7.5,2026_prospect,,,,1.6,42.6,,,,,0.8,False,,12.0,447.0,0.0268,V5.0,2026-05-04,38
+Djay Braswell,RB,Georgia State,2026,258,7,UDFA,complete,,1.0,20.57,1.4,8.0,2026_prospect,,,,2.2,42.6,,,,,0.6,False,,17.0,475.0,0.0358,V5.0,2026-05-04,38
+Samuel Singleton Jr.,RB,Florida State,2026,258,7,UDFA,complete,,1.0,20.79,1.4,8.6,2026_prospect,,,,3.0,42.6,,,,,0.3,False,,16.0,339.0,0.0472,V5.0,2026-05-04,38
+Branson Robinson,RB,Georgia State,2026,258,7,UDFA,complete,,1.0,20.77,1.4,8.6,2026_prospect,,,,2.9,42.6,,,,,0.5,False,,22.0,475.0,0.0463,V5.0,2026-05-04,38
+Jaylon Glover,RB,UNLV,2026,258,7,UDFA,complete,,1.0,22.17,1.4,12.6,2026_prospect,,,,7.6,42.6,,,,,1.2,False,,51.0,424.0,0.1203,V5.0,2026-05-04,38
+Savion Red,RB,Sacramento State,2026,258,7,UDFA,complete,,1.0,20.17,1.4,6.9,2026_prospect,,,,0.9,42.6,,,,,1.7,False,,3.0,209.0,0.0144,V5.0,2026-05-04,38
+Andrew Paul,RB,Jacksonville State,2026,258,7,UDFA,complete,,1.0,21.57,1.4,10.8,2026_prospect,,,,5.6,42.6,,,,,2.2,False,,29.0,328.0,0.0884,V5.0,2026-05-04,38
+Armoni Goodwin,RB,UT Martin,2026,258,7,UDFA,complete,,1.0,20.56,1.4,8.0,2026_prospect,,,,2.2,42.6,,,,,2.4,False,,18.0,443.0,0.0406,V5.0,2026-05-04,38
+L.J. Johnson Jr.,RB,California,2026,258,7,UDFA,complete,,1.0,20.88,1.4,8.9,2026_prospect,,,,3.3,42.6,,,,,0.3,False,,18.0,361.0,0.0499,V5.0,2026-05-04,38
+Trevion Cooley,RB,Troy,2026,258,7,UDFA,complete,,1.0,20.07,1.4,6.6,2026_prospect,,,,0.6,42.6,,,,,7.6,False,,4.0,382.0,0.0105,V5.0,2026-05-04,38
+Derrick Davis Jr.,RB,Pittsburgh,2026,258,7,UDFA,complete,,1.0,20.49,1.4,7.8,2026_prospect,,,,2.0,42.6,,,,,0.2,False,,15.0,461.0,0.0325,V5.0,2026-05-04,38
+Logan Diggs,RB,Mississippi,2026,258,7,UDFA,complete,,1.0,21.74,1.4,11.3,2026_prospect,,,,6.1,42.6,,,,,5.4,False,,56.0,523.0,0.1071,V5.0,2026-05-04,38
+E.J. Smith,RB,Texas A&M,2026,258,7,UDFA,complete,,1.0,20.66,1.4,8.2,2026_prospect,,,,2.5,42.6,,,,,4.3,False,,18.0,408.0,0.0441,V5.0,2026-05-04,38
+Roydell Williams,RB,Florida State,2026,258,7,UDFA,complete,,1.0,20.81,1.4,8.7,2026_prospect,,,,3.0,42.6,,,,,3.3,False,,19.0,339.0,0.056,V5.0,2026-05-04,38
+Cam Porter,RB,Northwestern,2026,258,7,UDFA,complete,,1.0,21.0,1.4,9.2,2026_prospect,,,,3.7,42.6,,,,,4.9,False,,23.0,378.0,0.0608,V5.0,2026-05-04,38
+Curtis Allen,RB,Virginia Union,2026,258,7,UDFA,imputed,,1.0,19.9,1.4,6.1,2026_prospect,,,,0.0,42.6,,,,,6.8,True,,,,,V5.0,2026-05-04,38
+Kenyon Sadiq,TE,Oregon,2026,16,1,Drafted Pick 16,complete,,81.8,66.02,95.9,31.5,2026_prospect,,,,,,29.8,14.3,60.0,20.0,18.7,False,,560.0,437.0,1.2815,V5.0,2026-05-04,1
+Eli Stowers,TE,Vanderbilt,2026,54,2,Drafted Pick 54,complete,,74.5,61.62,83.1,43.1,2026_prospect,,,,,,66.4,22.0,40.0,21.0,27.806563039723663,False,,765.0,400.0,1.9125,V5.0,2026-05-04,2
+Max Klare,TE,Ohio State,2026,61,2,Drafted Pick 61,complete,,67.2,58.85,80.6,39.6,2026_prospect,,,,,,68.0,10.9,40.0,20.8,30.908269317668324,False,,448.0,408.0,1.098,V5.0,2026-05-04,3
+Marlin Klein,TE,Michigan,2026,59,2,Drafted Pick 59,complete,,50.6,52.07,80.6,21.7,2026_prospect,,,,,,25.2,5.9,40.0,,10.7,False,,248.0,340.0,0.7294,V5.0,2026-05-04,4
+Nate Boerkircher,TE,Texas A&M,2026,56,2,Drafted Pick 56,complete,,48.2,51.47,81.2,18.8,2026_prospect,,,,,,20.9,2.5,40.0,,8.69,False,,204.0,408.0,0.5,V5.0,2026-05-04,5
+Eli Raridon,TE,Notre Dame,2026,95,3,Drafted Pick 95,complete,,45.1,50.49,68.4,33.2,2026_prospect,,,,,,45.6,16.3,40.0,21.8,16.19079610345986,False,,482.0,322.0,1.4969,V5.0,2026-05-04,6
+Sam Roush,TE,Stanford,2026,69,3,Drafted Pick 69,complete,,45.1,50.93,78.8,23.4,2026_prospect,,,,,,22.7,13.0,40.0,23.0,21.51,False,,545.0,391.0,1.3939,V5.0,2026-05-04,6
+Oscar Delp,TE,Georgia,2026,73,3,Drafted Pick 73,complete,,42.0,49.04,78.2,20.5,2026_prospect,,,,,,23.4,4.5,40.0,,10.3,False,,261.0,417.0,0.6259,V5.0,2026-05-04,8
+Justin Joly,TE,NC State,2026,152,5,Drafted Pick 152,complete,,37.8,46.73,39.6,44.3,2026_prospect,,,,,,80.3,11.3,40.0,19.3,25.55604012211077,False,,489.0,413.0,1.184,V5.0,2026-05-04,9
+Will Kacmarek,TE,Ohio State,2026,87,3,Drafted Pick 87,complete,,36.5,46.36,71.4,19.7,2026_prospect,,,,,,24.2,1.6,40.0,,11.51,False,,168.0,408.0,0.4118,V5.0,2026-05-04,10
+Tanner Koziol,TE,Houston,2026,164,5,Drafted Pick 164,complete,,31.6,44.57,34.7,42.8,2026_prospect,,,,,,66.7,20.9,40.0,19.0,28.34964562942963,False,,727.0,377.0,1.9284,V5.0,2026-05-04,11
+Seydou Traore,TE,Mississippi State,2026,180,6,Drafted Pick 180,complete,,24.3,42.53,26.1,42.8,2026_prospect,,,,,,79.1,8.3,40.0,19.8,23.25925925925926,False,,372.0,390.0,0.9538,V5.0,2026-05-04,12
+Matthew Hibner,TE,SMU,2026,133,4,Drafted Pick 133,complete,,20.0,40.74,49.4,22.9,2026_prospect,,,,,,26.8,7.6,40.0,,11.825332248440466,False,,436.0,460.0,0.9478,V5.0,2026-05-04,13
+Joe Royer,TE,Cincinnati,2026,170,5,Drafted Pick 170,complete,,11.4,36.92,32.8,25.6,2026_prospect,,,,,,31.7,10.0,40.0,22.7,18.39323467230444,False,,416.0,363.0,1.146,V5.0,2026-05-04,14
+Jaren Kanak,TE,Oklahoma,2026,225,7,Drafted Pick 225,complete,,10.2,35.29,12.6,38.0,2026_prospect,,,,,,61.1,13.6,40.0,20.8,17.29200652528548,False,,533.0,431.0,1.2367,V5.0,2026-05-04,15
+Josh Cuevas,TE,Alabama,2026,173,5,Drafted Pick 173,complete,,10.2,35.02,30.7,21.8,2026_prospect,,,,,,25.4,6.1,40.0,20.0,20.59,False,,411.0,523.0,0.7859,V5.0,2026-05-04,15
+Riley Nowakowski,TE,Indiana,2026,169,5,Drafted Pick 169,complete,,10.2,35.81,32.8,22.5,2026_prospect,,,,,,25.1,8.3,40.0,,10.128238680973569,False,,387.0,406.0,0.9532,V5.0,2026-05-04,15
+Bauer Sharp,TE,LSU,2026,185,6,Drafted Pick 185,complete,,7.1,33.78,25.5,22.5,2026_prospect,,,,,,29.5,3.7,40.0,20.0,15.02,False,,252.0,443.0,0.5688,V5.0,2026-05-04,18
+Jack Endries,TE,Texas,2026,221,7,Drafted Pick 221,complete,,6.5,32.54,13.2,30.0,2026_prospect,,,,,,46.8,6.6,40.0,21.4,18.59701492537313,False,,346.0,420.0,0.8238,V5.0,2026-05-04,19
+John Michael Gyllenborg,TE,Wyoming,2026,258,7,UDFA,complete,,5.3,30.21,1.0,34.5,2026_prospect,,,,,,62.1,3.3,40.0,20.9,19.200351493848856,False,,217.0,384.0,0.5651,V5.0,2026-05-04,20
+Jack Velling,TE,Michigan State,2026,258,7,UDFA,complete,,2.8,28.45,1.0,30.1,2026_prospect,,,,,,45.4,8.3,40.0,20.0,18.54,False,,359.0,378.0,0.9497,V5.0,2026-05-04,21
+Michael Trigg,TE,Baylor,2026,258,7,UDFA,complete,,1.6,27.21,1.0,27.0,2026_prospect,,,,,,31.8,13.6,40.0,22.8,18.670971213344096,False,,694.0,510.0,1.3608,V5.0,2026-05-04,22
+Dallen Bentley,TE,Utah,2026,258,7,UDFA,complete,,1.6,28.13,1.0,29.3,2026_prospect,,,,,,34.1,17.5,40.0,22.5,23.16890881913304,False,,620.0,373.0,1.6622,V5.0,2026-05-04,22
+Dae'Quan Wright,TE,Mississippi,2026,258,7,UDFA,complete,,1.6,26.63,1.0,25.6,2026_prospect,,,,,,29.0,12.5,40.0,22.0,16.65,False,,635.0,523.0,1.2141,V5.0,2026-05-04,22
+Carsen Ryan,TE,BYU,2026,248,7,Drafted Pick 248,complete,,1.6,27.1,6.5,24.0,2026_prospect,,,,,,22.5,14.8,40.0,23.0,20.090732339598187,False,,620.0,403.0,1.5385,V5.0,2026-05-04,22
+Lance Mason,TE,Wisconsin,2026,258,7,UDFA,complete,,1.6,26.19,1.0,24.5,2026_prospect,,,,,,24.7,13.9,40.0,23.0,27.33,False,,398.0,272.0,1.4632,V5.0,2026-05-04,22
+Toby Payne,TE,Marshall,2026,258,7,UDFA,complete,,1.6,26.6,1.0,25.5,2026_prospect,,,,,,30.4,10.9,40.0,22.9,15.770465489566613,False,,387.0,335.0,1.1552,V5.0,2026-05-04,22
+Lake McRee,TE,USC,2026,258,7,UDFA,complete,,1.6,25.97,1.0,23.9,2026_prospect,,,,,,26.6,10.6,40.0,,11.564449064449065,False,,450.0,420.0,1.0714,V5.0,2026-05-04,22
+Nate Rutchena,TE,UC Davis,2026,258,7,UDFA,imputed,,1.6,26.17,1.0,24.4,2026_prospect,,,,,,31.8,6.6,40.0,,15.0,True,,,,,V5.0,2026-05-04,22
+Chamon Metayer,TE,Arizona State,2026,258,7,UDFA,complete,,1.6,25.69,1.0,23.2,2026_prospect,,,,,,28.0,7.3,40.0,,14.23,False,,375.0,430.0,0.8721,V5.0,2026-05-04,22
+Dan Villari,TE,Syracuse,2026,258,7,UDFA,complete,,1.6,24.71,1.0,20.8,2026_prospect,,,,,,20.4,8.4,40.0,24.1,15.77924601632336,False,,412.0,408.0,1.0098,V5.0,2026-05-04,22
+Ty Thompson,TE,Tulane,2026,258,7,UDFA,complete,,1.6,24.89,1.0,21.2,2026_prospect,,,,,,23.3,6.6,40.0,,8.252032520325203,False,,0.0,391.0,0.0,V5.0,2026-05-04,22
+Brett Norfleet,TE,Missouri,2026,258,7,UDFA,complete,,1.6,25.05,1.0,21.6,2026_prospect,,,,,,25.4,5.6,40.0,22.0,22.93,False,,254.0,361.0,0.7036,V5.0,2026-05-04,22
+R.J. Maryland,TE,SMU,2026,258,7,UDFA,complete,,1.6,25.34,1.0,22.3,2026_prospect,,,,,,28.3,4.6,40.0,21.0,18.15,False,,322.0,460.0,0.7,V5.0,2026-05-04,22
+DJ Rogers,TE,TCU,2026,258,7,UDFA,complete,,1.6,24.67,1.0,20.7,2026_prospect,,,,,,23.5,5.0,40.0,,8.508935716190983,False,,319.0,460.0,0.6935,V5.0,2026-05-04,22
+Miles Kitselman,TE,Tennessee,2026,258,7,UDFA,complete,,1.6,24.74,1.0,20.9,2026_prospect,,,,,,25.5,3.5,40.0,22.0,15.63,False,,253.0,437.0,0.5789,V5.0,2026-05-04,22
+Ethan Davis,TE,Tennessee,2026,258,7,UDFA,complete,,1.6,24.21,1.0,19.5,2026_prospect,,,,,,21.8,3.6,40.0,,6.756046267087276,False,,257.0,437.0,0.5881,V5.0,2026-05-04,22
+Jameson Geers,TE,Minnesota,2026,258,7,UDFA,complete,,1.6,24.57,1.0,20.4,2026_prospect,,,,,,25.1,2.7,40.0,22.0,15.84,False,,206.0,399.0,0.5163,V5.0,2026-05-04,22
+Josh Kattus,TE,Kentucky,2026,258,7,UDFA,complete,,1.6,24.28,1.0,19.7,2026_prospect,,,,,,23.0,2.9,40.0,23.0,20.7,False,,195.0,367.0,0.5313,V5.0,2026-05-04,22
+Andrew Rappleyea,TE,Penn State,2026,258,7,UDFA,complete,,1.6,24.19,1.0,19.5,2026_prospect,,,,,,22.4,2.9,40.0,,7.395234182415776,False,,180.0,339.0,0.531,V5.0,2026-05-04,22
+Jaleel Skinner,TE,Louisville,2026,258,7,UDFA,complete,,1.6,24.12,1.0,19.3,2026_prospect,,,,,,22.2,2.6,40.0,,8.39,False,,204.0,418.0,0.488,V5.0,2026-05-04,22
+Khalil Dinkins,TE,Penn State,2026,258,7,UDFA,complete,,1.6,24.04,1.0,19.1,2026_prospect,,,,,,21.9,2.4,40.0,,7.83,False,,167.0,339.0,0.4926,V5.0,2026-05-04,22
+Benji Gosnell,TE,Virginia Tech,2026,258,7,UDFA,complete,,1.6,24.74,1.0,20.8,2026_prospect,,,,,,28.9,0.0,40.0,,13.878713878713878,False,,86.0,319.0,0.2696,V5.0,2026-05-04,22
+Amari Niblack,TE,Texas A&M,2026,258,7,UDFA,complete,,1.6,24.24,1.0,19.6,2026_prospect,,,,,,25.6,0.0,40.0,,14.11,False,,69.0,408.0,0.1691,V5.0,2026-05-04,22
+Luke Hasz,TE,Mississippi,2026,258,7,UDFA,complete,,1.6,24.34,1.0,19.8,2026_prospect,,,,,,26.2,0.0,40.0,20.0,15.03,False,,28.0,523.0,0.0535,V5.0,2026-05-04,22
+Cooper Flanagan,TE,Notre Dame,2026,258,7,UDFA,complete,,1.0,23.91,1.0,18.8,2026_prospect,,,,,,16.7,6.6,40.0,,6.75,False,,55.0,329.0,0.1672,V5.0,2026-05-04,46
+Tanner Arkin,TE,Illinois,2026,258,7,UDFA,complete,,1.0,23.4,1.0,17.5,2026_prospect,,,,,,19.9,0.0,40.0,,6.46,False,,114.0,372.0,0.3065,V5.0,2026-05-04,46
+Jack Pedersen,TE,UCLA,2026,258,7,UDFA,complete,,1.0,23.28,1.0,17.2,2026_prospect,,,,,,19.2,0.0,40.0,,5.57,False,,72.0,361.0,0.1994,V5.0,2026-05-04,46
+Holden Staes,TE,Indiana,2026,258,7,UDFA,complete,,1.0,23.47,1.0,17.7,2026_prospect,,,,,,20.5,0.0,40.0,,5.472636815920398,False,,62.0,406.0,0.1527,V5.0,2026-05-04,46
+Davin Stoffel,TE,Illinois,2026,258,7,UDFA,complete,,1.0,22.77,1.0,15.9,2026_prospect,,,,,,15.8,0.0,40.0,,2.93,False,,24.0,372.0,0.0645,V5.0,2026-05-04,46
+Joey Schlaffer,TE,Penn State,2026,258,7,UDFA,complete,,1.0,22.77,1.0,15.9,2026_prospect,,,,,,15.8,0.0,40.0,,5.43,False,,19.0,339.0,0.056,V5.0,2026-05-04,46
+Shamar Easter,TE,North Carolina,2026,258,7,UDFA,complete,,1.0,22.78,1.0,15.9,2026_prospect,,,,,,15.9,0.0,40.0,,0.8608971454463071,False,,17.0,355.0,0.0479,V5.0,2026-05-04,46
+Jordyn Tyson,WR,Arizona State,2026,8,1,Drafted Pick 8,complete,,96.1,90.22,96.3,82.1,2026_prospect,98.2,0.0,100.0,,,,,,19.0,36.4,False,4.0,711.0,430.0,1.6535,V5.0,2026-05-04,1
+Carnell Tate,WR,Ohio State,2026,4,1,Drafted Pick 4,complete,,94.4,88.24,98.6,68.4,2026_prospect,77.6,0.0,100.0,,,,,,20.0,25.3,False,16.0,875.0,408.0,2.1446,V5.0,2026-05-04,2
+Kevin Concepcion,WR,Texas A&M,2026,24,1,Drafted Pick 24,complete,,91.2,84.61,88.0,83.3,2026_prospect,99.9,0.0,100.0,,,,,,19.0,42.4,False,75.0,919.0,408.0,2.2525,V5.0,2026-05-04,3
+Makai Lemon,WR,USC,2026,20,1,Drafted Pick 20,complete,,84.8,79.53,91.5,62.1,2026_prospect,68.1,0.0,100.0,,,,,,21.0,36.2,False,4.0,1156.0,420.0,2.7524,V5.0,2026-05-04,4
+Omar Cooper Jr.,WR,Indiana,2026,30,1,Drafted Pick 30,complete,,80.8,76.51,85.7,62.2,2026_prospect,68.3,0.0,100.0,,,,,,21.0,26.7,False,74.0,961.0,406.0,2.367,V5.0,2026-05-04,5
+Denzel Boston,WR,Washington,2026,39,2,Drafted Pick 39,complete,,75.9,71.9,81.5,55.0,2026_prospect,82.5,0.0,0.0,,,,,,20.0,35.0,False,,881.0,370.0,2.3811,V5.0,2026-05-04,6
+Germie Bernard,WR,Alabama,2026,47,2,Drafted Pick 47,complete,,75.9,71.62,78.0,60.8,2026_prospect,66.1,0.0,100.0,,,,,,21.0,22.3,False,101.0,862.0,523.0,1.6482,V5.0,2026-05-04,6
+Ja'Kobi Lane,WR,USC,2026,80,3,Drafted Pick 80,complete,,73.3,70.02,64.2,79.2,2026_prospect,93.8,0.0,100.0,,,,,,19.0,27.6,False,,745.0,420.0,1.7738,V5.0,2026-05-04,8
+Caleb Douglas,WR,Texas Tech,2026,75,3,Drafted Pick 75,complete,,68.6,67.38,65.8,67.1,2026_prospect,75.6,0.0,100.0,,,,,,20.0,21.3,False,,830.0,486.0,1.7078,V5.0,2026-05-04,9
+De'Zhaun Stribling,WR,Mississippi,2026,33,2,Drafted Pick 33,complete,,68.4,66.01,84.7,30.1,2026_prospect,45.1,0.0,0.0,,,,,,22.0,20.2,False,,811.0,523.0,1.5507,V5.0,2026-05-04,10
+Malachi Fields,WR,Notre Dame,2026,74,3,Drafted Pick 74,complete,,67.8,65.62,66.2,60.5,2026_prospect,90.8,0.0,0.0,,,,,,19.0,21.6,False,,630.0,322.0,1.9565,V5.0,2026-05-04,11
+Ted Hurst,WR,Georgia State,2026,84,3,Drafted Pick 84,complete,,67.8,65.46,62.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,37.1,False,,1004.0,475.0,2.1137,V5.0,2026-05-04,11
+Antonio Williams,WR,Clemson,2026,71,3,Drafted Pick 71,complete,,65.8,64.71,67.2,55.5,2026_prospect,83.2,0.0,0.0,,,,,,20.0,26.4,False,78.0,604.0,474.0,1.2743,V5.0,2026-05-04,13
+Zachariah Branch,WR,Georgia,2026,79,3,Drafted Pick 79,complete,,65.8,63.97,64.7,58.4,2026_prospect,62.6,0.0,100.0,,,,,,21.0,25.2,False,7.0,811.0,417.0,1.9448,V5.0,2026-05-04,13
+Zavion Thomas,WR,LSU,2026,89,3,Drafted Pick 89,complete,,65.8,64.5,60.6,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,32.7,False,99.0,488.0,443.0,1.1016,V5.0,2026-05-04,13
+Chris Brazzell II,WR,Tennessee,2026,83,3,Drafted Pick 83,complete,,61.1,61.97,62.6,54.3,2026_prospect,81.5,0.0,0.0,,,,,,20.0,33.0,False,,1017.0,437.0,2.3272,V5.0,2026-05-04,16
+Elijah Sarratt,WR,Indiana,2026,115,4,Drafted Pick 115,complete,,55.1,58.53,51.6,62.3,2026_prospect,93.4,0.0,0.0,,,,,,19.0,26.8,False,,806.0,406.0,1.9852,V5.0,2026-05-04,17
+Chris Bell,WR,Louisville,2026,94,3,Drafted Pick 94,complete,,52.5,56.85,58.7,44.2,2026_prospect,66.3,0.0,0.0,,,,,,21.0,32.7,False,,917.0,418.0,2.1938,V5.0,2026-05-04,18
+Colbie Young,WR,Georgia,2026,140,5,Drafted Pick 140,complete,,51.0,55.74,44.4,66.8,2026_prospect,75.1,100.0,0.0,,,,,,20.0,20.2,False,,358.0,417.0,0.8585,V5.0,2026-05-04,19
+Skyler Bell,WR,UConn,2026,125,4,Drafted Pick 125,complete,,50.4,55.05,50.0,56.3,2026_prospect,84.5,0.0,0.0,,,,,,20.0,39.0,False,-2.0,1276.0,451.0,2.8293,V5.0,2026-05-04,20
+Brenen Thompson,WR,Mississippi State,2026,105,4,Drafted Pick 105,complete,,44.4,51.77,55.3,33.9,2026_prospect,50.9,0.0,0.0,,,,,,22.0,31.8,False,14.0,1054.0,390.0,2.7026,V5.0,2026-05-04,21
+Cyrus Allen,WR,Cincinnati,2026,176,5,Drafted Pick 176,complete,,40.3,50.21,32.2,66.6,2026_prospect,99.9,0.0,0.0,,,,,,19.0,31.7,False,34.0,660.0,363.0,1.8182,V5.0,2026-05-04,22
+Kevin Coleman Jr.,WR,Missouri,2026,177,6,Drafted Pick 177,complete,,37.1,48.34,31.8,60.9,2026_prospect,66.3,0.0,100.0,,,,,,21.0,22.6,False,76.0,732.0,361.0,2.0277,V5.0,2026-05-04,23
+Bryce Lance,WR,North Dakota State,2026,136,5,Drafted Pick 136,complete,,37.1,48.09,45.5,39.1,2026_prospect,58.7,0.0,0.0,,,,,,22.0,37.4,False,92.0,895.0,274.0,3.2664,V5.0,2026-05-04,23
+Reggie Virgil,WR,Texas Tech,2026,143,5,Drafted Pick 143,partial_data,,36.0,46.87,42.9,38.8,2026_prospect,33.2,0.0,100.0,,,,,,,18.2,False,,705.0,486.0,1.4506,V5.0,2026-05-04,25
+Lewis Bond,WR,Boston College,2026,204,6,Drafted Pick 204,complete,,33.4,45.94,21.1,65.6,2026_prospect,98.4,0.0,0.0,,,,,,19.0,36.8,False,3.0,1010.0,454.0,2.2247,V5.0,2026-05-04,26
+Kaden Wetjen,WR,Iowa,2026,121,4,Drafted Pick 121,partial_data,,31.6,45.35,50.4,21.7,2026_prospect,32.6,0.0,0.0,,,,,,,12.6,False,79.0,151.0,286.0,0.528,V5.0,2026-05-04,27
+Noah Thomas,WR,Georgia,2026,258,7,UDFA,complete,,30.2,45.14,1.4,86.7,2026_prospect,80.0,100.0,100.0,,,,,,20.0,30.0,False,,254.0,417.0,0.6091,V5.0,2026-05-04,28
+Amare Thomas,WR,Houston,2026,258,7,UDFA,complete,,29.0,44.12,1.4,83.3,2026_prospect,99.9,0.0,100.0,,,,,,19.0,40.2,False,9.0,966.0,377.0,2.5623,V5.0,2026-05-04,29
+Kendrick Law,WR,Kentucky,2026,168,5,Drafted Pick 168,complete,,22.4,41.52,36.0,33.7,2026_prospect,50.6,0.0,0.0,,,,,,22.0,21.1,False,53.0,540.0,367.0,1.4714,V5.0,2026-05-04,30
+Barion Brown,WR,LSU,2026,190,6,Drafted Pick 190,partial_data,,20.4,40.95,25.9,42.5,2026_prospect,38.7,0.0,100.0,,,,,,,18.7,False,33.0,532.0,443.0,1.2009,V5.0,2026-05-04,31
+Josh Cameron,WR,Baylor,2026,191,6,Drafted Pick 191,complete,,19.8,40.8,25.4,42.4,2026_prospect,63.6,0.0,0.0,,,,,,21.0,27.2,False,,872.0,510.0,1.7098,V5.0,2026-05-04,32
+Shelton Sampson Jr.,WR,Louisiana-Lafayette,2026,258,7,UDFA,complete,,19.8,40.92,1.4,72.6,2026_prospect,83.9,0.0,100.0,,,,,,20.0,37.8,False,,537.0,342.0,1.5702,V5.0,2026-05-04,32
+Anthony Evans III,WR,Mississippi State,2026,258,7,UDFA,complete,,18.6,40.46,1.4,71.1,2026_prospect,81.6,0.0,100.0,,,,,,20.0,23.2,False,47.0,831.0,390.0,2.1308,V5.0,2026-05-04,34
+C.J. Daniels,WR,Miami (FL),2026,197,6,Drafted Pick 197,complete,,18.1,40.3,23.5,43.6,2026_prospect,65.4,0.0,0.0,,,,,,21.0,30.7,False,,557.0,496.0,1.123,V5.0,2026-05-04,35
+Griffin Wilde,WR,Northwestern,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,19.0,41.7,False,5.0,880.0,378.0,2.328,V5.0,2026-05-04,36
+Justus Ross-Simmons,WR,Syracuse,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,20.7,False,,312.0,408.0,0.7647,V5.0,2026-05-04,36
+Jared Brown,WR,South Carolina,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,26.4,False,33.0,102.0,342.0,0.2982,V5.0,2026-05-04,36
+Devin Voisin,WR,South Alabama,2026,258,7,UDFA,complete,,13.1,39.12,1.4,66.6,2026_prospect,99.9,0.0,0.0,,,,,,18.0,38.5,False,,775.0,310.0,2.5,V5.0,2026-05-04,36
+Vinny Anthony II,WR,Wisconsin,2026,258,7,UDFA,complete,,12.9,38.99,1.4,66.2,2026_prospect,99.3,0.0,0.0,,,,,,19.0,28.5,False,27.0,382.0,235.0,1.6255,V5.0,2026-05-04,40
+Eric McAlister,WR,TCU,2026,258,7,UDFA,complete,,10.5,38.38,1.4,64.1,2026_prospect,96.2,0.0,0.0,,,,,,19.0,32.4,False,,1190.0,460.0,2.587,V5.0,2026-05-04,41
+Chase Roberts,WR,BYU,2026,258,7,UDFA,complete,,10.5,38.43,1.4,64.3,2026_prospect,96.5,0.0,0.0,,,,,,19.0,33.0,False,,802.0,403.0,1.9901,V5.0,2026-05-04,41
+Dane Key,WR,Nebraska,2026,258,7,UDFA,complete,,9.4,37.29,1.4,60.5,2026_prospect,90.8,0.0,0.0,,,,,,19.0,21.5,False,,452.0,378.0,1.1958,V5.0,2026-05-04,43
+Eric Rivers,WR,Georgia Tech,2026,258,7,UDFA,complete,,9.4,37.12,1.4,59.9,2026_prospect,89.9,0.0,0.0,,,,,,20.0,46.6,False,56.0,671.0,394.0,1.703,V5.0,2026-05-04,43
+Jalen Walthall,WR,Incarnate Word,2026,258,7,UDFA,complete,,9.4,37.12,1.4,59.9,2026_prospect,89.9,0.0,0.0,,,,,,20.0,55.9,False,50.0,847.0,540.0,1.5685,V5.0,2026-05-04,43
+C.J. Williams,WR,Stanford,2026,203,6,Drafted Pick 203,complete,,9.4,36.96,21.7,35.2,2026_prospect,52.8,0.0,0.0,,,,,,22.0,35.6,False,,757.0,391.0,1.9361,V5.0,2026-05-04,43
+Joseph Manjack IV,WR,TCU,2026,258,7,UDFA,complete,,9.4,37.41,1.4,60.9,2026_prospect,91.3,0.0,0.0,,,,,,19.0,22.7,False,-4.0,579.0,460.0,1.2587,V5.0,2026-05-04,43
+Keelan Marion,WR,Miami (FL),2026,258,7,UDFA,complete,,9.4,37.6,1.4,61.6,2026_prospect,92.3,0.0,0.0,,,,,,19.0,24.7,False,,746.0,496.0,1.504,V5.0,2026-05-04,43
+Emmanuel Henderson Jr.,WR,Kansas,2026,199,6,Drafted Pick 199,complete,,9.1,36.51,23.3,31.9,2026_prospect,47.8,0.0,0.0,,,,,,22.0,25.6,False,16.0,766.0,345.0,2.2203,V5.0,2026-05-04,49
+Deion Burks,WR,Oklahoma,2026,254,7,Drafted Pick 254,complete,,7.9,35.51,2.7,52.9,2026_prospect,79.4,0.0,0.0,,,,,,20.0,28.7,False,-3.0,620.0,431.0,1.4385,V5.0,2026-05-04,50
+Cody Jackson,WR,Tarleton State,2026,258,7,UDFA,complete,,7.9,36.12,1.4,56.6,2026_prospect,84.9,0.0,0.0,,,,,,20.0,53.4,False,6.0,799.0,126.0,6.3413,V5.0,2026-05-04,50
+London Humphreys,WR,Georgia,2026,258,7,UDFA,partial_data,,7.1,35.03,1.4,53.0,2026_prospect,29.5,100.0,100.0,,,,,,,14.5,False,7.0,276.0,417.0,0.6619,V5.0,2026-05-04,52
+Jordan Dwyer,WR,TCU,2026,258,7,UDFA,complete,,6.5,34.27,1.4,50.4,2026_prospect,75.7,0.0,0.0,,,,,,20.0,21.3,False,,730.0,460.0,1.587,V5.0,2026-05-04,53
+Malik Benson,WR,Oregon,2026,195,6,Drafted Pick 195,partial_data,,6.5,34.34,24.1,22.8,2026_prospect,34.1,0.0,0.0,,,,,,,19.1,False,-4.0,719.0,437.0,1.6453,V5.0,2026-05-04,53
+J.Michael Sturdivant,WR,Florida,2026,258,7,UDFA,complete,,6.5,34.82,1.4,52.3,2026_prospect,78.4,0.0,0.0,,,,,,20.0,26.8,False,1.0,406.0,374.0,1.0856,V5.0,2026-05-04,53
+Jerand Bradley,WR,Kansas State,2026,258,7,UDFA,complete,,6.5,34.34,1.4,50.7,2026_prospect,76.0,0.0,0.0,,,,,,20.0,22.0,False,,184.0,342.0,0.538,V5.0,2026-05-04,53
+Caullin Lacy,WR,Louisville,2026,258,7,UDFA,complete,,5.6,33.66,1.4,48.4,2026_prospect,72.6,0.0,0.0,,,,,,21.0,35.2,False,53.0,635.0,418.0,1.5191,V5.0,2026-05-04,57
+Michael Wortham,WR,Montana,2026,258,7,UDFA,complete,,5.0,33.05,1.4,46.4,2026_prospect,69.5,0.0,0.0,,,,,,21.0,29.1,False,345.0,1003.0,463.0,2.1663,V5.0,2026-05-04,58
+Hank Beatty,WR,Illinois,2026,258,7,UDFA,complete,,4.5,32.2,1.4,43.5,2026_prospect,65.3,0.0,0.0,,,,,,21.0,20.6,False,46.0,864.0,372.0,2.3226,V5.0,2026-05-04,59
+Ja'Varrius Johnson,WR,UCF,2026,258,7,UDFA,complete,,4.5,31.99,1.4,42.9,2026_prospect,64.3,0.0,0.0,,,,,,21.0,28.6,False,,62.0,290.0,0.2138,V5.0,2026-05-04,59
+Jordan Hudson,WR,SMU,2026,258,7,UDFA,complete,,3.9,31.33,1.4,40.6,2026_prospect,61.0,0.0,0.0,,,,,,21.0,21.9,False,6.0,766.0,460.0,1.6652,V5.0,2026-05-04,61
+Dillon Bell,WR,Georgia,2026,258,7,UDFA,partial_data,,3.6,30.7,1.4,38.5,2026_prospect,32.8,100.0,0.0,,,,,,,12.8,False,109.0,268.0,417.0,0.6427,V5.0,2026-05-04,62
+Squirrel White,WR,Florida State,2026,258,7,UDFA,partial_data,,3.6,30.75,1.4,38.7,2026_prospect,33.0,0.0,100.0,,,,,,,18.0,False,6.0,52.0,339.0,0.1534,V5.0,2026-05-04,62
+Ja'Mori Maclin,WR,Kentucky,2026,258,7,UDFA,complete,,3.6,31.18,1.4,40.1,2026_prospect,60.2,0.0,0.0,,,,,,21.0,20.4,False,,209.0,365.0,0.5726,V5.0,2026-05-04,62
+Jayden Ballard,WR,Wisconsin,2026,258,7,UDFA,complete,,3.6,31.28,1.4,40.5,2026_prospect,60.7,0.0,0.0,,,,,,21.0,21.4,False,,150.0,272.0,0.5515,V5.0,2026-05-04,62
+Kobe Prentice,WR,Baylor,2026,258,7,UDFA,partial_data,,3.0,30.1,1.4,36.5,2026_prospect,29.8,0.0,100.0,,,,,,,14.8,False,,380.0,510.0,0.7451,V5.0,2026-05-04,66
+Mikey Matthews,WR,UCLA,2026,258,7,UDFA,partial_data,,3.0,30.08,1.4,36.5,2026_prospect,29.7,0.0,100.0,,,,,,,14.7,False,1.0,348.0,361.0,0.964,V5.0,2026-05-04,66
+Ayden Williams,WR,Mississippi State,2026,258,7,UDFA,partial_data,,3.0,29.47,1.4,34.5,2026_prospect,26.7,0.0,100.0,,,,,,,11.7,False,,252.0,390.0,0.6462,V5.0,2026-05-04,66
+Trebor Pena,WR,Penn State,2026,258,7,UDFA,complete,,3.0,29.36,1.4,34.1,2026_prospect,51.1,0.0,0.0,,,,,,22.0,22.3,False,69.0,552.0,339.0,1.6283,V5.0,2026-05-04,66
+Braylin Presley,WR,Tulsa,2026,258,7,UDFA,partial_data,,2.7,29.23,1.4,33.7,2026_prospect,25.5,0.0,100.0,,,,,,,5.5,False,215.0,115.0,409.0,0.2812,V5.0,2026-05-04,70
+Cordale Russell,WR,Miami (OH),2026,258,7,UDFA,partial_data,,2.7,29.09,1.4,33.2,2026_prospect,24.7,0.0,100.0,,,,,,,9.7,False,,,356.0,,V5.0,2026-05-04,70
+Brandon Inniss,WR,Ohio State,2026,258,7,UDFA,partial_data,,2.7,28.77,1.4,32.1,2026_prospect,23.2,0.0,100.0,,,,,,,8.2,False,16.0,271.0,408.0,0.6642,V5.0,2026-05-04,70
+Jalen Brown,WR,Arkansas,2026,258,7,UDFA,partial_data,,2.7,29.11,1.4,33.2,2026_prospect,24.9,0.0,100.0,,,,,,,9.9,False,,167.0,381.0,0.4383,V5.0,2026-05-04,70
+Hykeem Williams,WR,Colorado,2026,258,7,UDFA,partial_data,,2.7,28.91,1.4,32.6,2026_prospect,23.8,0.0,100.0,,,,,,,8.8,False,,81.0,356.0,0.2275,V5.0,2026-05-04,70
+Antonio Gates Jr.,WR,Delaware State,2026,258,7,UDFA,partial_data,,2.2,28.21,1.4,30.2,2026_prospect,20.3,0.0,100.0,,,,,,,5.3,False,,49.0,338.0,0.145,V5.0,2026-05-04,75
+Harrison Wallace III,WR,Mississippi,2026,258,7,UDFA,complete,,2.2,28.17,1.4,30.1,2026_prospect,45.2,0.0,0.0,,,,,,22.0,20.4,False,,934.0,523.0,1.7859,V5.0,2026-05-04,75
+Raymond Cottrell,WR,West Alabama,2026,258,7,UDFA,partial_data,,1.9,27.6,1.4,28.2,2026_prospect,17.3,0.0,100.0,,,,,,,2.3,False,,,408.0,,V5.0,2026-05-04,77
+Nathan Leacock,WR,North Carolina,2026,258,7,UDFA,partial_data,,1.9,27.35,1.4,27.4,2026_prospect,16.1,0.0,100.0,,,,,,,1.1,False,6.0,48.0,355.0,0.1352,V5.0,2026-05-04,77
+Ryan Niblett,WR,Texas,2026,258,7,UDFA,partial_data,,1.9,27.35,1.4,27.4,2026_prospect,16.0,0.0,100.0,,,,,,,1.0,False,15.0,60.0,420.0,0.1429,V5.0,2026-05-04,77
+Jaquaize Pettaway,WR,East Carolina,2026,258,7,UDFA,partial_data,,1.9,27.57,1.4,28.1,2026_prospect,17.2,0.0,100.0,,,,,,,2.2,False,2.0,32.0,440.0,0.0727,V5.0,2026-05-04,77
+Tyler Brown,WR,Clemson,2026,258,7,UDFA,partial_data,,1.6,27.1,1.4,26.5,2026_prospect,39.8,0.0,0.0,,,,,,,19.8,False,71.0,191.0,474.0,0.403,V5.0,2026-05-04,81
+Braylon James,WR,TCU,2026,258,7,UDFA,partial_data,,1.6,27.18,1.4,26.8,2026_prospect,15.2,0.0,100.0,,,,,,,0.2,False,,6.0,443.0,0.0135,V5.0,2026-05-04,81
+Aaron Anderson,WR,LSU,2026,258,7,UDFA,partial_data,,1.0,26.0,1.4,22.9,2026_prospect,34.3,0.0,0.0,,,,,,,19.3,False,2.0,398.0,443.0,0.8984,V5.0,2026-05-04,83
+Kaleb Brown,WR,UAB,2026,258,7,UDFA,partial_data,,1.0,24.36,1.4,17.4,2026_prospect,26.1,0.0,0.0,,,,,,,11.1,False,5.0,255.0,438.0,0.5822,V5.0,2026-05-04,83
+Tyren Montgomery,WR,John Carroll,2026,258,7,UDFA,imputed,,1.0,26.14,1.4,23.3,2026_prospect,35.0,0.0,0.0,,,,,,,21.6,True,,,,,V5.0,2026-05-04,83
+Rara Thomas,WR,Troy,2026,258,7,UDFA,complete,,1.0,26.46,1.4,24.4,2026_prospect,36.6,0.0,0.0,,,,,,23.0,23.2,False,39.0,629.0,433.0,1.4527,V5.0,2026-05-04,83
+Jalil Farooq,WR,Maryland,2026,258,7,UDFA,complete,,1.0,25.14,1.4,20.0,2026_prospect,30.0,0.0,0.0,,,,,,23.0,20.0,False,8.0,545.0,491.0,1.11,V5.0,2026-05-04,83
+Jeff Caldwell,WR,Cincinnati,2026,258,7,UDFA,partial_data,,1.0,25.8,1.4,22.2,2026_prospect,33.3,0.0,0.0,,,,,,,18.3,False,,478.0,363.0,1.3168,V5.0,2026-05-04,83
+Romello Brinson,WR,SMU,2026,258,7,UDFA,partial_data,,1.0,25.02,1.4,19.6,2026_prospect,29.4,0.0,0.0,,,,,,,14.4,False,4.0,638.0,460.0,1.387,V5.0,2026-05-04,83
+E.J. Williams,WR,Indiana,2026,258,7,UDFA,partial_data,,1.0,24.97,1.4,19.4,2026_prospect,29.2,0.0,0.0,,,,,,,14.2,False,,438.0,406.0,1.0788,V5.0,2026-05-04,83
+Donavon Greene,WR,Virginia Tech,2026,258,7,UDFA,partial_data,,1.0,24.65,1.4,18.4,2026_prospect,27.6,0.0,0.0,,,,,,,12.6,False,,267.0,319.0,0.837,V5.0,2026-05-04,83
+Kyron Ware-Hudson,WR,Penn State,2026,258,7,UDFA,partial_data,,1.0,24.57,1.4,18.1,2026_prospect,27.2,0.0,0.0,,,,,,,12.2,False,,288.0,339.0,0.8496,V5.0,2026-05-04,83
+Jaron Glover,WR,Mississippi State,2026,258,7,UDFA,partial_data,,1.0,24.41,1.4,17.6,2026_prospect,26.4,0.0,0.0,,,,,,,11.4,False,,192.0,338.0,0.568,V5.0,2026-05-04,83
+Andrel Anthony,WR,Duke,2026,258,7,UDFA,partial_data,,1.0,24.22,1.4,17.0,2026_prospect,25.4,0.0,0.0,,,,,,,10.4,False,,246.0,506.0,0.4862,V5.0,2026-05-04,83
+Malik McClain,WR,Arizona State,2026,258,7,UDFA,partial_data,,1.0,24.15,1.4,16.7,2026_prospect,25.1,0.0,0.0,,,,,,,10.1,False,,441.0,430.0,1.0256,V5.0,2026-05-04,83
+Max Tomzcak,WR,Youngstown State,2026,258,7,UDFA,imputed,,1.0,26.14,1.4,23.3,2026_prospect,35.0,0.0,0.0,,,,,,,21.6,True,,,,,V5.0,2026-05-04,83
+JoJo Earle,WR,UNLV,2026,258,7,UDFA,partial_data,,1.0,24.62,1.4,18.3,2026_prospect,27.4,0.0,0.0,,,,,,,7.4,False,102.0,258.0,424.0,0.6085,V5.0,2026-05-04,83
+Chris Hilton,WR,LSU,2026,258,7,UDFA,partial_data,,1.0,23.77,1.4,15.4,2026_prospect,23.1,0.0,0.0,,,,,,,8.1,False,,122.0,443.0,0.2754,V5.0,2026-05-04,83
+Christian Leary,WR,Western Michigan,2026,258,7,UDFA,partial_data,,1.0,25.17,1.4,20.1,2026_prospect,30.2,0.0,0.0,,,,,,,10.2,False,46.0,115.0,305.0,0.377,V5.0,2026-05-04,83
+Dacari Collins,WR,Louisville,2026,258,7,UDFA,partial_data,,1.0,23.82,1.4,15.6,2026_prospect,23.4,0.0,0.0,,,,,,,8.4,False,,219.0,418.0,0.5239,V5.0,2026-05-04,83
+Deion Colzie,WR,Miami (OH),2026,258,7,UDFA,partial_data,,1.0,23.76,1.4,15.4,2026_prospect,23.1,0.0,0.0,,,,,,,8.1,False,,178.0,368.0,0.4837,V5.0,2026-05-04,83
+Talyn Shettron,WR,Oklahoma State,2026,258,7,UDFA,partial_data,,1.0,23.36,1.4,14.1,2026_prospect,21.1,0.0,0.0,,,,,,,6.1,False,,167.0,426.0,0.392,V5.0,2026-05-04,83
+Tobias Merriweather,WR,Utah,2026,258,7,UDFA,partial_data,,1.0,22.6,1.4,11.5,2026_prospect,17.3,0.0,0.0,,,,,,,2.3,False,,130.0,373.0,0.3485,V5.0,2026-05-04,83
+Jaden Bray,WR,West Virginia,2026,258,7,UDFA,partial_data,,1.0,24.48,1.4,17.8,2026_prospect,26.7,0.0,0.0,,,,,,,11.7,False,,95.0,327.0,0.2905,V5.0,2026-05-04,83
+Andre Greene Jr.,WR,Virginia,2026,258,7,UDFA,partial_data,,1.0,22.41,1.4,10.9,2026_prospect,16.3,0.0,0.0,,,,,,,1.3,False,,7.0,492.0,0.0142,V5.0,2026-05-04,83
+Kyion Grayes,WR,California,2026,258,7,UDFA,partial_data,,1.0,22.2,1.4,10.2,2026_prospect,15.3,0.0,0.0,,,,,,,0.3,False,,10.0,505.0,0.0198,V5.0,2026-05-04,83
+Jayden McGowan,WR,Charlotte,2026,258,7,UDFA,partial_data,,1.0,22.17,1.4,10.1,2026_prospect,15.1,0.0,0.0,,,,,,,0.1,False,,7.0,379.0,0.0185,V5.0,2026-05-04,83
+Jayden Thomas,WR,Virginia,2026,258,7,UDFA,partial_data,,1.0,23.77,1.4,15.4,2026_prospect,23.2,0.0,0.0,,,,,,,8.2,False,,9.0,492.0,0.0183,V5.0,2026-05-04,83
