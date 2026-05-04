@@ -935,6 +935,25 @@ for src_file, key_cols in [
 master['peak_dominator_imputed'] = master.apply(
     lambda r: imputed_lookup.get((r['player_name'], int(r['draft_year'])), False), axis=1)
 
+# ----------------------------------------------------------------------------
+# broke_out (boolean): explicit flag for whether the player ever hit the
+# position-specific dominator threshold (20% WR, 15% TE). Always populated.
+# Use this instead of checking 'is breakout_age NaN' — clearer semantics.
+# ----------------------------------------------------------------------------
+def _broke_out(row):
+    if pd.notna(row.get('breakout_age')):
+        return True
+    pos = row['position']
+    if pos == 'RB':
+        return None  # RBs don't have a 'breakout' concept in the model
+    pd_val = row.get('peak_dominator')
+    if pd.isna(pd_val):
+        return None  # unknown
+    threshold = 20.0 if pos == 'WR' else 15.0
+    return bool(pd_val >= threshold)
+
+master['broke_out'] = master.apply(_broke_out, axis=1)
+
 # Per CLAUDE.md "never estimate, guess, or make up data" — we do NOT impute
 # missing peak_dominator or ryptpa values in the master DB. NaN here means
 # "we don't have college receiving data for this player" (D2/D3/Ivy schools,
@@ -1020,7 +1039,7 @@ col_order = [
     # TE components
     'te_breakout_score', 'te_production_score', 'ras_score',
     # Shared raw inputs
-    'breakout_age', 'peak_dominator', 'peak_dominator_imputed', 'rush_yards',
+    'breakout_age', 'broke_out', 'peak_dominator', 'peak_dominator_imputed', 'rush_yards',
     'rec_yards', 'team_pass_att', 'ryptpa',
     # NFL outcomes
     'nfl_hit24', 'nfl_hit12', 'nfl_first_3yr_ppg', 'nfl_career_ppg',
