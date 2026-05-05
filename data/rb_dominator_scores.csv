@@ -1,0 +1,291 @@
+player_name,draft_year,dataset,peak_dominator,peak_dominator_season,peak_dominator_team,rec_yds_in_peak,rec_tds_in_peak,team_rec_yds_in_peak,team_rec_tds_in_peak,n_seasons_found
+Todd Gurley,2015,backtest,,,,,,,,0
+Melvin Gordon,2015,backtest,10.9,2014.0,Wisconsin,124.0,2.0,1961.0,13.0,1
+T.J. Yeldon,2015,backtest,2.2,2014.0,Alabama,158.0,0.0,3638.0,30.0,1
+Ameer Abdullah,2015,backtest,11.5,2014.0,Nebraska,208.0,3.0,2376.0,21.0,1
+Tevin Coleman,2015,backtest,4.9,2014.0,Indiana,143.0,0.0,1471.0,7.0,1
+Duke Johnson,2015,backtest,,,,,,,,0
+David Johnson,2015,backtest,33.9,2014.0,Northern Iowa,276.0,1.0,645.0,4.0,1
+Matt Jones,2015,backtest,5.0,2014.0,Florida,65.0,1.0,1998.0,15.0,1
+Jeremy Langford,2015,backtest,0.9,2014.0,Michigan State,51.0,0.0,2992.0,22.0,1
+Javorius Allen,2015,backtest,9.5,2014.0,USC,442.0,1.0,2824.0,30.0,1
+Mike Davis,2015,backtest,6.9,2014.0,South Carolina,336.0,1.0,3365.0,26.0,1
+David Cobb,2015,backtest,4.8,2014.0,Minnesota,129.0,0.0,1353.0,10.0,1
+Jay Ajayi,2015,backtest,12.2,2014.0,Boise State,461.0,3.0,3599.0,26.0,1
+Karlos Williams,2015,backtest,3.8,2014.0,Florida State,195.0,0.0,2547.0,21.0,1
+Cameron Artis-Payne,2015,backtest,3.1,2014.0,Auburn,129.0,0.0,2070.0,18.0,1
+Josh Robinson,2015,backtest,7.9,2014.0,Mississippi State,370.0,1.0,3162.0,25.0,1
+Marcus Murphy,2015,backtest,6.1,2014.0,Missouri,198.0,1.0,2548.0,23.0,1
+Kenny Hilliard,2015,backtest,0.9,2014.0,LSU,35.0,0.0,1966.0,12.0,1
+Ezekiel Elliott,2016,backtest,3.9,2015.0,Ohio State,176.0,0.0,2240.0,18.0,2
+Derrick Henry,2016,backtest,4.4,2014.0,Alabama,79.0,2.0,3638.0,30.0,2
+Kenyan Drake,2016,backtest,7.3,2015.0,Alabama,250.0,1.0,2757.0,18.0,2
+C.J. Prosise,2016,backtest,11.2,2014.0,Notre Dame,404.0,1.0,2492.0,16.0,2
+Tyler Ervin,2016,backtest,11.2,2015.0,San José State,337.0,2.0,2727.0,20.0,2
+Kenneth Dixon,2016,backtest,13.4,2014.0,Louisiana Tech,274.0,5.0,3058.0,28.0,2
+Devontae Booker,2016,backtest,6.9,2015.0,Utah,311.0,0.0,2262.0,15.0,2
+DeAndre Washington,2016,backtest,5.2,2015.0,Texas Tech,287.0,1.0,4090.0,30.0,2
+Paul Perkins,2016,backtest,6.6,2014.0,UCLA,186.0,1.0,2444.0,18.0,2
+Jordan Howard,2016,backtest,5.2,2014.0,UAB,51.0,1.0,1919.0,13.0,2
+Wendell Smallwood,2016,backtest,4.3,2014.0,West Virginia,321.0,0.0,3756.0,23.0,2
+Jonathan Williams,2016,backtest,3.8,2014.0,Arkansas,42.0,1.0,2078.0,18.0,1
+Alex Collins,2016,backtest,1.0,2015.0,Arkansas,64.0,0.0,3116.0,30.0,2
+Keenan Reynolds,2016,backtest,14.5,2014.0,Navy,38.0,2.0,942.0,8.0,2
+Kelvin Taylor,2016,backtest,2.9,2015.0,Florida,157.0,0.0,2683.0,18.0,1
+Darius Jackson,2016,backtest,11.3,2014.0,Eastern Michigan,126.0,2.0,1736.0,13.0,2
+Dwayne Washington,2016,backtest,14.4,2015.0,Washington,310.0,3.0,2790.0,17.0,2
+Daniel Lasco,2016,backtest,7.6,2014.0,California,356.0,2.0,3744.0,35.0,2
+Keith Marshall,2016,backtest,0.4,2015.0,Georgia,18.0,0.0,2245.0,12.0,1
+Zac Brooks,2016,backtest,4.2,2015.0,Clemson,66.0,2.0,3691.0,30.0,1
+Leonard Fournette,2017,backtest,5.5,2015.0,LSU,209.0,0.0,1904.0,12.0,3
+Christian McCaffrey,2017,backtest,19.0,2016.0,Stanford,311.0,3.0,1873.0,14.0,3
+Dalvin Cook,2017,backtest,5.6,2016.0,Florida State,357.0,0.0,3187.0,21.0,3
+Joe Mixon,2017,backtest,7.1,2015.0,Oklahoma,325.0,2.0,3684.0,37.0,2
+Alvin Kamara,2017,backtest,14.6,2015.0,Tennessee,272.0,3.0,2370.0,17.0,2
+Kareem Hunt,2017,backtest,6.2,2016.0,Toledo,356.0,1.0,3582.0,40.0,3
+D'Onta Foreman,2017,backtest,1.8,2015.0,Texas,64.0,0.0,1739.0,9.0,3
+James Conner,2017,backtest,13.4,2016.0,Pittsburgh,299.0,4.0,2613.0,26.0,3
+Samaje Perine,2017,backtest,2.6,2016.0,Oklahoma,106.0,1.0,3822.0,41.0,3
+Tarik Cohen,2017,backtest,7.8,2015.0,North Carolina A&T,20.0,0.0,128.0,1.0,1
+Joe Williams,2017,backtest,1.4,2015.0,Utah,62.0,0.0,2262.0,15.0,2
+Donnel Pumphrey,2017,backtest,20.6,2015.0,San Diego State,395.0,3.0,1859.0,15.0,3
+Jamaal Williams,2017,backtest,1.6,2016.0,BYU,70.0,0.0,2211.0,13.0,2
+Wayne Gallman,2017,backtest,4.4,2014.0,Clemson,114.0,1.0,3077.0,20.0,3
+Marlon Mack,2017,backtest,4.7,2015.0,South Florida,111.0,1.0,2158.0,24.0,3
+Brian Hill,2017,backtest,4.7,2014.0,Wyoming,199.0,0.0,2131.0,12.0,3
+Jeremy McNichols,2017,backtest,17.0,2015.0,Boise State,364.0,5.0,3568.0,21.0,3
+T.J. Logan,2017,backtest,8.8,2016.0,North Carolina,241.0,3.0,3534.0,28.0,3
+Aaron Jones,2017,backtest,14.7,2014.0,UTEP,212.0,2.0,1667.0,12.0,3
+Elijah McGuire,2017,backtest,13.5,2015.0,Louisiana,284.0,2.0,2431.0,13.0,3
+De'Angelo Henderson,2017,backtest,,,,,,,,0
+Brandon Wilson,2017,backtest,0.3,2015.0,Houston,18.0,0.0,3160.0,18.0,1
+Devante Mays,2017,backtest,0.2,2016.0,Utah State,8.0,0.0,1749.0,7.0,2
+Khalfani Muhammad,2017,backtest,1.8,2016.0,California,132.0,0.0,3753.0,32.0,3
+Elijah Hood,2017,backtest,2.1,2016.0,North Carolina,146.0,0.0,3534.0,28.0,2
+Chris Carson,2017,backtest,3.6,2016.0,Oklahoma State,128.0,1.0,3856.0,26.0,2
+Matthew Dayes,2017,backtest,4.6,2015.0,NC State,172.0,0.0,1882.0,14.0,2
+Saquon Barkley,2018,backtest,11.1,2016.0,Penn State,347.0,3.0,3396.0,25.0,3
+Rashaad Penny,2018,backtest,15.7,2016.0,San Diego State,220.0,3.0,1604.0,17.0,3
+Sony Michel,2018,backtest,9.7,2015.0,Georgia,248.0,1.0,2245.0,12.0,4
+Nick Chubb,2018,backtest,8.9,2014.0,Georgia,213.0,2.0,2342.0,23.0,4
+Ronald Jones II,2018,backtest,2.1,2015.0,USC,27.0,1.0,3515.0,29.0,4
+Kerryon Johnson,2018,backtest,5.0,2017.0,Auburn,133.0,1.0,2957.0,18.0,3
+Derrius Guice,2018,backtest,2.3,2016.0,LSU,95.0,0.0,2039.0,10.0,3
+Royce Freeman,2018,backtest,9.7,2015.0,Oregon,325.0,2.0,2670.0,28.0,4
+Nyheim Hines,2018,backtest,10.4,2015.0,NC State,256.0,1.0,1882.0,14.0,3
+Mark Walton,2018,backtest,6.4,2015.0,Miami,236.0,1.0,3395.0,17.0,3
+Ito Smith,2018,backtest,11.7,2015.0,Southern Miss,493.0,3.0,3518.0,32.0,4
+Kalen Ballage,2018,backtest,10.5,2016.0,Arizona State,459.0,1.0,3101.0,16.0,4
+Chase Edmonds,2018,backtest,21.7,2015.0,Fordham,140.0,0.0,322.0,0.0,4
+Jordan Wilkins,2018,backtest,4.8,2017.0,Ole Miss,231.0,1.0,3867.0,28.0,3
+John Kelly,2018,backtest,6.3,2017.0,Tennessee,255.0,0.0,2015.0,11.0,2
+Boston Scott,2018,backtest,6.8,2017.0,Louisiana Tech,181.0,1.0,2769.0,14.0,3
+Trenton Cannon,2018,backtest,,,,,,,,0
+David Williams,2018,backtest,9.0,2017.0,Arkansas,171.0,2.0,2514.0,18.0,4
+Bo Scarbrough,2018,backtest,1.9,2017.0,Alabama,92.0,0.0,2410.0,23.0,2
+Nick Bawden,2018,backtest,6.5,2017.0,San Diego State,101.0,1.0,1934.0,13.0,2
+Justin Jackson,2018,backtest,11.9,2014.0,Northwestern,201.0,1.0,2135.0,7.0,4
+Josh Jacobs,2019,backtest,5.5,2017.0,Alabama,158.0,1.0,2410.0,23.0,2
+Miles Sanders,2019,backtest,2.6,2018.0,Penn State,132.0,0.0,2561.0,19.0,3
+Darrell Henderson,2019,backtest,11.0,2018.0,Memphis,295.0,3.0,2922.0,25.0,3
+David Montgomery,2019,backtest,4.5,2017.0,Iowa State,289.0,0.0,3188.0,25.0,3
+Devin Singletary,2019,backtest,6.3,2017.0,Florida Atlantic,185.0,1.0,2617.0,18.0,3
+Damien Harris,2019,backtest,2.2,2018.0,Alabama,162.0,0.0,3600.0,36.0,4
+Alexander Mattison,2019,backtest,6.1,2017.0,Boise State,268.0,1.0,3306.0,24.0,3
+Bryce Love,2019,backtest,6.3,2015.0,Stanford,240.0,1.0,2712.0,27.0,4
+Justice Hill,2019,backtest,3.6,2017.0,Oklahoma State,191.0,1.0,4628.0,33.0,3
+Benny Snell Jr.,2019,backtest,2.8,2018.0,Kentucky,100.0,0.0,1783.0,12.0,3
+Tony Pollard,2019,backtest,13.8,2018.0,Memphis,458.0,3.0,2922.0,25.0,3
+Ryquell Armstead,2019,backtest,1.1,2017.0,Temple,64.0,0.0,3028.0,20.0,4
+Qadree Ollison,2019,backtest,7.8,2017.0,Pittsburgh,189.0,1.0,2596.0,12.0,4
+Jordan Scarlett,2019,backtest,1.6,2018.0,Florida,84.0,0.0,2660.0,27.0,3
+Trayveon Williams,2019,backtest,4.2,2018.0,Texas A&M,265.0,0.0,3120.0,23.0,3
+Ty Johnson,2019,backtest,8.6,2016.0,Maryland,191.0,1.0,2024.0,13.0,4
+Dexter Williams,2019,backtest,3.1,2017.0,Notre Dame,13.0,1.0,2111.0,18.0,3
+Travis Homer,2019,backtest,5.7,2017.0,Miami,219.0,1.0,2957.0,25.0,2
+Rodney Anderson,2019,backtest,8.7,2017.0,Oklahoma,283.0,5.0,4759.0,44.0,1
+Darwin Thompson,2019,backtest,8.5,2018.0,Utah State,336.0,2.0,3428.0,28.0,1
+Mike Weber,2019,backtest,1.4,2016.0,Ohio State,72.0,0.0,2634.0,26.0,3
+Cullen Gillaspia,2019,backtest,0.8,2018.0,Texas A&M,52.0,0.0,3120.0,23.0,1
+Kerrith Whyte Jr.,2019,backtest,6.1,2018.0,Florida Atlantic,71.0,1.0,2355.0,11.0,3
+Chandler Cox,2019,backtest,5.0,2018.0,Auburn,93.0,1.0,2490.0,16.0,4
+Myles Gaskin,2019,backtest,12.6,2017.0,Washington,228.0,3.0,2666.0,18.0,4
+Clyde Edwards-Helaire,2020,backtest,3.9,2019.0,LSU,386.0,0.0,5011.0,49.0,3
+D'Andre Swift,2020,backtest,7.9,2018.0,Georgia,249.0,2.0,2797.0,29.0,3
+Jonathan Taylor,2020,backtest,8.2,2019.0,Wisconsin,120.0,2.0,2589.0,17.0,3
+Cam Akers,2020,backtest,12.1,2019.0,Florida State,218.0,4.0,3196.0,23.0,3
+J.K. Dobbins,2020,backtest,5.1,2019.0,Ohio State,200.0,2.0,3364.0,47.0,3
+AJ Dillon,2020,backtest,3.6,2019.0,Boston College,153.0,0.0,2108.0,20.0,2
+Antonio Gibson,2020,backtest,20.5,2019.0,Memphis,618.0,8.0,3670.0,33.0,2
+Ke'Shawn Vaughn,2020,backtest,11.6,2019.0,Vanderbilt,270.0,1.0,2056.0,10.0,4
+Zack Moss,2020,backtest,9.7,2019.0,Utah,258.0,2.0,2932.0,19.0,4
+Darrynton Evans,2020,backtest,14.1,2019.0,App State,193.0,5.0,2334.0,25.0,3
+Joshua Kelley,2020,backtest,3.4,2018.0,UCLA,183.0,0.0,2676.0,12.0,3
+La'Mical Perine,2020,backtest,7.7,2019.0,Florida,218.0,3.0,3595.0,32.0,4
+Anthony McFarland Jr.,2020,backtest,8.1,2019.0,Maryland,126.0,1.0,1600.0,12.0,2
+DeeJay Dallas,2020,backtest,6.0,2019.0,Miami,140.0,2.0,3077.0,27.0,3
+Jason Huntley,2020,backtest,16.9,2018.0,New Mexico State,471.0,3.0,3110.0,16.0,4
+Eno Benjamin,2020,backtest,10.6,2019.0,Arizona State,361.0,2.0,3113.0,21.0,2
+Raymond Calais,2020,backtest,3.1,2019.0,Louisiana,69.0,1.0,3111.0,25.0,3
+Malcolm Perry,2020,backtest,28.1,2017.0,Navy,293.0,2.0,863.0,9.0,2
+Najee Harris,2021,backtest,5.8,2019.0,Alabama,207.0,3.0,4132.0,46.0,4
+Travis Etienne,2021,backtest,7.1,2020.0,Clemson,473.0,0.0,3342.0,27.0,4
+Javonte Williams,2021,backtest,9.9,2020.0,North Carolina,305.0,3.0,3379.0,28.0,3
+Trey Sermon,2021,backtest,2.5,2017.0,Oklahoma,129.0,1.0,4759.0,44.0,4
+Michael Carter,2021,backtest,7.5,2020.0,North Carolina,267.0,2.0,3379.0,28.0,4
+Kene Nwangwu,2021,backtest,0.5,2020.0,Iowa State,22.0,0.0,2287.0,16.0,4
+Rhamondre Stevenson,2021,backtest,3.0,2020.0,Oklahoma,175.0,0.0,2944.0,26.0,2
+Chuba Hubbard,2021,backtest,6.1,2018.0,Oklahoma State,192.0,2.0,3626.0,29.0,3
+Kenneth Gainwell,2021,backtest,11.8,2019.0,Memphis,532.0,3.0,3670.0,33.0,1
+Elijah Mitchell,2021,backtest,12.5,2018.0,Louisiana,342.0,3.0,2622.0,25.0,4
+Gary Brightwell,2021,backtest,3.2,2019.0,Arizona,59.0,1.0,3124.0,22.0,3
+Larry Rountree,2021,backtest,2.1,2020.0,Missouri,97.0,0.0,2350.0,7.0,4
+Chris Evans,2021,backtest,9.2,2017.0,Michigan,146.0,1.0,2023.0,9.0,4
+Demetric Felton,2021,backtest,16.5,2020.0,UCLA,159.0,3.0,1379.0,14.0,3
+Khalil Herbert,2021,backtest,7.9,2020.0,Virginia Tech,179.0,1.0,2204.0,13.0,4
+Jake Funk,2021,backtest,8.2,2020.0,Maryland,68.0,1.0,1270.0,9.0,5
+Gerrid Doaks,2021,backtest,10.9,2020.0,Cincinnati,189.0,2.0,1878.0,17.0,3
+Kylin Hill,2021,backtest,8.4,2020.0,Mississippi State,237.0,1.0,2598.0,13.0,4
+Jermar Jefferson,2021,backtest,4.7,2019.0,Oregon State,83.0,2.0,3058.0,30.0,3
+Breece Hall,2022,backtest,10.8,2021.0,Iowa State,269.0,2.0,2760.0,17.0,3
+Kenneth Walker III,2022,backtest,3.9,2021.0,Michigan State,99.0,1.0,2874.0,23.0,3
+James Cook,2022,backtest,11.4,2020.0,Georgia,225.0,2.0,2030.0,17.0,4
+Rachaad White,2022,backtest,22.1,2020.0,Arizona State,122.0,1.0,637.0,4.0,2
+Tyrion Davis-Price,2022,backtest,1.0,2021.0,LSU,64.0,0.0,3145.0,29.0,3
+Brian Robinson Jr.,2022,backtest,5.2,2021.0,Alabama,268.0,2.0,4504.0,44.0,3
+Dameon Pierce,2022,backtest,7.2,2021.0,Florida,206.0,2.0,3092.0,26.0,4
+Zamir White,2022,backtest,1.0,2021.0,Georgia,65.0,0.0,3129.0,33.0,3
+Isaiah Spiller,2022,backtest,6.4,2021.0,Texas A&M,189.0,1.0,2503.0,19.0,3
+Pierre Strong,2022,backtest,2.3,2021.0,South Dakota State,8.0,0.0,171.0,2.0,1
+Hassan Haskins,2022,backtest,2.0,2021.0,Michigan,116.0,0.0,2859.0,20.0,2
+Tyler Allgeier,2022,backtest,3.6,2019.0,BYU,75.0,1.0,3424.0,20.0,3
+Snoop Conner,2022,backtest,1.3,2020.0,Ole Miss,74.0,0.0,2856.0,21.0,3
+Jerome Ford,2022,backtest,4.7,2021.0,Cincinnati,209.0,1.0,3261.0,33.0,3
+Kyren Williams,2022,backtest,11.7,2021.0,Notre Dame,359.0,3.0,3150.0,25.0,3
+Ty Chandler,2022,backtest,14.0,2018.0,Tennessee,183.0,3.0,2304.0,15.0,5
+Kevin Harris,2022,backtest,10.5,2020.0,South Carolina,159.0,1.0,1875.0,8.0,3
+Tyler Badie,2022,backtest,21.6,2019.0,Missouri,356.0,5.0,2565.0,17.0,4
+Keaontay Ingram,2022,backtest,6.5,2019.0,Texas,216.0,2.0,3516.0,29.0,4
+Trestan Ebner,2022,backtest,19.1,2020.0,Baylor,299.0,3.0,1975.0,13.0,5
+Brittain Brown,2022,backtest,5.8,2020.0,UCLA,62.0,1.0,1379.0,14.0,5
+Isiah Pacheco,2022,backtest,7.4,2020.0,Rutgers,126.0,1.0,1634.0,14.0,4
+Zander Horvath,2022,backtest,8.7,2020.0,Purdue,323.0,0.0,1860.0,15.0,4
+Bijan Robinson,2023,backtest,11.1,2021.0,Texas,278.0,3.0,2589.0,26.0,3
+Jahmyr Gibbs,2023,backtest,19.3,2020.0,Georgia Tech,303.0,3.0,1951.0,13.0,3
+Zach Charbonnet,2023,backtest,5.2,2022.0,UCLA,336.0,0.0,3202.0,27.0,4
+Kendre Miller,2023,backtest,4.1,2021.0,TCU,83.0,1.0,2599.0,20.0,2
+Tyjae Spears,2023,backtest,7.2,2022.0,Tulane,231.0,2.0,3062.0,29.0,4
+De'Von Achane,2023,backtest,8.9,2022.0,Texas A&M,171.0,2.0,2523.0,18.0,3
+Tank Bigsby,2023,backtest,4.1,2022.0,Auburn,168.0,0.0,2067.0,9.0,3
+Roschon Johnson,2023,backtest,4.8,2022.0,Texas,135.0,1.0,2741.0,21.0,4
+Israel Abanikanda,2023,backtest,7.2,2022.0,Pittsburgh,161.0,1.0,2663.0,12.0,3
+Chase Brown,2023,backtest,11.4,2022.0,Illinois,222.0,2.0,2342.0,15.0,4
+Eric Gray,2023,backtest,15.0,2020.0,Tennessee,254.0,2.0,1902.0,12.0,4
+Evan Hull,2023,backtest,15.0,2022.0,Northwestern,503.0,1.0,2511.0,10.0,3
+Chris Rodriguez,2023,backtest,5.6,2021.0,Kentucky,56.0,2.0,2658.0,22.0,3
+Deuce Vaughn,2023,backtest,28.1,2021.0,Kansas State,429.0,3.0,1881.0,9.0,3
+Zach Evans,2023,backtest,5.0,2021.0,TCU,130.0,1.0,2599.0,20.0,3
+DeWayne McBride,2023,backtest,0.4,2021.0,UAB,14.0,0.0,1601.0,14.0,2
+Lew Nichols,2023,backtest,11.6,2020.0,Central Michigan,109.0,1.0,1214.0,7.0,3
+Kenny McIntosh,2023,backtest,8.1,2022.0,Georgia,449.0,1.0,3710.0,24.0,3
+Jonathon Brooks,2024,backtest,5.9,2023.0,Texas,252.0,1.0,3458.0,22.0,2
+Trey Benson,2024,backtest,5.3,2023.0,Florida State,229.0,1.0,3425.0,25.0,2
+Blake Corum,2024,backtest,5.0,2021.0,Michigan,143.0,1.0,2859.0,20.0,4
+MarShawn Lloyd,2024,backtest,7.9,2022.0,South Carolina,175.0,2.0,3053.0,20.0,3
+Jaylen Wright,2024,backtest,2.3,2023.0,Tennessee,134.0,0.0,2915.0,20.0,3
+Bucky Irving,2024,backtest,6.7,2023.0,Oregon,393.0,2.0,4454.0,44.0,3
+Will Shipley,2024,backtest,4.2,2023.0,Clemson,227.0,0.0,2702.0,20.0,3
+Ray Davis,2024,backtest,3.4,2022.0,Vanderbilt,38.0,1.0,1868.0,21.0,1
+Isaac Guerendo,2024,backtest,5.4,2022.0,Wisconsin,115.0,1.0,2160.0,18.0,3
+Braelon Allen,2024,backtest,5.7,2022.0,Wisconsin,127.0,1.0,2160.0,18.0,3
+Audric Estime,2024,backtest,5.3,2022.0,Notre Dame,127.0,1.0,2370.0,19.0,2
+Rasheen Ali,2024,backtest,9.3,2023.0,Marshall,213.0,1.0,2492.0,10.0,3
+Tyrone Tracy Jr.,2024,backtest,21.3,2019.0,Iowa,589.0,3.0,2772.0,14.0,5
+Keilan Robinson,2024,backtest,7.8,2022.0,Texas,164.0,2.0,2741.0,21.0,3
+Isaiah Davis,2024,backtest,5.6,2023.0,South Dakota State,150.0,1.0,2253.0,22.0,3
+Kimani Vidal,2024,backtest,3.5,2020.0,Troy,225.0,0.0,3197.0,22.0,4
+Jase McClellan,2024,backtest,7.2,2022.0,Alabama,164.0,3.0,3324.0,32.0,4
+Jawhar Jordan,2024,backtest,6.3,2023.0,Louisville,250.0,1.0,3083.0,22.0,4
+Dylan Laube,2024,backtest,44.4,2019.0,New Hampshire,87.0,1.0,224.0,2.0,4
+Ashton Jeanty,2025,backtest,20.3,2023.0,Boise State,539.0,4.0,2948.0,18.0,3
+Omarion Hampton,2025,backtest,13.1,2024.0,North Carolina,378.0,2.0,2748.0,16.0,3
+Quinshon Judkins,2025,backtest,4.6,2022.0,Ole Miss,116.0,1.0,2759.0,20.0,3
+TreVeyon Henderson,2025,backtest,4.8,2021.0,Ohio State,201.0,2.0,4379.0,40.0,4
+RJ Harvey,2025,backtest,15.9,2024.0,UCF,237.0,3.0,2298.0,14.0,3
+Kaleb Johnson,2025,backtest,17.3,2024.0,Iowa,188.0,2.0,1508.0,9.0,3
+Bhayshul Tuten,2025,backtest,13.3,2022.0,North Carolina A&T,209.0,1.0,1354.0,9.0,3
+Cam Skattebo,2025,backtest,12.7,2023.0,Arizona State,283.0,1.0,2563.0,7.0,3
+Trevor Etienne,2025,backtest,5.3,2023.0,Florida,159.0,1.0,2994.0,19.0,3
+Woody Marks,2025,backtest,10.6,2023.0,Mississippi State,169.0,2.0,2127.0,15.0,5
+Jarquez Hunter,2025,backtest,16.5,2022.0,Auburn,224.0,2.0,2067.0,9.0,4
+Dylan Sampson,2025,backtest,5.5,2023.0,Tennessee,175.0,1.0,2915.0,20.0,3
+Jordan James,2025,backtest,2.5,2023.0,Oregon,123.0,1.0,4454.0,44.0,3
+Jaydon Blue,2025,backtest,6.3,2024.0,Texas,243.0,2.0,3614.0,34.0,2
+DJ Giddens,2025,backtest,8.4,2023.0,Kansas State,283.0,2.0,2953.0,28.0,3
+Eli Heidenreich,2026,2026_prospect,57.1,2025.0,Navy,924.0,4.0,1622.0,7.0,3
+Jeremiyah Love,2026,2026_prospect,16.6,2025.0,Notre Dame,277.0,3.0,2713.0,13.0,3
+Jonah Coleman,2026,2026_prospect,9.2,2025.0,Washington,344.0,1.0,3058.0,14.0,4
+Jadarian Price,2026,2026_prospect,5.4,2025.0,Notre Dame,87.0,1.0,2713.0,13.0,3
+Emmett Johnson,2026,2026_prospect,7.7,2025.0,Nebraska,278.0,1.0,2892.0,17.0,3
+Nick Singleton,2026,2026_prospect,14.4,2024.0,Penn State,329.0,5.0,3186.0,27.0,4
+Kaytron Allen,2026,2026_prospect,5.6,2024.0,Penn State,119.0,2.0,3186.0,27.0,4
+Demond Claiborne,2026,2026_prospect,11.2,2024.0,Wake Forest,254.0,2.0,2540.0,16.0,3
+Mike Washington Jr.,2026,2026_prospect,7.0,2024.0,New Mexico State,82.0,1.0,1675.0,11.0,4
+Adam Randall,2026,2026_prospect,12.7,2025.0,Clemson,266.0,3.0,3393.0,17.0,4
+Noah Whittington,2026,2026_prospect,4.7,2024.0,Oregon,74.0,2.0,3249.0,28.0,5
+Roman Hemby,2026,2026_prospect,10.3,2023.0,Maryland,290.0,3.0,3388.0,25.0,4
+C.J. Donaldson,2026,2026_prospect,3.5,2025.0,Ohio State,86.0,1.0,3612.0,22.0,1
+J'Mari Taylor,2026,2026_prospect,8.2,2022.0,North Carolina Central,68.0,1.0,1280.0,9.0,2
+Jamarion Miller,2026,2026_prospect,1.8,2024.0,Alabama,103.0,0.0,2884.0,16.0,3
+Robert Henry Jr.,2026,2026_prospect,4.8,2025.0,UTSA,110.0,1.0,2996.0,17.0,3
+Max Bredeson,2026,2026_prospect,1.4,2022.0,Michigan,78.0,0.0,2736.0,22.0,4
+Kentrel Bullock,2026,2026_prospect,6.1,2025.0,South Alabama,49.0,1.0,2164.0,10.0,4
+Chip Trayanum,2026,2026_prospect,6.6,2025.0,Toledo,218.0,1.0,2974.0,17.0,4
+Seth McGowan,2026,2026_prospect,21.9,2024.0,New Mexico State,277.0,3.0,1675.0,11.0,2
+Le'Veon Moss,2026,2026_prospect,2.7,2024.0,Texas A&M,130.0,0.0,2413.0,16.0,4
+Dean Connors,2026,2026_prospect,15.1,2024.0,Rice,453.0,2.0,2680.0,15.0,4
+Rahsul Faison,2026,2026_prospect,2.7,2025.0,South Carolina,128.0,0.0,2392.0,8.0,3
+Desmond Reid,2026,2026_prospect,15.7,2024.0,Pittsburgh,543.0,4.0,3268.0,27.0,4
+Kaelon Black,2026,2026_prospect,7.8,2023.0,James Madison,199.0,3.0,3157.0,32.0,4
+Jaydn Ott,2026,2026_prospect,11.9,2022.0,California,348.0,3.0,3260.0,23.0,4
+Terion Stewart,2026,2026_prospect,0.6,2023.0,Bowling Green,27.0,0.0,2264.0,16.0,3
+Jamal Haynes,2026,2026_prospect,9.3,2024.0,Georgia Tech,122.0,2.0,2858.0,14.0,3
+Rueben Owens,2026,2026_prospect,2.2,2025.0,Texas A&M,130.0,0.0,3003.0,18.0,2
+Kedrick Reescano,2026,2026_prospect,0.8,2024.0,Arizona,47.0,0.0,2967.0,18.0,2
+Djay Braswell,2026,2026_prospect,0.6,2023.0,South Carolina,39.0,0.0,3336.0,21.0,2
+Quinten Joyner,2026,2026_prospect,3.3,2024.0,USC,89.0,1.0,3545.0,24.0,2
+Samuel Singleton Jr.,2026,2026_prospect,0.3,2025.0,Florida State,16.0,0.0,2957.0,14.0,2
+Sedrick Alexander,2026,2026_prospect,10.9,2025.0,Vanderbilt,230.0,4.0,3637.0,26.0,3
+Kaden Feagin,2026,2026_prospect,5.8,2025.0,Illinois,162.0,1.0,3023.0,16.0,3
+TreVonte Citizen,2026,2026_prospect,1.5,2025.0,McNeese,67.0,0.0,2193.0,9.0,2
+Branson Robinson,2026,2026_prospect,0.5,2024.0,Georgia,33.0,0.0,3641.0,28.0,3
+Jaylon Glover,2026,2026_prospect,1.2,2023.0,Utah,49.0,0.0,2036.0,15.0,3
+Savion Red,2026,2026_prospect,1.7,2024.0,Nevada,91.0,0.0,2753.0,19.0,3
+Andrew Paul,2026,2026_prospect,2.2,2023.0,Georgia,14.0,1.0,3922.0,25.0,2
+Richard Reese,2026,2026_prospect,3.8,2025.0,Stephen F. Austin,94.0,1.0,3085.0,22.0,4
+Armoni Goodwin,2026,2026_prospect,2.4,2024.0,UAB,20.0,1.0,3099.0,24.0,4
+L.J. Johnson Jr.,2026,2026_prospect,0.3,2025.0,California,18.0,0.0,3422.0,14.0,1
+Trevion Cooley,2026,2026_prospect,7.6,2021.0,Louisville,143.0,2.0,2755.0,20.0,4
+Derrick Davis Jr.,2026,2026_prospect,0.2,2024.0,Pittsburgh,15.0,0.0,3268.0,27.0,1
+Kadarius Calloway,2026,2026_prospect,3.6,2023.0,Old Dominion,48.0,1.0,2427.0,19.0,2
+Byron Cardwell,2026,2026_prospect,2.0,2025.0,San Diego State,84.0,0.0,2050.0,8.0,4
+Barika Kpeenu,2026,2026_prospect,3.7,2025.0,North Dakota State,215.0,0.0,2877.0,12.0,2
+Alton McCaskill IV,2026,2026_prospect,9.7,2025.0,Sam Houston,51.0,1.0,1875.0,6.0,3
+Logan Diggs,2026,2026_prospect,5.4,2022.0,Notre Dame,130.0,1.0,2370.0,19.0,4
+E.J. Smith,2026,2026_prospect,4.3,2023.0,Stanford,242.0,0.0,2786.0,11.0,5
+Roydell Williams,2026,2026_prospect,3.3,2023.0,Alabama,68.0,1.0,2962.0,23.0,5
+Dominic Richardson,2026,2026_prospect,5.8,2023.0,Baylor,156.0,1.0,3136.0,15.0,5
+Jalen Berger,2026,2026_prospect,11.6,2025.0,UCLA,64.0,2.0,2024.0,10.0,5
+Cam Porter,2026,2026_prospect,4.9,2023.0,Northwestern,104.0,1.0,2415.0,18.0,3
+Kejon Owens,2026,2026_prospect,1.7,2025.0,Florida International,86.0,0.0,2603.0,5.0,5
+Curtis Allen,2026,2026_prospect,,,,,,,,0
+Ollie Gordon,2025,backtest,7.9,2023.0,Oklahoma State,327.0,1.0,3443.0,16.0,3
+Devin Neal,2025,backtest,8.8,2024.0,Kansas,254.0,1.0,2328.0,15.0,4
+Kalel Mullings,2025,backtest,1.1,2024.0,Michigan,35.0,0.0,1614.0,11.0,2
+Tahj Brooks,2025,backtest,4.9,2022.0,Texas Tech,160.0,1.0,3118.0,21.0,6
+Damien Martinez,2025,backtest,2.3,2024.0,Miami,198.0,0.0,4262.0,38.0,3
+Brashard Smith,2025,backtest,11.8,2024.0,SMU,303.0,4.0,3431.0,27.0,4
+Kyle Monangai,2025,backtest,4.7,2024.0,Rutgers,75.0,1.0,2396.0,16.0,4
+LeQuint Allen,2025,backtest,10.7,2024.0,Syracuse,480.0,3.0,4340.0,29.0,3
+Phil Mafah,2025,backtest,2.0,2023.0,Clemson,109.0,0.0,2702.0,20.0,4
+Jacory Croskey-Merritt,2025,backtest,5.8,2021.0,Alabama State,15.0,0.0,130.0,0.0,3

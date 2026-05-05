@@ -1,0 +1,488 @@
+2026 WR breakout_age recomputation audit
+==============================================================================
+Reliability filter: team-season needs >= 50 receiving plays
+
+
+Kevin Concepcion (born 2004)
+  breakout_age: 20 -> 19  (stored 1 seasons; we found 4 reliable)
+  2023 (age 19) | NC State               | rec= 742, team_plays=203 | dom=42.5% <- HIT 20%
+  2024 (age 20) | Clemson                | rec=   5, team_plays=274 | dom=0.1%
+  2024 (age 20) | NC State               | rec= 330, team_plays=224 | dom=12.1%
+  2025 (age 21) | Texas A&M              | rec= 814, team_plays=221 | dom=27.4% <- HIT 20%
+
+Elijah Sarratt (born 2003)
+  breakout_age: 21 -> 19  (stored 2 seasons; we found 4 reliable)
+  2022 (age 19) | St. Francis (PA)       | rec= 213, team_plays=99 | dom=26.7% <- HIT 20%
+  2023 (age 20) | James Madison          | rec= 956, team_plays=246 | dom=26.1% <- HIT 20%
+  2024 (age 21) | Indiana                | rec= 879, team_plays=225 | dom=25.1% <- HIT 20%
+  2025 (age 22) | Indiana                | rec= 727, team_plays=278 | dom=26.1% <- HIT 20%
+
+Zachariah Branch (born 2004)
+  breakout_age: 21 -> 21  (stored 1 seasons; we found 4 reliable)
+  2023 (age 19) | UCLA                   | rec=   8, team_plays=221 | dom=0.1%
+  2023 (age 19) | USC                    | rec= 303, team_plays=285 | dom=7.2%
+  2024 (age 20) | USC                    | rec= 510, team_plays=313 | dom=7.2%
+  2025 (age 21) | Georgia                | rec= 794, team_plays=277 | dom=24.8% <- HIT 20%
+
+Germie Bernard (born 2003)
+  breakout_age: 21 -> 22  (stored 2 seasons; we found 4 reliable)
+  2022 (age 19) | Michigan State         | rec= 128, team_plays=255 | dom=6.4%
+  2023 (age 20) | Washington             | rec= 367, team_plays=311 | dom=5.6%
+  2024 (age 21) | Alabama                | rec= 628, team_plays=214 | dom=10.9%
+  2025 (age 22) | Alabama                | rec= 866, team_plays=337 | dom=22.3% <- HIT 20%
+
+Chris Brazzell II (born 2003)
+  breakout_age: 21 -> 20  (stored 2 seasons; we found 4 reliable)
+  2022 (age 19) | Tulane                 | rec=  22, team_plays=226 | dom=0.4%
+  2023 (age 20) | Tulane                 | rec= 711, team_plays=215 | dom=22.3% <- HIT 20%
+  2024 (age 21) | Tennessee              | rec= 266, team_plays=211 | dom=10.2%
+  2025 (age 22) | Tennessee              | rec= 968, team_plays=285 | dom=33.0% <- HIT 20%
+
+Skyler Bell (born 2002)
+  breakout_age: 22 -> 20  (stored 2 seasons; we found 4 reliable)
+  2022 (age 20) | Wisconsin              | rec= 408, team_plays=164 | dom=20.6% <- HIT 20%
+  2023 (age 21) | Wisconsin              | rec= 301, team_plays=247 | dom=10.7%
+  2024 (age 22) | UConn                  | rec= 791, team_plays=195 | dom=26.1% <- HIT 20%
+  2025 (age 23) | UConn                  | rec=1130, team_plays=303 | dom=27.9% <- HIT 20%
+
+Malachi Fields (born 2004)
+  breakout_age: 21 -> 19  (stored 1 seasons; we found 6 reliable)
+  2021 (age 17) | Virginia               | rec= 172, team_plays=342 | dom=1.9%
+  2022 (age 18) | Virginia               | rec=  58, team_plays=171 | dom=8.5%
+  2023 (age 19) | Virginia               | rec= 781, team_plays=248 | dom=20.7% <- HIT 20%
+  2024 (age 20) | Maryland               | rec=  10, team_plays=314 | dom=0.1%
+  2024 (age 20) | Virginia               | rec= 631, team_plays=238 | dom=21.6% <- HIT 20%
+  2025 (age 21) | Notre Dame             | rec= 545, team_plays=202 | dom=17.7%
+
+C.J. Daniels (born 2002)
+  breakout_age: NaN -> 21  (stored 1 seasons; we found 4 reliable)
+  2022 (age 20) | Liberty                | rec=  38, team_plays=218 | dom=3.4%
+  2023 (age 21) | Liberty                | rec= 881, team_plays=164 | dom=30.7% <- HIT 20%
+  2024 (age 22) | LSU                    | rec= 480, team_plays=321 | dom=6.3%
+  2025 (age 23) | Miami                  | rec= 526, team_plays=334 | dom=23.7% <- HIT 20%
+
+Brenen Thompson (born 2003)
+  breakout_age: 22 -> 22  (stored 1 seasons; we found 4 reliable)
+  2022 (age 19) | Texas                  | rec=  32, team_plays=212 | dom=0.6%
+  2023 (age 20) | Oklahoma               | rec= 158, team_plays=273 | dom=3.7%
+  2024 (age 21) | Oklahoma               | rec= 230, team_plays=199 | dom=12.9%
+  2025 (age 22) | Mississippi State      | rec= 979, team_plays=235 | dom=26.7% <- HIT 20%
+
+Deion Burks (born 2003)
+  breakout_age: 22 -> 20  (stored 2 seasons; we found 4 reliable)
+  2022 (age 19) | Purdue                 | rec= 153, team_plays=326 | dom=2.1%
+  2023 (age 20) | Purdue                 | rec= 545, team_plays=231 | dom=28.7% <- HIT 20%
+  2024 (age 21) | Oklahoma               | rec= 242, team_plays=199 | dom=16.8%
+  2025 (age 22) | Oklahoma               | rec= 589, team_plays=257 | dom=17.8%
+
+Kevin Coleman Jr. (born 2003)
+  breakout_age: NaN -> 21  (stored 1 seasons; we found 4 reliable)
+  2022 (age 19) | Jackson State          | rec= 188, team_plays=174 | dom=10.0%
+  2023 (age 20) | Louisville             | rec= 310, team_plays=232 | dom=9.6%
+  2024 (age 21) | Mississippi State      | rec= 784, team_plays=206 | dom=22.6% <- HIT 20%
+  2025 (age 22) | Missouri               | rec= 736, team_plays=227 | dom=19.9%
+
+Eric McAlister (born 2004)
+  breakout_age: 21 -> 19  (stored 2 seasons; we found 4 reliable)
+  2022 (age 18) | Boise State            | rec= 235, team_plays=203 | dom=13.0%
+  2023 (age 19) | Boise State            | rec= 818, team_plays=202 | dom=22.2% <- HIT 20%
+  2024 (age 20) | TCU                    | rec= 675, team_plays=294 | dom=16.7%
+  2025 (age 21) | TCU                    | rec=1097, team_plays=296 | dom=30.4% <- HIT 20%
+
+Eric Rivers (born 2004)
+  breakout_age: NaN -> 20  (stored 1 seasons; we found 3 reliable)
+  2023 (age 19) | Florida International  | rec= 343, team_plays=211 | dom=16.5%
+  2024 (age 20) | Florida International  | rec=1167, team_plays=202 | dom=46.6% <- HIT 20%
+  2025 (age 21) | Georgia Tech           | rec= 631, team_plays=243 | dom=20.9% <- HIT 20%
+
+De'Zhaun Stribling (born 2002)
+  breakout_age: 22 -> NaN  (stored 1 seasons; we found 4 reliable)
+  2021 (age 19) | Washington State       | rec= 101, team_plays=42 | dom=23.4% <- HIT 20% [INCOMPLETE — IGNORED]
+  2022 (age 20) | Washington State       | rec= 547, team_plays=294 | dom=13.0%
+  2023 (age 21) | Oklahoma State         | rec= 201, team_plays=307 | dom=6.0%
+  2024 (age 22) | Oklahoma State         | rec= 661, team_plays=254 | dom=17.8%
+  2025 (age 23) | Ole Miss               | rec= 722, team_plays=327 | dom=14.9%
+
+Keelan Marion (born 2002)
+  breakout_age: NaN -> 19  (stored 1 seasons; we found 5 reliable)
+  2021 (age 19) | UConn                  | rec= 425, team_plays=198 | dom=24.7% <- HIT 20%
+  2022 (age 20) | UConn                  | rec=  20, team_plays=145 | dom=6.3%
+  2023 (age 21) | BYU                    | rec= 186, team_plays=189 | dom=4.1%
+  2024 (age 22) | BYU                    | rec= 268, team_plays=193 | dom=7.8%
+  2025 (age 23) | Miami                  | rec= 633, team_plays=334 | dom=8.5%
+
+Noah Thomas (born 2004)
+  breakout_age: NaN -> 20  (stored 2 seasons; we found 4 reliable)
+  2022 (age 18) | Texas A&M              | rec=  51, team_plays=216 | dom=6.6%
+  2023 (age 19) | Texas A&M              | rec= 359, team_plays=251 | dom=16.2%
+  2024 (age 20) | Texas A&M              | rec= 543, team_plays=186 | dom=30.0% <- HIT 20%
+  2025 (age 21) | Georgia                | rec= 147, team_plays=277 | dom=2.5%
+
+Aaron Anderson (born 2002)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 3 reliable)
+  2023 (age 21) | LSU                    | rec=  66, team_plays=247 | dom=0.8%
+  2024 (age 22) | LSU                    | rec= 680, team_plays=321 | dom=14.7%
+  2025 (age 23) | LSU                    | rec= 403, team_plays=210 | dom=9.3%
+
+Dane Key (born 2003)
+  breakout_age: NaN -> 19  (stored 1 seasons; we found 4 reliable)
+  2022 (age 19) | Kentucky               | rec= 471, team_plays=203 | dom=21.5% <- HIT 20%
+  2023 (age 20) | Kentucky               | rec= 530, team_plays=186 | dom=18.5%
+  2024 (age 21) | Kentucky               | rec= 700, team_plays=166 | dom=19.2%
+  2025 (age 22) | Nebraska               | rec= 478, team_plays=252 | dom=20.0% <- HIT 20%
+
+Caleb Douglas (born 2003)
+  breakout_age: 20 -> NaN  (stored 2 seasons; we found 5 reliable)
+  2022 (age 19) | Florida                | rec= 150, team_plays=190 | dom=8.2%
+  2023 (age 20) | Charlotte              | rec=   3, team_plays=185 | dom=0.1%
+  2023 (age 20) | Florida                | rec= 111, team_plays=275 | dom=1.9%
+  2024 (age 21) | Texas Tech             | rec= 751, team_plays=307 | dom=19.1%
+  2025 (age 22) | Texas Tech             | rec= 731, team_plays=301 | dom=12.5%
+
+Caullin Lacy (born 2001)
+  breakout_age: NaN -> 21  (stored 2 seasons; we found 6 reliable)
+  2020 (age 19) | South Alabama          | rec=  98, team_plays=218 | dom=1.8%
+  2021 (age 20) | South Alabama          | rec= 178, team_plays=226 | dom=3.2%
+  2022 (age 21) | South Alabama          | rec= 767, team_plays=239 | dom=25.2% <- HIT 20%
+  2023 (age 22) | South Alabama          | rec=1317, team_plays=264 | dom=35.2% <- HIT 20%
+  2024 (age 23) | Louisville             | rec= 179, team_plays=253 | dom=2.8%
+  2025 (age 24) | Louisville             | rec= 592, team_plays=256 | dom=10.7%
+
+Kendrick Law (born 2003)
+  breakout_age: 22 -> 22  (stored 1 seasons; we found 4 reliable)
+  2022 (age 19) | Alabama                | rec= 103, team_plays=264 | dom=1.6%
+  2023 (age 20) | Alabama                | rec= 103, team_plays=193 | dom=1.7%
+  2024 (age 21) | Alabama                | rec=  83, team_plays=214 | dom=1.4%
+  2025 (age 22) | Kentucky               | rec= 569, team_plays=223 | dom=20.1% <- HIT 20%
+
+Colbie Young (born 2002)
+  breakout_age: NaN -> 20  (stored 2 seasons; we found 5 reliable)
+  2022 (age 20) | Miami                  | rec= 368, team_plays=252 | dom=20.2% <- HIT 20%
+  2023 (age 21) | Bethune-Cookman        | rec=  13, team_plays=138 | dom=0.5%
+  2023 (age 21) | Miami                  | rec= 541, team_plays=260 | dom=17.7%
+  2024 (age 22) | Georgia                | rec= 149, team_plays=314 | dom=5.6%
+  2025 (age 23) | Georgia                | rec= 382, team_plays=277 | dom=10.2%
+
+Kaden Wetjen (born 2002)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 2 reliable)
+  2024 (age 22) | Iowa                   | rec=  33, team_plays=143 | dom=1.1%
+  2025 (age 23) | Iowa                   | rec= 157, team_plays=175 | dom=12.6%
+
+Chris Hilton (born 2002)
+  breakout_age: NaN -> NaN  (stored 5 seasons; we found 4 reliable)
+  2022 (age 20) | LSU                    | rec=  98, team_plays=297 | dom=1.4%
+  2023 (age 21) | LSU                    | rec= 144, team_plays=247 | dom=3.2%
+  2024 (age 22) | LSU                    | rec= 130, team_plays=321 | dom=5.6%
+  2025 (age 23) | LSU                    | rec=  38, team_plays=210 | dom=0.9%
+
+Malik Benson (born 2002)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 3 reliable)
+  2023 (age 21) | Alabama                | rec= 162, team_plays=193 | dom=4.9%
+  2024 (age 22) | Florida State          | rec= 311, team_plays=178 | dom=11.7%
+  2025 (age 23) | Oregon                 | rec= 534, team_plays=285 | dom=14.5%
+
+Harrison Wallace III (born 2003)
+  breakout_age: NaN -> 22  (stored 1 seasons; we found 4 reliable)
+  2022 (age 19) | Penn State             | rec= 226, team_plays=246 | dom=5.8%
+  2023 (age 20) | Penn State             | rec= 150, team_plays=221 | dom=3.1%
+  2024 (age 21) | Penn State             | rec= 650, team_plays=251 | dom=17.6%
+  2025 (age 22) | Ole Miss               | rec= 910, team_plays=327 | dom=20.4% <- HIT 20%
+
+Jaden Greathouse (born 2004)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 3 reliable)
+  2023 (age 19) | Notre Dame             | rec= 239, team_plays=209 | dom=11.2%
+  2024 (age 20) | Notre Dame             | rec= 345, team_plays=213 | dom=10.3%
+  2025 (age 21) | Notre Dame             | rec=  73, team_plays=202 | dom=1.4%
+
+J.Michael Sturdivant (born 2002)
+  breakout_age: NaN -> 20  (stored 1 seasons; we found 4 reliable)
+  2022 (age 20) | California             | rec= 755, team_plays=291 | dom=26.8% <- HIT 20%
+  2023 (age 21) | UCLA                   | rec= 393, team_plays=221 | dom=11.8%
+  2024 (age 22) | UCLA                   | rec= 315, team_plays=220 | dom=12.4%
+  2025 (age 23) | Florida                | rec= 349, team_plays=222 | dom=12.6%
+
+Dillon Bell (born 2003)
+  breakout_age: NaN -> NaN  (stored 4 seasons; we found 4 reliable)
+  2022 (age 19) | Georgia                | rec= 169, team_plays=294 | dom=8.5%
+  2023 (age 20) | Georgia                | rec= 269, team_plays=306 | dom=7.4%
+  2024 (age 21) | Georgia                | rec= 366, team_plays=314 | dom=10.4%
+  2025 (age 22) | Georgia                | rec= 282, team_plays=277 | dom=4.7%
+
+Barion Brown (born 2003)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 5 reliable)
+  2022 (age 19) | Kentucky               | rec= 586, team_plays=203 | dom=18.7%
+  2023 (age 20) | Alabama                | rec=  -2, team_plays=193 | dom=-0.0%
+  2023 (age 20) | Kentucky               | rec= 441, team_plays=186 | dom=16.5%
+  2024 (age 21) | Kentucky               | rec= 361, team_plays=166 | dom=18.2%
+  2025 (age 22) | LSU                    | rec= 386, team_plays=210 | dom=12.1%
+
+Jalil Farooq (born 2001)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 5 reliable)
+  2021 (age 20) | Oklahoma               | rec=   5, team_plays=238 | dom=0.1%
+  2022 (age 21) | Oklahoma               | rec= 343, team_plays=213 | dom=13.4%
+  2023 (age 22) | Oklahoma               | rec= 582, team_plays=273 | dom=7.7%
+  2024 (age 23) | Oklahoma               | rec=  58, team_plays=199 | dom=1.4%
+  2025 (age 24) | Maryland               | rec= 471, team_plays=275 | dom=8.0%
+
+Amare Thomas (born 2005)
+  breakout_age: 19 -> 19  (stored 1 seasons; we found 3 reliable)
+  2023 (age 18) | UAB                    | rec= 448, team_plays=301 | dom=13.2%
+  2024 (age 19) | UAB                    | rec= 668, team_plays=286 | dom=23.3% <- HIT 20%
+  2025 (age 20) | Houston                | rec= 758, team_plays=225 | dom=20.9% <- HIT 20%
+
+Romello Brinson (born 2004)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 5 reliable)
+  2021 (age 17) | Miami                  | rec=  90, team_plays=251 | dom=3.4%
+  2022 (age 18) | Miami                  | rec= 100, team_plays=252 | dom=1.7%
+  2023 (age 19) | SMU                    | rec= 371, team_plays=236 | dom=8.3%
+  2024 (age 20) | SMU                    | rec= 143, team_plays=255 | dom=2.1%
+  2025 (age 21) | SMU                    | rec= 517, team_plays=293 | dom=10.2%
+
+Emmanuel Henderson Jr. (born 2003)
+  breakout_age: 22 -> 22  (stored 1 seasons; we found 3 reliable)
+  2022 (age 19) | Alabama                | rec=  14, team_plays=264 | dom=0.2%
+  2024 (age 21) | Alabama                | rec=  82, team_plays=214 | dom=1.4%
+  2025 (age 22) | Kansas                 | rec= 746, team_plays=204 | dom=25.6% <- HIT 20%
+
+Trebor Pena (born 2002)
+  breakout_age: NaN -> 22  (stored 1 seasons; we found 5 reliable)
+  2020 (age 18) | Syracuse               | rec=  -1, team_plays=173 | dom=-0.0%
+  2021 (age 19) | Syracuse               | rec=  69, team_plays=152 | dom=6.9%
+  2022 (age 20) | Syracuse               | rec= 173, team_plays=189 | dom=3.4%
+  2024 (age 22) | Syracuse               | rec= 885, team_plays=365 | dom=22.3% <- HIT 20%
+  2025 (age 23) | Penn State             | rec= 419, team_plays=211 | dom=9.6%
+
+Hykeem Williams (born 2003)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 3 reliable)
+  2023 (age 20) | Florida State          | rec=  71, team_plays=249 | dom=3.0%
+  2024 (age 21) | Florida State          | rec= 187, team_plays=178 | dom=8.8%
+  2025 (age 22) | Colorado               | rec=  81, team_plays=202 | dom=1.7%
+
+Jaquaize Pettaway (born 2006)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 3 reliable)
+  2023 (age 17) | Oklahoma               | rec=  70, team_plays=273 | dom=0.9%
+  2024 (age 18) | Oklahoma               | rec=  87, team_plays=199 | dom=2.2%
+  2025 (age 19) | East Carolina          | rec=  46, team_plays=273 | dom=0.7%
+
+Raymond Cottrell (born 2006)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 1 reliable)
+  2023 (age 17) | Texas A&M              | rec=  13, team_plays=251 | dom=2.3%
+
+Nathan Leacock (born 2004)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 1 reliable)
+  2025 (age 21) | North Carolina         | rec=  35, team_plays=219 | dom=0.8%
+
+Anthony Evans III (born 2005)
+  breakout_age: 20 -> NaN  (stored 1 seasons; we found 3 reliable)
+  2023 (age 18) | Georgia                | rec=  21, team_plays=306 | dom=0.3%
+  2024 (age 19) | Georgia                | rec=  88, team_plays=314 | dom=1.2%
+  2025 (age 20) | Mississippi State      | rec= 785, team_plays=235 | dom=20.0%
+
+Jalen Brown (born 2006)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 3 reliable)
+  2023 (age 17) | Bethune-Cookman        | rec=  67, team_plays=138 | dom=9.9%
+  2024 (age 18) | Florida State          | rec=  75, team_plays=178 | dom=1.7%
+  2025 (age 19) | Arkansas               | rec= 156, team_plays=224 | dom=5.5%
+
+Brandon Inniss (born 2004)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 3 reliable)
+  2023 (age 19) | Ohio State             | rec=  58, team_plays=245 | dom=2.8%
+  2024 (age 20) | Ohio State             | rec= 151, team_plays=231 | dom=4.4%
+  2025 (age 21) | Ohio State             | rec= 262, team_plays=301 | dom=5.9%
+
+Ryan Niblett (born 2004)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 2 reliable)
+  2024 (age 20) | Texas                  | rec=  24, team_plays=294 | dom=0.3%
+  2025 (age 21) | Texas                  | rec=  61, team_plays=238 | dom=1.0%
+
+Ayden Williams (born 2006)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 3 reliable)
+  2023 (age 17) | Ole Miss               | rec=  80, team_plays=229 | dom=1.2%
+  2024 (age 18) | Ole Miss               | rec=  39, team_plays=264 | dom=0.5%
+  2025 (age 19) | Mississippi State      | rec= 254, team_plays=235 | dom=4.2%
+
+Braylon James (born 2006)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 2 reliable)
+  2023 (age 17) | Notre Dame             | rec=  12, team_plays=209 | dom=0.2%
+  2024 (age 18) | TCU                    | rec=   6, team_plays=294 | dom=0.1%
+
+London Humphreys (born 2005)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 3 reliable)
+  2023 (age 18) | Vanderbilt             | rec= 406, team_plays=212 | dom=14.5%
+  2024 (age 19) | Georgia                | rec= 230, team_plays=314 | dom=4.9%
+  2025 (age 20) | Georgia                | rec= 268, team_plays=277 | dom=12.2%
+
+Tyler Brown (born 2005)
+  breakout_age: NaN -> NaN  (stored 4 seasons; we found 4 reliable)
+  2023 (age 18) | Clemson                | rec= 529, team_plays=268 | dom=19.8%
+  2024 (age 19) | Clemson                | rec=  32, team_plays=274 | dom=0.5%
+  2024 (age 19) | Dayton                 | rec=  22, team_plays=201 | dom=0.5%
+  2025 (age 20) | Clemson                | rec= 191, team_plays=300 | dom=2.8%
+
+Mikey Matthews (born 2006)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 3 reliable)
+  2023 (age 17) | Utah                   | rec= 261, team_plays=176 | dom=6.4%
+  2024 (age 18) | California             | rec= 259, team_plays=260 | dom=8.3%
+  2025 (age 19) | UCLA                   | rec= 292, team_plays=221 | dom=7.2%
+
+Antonio Gates Jr. (born 2003)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 2 reliable)
+  2023 (age 20) | Michigan State         | rec=  82, team_plays=216 | dom=5.3%
+  2024 (age 21) | Michigan State         | rec=  49, team_plays=193 | dom=1.0%
+
+Kobe Prentice (born 2004)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 4 reliable)
+  2022 (age 18) | Alabama                | rec= 290, team_plays=264 | dom=5.9%
+  2023 (age 19) | Alabama                | rec= 222, team_plays=193 | dom=5.9%
+  2024 (age 20) | Alabama                | rec= 113, team_plays=214 | dom=2.0%
+  2025 (age 21) | Baylor                 | rec= 315, team_plays=292 | dom=12.0%
+
+Braylin Presley (born 2003)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 4 reliable)
+  2022 (age 19) | Oklahoma State         | rec=  17, team_plays=277 | dom=0.2%
+  2023 (age 20) | Tulsa                  | rec= 122, team_plays=183 | dom=2.5%
+  2024 (age 21) | Tulsa                  | rec=  32, team_plays=236 | dom=0.6%
+  2025 (age 22) | Tulsa                  | rec= 114, team_plays=229 | dom=2.2%
+
+Kaleb Brown (born 2003)
+  breakout_age: NaN -> NaN  (stored 4 seasons; we found 4 reliable)
+  2022 (age 19) | Ohio State             | rec=   5, team_plays=252 | dom=0.1%
+  2023 (age 20) | Iowa                   | rec= 178, team_plays=161 | dom=11.1%
+  2024 (age 21) | Iowa                   | rec=  18, team_plays=143 | dom=0.6%
+  2025 (age 22) | UAB                    | rec= 242, team_plays=272 | dom=7.7%
+
+Squirrel White (born 2004)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 4 reliable)
+  2022 (age 18) | Tennessee              | rec= 373, team_plays=270 | dom=6.1%
+  2023 (age 19) | Tennessee              | rec= 761, team_plays=244 | dom=18.1%
+  2024 (age 20) | Tennessee              | rec= 342, team_plays=211 | dom=11.8%
+  2025 (age 21) | Florida State          | rec=  51, team_plays=191 | dom=0.9%
+
+Jayden Ballard (born 2004)
+  breakout_age: NaN -> 21  (stored 1 seasons; we found 4 reliable)
+  2021 (age 17) | Ohio State             | rec=   4, team_plays=312 | dom=0.1%
+  2022 (age 18) | Ohio State             | rec= 155, team_plays=252 | dom=3.5%
+  2024 (age 20) | Ohio State             | rec=  12, team_plays=231 | dom=0.2%
+  2025 (age 21) | Wisconsin              | rec= 150, team_plays=150 | dom=21.4% <- HIT 20%
+
+Christian Leary (born 2004)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 5 reliable)
+  2021 (age 17) | Alabama                | rec=   4, team_plays=328 | dom=1.2%
+  2022 (age 18) | Alabama                | rec=   6, team_plays=264 | dom=0.1%
+  2023 (age 19) | Georgia Tech           | rec= 351, team_plays=217 | dom=10.2%
+  2024 (age 20) | Georgia Tech           | rec=  27, team_plays=242 | dom=0.5%
+  2025 (age 21) | Western Michigan       | rec= 115, team_plays=177 | dom=3.1%
+
+JoJo Earle (born 2003)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 5 reliable)
+  2021 (age 18) | Alabama                | rec= 148, team_plays=328 | dom=1.6%
+  2022 (age 19) | Alabama                | rec= 155, team_plays=264 | dom=5.5%
+  2023 (age 20) | TCU                    | rec= 224, team_plays=293 | dom=7.4%
+  2024 (age 21) | TCU                    | rec=  37, team_plays=294 | dom=2.4%
+  2025 (age 22) | UNLV                   | rec= 260, team_plays=265 | dom=4.0%
+
+Dacari Collins (born 2002)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 5 reliable)
+  2021 (age 19) | Clemson                | rec= 169, team_plays=206 | dom=3.7%
+  2022 (age 20) | Clemson                | rec=   8, team_plays=268 | dom=0.1%
+  2023 (age 21) | NC State               | rec= 143, team_plays=203 | dom=5.7%
+  2024 (age 22) | NC State               | rec= 285, team_plays=224 | dom=8.4%
+  2025 (age 23) | Louisville             | rec= 208, team_plays=256 | dom=3.8%
+
+Malik McClain (born 2004)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 5 reliable)
+  2021 (age 17) | Florida State          | rec= 152, team_plays=191 | dom=3.2%
+  2022 (age 18) | Florida State          | rec= 171, team_plays=218 | dom=6.7%
+  2023 (age 19) | Penn State             | rec=  71, team_plays=221 | dom=3.3%
+  2024 (age 20) | Arizona State          | rec=  43, team_plays=195 | dom=0.8%
+  2025 (age 21) | Arizona State          | rec= 425, team_plays=235 | dom=7.7%
+
+Deion Colzie (born 2003)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 5 reliable)
+  2021 (age 18) | Notre Dame             | rec=  67, team_plays=251 | dom=1.1%
+  2022 (age 19) | Notre Dame             | rec= 169, team_plays=190 | dom=3.6%
+  2023 (age 20) | Notre Dame             | rec=  45, team_plays=209 | dom=2.5%
+  2024 (age 21) | Notre Dame             | rec=  41, team_plays=213 | dom=3.7%
+  2025 (age 22) | Miami (OH)             | rec= 178, team_plays=177 | dom=8.1%
+
+Jerand Bradley (born 2002)
+  breakout_age: NaN -> 20  (stored 1 seasons; we found 5 reliable)
+  2021 (age 19) | Texas Tech             | rec=  35, team_plays=224 | dom=0.6%
+  2022 (age 20) | Texas Tech             | rec= 630, team_plays=279 | dom=22.0% <- HIT 20%
+  2023 (age 21) | Texas Tech             | rec= 416, team_plays=254 | dom=15.1%
+  2024 (age 22) | Boston College         | rec=  82, team_plays=182 | dom=3.9%
+  2025 (age 23) | Kansas State           | rec= 119, team_plays=199 | dom=6.5%
+
+Andrel Anthony (born 2002)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 4 reliable)
+  2022 (age 20) | Michigan               | rec=  80, team_plays=217 | dom=1.5%
+  2023 (age 21) | Oklahoma               | rec= 394, team_plays=273 | dom=6.8%
+  2024 (age 22) | Oklahoma               | rec=   4, team_plays=199 | dom=0.1%
+  2025 (age 23) | Duke                   | rec= 216, team_plays=322 | dom=9.7%
+
+Jayden Thomas (born 2002)
+  breakout_age: NaN -> NaN  (stored 1 seasons; we found 4 reliable)
+  2022 (age 20) | Notre Dame             | rec= 262, team_plays=190 | dom=8.2%
+  2023 (age 21) | Notre Dame             | rec= 251, team_plays=209 | dom=6.0%
+  2024 (age 22) | Notre Dame             | rec= 154, team_plays=213 | dom=6.1%
+  2025 (age 23) | Virginia               | rec=   9, team_plays=305 | dom=0.1%
+
+Rara Thomas (born 2002)
+  breakout_age: 23 -> NaN  (stored 1 seasons; we found 4 reliable)
+  2021 (age 19) | Mississippi State      | rec= 180, team_plays=439 | dom=6.7%
+  2022 (age 20) | Mississippi State      | rec= 593, team_plays=392 | dom=16.6%
+  2023 (age 21) | Georgia                | rec= 383, team_plays=306 | dom=6.9%
+  2025 (age 23) | Troy                   | rec= 413, team_plays=235 | dom=11.7%
+
+Cyrus Allen (born 2004)
+  breakout_age: 21 -> 19  (stored 1 seasons; we found 4 reliable)
+  2022 (age 18) | Louisiana Tech         | rec= 554, team_plays=261 | dom=16.2%
+  2023 (age 19) | Louisiana Tech         | rec= 740, team_plays=259 | dom=24.7% <- HIT 20%
+  2024 (age 20) | Texas A&M              | rec= 269, team_plays=186 | dom=8.7%
+  2025 (age 21) | Cincinnati             | rec= 567, team_plays=215 | dom=22.3% <- HIT 20%
+
+Jared Brown (born 2004)
+  breakout_age: NaN -> 18  (stored 5 seasons; we found 5 reliable)
+  2021 (age 17) | Coastal Carolina       | rec=   5, team_plays=186 | dom=1.9%
+  2022 (age 18) | Coastal Carolina       | rec= 762, team_plays=218 | dom=26.4% <- HIT 20%
+  2023 (age 19) | Coastal Carolina       | rec= 740, team_plays=253 | dom=21.0% <- HIT 20%
+  2024 (age 20) | South Carolina         | rec= 244, team_plays=184 | dom=7.7%
+  2025 (age 21) | South Carolina         | rec=  70, team_plays=198 | dom=1.5%
+
+Jaden Bray (born 2002)
+  breakout_age: NaN -> NaN  (stored 2 seasons; we found 5 reliable)
+  2021 (age 19) | Oklahoma State         | rec= 241, team_plays=174 | dom=9.7%
+  2022 (age 20) | Oklahoma State         | rec=  54, team_plays=277 | dom=0.8%
+  2023 (age 21) | Oklahoma State         | rec= 377, team_plays=307 | dom=11.7%
+  2024 (age 22) | West Virginia          | rec=  44, team_plays=194 | dom=0.9%
+  2025 (age 23) | West Virginia          | rec=  95, team_plays=184 | dom=2.2%
+
+Joseph Manjack IV (born 2004)
+  breakout_age: NaN -> 19  (stored 1 seasons; we found 5 reliable)
+  2021 (age 17) | USC                    | rec=  49, team_plays=261 | dom=0.8%
+  2022 (age 18) | Houston                | rec=  93, team_plays=315 | dom=1.2%
+  2023 (age 19) | Houston                | rec= 597, team_plays=261 | dom=22.7% <- HIT 20%
+  2024 (age 20) | Houston                | rec= 323, team_plays=181 | dom=19.9%
+  2025 (age 21) | TCU                    | rec= 556, team_plays=296 | dom=12.0%
+
+E.J. Williams (born 2003)
+  breakout_age: NaN -> NaN  (stored 3 seasons; we found 6 reliable)
+  2020 (age 17) | Clemson                | rec= 181, team_plays=260 | dom=4.6%
+  2021 (age 18) | Clemson                | rec=  60, team_plays=206 | dom=1.3%
+  2022 (age 19) | Clemson                | rec=  70, team_plays=268 | dom=1.2%
+  2023 (age 20) | Indiana                | rec= 276, team_plays=214 | dom=5.4%
+  2024 (age 21) | Indiana                | rec=  49, team_plays=225 | dom=0.8%
+  2025 (age 22) | Indiana                | rec= 425, team_plays=278 | dom=11.2%
+
+Michael Wortham (born 2004)
+  breakout_age: NaN -> 21  (stored 1 seasons; we found 3 reliable)
+  2023 (age 19) | Eastern Washington     | rec=  33, team_plays=214 | dom=0.7%
+  2024 (age 20) | Eastern Washington     | rec= 147, team_plays=191 | dom=3.8%
+  2025 (age 21) | Montana                | rec=1003, team_plays=306 | dom=29.1% <- HIT 20%
+
+Devin Voisin (born 2004)
+  breakout_age: NaN -> 18  (stored 1 seasons; we found 4 reliable)
+  2022 (age 18) | South Alabama          | rec= 754, team_plays=239 | dom=20.8% <- HIT 20%
+  2023 (age 19) | South Alabama          | rec=  77, team_plays=264 | dom=3.3%
+  2024 (age 20) | South Alabama          | rec= 293, team_plays=226 | dom=5.9%
+  2025 (age 21) | South Alabama          | rec= 799, team_plays=213 | dom=38.5% <- HIT 20%
